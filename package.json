@@ -14,7 +14,7 @@
     "check": "astro check",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "verify": "pnpm run format:check && pnpm run build"
+    "verify": "pnpm run check && pnpm run format:check && pnpm run build"
   },
   "dependencies": {
     "astro": "^7.4.1"

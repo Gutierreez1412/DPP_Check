@@ -178,6 +178,44 @@ main h1 {
   font-size: 0.95rem;
 }
 
+/*
+  Rollen-Hinweis: Ergebnis der Rollen-Ermittlung (Ebene 1). Eigene Hinweisbox mit
+  Akzentlinie, damit sie als Befund hervorsticht statt wie ein beliebiger Hinweis
+  zu wirken. Bewusst ohne Status-Chip ("Gilt"/"Unklar") – die Formulierungen in
+  Titel und Text tragen den Vorbehalt schon ("könnte", "voraussichtlich"), ein
+  zusätzliches Badge hätte dem widersprochen.
+*/
+.rollen-hinweis {
+  padding: 1.5rem 1.75rem;
+  border: 1px solid var(--farbe-rand);
+  border-left: 3px solid var(--farbe-primaer);
+}
+
+.rollen-hinweis .eyebrow {
+  margin: 0 0 0.5rem;
+  color: var(--farbe-primaer-hover);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.rollen-hinweis h2 {
+  margin-bottom: 0.6rem;
+  font-size: clamp(1.25rem, 2.6vw, 1.5rem);
+  color: var(--farbe-text);
+}
+
+.rollen-hinweis p {
+  max-width: 68ch;
+}
+
+.rollen-hinweis #rollen-quelle {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+}
+
 .seite-fuss {
   border-top: 1px solid var(--farbe-rand);
   margin-top: 3rem;
@@ -443,25 +481,6 @@ fieldset.schritt legend {
 
 .button--sekundaer:hover {
   background: var(--farbe-flaeche);
-}
-
-.rollen-ergebnis {
-  margin: 1.75rem 0;
-  color: var(--farbe-text);
-}
-
-.rollen-ergebnis h2 {
-  margin: 0.6rem 0 0.75rem;
-}
-
-.rollen-ergebnis #rollen-quelle {
-  display: inline-block;
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-}
-
-.rollen-ergebnis p {
-  max-width: 68ch;
 }
 
 .gruppen-liste {

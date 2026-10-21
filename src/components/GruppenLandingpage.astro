@@ -22,7 +22,7 @@ interface FaqEintrag {
   quelle: string;
 }
 
-interface GruppenDaten {
+export interface GruppenDaten {
   id: string;
   name: Zweisprachig;
   definition: Zweisprachig;
@@ -45,22 +45,28 @@ const quelleLabel = t(seite.quelle_label);
 <section>
   <h1>{t(daten.name)}</h1>
   <RollenHinweis lang={lang} />
-  <p class="definition">{t(daten.definition)}</p>
-  <p class="quelle-hinweis">
-    <a href={daten.definition_quelle} target="_blank" rel="noopener"
-      >{quelleLabel}</a
-    >
-    {
-      daten.weiterfuehrend && (
-        <>
-          {" · "}
-          <a href={daten.weiterfuehrend.url} target="_blank" rel="noopener">
-            {t(daten.weiterfuehrend.label)}
-          </a>
-        </>
-      )
-    }
-  </p>
+
+  <div class="block">
+    <h2>{t(seite.definition_titel)}</h2>
+    <div class="block__inhalt">
+      <p class="definition">{t(daten.definition)}</p>
+      <p class="quelle-hinweis">
+        <a href={daten.definition_quelle} target="_blank" rel="noopener"
+          >{quelleLabel}</a
+        >
+        {
+          daten.weiterfuehrend && (
+            <>
+              {" · "}
+              <a href={daten.weiterfuehrend.url} target="_blank" rel="noopener">
+                {t(daten.weiterfuehrend.label)}
+              </a>
+            </>
+          )
+        }
+      </p>
+    </div>
+  </div>
 
   <section class="zeitstrahl-block">
     <h2>{t(seite.zeitstrahl_titel)}</h2>

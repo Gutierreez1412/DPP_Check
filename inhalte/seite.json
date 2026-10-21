@@ -59,6 +59,14 @@
     "de": "Quelle",
     "en": "Source"
   },
+  "rollen_eyebrow": {
+    "de": "Ihre Rolle",
+    "en": "Your role"
+  },
+  "definition_titel": {
+    "de": "Definition",
+    "en": "Definition"
+  },
   "status_label": {
     "gilt": { "de": "Gilt", "en": "In force" },
     "geplant": { "de": "Geplant", "en": "Planned" },

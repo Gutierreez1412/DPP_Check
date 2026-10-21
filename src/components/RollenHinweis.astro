@@ -13,13 +13,12 @@ const texteFuerClient = {
   varianten: filter.rollenergebnis.varianten,
   weiterHinweis: t(filter.rollenergebnis.weiter_hinweis),
   quelleLabel: t(seite.quelle_label),
-  statusLabel: seite.status_label,
   lang,
 };
 ---
 
 <div class="rollen-hinweis hinweisbox" id="rollen-hinweis" hidden>
-  <span class="status-badge" id="rollen-status"></span>
+  <p class="eyebrow">{t(seite.rollen_eyebrow)}</p>
   <h2 id="rollen-titel"></h2>
   <p id="rollen-text"></p>
   <p class="hinweis-text" id="rollen-weiter-hinweis"></p>
@@ -36,25 +35,31 @@ const texteFuerClient = {
   function initRollenHinweis() {
     const texteEl = document.getElementById("rollen-hinweis-texte");
     const box = document.getElementById("rollen-hinweis");
-    if (!texteEl || !box) return;
+    const titelEl = document.getElementById("rollen-titel");
+    const textEl = document.getElementById("rollen-text");
+    const weiterEl = document.getElementById("rollen-weiter-hinweis");
+    const quelleEl = document.getElementById("rollen-quelle");
+    if (
+      !texteEl ||
+      !box ||
+      !titelEl ||
+      !textEl ||
+      !weiterEl ||
+      !(quelleEl instanceof HTMLAnchorElement)
+    ) {
+      return;
+    }
 
-    const { varianten, weiterHinweis, quelleLabel, statusLabel, lang } =
-      JSON.parse(texteEl.textContent || "{}");
-    const params = new URLSearchParams(window.location.search);
-    const rolleId = params.get("rolle");
-    const variante = varianten[rolleId];
+    const { varianten, weiterHinweis, quelleLabel, lang } = JSON.parse(
+      texteEl.textContent || "{}",
+    );
+    const rolleId = new URLSearchParams(window.location.search).get("rolle");
+    const variante = rolleId ? varianten[rolleId] : undefined;
     if (!variante) return;
 
-    document.getElementById("rollen-titel").textContent = variante.titel[lang];
-    document.getElementById("rollen-text").textContent = variante.text[lang];
-    document.getElementById("rollen-weiter-hinweis").textContent =
-      weiterHinweis;
-
-    const statusEl = document.getElementById("rollen-status");
-    statusEl.textContent = statusLabel[variante.status][lang];
-    statusEl.className = `status-badge status-badge--${variante.status}`;
-
-    const quelleEl = document.getElementById("rollen-quelle");
+    titelEl.textContent = variante.titel[lang];
+    textEl.textContent = variante.text[lang];
+    weiterEl.textContent = weiterHinweis;
     quelleEl.href = variante.quelle;
     quelleEl.textContent = quelleLabel;
 

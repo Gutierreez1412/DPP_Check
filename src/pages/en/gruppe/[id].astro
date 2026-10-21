@@ -1,7 +1,9 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import Platzhalter from "../../../components/Platzhalter.astro";
-import GruppenLandingpage from "../../../components/GruppenLandingpage.astro";
+import GruppenLandingpage, {
+  type GruppenDaten,
+} from "../../../components/GruppenLandingpage.astro";
 import RollenHinweis from "../../../components/RollenHinweis.astro";
 import filter from "../../../../inhalte/filter.json";
 import seite from "../../../../inhalte/seite.json";
@@ -15,12 +17,12 @@ export function getStaticPaths() {
 
 const { gruppe } = Astro.props;
 
-const alleGruppenDaten = import.meta.glob(
+const alleGruppenDaten = import.meta.glob<{ default: GruppenDaten }>(
   "../../../../inhalte/gruppen/*/gruppe.json",
   { eager: true },
 );
 const daten = Object.values(alleGruppenDaten).find(
-  (modul: any) => modul.default?.id === gruppe.id,
+  (modul) => modul.default.id === gruppe.id,
 )?.default;
 ---
 
