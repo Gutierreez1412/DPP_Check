@@ -1,0 +1,17 @@
+---
+interface Props {
+  titel: string;
+  hinweis: string;
+  zurueckHref: string;
+  zurueckLabel: string;
+}
+
+const { titel, hinweis, zurueckHref, zurueckLabel } = Astro.props;
+---
+
+<section>
+  <h1>{titel}</h1>
+  <slot name="vor-hinweis" />
+  <p class="hinweisbox">{hinweis}</p>
+  <p><a href={zurueckHref}>{zurueckLabel}</a></p>
+</section>

@@ -1,0 +1,158 @@
+{
+  "id": "batterien",
+  "name": { "de": "Batterien", "en": "Batteries" },
+  "definition": {
+    "de": "Die EU-Batterieverordnung (EU) 2023/1542 gilt für alle Batterien, die in der EU in Verkehr gebracht werden: Gerätebatterien (z. B. in Haushaltsgeräten), Batterien für Leichtverkehrsmittel (LMT, z. B. E-Bikes und E-Scooter), Fahrzeugbatterien (EV-Batterien), Industriebatterien und Starterbatterien (SLI). Sie ersetzt die bisherige Batterie-Richtlinie 2006/66/EG.",
+    "en": "The EU Battery Regulation (EU) 2023/1542 applies to all batteries placed on the EU market: portable batteries (e.g. in household appliances), batteries for light means of transport (LMT, e.g. e-bikes and e-scooters), electric vehicle (EV) batteries, industrial batteries and starter batteries (SLI). It replaces the previous Battery Directive 2006/66/EC."
+  },
+  "definition_quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
+
+  "weiterfuehrend": {
+    "label": {
+      "de": "Mehr erfahren: Batteriepass bei der EU-Kommission",
+      "en": "Learn more: battery passport at the European Commission"
+    },
+    "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
+  },
+
+  "zeitstrahl": [
+    {
+      "datum": "2024-02-18",
+      "titel": {
+        "de": "Batterieverordnung gilt allgemein",
+        "en": "Battery Regulation generally applicable"
+      },
+      "beschreibung": {
+        "de": "Die meisten Pflichten der EU-Batterieverordnung gelten ab diesem Datum, mit einzelnen produktgruppenspezifischen Ausnahmen.",
+        "en": "Most obligations of the EU Battery Regulation apply from this date, with some product-group-specific exceptions."
+      },
+      "status": "gilt",
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    {
+      "datum": "2025-08-18",
+      "titel": {
+        "de": "Alte Batterie-Richtlinie aufgehoben",
+        "en": "Old Battery Directive repealed"
+      },
+      "beschreibung": {
+        "de": "Die bisherige Richtlinie 2006/66/EG wird aufgehoben. Außerdem müssen Mitgliedstaaten ab diesem Datum wirksame Sanktionen für Verstöße festgelegt haben, und das Symbol für die Getrenntsammlung wird Pflicht.",
+        "en": "The previous Directive 2006/66/EC is repealed. From this date, member states must also have effective penalties for violations in place, and the separate-collection symbol becomes mandatory."
+      },
+      "status": "gilt",
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    {
+      "datum": "2026-08-18",
+      "titel": {
+        "de": "Kennzeichnungspflichten (Labels)",
+        "en": "Labelling requirements"
+      },
+      "beschreibung": {
+        "de": "Informations- und Kapazitätslabel werden Pflicht (bzw. 18 Monate nach dem zugehörigen Durchführungsrechtsakt, je nachdem was später eintritt).",
+        "en": "Information and capacity labels become mandatory (or 18 months after the related implementing act, whichever is later)."
+      },
+      "status": "gilt",
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    {
+      "datum": "2027-02-18",
+      "titel": {
+        "de": "Digitaler Batteriepass Pflicht",
+        "en": "Digital battery passport mandatory"
+      },
+      "beschreibung": {
+        "de": "Ab diesem Datum brauchen LMT-Batterien, Industriebatterien mit mehr als 2 kWh Kapazität und Fahrzeugbatterien (EV) einen digitalen Batteriepass mit QR-Code. Gerätebatterien sind davon nicht erfasst. Zuständig ist, wer die fertige Batterie in der EU in Verkehr bringt.",
+        "en": "From this date, LMT batteries, industrial batteries with a capacity over 2 kWh, and electric vehicle (EV) batteries require a digital battery passport with a QR code. Portable batteries are not covered. Responsibility lies with whoever places the finished battery on the EU market."
+      },
+      "status": "gilt",
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    {
+      "datum": "2027-08-18",
+      "titel": {
+        "de": "Sorgfaltspflichten in der Lieferkette",
+        "en": "Supply chain due diligence obligations"
+      },
+      "beschreibung": {
+        "de": "Unternehmen über 40 Mio. Euro Nettoumsatz müssen konzernweite Sorgfaltspflichten zu Rohstoffen in der Batterie-Lieferkette erfüllen. Der Termin wurde durch die Änderungsverordnung (EU) 2025/1561 von ursprünglich 2025 auf 2027 verschoben.",
+        "en": "Companies with net turnover above €40 million must meet group-wide due diligence obligations for raw materials in the battery supply chain. The deadline was postponed from the original 2025 to 2027 by amending Regulation (EU) 2025/1561."
+      },
+      "status": "gilt",
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2025/1561/oj/eng"
+    },
+    {
+      "datum": "2028-02-18",
+      "titel": {
+        "de": "CO2-Fußabdruck-Deklaration für EV-Batterien",
+        "en": "Carbon footprint declaration for EV batteries"
+      },
+      "beschreibung": {
+        "de": "Fahrzeugbatterien müssen ab diesem Datum eine CO2-Fußabdruck-Deklaration vorweisen. Die genauen Grenzwerte legt die EU-Kommission noch in einem eigenen delegierten Rechtsakt fest.",
+        "en": "From this date, EV batteries must carry a carbon footprint declaration. The exact thresholds will still be set by the European Commission in a separate delegated act."
+      },
+      "status": "geplant",
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    {
+      "datum": "2031-08-18",
+      "titel": {
+        "de": "Mindestrezyklatanteile Pflicht",
+        "en": "Minimum recycled content mandatory"
+      },
+      "beschreibung": {
+        "de": "Ab diesem Datum gelten feste Mindestanteile an recyceltem Material: 16 % Kobalt, 85 % Blei, 6 % Lithium, 6 % Nickel.",
+        "en": "From this date, fixed minimum shares of recycled content apply: 16% cobalt, 85% lead, 6% lithium, 6% nickel."
+      },
+      "status": "gilt",
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    }
+  ],
+
+  "faq": [
+    {
+      "frage": {
+        "de": "Wer muss den Batteriepass bereitstellen?",
+        "en": "Who has to provide the battery passport?"
+      },
+      "antwort": {
+        "de": "Der Wirtschaftsakteur, der die fertige Batterie in der EU in Verkehr bringt – nicht der Zulieferer einzelner Zellen oder Module. Die Pflicht gilt ab dem 18. Februar 2027 für LMT-, Industrie- (über 2 kWh) und Fahrzeugbatterien.",
+        "en": "The economic operator who places the finished battery on the EU market – not the supplier of individual cells or modules. The obligation applies from 18 February 2027 for LMT, industrial (over 2 kWh) and electric vehicle batteries."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    {
+      "frage": {
+        "de": "Gilt das auch für importierte Batterien?",
+        "en": "Does this also apply to imported batteries?"
+      },
+      "antwort": {
+        "de": "Ja. Importeure gelten als Wirtschaftsakteure und müssen unter anderem CE-Kennzeichnung, EU-Konformitätserklärung und technische Dokumentation prüfen. Die Batteriepass-Pflicht trifft ausdrücklich auch, wer eine Batterie aus einem Drittland in der EU in Verkehr bringt.",
+        "en": "Yes. Importers are considered economic operators and must check, among other things, CE marking, the EU declaration of conformity and technical documentation. The battery passport obligation explicitly also applies to anyone placing a battery from a third country on the EU market."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    {
+      "frage": {
+        "de": "Was passiert bei Nichteinhaltung?",
+        "en": "What happens if the rules are not followed?"
+      },
+      "antwort": {
+        "de": "Die Mitgliedstaaten mussten bis zum 18. August 2025 wirksame, verhältnismäßige und abschreckende Sanktionen für Verstöße festlegen. Zusätzlich drohen Marktüberwachungsmaßnahmen wie Rücknahme oder Rückruf. Die konkrete Höhe von Bußgeldern ist EU-weit nicht einheitlich geregelt, sondern Sache der einzelnen Mitgliedstaaten.",
+        "en": "Member states had to set effective, proportionate and dissuasive penalties for violations by 18 August 2025. Market surveillance measures such as withdrawal or recall can also apply. The exact amount of fines is not harmonised across the EU and is determined by individual member states."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    {
+      "frage": {
+        "de": "Gilt die Sorgfaltspflicht auch für kleinere Unternehmen?",
+        "en": "Does the due diligence obligation also apply to smaller companies?"
+      },
+      "antwort": {
+        "de": "Nein. Unternehmen mit weniger als 40 Mio. Euro Nettoumsatz sind ausgenommen, sofern sie nicht Teil einer größeren Unternehmensgruppe über dieser Schwelle sind. Die Pflicht selbst gilt seit der Verschiebung durch Verordnung (EU) 2025/1561 ab dem 18. August 2027.",
+        "en": "No. Companies with net turnover below €40 million are exempt, unless they are part of a larger corporate group above that threshold. Following the postponement by Regulation (EU) 2025/1561, the obligation itself applies from 18 August 2027."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2025/1561/oj/eng"
+    }
+  ]
+}

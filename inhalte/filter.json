@@ -1,0 +1,121 @@
+{
+  "produktgruppen": [
+    { "id": "batterien", "name": { "de": "Batterien", "en": "Batteries" } },
+    { "id": "stahl", "name": { "de": "Stahl", "en": "Steel" } },
+    { "id": "textil", "name": { "de": "Textil", "en": "Textiles" } },
+    { "id": "moebel", "name": { "de": "Möbel", "en": "Furniture" } },
+    {
+      "id": "bauprodukte",
+      "name": { "de": "Bauprodukte", "en": "Construction products" }
+    }
+  ],
+
+  "fortschritt_vorlage": {
+    "de": "Schritt {n} von {gesamt}",
+    "en": "Step {n} of {gesamt}"
+  },
+
+  "schritt1": {
+    "titel": {
+      "de": "Welche Produktgruppen betreffen Sie?",
+      "en": "Which product groups apply to you?"
+    },
+    "hinweis": {
+      "de": "Mehrfachauswahl möglich.",
+      "en": "Multiple selection possible."
+    },
+    "fehler_keine_auswahl": {
+      "de": "Bitte wählen Sie mindestens eine Produktgruppe aus.",
+      "en": "Please select at least one product group."
+    }
+  },
+  "schritt2": {
+    "titel": {
+      "de": "Verkaufen Sie Produkte unter Ihrem eigenen Namen oder Ihrer eigenen Marke?",
+      "en": "Do you sell products under your own name or brand?"
+    }
+  },
+  "schritt3": {
+    "titel": {
+      "de": "Verändern Sie bezogene Produkte oder setzen Sie sie anders ein?",
+      "en": "Do you modify purchased products or use them for a different purpose?"
+    },
+    "hinweis": {
+      "de": "z. B. Umbau, Veredelung, Set-Bildung, Aufbereitung, neuer Verwendungszweck",
+      "en": "e.g. rework, refinishing, creating sets, reconditioning, new intended use"
+    }
+  },
+  "fehler_keine_antwort": {
+    "de": "Bitte wählen Sie eine Antwort aus.",
+    "en": "Please select an answer."
+  },
+
+  "antworten": {
+    "ja": { "de": "Ja", "en": "Yes" },
+    "nein": { "de": "Nein", "en": "No" }
+  },
+  "buttons": {
+    "weiter": { "de": "Weiter", "en": "Next" },
+    "zurueck": { "de": "Zurück", "en": "Back" }
+  },
+
+  "uebersicht": {
+    "titel": {
+      "de": "Ihre ausgewählten Produktgruppen",
+      "en": "Your selected product groups"
+    },
+    "hinweis": {
+      "de": "Sie haben mehrere Produktgruppen ausgewählt. Der Betroffenheitscheck läuft pro Gruppe separat – wählen Sie eine Gruppe, um zu starten.",
+      "en": "You selected several product groups. The impact check runs separately per group – choose a group to start."
+    },
+    "keine_auswahl": {
+      "de": "Keine Auswahl gefunden. Bitte starten Sie den Check erneut.",
+      "en": "No selection found. Please start the check again."
+    }
+  },
+
+  "rollenergebnis": {
+    "weiter_hinweis": {
+      "de": "Erste Einschätzung auf Basis Ihrer Angaben, keine abschließende rechtliche Bewertung.",
+      "en": "Initial assessment based on your answers, not a final legal determination."
+    },
+    "varianten": {
+      "hersteller": {
+        "titel": {
+          "de": "Sie könnten als Hersteller gelten",
+          "en": "You could be considered a manufacturer"
+        },
+        "text": {
+          "de": "Sie vertreiben Produkte unter Ihrem eigenen Namen oder Ihrer eigenen Marke, die unter die ESPR und damit auch unter den Digitalen Produktpass fallen könnten. Nach Art. 34 ESPR würden Sie damit als Hersteller gelten – mit der Hauptverantwortung für den Produktpass, einschließlich Konformitätsbewertung, technischer Dokumentation und EU-Konformitätserklärung (Art. 27 ESPR).",
+          "en": "You distribute products under your own name or trademark that could fall under the ESPR and therefore under the Digital Product Passport. Under Art. 34 ESPR, you would then be considered a manufacturer – bearing the main responsibility for the product passport, including conformity assessment, technical documentation and the EU declaration of conformity (Art. 27 ESPR)."
+        },
+        "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng",
+        "status": "gilt"
+      },
+      "hersteller_screening": {
+        "titel": {
+          "de": "Sie könnten Herstellerverantwortung erhalten haben",
+          "en": "You may have acquired manufacturer responsibility"
+        },
+        "text": {
+          "de": "Weil Sie bezogene Produkte verändern, könnte es sein, dass Sie dadurch eine Herstellerverantwortung nach Art. 34 ESPR erhalten haben oder erhalten könnten – nämlich dann, wenn die Veränderung die Konformität des Produkts mit den geltenden Anforderungen beeinträchtigt. Ob das bei Ihnen zutrifft, lässt sich nur im Einzelfall anhand der jeweiligen produktspezifischen Verordnung beurteilen.",
+          "en": "Because you modify purchased products, you may have acquired – or could acquire – manufacturer responsibility under Art. 34 ESPR, namely if the modification affects the product's compliance with the applicable requirements. Whether this applies to you can only be assessed case by case, based on the relevant product-specific regulation."
+        },
+        "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng",
+        "status": "unklar"
+      },
+      "importeur_vertreiber": {
+        "titel": {
+          "de": "Sie blieben voraussichtlich Importeur oder Vertreiber",
+          "en": "You would likely remain an importer or distributor"
+        },
+        "text": {
+          "de": "Nach Ihren Angaben würden Sie nicht unter die Herstellerdefinition des Art. 34 ESPR fallen. Als Importeur bzw. Vertreiber könnten Sie dennoch eigene Pflichten treffen – etwa zu prüfen, ob CE-Kennzeichnung, Digitaler Produktpass und Konformitätsunterlagen vorhanden sind, sobald diese Anforderungen für Ihre Produktgruppe gelten (Art. 29 ESPR für Importeure, Art. 30 ESPR für Vertreiber).",
+          "en": "Based on your answers, you would not fall under the manufacturer definition of Art. 34 ESPR. As an importer or distributor, you could still have your own obligations – for example checking that CE marking, the Digital Product Passport and conformity documents are in place once these requirements apply to your product group (Art. 29 ESPR for importers, Art. 30 ESPR for distributors)."
+        },
+        "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng",
+        "status": "gilt"
+      }
+    }
+  }
+}

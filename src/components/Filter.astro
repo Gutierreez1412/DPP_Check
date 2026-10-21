@@ -1,0 +1,238 @@
+---
+import filter from "../../inhalte/filter.json";
+
+interface Props {
+  lang: "de" | "en";
+}
+
+const { lang } = Astro.props;
+const t = (feld: Record<"de" | "en", string>) => feld[lang];
+const gruppen = filter.produktgruppen;
+
+const texteFuerClient = {
+  fehlerKeineAuswahl: t(filter.schritt1.fehler_keine_auswahl),
+  fehlerKeineAntwort: t(filter.fehler_keine_antwort),
+  fortschrittVorlage: t(filter.fortschritt_vorlage),
+};
+---
+
+<section class="assistent">
+  <p class="fortschritt" id="fortschritt-text" aria-live="polite"></p>
+  <div class="fortschrittsbalken">
+    <div class="fortschrittsbalken__fuellung" id="fortschrittsbalken"></div>
+  </div>
+
+  <form id="filter-formular">
+    <fieldset class="schritt" id="schritt-1" data-schritt="1">
+      <legend>{t(filter.schritt1.titel)}</legend>
+      <p class="hinweis-text">{t(filter.schritt1.hinweis)}</p>
+      <div class="optionen">
+        {
+          gruppen.map((g) => (
+            <label class="option">
+              <input type="checkbox" name="gruppen" value={g.id} />
+              <span>{t(g.name)}</span>
+            </label>
+          ))
+        }
+      </div>
+      <p class="fehler" id="fehler-1" role="alert" hidden></p>
+      <div class="aktionen">
+        <button type="button" class="button" data-weiter="1"
+          >{t(filter.buttons.weiter)}</button
+        >
+      </div>
+    </fieldset>
+
+    <fieldset class="schritt" id="schritt-2" data-schritt="2" hidden>
+      <legend>{t(filter.schritt2.titel)}</legend>
+      <div class="optionen">
+        <label class="option">
+          <input type="radio" name="eigener_name" value="ja" />
+          <span>{t(filter.antworten.ja)}</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="eigener_name" value="nein" />
+          <span>{t(filter.antworten.nein)}</span>
+        </label>
+      </div>
+      <p class="fehler" id="fehler-2" role="alert" hidden></p>
+      <div class="aktionen">
+        <button type="button" class="button button--sekundaer" data-zurueck="2"
+          >{t(filter.buttons.zurueck)}</button
+        >
+        <button type="button" class="button" data-weiter="2"
+          >{t(filter.buttons.weiter)}</button
+        >
+      </div>
+    </fieldset>
+
+    <fieldset class="schritt" id="schritt-3" data-schritt="3" hidden>
+      <legend>{t(filter.schritt3.titel)}</legend>
+      <p class="hinweis-text">{t(filter.schritt3.hinweis)}</p>
+      <div class="optionen">
+        <label class="option">
+          <input type="radio" name="wesentliche_aenderung" value="ja" />
+          <span>{t(filter.antworten.ja)}</span>
+        </label>
+        <label class="option">
+          <input type="radio" name="wesentliche_aenderung" value="nein" />
+          <span>{t(filter.antworten.nein)}</span>
+        </label>
+      </div>
+      <p class="fehler" id="fehler-3" role="alert" hidden></p>
+      <div class="aktionen">
+        <button type="button" class="button button--sekundaer" data-zurueck="3"
+          >{t(filter.buttons.zurueck)}</button
+        >
+        <button type="button" class="button" data-weiter="3"
+          >{t(filter.buttons.weiter)}</button
+        >
+      </div>
+    </fieldset>
+  </form>
+</section>
+
+<script
+  type="application/json"
+  id="filter-texte"
+  set:html={JSON.stringify(texteFuerClient)}
+/>
+
+<script>
+  function initFilter() {
+    const form = document.getElementById("filter-formular");
+    const texteEl = document.getElementById("filter-texte");
+    if (!(form instanceof HTMLFormElement) || !texteEl) return;
+
+    const lang = document.documentElement.lang || "de";
+    const texte = JSON.parse(texteEl.textContent || "{}");
+    const reduzierteBewegung = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    const schritte = Array.from(
+      form.querySelectorAll<HTMLFieldSetElement>(".schritt"),
+    );
+    const gesamt = schritte.length;
+    const fortschrittText = document.getElementById("fortschritt-text");
+    const fortschrittBalken = document.getElementById("fortschrittsbalken");
+
+    const state: {
+      gruppen: string[];
+      eigenerName: string | null;
+      wesentlicheAenderung: string | null;
+    } = {
+      gruppen: [],
+      eigenerName: null,
+      wesentlicheAenderung: null,
+    };
+
+    function zeigeSchritt(n: number) {
+      schritte.forEach((el) => {
+        const istAktiv = Number(el.dataset.schritt) === n;
+        el.hidden = !istAktiv;
+        if (istAktiv) {
+          el.classList.remove("eintritt");
+          if (!reduzierteBewegung) {
+            void el.offsetWidth;
+            el.classList.add("eintritt");
+          }
+        }
+      });
+      if (fortschrittText) {
+        fortschrittText.textContent = texte.fortschrittVorlage
+          .replace("{n}", String(n))
+          .replace("{gesamt}", String(gesamt));
+      }
+      if (fortschrittBalken instanceof HTMLElement) {
+        fortschrittBalken.style.width = `${(n / gesamt) * 100}%`;
+      }
+      const legende = schritte[n - 1]?.querySelector("legend");
+      if (legende instanceof HTMLElement) {
+        legende.setAttribute("tabindex", "-1");
+        legende.focus();
+      }
+    }
+
+    function zeigeFehler(schrittNr: number, nachricht: string) {
+      const fehlerEl = document.getElementById(`fehler-${schrittNr}`);
+      if (fehlerEl) {
+        fehlerEl.textContent = nachricht;
+        fehlerEl.hidden = false;
+      }
+    }
+
+    function versteckeFehler(schrittNr: number) {
+      const fehlerEl = document.getElementById(`fehler-${schrittNr}`);
+      if (fehlerEl) fehlerEl.hidden = true;
+    }
+
+    function ermittleRolle() {
+      if (state.eigenerName === "ja") return "hersteller";
+      if (state.wesentlicheAenderung === "ja") return "hersteller_screening";
+      return "importeur_vertreiber";
+    }
+
+    function weiterleiten() {
+      const rolle = ermittleRolle();
+      if (state.gruppen.length === 1) {
+        window.location.href = `/${lang}/gruppe/${state.gruppen[0]}/?rolle=${rolle}`;
+        return;
+      }
+      window.location.href = `/${lang}/uebersicht/?gruppen=${state.gruppen.join(",")}&rolle=${rolle}`;
+    }
+
+    form.querySelector('[data-weiter="1"]')?.addEventListener("click", () => {
+      const ausgewaehlt = Array.from(
+        form.querySelectorAll<HTMLInputElement>(
+          'input[name="gruppen"]:checked',
+        ),
+      ).map((el) => el.value);
+      if (ausgewaehlt.length === 0) {
+        zeigeFehler(1, texte.fehlerKeineAuswahl);
+        return;
+      }
+      state.gruppen = ausgewaehlt;
+      versteckeFehler(1);
+      zeigeSchritt(2);
+    });
+
+    form.querySelector('[data-weiter="2"]')?.addEventListener("click", () => {
+      const antwort = form.querySelector<HTMLInputElement>(
+        'input[name="eigener_name"]:checked',
+      );
+      if (!antwort) {
+        zeigeFehler(2, texte.fehlerKeineAntwort);
+        return;
+      }
+      state.eigenerName = antwort.value;
+      versteckeFehler(2);
+      zeigeSchritt(3);
+    });
+
+    form.querySelector('[data-weiter="3"]')?.addEventListener("click", () => {
+      const antwort = form.querySelector<HTMLInputElement>(
+        'input[name="wesentliche_aenderung"]:checked',
+      );
+      if (!antwort) {
+        zeigeFehler(3, texte.fehlerKeineAntwort);
+        return;
+      }
+      state.wesentlicheAenderung = antwort.value;
+      versteckeFehler(3);
+      weiterleiten();
+    });
+
+    form.querySelectorAll("[data-zurueck]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const schrittNr = Number((btn as HTMLElement).dataset.zurueck);
+        zeigeSchritt(schrittNr - 1);
+      });
+    });
+
+    zeigeSchritt(1);
+  }
+
+  initFilter();
+</script>

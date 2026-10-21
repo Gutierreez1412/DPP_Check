@@ -1,0 +1,69 @@
+---
+import seite from "../../inhalte/seite.json";
+
+interface Props {
+  lang: "de" | "en";
+}
+
+const { lang } = Astro.props;
+const t = (feld: Record<"de" | "en", string>) => feld[lang];
+const felder = seite.pass_grafik.felder;
+const breiten = ["82%", "64%", "47%", "71%"];
+---
+
+<div class="pass" aria-hidden="true">
+  <div class="pass-top">
+    <strong>{t(seite.pass_grafik.titel)}</strong>
+    <span class="pass-id">{t(seite.pass_grafik.id_beispiel)}</span>
+  </div>
+  <div class="pass-body">
+    <div class="pass-qr" id="pass-qr"></div>
+    <dl class="pass-felder">
+      {
+        felder.map((feld, i) => (
+          <div>
+            <dt>{t(feld)}</dt>
+            <dd>
+              <i style={`--breite:${breiten[i % breiten.length]}`} />
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+  <p class="pass-fuss">{t(seite.pass_grafik.fuss)}</p>
+</div>
+
+<script>
+  function buildQr() {
+    const el = document.getElementById("pass-qr");
+    if (!el) return;
+    const n = 21;
+    let seed = 20270218;
+    function rnd() {
+      seed = (seed * 1103515245 + 12345) % 2147483648;
+      return seed / 2147483648;
+    }
+    function finder(x: number, y: number) {
+      return (
+        `<rect x="${x}" y="${y}" width="7" height="7" fill="currentColor"/>` +
+        `<rect x="${x + 1}" y="${y + 1}" width="5" height="5" class="pass-qr-bg"/>` +
+        `<rect x="${x + 2}" y="${y + 2}" width="3" height="3" fill="currentColor"/>`
+      );
+    }
+    let out = "";
+    for (let y = 0; y < n; y++) {
+      for (let x = 0; x < n; x++) {
+        const inFinder =
+          (x < 8 && y < 8) || (x > n - 9 && y < 8) || (x < 8 && y > n - 9);
+        if (!inFinder && rnd() < 0.46) {
+          out += `<rect x="${x}" y="${y}" width="1" height="1" fill="currentColor"/>`;
+        }
+      }
+    }
+    out += finder(0, 0) + finder(n - 7, 0) + finder(0, n - 7);
+    el.innerHTML = `<svg viewBox="0 0 ${n} ${n}" shape-rendering="crispEdges" focusable="false" role="presentation">${out}</svg>`;
+  }
+
+  buildQr();
+</script>

@@ -1,0 +1,132 @@
+---
+import grundlagen from "../../inhalte/grundlagen.json";
+import seite from "../../inhalte/seite.json";
+import RollenHinweis from "./RollenHinweis.astro";
+
+interface Zweisprachig {
+  de: string;
+  en: string;
+}
+
+interface Meilenstein {
+  datum: string;
+  titel: Zweisprachig;
+  beschreibung: Zweisprachig;
+  status: "gilt" | "geplant" | "unklar";
+  quelle: string;
+}
+
+interface FaqEintrag {
+  frage: Zweisprachig;
+  antwort: Zweisprachig;
+  quelle: string;
+}
+
+interface GruppenDaten {
+  id: string;
+  name: Zweisprachig;
+  definition: Zweisprachig;
+  definition_quelle: string;
+  weiterfuehrend?: { label: Zweisprachig; url: string };
+  zeitstrahl: Meilenstein[];
+  faq: FaqEintrag[];
+}
+
+interface Props {
+  lang: "de" | "en";
+  daten: GruppenDaten;
+}
+
+const { lang, daten } = Astro.props;
+const t = (feld: Zweisprachig) => feld[lang];
+const quelleLabel = t(seite.quelle_label);
+---
+
+<section>
+  <h1>{t(daten.name)}</h1>
+  <RollenHinweis lang={lang} />
+  <p class="definition">{t(daten.definition)}</p>
+  <p class="quelle-hinweis">
+    <a href={daten.definition_quelle} target="_blank" rel="noopener"
+      >{quelleLabel}</a
+    >
+    {
+      daten.weiterfuehrend && (
+        <>
+          {" · "}
+          <a href={daten.weiterfuehrend.url} target="_blank" rel="noopener">
+            {t(daten.weiterfuehrend.label)}
+          </a>
+        </>
+      )
+    }
+  </p>
+
+  <section class="zeitstrahl-block">
+    <h2>{t(seite.zeitstrahl_titel)}</h2>
+    <ol class="zeitstrahl" style={`--anzahl:${daten.zeitstrahl.length}`}>
+      {
+        daten.zeitstrahl.map((m) => (
+          <li class="zeitstrahl__eintrag" data-status={m.status}>
+            <span class="zeitstrahl__datum">{m.datum}</span>
+            <span class={`status-badge status-badge--${m.status}`}>
+              {t(seite.status_label[m.status])}
+            </span>
+            <strong>{t(m.titel)}</strong>
+            <p>{t(m.beschreibung)}</p>
+            <a href={m.quelle} target="_blank" rel="noopener">
+              {quelleLabel}
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <div class="block">
+    <h2>{t(seite.faq_titel)}</h2>
+    <div class="block__inhalt">
+      <div class="faq-liste">
+        {
+          daten.faq.map((f) => (
+            <details class="faq-eintrag">
+              <summary>{t(f.frage)}</summary>
+              <p>{t(f.antwort)}</p>
+              <a href={f.quelle} target="_blank" rel="noopener">
+                {quelleLabel}
+              </a>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>{t(grundlagen.titel)}</h2>
+    <div class="block__inhalt">
+      <div class="grundlagen-liste">
+        {
+          grundlagen.abschnitte.map((a) => (
+            <div class="grundlagen-eintrag">
+              <h3>{t(a.ueberschrift)}</h3>
+              <p>{t(a.text)}</p>
+              <a href={a.quelle} target="_blank" rel="noopener">
+                {quelleLabel}
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="aktionen aktionen--landingpage">
+    <a class="button" href={`/${lang}/check/${daten.id}/`}
+      >{t(seite.check_button)}</a
+    >
+    <a class="button button--sekundaer" href={`/${lang}/`}
+      >{t(seite.zurueck_zur_auswahl)}</a
+    >
+  </div>
+</section>

@@ -1,0 +1,65 @@
+---
+import filter from "../../inhalte/filter.json";
+import seite from "../../inhalte/seite.json";
+
+interface Props {
+  lang: "de" | "en";
+}
+
+const { lang } = Astro.props;
+const t = (feld: Record<"de" | "en", string>) => feld[lang];
+
+const texteFuerClient = {
+  varianten: filter.rollenergebnis.varianten,
+  weiterHinweis: t(filter.rollenergebnis.weiter_hinweis),
+  quelleLabel: t(seite.quelle_label),
+  statusLabel: seite.status_label,
+  lang,
+};
+---
+
+<div class="rollen-hinweis hinweisbox" id="rollen-hinweis" hidden>
+  <span class="status-badge" id="rollen-status"></span>
+  <h2 id="rollen-titel"></h2>
+  <p id="rollen-text"></p>
+  <p class="hinweis-text" id="rollen-weiter-hinweis"></p>
+  <a id="rollen-quelle" target="_blank" rel="noopener"></a>
+</div>
+
+<script
+  type="application/json"
+  id="rollen-hinweis-texte"
+  set:html={JSON.stringify(texteFuerClient)}
+/>
+
+<script>
+  function initRollenHinweis() {
+    const texteEl = document.getElementById("rollen-hinweis-texte");
+    const box = document.getElementById("rollen-hinweis");
+    if (!texteEl || !box) return;
+
+    const { varianten, weiterHinweis, quelleLabel, statusLabel, lang } =
+      JSON.parse(texteEl.textContent || "{}");
+    const params = new URLSearchParams(window.location.search);
+    const rolleId = params.get("rolle");
+    const variante = varianten[rolleId];
+    if (!variante) return;
+
+    document.getElementById("rollen-titel").textContent = variante.titel[lang];
+    document.getElementById("rollen-text").textContent = variante.text[lang];
+    document.getElementById("rollen-weiter-hinweis").textContent =
+      weiterHinweis;
+
+    const statusEl = document.getElementById("rollen-status");
+    statusEl.textContent = statusLabel[variante.status][lang];
+    statusEl.className = `status-badge status-badge--${variante.status}`;
+
+    const quelleEl = document.getElementById("rollen-quelle");
+    quelleEl.href = variante.quelle;
+    quelleEl.textContent = quelleLabel;
+
+    box.hidden = false;
+  }
+
+  initRollenHinweis();
+</script>

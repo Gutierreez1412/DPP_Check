@@ -1,0 +1,81 @@
+{
+  "titel": {
+    "de": "DPP-Betroffenheitscheck",
+    "en": "DPP Impact Check"
+  },
+  "untertitel": {
+    "de": "In wenigen Minuten einschätzen, wie stark Ihr Unternehmen vom Digitalen Produktpass betroffen ist.",
+    "en": "Assess in a few minutes how strongly your company is affected by the Digital Product Passport."
+  },
+  "datenschutz_hinweis": {
+    "de": "Dauert unter zwei Minuten. Ihre Antworten bleiben in Ihrem Browser und werden nicht gespeichert oder gesendet.",
+    "en": "Takes under two minutes. Your answers stay in your browser and are not stored or sent."
+  },
+  "sprachumschalter": {
+    "de": "EN",
+    "en": "DE"
+  },
+  "disclaimer": {
+    "de": "Dieses Tool liefert unverbindliche Einschätzungen und Scores. Es ersetzt keine Rechtsberatung und keinen Konformitätsnachweis.",
+    "en": "This tool provides non-binding assessments and scores. It does not replace legal advice or proof of conformity."
+  },
+  "footer": {
+    "de": "Ein Angebot von Future Response, Berlin.",
+    "en": "An offering by Future Response, Berlin."
+  },
+  "platzhalter_gruppenseite": {
+    "de": "Die Landingpage für diese Produktgruppe (Definition, Zeitstrahl, FAQ) folgt im nächsten Arbeitsschritt.",
+    "en": "The landing page for this product group (definition, timeline, FAQ) will be added in the next step."
+  },
+  "zurueck_zur_auswahl": {
+    "de": "Zurück zur Auswahl",
+    "en": "Back to selection"
+  },
+  "zur_startseite": {
+    "de": "Zur Startseite",
+    "en": "Go to start page"
+  },
+  "zurueck_zur_gruppe": {
+    "de": "Zurück zur Produktgruppen-Seite",
+    "en": "Back to product group page"
+  },
+  "platzhalter_checkseite": {
+    "de": "Der Betroffenheitscheck für diese Produktgruppe folgt im nächsten Arbeitsschritt.",
+    "en": "The impact check for this product group will be added in the next step."
+  },
+  "check_button": {
+    "de": "Umfang der Betroffenheit berechnen",
+    "en": "Calculate extent of impact"
+  },
+  "zeitstrahl_titel": {
+    "de": "Zeitstrahl",
+    "en": "Timeline"
+  },
+  "faq_titel": {
+    "de": "Häufige Fragen",
+    "en": "Frequently asked questions"
+  },
+  "quelle_label": {
+    "de": "Quelle",
+    "en": "Source"
+  },
+  "status_label": {
+    "gilt": { "de": "Gilt", "en": "In force" },
+    "geplant": { "de": "Geplant", "en": "Planned" },
+    "unklar": { "de": "Unklar", "en": "Unclear" }
+  },
+  "pass_grafik": {
+    "titel": { "de": "Produktpass", "en": "Product Passport" },
+    "id_beispiel": { "de": "ID DE-0427-5591", "en": "ID DE-0427-5591" },
+    "felder": [
+      { "de": "Materialzusammensetzung", "en": "Material composition" },
+      { "de": "Herkunft & Lieferkette", "en": "Origin & supply chain" },
+      { "de": "CO₂-Fußabdruck", "en": "Carbon footprint" },
+      { "de": "Reparatur & Recycling", "en": "Repair & recycling" }
+    ],
+    "fuss": {
+      "de": "Beispielhafte Darstellung – kein echter Datensatz.",
+      "en": "Illustrative example – not an actual data record."
+    }
+  }
+}

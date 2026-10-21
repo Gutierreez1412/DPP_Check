@@ -1,0 +1,42 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Platzhalter from "../../../components/Platzhalter.astro";
+import GruppenLandingpage from "../../../components/GruppenLandingpage.astro";
+import RollenHinweis from "../../../components/RollenHinweis.astro";
+import filter from "../../../../inhalte/filter.json";
+import seite from "../../../../inhalte/seite.json";
+
+export function getStaticPaths() {
+  return filter.produktgruppen.map((gruppe) => ({
+    params: { id: gruppe.id },
+    props: { gruppe },
+  }));
+}
+
+const { gruppe } = Astro.props;
+
+const alleGruppenDaten = import.meta.glob(
+  "../../../../inhalte/gruppen/*/gruppe.json",
+  { eager: true },
+);
+const daten = Object.values(alleGruppenDaten).find(
+  (modul: any) => modul.default?.id === gruppe.id,
+)?.default;
+---
+
+<Layout lang="en" title={gruppe.name.en}>
+  {
+    daten ? (
+      <GruppenLandingpage lang="en" daten={daten} />
+    ) : (
+      <Platzhalter
+        titel={gruppe.name.en}
+        hinweis={seite.platzhalter_gruppenseite.en}
+        zurueckHref="/en/"
+        zurueckLabel={seite.zurueck_zur_auswahl.en}
+      >
+        <RollenHinweis lang="en" slot="vor-hinweis" />
+      </Platzhalter>
+    )
+  }
+</Layout>

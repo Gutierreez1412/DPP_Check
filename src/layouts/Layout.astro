@@ -1,0 +1,54 @@
+---
+import "../styles/global.css";
+import seite from "../../inhalte/seite.json";
+
+interface Props {
+  lang: "de" | "en";
+  title?: string;
+}
+
+const { lang, title } = Astro.props;
+
+const text = (feld: Record<"de" | "en", string>) => feld[lang];
+
+const andereSprache = lang === "de" ? "en" : "de";
+const aktuellerPfad = Astro.url.pathname;
+const pfadAndereSprache = aktuellerPfad.replace(
+  /^\/(de|en)(\/|$)/,
+  `/${andereSprache}$2`,
+);
+
+const seitentitel = title
+  ? `${title} – ${text(seite.titel)}`
+  : text(seite.titel);
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{seitentitel}</title>
+  </head>
+  <body>
+    <header class="seite-kopf">
+      <div class="seite-kopf__innen">
+        <a class="seite-kopf__titel" href={`/${lang}/`}>{text(seite.titel)}</a>
+        <a class="sprachumschalter" href={pfadAndereSprache}
+          >{text(seite.sprachumschalter)}</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="seite-fuss">
+      <div class="seite-fuss__innen">
+        <p>{text(seite.footer)}</p>
+        <p class="disclaimer">{text(seite.disclaimer)}</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Platzhalter from "../../../components/Platzhalter.astro";
+import filter from "../../../../inhalte/filter.json";
+import seite from "../../../../inhalte/seite.json";
+
+export function getStaticPaths() {
+  return filter.produktgruppen.map((gruppe) => ({
+    params: { id: gruppe.id },
+    props: { gruppe },
+  }));
+}
+
+const { gruppe } = Astro.props;
+---
+
+<Layout lang="de" title={gruppe.name.de}>
+  <Platzhalter
+    titel={gruppe.name.de}
+    hinweis={seite.platzhalter_checkseite.de}
+    zurueckHref={`/de/gruppe/${gruppe.id}/`}
+    zurueckLabel={seite.zurueck_zur_gruppe.de}
+  />
+</Layout>

@@ -1,0 +1,56 @@
+{
+  "titel": {
+    "de": "ESPR und Digitaler Produktpass – die Grundlagen",
+    "en": "ESPR and the Digital Product Passport – the basics"
+  },
+  "abschnitte": [
+    {
+      "ueberschrift": {
+        "de": "Was ist die ESPR?",
+        "en": "What is the ESPR?"
+      },
+      "text": {
+        "de": "Die ESPR (Ecodesign for Sustainable Products Regulation, Verordnung (EU) 2024/1781) legt einen Rahmen für Ökodesign-Anforderungen an Produkte in der EU fest. Sie ist am 18. Juli 2024 in Kraft getreten und löst die bisherige Ökodesign-Richtlinie 2009/125/EG ab. Welche konkreten Anforderungen für welche Produktgruppe gelten, legt die EU-Kommission nach und nach in eigenen, produktspezifischen delegierten Rechtsakten fest.",
+        "en": "The ESPR (Ecodesign for Sustainable Products Regulation, Regulation (EU) 2024/1781) establishes a framework for ecodesign requirements for products in the EU. It entered into force on 18 July 2024 and replaces the previous Ecodesign Directive 2009/125/EC. The specific requirements for each product group are set out step by step in separate, product-specific delegated acts issued by the European Commission."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng",
+      "status": "gilt"
+    },
+    {
+      "ueberschrift": {
+        "de": "Was ist der Digitale Produktpass?",
+        "en": "What is the Digital Product Passport?"
+      },
+      "text": {
+        "de": "Der Digitale Produktpass (DPP) ist ein digitaler Container für Produkte, Bauteile und Materialien, der Informationen zu Nachhaltigkeit, Kreislauffähigkeit und Rechtskonformität bündelt. Rechtsgrundlage ist die ESPR. Ein DPP wird erst dann Pflicht, wenn der jeweilige produktspezifische delegierte Rechtsakt dies vorschreibt – die Pflicht entsteht also nicht pauschal, sondern Produktgruppe für Produktgruppe.",
+        "en": "The Digital Product Passport (DPP) is a digital container for products, components and materials that bundles information on sustainability, circularity and legal compliance. Its legal basis is the ESPR. A DPP only becomes mandatory once the relevant product-specific delegated act requires it – the obligation therefore does not apply across the board, but is introduced product group by product group."
+      },
+      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en",
+      "status": "gilt"
+    },
+    {
+      "ueberschrift": {
+        "de": "Wer ist betroffen?",
+        "en": "Who is affected?"
+      },
+      "text": {
+        "de": "Die Pflicht, den Produktpass bereitzustellen, trifft in erster Linie Hersteller und Importeure. Bevollmächtigte Vertreter sind davon laut ESPR ausdrücklich ausgenommen. Händler und Vertreiber greifen in der Regel auf bestehende Passdaten zu bzw. aktualisieren sie, ohne selbst zur Ersterstellung verpflichtet zu sein.",
+        "en": "The obligation to provide the product passport primarily falls on manufacturers and importers. Authorised representatives are explicitly excluded from this duty under the ESPR. Distributors and retailers generally access or update existing passport data without being responsible for creating it in the first place."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng",
+      "status": "gilt"
+    },
+    {
+      "ueberschrift": {
+        "de": "Wann kommen die Anforderungen für welche Produkte?",
+        "en": "When do requirements for which products take effect?"
+      },
+      "text": {
+        "de": "Laut der offiziellen DPP-Übersichtsseite der EU-Kommission wird das zentrale DPP-Register ab dem 20. Juli 2026 betriebsbereit sein. Batterien sind die erste Produktgruppe mit Pass-Pflicht, ab dem 18. Februar 2027. Für weitere Produktgruppen wie Bauprodukte, Textilien, Aluminium, Reifen, Möbel und Matratzen nennt die Kommission die Jahre 2027 bis 2029 – ausdrücklich als vorläufigen, indikativen Zeitplan. Nach Erlass eines delegierten Rechtsakts gilt zusätzlich eine Übergangsfrist von mindestens 18 Monaten.",
+        "en": "According to the European Commission's official DPP overview page, the central DPP register will become operational on 20 July 2026. Batteries are the first product group subject to the passport obligation, from 18 February 2027. For further product groups such as construction products, textiles, aluminium, tyres, furniture and mattresses, the Commission names the years 2027 to 2029 – explicitly as a provisional, indicative timeline. Once a delegated act is adopted, a transition period of at least 18 months additionally applies."
+      },
+      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en",
+      "status": "geplant"
+    }
+  ]
+}

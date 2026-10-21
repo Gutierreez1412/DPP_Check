@@ -1,0 +1,66 @@
+---
+import filter from "../../inhalte/filter.json";
+import seite from "../../inhalte/seite.json";
+
+interface Props {
+  lang: "de" | "en";
+}
+
+const { lang } = Astro.props;
+const t = (feld: Record<"de" | "en", string>) => feld[lang];
+const gruppen = filter.produktgruppen;
+const keineAuswahlText = t(filter.uebersicht.keine_auswahl);
+---
+
+<section>
+  <h1>{t(filter.uebersicht.titel)}</h1>
+  <p>{t(filter.uebersicht.hinweis)}</p>
+  <ul class="gruppen-liste" id="gruppen-liste"></ul>
+  <p class="hinweisbox" id="keine-auswahl" hidden>
+    {keineAuswahlText}
+    <a href={`/${lang}/`}>{t(seite.zur_startseite)}</a>
+  </p>
+</section>
+
+<script
+  type="application/json"
+  id="produktgruppen-daten"
+  set:html={JSON.stringify(gruppen)}
+/>
+
+<script>
+  function initUebersicht() {
+    const datenEl = document.getElementById("produktgruppen-daten");
+    const liste = document.getElementById("gruppen-liste");
+    const keineAuswahl = document.getElementById("keine-auswahl");
+    if (!datenEl || !liste || !keineAuswahl) return;
+
+    const lang = document.documentElement.lang || "de";
+    const alle: { id: string; name: Record<string, string> }[] = JSON.parse(
+      datenEl.textContent || "[]",
+    );
+    const params = new URLSearchParams(window.location.search);
+    const ids = (params.get("gruppen") || "").split(",").filter(Boolean);
+    const rolle = params.get("rolle");
+    const ausgewaehlt = alle.filter((g) => ids.includes(g.id));
+
+    if (ausgewaehlt.length === 0) {
+      keineAuswahl.hidden = false;
+      return;
+    }
+
+    ausgewaehlt.forEach((g) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = rolle
+        ? `/${lang}/gruppe/${g.id}/?rolle=${rolle}`
+        : `/${lang}/gruppe/${g.id}/`;
+      a.className = "button";
+      a.textContent = g.name[lang] || g.name.de;
+      li.appendChild(a);
+      liste.appendChild(li);
+    });
+  }
+
+  initUebersicht();
+</script>
