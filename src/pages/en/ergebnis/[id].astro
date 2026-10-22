@@ -1,0 +1,38 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Platzhalter from "../../../components/Platzhalter.astro";
+import Ergebnis from "../../../components/Ergebnis.astro";
+import filter from "../../../../inhalte/filter.json";
+import seite from "../../../../inhalte/seite.json";
+
+export function getStaticPaths() {
+  return filter.produktgruppen.map((gruppe) => ({
+    params: { id: gruppe.id },
+    props: { gruppe },
+  }));
+}
+
+const { gruppe } = Astro.props;
+
+const gruppenDateien = import.meta.glob(
+  "../../../../inhalte/gruppen/*/gruppe.json",
+);
+const freigeschaltet = Object.keys(gruppenDateien).some((pfad) =>
+  pfad.includes(`/gruppen/${gruppe.id}/`),
+);
+---
+
+<Layout lang="en" title={`${seite.ergebnis.eyebrow.en} – ${gruppe.name.en}`}>
+  {
+    freigeschaltet ? (
+      <Ergebnis lang="en" gruppe={gruppe} />
+    ) : (
+      <Platzhalter
+        titel={gruppe.name.en}
+        hinweis={seite.platzhalter_checkseite.en}
+        zurueckHref={`/en/gruppe/${gruppe.id}/`}
+        zurueckLabel={seite.zurueck_zur_gruppe.en}
+      />
+    )
+  }
+</Layout>
