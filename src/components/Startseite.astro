@@ -1,0 +1,57 @@
+---
+import seite from "../../inhalte/seite.json";
+
+interface Props {
+  lang: "de" | "en";
+}
+
+const { lang } = Astro.props;
+const start = seite.startseite;
+---
+
+<section class="hero-start">
+  <h1>{start.hero.ueberschrift[lang]}</h1>
+  <p class="hero-start__unterzeile">{start.hero.unterzeile[lang]}</p>
+</section>
+
+<section class="kooperation" aria-label={start.kooperation.verbindung[lang]}>
+  {
+    start.kooperation.logos.map((logo, i) => (
+      <>
+        {i > 0 && (
+          <span class="kooperation__verbindung">
+            {start.kooperation.verbindung[lang]}
+          </span>
+        )}
+        {logo.bild ? (
+          <img class="kooperation__logo" src={logo.bild} alt={logo.alt[lang]} />
+        ) : (
+          <span class="logo-platzhalter" role="img" aria-label={logo.alt[lang]}>
+            {logo.beschriftung[lang]}
+          </span>
+        )}
+      </>
+    ))
+  }
+</section>
+
+<section class="start-aktion">
+  <a class="button button--gross" href={start.cta.link[lang]}
+    >{start.cta.text[lang]}</a
+  >
+</section>
+
+<section class="nutzen">
+  <ul class="nutzen__liste">
+    {
+      start.nutzen.map((punkt) => (
+        <li class="nutzen__punkt">
+          <h2>{punkt.titel[lang]}</h2>
+          <p>{punkt.text[lang]}</p>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<p class="start-hinweis">{start.hinweis[lang]}</p>

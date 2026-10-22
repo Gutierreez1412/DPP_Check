@@ -1,19 +1,8 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Filter from "../../components/Filter.astro";
-import ProduktpassGrafik from "../../components/ProduktpassGrafik.astro";
-import seite from "../../../inhalte/seite.json";
+import StartLayout from "../../layouts/StartLayout.astro";
+import Startseite from "../../components/Startseite.astro";
 ---
 
-<Layout lang="de">
-  <div class="hero">
-    <div>
-      <h1>{seite.titel.de}</h1>
-      <p class="lede">{seite.untertitel.de}</p>
-      <p class="hinweis-text">{seite.datenschutz_hinweis.de}</p>
-    </div>
-    <ProduktpassGrafik lang="de" />
-  </div>
-
-  <Filter lang="de" />
-</Layout>
+<StartLayout lang="de" wechselHref="/en/">
+  <Startseite lang="de" />
+</StartLayout>
