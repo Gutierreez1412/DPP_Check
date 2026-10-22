@@ -55,6 +55,95 @@
     "de": "Häufige Fragen",
     "en": "Frequently asked questions"
   },
+  "cta_titel": {
+    "de": "Wie stark sind Sie betroffen?",
+    "en": "How strongly are you affected?"
+  },
+  "cta_text": {
+    "de": "Beantworten Sie wenige Fragen zu Ihren Produkten und erhalten Sie in unter zwei Minuten eine erste Einschätzung. Ihre Antworten bleiben in Ihrem Browser.",
+    "en": "Answer a few questions about your products and get a first assessment in under two minutes. Your answers stay in your browser."
+  },
+  "cta_beratung_link": {
+    "de": "Oder direkt einen Beratungstermin anfragen",
+    "en": "Or request a consultation directly"
+  },
+  "beratung": {
+    "empfaenger": "beratung@example.com",
+    "titel": {
+      "de": "Beratungstermin anfragen",
+      "en": "Request a consultation"
+    },
+    "text": {
+      "de": "Sie möchten Ihre Betroffenheit mit uns besprechen? Nennen Sie uns einen Wunschtermin, wir melden uns zur Bestätigung.",
+      "en": "Want to discuss how you are affected? Suggest a preferred date and we will get back to you to confirm."
+    },
+    "feld_name": {
+      "de": "Name",
+      "en": "Name"
+    },
+    "feld_firma": {
+      "de": "Unternehmen",
+      "en": "Company"
+    },
+    "feld_email": {
+      "de": "E-Mail",
+      "en": "Email"
+    },
+    "feld_datum": {
+      "de": "Wunschtermin",
+      "en": "Preferred date"
+    },
+    "feld_zeit": {
+      "de": "Tageszeit",
+      "en": "Time of day"
+    },
+    "feld_nachricht": {
+      "de": "Worum geht es? (optional)",
+      "en": "What is it about? (optional)"
+    },
+    "zeitfenster": [
+      {
+        "de": "Egal",
+        "en": "No preference"
+      },
+      {
+        "de": "Vormittags",
+        "en": "Morning"
+      },
+      {
+        "de": "Nachmittags",
+        "en": "Afternoon"
+      }
+    ],
+    "einwilligung": {
+      "de": "Ich bin damit einverstanden, dass Future Response meine Angaben zur Bearbeitung dieser Anfrage verwendet. Datenschutzerklärung: folgt.",
+      "en": "I agree that Future Response uses my details to process this request. Privacy policy: to follow."
+    },
+    "senden": {
+      "de": "Terminanfrage vorbereiten",
+      "en": "Prepare request"
+    },
+    "hinweis": {
+      "de": "Es öffnet sich Ihr E-Mail-Programm mit einer vorbereiteten Nachricht. Erst wenn Sie dort auf Senden klicken, werden Ihre Angaben übermittelt.",
+      "en": "Your email app opens with a prepared message. Your details are only sent once you click send there."
+    },
+    "betreff": {
+      "de": "Beratungstermin DPP-Betroffenheitscheck",
+      "en": "DPP impact check consultation"
+    },
+    "mail_gruppe": {
+      "de": "Produktgruppe",
+      "en": "Product group"
+    }
+  },
+  "slider_zurueck": {
+    "de": "Vorherige Karte",
+    "en": "Previous card"
+  },
+  "slider_weiter": {
+    "de": "Nächste Karte",
+    "en": "Next card"
+  },
   "quelle_label": {
     "de": "Quelle",
     "en": "Source"
@@ -64,22 +153,49 @@
     "en": "Your role"
   },
   "definition_titel": {
-    "de": "Definition",
-    "en": "Definition"
+    "de": "Rechtlicher Rahmen für Ihre Produktgruppe",
+    "en": "Legal framework for your product group"
   },
   "status_label": {
-    "gilt": { "de": "Gilt", "en": "In force" },
-    "geplant": { "de": "Geplant", "en": "Planned" },
-    "unklar": { "de": "Unklar", "en": "Unclear" }
+    "gilt": {
+      "de": "Gilt",
+      "en": "In force"
+    },
+    "geplant": {
+      "de": "Geplant",
+      "en": "Planned"
+    },
+    "unklar": {
+      "de": "Unklar",
+      "en": "Unclear"
+    }
   },
   "pass_grafik": {
-    "titel": { "de": "Produktpass", "en": "Product Passport" },
-    "id_beispiel": { "de": "ID DE-0427-5591", "en": "ID DE-0427-5591" },
+    "titel": {
+      "de": "Digitaler Produktpass",
+      "en": "Digital Product Passport"
+    },
+    "id_beispiel": {
+      "de": "ID DE-0427-5591",
+      "en": "ID DE-0427-5591"
+    },
     "felder": [
-      { "de": "Materialzusammensetzung", "en": "Material composition" },
-      { "de": "Herkunft & Lieferkette", "en": "Origin & supply chain" },
-      { "de": "CO₂-Fußabdruck", "en": "Carbon footprint" },
-      { "de": "Reparatur & Recycling", "en": "Repair & recycling" }
+      {
+        "de": "Materialzusammensetzung",
+        "en": "Material composition"
+      },
+      {
+        "de": "Herkunft & Lieferkette",
+        "en": "Origin & supply chain"
+      },
+      {
+        "de": "CO₂-Fußabdruck",
+        "en": "Carbon footprint"
+      },
+      {
+        "de": "Reparatur & Recycling",
+        "en": "Repair & recycling"
+      }
     ],
     "fuss": {
       "de": "Beispielhafte Darstellung – kein echter Datensatz.",

@@ -54,7 +54,10 @@ const texteFuerClient = {
       texteEl.textContent || "{}",
     );
     const rolleId = new URLSearchParams(window.location.search).get("rolle");
-    const variante = rolleId ? varianten[rolleId] : undefined;
+    const variante =
+      rolleId && Object.hasOwn(varianten, rolleId)
+        ? varianten[rolleId]
+        : undefined;
     if (!variante) return;
 
     titelEl.textContent = variante.titel[lang];
