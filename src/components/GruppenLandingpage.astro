@@ -2,6 +2,7 @@
 import grundlagen from "../../inhalte/grundlagen.json";
 import seite from "../../inhalte/seite.json";
 import RollenHinweis from "./RollenHinweis.astro";
+import Beratungsformular from "./Beratungsformular.astro";
 
 interface Zweisprachig {
   de: string;
@@ -43,8 +44,89 @@ const quelleLabel = t(seite.quelle_label);
 ---
 
 <section>
-  <h1>{t(daten.name)}</h1>
+  <h1 class="nur-screenreader">{t(daten.name)}</h1>
   <RollenHinweis lang={lang} />
+
+  <div class="cta-band">
+    <div class="cta-band__text">
+      <h2>{t(seite.cta_titel)}</h2>
+      <p>{t(seite.cta_text)}</p>
+    </div>
+    <div class="cta-band__aktion">
+      <a class="button button--hell" href={`/${lang}/check/${daten.id}/`}
+        >{t(seite.check_button)}</a
+      >
+      <a class="cta-band__link" href="#beratung">{t(seite.cta_beratung_link)}</a
+      >
+    </div>
+  </div>
+
+  <section class="grundlagen-slider" aria-labelledby="grundlagen-titel">
+    <div class="grundlagen-slider__kopf">
+      <h2 id="grundlagen-titel">{t(grundlagen.titel)}</h2>
+      <div class="grundlagen-slider__steuerung" hidden>
+        <button
+          type="button"
+          data-richtung="-1"
+          aria-label={t(seite.slider_zurueck)}>‹</button
+        >
+        <button
+          type="button"
+          data-richtung="1"
+          aria-label={t(seite.slider_weiter)}>›</button
+        >
+      </div>
+    </div>
+    <ul class="grundlagen-slider__spur" tabindex="0">
+      {
+        grundlagen.abschnitte.map((a) => (
+          <li class="grundlagen-karte">
+            <h3>{t(a.ueberschrift)}</h3>
+            <p class="grundlagen-karte__kern">{t(a.kern)}</p>
+            <p>{t(a.text)}</p>
+            <a href={a.quelle} target="_blank" rel="noopener">
+              {quelleLabel}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <script>
+    document.querySelectorAll(".grundlagen-slider").forEach((slider) => {
+      const spur = slider.querySelector<HTMLElement>(
+        ".grundlagen-slider__spur",
+      );
+      const steuerung = slider.querySelector<HTMLElement>(
+        ".grundlagen-slider__steuerung",
+      );
+      if (!spur || !steuerung) return;
+      const knoepfe = steuerung.querySelectorAll<HTMLButtonElement>("button");
+      const [zurueck, weiter] = knoepfe;
+
+      const aktualisieren = () => {
+        const max = spur.scrollWidth - spur.clientWidth - 2;
+        steuerung.hidden = max <= 0;
+        zurueck.disabled = spur.scrollLeft <= 2;
+        weiter.disabled = spur.scrollLeft >= max;
+      };
+
+      knoepfe.forEach((knopf) =>
+        knopf.addEventListener("click", () => {
+          const karte = spur.querySelector<HTMLElement>("li");
+          const schritt = (karte?.offsetWidth ?? 280) + 16;
+          spur.scrollBy({
+            left: Number(knopf.dataset.richtung) * schritt,
+            behavior: "smooth",
+          });
+        }),
+      );
+      spur.addEventListener("scroll", aktualisieren, { passive: true });
+      window.addEventListener("resize", aktualisieren);
+      aktualisieren();
+    });
+  </script>
 
   <div class="block">
     <h2>{t(seite.definition_titel)}</h2>
@@ -108,24 +190,7 @@ const quelleLabel = t(seite.quelle_label);
     </div>
   </div>
 
-  <div class="block">
-    <h2>{t(grundlagen.titel)}</h2>
-    <div class="block__inhalt">
-      <div class="grundlagen-liste">
-        {
-          grundlagen.abschnitte.map((a) => (
-            <div class="grundlagen-eintrag">
-              <h3>{t(a.ueberschrift)}</h3>
-              <p>{t(a.text)}</p>
-              <a href={a.quelle} target="_blank" rel="noopener">
-                {quelleLabel}
-              </a>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </div>
+  <Beratungsformular lang={lang} gruppenName={t(daten.name)} />
 
   <div class="aktionen aktionen--landingpage">
     <a class="button" href={`/${lang}/check/${daten.id}/`}

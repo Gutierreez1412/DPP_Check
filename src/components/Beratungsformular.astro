@@ -1,0 +1,120 @@
+---
+import seite from "../../inhalte/seite.json";
+
+interface Props {
+  lang: "de" | "en";
+  gruppenName: string;
+}
+
+const { lang, gruppenName } = Astro.props;
+const t = (feld: Record<"de" | "en", string>) => feld[lang];
+const b = seite.beratung;
+
+const clientTexte = {
+  empfaenger: b.empfaenger,
+  betreff: t(b.betreff),
+  gruppe: t(b.mail_gruppe),
+  labels: {
+    name: t(b.feld_name),
+    firma: t(b.feld_firma),
+    email: t(b.feld_email),
+    datum: t(b.feld_datum),
+    zeit: t(b.feld_zeit),
+    nachricht: t(b.feld_nachricht),
+  },
+  gruppenName,
+};
+---
+
+<section class="beratung" id="beratung" aria-labelledby="beratung-titel">
+  <div class="beratung__intro">
+    <h2 id="beratung-titel">{t(b.titel)}</h2>
+    <p>{t(b.text)}</p>
+  </div>
+
+  <form class="beratung__form" id="beratung-form">
+    <div class="feld">
+      <label for="b-name">{t(b.feld_name)}</label>
+      <input id="b-name" name="name" type="text" autocomplete="name" required />
+    </div>
+    <div class="feld">
+      <label for="b-firma">{t(b.feld_firma)}</label>
+      <input
+        id="b-firma"
+        name="firma"
+        type="text"
+        autocomplete="organization"
+        required
+      />
+    </div>
+    <div class="feld feld--breit">
+      <label for="b-email">{t(b.feld_email)}</label>
+      <input
+        id="b-email"
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+      />
+    </div>
+    <div class="feld">
+      <label for="b-datum">{t(b.feld_datum)}</label>
+      <input id="b-datum" name="datum" type="date" />
+    </div>
+    <div class="feld">
+      <label for="b-zeit">{t(b.feld_zeit)}</label>
+      <select id="b-zeit" name="zeit">
+        {b.zeitfenster.map((z) => <option value={t(z)}>{t(z)}</option>)}
+      </select>
+    </div>
+    <div class="feld feld--breit">
+      <label for="b-nachricht">{t(b.feld_nachricht)}</label>
+      <textarea id="b-nachricht" name="nachricht" rows="3"></textarea>
+    </div>
+
+    <label class="einwilligung feld--breit">
+      <input type="checkbox" name="einwilligung" required />
+      <span>{t(b.einwilligung)}</span>
+    </label>
+
+    <div class="beratung__aktion feld--breit">
+      <button class="button" type="submit">{t(b.senden)}</button>
+      <p class="beratung__hinweis">{t(b.hinweis)}</p>
+    </div>
+  </form>
+
+  <script
+    type="application/json"
+    id="beratung-texte"
+    set:html={JSON.stringify(clientTexte)}
+  />
+</section>
+
+<script>
+  const form = document.getElementById("beratung-form");
+  const texteEl = document.getElementById("beratung-texte");
+  if (form instanceof HTMLFormElement && texteEl) {
+    const texte = JSON.parse(texteEl.textContent || "{}");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const d = new FormData(form);
+      const wert = (k: string) => String(d.get(k) || "").trim() || "–";
+      const zeilen = [
+        `${texte.gruppe}: ${texte.gruppenName}`,
+        `${texte.labels.name}: ${wert("name")}`,
+        `${texte.labels.firma}: ${wert("firma")}`,
+        `${texte.labels.email}: ${wert("email")}`,
+        `${texte.labels.datum}: ${wert("datum")}`,
+        `${texte.labels.zeit}: ${wert("zeit")}`,
+        "",
+        `${texte.labels.nachricht}:`,
+        wert("nachricht"),
+      ];
+      const betreff = `${texte.betreff} – ${texte.gruppenName}`;
+      window.location.href =
+        `mailto:${texte.empfaenger}` +
+        `?subject=${encodeURIComponent(betreff)}` +
+        `&body=${encodeURIComponent(zeilen.join("\n"))}`;
+    });
+  }
+</script>
