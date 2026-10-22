@@ -47,6 +47,90 @@
     "de": "Umfang der Betroffenheit berechnen",
     "en": "Calculate extent of impact"
   },
+  "check": {
+    "eyebrow": {
+      "de": "Betroffenheitscheck",
+      "en": "Impact check"
+    },
+    "titel": {
+      "de": "Wie gut sind Sie vorbereitet?",
+      "en": "How well prepared are you?"
+    },
+    "intro": {
+      "de": "8 kurze Fragen, je eine Antwort. Ihre Antworten bleiben in Ihrem Browser.",
+      "en": "8 short questions, one answer each. Your answers stay in your browser."
+    },
+    "fortschritt_vorlage": {
+      "de": "Frage {n} von {gesamt}",
+      "en": "Question {n} of {gesamt}"
+    },
+    "weiter": {
+      "de": "Weiter",
+      "en": "Next"
+    },
+    "zurueck": {
+      "de": "Zurück",
+      "en": "Back"
+    },
+    "auswerten": {
+      "de": "Ergebnis anzeigen",
+      "en": "Show result"
+    },
+    "fehler_keine_antwort": {
+      "de": "Bitte wählen Sie eine Antwort aus.",
+      "en": "Please select an answer."
+    },
+    "auswertung_laeuft": {
+      "de": "Ihre Angaben werden ausgewertet …",
+      "en": "Evaluating your answers …"
+    }
+  },
+  "ergebnis": {
+    "eyebrow": {
+      "de": "Ihr Ergebnis",
+      "en": "Your result"
+    },
+    "skala_label": {
+      "de": "Handlungsbedarf",
+      "en": "Need for action"
+    },
+    "beratung_button": {
+      "de": "Ergebnis mit uns besprechen",
+      "en": "Discuss your result with us"
+    },
+    "antworten_aendern": {
+      "de": "Antworten ändern",
+      "en": "Change answers"
+    },
+    "keine_antworten": {
+      "de": "Es liegen keine vollständigen Antworten vor. Bitte beantworten Sie zuerst alle Fragen des Checks.",
+      "en": "No complete answers found. Please answer all questions of the check first."
+    },
+    "zum_check": {
+      "de": "Zum Check",
+      "en": "Go to the check"
+    },
+    "mitsenden": {
+      "de": "Ergebnis des Checks mitsenden (Produktgruppe, Antworten, Punkte und Einstufung).",
+      "en": "Include the check result (product group, answers, points and rating)."
+    },
+    "mail_titel": {
+      "de": "Ergebnis des Betroffenheitschecks",
+      "en": "Impact check result"
+    },
+    "mail_einstufung": {
+      "de": "Einstufung",
+      "en": "Rating"
+    },
+    "mail_punkte": {
+      "de": "Punkte",
+      "en": "Points"
+    },
+    "mail_antworten": {
+      "de": "Antworten",
+      "en": "Answers"
+    }
+  },
   "zeitstrahl_titel": {
     "de": "Zeitstrahl",
     "en": "Timeline"
