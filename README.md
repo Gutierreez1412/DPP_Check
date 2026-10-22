@@ -62,24 +62,29 @@ Push und jede Pull Request gegen `main`.
 - **Aufbau der Seiten** (HTML-Struktur, Sprachumschalter, Logik): liegt im Ordner `src/`.
   Hier ist beim Ändern Vorsicht geboten – im Zweifel vorher fragen.
 
-## Projektstruktur (Stand: Grundgerüst)
+## Projektordner: was ist was?
+
+Im Hauptordner liegen viele Dateien, die meisten davon sind **technische Konfiguration für
+die Werkzeuge** (Astro, pnpm, Prettier, Git) – die darfst du ignorieren, die bearbeite ich.
+Wichtig für dich sind nur wenige Ordner:
 
 ```text
 /
-├── PROJEKT.md              Briefing, bitte zuerst lesen
-├── README.md               diese Datei
-├── inhalte/
-│   └── seite.json          Navigation, Disclaimer, Button-Texte (de + en)
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro    gemeinsamer Rahmen: Kopf, Sprachumschalter, Fuß, Disclaimer
-│   ├── styles/
-│   │   └── global.css      Platzhalter-Design, Farben als Variablen
-│   └── pages/
-│       ├── de/index.astro  deutsche Startseite
-│       └── en/index.astro  englische Startseite
-└── public/
+├── inhalte/                 ← Hier änderst DU Texte und Inhalte (JSON, kein Code)
+│   ├── seite.json           Navigation, Disclaimer, Button-Texte (de + en)
+│   ├── filter.json           Fragen & Texte der Rollen-Ermittlung (Ebene 1)
+│   ├── grundlagen.json        zentrale ESPR/DPP-Erklärungen
+│   └── gruppen/<id>/gruppe.json   Definition, Zeitstrahl, FAQ je Produktgruppe
+├── src/                      Code/Aufbau der Seiten – Vorsicht beim Ändern, im Zweifel fragen
+├── public/                   Favicon & Bilder, werden unverändert mit ausgeliefert
+├── docs/                     Technische Anleitungen (z. B. Branch-Schutz einrichten)
+├── PROJEKT.md                Das Briefing: Ziel, Leitprinzipien, Seitenaufbau
+├── README.md                 diese Datei
+└── AGENTS.md                 Regeln für die Arbeit mit Claude Code
 ```
 
-Weitere Inhalte (Fragen pro Produktgruppe, Zeitstrahl, FAQ, Ampel-Logik, Pilot-Beispiele)
-kommen in den nächsten Arbeitsschritten dazu (siehe PROJEKT.md, Abschnitt 7).
+Alles andere im Hauptordner (`package.json`, `pnpm-lock.yaml`, `tsconfig.json`,
+`astro.config.mjs`, `.gitignore`, `.prettier*`, `.vscode/`, `.github/`, sowie die Ordner
+`node_modules/`, `dist/`, `.astro/`) ist Werkzeug-Konfiguration bzw. wird automatisch
+erzeugt. `node_modules/`, `dist/` und `.astro/` sind im Editor ausgeblendet
+(`.vscode/settings.json`), damit sie nicht zwischen deinen Dateien auftauchen.
