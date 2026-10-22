@@ -9,8 +9,8 @@
 
   "weiterfuehrend": {
     "label": {
-      "de": "Mehr erfahren: Batteriepass bei der EU-Kommission",
-      "en": "Learn more: battery passport at the European Commission"
+      "de": "Mehr erfahren: Digitaler Produktpass für Batterien bei der EU-Kommission",
+      "en": "Learn more: Digital Product Passport for batteries at the European Commission"
     },
     "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
   },
@@ -58,12 +58,12 @@
     {
       "datum": "2027-02-18",
       "titel": {
-        "de": "Digitaler Batteriepass Pflicht",
-        "en": "Digital battery passport mandatory"
+        "de": "Digitaler Produktpass Pflicht",
+        "en": "Digital Product Passport mandatory"
       },
       "beschreibung": {
-        "de": "Ab diesem Datum brauchen LMT-Batterien, Industriebatterien mit mehr als 2 kWh Kapazität und Fahrzeugbatterien (EV) einen digitalen Batteriepass mit QR-Code. Gerätebatterien sind davon nicht erfasst. Zuständig ist, wer die fertige Batterie in der EU in Verkehr bringt.",
-        "en": "From this date, LMT batteries, industrial batteries with a capacity over 2 kWh, and electric vehicle (EV) batteries require a digital battery passport with a QR code. Portable batteries are not covered. Responsibility lies with whoever places the finished battery on the EU market."
+        "de": "Ab diesem Datum brauchen LMT-Batterien, Industriebatterien mit mehr als 2 kWh Kapazität und Fahrzeugbatterien (EV) einen Digitalen Produktpass mit QR-Code. Gerätebatterien sind davon nicht erfasst. Zuständig ist, wer die fertige Batterie in der EU in Verkehr bringt.",
+        "en": "From this date, LMT batteries, industrial batteries with a capacity over 2 kWh, and electric vehicle (EV) batteries require a Digital Product Passport with a QR code. Portable batteries are not covered. Responsibility lies with whoever places the finished battery on the EU market."
       },
       "status": "gilt",
       "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
@@ -112,8 +112,19 @@
   "faq": [
     {
       "frage": {
-        "de": "Wer muss den Batteriepass bereitstellen?",
-        "en": "Who has to provide the battery passport?"
+        "de": "Ab welcher Batteriegröße brauche ich einen Digitalen Produktpass?",
+        "en": "From what battery size do I need a Digital Product Passport?"
+      },
+      "antwort": {
+        "de": "Das hängt von der Batterieart ab. Pflicht ist der Digitale Produktpass (bei Batterien: Batteriepass) für Fahrzeugbatterien (EV), Batterien für Leichtverkehrsmittel (LMT) und Industriebatterien mit mehr als 2 kWh Kapazität. Industriebatterien bis einschließlich 2 kWh und Gerätebatterien sind nicht erfasst.",
+        "en": "It depends on the battery category. The Digital Product Passport (for batteries: battery passport) is mandatory for electric vehicle (EV) batteries, batteries for light means of transport (LMT) and industrial batteries with a capacity over 2 kWh. Industrial batteries up to and including 2 kWh and portable batteries are not covered."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    {
+      "frage": {
+        "de": "Wer muss den Digitalen Produktpass (Batteriepass) bereitstellen?",
+        "en": "Who has to provide the Digital Product Passport (battery passport)?"
       },
       "antwort": {
         "de": "Der Wirtschaftsakteur, der die fertige Batterie in der EU in Verkehr bringt – nicht der Zulieferer einzelner Zellen oder Module. Die Pflicht gilt ab dem 18. Februar 2027 für LMT-, Industrie- (über 2 kWh) und Fahrzeugbatterien.",
@@ -127,8 +138,8 @@
         "en": "Does this also apply to imported batteries?"
       },
       "antwort": {
-        "de": "Ja. Importeure gelten als Wirtschaftsakteure und müssen unter anderem CE-Kennzeichnung, EU-Konformitätserklärung und technische Dokumentation prüfen. Die Batteriepass-Pflicht trifft ausdrücklich auch, wer eine Batterie aus einem Drittland in der EU in Verkehr bringt.",
-        "en": "Yes. Importers are considered economic operators and must check, among other things, CE marking, the EU declaration of conformity and technical documentation. The battery passport obligation explicitly also applies to anyone placing a battery from a third country on the EU market."
+        "de": "Ja. Importeure gelten als Wirtschaftsakteure und müssen unter anderem CE-Kennzeichnung, EU-Konformitätserklärung und technische Dokumentation prüfen. Die Pflicht zum Digitalen Produktpass trifft ausdrücklich auch, wer eine Batterie aus einem Drittland in der EU in Verkehr bringt.",
+        "en": "Yes. Importers are considered economic operators and must check, among other things, CE marking, the EU declaration of conformity and technical documentation. The Digital Product Passport obligation explicitly also applies to anyone placing a battery from a third country on the EU market."
       },
       "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
     },
