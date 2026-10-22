@@ -201,5 +201,150 @@
       "de": "Beispielhafte Darstellung – kein echter Datensatz.",
       "en": "Illustrative example – not an actual data record."
     }
+  },
+  "startseite": {
+    "seitentitel": {
+      "de": "DPP-Betroffenheitscheck",
+      "en": "DPP Impact Check"
+    },
+    "logo": {
+      "bild": null,
+      "beschriftung": {
+        "de": "Logo",
+        "en": "Logo"
+      },
+      "alt": {
+        "de": "Platzhalter-Logo",
+        "en": "Placeholder logo"
+      }
+    },
+    "sprachwechsel": {
+      "de": {
+        "label": "EN",
+        "titel": "Switch to English",
+        "link": "/en/"
+      },
+      "en": {
+        "label": "DE",
+        "titel": "Auf Deutsch wechseln",
+        "link": "/de/"
+      }
+    },
+    "hero": {
+      "ueberschrift": {
+        "de": "Wie stark betrifft der Digitale Produktpass Ihr Unternehmen?",
+        "en": "How strongly does the Digital Product Passport affect your company?"
+      },
+      "unterzeile": {
+        "de": "Als Hersteller, Marke oder Importeur schätzen Sie Ihre Betroffenheit durch den Digitalen Produktpass in wenigen Minuten ein.",
+        "en": "As a manufacturer, brand or importer, you can assess how the Digital Product Passport affects you in just a few minutes."
+      }
+    },
+    "kooperation": {
+      "verbindung": {
+        "de": "in Kooperation mit",
+        "en": "in cooperation with"
+      },
+      "logos": [
+        {
+          "bild": null,
+          "beschriftung": {
+            "de": "Logo Unternehmen A",
+            "en": "Logo Company A"
+          },
+          "alt": {
+            "de": "Logo Unternehmen A",
+            "en": "Logo Company A"
+          }
+        },
+        {
+          "bild": null,
+          "beschriftung": {
+            "de": "Logo Unternehmen B",
+            "en": "Logo Company B"
+          },
+          "alt": {
+            "de": "Logo Unternehmen B",
+            "en": "Logo Company B"
+          }
+        }
+      ]
+    },
+    "cta": {
+      "text": {
+        "de": "Betroffenheitsanalyse starten",
+        "en": "Start impact assessment"
+      },
+      "link": {
+        "de": "/de/filter/",
+        "en": "/en/filter/"
+      }
+    },
+    "nutzen": [
+      {
+        "titel": {
+          "de": "Wer ist betroffen?",
+          "en": "Who is affected?"
+        },
+        "text": {
+          "de": "Platzhalter: Hier erläutern wir kurz, welche Hersteller, Marken und Importeure vom Digitalen Produktpass betroffen sein können.",
+          "en": "Placeholder: A short explanation of which manufacturers, brands and importers may be affected by the Digital Product Passport."
+        }
+      },
+      {
+        "titel": {
+          "de": "Was gilt ab wann?",
+          "en": "What applies from when?"
+        },
+        "text": {
+          "de": "Platzhalter: Hier ordnen wir ein, welche Anforderungen für Ihre Produktgruppe zu welchem Zeitpunkt relevant werden. Angaben folgen mit Quellen.",
+          "en": "Placeholder: A summary of which requirements become relevant for your product group and when. Details will follow with sources."
+        }
+      },
+      {
+        "titel": {
+          "de": "Wie hoch ist der Aufwand?",
+          "en": "How much effort is involved?"
+        },
+        "text": {
+          "de": "Platzhalter: Hier geben wir eine erste Orientierung, mit welchem Umsetzungsaufwand Sie rechnen sollten.",
+          "en": "Placeholder: A first indication of the implementation effort you should expect."
+        }
+      }
+    ],
+    "hinweis": {
+      "de": "Hinweis: Das Ergebnis ist eine unverbindliche Einschätzung und keine Rechtsberatung.",
+      "en": "Note: The result is a non-binding assessment and not legal advice."
+    },
+    "footer": {
+      "impressum": {
+        "text": {
+          "de": "Impressum",
+          "en": "Legal notice"
+        },
+        "link": "#"
+      },
+      "datenschutz": {
+        "text": {
+          "de": "Datenschutz",
+          "en": "Privacy policy"
+        },
+        "link": "#"
+      }
+    },
+    "analyse_platzhalter": {
+      "titel": {
+        "de": "Betroffenheitsanalyse",
+        "en": "Impact assessment"
+      },
+      "text": {
+        "de": "Die Betroffenheitsanalyse folgt in Kürze.",
+        "en": "The impact assessment will follow shortly."
+      },
+      "zurueck": {
+        "de": "Zurück zur Startseite",
+        "en": "Back to start page"
+      }
+    }
   }
 }
