@@ -244,7 +244,21 @@ falls in `fragen.json` ein Feld `schwellen` steht.
 - [ ] **Fragenkataloge und Scores** je Produktgruppe: Entwurf durch Claude, Prüfung durch Nutzer.
 - [ ] **Zeitstrahl, FAQ, Erklärtexte, Pilot-Beispiele:** Entwurf aus offiziellen Quellen, Prüfung durch Nutzer.
 - [ ] **Kontaktformular:** Anbindung (Dienst, Empfänger, DSGVO-Texte) beim Umzug auf die Zielwebsite.
+      Stand: Beratungsformular auf der Produktgruppen-Seite per `mailto:` umgesetzt
+      (`src/components/Beratungsformular.astro`).
+- [ ] **Echte Empfänger-Mailadresse** für Terminanfragen eintragen: aktuell Platzhalter
+      `beratung@example.com` in `inhalte/seite.json` (`beratung.empfaenger`).
 - [ ] **Datenschutzerklärung und Impressum:** Platzhalter, echte Texte vom Betreiber.
+      Im Beratungsformular steht im Einwilligungstext noch „Datenschutzerklärung: folgt“ –
+      dort den Link zur echten Datenschutzerklärung einsetzen (`beratung.einwilligung` in
+      `inhalte/seite.json`).
+- [ ] **Schriften selbst ausliefern (vor Livegang):** `src/styles/global.css` lädt Newsreader und
+      Public Sans von Google Fonts (`fonts.googleapis.com`, `fonts.gstatic.com`). Dabei geht die
+      IP-Adresse der Besucher an Google, datenschutzrechtlich heikel (siehe Leitprinzip 6).
+      Für den Pilot bewusst so belassen. Vor einem öffentlichen Livegang auf selbst gehostete
+      Schriftdateien (z. B. in `public/fonts/`) umstellen.
+- [ ] **Check-Ergebnis ins Beratungsformular:** Sobald Check- und Ergebnisseite existieren,
+      Häkchen „Ergebnis mitsenden“ (nur mit Zustimmung) ergänzen.
 
 ## 9. Entscheidungen im Überblick (Stand: Interview)
 
