@@ -1,0 +1,221 @@
+---
+import fragenDaten from "../../inhalte/fragen.json";
+import ampel from "../../inhalte/ampel.json";
+import seite from "../../inhalte/seite.json";
+import Beratungsformular from "./Beratungsformular.astro";
+
+interface Props {
+  lang: "de" | "en";
+  gruppe: { id: string; name: Record<"de" | "en", string> };
+}
+
+const { lang, gruppe } = Astro.props;
+const t = (feld: Record<"de" | "en", string>) => feld[lang];
+const e = seite.ergebnis;
+const stufenIds = ["gruen", "gelb", "rot"] as const;
+
+// Tacho: Halbkreis in drei gleich großen Segmenten. Die Nadel zeigt bewusst
+// auf die Mitte des Segments, nicht auf den genauen Punktwert (der Gesamtscore
+// wird laut PROJEKT.md nicht angezeigt).
+const mx = 120;
+const my = 120;
+const radius = 96;
+const luecke = 2.5;
+const punkt = (grad: number) => {
+  const rad = (grad * Math.PI) / 180;
+  return `${(mx + radius * Math.cos(rad)).toFixed(2)} ${(my - radius * Math.sin(rad)).toFixed(2)}`;
+};
+const segmente = stufenIds.map((id, i) => {
+  const start = 180 - i * 60 - (i === 0 ? 0 : luecke);
+  const ende = 180 - (i + 1) * 60 + (i === 2 ? 0 : luecke);
+  return {
+    id,
+    pfad: `M ${punkt(start)} A ${radius} ${radius} 0 0 1 ${punkt(ende)}`,
+  };
+});
+
+const texteFuerClient = {
+  gruppeId: gruppe.id,
+  gruppenName: t(gruppe.name),
+  schwellen: ampel.schwellen,
+  stufen: Object.fromEntries(
+    stufenIds.map((id) => [
+      id,
+      {
+        kurz: t(ampel.stufen[id].kurz),
+        titel: t(ampel.stufen[id].titel),
+        erklaerung: t(ampel.stufen[id].erklaerung),
+      },
+    ]),
+  ),
+  fragen: fragenDaten.fragen.map((f) => ({
+    text: t(f.text),
+    antworten: f.antworten.map((a) => ({
+      id: a.id,
+      text: t(a.text),
+      score: a.score,
+    })),
+  })),
+  mail: {
+    titel: t(e.mail_titel),
+    einstufung: t(e.mail_einstufung),
+    punkte: t(e.mail_punkte),
+    antworten: t(e.mail_antworten),
+  },
+};
+---
+
+<section class="ergebnis">
+  <div class="hinweisbox ergebnis__fehlt" id="ergebnis-fehlt" hidden>
+    <p>{t(e.keine_antworten)}</p>
+    <a class="button" href={`/${lang}/check/${gruppe.id}/`}>{t(e.zum_check)}</a>
+  </div>
+
+  <div class="ergebnis-karte" id="ergebnis-karte" hidden>
+    <p class="ergebnis-karte__eyebrow">
+      {t(e.eyebrow)} · {t(gruppe.name)}
+    </p>
+
+    <div class="tacho">
+      <svg viewBox="0 0 240 132" aria-hidden="true" focusable="false">
+        <path
+          class="tacho__spur"
+          d={`M ${punkt(180)} A ${radius} ${radius} 0 0 1 ${punkt(0)}`}></path>
+        {
+          segmente.map((s, i) => (
+            <path
+              class={`tacho__segment tacho__segment--${s.id}`}
+              d={s.pfad}
+              pathLength="100"
+              style={`--i:${i}`}
+            />
+          ))
+        }
+        <g class="tacho__zeiger" id="tacho-zeiger">
+          <line x1={mx} y1={my} x2={mx} y2={my - radius + 18}></line>
+          <circle cx={mx} cy={my} r="7"></circle>
+        </g>
+      </svg>
+      <div class="tacho__mitte">
+        <span class="tacho__label">{t(e.skala_label)}</span>
+        <strong class="tacho__stufe" id="tacho-stufe"></strong>
+      </div>
+      <ol class="tacho__legende" aria-hidden="true">
+        {
+          stufenIds.map((id) => (
+            <li data-id={id}>{t(ampel.stufen[id].kurz)}</li>
+          ))
+        }
+      </ol>
+    </div>
+
+    <h1 class="ergebnis-karte__titel" id="ergebnis-titel"></h1>
+    <p class="ergebnis-karte__text" id="ergebnis-text"></p>
+
+    <div class="ergebnis-karte__aktionen">
+      <a class="button button--hell" href="#beratung">{t(e.beratung_button)}</a>
+      <a
+        class="ergebnis-karte__link"
+        id="ergebnis-aendern"
+        href={`/${lang}/check/${gruppe.id}/`}>{t(e.antworten_aendern)}</a
+      >
+    </div>
+  </div>
+
+  <p class="ergebnis__hinweis">{t(ampel.hinweis)}</p>
+
+  <Beratungsformular lang={lang} gruppenName={t(gruppe.name)} mitErgebnis />
+
+  <p class="check__zurueck">
+    <a href={`/${lang}/gruppe/${gruppe.id}/`}>{t(seite.zurueck_zur_gruppe)}</a>
+  </p>
+</section>
+
+<script
+  type="application/json"
+  id="ergebnis-texte"
+  set:html={JSON.stringify(texteFuerClient)}
+/>
+
+<script>
+  interface Antwort {
+    id: string;
+    text: string;
+    score: number;
+  }
+  interface Frage {
+    text: string;
+    antworten: Antwort[];
+  }
+
+  function initErgebnis() {
+    const texteEl = document.getElementById("ergebnis-texte");
+    const karte = document.getElementById("ergebnis-karte");
+    const fehlt = document.getElementById("ergebnis-fehlt");
+    if (!texteEl || !karte || !fehlt) return;
+    const texte = JSON.parse(texteEl.textContent || "{}");
+    const fragen: Frage[] = texte.fragen;
+
+    // Antworten stehen im Adress-Anker (#a=a-b-c…). Der Teil hinter "#" wird
+    // nie an einen Server übertragen, die Daten bleiben also im Browser.
+    const ids =
+      new URLSearchParams(window.location.hash.slice(1)).get("a")?.split("-") ??
+      [];
+    const gewaehlt = fragen.map((f, i) =>
+      f.antworten.find((a) => a.id === ids[i]),
+    );
+
+    if (gewaehlt.some((a) => !a)) {
+      fehlt.hidden = false;
+      document.getElementById("b-ergebnis-zeile")?.setAttribute("hidden", "");
+      return;
+    }
+
+    const antworten = gewaehlt as Antwort[];
+    const summe = antworten.reduce((s, a) => s + a.score, 0);
+    const max = fragen.reduce(
+      (s, f) => s + Math.max(...f.antworten.map((a) => a.score)),
+      0,
+    );
+    const stufeId =
+      summe <= texte.schwellen.gruen_max
+        ? "gruen"
+        : summe <= texte.schwellen.gelb_max
+          ? "gelb"
+          : "rot";
+    const stufe = texte.stufen[stufeId];
+
+    karte.dataset.stufe = stufeId;
+    document.getElementById("tacho-stufe")!.textContent = stufe.kurz;
+    document.getElementById("ergebnis-titel")!.textContent = stufe.titel;
+    document.getElementById("ergebnis-text")!.textContent = stufe.erklaerung;
+    const aendern = document.getElementById("ergebnis-aendern");
+    if (aendern instanceof HTMLAnchorElement)
+      aendern.hash = `a=${ids.join("-")}`;
+
+    // Inhalt für die Mail, falls im Beratungsformular "Ergebnis mitsenden"
+    // angehakt wird.
+    const zeilen = [
+      `${texte.mail.titel}:`,
+      `${texte.mail.einstufung}: ${stufe.titel}`,
+      `${texte.mail.punkte}: ${summe} / ${max}`,
+      "",
+      `${texte.mail.antworten}:`,
+      ...fragen.map((f, i) => `${i + 1}. ${f.text}\n   → ${antworten[i].text}`),
+    ];
+    const formular = document.getElementById("beratung-form");
+    if (formular) formular.dataset.ergebnis = JSON.stringify(zeilen);
+
+    // Animation starten: Segmente zeichnen, Nadel schwingt ein, Stufe leuchtet.
+    const winkel = { gruen: -60, gelb: 0, rot: 60 }[stufeId];
+    const zeiger = document.getElementById("tacho-zeiger");
+    karte.hidden = false;
+    void karte.offsetWidth;
+    requestAnimationFrame(() => {
+      karte.classList.add("ist-sichtbar");
+      if (zeiger) zeiger.style.transform = `rotate(${winkel}deg)`;
+    });
+  }
+
+  initErgebnis();
+</script>

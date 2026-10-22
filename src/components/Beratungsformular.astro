@@ -4,9 +4,11 @@ import seite from "../../inhalte/seite.json";
 interface Props {
   lang: "de" | "en";
   gruppenName: string;
+  /** Auf der Ergebnisseite: Häkchen "Ergebnis mitsenden" anzeigen. */
+  mitErgebnis?: boolean;
 }
 
-const { lang, gruppenName } = Astro.props;
+const { lang, gruppenName, mitErgebnis = false } = Astro.props;
 const t = (feld: Record<"de" | "en", string>) => feld[lang];
 const b = seite.beratung;
 
@@ -72,6 +74,15 @@ const clientTexte = {
       <textarea id="b-nachricht" name="nachricht" rows="3"></textarea>
     </div>
 
+    {
+      mitErgebnis && (
+        <label class="einwilligung feld--breit" id="b-ergebnis-zeile">
+          <input type="checkbox" name="ergebnis_mitsenden" />
+          <span>{t(seite.ergebnis.mitsenden)}</span>
+        </label>
+      )
+    }
+
     <label class="einwilligung feld--breit">
       <input type="checkbox" name="einwilligung" required />
       <span>{t(b.einwilligung)}</span>
@@ -110,6 +121,11 @@ const clientTexte = {
         `${texte.labels.nachricht}:`,
         wert("nachricht"),
       ];
+      // Das Check-Ergebnis legt die Ergebnisseite am Formular ab; es geht nur
+      // mit, wenn der Nutzer das Häkchen gesetzt hat.
+      if (d.get("ergebnis_mitsenden") && form.dataset.ergebnis) {
+        zeilen.push("", "", ...JSON.parse(form.dataset.ergebnis));
+      }
       const betreff = `${texte.betreff} – ${texte.gruppenName}`;
       window.location.href =
         `mailto:${texte.empfaenger}` +

@@ -1,0 +1,295 @@
+{
+  "gruppe": "alle",
+  "quelle_regel": "Finale Regel.xlsx (Stand: Kurz-Check, 8 Fragen)",
+  "fragen": [
+    {
+      "id": "q1",
+      "kategorie": { "de": "Produktportfolio", "en": "Product portfolio" },
+      "text": {
+        "de": "Wie viele verschiedene Produkttypen (Artikel- oder Modellnummern) bieten Sie an?",
+        "en": "How many different product types (item or model numbers) do you offer?"
+      },
+      "antworten": [
+        { "id": "a", "text": { "de": "Bis 10", "en": "Up to 10" }, "score": 0 },
+        { "id": "b", "text": { "de": "11–100", "en": "11–100" }, "score": 1 },
+        {
+          "id": "c",
+          "text": { "de": "101–1.000", "en": "101–1,000" },
+          "score": 2
+        },
+        {
+          "id": "d",
+          "text": { "de": "Über 1.000", "en": "More than 1,000" },
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "kategorie": { "de": "Lieferkette", "en": "Supply chain" },
+      "text": {
+        "de": "Bei wie vielen Lieferanten müssten Sie Material-, Stoff- oder Bauteildaten für Ihre Produkte anfragen?",
+        "en": "From how many suppliers would you need to request material, substance or component data for your products?"
+      },
+      "antworten": [
+        { "id": "a", "text": { "de": "Bis 10", "en": "Up to 10" }, "score": 0 },
+        { "id": "b", "text": { "de": "11–50", "en": "11–50" }, "score": 1 },
+        { "id": "c", "text": { "de": "51–200", "en": "51–200" }, "score": 2 },
+        {
+          "id": "d",
+          "text": { "de": "Über 200", "en": "More than 200" },
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "kategorie": {
+        "de": "Material und Bauteile",
+        "en": "Materials and components"
+      },
+      "text": {
+        "de": "Wissen Sie, aus welchen Materialien und zugekauften Bauteilen Ihre Produkte bestehen?",
+        "en": "Do you know which materials and purchased components your products are made of?"
+      },
+      "antworten": [
+        {
+          "id": "a",
+          "text": {
+            "de": "Ja, vollständig vorhanden",
+            "en": "Yes, fully available"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "de": "Für die meisten Produkte",
+            "en": "For most products"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "de": "Nur teilweise oder für einzelne Produkte",
+            "en": "Only partly or for individual products"
+          },
+          "score": 2
+        },
+        {
+          "id": "d",
+          "text": { "de": "Nein oder weiß nicht", "en": "No or don't know" },
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "kategorie": {
+        "de": "Stoffe und Chemikalien",
+        "en": "Substances and chemicals"
+      },
+      "text": {
+        "de": "Kennen Sie die in Ihren Produkten enthaltenen besorgniserregenden Stoffe samt Menge?",
+        "en": "Do you know the substances of concern contained in your products, including their quantities?"
+      },
+      "antworten": [
+        {
+          "id": "a",
+          "text": {
+            "de": "Ja, vollständig vorhanden",
+            "en": "Yes, fully available"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "de": "Für die meisten Produkte",
+            "en": "For most products"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "de": "Nur teilweise oder für einzelne Produkte",
+            "en": "Only partly or for individual products"
+          },
+          "score": 2
+        },
+        {
+          "id": "d",
+          "text": { "de": "Nein oder weiß nicht", "en": "No or don't know" },
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "kategorie": {
+        "de": "CO₂-Fußabdruck und Umweltdaten",
+        "en": "Carbon footprint and environmental data"
+      },
+      "text": {
+        "de": "Haben Sie für Ihre Produkte einen berechneten CO₂-Fußabdruck oder eine Umweltdeklaration?",
+        "en": "Do you have a calculated carbon footprint or an environmental declaration for your products?"
+      },
+      "antworten": [
+        {
+          "id": "a",
+          "text": {
+            "de": "Ja, vollständig vorhanden",
+            "en": "Yes, fully available"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "de": "Für die meisten Produkte",
+            "en": "For most products"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "de": "Nur teilweise oder für einzelne Produkte",
+            "en": "Only partly or for individual products"
+          },
+          "score": 2
+        },
+        {
+          "id": "d",
+          "text": { "de": "Nein oder weiß nicht", "en": "No or don't know" },
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "kategorie": { "de": "Recyclatanteil", "en": "Recycled content" },
+      "text": {
+        "de": "Können Sie für Ihre Produkte den Anteil recycelten Materials angeben?",
+        "en": "Can you state the share of recycled material in your products?"
+      },
+      "antworten": [
+        {
+          "id": "a",
+          "text": {
+            "de": "Ja, vollständig vorhanden",
+            "en": "Yes, fully available"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "de": "Für die meisten Produkte",
+            "en": "For most products"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "de": "Nur teilweise oder für einzelne Produkte",
+            "en": "Only partly or for individual products"
+          },
+          "score": 2
+        },
+        {
+          "id": "d",
+          "text": { "de": "Nein oder weiß nicht", "en": "No or don't know" },
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "kategorie": { "de": "Startpunkt", "en": "Starting point" },
+      "text": {
+        "de": "Wie weit sind Sie mit dem Digitalen Produktpass bereits?",
+        "en": "How far along are you with the Digital Product Passport?"
+      },
+      "antworten": [
+        {
+          "id": "a",
+          "text": {
+            "de": "Pilot oder Datenerhebung läuft",
+            "en": "Pilot or data collection under way"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "de": "Projekt und Verantwortliche benannt",
+            "en": "Project and responsible persons appointed"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "de": "Informiert, aber noch kein Projekt",
+            "en": "Informed, but no project yet"
+          },
+          "score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "de": "Noch nicht befasst",
+            "en": "Not yet looked into it"
+          },
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "kategorie": {
+        "de": "End-of-Life (Demontage und Entsorgung)",
+        "en": "End of life (disassembly and disposal)"
+      },
+      "text": {
+        "de": "Können Sie Recyclern und Kunden erklären, wie Ihre Produkte zerlegt, wiederverwendet oder entsorgt werden?",
+        "en": "Can you explain to recyclers and customers how your products are disassembled, reused or disposed of?"
+      },
+      "antworten": [
+        {
+          "id": "a",
+          "text": {
+            "de": "Ja, vollständig vorhanden",
+            "en": "Yes, fully available"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "de": "Für die meisten Produkte",
+            "en": "For most products"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "de": "Nur teilweise oder für einzelne Produkte",
+            "en": "Only partly or for individual products"
+          },
+          "score": 2
+        },
+        {
+          "id": "d",
+          "text": { "de": "Nein oder weiß nicht", "en": "No or don't know" },
+          "score": 3
+        }
+      ]
+    }
+  ]
+}

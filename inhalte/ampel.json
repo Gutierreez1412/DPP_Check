@@ -1,0 +1,45 @@
+{
+  "schwellen": { "gruen_max": 5, "gelb_max": 11 },
+  "stufen": {
+    "gruen": {
+      "kurz": { "de": "Niedrig", "en": "Low" },
+      "titel": {
+        "de": "Niedriger Handlungsbedarf",
+        "en": "Low need for action"
+      },
+      "erklaerung": {
+        "de": "Wenig Handlungsbedarf: Angaben weitgehend vorhanden.",
+        "en": "Little need for action: information is largely available."
+      },
+      "naechste_schritte": []
+    },
+    "gelb": {
+      "kurz": { "de": "Mittel", "en": "Medium" },
+      "titel": {
+        "de": "Mittlerer Handlungsbedarf",
+        "en": "Medium need for action"
+      },
+      "erklaerung": {
+        "de": "Mittlerer Handlungsbedarf: Lücken gezielt schließen.",
+        "en": "Medium need for action: close gaps in a targeted way."
+      },
+      "naechste_schritte": []
+    },
+    "rot": {
+      "kurz": { "de": "Hoch", "en": "High" },
+      "titel": {
+        "de": "Hoher Handlungsbedarf",
+        "en": "High need for action"
+      },
+      "erklaerung": {
+        "de": "Hoher Handlungsbedarf: Lücken zügig schließen, Aufbau priorisieren.",
+        "en": "High need for action: close gaps quickly and prioritise setting up."
+      },
+      "naechste_schritte": []
+    }
+  },
+  "hinweis": {
+    "de": "Hinweis: Selbsteinschätzung des Vorbereitungsgrads auf Basis eigener Angaben und der Datenpunkte aus Studienentwürfen (Stahl, Textil, Möbel), der Bauprodukteverordnung und des Batterie-Leitfadens. Kein Konformitätsnachweis, keine Feststellung der rechtlichen Betroffenheit, keine Rechtsberatung.",
+    "en": "Note: Self-assessment of your level of preparedness based on your own answers and on the data points from draft studies (steel, textiles, furniture), the Construction Products Regulation and the battery guidance. Not proof of conformity, not a determination of legal applicability, not legal advice."
+  }
+}

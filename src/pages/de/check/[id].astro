@@ -1,6 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import Platzhalter from "../../../components/Platzhalter.astro";
+import Check from "../../../components/Check.astro";
 import filter from "../../../../inhalte/filter.json";
 import seite from "../../../../inhalte/seite.json";
 
@@ -12,13 +13,27 @@ export function getStaticPaths() {
 }
 
 const { gruppe } = Astro.props;
+
+// Der Check ist freigeschaltet, sobald die Gruppe eine eigene gruppe.json hat.
+const gruppenDateien = import.meta.glob(
+  "../../../../inhalte/gruppen/*/gruppe.json",
+);
+const freigeschaltet = Object.keys(gruppenDateien).some((pfad) =>
+  pfad.includes(`/gruppen/${gruppe.id}/`),
+);
 ---
 
 <Layout lang="de" title={gruppe.name.de}>
-  <Platzhalter
-    titel={gruppe.name.de}
-    hinweis={seite.platzhalter_checkseite.de}
-    zurueckHref={`/de/gruppe/${gruppe.id}/`}
-    zurueckLabel={seite.zurueck_zur_gruppe.de}
-  />
+  {
+    freigeschaltet ? (
+      <Check lang="de" gruppe={gruppe} />
+    ) : (
+      <Platzhalter
+        titel={gruppe.name.de}
+        hinweis={seite.platzhalter_checkseite.de}
+        zurueckHref={`/de/gruppe/${gruppe.id}/`}
+        zurueckLabel={seite.zurueck_zur_gruppe.de}
+      />
+    )
+  }
 </Layout>

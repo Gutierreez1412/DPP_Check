@@ -23,6 +23,12 @@
   --farbe-ampel-gelb: #b98900;
   --farbe-ampel-rot: #b3261e;
 
+  /* Ergebnis-Tacho (dunkle Karte): hellere Ampeltöne für Kontrast auf Dunkel */
+  --tacho-hintergrund: #0f1a21;
+  --tacho-gruen: #4cc38a;
+  --tacho-gelb: #f2c14e;
+  --tacho-rot: #ef6a5f;
+
   --schrift:
     "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
     sans-serif;
@@ -1017,4 +1023,387 @@ h2 {
   .beratung__form {
     grid-template-columns: 1fr;
   }
+}
+
+/* Ebene 3: Check (eine Frage pro Bildschirm) */
+
+.eyebrow-klein {
+  margin: 0 0 0.75rem;
+  color: var(--farbe-primaer-hover);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.check__kategorie {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--schrift);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--farbe-primaer);
+}
+
+.optionen--liste {
+  grid-template-columns: 1fr;
+  max-width: 36rem;
+}
+
+.check__auswertung {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 3rem 0 1rem;
+  color: var(--farbe-text-schwach);
+  font-weight: 500;
+  animation: schrittEin 0.32s ease both;
+}
+
+.check__auswertung[hidden] {
+  display: none;
+}
+
+.check__puls {
+  position: relative;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  background: var(--farbe-primaer);
+}
+
+.check__puls::before,
+.check__puls::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--farbe-primaer);
+  animation: puls 1.2s ease-out infinite;
+}
+
+.check__puls::after {
+  animation-delay: 0.4s;
+}
+
+@keyframes puls {
+  from {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.check__zurueck {
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+}
+
+/*
+  Ebene 3: Ergebnis. Dunkle Karte mit Tacho-Animation:
+  1. Karte blendet ein  2. Segmente zeichnen sich nacheinander
+  3. Nadel schwingt mit leichtem Überschwingen ein  4. Stufe leuchtet auf,
+  andere Segmente treten zurück  5. Titel, Text und Aktionen gleiten herein.
+  Bei "Bewegung reduzieren" greift die globale Regel oben (keine Animation).
+*/
+
+.ergebnis-karte {
+  --akzent: var(--tacho-gelb);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  text-align: center;
+  padding: clamp(2rem, 5vw, 3rem) clamp(1.25rem, 4vw, 3rem)
+    clamp(2rem, 4vw, 2.75rem);
+  color: #fff;
+  background-color: var(--tacho-hintergrund);
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.07) 1px,
+    transparent 1px
+  );
+  background-size: 18px 18px;
+  border-radius: 14px;
+  box-shadow: 0 30px 60px -35px rgba(15, 26, 33, 0.7);
+  opacity: 0;
+  transform: translateY(14px) scale(0.985);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.ergebnis-karte[data-stufe="gruen"] {
+  --akzent: var(--tacho-gruen);
+}
+
+.ergebnis-karte[data-stufe="rot"] {
+  --akzent: var(--tacho-rot);
+}
+
+.ergebnis-karte::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: -35%;
+  width: 34rem;
+  height: 34rem;
+  translate: -50% 0;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, var(--akzent), transparent);
+  opacity: 0;
+  filter: blur(20px);
+  transition: opacity 1.2s ease 1.5s;
+  pointer-events: none;
+}
+
+.ergebnis-karte.ist-sichtbar {
+  opacity: 1;
+  transform: none;
+}
+
+.ergebnis-karte.ist-sichtbar::before {
+  opacity: 0.28;
+  animation: atmen 6s ease-in-out 2.7s infinite;
+}
+
+@keyframes atmen {
+  50% {
+    opacity: 0.16;
+    scale: 1.08;
+  }
+}
+
+.ergebnis-karte__eyebrow {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.tacho {
+  max-width: 21rem;
+  margin: 1.5rem auto 0;
+}
+
+.tacho svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.tacho__spur,
+.tacho__segment {
+  fill: none;
+  stroke-width: 16;
+}
+
+.tacho__spur {
+  stroke: rgba(255, 255, 255, 0.07);
+}
+
+.tacho__segment {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transition:
+    stroke-dashoffset 0.7s cubic-bezier(0.65, 0, 0.35, 1)
+      calc(0.25s + var(--i) * 0.2s),
+    opacity 0.6s ease 1.8s,
+    filter 0.6s ease 1.8s;
+}
+
+.tacho__segment--gruen {
+  stroke: var(--tacho-gruen);
+}
+.tacho__segment--gelb {
+  stroke: var(--tacho-gelb);
+}
+.tacho__segment--rot {
+  stroke: var(--tacho-rot);
+}
+
+.ist-sichtbar .tacho__segment {
+  stroke-dashoffset: 0;
+}
+
+.ist-sichtbar[data-stufe="gruen"] .tacho__segment:not(.tacho__segment--gruen),
+.ist-sichtbar[data-stufe="gelb"] .tacho__segment:not(.tacho__segment--gelb),
+.ist-sichtbar[data-stufe="rot"] .tacho__segment:not(.tacho__segment--rot) {
+  opacity: 0.2;
+}
+
+.ist-sichtbar[data-stufe="gruen"] .tacho__segment--gruen,
+.ist-sichtbar[data-stufe="gelb"] .tacho__segment--gelb,
+.ist-sichtbar[data-stufe="rot"] .tacho__segment--rot {
+  filter: drop-shadow(0 0 7px var(--akzent));
+}
+
+.tacho__zeiger {
+  transform-box: view-box;
+  transform-origin: 120px 120px;
+  transform: rotate(-90deg);
+  transition: transform 1.5s cubic-bezier(0.3, 1.5, 0.45, 1) 0.5s;
+}
+
+.tacho__zeiger line {
+  stroke: #fff;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+}
+
+.tacho__zeiger circle {
+  fill: var(--tacho-hintergrund);
+  stroke: #fff;
+  stroke-width: 3.5;
+}
+
+.tacho__legende {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.tacho__legende li {
+  transition: color 0.6s ease 1.8s;
+}
+
+.ist-sichtbar[data-stufe="gruen"] .tacho__legende [data-id="gruen"],
+.ist-sichtbar[data-stufe="gelb"] .tacho__legende [data-id="gelb"],
+.ist-sichtbar[data-stufe="rot"] .tacho__legende [data-id="rot"] {
+  color: var(--akzent);
+}
+
+.tacho__mitte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  margin-top: 1.1rem;
+}
+
+.tacho__label {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.tacho__stufe {
+  font-family: var(--schrift-headline);
+  font-weight: 500;
+  font-size: clamp(2.4rem, 7vw, 3.2rem);
+  line-height: 1.05;
+  color: var(--akzent);
+  text-shadow: 0 0 28px color-mix(in srgb, var(--akzent) 55%, transparent);
+}
+
+/* Nacheinander hereingleitende Elemente nach dem Einschwingen der Nadel */
+.tacho__mitte,
+.ergebnis-karte__titel,
+.ergebnis-karte__text,
+.ergebnis-karte__aktionen {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.tacho__mitte {
+  transform: scale(0.85);
+  transition-delay: 1.7s;
+}
+.ergebnis-karte__titel {
+  transition-delay: 2s;
+}
+.ergebnis-karte__text {
+  transition-delay: 2.15s;
+}
+.ergebnis-karte__aktionen {
+  transition-delay: 2.3s;
+}
+
+.ist-sichtbar .tacho__mitte,
+.ist-sichtbar .ergebnis-karte__titel,
+.ist-sichtbar .ergebnis-karte__text,
+.ist-sichtbar .ergebnis-karte__aktionen {
+  opacity: 1;
+  transform: none;
+}
+
+.ergebnis-karte__titel {
+  max-width: none;
+  margin: 1.75rem auto 0;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: #fff;
+}
+
+.ergebnis-karte__text {
+  max-width: 46ch;
+  margin: 0.6rem auto 0;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.ergebnis-karte__aktionen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.ergebnis-karte__link {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.92rem;
+}
+
+.ergebnis-karte__link:hover {
+  color: #fff;
+}
+
+.ergebnis-karte :focus-visible {
+  outline-color: #fff;
+}
+
+.ergebnis__fehlt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.ergebnis__fehlt[hidden] {
+  display: none;
+}
+
+.ergebnis__fehlt p {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ergebnis-karte,
+  .ergebnis-karte *,
+  .ergebnis-karte::before {
+    transition-delay: 0s !important;
+  }
+}
+
+.ergebnis__hinweis {
+  max-width: 72ch;
+  margin: 1.25rem 0 0;
+  font-size: 0.82rem;
+  color: var(--farbe-text-schwach);
 }

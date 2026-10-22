@@ -236,8 +236,20 @@ falls in `fragen.json` ein Feld `schwellen` steht.
       drei Rollen-Ausgänge (Hersteller / möglicherweise Hersteller / Importeur-Vertreiber),
       nicht nur den Zweimal-Nein-Fall. Kein Abbruch mehr – alle Rollen führen weiter zur
       Landingpage.
-- [ ] **Ampel-Schwellen:** Echte Werte folgen vom Nutzer. Bis dahin Platzhalter
-      (Grün 0-4, Gelb 5-10, Rot über 10). Zentral in `ampel.json` halten.
+- [x] **Ampel-Schwellen:** Aus „Finale Regel.xlsx“ übernommen: Niedrig/Grün 0–5,
+      Mittel/Gelb 6–11, Hoch/Rot 12–24 (`inhalte/ampel.json`).
+- [x] **Fragenkatalog (V1):** 8 Fragen aus „Finale Regel.xlsx“, zunächst ein zentraler
+      Katalog für alle Gruppen (`inhalte/fragen.json`). Gruppenspezifische Änderungen
+      können folgen. Englische Fassung ist ein Entwurf von Claude, Prüfung durch Nutzer.
+- [ ] **Antwortskala „Stand der Daten“ schärfen (Fragen 3, 4, 5, 6, 8):** Die Antwort
+      „Für die meisten Produkte“ (1 Punkt) ist von „Nur teilweise“ (2 Punkte) nicht klar
+      abgegrenzt. Vorschlag: 0 = „Ja, für alle Produkte vollständig“, 1 = „Für die meisten
+      Produkte (mehr als die Hälfte)“. Vorerst unverändert wie in der Excel.
+- [ ] **Ergebnisseite ausbauen:** Längerer Erklärtext je Stufe („Was bedeutet das für
+      mich?“) und 2–4 nächste Schritte (`naechste_schritte` in `ampel.json`, aktuell leer).
+      Link zum DPP-Pilot (Ebene 4), sobald vorhanden.
+- [ ] **Check für weitere Gruppen:** Check und Ergebnis sind nur für Gruppen mit eigener
+      `gruppe.json` freigeschaltet (aktuell Batterien).
 - [x] **Design-Vorgabe:** Erste Design-Richtung mit dem Nutzer abgestimmt (redaktionell, ruhig,
       Kachel-Auswahl statt Checkboxen/Radios) – siehe `src/styles/global.css`. Feinschliff/
       Branding kann noch folgen, Farben bleiben zentrale Variablen (leicht austauschbar).
@@ -257,8 +269,9 @@ falls in `fragen.json` ein Feld `schwellen` steht.
       IP-Adresse der Besucher an Google, datenschutzrechtlich heikel (siehe Leitprinzip 6).
       Für den Pilot bewusst so belassen. Vor einem öffentlichen Livegang auf selbst gehostete
       Schriftdateien (z. B. in `public/fonts/`) umstellen.
-- [ ] **Check-Ergebnis ins Beratungsformular:** Sobald Check- und Ergebnisseite existieren,
-      Häkchen „Ergebnis mitsenden“ (nur mit Zustimmung) ergänzen.
+- [x] **Check-Ergebnis ins Beratungsformular:** Häkchen „Ergebnis mitsenden“ auf der
+      Ergebnisseite (standardmäßig aus). Antworten werden im Adress-Anker (`#a=…`)
+      übergeben, der nie an einen Server geht.
 
 ## 9. Entscheidungen im Überblick (Stand: Interview)
 

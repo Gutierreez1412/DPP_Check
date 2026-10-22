@@ -1,0 +1,215 @@
+---
+import fragenDaten from "../../inhalte/fragen.json";
+import seite from "../../inhalte/seite.json";
+
+interface Props {
+  lang: "de" | "en";
+  gruppe: { id: string; name: Record<"de" | "en", string> };
+}
+
+const { lang, gruppe } = Astro.props;
+const t = (feld: Record<"de" | "en", string>) => feld[lang];
+const c = seite.check;
+const fragen = fragenDaten.fragen;
+const gesamt = fragen.length;
+
+const texteFuerClient = {
+  fortschrittVorlage: t(c.fortschritt_vorlage),
+  fehlerKeineAntwort: t(c.fehler_keine_antwort),
+  gruppeId: gruppe.id,
+};
+---
+
+<section class="check">
+  <p class="eyebrow-klein">{t(c.eyebrow)} · {t(gruppe.name)}</p>
+  <h1>{t(c.titel)}</h1>
+  <p class="lede">{t(c.intro)}</p>
+
+  <div class="assistent">
+    <p class="fortschritt" id="check-fortschritt-text" aria-live="polite"></p>
+    <div class="fortschrittsbalken">
+      <div class="fortschrittsbalken__fuellung" id="check-fortschrittsbalken">
+      </div>
+    </div>
+
+    <form id="check-formular">
+      {
+        fragen.map((f, i) => (
+          <fieldset class="schritt" data-schritt={i + 1} hidden={i > 0}>
+            <legend>
+              <span class="check__kategorie">{t(f.kategorie)}</span>
+              {t(f.text)}
+            </legend>
+            <div class="optionen optionen--liste">
+              {f.antworten.map((a) => (
+                <label class="option">
+                  <input type="radio" name={f.id} value={a.id} />
+                  <span>{t(a.text)}</span>
+                </label>
+              ))}
+            </div>
+            <p class="fehler" role="alert" hidden />
+            <div class="aktionen">
+              {i > 0 && (
+                <button
+                  type="button"
+                  class="button button--sekundaer"
+                  data-zurueck
+                >
+                  {t(c.zurueck)}
+                </button>
+              )}
+              <button type="button" class="button" data-weiter>
+                {i === gesamt - 1 ? t(c.auswerten) : t(c.weiter)}
+              </button>
+            </div>
+          </fieldset>
+        ))
+      }
+    </form>
+
+    <div class="check__auswertung" id="check-auswertung" hidden>
+      <span class="check__puls" aria-hidden="true"></span>
+      <p role="status">{t(c.auswertung_laeuft)}</p>
+    </div>
+  </div>
+
+  <p class="check__zurueck">
+    <a href={`/${lang}/gruppe/${gruppe.id}/`}>{t(seite.zurueck_zur_gruppe)}</a>
+  </p>
+</section>
+
+<script
+  type="application/json"
+  id="check-texte"
+  set:html={JSON.stringify(texteFuerClient)}
+/>
+
+<script>
+  function initCheck() {
+    const form = document.getElementById("check-formular");
+    const texteEl = document.getElementById("check-texte");
+    if (!(form instanceof HTMLFormElement) || !texteEl) return;
+
+    const lang = document.documentElement.lang || "de";
+    const texte = JSON.parse(texteEl.textContent || "{}");
+    const reduzierteBewegung = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    const schritte = Array.from(
+      form.querySelectorAll<HTMLFieldSetElement>(".schritt"),
+    );
+    const gesamt = schritte.length;
+    const fortschrittText = document.getElementById("check-fortschritt-text");
+    const fortschrittBalken = document.getElementById(
+      "check-fortschrittsbalken",
+    );
+    const auswertung = document.getElementById("check-auswertung");
+    let aktuell = 1;
+    let autoWeiter: number | undefined;
+
+    // Kommt der Nutzer über "Antworten ändern" zurück, stehen die bisherigen
+    // Antworten im Adress-Anker (#a=…) und werden vorausgewählt.
+    const vorher = new URLSearchParams(window.location.hash.slice(1))
+      .get("a")
+      ?.split("-");
+    schritte.forEach((el, i) => {
+      const wert = vorher?.[i];
+      if (!wert) return;
+      el.querySelectorAll<HTMLInputElement>("input").forEach((input) => {
+        if (input.value === wert) input.checked = true;
+      });
+    });
+
+    function zeigeSchritt(n: number) {
+      aktuell = n;
+      schritte.forEach((el) => {
+        const istAktiv = Number(el.dataset.schritt) === n;
+        el.hidden = !istAktiv;
+        if (istAktiv) {
+          el.classList.remove("eintritt");
+          if (!reduzierteBewegung) {
+            void el.offsetWidth;
+            el.classList.add("eintritt");
+          }
+        }
+      });
+      if (fortschrittText) {
+        fortschrittText.textContent = texte.fortschrittVorlage
+          .replace("{n}", String(n))
+          .replace("{gesamt}", String(gesamt));
+      }
+      if (fortschrittBalken instanceof HTMLElement) {
+        fortschrittBalken.style.width = `${((n - 1) / gesamt) * 100}%`;
+      }
+      const legende = schritte[n - 1]?.querySelector("legend");
+      if (legende instanceof HTMLElement) {
+        legende.setAttribute("tabindex", "-1");
+        legende.focus({ preventScroll: true });
+      }
+    }
+
+    function gewaehlt(el: HTMLFieldSetElement) {
+      return el.querySelector<HTMLInputElement>("input:checked")?.value;
+    }
+
+    function weiter() {
+      window.clearTimeout(autoWeiter);
+      autoWeiter = undefined;
+      const el = schritte[aktuell - 1];
+      const fehlerEl = el.querySelector<HTMLElement>(".fehler");
+      if (!gewaehlt(el)) {
+        if (fehlerEl) {
+          fehlerEl.textContent = texte.fehlerKeineAntwort;
+          fehlerEl.hidden = false;
+        }
+        return;
+      }
+      if (fehlerEl) fehlerEl.hidden = true;
+      if (aktuell < gesamt) {
+        zeigeSchritt(aktuell + 1);
+        return;
+      }
+      auswerten();
+    }
+
+    function auswerten() {
+      const antworten = schritte.map((el) => gewaehlt(el));
+      const ziel = `/${lang}/ergebnis/${texte.gruppeId}/#a=${antworten.join("-")}`;
+      if (fortschrittBalken instanceof HTMLElement) {
+        fortschrittBalken.style.width = "100%";
+      }
+      form?.setAttribute("hidden", "");
+      if (fortschrittText) fortschrittText.hidden = true;
+      if (auswertung) auswertung.hidden = false;
+      window.setTimeout(
+        () => window.location.assign(ziel),
+        reduzierteBewegung ? 0 : 1100,
+      );
+    }
+
+    form.addEventListener("click", (e) => {
+      const ziel = e.target as HTMLElement;
+      if (ziel.closest("[data-weiter]")) {
+        weiter();
+        return;
+      }
+      if (ziel.closest("[data-zurueck]")) {
+        window.clearTimeout(autoWeiter);
+        autoWeiter = undefined;
+        zeigeSchritt(aktuell - 1);
+        return;
+      }
+      // Bei Maus/Touch geht es nach der Auswahl automatisch weiter. Bei Tastatur
+      // (Pfeiltasten, detail = 0) nicht, damit man in Ruhe auswählen kann.
+      if (ziel.closest(".option") && e.detail > 0 && autoWeiter === undefined) {
+        autoWeiter = window.setTimeout(weiter, reduzierteBewegung ? 0 : 320);
+      }
+    });
+
+    zeigeSchritt(1);
+  }
+
+  initCheck();
+</script>
