@@ -1,0 +1,71 @@
+---
+import "../styles/global.css";
+import "../styles/landing.css";
+import seite from "../../inhalte/seite.json";
+
+interface Props {
+  lang: "de" | "en";
+  /** Zieladresse des Sprachumschalters (die gleiche Seite in der anderen Sprache). */
+  wechselHref: string;
+  title?: string;
+}
+
+const { lang, wechselHref, title } = Astro.props;
+const start = seite.startseite;
+const startLink = `/${lang}/`;
+const wechsel = start.sprachwechsel[lang];
+const seitentitel = title
+  ? `${title} – ${start.seitentitel[lang]}`
+  : start.seitentitel[lang];
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{seitentitel}</title>
+  </head>
+  <body class="landing">
+    <header class="start-kopf">
+      <div class="start-kopf__innen">
+        <a class="start-logo" href={startLink}>
+          {
+            start.logo.bild ? (
+              <img src={start.logo.bild} alt={start.logo.alt[lang]} />
+            ) : (
+              <span class="logo-platzhalter logo-platzhalter--klein">
+                {start.logo.beschriftung[lang]}
+              </span>
+            )
+          }
+        </a>
+        <a
+          class="sprachumschalter"
+          href={wechselHref}
+          hreflang={wechsel.label.toLowerCase()}
+          title={wechsel.titel}
+          aria-label={wechsel.titel}>{wechsel.label}</a
+        >
+      </div>
+    </header>
+
+    <main class="start-haupt">
+      <slot />
+    </main>
+
+    <footer class="start-fuss">
+      <nav
+        class="start-fuss__innen"
+        aria-label={lang === "de" ? "Rechtliches" : "Legal"}
+      >
+        <a href={start.footer.impressum.link}
+          >{start.footer.impressum.text[lang]}</a
+        >
+        <a href={start.footer.datenschutz.link}
+          >{start.footer.datenschutz.text[lang]}</a
+        >
+      </nav>
+    </footer>
+  </body>
+</html>

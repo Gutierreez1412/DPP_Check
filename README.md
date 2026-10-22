@@ -22,7 +22,7 @@ pnpm dev
 ```
 
 Die Seite ist dann unter `http://localhost:4321/` erreichbar (leitet automatisch auf die
-deutsche Startseite `http://localhost:4321/de/` weiter). Der Server läuft, bis man im
+deutsche Startseite `http://localhost:4321/de/` weiter, das ist die Landingpage; der Filter liegt unter `/de/filter/`). Der Server läuft, bis man im
 Terminal `Strg+C` drückt. Änderungen an Dateien werden sofort im Browser sichtbar.
 
 ## Seite bauen (für den späteren Umzug/Hosting)

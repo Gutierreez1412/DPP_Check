@@ -1,0 +1,14 @@
+---
+import StartLayout from "../layouts/StartLayout.astro";
+import seite from "../../inhalte/seite.json";
+
+const p = seite.startseite.analyse_platzhalter;
+---
+
+<StartLayout lang="de" wechselHref="/en/analyse/" title={p.titel.de}>
+  <section class="analyse-platzhalter">
+    <h1>{p.titel.de}</h1>
+    <p>{p.text.de}</p>
+    <a class="button button--sekundaer" href="/de/">{p.zurueck.de}</a>
+  </section>
+</StartLayout>
