@@ -208,48 +208,6 @@
       ]
     },
     {
-      "id": "q7",
-      "kategorie": { "de": "Startpunkt", "en": "Starting point" },
-      "text": {
-        "de": "Wie weit sind Sie mit dem Digitalen Produktpass bereits?",
-        "en": "How far along are you with the Digital Product Passport?"
-      },
-      "antworten": [
-        {
-          "id": "a",
-          "text": {
-            "de": "Pilot oder Datenerhebung läuft",
-            "en": "Pilot or data collection under way"
-          },
-          "score": 0
-        },
-        {
-          "id": "b",
-          "text": {
-            "de": "Projekt und Verantwortliche benannt",
-            "en": "Project and responsible persons appointed"
-          },
-          "score": 1
-        },
-        {
-          "id": "c",
-          "text": {
-            "de": "Informiert, aber noch kein Projekt",
-            "en": "Informed, but no project yet"
-          },
-          "score": 2
-        },
-        {
-          "id": "d",
-          "text": {
-            "de": "Noch nicht befasst",
-            "en": "Not yet looked into it"
-          },
-          "score": 3
-        }
-      ]
-    },
-    {
       "id": "q8",
       "kategorie": {
         "de": "End-of-Life (Demontage und Entsorgung)",
@@ -287,6 +245,48 @@
         {
           "id": "d",
           "text": { "de": "Nein oder weiß nicht", "en": "No or don't know" },
+          "score": 3
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "kategorie": { "de": "Startpunkt", "en": "Starting point" },
+      "text": {
+        "de": "Wie weit sind Sie mit dem Digitalen Produktpass bereits?",
+        "en": "How far along are you with the Digital Product Passport?"
+      },
+      "antworten": [
+        {
+          "id": "a",
+          "text": {
+            "de": "Pilot oder Datenerhebung läuft",
+            "en": "Pilot or data collection under way"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "de": "Projekt und Verantwortliche benannt",
+            "en": "Project and responsible persons appointed"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "de": "Informiert, aber noch kein Projekt",
+            "en": "Informed, but no project yet"
+          },
+          "score": 2
+        },
+        {
+          "id": "d",
+          "text": {
+            "de": "Noch nicht befasst",
+            "en": "Not yet looked into it"
+          },
           "score": 3
         }
       ]
