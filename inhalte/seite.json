@@ -129,6 +129,88 @@
     "mail_antworten": {
       "de": "Antworten",
       "en": "Answers"
+    },
+    "pilot_link": {
+      "de": "Beispiel: So sieht ein digitaler Produktpass aus",
+      "en": "Example: what a digital product passport looks like"
+    }
+  },
+  "platzhalter_pilot": {
+    "de": "Das Pilot-Beispiel für diese Produktgruppe folgt im nächsten Arbeitsschritt.",
+    "en": "The pilot example for this product group will be added in the next step."
+  },
+  "pilot": {
+    "beispiel_badge": {
+      "de": "Beispiel",
+      "en": "Example"
+    },
+    "schritte_titel": {
+      "de": "Das Prinzip in drei Schritten",
+      "en": "The principle in three steps"
+    },
+    "produkt_titel": {
+      "de": "Das Produkt und seine Bauteile",
+      "en": "The product and its components"
+    },
+    "produkt_text": {
+      "de": "Wählen Sie ein Bauteil aus. Sie sehen dann, welche Daten es für den Pass liefert und wer sie bereitstellt.",
+      "en": "Select a component to see which data it provides for the passport and who supplies it."
+    },
+    "liefert_daten": {
+      "de": "Liefert diese Daten für den Pass",
+      "en": "Provides this data for the passport"
+    },
+    "datenquelle": {
+      "de": "Typische Datenquelle",
+      "en": "Typical data source"
+    },
+    "pass_titel": {
+      "de": "Der Pass nach dem QR-Scan",
+      "en": "The passport after the QR scan"
+    },
+    "pass_text": {
+      "de": "Wer den Pass öffnet, sieht je nach Rolle unterschiedlich viel. Wechseln Sie die Rolle und vergleichen Sie.",
+      "en": "What you see in the passport depends on your role. Switch roles and compare."
+    },
+    "rolle_label": {
+      "de": "Ansicht als",
+      "en": "View as"
+    },
+    "gesperrt": {
+      "de": "Nur für",
+      "en": "Only for"
+    },
+    "dynamisch": {
+      "de": "wird laufend aktualisiert",
+      "en": "updated continuously"
+    },
+    "unklar": {
+      "de": "Rechtslage prüfen",
+      "en": "Check legal status"
+    },
+    "scan_hinweis": {
+      "de": "Gescannt über QR-Code",
+      "en": "Scanned via QR code"
+    },
+    "lieferkette_titel": {
+      "de": "Unternehmenssicht: Wer liefert welche Daten?",
+      "en": "Company view: who provides which data?"
+    },
+    "lieferkette_text": {
+      "de": "Der Pass entsteht entlang der Lieferkette. Den größten Teil der Daten muss sich der verantwortliche Hersteller von seinen Lieferanten beschaffen.",
+      "en": "The passport is built along the supply chain. The responsible manufacturer has to obtain most of the data from its suppliers."
+    },
+    "verantwortlich": {
+      "de": "Verantwortlich",
+      "en": "Responsible"
+    },
+    "quellen_titel": {
+      "de": "Quellen",
+      "en": "Sources"
+    },
+    "zurueck_ergebnis": {
+      "de": "Zurück zum Ergebnis",
+      "en": "Back to the result"
     }
   },
   "zeitstrahl_titel": {
