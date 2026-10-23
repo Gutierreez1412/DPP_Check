@@ -12,3 +12,8 @@ Diese Datei ergänzt es um Regeln für die tägliche Arbeit am Code.
 5. **Quellenpflicht** für alle inhaltlichen Aussagen (siehe PROJEKT.md, Leitprinzip 5) —
    nichts erfinden, Unklares als `"status": "unklar"` markieren.
 6. **Kleine, aussagekräftige Commits** auf Deutsch, Inhalt und Code getrennt committen.
+7. **Hosting:** Die Seite läuft passwortgeschützt auf Cloudflare Pages (Projekt `dpp-check`,
+   https://dpp-check.pages.dev). Kein Auto-Deploy, hochgeladen wird per `wrangler` nur
+   nach Rückfrage beim Nutzer. Details und Befehle: [README.md](./README.md), Abschnitt
+   „Hosting“. `functions/_middleware.js` (Passwortschutz) nicht entfernen; das Passwort
+   nie ins Repo schreiben.
