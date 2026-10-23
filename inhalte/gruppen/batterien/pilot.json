@@ -1,6 +1,5 @@
 {
   "id": "batterien",
-
   "eyebrow": {
     "de": "DPP-Pilot · Batterien",
     "en": "DPP pilot · Batteries"
@@ -14,12 +13,10 @@
     "en": "From 18 February 2027, every e-bike battery, every industrial battery above 2 kWh and every electric vehicle battery in the EU needs a digital battery passport. It is an electronic record accessed via a QR code on the battery. Using an e-bike battery as an example, we show which components provide which data and what customers, repair shops and authorities see in the passport."
   },
   "einleitung_quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#art_77",
-
   "beispiel_hinweis": {
     "de": "Fiktives Beispiel: Produkt, Hersteller und alle Werte sind erfunden und dienen nur der Veranschaulichung.",
     "en": "Fictitious example: product, manufacturer and all values are made up for illustration only."
   },
-
   "produkt": {
     "name": "VoltRahmen 625",
     "typ": {
@@ -29,13 +26,36 @@
     "hersteller": "Musterwerk Akkutechnik GmbH",
     "pass_id": "BP-DE-MWA-0625-27-004812",
     "eckdaten": [
-      { "label": { "de": "Energie", "en": "Energy" }, "wert": "625 Wh" },
-      { "label": { "de": "Spannung", "en": "Voltage" }, "wert": "36 V" },
-      { "label": { "de": "Zellen", "en": "Cells" }, "wert": "40 × 21700" },
-      { "label": { "de": "Gewicht", "en": "Weight" }, "wert": "3,4 kg" }
+      {
+        "label": {
+          "de": "Energie",
+          "en": "Energy"
+        },
+        "wert": "625 Wh"
+      },
+      {
+        "label": {
+          "de": "Spannung",
+          "en": "Voltage"
+        },
+        "wert": "36 V"
+      },
+      {
+        "label": {
+          "de": "Zellen",
+          "en": "Cells"
+        },
+        "wert": "40 × 21700"
+      },
+      {
+        "label": {
+          "de": "Gewicht",
+          "en": "Weight"
+        },
+        "wert": "3,4 kg"
+      }
     ]
   },
-
   "schritte": [
     {
       "titel": {
@@ -60,7 +80,10 @@
       "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#art_77"
     },
     {
-      "titel": { "de": "Gestufter Zugriff", "en": "Tiered access" },
+      "titel": {
+        "de": "Gestufter Zugriff",
+        "en": "Tiered access"
+      },
       "text": {
         "de": "Manche Daten sind für alle sichtbar. Andere sehen nur Werkstätten, Recycler oder Behörden.",
         "en": "Some data is visible to everyone. Other data is only visible to repairers, recyclers or authorities."
@@ -69,11 +92,13 @@
       "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#anx_XIII"
     }
   ],
-
   "zugriffsstufen": [
     {
       "id": "oeffentlich",
-      "name": { "de": "Öffentlich", "en": "Public" },
+      "name": {
+        "de": "Öffentlich",
+        "en": "Public"
+      },
       "wer": {
         "de": "Alle, z. B. Kundinnen und Kunden",
         "en": "Everyone, e.g. customers"
@@ -82,7 +107,10 @@
     },
     {
       "id": "berechtigt",
-      "name": { "de": "Berechtigtes Interesse", "en": "Legitimate interest" },
+      "name": {
+        "de": "Berechtigtes Interesse",
+        "en": "Legitimate interest"
+      },
       "wer": {
         "de": "z. B. Werkstätten, Wiederaufbereiter, Recycler",
         "en": "e.g. repairers, remanufacturers, recyclers"
@@ -91,7 +119,10 @@
     },
     {
       "id": "behoerden",
-      "name": { "de": "Behörden", "en": "Authorities" },
+      "name": {
+        "de": "Behörden",
+        "en": "Authorities"
+      },
       "wer": {
         "de": "Benannte Stellen, Marktüberwachung, EU-Kommission",
         "en": "Notified bodies, market surveillance, European Commission"
@@ -99,18 +130,23 @@
       "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#anx_XIII"
     }
   ],
-
   "komponenten": [
     {
       "id": "deckel",
       "ebene": "deckel",
       "nummer": "01",
-      "name": { "de": "Gehäuse & Befestigung", "en": "Housing & fastening" },
+      "name": {
+        "de": "Gehäuse & Befestigung",
+        "en": "Housing & fastening"
+      },
       "text": {
         "de": "Schützt die Zellen und hält den Akku im Rahmen. Für Reparatur und Recycling zählt, wie er sich öffnen lässt: Schrauben, Clips, benötigtes Werkzeug.",
         "en": "Protects the cells and holds the battery in the frame. For repair and recycling, what matters is how it opens: screws, clips, required tools."
       },
-      "lieferant": { "de": "Akkuhersteller", "en": "Battery manufacturer" },
+      "lieferant": {
+        "de": "Akkuhersteller",
+        "en": "Battery manufacturer"
+      },
       "felder": ["demontage", "ersatzteile", "sicherheit"]
     },
     {
@@ -135,12 +171,18 @@
       "id": "zellen",
       "ebene": "zellen",
       "nummer": "03",
-      "name": { "de": "Zellmodul (40 Zellen)", "en": "Cell module (40 cells)" },
+      "name": {
+        "de": "Zellmodul (40 Zellen)",
+        "en": "Cell module (40 cells)"
+      },
       "text": {
         "de": "40 Rundzellen bestimmen Kapazität, Spannung und Lebensdauer. Die Leistungsdaten und Testberichte stammen größtenteils vom Zellhersteller.",
         "en": "40 cylindrical cells determine capacity, voltage and lifetime. Performance data and test reports mostly come from the cell manufacturer."
       },
-      "lieferant": { "de": "Zellhersteller", "en": "Cell manufacturer" },
+      "lieferant": {
+        "de": "Zellhersteller",
+        "en": "Cell manufacturer"
+      },
       "felder": ["kapazitaet", "spannung", "lebensdauer", "co2", "testberichte"]
     },
     {
@@ -171,12 +213,18 @@
       "id": "wanne",
       "ebene": "wanne",
       "nummer": "05",
-      "name": { "de": "Typenschild & QR-Code", "en": "Type plate & QR code" },
+      "name": {
+        "de": "Typenschild & QR-Code",
+        "en": "Type plate & QR code"
+      },
       "text": {
         "de": "Auf dem Gehäuseboden sitzt der QR-Code. Er ist der Zugang zum Pass. Dazu kommen CE-Kennzeichnung, Sammelsymbol und die Konformitätserklärung.",
         "en": "The QR code sits on the housing base and is the gateway to the passport. Add to that CE marking, collection symbol and declaration of conformity."
       },
-      "lieferant": { "de": "Akkuhersteller", "en": "Battery manufacturer" },
+      "lieferant": {
+        "de": "Akkuhersteller",
+        "en": "Battery manufacturer"
+      },
       "felder": [
         "kennung",
         "hersteller",
@@ -186,21 +234,28 @@
       ]
     }
   ],
-
   "pass": {
     "abschnitte": [
       {
-        "id": "allgemein",
-        "titel": { "de": "Allgemeine Angaben", "en": "General information" },
+        "id": "identifikation",
+        "titel": {
+          "de": "Produktidentifikation",
+          "en": "Product identification"
+        },
+        "datenpunkte": [1, 2, 3, 4, 5, 6, 7, 8, 9, 67],
         "felder": [
           {
             "id": "kennung",
-            "label": { "de": "Eindeutige Kennung", "en": "Unique identifier" },
+            "label": {
+              "de": "Eindeutige Kennung",
+              "en": "Unique identifier"
+            },
             "wert": {
               "de": "BP-DE-MWA-0625-27-004812",
               "en": "BP-DE-MWA-0625-27-004812"
             },
-            "stufe": "oeffentlich"
+            "stufe": "oeffentlich",
+            "datenpunkte": [1]
           },
           {
             "id": "hersteller",
@@ -212,108 +267,35 @@
               "de": "Musterwerk Akkutechnik GmbH, Musterstadt (DE), 03/2027",
               "en": "Musterwerk Akkutechnik GmbH, Musterstadt (DE), 03/2027"
             },
-            "stufe": "oeffentlich"
+            "stufe": "oeffentlich",
+            "datenpunkte": [3, 8, 9]
           },
           {
             "id": "kategorie",
-            "label": { "de": "Batteriekategorie", "en": "Battery category" },
+            "label": {
+              "de": "Batteriekategorie",
+              "en": "Battery category"
+            },
             "wert": {
               "de": "LMT-Batterie (Leichtverkehrsmittel)",
               "en": "LMT battery (light means of transport)"
             },
-            "stufe": "oeffentlich"
+            "stufe": "oeffentlich",
+            "datenpunkte": [6]
           },
           {
             "id": "status",
-            "label": { "de": "Status der Batterie", "en": "Battery status" },
-            "wert": { "de": "Original", "en": "Original" },
+            "label": {
+              "de": "Status der Batterie",
+              "en": "Battery status"
+            },
+            "wert": {
+              "de": "Original",
+              "en": "Original"
+            },
             "stufe": "berechtigt",
-            "dynamisch": true
-          }
-        ]
-      },
-      {
-        "id": "konformitaet",
-        "titel": {
-          "de": "Konformität & Kennzeichnung",
-          "en": "Compliance & labels"
-        },
-        "felder": [
-          {
-            "id": "kennzeichen",
-            "label": { "de": "Kennzeichnungen", "en": "Labels" },
-            "wert": {
-              "de": "CE, Symbol für getrennte Sammlung, Kapazitätslabel",
-              "en": "CE, separate collection symbol, capacity label"
-            },
-            "stufe": "oeffentlich"
-          },
-          {
-            "id": "konformitaet",
-            "label": {
-              "de": "EU-Konformitätserklärung",
-              "en": "EU declaration of conformity"
-            },
-            "wert": { "de": "PDF, Stand 02/2027", "en": "PDF, as of 02/2027" },
-            "stufe": "oeffentlich"
-          },
-          {
-            "id": "testberichte",
-            "label": {
-              "de": "Testberichte zum Nachweis der Konformität",
-              "en": "Test reports proving compliance"
-            },
-            "wert": { "de": "4 Dokumente", "en": "4 documents" },
-            "stufe": "behoerden"
-          }
-        ]
-      },
-      {
-        "id": "co2",
-        "titel": { "de": "CO₂-Fußabdruck", "en": "Carbon footprint" },
-        "felder": [
-          {
-            "id": "co2",
-            "label": {
-              "de": "CO₂-Fußabdruck über den Lebensweg",
-              "en": "Life-cycle carbon footprint"
-            },
-            "wert": {
-              "de": "72 kg CO₂e pro kWh · Klasse B",
-              "en": "72 kg CO₂e per kWh · class B"
-            },
-            "stufe": "oeffentlich",
-            "status": "unklar",
-            "hinweis": {
-              "de": "Ab wann diese Angabe für E-Bike-Akkus Pflicht ist, hängt von noch ausstehenden delegierten Rechtsakten ab (Art. 7).",
-              "en": "When this becomes mandatory for e-bike batteries depends on pending delegated acts (Art. 7)."
-            }
-          }
-        ]
-      },
-      {
-        "id": "lieferkette",
-        "titel": {
-          "de": "Sorgfaltspflichten Lieferkette",
-          "en": "Supply chain due diligence"
-        },
-        "felder": [
-          {
-            "id": "sorgfalt",
-            "label": {
-              "de": "Bericht zu Sorgfaltspflichten",
-              "en": "Due diligence report"
-            },
-            "wert": {
-              "de": "Bericht 2027, geprüft durch benannte Stelle",
-              "en": "Report 2027, verified by notified body"
-            },
-            "stufe": "oeffentlich",
-            "status": "unklar",
-            "hinweis": {
-              "de": "Der Starttermin der Sorgfaltspflichten (Art. 47 ff.) wurde per Omnibus-Verfahren verschoben. Aktuellen Stand prüfen.",
-              "en": "The start date of the due diligence obligations (Art. 47 ff.) was postponed via an omnibus procedure. Check current status."
-            }
+            "dynamisch": true,
+            "datenpunkte": [67]
           }
         ]
       },
@@ -323,15 +305,20 @@
           "de": "Materialien & Zusammensetzung",
           "en": "Materials & composition"
         },
+        "datenpunkte": [10, 12, 13, 14, 15, 16, 45],
         "felder": [
           {
             "id": "chemie",
-            "label": { "de": "Batteriechemie", "en": "Battery chemistry" },
+            "label": {
+              "de": "Batteriechemie",
+              "en": "Battery chemistry"
+            },
             "wert": {
               "de": "Lithium-Ionen, NMC 811 / Graphit",
               "en": "Lithium-ion, NMC 811 / graphite"
             },
-            "stufe": "oeffentlich"
+            "stufe": "oeffentlich",
+            "datenpunkte": [12]
           },
           {
             "id": "rohstoffe",
@@ -343,7 +330,8 @@
               "de": "Lithium, Nickel, Kobalt, Mangan, natürlicher Graphit",
               "en": "Lithium, nickel, cobalt, manganese, natural graphite"
             },
-            "stufe": "oeffentlich"
+            "stufe": "oeffentlich",
+            "datenpunkte": [15]
           },
           {
             "id": "zusammensetzung",
@@ -355,30 +343,159 @@
               "de": "Materialliste, 38 Positionen",
               "en": "Material list, 38 items"
             },
-            "stufe": "berechtigt"
+            "stufe": "berechtigt",
+            "datenpunkte": [45]
           }
         ]
       },
       {
-        "id": "kreislauf",
+        "id": "nachhaltigkeit",
         "titel": {
-          "de": "Kreislauf & Ressourcen",
-          "en": "Circularity & resources"
+          "de": "CO₂, Lieferkette & Rezyklat",
+          "en": "Carbon, supply chain & recycled content"
         },
+        "datenpunkte": [17, 18, 19, 20, 21, 22, 23, 24],
         "felder": [
           {
-            "id": "rezyklat",
-            "label": { "de": "Recyclinganteil", "en": "Recycled content" },
+            "id": "co2",
+            "label": {
+              "de": "CO₂-Fußabdruck über den Lebensweg",
+              "en": "Life-cycle carbon footprint"
+            },
             "wert": {
-              "de": "Kobalt 8 % · Lithium 3 % · Nickel 4 %",
-              "en": "Cobalt 8% · lithium 3% · nickel 4%"
+              "de": "Noch nicht verpflichtend: Format folgt per Rechtsakt",
+              "en": "Not yet mandatory: format to follow in a legal act"
             },
             "stufe": "oeffentlich",
             "status": "unklar",
             "hinweis": {
-              "de": "Die Dokumentationspflicht zum Recyclinganteil (Art. 8) startet später als der Pass. Termin für E-Bike-Akkus prüfen.",
-              "en": "The documentation obligation for recycled content (Art. 8) starts later than the passport. Check the date for e-bike batteries."
-            }
+              "de": "Die Angabe zum CO₂-Fußabdruck wird erst Pflicht, wenn die zugehörigen delegierten und Durchführungsrechtsakte (Art. 7) vorliegen.",
+              "en": "The carbon footprint information only becomes mandatory once the related delegated and implementing acts (Art. 7) are in place."
+            },
+            "datenpunkte": [17, 18]
+          },
+          {
+            "id": "sorgfalt",
+            "label": {
+              "de": "Bericht zu Sorgfaltspflichten",
+              "en": "Due diligence report"
+            },
+            "wert": {
+              "de": "Noch nicht verpflichtend: voraussichtlich ab August 2027",
+              "en": "Not yet mandatory: expected from August 2027"
+            },
+            "stufe": "oeffentlich",
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Start der Sorgfaltspflichten (Art. 47 ff., Art. 48(1)) wurde per Omnibus-Verfahren verschoben. Aktuellen Stand prüfen.",
+              "en": "The start of the due diligence obligations (Art. 47 ff., Art. 48(1)) was postponed via an omnibus procedure. Check current status."
+            },
+            "datenpunkte": [19]
+          },
+          {
+            "id": "rezyklat",
+            "label": {
+              "de": "Recyclinganteil",
+              "en": "Recycled content"
+            },
+            "wert": {
+              "de": "Noch nicht verpflichtend: folgt mit Art. 8",
+              "en": "Not yet mandatory: follows Art. 8"
+            },
+            "stufe": "oeffentlich",
+            "status": "unklar",
+            "hinweis": {
+              "de": "Die Dokumentationspflicht zum Recyclinganteil (Art. 8) hängt vom delegierten Rechtsakt zur Berechnungsmethode ab und startet später als der Pass.",
+              "en": "The documentation obligation for recycled content (Art. 8) depends on the delegated act on the calculation method and starts later than the passport."
+            },
+            "datenpunkte": [20, 21, 22]
+          }
+        ]
+      },
+      {
+        "id": "leistung",
+        "titel": {
+          "de": "Leistung & Haltbarkeit",
+          "en": "Performance & durability"
+        },
+        "datenpunkte": [
+          11, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39
+        ],
+        "felder": [
+          {
+            "id": "kapazitaet",
+            "label": {
+              "de": "Nennkapazität",
+              "en": "Rated capacity"
+            },
+            "wert": {
+              "de": "17,4 Ah (625 Wh)",
+              "en": "17.4 Ah (625 Wh)"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [11]
+          },
+          {
+            "id": "spannung",
+            "label": {
+              "de": "Spannung (min. / nominal / max.)",
+              "en": "Voltage (min / nominal / max)"
+            },
+            "wert": {
+              "de": "30 V / 36 V / 42 V",
+              "en": "30 V / 36 V / 42 V"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [26, 27, 28]
+          },
+          {
+            "id": "lebensdauer",
+            "label": {
+              "de": "Erwartete Lebensdauer",
+              "en": "Expected lifetime"
+            },
+            "wert": {
+              "de": "1.000 Ladezyklen",
+              "en": "1,000 charge cycles"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [31]
+          }
+        ]
+      },
+      {
+        "id": "konformitaet",
+        "titel": {
+          "de": "Konformität & Entsorgung",
+          "en": "Compliance & end of life"
+        },
+        "datenpunkte": [40, 41, 42, 43, 44, 50],
+        "felder": [
+          {
+            "id": "kennzeichen",
+            "label": {
+              "de": "Kennzeichnungen",
+              "en": "Labels"
+            },
+            "wert": {
+              "de": "CE, Symbol für getrennte Sammlung, Kapazitätslabel",
+              "en": "CE, separate collection symbol, capacity label"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [40]
+          },
+          {
+            "id": "konformitaet",
+            "label": {
+              "de": "EU-Konformitätserklärung",
+              "en": "EU declaration of conformity"
+            },
+            "wert": {
+              "de": "PDF, Stand 02/2027",
+              "en": "PDF, as of 02/2027"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [42]
           },
           {
             "id": "ruecknahme",
@@ -390,7 +507,44 @@
               "de": "Kostenlose Rückgabe im Fachhandel, Infos zur Vermeidung von Abfall",
               "en": "Free return at retailers, information on waste prevention"
             },
-            "stufe": "oeffentlich"
+            "stufe": "oeffentlich",
+            "datenpunkte": [43]
+          },
+          {
+            "id": "testberichte",
+            "label": {
+              "de": "Testberichte zum Nachweis der Konformität",
+              "en": "Test reports proving compliance"
+            },
+            "wert": {
+              "de": "4 Dokumente",
+              "en": "4 documents"
+            },
+            "stufe": "behoerden",
+            "datenpunkte": [50]
+          }
+        ]
+      },
+      {
+        "id": "reparatur",
+        "titel": {
+          "de": "Reparatur & Demontage",
+          "en": "Repair & dismantling"
+        },
+        "datenpunkte": [46, 47, 48, 49],
+        "felder": [
+          {
+            "id": "ersatzteile",
+            "label": {
+              "de": "Teilenummern & Bezugsquellen für Ersatzteile",
+              "en": "Part numbers & sources of spare parts"
+            },
+            "wert": {
+              "de": "9 Teile, Kontakt Ersatzteilservice",
+              "en": "9 parts, spare parts service contact"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [46, 47]
           },
           {
             "id": "demontage",
@@ -402,71 +556,48 @@
               "de": "12 Schritte · Torx T10, Kunststoffhebel",
               "en": "12 steps · Torx T10, plastic lever"
             },
-            "stufe": "berechtigt"
-          },
-          {
-            "id": "ersatzteile",
-            "label": {
-              "de": "Teilenummern & Bezugsquellen für Ersatzteile",
-              "en": "Part numbers & sources of spare parts"
-            },
-            "wert": {
-              "de": "9 Teile, Kontakt Ersatzteilservice",
-              "en": "9 parts, spare parts service contact"
-            },
-            "stufe": "berechtigt"
+            "stufe": "berechtigt",
+            "datenpunkte": [48]
           },
           {
             "id": "sicherheit",
-            "label": { "de": "Sicherheitshinweise", "en": "Safety measures" },
+            "label": {
+              "de": "Sicherheitshinweise",
+              "en": "Safety measures"
+            },
             "wert": {
               "de": "Vor dem Öffnen entladen, Brandschutzhinweise",
               "en": "Discharge before opening, fire safety notes"
             },
-            "stufe": "berechtigt"
+            "stufe": "berechtigt",
+            "datenpunkte": [49]
           }
         ]
       },
       {
-        "id": "leistung",
+        "id": "zustand",
         "titel": {
-          "de": "Leistung & Haltbarkeit",
-          "en": "Performance & durability"
+          "de": "Zustand & Nutzung",
+          "en": "State & use"
         },
+        "datenpunkte": [
+          51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 68,
+          69, 70, 71
+        ],
         "felder": [
-          {
-            "id": "kapazitaet",
-            "label": { "de": "Nennkapazität", "en": "Rated capacity" },
-            "wert": { "de": "17,4 Ah (625 Wh)", "en": "17.4 Ah (625 Wh)" },
-            "stufe": "oeffentlich"
-          },
-          {
-            "id": "spannung",
-            "label": {
-              "de": "Spannung (min. / nominal / max.)",
-              "en": "Voltage (min / nominal / max)"
-            },
-            "wert": { "de": "30 V / 36 V / 42 V", "en": "30 V / 36 V / 42 V" },
-            "stufe": "oeffentlich"
-          },
-          {
-            "id": "lebensdauer",
-            "label": {
-              "de": "Erwartete Lebensdauer",
-              "en": "Expected lifetime"
-            },
-            "wert": { "de": "1.000 Ladezyklen", "en": "1,000 charge cycles" },
-            "stufe": "oeffentlich"
-          },
           {
             "id": "soh",
             "label": {
               "de": "Alterungszustand (State of Health)",
               "en": "State of health"
             },
-            "wert": { "de": "96 %", "en": "96%" },
+            "wert": {
+              "de": "96 %",
+              "en": "96%"
+            },
             "stufe": "berechtigt",
-            "dynamisch": true
+            "dynamisch": true,
+            "datenpunkte": [62]
           },
           {
             "id": "zyklen_aktuell",
@@ -474,22 +605,744 @@
               "de": "Bisherige Ladezyklen",
               "en": "Charge cycles so far"
             },
-            "wert": { "de": "84", "en": "84" },
+            "wert": {
+              "de": "84",
+              "en": "84"
+            },
             "stufe": "berechtigt",
-            "dynamisch": true
+            "dynamisch": true,
+            "datenpunkte": [68]
           }
         ]
       }
     ],
+    "datenpunkte": [
+      {
+        "nr": 1,
+        "name": {
+          "de": "Eindeutige Kennung",
+          "en": "Unique identifier"
+        },
+        "quelle": "Art. 77(3)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 2,
+        "name": {
+          "de": "Verantwortlicher für den Batteriepass",
+          "en": "Party responsible for the battery passport"
+        },
+        "quelle": "Art. 77(3)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 3,
+        "name": {
+          "de": "Name oder eingetragene Marke des Herstellers",
+          "en": "Manufacturer name or registered trademark"
+        },
+        "quelle": "Anh. VI A (1)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 4,
+        "name": {
+          "de": "Postanschrift des Herstellers",
+          "en": "Manufacturer postal address"
+        },
+        "quelle": "Anh. VI A (1)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 5,
+        "name": {
+          "de": "Web- und E-Mail-Adresse des Herstellers",
+          "en": "Manufacturer web and email address"
+        },
+        "quelle": "Anh. VI A (1)",
+        "stufe": "oeffentlich",
+        "lmt": "optional"
+      },
+      {
+        "nr": 6,
+        "name": {
+          "de": "Batteriekategorie",
+          "en": "Battery category"
+        },
+        "quelle": "Anh. VI A (2)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 7,
+        "name": {
+          "de": "Modell- und Chargen- oder Seriennummer",
+          "en": "Model and batch or serial number"
+        },
+        "quelle": "Anh. VI A (2)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 8,
+        "name": {
+          "de": "Herstellungsort",
+          "en": "Place of manufacture"
+        },
+        "quelle": "Anh. VI A (3)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 9,
+        "name": {
+          "de": "Herstellungsdatum (Monat und Jahr)",
+          "en": "Date of manufacture (month and year)"
+        },
+        "quelle": "Anh. VI A (4)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 10,
+        "name": {
+          "de": "Gewicht",
+          "en": "Weight"
+        },
+        "quelle": "Anh. VI A (5)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 11,
+        "name": {
+          "de": "Kapazität",
+          "en": "Capacity"
+        },
+        "quelle": "Anh. VI A (6)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 12,
+        "name": {
+          "de": "Batteriechemie",
+          "en": "Chemistry"
+        },
+        "quelle": "Anh. VI A (7)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 13,
+        "name": {
+          "de": "Gefährliche Stoffe (außer Quecksilber, Cadmium, Blei)",
+          "en": "Hazardous substances (other than mercury, cadmium, lead)"
+        },
+        "quelle": "Anh. VI A (8)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 14,
+        "name": {
+          "de": "Geeignetes Löschmittel",
+          "en": "Usable extinguishing agent"
+        },
+        "quelle": "Anh. VI A (9)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 15,
+        "name": {
+          "de": "Kritische Rohstoffe über 0,1 Gewichtsprozent",
+          "en": "Critical raw materials above 0.1% w/w"
+        },
+        "quelle": "Anh. VI A (10)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 16,
+        "name": {
+          "de": "Materialzusammensetzung (Wiederholung)",
+          "en": "Material composition (repetition)"
+        },
+        "quelle": "Anh. XIII 1 (b)",
+        "stufe": "oeffentlich",
+        "lmt": "entfaellt"
+      },
+      {
+        "nr": 17,
+        "name": {
+          "de": "Erklärung zum CO₂-Fußabdruck",
+          "en": "Carbon footprint declaration"
+        },
+        "quelle": "Anh. XIII 1 (c)",
+        "stufe": "oeffentlich",
+        "lmt": "spaeter"
+      },
+      {
+        "nr": 18,
+        "name": {
+          "de": "Label zum CO₂-Fußabdruck",
+          "en": "Carbon footprint label"
+        },
+        "quelle": "Anh. XIII 1 (c)",
+        "stufe": "oeffentlich",
+        "lmt": "spaeter"
+      },
+      {
+        "nr": 19,
+        "name": {
+          "de": "Verantwortungsvolle Beschaffung (Sorgfaltspflichten)",
+          "en": "Responsible sourcing (due diligence)"
+        },
+        "quelle": "Anh. XIII 1 (d)",
+        "stufe": "oeffentlich",
+        "lmt": "spaeter"
+      },
+      {
+        "nr": 20,
+        "name": {
+          "de": "Rezyklatanteil Kobalt",
+          "en": "Recycled content cobalt"
+        },
+        "quelle": "Anh. XIII 1 (e)",
+        "stufe": "oeffentlich",
+        "lmt": "spaeter"
+      },
+      {
+        "nr": 21,
+        "name": {
+          "de": "Rezyklatanteil Lithium",
+          "en": "Recycled content lithium"
+        },
+        "quelle": "Anh. XIII 1 (e)",
+        "stufe": "oeffentlich",
+        "lmt": "spaeter"
+      },
+      {
+        "nr": 22,
+        "name": {
+          "de": "Rezyklatanteil Nickel",
+          "en": "Recycled content nickel"
+        },
+        "quelle": "Anh. XIII 1 (e)",
+        "stufe": "oeffentlich",
+        "lmt": "spaeter"
+      },
+      {
+        "nr": 23,
+        "name": {
+          "de": "Rezyklatanteil Blei",
+          "en": "Recycled content lead"
+        },
+        "quelle": "Anh. XIII 1 (e)",
+        "stufe": "oeffentlich",
+        "lmt": "spaeter"
+      },
+      {
+        "nr": 24,
+        "name": {
+          "de": "Anteil erneuerbarer Inhalte",
+          "en": "Share of renewable content"
+        },
+        "quelle": "Anh. XIII 1 (f)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 25,
+        "name": {
+          "de": "Nennkapazität in Ah (Wiederholung)",
+          "en": "Rated capacity in Ah (repetition)"
+        },
+        "quelle": "Anh. XIII 1 (g)",
+        "stufe": "oeffentlich",
+        "lmt": "entfaellt"
+      },
+      {
+        "nr": 26,
+        "name": {
+          "de": "Minimale Spannung",
+          "en": "Minimal voltage"
+        },
+        "quelle": "Anh. XIII 1 (h)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 27,
+        "name": {
+          "de": "Nennspannung",
+          "en": "Nominal voltage"
+        },
+        "quelle": "Anh. XIII 1 (h)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 28,
+        "name": {
+          "de": "Maximale Spannung",
+          "en": "Maximum voltage"
+        },
+        "quelle": "Anh. XIII 1 (h)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 29,
+        "name": {
+          "de": "Ursprüngliche Leistungsfähigkeit (W)",
+          "en": "Original power capability (W)"
+        },
+        "quelle": "Anh. XIII 1 (i)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 30,
+        "name": {
+          "de": "Leistungsgrenzen",
+          "en": "Power limits"
+        },
+        "quelle": "Anh. XIII 1 (i)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 31,
+        "name": {
+          "de": "Erwartete Lebensdauer in Zyklen",
+          "en": "Expected lifetime in cycles"
+        },
+        "quelle": "Anh. XIII 1 (j)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 32,
+        "name": {
+          "de": "Referenztest für die Lebensdauer",
+          "en": "Reference test for expected lifetime"
+        },
+        "quelle": "Anh. XIII 1 (j)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 33,
+        "name": {
+          "de": "Kapazitätsschwelle für Erschöpfung",
+          "en": "Capacity threshold for exhaustion"
+        },
+        "quelle": "Anh. XIII 1 (k)",
+        "stufe": "oeffentlich",
+        "lmt": "entfaellt"
+      },
+      {
+        "nr": 34,
+        "name": {
+          "de": "Temperaturbereich im Ruhezustand",
+          "en": "Temperature range when not in use"
+        },
+        "quelle": "Anh. XIII 1 (l)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 35,
+        "name": {
+          "de": "Garantiezeit für die kalendarische Lebensdauer",
+          "en": "Commercial warranty period for calendar life"
+        },
+        "quelle": "Anh. XIII 1 (m)",
+        "stufe": "oeffentlich",
+        "lmt": "falls_zutreffend"
+      },
+      {
+        "nr": 36,
+        "name": {
+          "de": "Anfänglicher Energie-Wirkungsgrad (Round Trip)",
+          "en": "Initial round trip energy efficiency"
+        },
+        "quelle": "Anh. XIII 1 (n)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 37,
+        "name": {
+          "de": "Energie-Wirkungsgrad bei 50 % der Lebensdauer",
+          "en": "Round trip energy efficiency at 50% of cycle life"
+        },
+        "quelle": "Anh. XIII 1 (n)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 38,
+        "name": {
+          "de": "Innenwiderstand von Zelle und Pack",
+          "en": "Internal cell and pack resistance"
+        },
+        "quelle": "Anh. XIII 1 (o)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 39,
+        "name": {
+          "de": "C-Rate des Lebensdauertests",
+          "en": "C-rate of cycle-life test"
+        },
+        "quelle": "Anh. XIII 1 (p)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 40,
+        "name": {
+          "de": "Kennzeichnungen nach Art. 13(4)",
+          "en": "Markings under Art. 13(4)"
+        },
+        "quelle": "Anh. XIII 1 (q)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 41,
+        "name": {
+          "de": "Cadmium- oder Bleisymbol nach Art. 13(5)",
+          "en": "Cadmium or lead symbol under Art. 13(5)"
+        },
+        "quelle": "Anh. XIII 1 (q)",
+        "stufe": "oeffentlich",
+        "lmt": "falls_zutreffend"
+      },
+      {
+        "nr": 42,
+        "name": {
+          "de": "EU-Konformitätserklärung",
+          "en": "EU declaration of conformity"
+        },
+        "quelle": "Anh. XIII 1 (r)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 43,
+        "name": {
+          "de": "Vermeidung und Entsorgung von Altbatterien",
+          "en": "Prevention and management of waste batteries"
+        },
+        "quelle": "Anh. XIII 1 (s)",
+        "stufe": "oeffentlich",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 44,
+        "name": {
+          "de": "Gebrauchsanleitung",
+          "en": "Instructions for use"
+        },
+        "quelle": "Anh. XIII 1 (t)",
+        "stufe": "oeffentlich",
+        "lmt": "spaeter"
+      },
+      {
+        "nr": 45,
+        "name": {
+          "de": "Detaillierte Zusammensetzung (Kathode, Anode, Elektrolyt)",
+          "en": "Detailed composition (cathode, anode, electrolyte)"
+        },
+        "quelle": "Anh. XIII 2 (a)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 46,
+        "name": {
+          "de": "Teilenummern der Komponenten",
+          "en": "Part numbers for components"
+        },
+        "quelle": "Anh. XIII 2 (b)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 47,
+        "name": {
+          "de": "Bezugsquellen für Ersatzteile",
+          "en": "Sources for replacement spares"
+        },
+        "quelle": "Anh. XIII 2 (b)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 48,
+        "name": {
+          "de": "Demontageinformationen",
+          "en": "Dismantling information"
+        },
+        "quelle": "Anh. XIII 2 (c)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 49,
+        "name": {
+          "de": "Sicherheitsmaßnahmen",
+          "en": "Safety measures"
+        },
+        "quelle": "Anh. XIII 2 (d)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 50,
+        "name": {
+          "de": "Ergebnisse von Testberichten",
+          "en": "Results of test reports"
+        },
+        "quelle": "Anh. XIII 3",
+        "stufe": "behoerden",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 51,
+        "name": {
+          "de": "Nennkapazität (dynamisch)",
+          "en": "Rated capacity (dynamic)"
+        },
+        "quelle": "Anh. XIII 4 (a)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 52,
+        "name": {
+          "de": "Kapazitätsverlust",
+          "en": "Capacity fade"
+        },
+        "quelle": "Anh. XIII 4 (a)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 53,
+        "name": {
+          "de": "Leistung (W)",
+          "en": "Power (W)"
+        },
+        "quelle": "Anh. XIII 4 (a)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 54,
+        "name": {
+          "de": "Leistungsverlust",
+          "en": "Power fade"
+        },
+        "quelle": "Anh. XIII 4 (a)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 55,
+        "name": {
+          "de": "Innenwiderstand",
+          "en": "Internal resistance"
+        },
+        "quelle": "Anh. XIII 4 (a)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 56,
+        "name": {
+          "de": "Anstieg des Innenwiderstands",
+          "en": "Internal resistance increase"
+        },
+        "quelle": "Anh. XIII 4 (a)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 57,
+        "name": {
+          "de": "Energie-Wirkungsgrad (Round Trip)",
+          "en": "Energy round trip efficiency"
+        },
+        "quelle": "Anh. XIII 4 (a)",
+        "stufe": "berechtigt",
+        "lmt": "falls_zutreffend"
+      },
+      {
+        "nr": 58,
+        "name": {
+          "de": "Abnahme des Energie-Wirkungsgrads",
+          "en": "Energy round trip efficiency fade"
+        },
+        "quelle": "Anh. XIII 4 (a)",
+        "stufe": "berechtigt",
+        "lmt": "falls_zutreffend"
+      },
+      {
+        "nr": 59,
+        "name": {
+          "de": "Erwartete Lebensdauer in Zyklen (Referenzbedingungen)",
+          "en": "Expected lifetime in cycles (reference conditions)"
+        },
+        "quelle": "Anh. XIII 4 (a)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 60,
+        "name": {
+          "de": "Erwartete Lebensdauer in Kalenderjahren",
+          "en": "Expected lifetime in calendar years"
+        },
+        "quelle": "Anh. XIII 4 (a)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 61,
+        "name": {
+          "de": "Zertifizierter Energiezustand (SOCE)",
+          "en": "State of certified energy (SOCE)"
+        },
+        "quelle": "Anh. XIII 4 (b)",
+        "stufe": "berechtigt",
+        "lmt": "entfaellt"
+      },
+      {
+        "nr": 62,
+        "name": {
+          "de": "Restkapazität",
+          "en": "Remaining capacity"
+        },
+        "quelle": "Anh. XIII 4 (b)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 63,
+        "name": {
+          "de": "Verbleibende Leistungsfähigkeit",
+          "en": "Remaining power capability"
+        },
+        "quelle": "Anh. XIII 4 (b)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 64,
+        "name": {
+          "de": "Verbleibender Energie-Wirkungsgrad",
+          "en": "Remaining round trip efficiency"
+        },
+        "quelle": "Anh. XIII 4 (b)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 65,
+        "name": {
+          "de": "Entwicklung der Selbstentladung",
+          "en": "Evolution of self-discharge rates"
+        },
+        "quelle": "Anh. XIII 4 (b)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 66,
+        "name": {
+          "de": "Ohmscher Widerstand",
+          "en": "Ohmic resistance"
+        },
+        "quelle": "Anh. XIII 4 (b)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 67,
+        "name": {
+          "de": "Status der Batterie",
+          "en": "Battery status"
+        },
+        "quelle": "Anh. XIII 4 (c)",
+        "stufe": "berechtigt",
+        "lmt": "pflicht"
+      },
+      {
+        "nr": 68,
+        "name": {
+          "de": "Anzahl der Lade- und Entladezyklen",
+          "en": "Number of charge and discharge cycles"
+        },
+        "quelle": "Anh. XIII 4 (d)",
+        "stufe": "berechtigt",
+        "lmt": "falls_zutreffend"
+      },
+      {
+        "nr": 69,
+        "name": {
+          "de": "Negative Ereignisse, z. B. Unfälle",
+          "en": "Negative events such as accidents"
+        },
+        "quelle": "Anh. XIII 4 (d)",
+        "stufe": "berechtigt",
+        "lmt": "falls_zutreffend"
+      },
+      {
+        "nr": 70,
+        "name": {
+          "de": "Betriebsbedingungen inkl. Temperatur",
+          "en": "Operating conditions incl. temperature"
+        },
+        "quelle": "Anh. XIII 4 (d)",
+        "stufe": "berechtigt",
+        "lmt": "falls_zutreffend"
+      },
+      {
+        "nr": 71,
+        "name": {
+          "de": "Ladezustand (periodisch erfasst)",
+          "en": "State of charge (periodically recorded)"
+        },
+        "quelle": "Anh. XIII 4 (d)",
+        "stufe": "berechtigt",
+        "lmt": "falls_zutreffend"
+      }
+    ],
+    "datenpunkte_quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#anx_XIII",
     "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#anx_XIII",
     "gliederung_quelle": "https://thebatterypass.eu/resources/"
   },
-
   "lieferkette": [
     {
       "id": "rohstoffe",
-      "rolle": { "de": "Rohstoffe", "en": "Raw materials" },
-      "beispiel": { "de": "Mine & Raffinerie", "en": "Mine & refinery" },
+      "rolle": {
+        "de": "Rohstoffe",
+        "en": "Raw materials"
+      },
+      "beispiel": {
+        "de": "Mine & Raffinerie",
+        "en": "Mine & refinery"
+      },
       "liefert": {
         "de": [
           "Herkunft der Rohstoffe",
@@ -505,7 +1358,10 @@
     },
     {
       "id": "material",
-      "rolle": { "de": "Aktivmaterial", "en": "Active material" },
+      "rolle": {
+        "de": "Aktivmaterial",
+        "en": "Active material"
+      },
       "beispiel": {
         "de": "Kathoden- und Anodenhersteller",
         "en": "Cathode and anode producers"
@@ -525,8 +1381,14 @@
     },
     {
       "id": "zelle",
-      "rolle": { "de": "Zellen", "en": "Cells" },
-      "beispiel": { "de": "Zellhersteller", "en": "Cell manufacturer" },
+      "rolle": {
+        "de": "Zellen",
+        "en": "Cells"
+      },
+      "beispiel": {
+        "de": "Zellhersteller",
+        "en": "Cell manufacturer"
+      },
       "liefert": {
         "de": [
           "Zellchemie und Leistungsdaten",
@@ -542,7 +1404,10 @@
     },
     {
       "id": "akku",
-      "rolle": { "de": "Akkuhersteller", "en": "Battery manufacturer" },
+      "rolle": {
+        "de": "Akkuhersteller",
+        "en": "Battery manufacturer"
+      },
       "beispiel": {
         "de": "Verantwortlich für den Pass",
         "en": "Responsible for the passport"
@@ -563,8 +1428,14 @@
     },
     {
       "id": "nutzung",
-      "rolle": { "de": "Nutzung", "en": "Use phase" },
-      "beispiel": { "de": "BMS im E-Bike", "en": "BMS in the e-bike" },
+      "rolle": {
+        "de": "Nutzung",
+        "en": "Use phase"
+      },
+      "beispiel": {
+        "de": "BMS im E-Bike",
+        "en": "BMS in the e-bike"
+      },
       "liefert": {
         "de": [
           "Alterungszustand (State of Health)",
@@ -597,7 +1468,6 @@
     }
   ],
   "lieferkette_quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#art_77",
-
   "quellen": [
     {
       "label": {

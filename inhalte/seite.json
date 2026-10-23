@@ -164,6 +164,18 @@
       "de": "Beispiel",
       "en": "Example"
     },
+    "szene_label": {
+      "de": "E-Bike mit vergrößertem Akku: Das Typenschild trägt den QR-Code zum Batteriepass.",
+      "en": "E-bike with magnified battery: the label carries the QR code to the battery passport."
+    },
+    "szene_schild": {
+      "de": "Typenschild am Akku",
+      "en": "Label on the battery"
+    },
+    "szene_scan": {
+      "de": "Scan → Batteriepass",
+      "en": "Scan → battery passport"
+    },
     "schritte_titel": {
       "de": "Das Prinzip in drei Schritten",
       "en": "The principle in three steps"
@@ -207,6 +219,40 @@
     "unklar": {
       "de": "Rechtslage prüfen",
       "en": "Check legal status"
+    },
+    "register_label": {
+      "de": "Bereiche des Batteriepasses",
+      "en": "Sections of the battery passport"
+    },
+    "teaser": {
+      "de": "weitere Datenpunkte in diesem Bereich",
+      "en": "more data points in this section"
+    },
+    "dp_einheit": {
+      "de": "Datenpunkte",
+      "en": "data points"
+    },
+    "dp_gesamt": {
+      "de": "Datenpunkte im Batteriepass",
+      "en": "Data points in the battery passport"
+    },
+    "dp_lmt": {
+      "de": "davon für E-Bike-Akkus relevant",
+      "en": "of which relevant for e-bike batteries"
+    },
+    "dp_beispiel": {
+      "de": "hier im Beispiel ausgefüllt",
+      "en": "filled in this example"
+    },
+    "dp_status": {
+      "spaeter": {
+        "de": "später",
+        "en": "later"
+      },
+      "entfaellt": {
+        "de": "entfällt",
+        "en": "n/a"
+      }
     },
     "scan_hinweis": {
       "de": "Gescannt über QR-Code",
