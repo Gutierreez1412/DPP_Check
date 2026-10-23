@@ -1,8 +1,18 @@
 {
-  "schwellen": { "gruen_max": 5, "gelb_max": 11 },
+  "schwellen": {
+    "gruen_max": 5,
+    "gelb_max": 11
+  },
+  "schwellen_je_frage": {
+    "gruen_max": 0,
+    "gelb_max": 1
+  },
   "stufen": {
     "gruen": {
-      "kurz": { "de": "Niedrig", "en": "Low" },
+      "kurz": {
+        "de": "Niedrig",
+        "en": "Low"
+      },
       "titel": {
         "de": "Niedriger Handlungsbedarf",
         "en": "Low need for action"
@@ -14,7 +24,10 @@
       "naechste_schritte": []
     },
     "gelb": {
-      "kurz": { "de": "Mittel", "en": "Medium" },
+      "kurz": {
+        "de": "Mittel",
+        "en": "Medium"
+      },
       "titel": {
         "de": "Mittlerer Handlungsbedarf",
         "en": "Medium need for action"
@@ -26,7 +39,10 @@
       "naechste_schritte": []
     },
     "rot": {
-      "kurz": { "de": "Hoch", "en": "High" },
+      "kurz": {
+        "de": "Hoch",
+        "en": "High"
+      },
       "titel": {
         "de": "Hoher Handlungsbedarf",
         "en": "High need for action"

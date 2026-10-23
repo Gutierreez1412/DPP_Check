@@ -1,0 +1,152 @@
+{
+  "rechtsgrundlage": {
+    "de": "Batterieverordnung (EU) 2023/1542",
+    "en": "Battery Regulation (EU) 2023/1542"
+  },
+  "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
+  "daten_intro": {
+    "de": "Auswahl; Umfang je nach Batteriekategorie.",
+    "en": "Selection; scope depends on the battery category."
+  },
+  "daten_aufwand": {
+    "gruen": {
+      "de": "Diese Angaben liegen bei Ihnen bereits vor.",
+      "en": "You already have this information."
+    },
+    "gelb": {
+      "de": "Für die meisten Produkte liegen sie vor, die Lücken sollten Sie gezielt schließen.",
+      "en": "It is available for most products; close the gaps in a targeted way."
+    },
+    "rot": {
+      "de": "Diese Angaben fehlen bei Ihnen weitgehend oder sind unklar und müssen erst beschafft werden.",
+      "en": "This information is largely missing or unclear and must first be obtained."
+    }
+  },
+  "fragen": {
+    "q1": {
+      "fakt": {
+        "de": "Jede Batterie braucht einen eigenen Pass mit Angaben zu ihrem Modell, der stets aktuell zu halten ist.",
+        "en": "Every battery needs its own passport with information on its model, which must be kept up to date."
+      },
+      "aufwand": {
+        "gruen": {
+          "de": "Bei wenigen Produkttypen bleibt der Datenumfang überschaubar.",
+          "en": "With few product types, the amount of data remains manageable."
+        },
+        "gelb": {
+          "de": "Bei Ihrer Zahl an Produkttypen entsteht ein spürbarer Datenumfang.",
+          "en": "With your number of product types, the amount of data is noticeable."
+        },
+        "rot": {
+          "de": "Bei Ihrer großen Zahl an Produkttypen ist der Umfang der zu erhebenden und zu pflegenden Daten hoch.",
+          "en": "With your large number of product types, the amount of data to collect and maintain is high."
+        }
+      },
+      "bezug": {
+        "de": "Art. 77 Abs. 1, 2 und 4",
+        "en": "Art. 77(1), (2) and (4)"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    "q2": {
+      "fakt": {
+        "de": "Ab 40 Mio. € Nettoumsatz (auch im Konzern) müssen Sie zudem die Lieferkette für Kobalt, natürlichen Grafit, Lithium und Nickel rückverfolgen können.",
+        "en": "From €40m net turnover (including at group level), you must also be able to trace the supply chain for cobalt, natural graphite, lithium and nickel."
+      },
+      "aufwand": {
+        "gruen": {
+          "de": "Bei wenigen Lieferanten bleiben Datenanfragen und Abstimmungen überschaubar.",
+          "en": "With few suppliers, data requests and coordination remain manageable."
+        },
+        "gelb": {
+          "de": "Bei Ihrer Zahl an Lieferanten sind einige Datenanfragen und Abstimmungen nötig.",
+          "en": "With your number of suppliers, a fair number of data requests and coordination is needed."
+        },
+        "rot": {
+          "de": "Bei Ihrer großen Zahl an Lieferanten sind viele Datenanfragen und Abstimmungen nötig.",
+          "en": "With your large number of suppliers, many data requests and a lot of coordination are needed."
+        }
+      },
+      "aufwand_zuerst": true,
+      "bezug": {
+        "de": "Art. 47 und 49, Anhang X",
+        "en": "Art. 47 and 49, Annex X"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    "q7": {
+      "fakt": {
+        "de": "Ab dem 18. Februar 2027 brauchen LMT-, Fahrzeug- und Industriebatterien über 2 kWh einen Batteriepass.",
+        "en": "From 18 February 2027, LMT, EV and industrial batteries over 2 kWh need a battery passport."
+      },
+      "aufwand": {
+        "gruen": {
+          "de": "Mit laufendem Pilot oder laufender Datenerhebung sind Sie auf einem guten Weg.",
+          "en": "With a pilot or data collection under way, you are on a good path."
+        },
+        "gelb": {
+          "de": "Die Frist ist nah; mit benanntem Projekt sollte die Datenerhebung jetzt starten.",
+          "en": "The deadline is close; with a project in place, data collection should start now."
+        },
+        "rot": {
+          "de": "Die Frist ist nah und der Aufbau steht noch aus, deshalb besteht hier dringender Handlungsbedarf.",
+          "en": "The deadline is close and set-up has not started yet, so action is urgently needed here."
+        }
+      },
+      "bezug": { "de": "Art. 77 Abs. 1", "en": "Art. 77(1)" },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    "q3": {
+      "fakt": {
+        "de": "Der Pass muss Zusammensetzung und kritische Rohstoffe angeben, für Berechtigte auch die Materialien von Kathode, Anode und Elektrolyt.",
+        "en": "The passport must state composition and critical raw materials; for persons with a legitimate interest also the materials of cathode, anode and electrolyte."
+      },
+      "bezug": {
+        "de": "Anhang XIII Nr. 1 b und 2 a",
+        "en": "Annex XIII(1)(b) and (2)(a)"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    "q4": {
+      "fakt": {
+        "de": "Der Pass muss die enthaltenen gefährlichen Stoffe nennen (außer Quecksilber, Cadmium oder Blei).",
+        "en": "The passport must state the hazardous substances contained (other than mercury, cadmium or lead)."
+      },
+      "bezug": { "de": "Anhang XIII Nr. 1 b", "en": "Annex XIII(1)(b)" },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    "q5": {
+      "fakt": {
+        "de": "Der Pass muss den CO₂-Fußabdruck je Batteriemodell und Werk enthalten.",
+        "en": "The passport must contain the carbon footprint per battery model and plant."
+      },
+      "bezug": {
+        "de": "Art. 7 Abs. 1, Anhang XIII Nr. 1 c",
+        "en": "Art. 7(1), Annex XIII(1)(c)"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    "q6": {
+      "fakt": {
+        "de": "Der Pass muss den Anteil recycelten Kobalts, Bleis, Lithiums und Nickels je Modell, Jahr und Werk ausweisen.",
+        "en": "The passport must show the share of recycled cobalt, lead, lithium and nickel per model, year and plant."
+      },
+      "bezug": {
+        "de": "Art. 8 Abs. 1, Anhang XIII Nr. 1 e",
+        "en": "Art. 8(1), Annex XIII(1)(e)"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    "q8": {
+      "fakt": {
+        "de": "Der Pass muss für Reparatur- und Recyclingbetriebe Zerlegungs- und Sicherheitsinformationen enthalten.",
+        "en": "The passport must contain dismantling and safety information for repairers and recyclers."
+      },
+      "bezug": {
+        "de": "Art. 77 Abs. 2, Anhang XIII Nr. 2 c–d",
+        "en": "Art. 77(2), Annex XIII(2)(c)–(d)"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    }
+  }
+}

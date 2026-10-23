@@ -39,10 +39,42 @@ const segmente = stufenIds.map((id, i) => {
   };
 });
 
+// Begründungen je Frage: ein Fakt aus der Rechtsgrundlage der Produktgruppe
+// plus ein Satz zum Aufwand je Stufe (bei Datenfragen meist gemeinsam über
+// "daten_aufwand"). Fehlt die Datei für eine Gruppe, erscheinen nur Stufe und
+// Antwort.
+type Text = Record<"de" | "en", string>;
+type AufwandJeStufe = Record<"gruen" | "gelb" | "rot", Text>;
+interface Begruendungen {
+  rechtsgrundlage: Text;
+  quelle: string;
+  daten_intro?: Text;
+  daten_aufwand?: AufwandJeStufe;
+  fragen: Record<
+    string,
+    {
+      fakt: Text;
+      aufwand?: AufwandJeStufe;
+      aufwand_zuerst?: boolean;
+      bezug: Text;
+      quelle: string;
+    }
+  >;
+}
+const begruendungsDateien = import.meta.glob<Begruendungen>(
+  "../../inhalte/gruppen/*/begruendungen.json",
+  { eager: true, import: "default" },
+);
+const begruendungen = Object.entries(begruendungsDateien).find(([pfad]) =>
+  pfad.includes(`/gruppen/${gruppe.id}/`),
+)?.[1];
+
 const texteFuerClient = {
   gruppeId: gruppe.id,
   gruppenName: t(gruppe.name),
   schwellen: ampel.schwellen,
+  schwellenJeFrage: ampel.schwellen_je_frage,
+  ihreAntwort: t(e.ihre_antwort),
   stufen: Object.fromEntries(
     stufenIds.map((id) => [
       id,
@@ -53,14 +85,33 @@ const texteFuerClient = {
       },
     ]),
   ),
-  fragen: fragenDaten.fragen.map((f) => ({
-    text: t(f.text),
-    antworten: f.antworten.map((a) => ({
-      id: a.id,
-      text: t(a.text),
-      score: a.score,
-    })),
-  })),
+  fragen: fragenDaten.fragen.map((f) => {
+    const b = begruendungen?.fragen[f.id];
+    const aufwand =
+      b?.aufwand ??
+      (f.bereich === "daten" ? begruendungen?.daten_aufwand : undefined);
+    return {
+      text: t(f.text),
+      bereich: f.bereich,
+      kategorie: t(f.kategorie),
+      begruendung: b
+        ? {
+            fakt: t(b.fakt),
+            aufwand: aufwand
+              ? Object.fromEntries(stufenIds.map((id) => [id, t(aufwand[id])]))
+              : null,
+            aufwandZuerst: b.aufwand_zuerst ?? false,
+            bezug: t(b.bezug),
+            quelle: b.quelle,
+          }
+        : null,
+      antworten: f.antworten.map((a) => ({
+        id: a.id,
+        text: t(a.text),
+        score: a.score,
+      })),
+    };
+  }),
   mail: {
     titel: t(e.mail_titel),
     einstufung: t(e.mail_einstufung),
@@ -77,54 +128,89 @@ const texteFuerClient = {
   </div>
 
   <div class="ergebnis-karte" id="ergebnis-karte" hidden>
-    <p class="ergebnis-karte__eyebrow">
-      {t(e.eyebrow)} · {t(gruppe.name)}
-    </p>
+    <div class="ergebnis-karte__haupt">
+      <p class="ergebnis-karte__eyebrow">
+        {t(e.eyebrow)}
+      </p>
 
-    <div class="tacho">
-      <svg viewBox="0 0 240 132" aria-hidden="true" focusable="false">
-        <path
-          class="tacho__spur"
-          d={`M ${punkt(180)} A ${radius} ${radius} 0 0 1 ${punkt(0)}`}></path>
-        {
-          segmente.map((s, i) => (
-            <path
-              class={`tacho__segment tacho__segment--${s.id}`}
-              d={s.pfad}
-              pathLength="100"
-              style={`--i:${i}`}
-            />
-          ))
-        }
-        <g class="tacho__zeiger" id="tacho-zeiger">
-          <line x1={mx} y1={my} x2={mx} y2={my - radius + 18}></line>
-          <circle cx={mx} cy={my} r="7"></circle>
-        </g>
-      </svg>
-      <div class="tacho__mitte">
-        <span class="tacho__label">{t(e.skala_label)}</span>
-        <strong class="tacho__stufe" id="tacho-stufe"></strong>
+      <div class="tacho">
+        <svg viewBox="0 0 240 132" aria-hidden="true" focusable="false">
+          <path
+            class="tacho__spur"
+            d={`M ${punkt(180)} A ${radius} ${radius} 0 0 1 ${punkt(0)}`}
+          ></path>
+          {
+            segmente.map((s, i) => (
+              <path
+                class={`tacho__segment tacho__segment--${s.id}`}
+                d={s.pfad}
+                pathLength="100"
+                style={`--i:${i}`}
+              />
+            ))
+          }
+          <g class="tacho__zeiger" id="tacho-zeiger">
+            <line x1={mx} y1={my} x2={mx} y2={my - radius + 18}></line>
+            <circle cx={mx} cy={my} r="7"></circle>
+          </g>
+        </svg>
+        <div class="tacho__mitte">
+          <span class="tacho__label">{t(e.skala_label)}</span>
+          <strong class="tacho__stufe" id="tacho-stufe"></strong>
+        </div>
+        <ol class="tacho__legende" aria-hidden="true">
+          {
+            stufenIds.map((id) => (
+              <li data-id={id}>{t(ampel.stufen[id].kurz)}</li>
+            ))
+          }
+        </ol>
       </div>
-      <ol class="tacho__legende" aria-hidden="true">
-        {
-          stufenIds.map((id) => (
-            <li data-id={id}>{t(ampel.stufen[id].kurz)}</li>
-          ))
-        }
-      </ol>
+
+      <h1 class="ergebnis-karte__titel" id="ergebnis-titel"></h1>
+      <p class="ergebnis-karte__text" id="ergebnis-text"></p>
+
+      <div class="ergebnis-karte__aktionen">
+        <a class="button button--hell" href="#beratung"
+          >{t(e.beratung_button)}</a
+        >
+        <a
+          class="ergebnis-karte__link"
+          id="ergebnis-aendern"
+          href={`/${lang}/check/${gruppe.id}/`}>{t(e.antworten_aendern)}</a
+        >
+      </div>
     </div>
 
-    <h1 class="ergebnis-karte__titel" id="ergebnis-titel"></h1>
-    <p class="ergebnis-karte__text" id="ergebnis-text"></p>
+    <aside class="begruendung" aria-labelledby="begruendung-titel">
+      <h2 class="begruendung__titel" id="begruendung-titel">
+        {t(e.begruendung_titel)}
+      </h2>
+      {
+        begruendungen && (
+          <p class="begruendung__intro">
+            {t(e.begruendung_bezug)}{" "}
+            <a href={begruendungen.quelle} target="_blank" rel="noopener">
+              {t(begruendungen.rechtsgrundlage)}
+            </a>
+            .
+          </p>
+        )
+      }
 
-    <div class="ergebnis-karte__aktionen">
-      <a class="button button--hell" href="#beratung">{t(e.beratung_button)}</a>
-      <a
-        class="ergebnis-karte__link"
-        id="ergebnis-aendern"
-        href={`/${lang}/check/${gruppe.id}/`}>{t(e.antworten_aendern)}</a
-      >
-    </div>
+      <section class="begruendung__block">
+        <h3 class="begruendung__blocktitel">{t(e.rahmen_titel)}</h3>
+        <ol class="begruendung__liste" id="begruendung-rahmen"></ol>
+      </section>
+
+      <section class="begruendung__block">
+        <h3 class="begruendung__blocktitel">{t(e.daten_titel)}</h3>
+        <p class="begruendung__blockintro">
+          {t(begruendungen?.daten_intro ?? e.daten_intro)}
+        </p>
+        <ol class="begruendung__liste" id="begruendung-daten"></ol>
+      </section>
+    </aside>
 
     {
       hatPilot && (
@@ -134,11 +220,28 @@ const texteFuerClient = {
           href={`/${lang}/pilot/${gruppe.id}/`}
         >
           <span class="ergebnis-karte__pilot-qr" aria-hidden="true" />
-          {t(e.pilot_link)}
-          <span aria-hidden="true">→</span>
+          <span class="ergebnis-karte__pilot-text">{t(e.pilot_link)}</span>
+          <span class="ergebnis-karte__pilot-pfeil" aria-hidden="true">
+            →
+          </span>
         </a>
       )
     }
+
+    <template id="begruendung-vorlage">
+      <li class="begruendung__punkt">
+        <details>
+          <summary class="begruendung__kopf">
+            <span class="begruendung__kategorie"></span>
+            <span class="begruendung__stufe"></span>
+          </summary>
+          <p class="begruendung__warum">
+            <span></span>
+            <a target="_blank" rel="noopener"></a>
+          </p>
+        </details>
+      </li>
+    </template>
   </div>
 
   <p class="ergebnis__hinweis">{t(ampel.hinweis)}</p>
@@ -164,7 +267,78 @@ const texteFuerClient = {
   }
   interface Frage {
     text: string;
+    bereich: "rahmen" | "daten";
+    kategorie: string;
+    begruendung: {
+      fakt: string;
+      aufwand: Record<string, string> | null;
+      aufwandZuerst: boolean;
+      bezug: string;
+      quelle: string;
+    } | null;
     antworten: Antwort[];
+  }
+
+  // Ampelstufe einer einzelnen Antwort (Schwellen aus ampel.json).
+  function stufeFuer(
+    score: number,
+    s: { gruen_max: number; gelb_max: number },
+  ) {
+    return score <= s.gruen_max
+      ? "gruen"
+      : score <= s.gelb_max
+        ? "gelb"
+        : "rot";
+  }
+
+  // Begründungen in zwei Blöcken (Rahmenbedingungen, Produktdaten), innerhalb
+  // eines Blocks höchster Handlungsbedarf zuerst.
+  function fuelleBegruendungen(
+    texte: any,
+    fragen: Frage[],
+    antworten: Antwort[],
+  ) {
+    const vorlage = document.getElementById("begruendung-vorlage");
+    if (!(vorlage instanceof HTMLTemplateElement)) return;
+
+    const reihenfolge = fragen
+      .map((f, i) => ({ frage: f, antwort: antworten[i] }))
+      .sort((a, b) => b.antwort.score - a.antwort.score);
+
+    reihenfolge.forEach(({ frage, antwort }, j) => {
+      const liste = document.getElementById(`begruendung-${frage.bereich}`);
+      if (!liste) return;
+      const el = vorlage.content.firstElementChild!.cloneNode(
+        true,
+      ) as HTMLElement;
+      const stufeId = stufeFuer(antwort.score, texte.schwellenJeFrage);
+      const feld = (klasse: string) =>
+        el.querySelector(`.begruendung__${klasse}`) as HTMLElement;
+
+      el.dataset.stufe = stufeId;
+      el.style.setProperty("--j", String(j));
+      feld("kategorie").textContent = frage.kategorie;
+      feld("stufe").textContent = texte.stufen[stufeId].kurz;
+
+      // Ein Absatz: Fakt aus der Verordnung und was er bei dieser Antwort für den
+      // Aufwand bedeutet, am Ende klein der Artikel. Ohne Begründungsdatei steht
+      // dort nur die gewählte Antwort.
+      const text = feld("warum").querySelector("span")!;
+      const link = feld("warum").querySelector("a")!;
+      if (frage.begruendung) {
+        const { fakt, aufwand, aufwandZuerst, bezug, quelle } =
+          frage.begruendung;
+        const saetze = [fakt, aufwand?.[stufeId] ?? ""];
+        if (aufwandZuerst) saetze.reverse();
+        text.textContent = `${saetze.join(" ").trim()} `;
+        link.href = quelle;
+        link.textContent = bezug;
+      } else {
+        text.textContent = `${texte.ihreAntwort}: ${antwort.text}`;
+        link.remove();
+      }
+      liste.append(el);
+    });
   }
 
   function initErgebnis() {
@@ -196,13 +370,9 @@ const texteFuerClient = {
       (s, f) => s + Math.max(...f.antworten.map((a) => a.score)),
       0,
     );
-    const stufeId =
-      summe <= texte.schwellen.gruen_max
-        ? "gruen"
-        : summe <= texte.schwellen.gelb_max
-          ? "gelb"
-          : "rot";
+    const stufeId = stufeFuer(summe, texte.schwellen);
     const stufe = texte.stufen[stufeId];
+    fuelleBegruendungen(texte, fragen, antworten);
 
     karte.dataset.stufe = stufeId;
     document.getElementById("tacho-stufe")!.textContent = stufe.kurz;
@@ -237,6 +407,14 @@ const texteFuerClient = {
       karte.classList.add("ist-sichtbar");
       if (zeiger) zeiger.style.transform = `rotate(${winkel}deg)`;
     });
+
+    // Danach rückt das Ergebnis nach links und die Begründungen erscheinen
+    // rechts (auf schmalen Bildschirmen darunter).
+    const ruhig = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.setTimeout(
+      () => karte.classList.add("ist-aufgeteilt"),
+      ruhig ? 0 : 3000,
+    );
   }
 
   initErgebnis();
