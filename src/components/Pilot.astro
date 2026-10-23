@@ -232,6 +232,17 @@ const versatz: Record<string, number> = {
             <span class="pilot-mono pilot-schritte__nr">0{i + 1}</span>
             <h3>{t(s.titel)}</h3>
             <p>{t(s.text)}</p>
+            {"zugriffsstufen_zeigen" in s && s.zugriffsstufen_zeigen && (
+              <ul class="pilot-schritte__stufen">
+                {stufen.map((st) => (
+                  <li
+                    class={`stufe-chip stufe-chip--hell stufe-chip--${st.id}`}
+                  >
+                    {t(st.name)}
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
         ))
       }

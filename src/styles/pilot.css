@@ -237,6 +237,35 @@ main.breit {
   color: var(--farbe-text-schwach);
 }
 
+.pilot-schritte__stufen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Chips sind selbst <li> in der Schritt-Karte: Karten-Stil zurücksetzen */
+.pilot-schritte__stufen .stufe-chip {
+  padding: 0.1rem 0.55rem;
+  background: none;
+  border: 1px solid currentColor;
+  border-radius: 99px;
+  font-size: 0.72rem;
+}
+
+/* Stufen-Chips auf hellem Grund: dunklere Töne für ausreichenden Kontrast */
+.stufe-chip--hell.stufe-chip--oeffentlich {
+  color: #2e7d46;
+}
+.stufe-chip--hell.stufe-chip--berechtigt {
+  color: #8a6400;
+}
+.stufe-chip--hell.stufe-chip--behoerden {
+  color: #5a4bc4;
+}
+
 /* ---------- Konsole (dunkle Abschnitte) ---------- */
 
 .pilot-konsole {
