@@ -2,8 +2,8 @@
   "id": "batterien",
   "name": { "de": "Batterien", "en": "Batteries" },
   "definition": {
-    "de": "Die EU-Batterieverordnung (EU) 2023/1542 gilt für alle Batterien, die in der EU in Verkehr gebracht werden: Gerätebatterien (z. B. in Haushaltsgeräten), Batterien für Leichtverkehrsmittel (LMT, z. B. E-Bikes und E-Scooter), Fahrzeugbatterien (EV-Batterien), Industriebatterien und Starterbatterien (SLI). Sie ersetzt die bisherige Batterie-Richtlinie 2006/66/EG.",
-    "en": "The EU Battery Regulation (EU) 2023/1542 applies to all batteries placed on the EU market: portable batteries (e.g. in household appliances), batteries for light means of transport (LMT, e.g. e-bikes and e-scooters), electric vehicle (EV) batteries, industrial batteries and starter batteries (SLI). It replaces the previous Battery Directive 2006/66/EC."
+    "de": "Für Batterien gibt es eine eigene EU-Verordnung: die Batterieverordnung (EU) 2023/1542. Sie gilt seit Februar 2024 direkt in allen EU-Ländern und hat die frühere Batterie-Richtlinie abgelöst. Der digitale Produktpass kommt hier also nicht über die Ökodesign-Verordnung (ESPR), sondern ist direkt in der Batterieverordnung geregelt, als Batteriepass. Erfasst sind alle Batterien, die in der EU auf den Markt kommen, auch eingebaute: von Gerätebatterien über E-Bike- und Autobatterien bis zu Industrie- und Starterbatterien.",
+    "en": "Batteries have their own EU regulation: the Battery Regulation (EU) 2023/1542. It has applied directly in all EU countries since February 2024 and replaced the former Battery Directive. The digital product passport therefore does not come via the Ecodesign Regulation (ESPR) here, but is set out directly in the Battery Regulation, as the battery passport. It covers all batteries placed on the EU market, including built-in ones: from portable batteries to e-bike and car batteries, industrial and starter batteries."
   },
   "definition_quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
 
