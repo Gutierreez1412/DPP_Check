@@ -129,6 +129,30 @@
     "pilot_link": {
       "de": "Beispiel: So sieht ein digitaler Produktpass aus",
       "en": "Example: what a digital product passport looks like"
+    },
+    "begruendung_titel": {
+      "de": "Woher Ihr Handlungsbedarf kommt",
+      "en": "Where your need for action comes from"
+    },
+    "begruendung_bezug": {
+      "de": "Bezogen auf die Anforderungen der",
+      "en": "Based on the requirements of the"
+    },
+    "rahmen_titel": {
+      "de": "Rahmenbedingungen",
+      "en": "Framework conditions"
+    },
+    "daten_titel": {
+      "de": "Pflichtangaben im Pass",
+      "en": "Mandatory passport information"
+    },
+    "daten_intro": {
+      "de": "Auswahl, Umfang je nach Produktkategorie.",
+      "en": "Selection; scope depends on the product category."
+    },
+    "ihre_antwort": {
+      "de": "Ihre Antwort",
+      "en": "Your answer"
     }
   },
   "platzhalter_pilot": {

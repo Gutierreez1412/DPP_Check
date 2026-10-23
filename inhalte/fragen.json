@@ -4,46 +4,99 @@
   "fragen": [
     {
       "id": "q1",
-      "kategorie": { "de": "Produktportfolio", "en": "Product portfolio" },
+      "bereich": "rahmen",
+      "kategorie": {
+        "de": "Produktportfolio",
+        "en": "Product portfolio"
+      },
       "text": {
         "de": "Wie viele verschiedene Produkttypen (Artikel- oder Modellnummern) bieten Sie an?",
         "en": "How many different product types (item or model numbers) do you offer?"
       },
       "antworten": [
-        { "id": "a", "text": { "de": "Bis 10", "en": "Up to 10" }, "score": 0 },
-        { "id": "b", "text": { "de": "11–100", "en": "11–100" }, "score": 1 },
+        {
+          "id": "a",
+          "text": {
+            "de": "Bis 10",
+            "en": "Up to 10"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "de": "11–100",
+            "en": "11–100"
+          },
+          "score": 1
+        },
         {
           "id": "c",
-          "text": { "de": "101–1.000", "en": "101–1,000" },
+          "text": {
+            "de": "101–1.000",
+            "en": "101–1,000"
+          },
           "score": 2
         },
         {
           "id": "d",
-          "text": { "de": "Über 1.000", "en": "More than 1,000" },
+          "text": {
+            "de": "Über 1.000",
+            "en": "More than 1,000"
+          },
           "score": 3
         }
       ]
     },
     {
       "id": "q2",
-      "kategorie": { "de": "Lieferkette", "en": "Supply chain" },
+      "bereich": "rahmen",
+      "kategorie": {
+        "de": "Lieferkette",
+        "en": "Supply chain"
+      },
       "text": {
         "de": "Bei wie vielen Lieferanten müssten Sie Material-, Stoff- oder Bauteildaten für Ihre Produkte anfragen?",
         "en": "From how many suppliers would you need to request material, substance or component data for your products?"
       },
       "antworten": [
-        { "id": "a", "text": { "de": "Bis 10", "en": "Up to 10" }, "score": 0 },
-        { "id": "b", "text": { "de": "11–50", "en": "11–50" }, "score": 1 },
-        { "id": "c", "text": { "de": "51–200", "en": "51–200" }, "score": 2 },
+        {
+          "id": "a",
+          "text": {
+            "de": "Bis 10",
+            "en": "Up to 10"
+          },
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": {
+            "de": "11–50",
+            "en": "11–50"
+          },
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": {
+            "de": "51–200",
+            "en": "51–200"
+          },
+          "score": 2
+        },
         {
           "id": "d",
-          "text": { "de": "Über 200", "en": "More than 200" },
+          "text": {
+            "de": "Über 200",
+            "en": "More than 200"
+          },
           "score": 3
         }
       ]
     },
     {
       "id": "q3",
+      "bereich": "daten",
       "kategorie": {
         "de": "Material und Bauteile",
         "en": "Materials and components"
@@ -79,13 +132,17 @@
         },
         {
           "id": "d",
-          "text": { "de": "Nein oder weiß nicht", "en": "No or don't know" },
+          "text": {
+            "de": "Nein oder weiß nicht",
+            "en": "No or don't know"
+          },
           "score": 3
         }
       ]
     },
     {
       "id": "q4",
+      "bereich": "daten",
       "kategorie": {
         "de": "Stoffe und Chemikalien",
         "en": "Substances and chemicals"
@@ -121,13 +178,17 @@
         },
         {
           "id": "d",
-          "text": { "de": "Nein oder weiß nicht", "en": "No or don't know" },
+          "text": {
+            "de": "Nein oder weiß nicht",
+            "en": "No or don't know"
+          },
           "score": 3
         }
       ]
     },
     {
       "id": "q5",
+      "bereich": "daten",
       "kategorie": {
         "de": "CO₂-Fußabdruck und Umweltdaten",
         "en": "Carbon footprint and environmental data"
@@ -163,14 +224,21 @@
         },
         {
           "id": "d",
-          "text": { "de": "Nein oder weiß nicht", "en": "No or don't know" },
+          "text": {
+            "de": "Nein oder weiß nicht",
+            "en": "No or don't know"
+          },
           "score": 3
         }
       ]
     },
     {
       "id": "q6",
-      "kategorie": { "de": "Recyclatanteil", "en": "Recycled content" },
+      "bereich": "daten",
+      "kategorie": {
+        "de": "Recyclatanteil",
+        "en": "Recycled content"
+      },
       "text": {
         "de": "Können Sie für Ihre Produkte den Anteil recycelten Materials angeben?",
         "en": "Can you state the share of recycled material in your products?"
@@ -202,13 +270,17 @@
         },
         {
           "id": "d",
-          "text": { "de": "Nein oder weiß nicht", "en": "No or don't know" },
+          "text": {
+            "de": "Nein oder weiß nicht",
+            "en": "No or don't know"
+          },
           "score": 3
         }
       ]
     },
     {
       "id": "q8",
+      "bereich": "daten",
       "kategorie": {
         "de": "End-of-Life (Demontage und Entsorgung)",
         "en": "End of life (disassembly and disposal)"
@@ -244,14 +316,21 @@
         },
         {
           "id": "d",
-          "text": { "de": "Nein oder weiß nicht", "en": "No or don't know" },
+          "text": {
+            "de": "Nein oder weiß nicht",
+            "en": "No or don't know"
+          },
           "score": 3
         }
       ]
     },
     {
       "id": "q7",
-      "kategorie": { "de": "Startpunkt", "en": "Starting point" },
+      "bereich": "rahmen",
+      "kategorie": {
+        "de": "Startpunkt",
+        "en": "Starting point"
+      },
       "text": {
         "de": "Wie weit sind Sie mit dem Digitalen Produktpass bereits?",
         "en": "How far along are you with the Digital Product Passport?"

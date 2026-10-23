@@ -82,7 +82,17 @@ in den normalen Ablauf, kein Abbruch/Sackgasse mehr.)
   - **Kontaktformular** (im Prototyp nur Attrappe, ohne Versand). Beim Absenden sollen
     Produktgruppe, alle Antworten, Gesamtscore und Ampelfarbe als Felder mitgehen.
   - Link zum DPP-Pilot (Ebene 4)
-- Der Gesamtscore und die Aufwandstreiber werden **nicht** angezeigt.
+- Der Gesamtscore und die Punkte je Frage werden **nicht** angezeigt.
+- Nach der Tacho-Animation rückt das Ergebnis nach links, rechts erscheint pro Frage eine
+  **Begründung** in zwei Blöcken (Feld `bereich` in `fragen.json`): „Rahmenbedingungen“
+  (Portfolio, Lieferkette, Startpunkt) und „Produktdaten“ (Auswahl an Datenpunkten). Je
+  Frage: Stufe (Niedrig/Mittel/Hoch, Schwellen `schwellen_je_frage` in `ampel.json`), ein
+  Fakt zur Anforderung (`fakt`, ausschließlich aus der Rechtsgrundlage der
+  Produktgruppe) und ein Satz, was das bei dieser Stufe für den Aufwand bedeutet
+  (`aufwand` je Frage bzw. `daten_aufwand` für alle Datenfragen), als ein Absatz mit
+  Artikel und Quelle am Ende. Zugeklappt sind nur Kategorie und Stufe sichtbar, die
+  Begründung öffnet sich per Klick
+  (`inhalte/gruppen/<id>/begruendungen.json`).
 - Mehrere Produktgruppen: Check läuft pro Gruppe separat.
 
 ### Ebene 4: DPP-Pilot (`/pilot/<id>`)
