@@ -1116,7 +1116,8 @@ h2 {
 .ergebnis-karte {
   --akzent: var(--tacho-gelb);
   position: relative;
-  overflow: hidden;
+  /* clip statt hidden, damit die linke Spalte "sticky" bleiben kann */
+  overflow: clip;
   isolation: isolate;
   text-align: center;
   padding: clamp(2rem, 5vw, 3rem) clamp(1.25rem, 4vw, 3rem)
@@ -1158,7 +1159,9 @@ h2 {
   background: radial-gradient(closest-side, var(--akzent), transparent);
   opacity: 0;
   filter: blur(20px);
-  transition: opacity 1.2s ease 1.5s;
+  transition:
+    opacity 1.2s ease 1.5s,
+    left 0.9s cubic-bezier(0.65, 0, 0.35, 1);
   pointer-events: none;
 }
 
@@ -1375,22 +1378,23 @@ h2 {
 }
 
 /* Überleitung zum DPP-Pilot (Ebene 4) */
+/* Pilot-Link: Fußzeile der Karte unter einer feinen Linie, zentriert */
 .ergebnis-karte__pilot {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.65rem;
-  margin-top: 2rem;
-  padding: 0.6rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 99px;
-  color: #fff;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 0.9rem;
+  line-height: 1.35;
   text-decoration: none;
   opacity: 0;
   transition:
     opacity 0.6s ease 2.6s,
-    border-color 0.2s ease,
-    background-color 0.2s ease;
+    color 0.2s ease;
 }
 
 .ist-sichtbar .ergebnis-karte__pilot {
@@ -1398,8 +1402,7 @@ h2 {
 }
 
 .ergebnis-karte__pilot:hover {
-  border-color: rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
 }
 
 .ergebnis-karte__pilot-qr {
@@ -1412,6 +1415,23 @@ h2 {
   outline: 2px solid #fff;
   outline-offset: 1px;
   opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.ergebnis-karte__pilot-text {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+  text-wrap: balance;
+}
+
+.ergebnis-karte__pilot-pfeil {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.ergebnis-karte__pilot:hover .ergebnis-karte__pilot-pfeil {
+  transform: translateX(3px);
 }
 
 .ergebnis-karte :focus-visible {
@@ -1431,6 +1451,221 @@ h2 {
 
 .ergebnis__fehlt p {
   margin: 0;
+}
+
+/*
+  Begründungen: Nach dem Einschwingen (Klasse .ist-aufgeteilt) rückt das
+  Ergebnis in die linke Spalte, rechts erscheinen die Begründungen je Frage.
+  Unter 900px stehen sie unter dem Ergebnis.
+*/
+
+.begruendung {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.5s ease 0.55s,
+    visibility 0s linear 0.55s;
+}
+
+.ist-aufgeteilt .begruendung {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Vor dem Aufteilen nimmt die Spalte keine Höhe ein */
+.ergebnis-karte:not(.ist-aufgeteilt) .begruendung {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+
+.begruendung__titel {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.6vw, 1.5rem);
+  color: #fff;
+}
+
+.begruendung__intro {
+  max-width: 60ch;
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.begruendung a {
+  color: #fff;
+  text-underline-offset: 2px;
+}
+
+.begruendung__block {
+  margin-top: 1.5rem;
+}
+
+.begruendung__blocktitel {
+  margin: 0;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.begruendung__blockintro {
+  margin: 0.25rem 0 0;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.begruendung__liste {
+  margin: 0.6rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Pro Frage eine Zeile, aufklappbar */
+.begruendung__punkt {
+  --farbe: var(--tacho-gelb);
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.45s ease calc(0.7s + var(--j) * 0.06s),
+    transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) calc(0.7s + var(--j) * 0.06s);
+}
+
+.begruendung__punkt[data-stufe="gruen"] {
+  --farbe: var(--tacho-gruen);
+}
+
+.begruendung__punkt[data-stufe="rot"] {
+  --farbe: var(--tacho-rot);
+}
+
+.ist-aufgeteilt .begruendung__punkt {
+  opacity: 1;
+  transform: none;
+}
+
+/* Zugeklappt: Kategorie und Stufe, ein Klick zeigt die Begründung */
+.begruendung__kopf {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.begruendung__kopf::-webkit-details-marker {
+  display: none;
+}
+
+.begruendung__kopf::after {
+  content: "";
+  flex-shrink: 0;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin: 0 0.2rem 0.2rem 0;
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+details[open] > .begruendung__kopf::after {
+  margin: 0.2rem 0.2rem 0 0;
+  transform: rotate(-135deg);
+}
+
+.begruendung__kopf:hover .begruendung__kategorie {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.begruendung__kategorie {
+  flex: 1;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.begruendung__stufe {
+  flex-shrink: 0;
+  padding: 0.05rem 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--farbe) 60%, transparent);
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--farbe) 14%, transparent);
+  color: var(--farbe);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.begruendung__warum {
+  margin: 0.45rem 0 0.1rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.begruendung__warum a {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+}
+
+@media (min-width: 900px) {
+  /* Karte darf breiter werden als die Textspalte der Seite */
+  .ergebnis-karte {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0fr);
+    align-items: start;
+    width: min(1120px, calc(100vw - 2rem));
+    margin-inline: calc(50% - min(560px, 50vw - 1rem));
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease,
+      grid-template-columns 0.9s cubic-bezier(0.65, 0, 0.35, 1),
+      column-gap 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  .ergebnis-karte[hidden] {
+    display: none;
+  }
+
+  .ergebnis-karte.ist-aufgeteilt {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    column-gap: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .ergebnis-karte.ist-aufgeteilt::before {
+    left: 20%;
+  }
+
+  /* Pilot-Link als Fußzeile über beide Spalten */
+  .ergebnis-karte__pilot {
+    grid-column: 1 / -1;
+    margin-top: 2.25rem;
+  }
+
+  .ergebnis-karte__haupt {
+    position: sticky;
+    top: 1.5rem;
+  }
+
+  .begruendung {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
