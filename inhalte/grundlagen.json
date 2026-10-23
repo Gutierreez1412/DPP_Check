@@ -10,46 +10,30 @@
         "en": "What is the ESPR?"
       },
       "kern": {
-        "de": "In Kraft seit 18.07.2024",
-        "en": "In force since 18 July 2024"
+        "de": "In Kraft seit 07/2024",
+        "en": "In force since 07/2024"
       },
       "text": {
-        "de": "Die EU-Verordnung 2024/1781 legt Ökodesign-Anforderungen für Produkte fest. Was konkret für welche Produktgruppe gilt, folgt nach und nach in eigenen Rechtsakten.",
-        "en": "Regulation (EU) 2024/1781 sets ecodesign requirements for products. What applies to which product group follows step by step in separate delegated acts."
+        "de": "Die Ökodesign-Verordnung (EU) 2024/1781 ist der Rahmen für den DPP. Was für welche Produktgruppe gilt, regeln eigene Rechtsakte. Manche Gruppen haben eigene Verordnungen mit DPP-Vorgaben, z. B. Batterien, Bauprodukte und Spielzeug.",
+        "en": "The Ecodesign Regulation (EU) 2024/1781 is the framework for the DPP. What applies to which product group is set out in separate acts. Some groups have their own regulations with DPP requirements, e.g. batteries, construction products and toys."
       },
       "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng",
       "status": "gilt"
     },
     {
       "ueberschrift": {
-        "de": "Was ist der Digitale Produktpass?",
-        "en": "What is the Digital Product Passport?"
+        "de": "Was ist der DPP?",
+        "en": "What is the DPP?"
       },
       "kern": {
-        "de": "Ein digitaler Container pro Produkt",
-        "en": "A digital container per product"
+        "de": "Ein Datensatz pro Produkt",
+        "en": "One record per product"
       },
       "text": {
-        "de": "Er bündelt Angaben zu Nachhaltigkeit, Kreislauffähigkeit und Rechtskonformität. Pflicht wird er erst, wenn ein Rechtsakt ihn für die Produktgruppe vorschreibt.",
-        "en": "It bundles information on sustainability, circularity and legal compliance. It only becomes mandatory once a delegated act requires it for the product group."
+        "de": "Per QR-Code abrufbar, mit Informationen etwa zu Materialien, Herkunft, Reparatur und Recycling. Pflicht erst, wenn ein Rechtsakt ihn für die Produktgruppe vorschreibt.",
+        "en": "Accessible via QR code, with information on materials, origin, repair and recycling, for example. Mandatory only once an act requires it for the product group."
       },
       "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en",
-      "status": "gilt"
-    },
-    {
-      "ueberschrift": {
-        "de": "Wer ist betroffen?",
-        "en": "Who is affected?"
-      },
-      "kern": {
-        "de": "Hersteller und Importeure",
-        "en": "Manufacturers and importers"
-      },
-      "text": {
-        "de": "Sie müssen den Digitalen Produktpass bereitstellen. Bevollmächtigte Vertreter sind ausgenommen, Händler nutzen und aktualisieren meist vorhandene Daten.",
-        "en": "They have to provide the Digital Product Passport. Authorised representatives are excluded; distributors generally use and update existing data."
-      },
-      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng",
       "status": "gilt"
     },
     {
@@ -58,15 +42,47 @@
         "en": "When does it apply?"
       },
       "kern": {
-        "de": "Batterien ab 18.02.2027",
-        "en": "Batteries from 18 Feb 2027"
+        "de": "Schrittweise, pro Produktgruppe",
+        "en": "Step by step, per product group"
       },
       "text": {
-        "de": "Batterien sind die erste Produktgruppe mit Pflicht. Für Textilien, Möbel, Bauprodukte und weitere nennt die Kommission vorläufig 2027 bis 2029, plus mindestens 18 Monate Übergangsfrist.",
-        "en": "Batteries are the first product group with a mandatory passport. For textiles, furniture, construction products and more, the Commission names 2027 to 2029 provisionally, plus a transition period of at least 18 months."
+        "de": "Batterien ab 18.02.2027. Weitere delegierte Rechtsakte und Verordnungen mit DPP-Pflichten, etwa für Textilien, Möbel und Reifen, werden vorläufig zwischen 2027 und 2029 erwartet.",
+        "en": "Batteries from 18 Feb 2027. Further delegated acts and regulations with DPP obligations, e.g. for textiles, furniture and tyres, are provisionally expected between 2027 and 2029."
       },
       "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en",
       "status": "geplant"
+    },
+    {
+      "ueberschrift": {
+        "de": "Warum jetzt handeln?",
+        "en": "Why act now?"
+      },
+      "kern": {
+        "de": "Daten brauchen Vorlauf",
+        "en": "Data needs lead time"
+      },
+      "text": {
+        "de": "Viele Angaben für den Pass liegen bei Lieferanten, etwa zu Materialien, Herkunft oder CO₂. Sie über komplexe Lieferketten zu beschaffen, zu prüfen und strukturiert bereitzustellen, braucht Zeit.",
+        "en": "Much of the information for the passport sits with suppliers, e.g. on materials, origin or CO₂. Obtaining, checking and providing it in a structured way across complex supply chains takes time."
+      },
+      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en",
+      "status": "gilt"
+    },
+    {
+      "ueberschrift": {
+        "de": "Was ist das Ziel?",
+        "en": "What is the goal?"
+      },
+      "kern": {
+        "de": "Kreislaufwirtschaft stärken",
+        "en": "Strengthen the circular economy"
+      },
+      "text": {
+        "de": "Produktinformationen werden über den gesamten Lebenszyklus transparent und für Kundschaft, Werkstätten, Recycler und Behörden verfügbar.",
+        "en": "Product information becomes transparent across the entire life cycle and available to customers, repairers, recyclers and authorities."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng",
+      "status": "gilt"
     }
   ]
 }

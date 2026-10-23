@@ -19,10 +19,6 @@
     "de": "Dieses Tool liefert unverbindliche Einschätzungen und Scores. Es ersetzt keine Rechtsberatung und keinen Konformitätsnachweis.",
     "en": "This tool provides non-binding assessments and scores. It does not replace legal advice or proof of conformity."
   },
-  "footer": {
-    "de": "Ein Angebot von Future Response, Berlin.",
-    "en": "An offering by Future Response, Berlin."
-  },
   "platzhalter_gruppenseite": {
     "de": "Die Landingpage für diese Produktgruppe (Definition, Zeitstrahl, FAQ) folgt im nächsten Arbeitsschritt.",
     "en": "The landing page for this product group (definition, timeline, FAQ) will be added in the next step."
@@ -282,8 +278,8 @@
       }
     ],
     "einwilligung": {
-      "de": "Ich bin damit einverstanden, dass Future Response meine Angaben zur Bearbeitung dieser Anfrage verwendet. Datenschutzerklärung: folgt.",
-      "en": "I agree that Future Response uses my details to process this request. Privacy policy: to follow."
+      "de": "Ich bin damit einverstanden, dass die Projektpartner meine Angaben zur Bearbeitung dieser Anfrage verwenden. Datenschutzerklärung: folgt.",
+      "en": "I agree that the project partners use my details to process this request. Privacy policy: to follow."
     },
     "senden": {
       "de": "Terminanfrage vorbereiten",
@@ -453,18 +449,8 @@
           "en": "Who is affected?"
         },
         "text": {
-          "de": "Platzhalter: Hier erläutern wir kurz, welche Hersteller, Marken und Importeure vom Digitalen Produktpass betroffen sein können.",
-          "en": "Placeholder: A short explanation of which manufacturers, brands and importers may be affected by the Digital Product Passport."
-        }
-      },
-      {
-        "titel": {
-          "de": "Was gilt ab wann?",
-          "en": "What applies from when?"
-        },
-        "text": {
-          "de": "Platzhalter: Hier ordnen wir ein, welche Anforderungen für Ihre Produktgruppe zu welchem Zeitpunkt relevant werden. Angaben folgen mit Quellen.",
-          "en": "Placeholder: A summary of which requirements become relevant for your product group and when. Details will follow with sources."
+          "de": "Ob Sie betroffen sind, ist die erste Frage, die Sie klären sollten. Nach drei kurzen Fragen sehen Sie, ob Sie voraussichtlich als Hersteller gelten und welche Pflichten damit für Sie greifen könnten.",
+          "en": "Whether you are affected is the first question to clarify. After three short questions, you will see whether you are likely to count as a manufacturer and which obligations could apply to you."
         }
       },
       {
@@ -473,8 +459,8 @@
           "en": "How much effort is involved?"
         },
         "text": {
-          "de": "Platzhalter: Hier geben wir eine erste Orientierung, mit welchem Umsetzungsaufwand Sie rechnen sollten.",
-          "en": "Placeholder: A first indication of the implementation effort you should expect."
+          "de": "Wenn klar ist, ob Sie Herstellerverantwortung tragen, schätzen wir im zweiten Schritt anhand weniger Fragen Ihren voraussichtlichen Umsetzungsaufwand ein.",
+          "en": "Once it is clear whether you bear manufacturer responsibility, a few questions in the second step estimate your likely implementation effort."
         }
       }
     ],
