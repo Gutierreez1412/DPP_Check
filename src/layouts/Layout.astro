@@ -5,9 +5,10 @@ import seite from "../../inhalte/seite.json";
 interface Props {
   lang: "de" | "en";
   title?: string;
+  breit?: boolean;
 }
 
-const { lang, title } = Astro.props;
+const { lang, title, breit = false } = Astro.props;
 
 const text = (feld: Record<"de" | "en", string>) => feld[lang];
 
@@ -40,7 +41,7 @@ const seitentitel = title
       </div>
     </header>
 
-    <main>
+    <main class:list={{ breit }}>
       <slot />
     </main>
 

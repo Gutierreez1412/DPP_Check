@@ -1,0 +1,1121 @@
+/*
+  Ebene 4: DPP-Pilot. Technischer, dunkler Look ("Konsole") als Kontrast zu den
+  redaktionellen Seiten davor. Alle Farben als Variablen, siehe global.css.
+*/
+.pilot {
+  --p-bg: #0b141a;
+  --p-panel: #111e26;
+  --p-panel-2: #172833;
+  --p-linie: rgba(255, 255, 255, 0.1);
+  --p-text: #e8f0f3;
+  --p-schwach: rgba(232, 240, 243, 0.62);
+  --p-akzent: #45d4c0;
+  --p-akzent-soft: rgba(69, 212, 192, 0.14);
+  --p-oeffentlich: #4cc38a;
+  --p-berechtigt: #f2c14e;
+  --p-behoerden: #a99bff;
+  --p-mono:
+    ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Consolas, monospace;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 4rem);
+}
+
+main.breit {
+  max-width: 1180px;
+}
+
+.pilot-mono {
+  font-family: var(--p-mono);
+  letter-spacing: 0.02em;
+}
+
+.pilot-schwach {
+  color: var(--p-schwach);
+}
+
+.pilot-h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+  line-height: 1.15;
+}
+
+.pilot-puls {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--p-akzent);
+  box-shadow: 0 0 0 0 var(--p-akzent);
+  animation: pilot-puls 2s ease-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pilot-puls {
+  70% {
+    box-shadow: 0 0 0 7px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+/* ---------- Hero ---------- */
+
+.pilot-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.pilot-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--farbe-primaer);
+}
+
+.pilot-hero h1 {
+  max-width: 16ch;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+}
+
+.pilot-hero__lede {
+  margin: 1.25rem 0 0;
+  max-width: 58ch;
+  color: var(--farbe-text-schwach);
+}
+
+.pilot-beispiel {
+  display: flex;
+  gap: 0.7rem;
+  align-items: baseline;
+  margin: 1.5rem 0 0;
+  font-size: 0.85rem;
+  color: var(--farbe-text-schwach);
+}
+
+.pilot-beispiel span {
+  flex-shrink: 0;
+  padding: 0.15rem 0.55rem;
+  border: 1px dashed var(--farbe-rand-stark);
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pilot-produkt {
+  position: relative;
+  padding: 1.5rem;
+  color: var(--p-text);
+  background:
+    linear-gradient(140deg, rgba(69, 212, 192, 0.16), transparent 45%),
+    var(--p-bg);
+  border: 1px solid #1d3340;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px -35px rgba(11, 20, 26, 0.8);
+}
+
+.pilot-produkt p {
+  margin: 0;
+}
+
+.pilot-produkt__kopf {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.pilot-produkt__kopf .pilot-mono {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.pilot-produkt__name {
+  margin: 0.3rem 0 0.15rem !important;
+  font-family: var(--schrift-headline);
+  font-size: 1.7rem;
+  line-height: 1.1;
+}
+
+.pilot-produkt__kopf .pilot-schwach:last-child {
+  font-size: 0.85rem;
+}
+
+.pilot-qr {
+  width: 4.75rem;
+  height: 4.75rem;
+  padding: 0.4rem;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--p-bg);
+}
+
+.pilot-qr svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.pilot-produkt__daten {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin: 1.25rem 0 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--p-linie);
+}
+
+.pilot-produkt__daten div {
+  padding: 0.7rem 0.85rem;
+  background: var(--p-panel);
+}
+
+.pilot-produkt__daten dt {
+  font-size: 0.72rem;
+  color: var(--p-schwach);
+}
+
+.pilot-produkt__daten dd {
+  margin: 0;
+  font-family: var(--p-mono);
+  font-size: 1.05rem;
+  color: var(--p-akzent);
+}
+
+.pilot-produkt__id {
+  margin-top: 1rem !important;
+  font-size: 0.72rem;
+  color: var(--p-schwach);
+  word-break: break-all;
+}
+
+/* ---------- Drei Schritte ---------- */
+
+.pilot-schritte {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pilot-schritte li {
+  padding: 1.25rem 1.25rem 1.4rem;
+  background: var(--farbe-oberflaeche);
+  border: 1px solid var(--farbe-rand);
+  border-radius: 12px;
+}
+
+.pilot-schritte__nr {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--farbe-primaer);
+}
+
+.pilot-schritte h3 {
+  font-size: 1.25rem;
+}
+
+.pilot-schritte p {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+  color: var(--farbe-text-schwach);
+}
+
+/* ---------- Konsole (dunkle Abschnitte) ---------- */
+
+.pilot-konsole {
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  color: var(--p-text);
+  background-color: var(--p-bg);
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 1px
+  );
+  background-size: 18px 18px;
+  border-radius: 18px;
+  box-shadow: 0 30px 60px -35px rgba(11, 20, 26, 0.7);
+}
+
+.pilot-konsole :focus-visible {
+  outline-color: var(--p-akzent);
+}
+
+.pilot-explorer__kopf p {
+  max-width: 60ch;
+  margin: 0.6rem 0 0;
+  color: var(--p-schwach);
+}
+
+.pilot-explorer__raster {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+  margin-top: 2rem;
+}
+
+/* Explosionszeichnung */
+
+.explosion {
+  position: relative;
+  aspect-ratio: 395 / 448;
+  max-width: 34rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.explosion svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.explosion__raster {
+  fill: none;
+  stroke: rgba(69, 212, 192, 0.07);
+  stroke-width: 1;
+}
+
+.explosion__fuehrung line {
+  stroke: rgba(69, 212, 192, 0.45);
+  stroke-width: 0.8;
+  stroke-dasharray: 3 4;
+  opacity: 0;
+  transition: opacity 0.6s ease 1.2s;
+}
+
+.ist-explodiert .explosion__fuehrung line {
+  opacity: 1;
+}
+
+.ebene {
+  transform: translateY(var(--zu));
+  transition:
+    transform 1.3s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.5s ease;
+}
+
+.ebene--innen {
+  opacity: 0;
+}
+
+.ist-explodiert .ebene {
+  transform: none;
+  opacity: 1;
+}
+
+.ist-explodiert .ebene[data-ebene="zellen"] {
+  transition-delay: 0.15s;
+}
+.ist-explodiert .ebene[data-ebene="bms"] {
+  transition-delay: 0.05s;
+}
+
+.flaeche {
+  stroke: rgba(173, 214, 224, 0.55);
+  stroke-width: 0.8;
+  stroke-linejoin: round;
+  transition:
+    fill 0.35s ease,
+    stroke 0.35s ease;
+}
+
+.flaeche--oben {
+  fill: #2a4351;
+}
+.flaeche--links {
+  fill: #1c303b;
+}
+.flaeche--rechts {
+  fill: #142530;
+}
+.flaeche--innen {
+  fill: #0f1d25;
+}
+
+.platine {
+  fill: #1f4a43;
+}
+
+.chip .flaeche--oben {
+  fill: #0e1a20;
+}
+
+.schild rect {
+  fill: #dfe9ec;
+  stroke: none;
+}
+
+.schild .schild__qr {
+  fill: var(--p-bg);
+}
+
+.schild .schild__zeile {
+  fill: #9fb2b9;
+}
+
+.zelle__mantel {
+  fill: #1b3a46;
+  stroke: rgba(173, 214, 224, 0.4);
+  stroke-width: 0.6;
+}
+
+.zelle__kopf {
+  fill: #3a5a69;
+  stroke: rgba(173, 214, 224, 0.55);
+  stroke-width: 0.6;
+}
+
+.zelle__pol {
+  fill: #9fb6bf;
+}
+
+.zelle * {
+  transition:
+    fill 0.35s ease,
+    stroke 0.35s ease;
+}
+
+/* Hervorhebung des gewählten Bauteils */
+.explosion.ist-explodiert[data-aktiv] .ebene {
+  opacity: 0.6;
+}
+
+.explosion[data-aktiv="deckel"] .ebene[data-ebene="deckel"],
+.explosion[data-aktiv="bms"] .ebene[data-ebene="bms"],
+.explosion[data-aktiv="zellen"] .ebene[data-ebene="zellen"],
+.explosion[data-aktiv="chemie"] .ebene[data-ebene="zellen"],
+.explosion[data-aktiv="wanne"] .ebene[data-ebene="wanne"] {
+  opacity: 1;
+}
+
+.explosion:not(.ist-explodiert) .ebene--innen {
+  opacity: 0;
+}
+
+.explosion[data-aktiv="deckel"] [data-ebene="deckel"] .flaeche,
+.explosion[data-aktiv="bms"] [data-ebene="bms"] .flaeche,
+.explosion[data-aktiv="zellen"] [data-ebene="zellen"] .flaeche,
+.explosion[data-aktiv="zellen"] .zelle__mantel,
+.explosion[data-aktiv="wanne"] [data-ebene="wanne"] .flaeche {
+  stroke: var(--p-akzent);
+}
+
+.explosion[data-aktiv="deckel"] [data-ebene="deckel"] .flaeche--oben,
+.explosion[data-aktiv="wanne"] [data-ebene="wanne"] .flaeche--oben,
+.explosion[data-aktiv="zellen"] .zelle__kopf {
+  fill: #2f6e69;
+}
+
+.explosion[data-aktiv="chemie"] .zelle__kopf {
+  fill: #6a5a2a;
+  stroke: var(--p-berechtigt);
+}
+
+.explosion[data-aktiv="chemie"] .zelle__pol {
+  fill: var(--p-berechtigt);
+}
+
+.hotspot {
+  position: absolute;
+  translate: -50% -50%;
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: 0;
+  border: 1px solid var(--p-akzent);
+  border-radius: 50%;
+  background: rgba(11, 20, 26, 0.85);
+  color: var(--p-akzent);
+  font-family: var(--p-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  opacity: 0;
+  scale: 0.6;
+  transition:
+    opacity 0.4s ease,
+    scale 0.4s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.ist-explodiert .hotspot {
+  opacity: 1;
+  scale: 1;
+  transition-delay: 1.3s, 1.3s, 0s, 0s;
+}
+
+.hotspot::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid var(--p-akzent);
+  opacity: 0;
+}
+
+.hotspot:hover,
+.hotspot.ist-aktiv {
+  background: var(--p-akzent);
+  color: var(--p-bg);
+}
+
+.hotspot.ist-aktiv::after {
+  animation: hotspot-ring 1.8s ease-out infinite;
+}
+
+@keyframes hotspot-ring {
+  0% {
+    opacity: 0.8;
+    scale: 0.8;
+  }
+  100% {
+    opacity: 0;
+    scale: 1.5;
+  }
+}
+
+/* Bauteil-Liste und Details */
+
+.komponenten-liste {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.komponenten-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--p-linie);
+  border-radius: 10px;
+  background: var(--p-panel);
+  color: var(--p-text);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.komponenten-tab .pilot-mono {
+  font-size: 0.75rem;
+  color: var(--p-schwach);
+}
+
+.komponenten-tab:hover {
+  border-color: rgba(69, 212, 192, 0.5);
+}
+
+.komponenten-tab[aria-selected="true"] {
+  border-color: var(--p-akzent);
+  background: var(--p-akzent-soft);
+}
+
+.komponenten-tab[aria-selected="true"] .pilot-mono {
+  color: var(--p-akzent);
+}
+
+.komponente {
+  margin-top: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--p-linie);
+  border-radius: 12px;
+  background: var(--p-panel);
+  animation: einblenden 0.35s ease;
+}
+
+@keyframes einblenden {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.komponente__text {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--p-schwach);
+}
+
+.komponente__label {
+  margin: 1.1rem 0 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--p-akzent);
+}
+
+.komponente__felder {
+  display: grid;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--p-linie);
+}
+
+.komponente__felder li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  background: var(--p-panel-2);
+  font-size: 0.88rem;
+}
+
+.komponente__quelle {
+  margin: 1rem 0 0;
+  font-size: 0.88rem;
+}
+
+.stufe-chip {
+  flex-shrink: 0;
+  padding: 0.1rem 0.5rem;
+  border-radius: 99px;
+  border: 1px solid currentColor;
+  font-size: 0.68rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.stufe-chip--oeffentlich {
+  color: var(--p-oeffentlich);
+}
+.stufe-chip--berechtigt {
+  color: var(--p-berechtigt);
+}
+.stufe-chip--behoerden {
+  color: var(--p-behoerden);
+}
+
+/* ---------- Pass auf dem Telefon ---------- */
+
+.pilot-pass {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 23rem);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.pilot-pass__text > p {
+  max-width: 50ch;
+  margin: 0.6rem 0 0;
+  color: var(--farbe-text-schwach);
+}
+
+.pilot-pass__rolle-label {
+  margin-top: 1.75rem !important;
+  font-size: 0.72rem !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.rollen {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  max-width: 28rem;
+}
+
+.rolle {
+  --farbe: var(--p-oeffentlich);
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.75rem 1rem 0.75rem 1.1rem;
+  border: 1px solid var(--farbe-rand);
+  border-left: 4px solid var(--farbe);
+  border-radius: 10px;
+  background: var(--farbe-oberflaeche);
+  color: var(--farbe-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.rolle--berechtigt {
+  --farbe: #c99a1c;
+}
+.rolle--behoerden {
+  --farbe: #7a6be0;
+}
+
+.rolle span {
+  font-size: 0.85rem;
+  color: var(--farbe-text-schwach);
+}
+
+.rolle:hover {
+  border-color: var(--farbe-rand-stark);
+  border-left-color: var(--farbe);
+}
+
+.rolle[aria-pressed="true"] {
+  border-color: var(--farbe);
+  box-shadow: 0 0 0 1px var(--farbe);
+}
+
+.telefon {
+  justify-self: center;
+  width: 100%;
+  max-width: 23rem;
+}
+
+.telefon__rahmen {
+  position: relative;
+  padding: 0.7rem;
+  border-radius: 2.6rem;
+  background: #05090c;
+  box-shadow:
+    inset 0 0 0 1px #2a3b45,
+    0 40px 80px -40px rgba(11, 20, 26, 0.8);
+}
+
+.telefon__kamera {
+  position: absolute;
+  z-index: 2;
+  top: 1.2rem;
+  left: 50%;
+  translate: -50% 0;
+  width: 5.5rem;
+  height: 1.4rem;
+  border-radius: 99px;
+  background: #05090c;
+}
+
+.pass-app {
+  height: 40rem;
+  overflow-y: auto;
+  padding: 3rem 1rem 1.25rem;
+  border-radius: 2rem;
+  color: var(--p-text);
+  background:
+    radial-gradient(
+      120% 50% at 100% 0%,
+      rgba(69, 212, 192, 0.22),
+      transparent 60%
+    ),
+    var(--p-bg);
+  scrollbar-width: thin;
+  scrollbar-color: #2a3b45 transparent;
+}
+
+.pass-app p {
+  margin: 0;
+}
+
+.pass-app__kopf {
+  padding: 0 0.25rem 1rem;
+}
+
+.pass-app__scan {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.68rem;
+  color: var(--p-schwach);
+}
+
+.pass-app__marke {
+  margin-top: 1rem !important;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--p-akzent);
+}
+
+.pass-app__name {
+  font-family: var(--schrift-headline);
+  font-size: 1.6rem;
+  line-height: 1.15;
+}
+
+.pass-app__id {
+  margin-top: 0.2rem !important;
+  font-size: 0.66rem;
+  color: var(--p-schwach);
+  word-break: break-all;
+}
+
+.pass-app__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.8rem !important;
+}
+
+.pass-app__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--p-linie);
+  border-radius: 99px;
+  font-size: 0.7rem;
+}
+
+.pass-app__chip--live {
+  border-color: rgba(69, 212, 192, 0.5);
+  color: var(--p-akzent);
+}
+
+.pass-abschnitt {
+  margin-top: 0.5rem;
+  border: 1px solid var(--p-linie);
+  border-radius: 12px;
+  background: var(--p-panel);
+}
+
+.pass-abschnitt summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.pass-abschnitt summary::-webkit-details-marker {
+  display: none;
+}
+
+.pass-abschnitt summary::after {
+  content: "+";
+  font-family: var(--p-mono);
+  color: var(--p-schwach);
+}
+
+.pass-abschnitt[open] summary::after {
+  content: "–";
+}
+
+.pass-abschnitt__anzahl {
+  margin-left: auto;
+  font-size: 0.68rem;
+  color: var(--p-schwach);
+}
+
+.pass-abschnitt dl {
+  margin: 0;
+  padding: 0 0.9rem 0.4rem;
+}
+
+.feld {
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--p-linie);
+}
+
+.feld dt {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--p-schwach);
+}
+
+.feld dd {
+  margin: 0.15rem 0 0;
+}
+
+.feld__wert {
+  font-size: 0.88rem;
+  border-left: 2px solid var(--p-oeffentlich);
+  padding-left: 0.5rem;
+}
+
+.feld[data-stufe="berechtigt"] .feld__wert {
+  border-left-color: var(--p-berechtigt);
+}
+.feld[data-stufe="behoerden"] .feld__wert {
+  border-left-color: var(--p-behoerden);
+}
+
+.feld__live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--p-mono);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: var(--p-akzent);
+}
+
+.feld__live .pilot-puls {
+  width: 0.35rem;
+  height: 0.35rem;
+}
+
+.feld__sperre {
+  display: none;
+  font-size: 0.8rem;
+  color: var(--p-schwach);
+}
+
+.feld__unklar {
+  margin-top: 0.35rem !important;
+  padding: 0.4rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(242, 193, 78, 0.1);
+  font-size: 0.7rem;
+  line-height: 1.45;
+  color: rgba(242, 193, 78, 0.9);
+}
+
+/* Gesperrte Felder je nach gewählter Rolle */
+.pass-app[data-rolle="oeffentlich"]
+  .feld:is([data-stufe="berechtigt"], [data-stufe="behoerden"])
+  .feld__wert,
+.pass-app[data-rolle="berechtigt"] .feld[data-stufe="behoerden"] .feld__wert {
+  display: none;
+}
+
+.pass-app[data-rolle="oeffentlich"]
+  .feld:is([data-stufe="berechtigt"], [data-stufe="behoerden"])
+  .feld__sperre,
+.pass-app[data-rolle="berechtigt"] .feld[data-stufe="behoerden"] .feld__sperre {
+  display: block;
+}
+
+.pass-app[data-rolle="oeffentlich"]
+  .feld:is([data-stufe="berechtigt"], [data-stufe="behoerden"])
+  dt,
+.pass-app[data-rolle="berechtigt"] .feld[data-stufe="behoerden"] dt {
+  opacity: 0.55;
+}
+
+.pass-app .feld {
+  animation: einblenden 0.3s ease;
+}
+
+.pass-app__fuss {
+  margin-top: 1rem !important;
+  font-size: 0.66rem;
+  color: var(--p-schwach);
+  text-align: center;
+}
+
+/* ---------- Lieferkette ---------- */
+
+.kette {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kette::before {
+  content: "";
+  position: absolute;
+  top: 1.35rem;
+  left: 1rem;
+  right: 1rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--p-akzent) 20%,
+    var(--p-akzent) 80%,
+    transparent
+  );
+  opacity: 0.4;
+}
+
+.kette::after {
+  content: "";
+  position: absolute;
+  top: calc(1.35rem - 3px);
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--p-akzent);
+  box-shadow: 0 0 12px var(--p-akzent);
+  animation: kette-fluss 5s linear infinite;
+}
+
+@keyframes kette-fluss {
+  from {
+    left: 1rem;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  to {
+    left: calc(100% - 1rem);
+    opacity: 0;
+  }
+}
+
+.kette__glied {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0 0.9rem 1rem;
+  border: 1px solid var(--p-linie);
+  border-radius: 12px;
+  background: var(--p-panel);
+}
+
+.kette__nr {
+  align-self: flex-start;
+  margin: 0.9rem 0 0.5rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 6px;
+  background: var(--p-bg);
+  border: 1px solid var(--p-linie);
+  font-size: 0.7rem;
+  color: var(--p-akzent);
+}
+
+.kette__glied strong {
+  font-size: 0.98rem;
+}
+
+.kette__beispiel {
+  font-size: 0.78rem;
+  color: var(--p-schwach);
+}
+
+.kette__glied ul {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0.6rem 0 0;
+  padding: 0.6rem 0 0;
+  border-top: 1px solid var(--p-linie);
+  list-style: none;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.kette__glied ul li {
+  display: flex;
+  gap: 0.35rem;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.kette__glied ul li::before {
+  content: "→";
+  flex-shrink: 0;
+  color: var(--p-akzent);
+}
+
+.kette__glied.ist-verantwortlich {
+  border-color: var(--p-akzent);
+  background: linear-gradient(180deg, var(--p-akzent-soft), var(--p-panel));
+  box-shadow: 0 0 30px -10px rgba(69, 212, 192, 0.5);
+}
+
+.kette__badge {
+  align-self: flex-start;
+  display: inline-block;
+  padding: 0.05rem 0.5rem;
+  border-radius: 99px;
+  background: var(--p-akzent);
+  color: var(--p-bg);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+/* ---------- Quellen ---------- */
+
+.pilot-quellen h2 {
+  font-size: 1.15rem;
+}
+
+.pilot-quellen ul {
+  margin: 0.6rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.88rem;
+  color: var(--farbe-text-schwach);
+}
+
+.pilot .check__zurueck {
+  margin-top: -1.5rem;
+}
+
+/* ---------- Responsiv ---------- */
+
+@media (max-width: 1000px) {
+  .kette {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .kette::before,
+  .kette::after {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .pilot-hero,
+  .pilot-explorer__raster,
+  .pilot-pass {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pilot-schritte {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .kette {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pass-app {
+    height: 34rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ebene,
+  .hotspot,
+  .explosion__fuehrung line {
+    transition-delay: 0s !important;
+  }
+  .kette::after {
+    display: none;
+  }
+}

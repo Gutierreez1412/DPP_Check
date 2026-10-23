@@ -14,6 +14,11 @@ const t = (feld: Record<"de" | "en", string>) => feld[lang];
 const e = seite.ergebnis;
 const stufenIds = ["gruen", "gelb", "rot"] as const;
 
+const pilotDateien = import.meta.glob("../../inhalte/gruppen/*/pilot.json");
+const hatPilot = Object.keys(pilotDateien).some((pfad) =>
+  pfad.includes(`/gruppen/${gruppe.id}/`),
+);
+
 // Tacho: Halbkreis in drei gleich großen Segmenten. Die Nadel zeigt bewusst
 // auf die Mitte des Segments, nicht auf den genauen Punktwert (der Gesamtscore
 // wird laut PROJEKT.md nicht angezeigt).
@@ -120,6 +125,20 @@ const texteFuerClient = {
         href={`/${lang}/check/${gruppe.id}/`}>{t(e.antworten_aendern)}</a
       >
     </div>
+
+    {
+      hatPilot && (
+        <a
+          class="ergebnis-karte__pilot"
+          id="ergebnis-pilot"
+          href={`/${lang}/pilot/${gruppe.id}/`}
+        >
+          <span class="ergebnis-karte__pilot-qr" aria-hidden="true" />
+          {t(e.pilot_link)}
+          <span aria-hidden="true">→</span>
+        </a>
+      )
+    }
   </div>
 
   <p class="ergebnis__hinweis">{t(ampel.hinweis)}</p>
@@ -192,6 +211,9 @@ const texteFuerClient = {
     const aendern = document.getElementById("ergebnis-aendern");
     if (aendern instanceof HTMLAnchorElement)
       aendern.hash = `a=${ids.join("-")}`;
+    // Antworten zum Pilot mitgeben, damit der Rückweg zum Ergebnis funktioniert.
+    const pilot = document.getElementById("ergebnis-pilot");
+    if (pilot instanceof HTMLAnchorElement) pilot.hash = `a=${ids.join("-")}`;
 
     // Inhalt für die Mail, falls im Beratungsformular "Ergebnis mitsenden"
     // angehakt wird.

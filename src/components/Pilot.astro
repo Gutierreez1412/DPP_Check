@@ -1,0 +1,667 @@
+---
+import seite from "../../inhalte/seite.json";
+import pilotVorlage from "../../inhalte/gruppen/batterien/pilot.json";
+import "../styles/pilot.css";
+
+// Batterien ist die Vorlage für alle pilot.json-Dateien (PROJEKT.md, Ebene 4).
+type PilotDaten = typeof pilotVorlage;
+
+interface Props {
+  lang: "de" | "en";
+  gruppe: { id: string; name: Record<"de" | "en", string> };
+  pilot: PilotDaten;
+}
+
+const { lang, gruppe, pilot } = Astro.props;
+const t = (feld: Record<"de" | "en", string>) => feld[lang];
+const p = seite.pilot;
+
+const stufen = pilot.zugriffsstufen;
+const stufeName = Object.fromEntries(stufen.map((s) => [s.id, t(s.name)]));
+// Optionale Angaben je Feld: dynamisch (live aus dem BMS), status/hinweis
+// (Rechtslage noch unklar, siehe AGENTS.md Regel 5).
+type Feld = {
+  id: string;
+  label: Record<"de" | "en", string>;
+  wert: Record<"de" | "en", string>;
+  stufe: string;
+  dynamisch?: boolean;
+  status?: string;
+  hinweis?: Record<"de" | "en", string>;
+};
+const abschnitte = pilot.pass.abschnitte.map((a) => ({
+  ...a,
+  felder: a.felder as Feld[],
+}));
+const alleFelder = abschnitte.flatMap((a) => a.felder);
+const feldNachId = Object.fromEntries(alleFelder.map((f) => [f.id, f]));
+
+/*
+  Explosionszeichnung in isometrischer Projektion. Geometrie ist bewusst im
+  Code (reine Darstellung), die Texte zu den Bauteilen kommen aus pilot.json.
+  Jede Ebene hat eine Position im zusammengebauten Zustand (--zu = Versatz nach
+  unten); beim Laden fährt der Akku auseinander.
+*/
+const cos30 = Math.cos(Math.PI / 6);
+const iso = (x: number, y: number, z: number) => [
+  (x - y) * cos30,
+  (x + y) * 0.5 - z,
+];
+const pt = (x: number, y: number, z: number) =>
+  iso(x, y, z)
+    .map((n) => n.toFixed(1))
+    .join(",");
+const box = (
+  x0: number,
+  y0: number,
+  z0: number,
+  l: number,
+  w: number,
+  h: number,
+) => {
+  const [x1, y1, z1] = [x0 + l, y0 + w, z0 + h];
+  return {
+    oben: [pt(x0, y0, z1), pt(x1, y0, z1), pt(x1, y1, z1), pt(x0, y1, z1)].join(
+      " ",
+    ),
+    links: [
+      pt(x0, y1, z0),
+      pt(x1, y1, z0),
+      pt(x1, y1, z1),
+      pt(x0, y1, z1),
+    ].join(" "),
+    rechts: [
+      pt(x1, y0, z0),
+      pt(x1, y1, z0),
+      pt(x1, y1, z1),
+      pt(x1, y0, z1),
+    ].join(" "),
+  };
+};
+
+const L = 320;
+const W = 84;
+const Z = { wanne: 0, zellen: 64, bms: 140, deckel: 180 };
+
+const wanne = box(0, 0, Z.wanne, L, W, 30);
+const wanneInnen = box(10, 10, Z.wanne + 30, L - 20, W - 20, 0).oben;
+const halter = box(4, 4, Z.zellen, L - 8, W - 8, 8);
+const platine = box(70, 14, Z.bms, 180, 56, 4);
+const chips = [
+  box(92, 24, Z.bms + 4, 34, 22, 7),
+  box(146, 32, Z.bms + 4, 22, 14, 5),
+  box(190, 22, Z.bms + 4, 40, 28, 7),
+];
+const deckel = box(0, 0, Z.deckel, L, W, 24);
+const deckelInnen = box(14, 14, Z.deckel + 24, L - 28, W - 28, 0).oben;
+
+// 40 Rundzellen (10 × 4), von hinten nach vorne gezeichnet.
+const zr = 9;
+const zrx = zr * 1.2247;
+const zry = zr * 0.7071;
+const zelleUnten = Z.zellen + 8;
+const zelleOben = zelleUnten + 34;
+const zellen = Array.from({ length: 40 }, (_, k) => ({
+  x: 16 + (k % 10) * 32,
+  y: 12 + Math.floor(k / 10) * 20,
+}))
+  .sort((a, b) => a.x + a.y - (b.x + b.y))
+  .map(({ x, y }) => {
+    const [cx, oy] = iso(x, y, zelleOben);
+    const [, uy] = iso(x, y, zelleUnten);
+    return {
+      mantel: `M${(cx - zrx).toFixed(1)} ${oy.toFixed(1)}V${uy.toFixed(1)}A${zrx.toFixed(1)} ${zry.toFixed(1)} 0 0 0 ${(cx + zrx).toFixed(1)} ${uy.toFixed(1)}V${oy.toFixed(1)}Z`,
+      cx: cx.toFixed(1),
+      cy: oy.toFixed(1),
+    };
+  });
+
+// Hilfslinien der Explosionszeichnung an den vier Ecken.
+const fuehrung = [
+  [0, 0],
+  [L, 0],
+  [L, W],
+  [0, W],
+].map(([x, y]) => ({ von: iso(x, y, 30), bis: iso(x, y, Z.deckel) }));
+
+// Typenschild mit QR-Code auf der vorderen Längsseite der Wanne.
+const [ox, oy] = iso(0, W, 0);
+const schildMatrix = `matrix(${cos30.toFixed(4)} 0.5 0 -1 ${ox.toFixed(1)} ${oy.toFixed(1)})`;
+let seed = 625;
+const zufall = () => {
+  seed = (seed * 1103515245 + 12345) % 2147483648;
+  return seed / 2147483648;
+};
+const qrModule = Array.from({ length: 49 }, (_, k) => [
+  k % 7,
+  Math.floor(k / 7),
+])
+  .filter(([x, y]) => (x < 2 && y < 2) || (x > 4 && y > 4) || zufall() < 0.5)
+  .map(([x, y]) => ({ x: 26 + x * 2.4, y: 6 + y * 2.4 }));
+
+// Größerer Schein-QR-Code (21 × 21 mit Positionsmarken) für die Produktkarte.
+const qrN = 21;
+const imFinder = (x: number, y: number) =>
+  (x < 8 && y < 8) || (x > qrN - 9 && y < 8) || (x < 8 && y > qrN - 9);
+const qrGross = Array.from({ length: qrN * qrN }, (_, k) => [
+  k % qrN,
+  Math.floor(k / qrN),
+]).filter(([x, y]) => !imFinder(x, y) && zufall() < 0.46);
+const qrFinder = [
+  [0, 0],
+  [qrN - 7, 0],
+  [0, qrN - 7],
+];
+
+const vb = { x: -95, y: -228, b: 395, h: 448 };
+const hotspot = (x: number, y: number, z: number) => {
+  const [sx, sy] = iso(x, y, z);
+  return `left:${(((sx - vb.x) / vb.b) * 100).toFixed(2)}%;top:${(((sy - vb.y) / vb.h) * 100).toFixed(2)}%`;
+};
+const hotspotPos: Record<string, string> = {
+  deckel: hotspot(L * 0.55, W * 0.5, Z.deckel + 24),
+  bms: hotspot(210, 36, Z.bms + 11),
+  zellen: hotspot(48, 72, zelleOben),
+  chemie: hotspot(250, 72, zelleOben),
+  wanne: hotspot(52, W, 16),
+};
+const versatz: Record<string, number> = {
+  wanne: 0,
+  zellen: Z.zellen,
+  bms: Z.bms - 40,
+  deckel: Z.deckel - 30,
+};
+---
+
+<div class="pilot">
+  <section class="pilot-hero">
+    <div class="pilot-hero__text">
+      <p class="pilot-eyebrow">
+        <span class="pilot-puls" aria-hidden="true"></span>
+        {t(pilot.eyebrow)}
+      </p>
+      <h1>{t(pilot.titel)}</h1>
+      <p class="pilot-hero__lede">{t(pilot.einleitung)}</p>
+      <p class="pilot-beispiel">
+        <span>{t(p.beispiel_badge)}</span>
+        {t(pilot.beispiel_hinweis)}
+      </p>
+    </div>
+
+    <div class="pilot-produkt">
+      <div class="pilot-produkt__kopf">
+        <div>
+          <p class="pilot-mono pilot-schwach">{t(pilot.produkt.typ)}</p>
+          <p class="pilot-produkt__name">{pilot.produkt.name}</p>
+          <p class="pilot-schwach">{pilot.produkt.hersteller}</p>
+        </div>
+        <div class="pilot-qr" aria-hidden="true">
+          <svg viewBox={`0 0 ${qrN} ${qrN}`} shape-rendering="crispEdges">
+            {qrGross.map(([x, y]) => <rect x={x} y={y} width="1" height="1" />)}
+            {
+              qrFinder.map(([x, y]) => (
+                <path
+                  fill-rule="evenodd"
+                  d={`M${x} ${y}h7v7h-7zM${x + 1} ${y + 1}v5h5v-5zM${x + 2} ${y + 2}h3v3h-3z`}
+                />
+              ))
+            }
+          </svg>
+        </div>
+      </div>
+      <dl class="pilot-produkt__daten">
+        {
+          pilot.produkt.eckdaten.map((d) => (
+            <div>
+              <dt>{t(d.label)}</dt>
+              <dd>{d.wert}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <p class="pilot-mono pilot-produkt__id">ID {pilot.produkt.pass_id}</p>
+    </div>
+  </section>
+
+  <section class="pilot-abschnitt" aria-labelledby="pilot-schritte-titel">
+    <h2 id="pilot-schritte-titel" class="pilot-h2">{t(p.schritte_titel)}</h2>
+    <ol class="pilot-schritte">
+      {
+        pilot.schritte.map((s, i) => (
+          <li>
+            <span class="pilot-mono pilot-schritte__nr">0{i + 1}</span>
+            <h3>{t(s.titel)}</h3>
+            <p>{t(s.text)}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section
+    class="pilot-konsole pilot-explorer"
+    aria-labelledby="pilot-produkt-titel"
+  >
+    <div class="pilot-explorer__kopf">
+      <h2 id="pilot-produkt-titel" class="pilot-h2">{t(p.produkt_titel)}</h2>
+      <p>{t(p.produkt_text)}</p>
+    </div>
+
+    <div class="pilot-explorer__raster">
+      <div class="explosion" id="explosion" data-aktiv="zellen">
+        <svg
+          viewBox={`${vb.x} ${vb.y} ${vb.b} ${vb.h}`}
+          role="img"
+          aria-label={pilot.produkt.name}
+        >
+          <defs>
+            <pattern
+              id="raster"
+              width="24"
+              height="24"
+              patternUnits="userSpaceOnUse"
+            >
+              <path d="M24 0H0V24" class="explosion__raster"></path>
+            </pattern>
+          </defs>
+          <rect x={vb.x} y={vb.y} width={vb.b} height={vb.h} fill="url(#raster)"
+          ></rect>
+
+          <g class="explosion__fuehrung">
+            {
+              fuehrung.map((f) => (
+                <line x1={f.von[0]} y1={f.von[1]} x2={f.bis[0]} y2={f.bis[1]} />
+              ))
+            }
+          </g>
+
+          <g class="ebene" data-ebene="wanne" style="--zu:0px">
+            <polygon class="flaeche flaeche--links" points={wanne.links}
+            ></polygon>
+            <polygon class="flaeche flaeche--rechts" points={wanne.rechts}
+            ></polygon>
+            <polygon class="flaeche flaeche--oben" points={wanne.oben}
+            ></polygon>
+            <polygon class="flaeche flaeche--innen" points={wanneInnen}
+            ></polygon>
+            <g transform={schildMatrix} class="schild">
+              <rect x="20" y="4" width="96" height="22" rx="1.5"></rect>
+              {
+                qrModule.map((m) => (
+                  <rect
+                    class="schild__qr"
+                    x={m.x}
+                    y={m.y}
+                    width="2.4"
+                    height="2.4"
+                  />
+                ))
+              }
+              <rect class="schild__zeile" x="48" y="19" width="56" height="2"
+              ></rect>
+              <rect class="schild__zeile" x="48" y="14" width="40" height="2"
+              ></rect>
+              <rect class="schild__zeile" x="48" y="9" width="48" height="2"
+              ></rect>
+            </g>
+          </g>
+
+          <g
+            class="ebene ebene--innen"
+            data-ebene="zellen"
+            style={`--zu:${versatz.zellen}px`}
+          >
+            <polygon class="flaeche flaeche--links" points={halter.links}
+            ></polygon>
+            <polygon class="flaeche flaeche--rechts" points={halter.rechts}
+            ></polygon>
+            <polygon class="flaeche flaeche--oben" points={halter.oben}
+            ></polygon>
+            {
+              zellen.map((z) => (
+                <g class="zelle">
+                  <path class="zelle__mantel" d={z.mantel} />
+                  <ellipse
+                    class="zelle__kopf"
+                    cx={z.cx}
+                    cy={z.cy}
+                    rx={zrx.toFixed(1)}
+                    ry={zry.toFixed(1)}
+                  />
+                  <ellipse
+                    class="zelle__pol"
+                    cx={z.cx}
+                    cy={z.cy}
+                    rx={(zrx * 0.38).toFixed(1)}
+                    ry={(zry * 0.38).toFixed(1)}
+                  />
+                </g>
+              ))
+            }
+          </g>
+
+          <g
+            class="ebene ebene--innen"
+            data-ebene="bms"
+            style={`--zu:${versatz.bms}px`}
+          >
+            <polygon class="flaeche flaeche--links" points={platine.links}
+            ></polygon>
+            <polygon class="flaeche flaeche--rechts" points={platine.rechts}
+            ></polygon>
+            <polygon class="flaeche flaeche--oben platine" points={platine.oben}
+            ></polygon>
+            {
+              chips.map((c) => (
+                <g class="chip">
+                  <polygon class="flaeche flaeche--links" points={c.links} />
+                  <polygon class="flaeche flaeche--rechts" points={c.rechts} />
+                  <polygon class="flaeche flaeche--oben" points={c.oben} />
+                </g>
+              ))
+            }
+          </g>
+
+          <g
+            class="ebene"
+            data-ebene="deckel"
+            style={`--zu:${versatz.deckel}px`}
+          >
+            <polygon class="flaeche flaeche--links" points={deckel.links}
+            ></polygon>
+            <polygon class="flaeche flaeche--rechts" points={deckel.rechts}
+            ></polygon>
+            <polygon class="flaeche flaeche--oben" points={deckel.oben}
+            ></polygon>
+            <polygon class="flaeche flaeche--innen" points={deckelInnen}
+            ></polygon>
+          </g>
+        </svg>
+
+        {
+          pilot.komponenten.map((k) => (
+            <button
+              type="button"
+              class="hotspot"
+              data-komponente={k.id}
+              style={hotspotPos[k.id]}
+              aria-label={t(k.name)}
+            >
+              <span>{k.nummer}</span>
+            </button>
+          ))
+        }
+      </div>
+
+      <div class="pilot-explorer__info">
+        <div class="komponenten-liste" role="tablist">
+          {
+            pilot.komponenten.map((k, i) => (
+              <button
+                type="button"
+                role="tab"
+                class="komponenten-tab"
+                id={`tab-${k.id}`}
+                data-komponente={k.id}
+                aria-selected={i === 2 ? "true" : "false"}
+                aria-controls={`panel-${k.id}`}
+              >
+                <span class="pilot-mono">{k.nummer}</span>
+                {t(k.name)}
+              </button>
+            ))
+          }
+        </div>
+
+        {
+          pilot.komponenten.map((k, i) => (
+            <div
+              class="komponente"
+              role="tabpanel"
+              id={`panel-${k.id}`}
+              aria-labelledby={`tab-${k.id}`}
+              hidden={i !== 2}
+            >
+              <p class="komponente__text">{t(k.text)}</p>
+              <p class="komponente__label">{t(p.liefert_daten)}</p>
+              <ul class="komponente__felder">
+                {k.felder.map((id) => {
+                  const f = feldNachId[id];
+                  return f ? (
+                    <li>
+                      <span>{t(f.label)}</span>
+                      <span class={`stufe-chip stufe-chip--${f.stufe}`}>
+                        {stufeName[f.stufe]}
+                      </span>
+                    </li>
+                  ) : null;
+                })}
+              </ul>
+              <p class="komponente__quelle">
+                <span class="pilot-schwach">{t(p.datenquelle)}:</span>{" "}
+                {t(k.lieferant)}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="pilot-abschnitt pilot-pass"
+    aria-labelledby="pilot-pass-titel"
+  >
+    <div class="pilot-pass__text">
+      <h2 id="pilot-pass-titel" class="pilot-h2">{t(p.pass_titel)}</h2>
+      <p>{t(p.pass_text)}</p>
+
+      <p class="pilot-pass__rolle-label">{t(p.rolle_label)}</p>
+      <div class="rollen" role="group" aria-label={t(p.rolle_label)}>
+        {
+          stufen.map((s, i) => (
+            <button
+              type="button"
+              class={`rolle rolle--${s.id}`}
+              data-rolle={s.id}
+              aria-pressed={i === 0 ? "true" : "false"}
+            >
+              <strong>{t(s.name)}</strong>
+              <span>{t(s.wer)}</span>
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="telefon">
+      <div class="telefon__rahmen">
+        <div class="telefon__kamera" aria-hidden="true"></div>
+        <div class="pass-app" id="pass-app" data-rolle="oeffentlich">
+          <div class="pass-app__kopf">
+            <p class="pass-app__scan pilot-mono">
+              <span class="pilot-puls" aria-hidden="true"></span>
+              {t(p.scan_hinweis)}
+            </p>
+            <p class="pass-app__marke">Battery Passport</p>
+            <p class="pass-app__name">{pilot.produkt.name}</p>
+            <p class="pilot-mono pass-app__id">{pilot.produkt.pass_id}</p>
+            <p class="pass-app__chips">
+              <span class="pass-app__chip">{t(pilot.produkt.typ)}</span>
+              <span class="pass-app__chip pass-app__chip--live">
+                <span class="pilot-puls" aria-hidden="true"></span>
+                Original
+              </span>
+            </p>
+          </div>
+
+          {
+            abschnitte.map((a, i) => (
+              <details class="pass-abschnitt" open={i < 2}>
+                <summary>
+                  <span>{t(a.titel)}</span>
+                  <span class="pass-abschnitt__anzahl pilot-mono">
+                    {a.felder.length}
+                  </span>
+                </summary>
+                <dl>
+                  {a.felder.map((f) => (
+                    <div class="feld" data-feld={f.id} data-stufe={f.stufe}>
+                      <dt>
+                        {t(f.label)}
+                        {f.dynamisch && (
+                          <span class="feld__live" title={t(p.dynamisch)}>
+                            <span class="pilot-puls" aria-hidden="true" />
+                            live
+                          </span>
+                        )}
+                      </dt>
+                      <dd class="feld__wert">{t(f.wert)}</dd>
+                      <dd class="feld__sperre">
+                        <span aria-hidden="true">🔒</span> {t(p.gesperrt)}{" "}
+                        {stufeName[f.stufe]}
+                      </dd>
+                      {f.status === "unklar" && f.hinweis && (
+                        <dd class="feld__unklar">
+                          <strong>{t(p.unklar)}:</strong> {t(f.hinweis)}
+                        </dd>
+                      )}
+                    </div>
+                  ))}
+                </dl>
+              </details>
+            ))
+          }
+          <p class="pass-app__fuss">{t(pilot.beispiel_hinweis)}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="pilot-konsole pilot-kette"
+    aria-labelledby="pilot-kette-titel"
+  >
+    <div class="pilot-explorer__kopf">
+      <h2 id="pilot-kette-titel" class="pilot-h2">
+        {t(p.lieferkette_titel)}
+      </h2>
+      <p>{t(p.lieferkette_text)}</p>
+    </div>
+    <ol class="kette">
+      {
+        pilot.lieferkette.map((k, i) => (
+          <li
+            class={
+              k.verantwortlich
+                ? "kette__glied ist-verantwortlich"
+                : "kette__glied"
+            }
+            style={`--i:${i}`}
+          >
+            <span class="pilot-mono kette__nr">0{i + 1}</span>
+            <strong>{t(k.rolle)}</strong>
+            <span class="kette__beispiel">
+              {k.verantwortlich ? (
+                <span class="kette__badge">{t(p.verantwortlich)}</span>
+              ) : (
+                t(k.beispiel)
+              )}
+            </span>
+            <ul>
+              {k.liefert[lang].map((l) => (
+                <li>{l}</li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <section class="pilot-quellen" aria-labelledby="pilot-quellen-titel">
+    <h2 id="pilot-quellen-titel">{t(p.quellen_titel)}</h2>
+    <ul>
+      {
+        pilot.quellen.map((q) => (
+          <li>
+            <a href={q.url} target="_blank" rel="noopener">
+              {t(q.label)}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <p class="check__zurueck">
+    <a id="pilot-zurueck" href={`/${lang}/ergebnis/${gruppe.id}/`}
+      >← {t(p.zurueck_ergebnis)}</a
+    >
+  </p>
+</div>
+
+<script>
+  function initPilot() {
+    const explosion = document.getElementById("explosion");
+    const passApp = document.getElementById("pass-app");
+    if (!explosion || !passApp) return;
+
+    // Akku auseinanderfahren, sobald die Grafik im Bild ist.
+    const beobachter = new IntersectionObserver(
+      (eintraege) => {
+        if (eintraege.some((e) => e.isIntersecting)) {
+          explosion.classList.add("ist-explodiert");
+          beobachter.disconnect();
+        }
+      },
+      { threshold: 0.35 },
+    );
+    beobachter.observe(explosion);
+
+    const tabs =
+      document.querySelectorAll<HTMLButtonElement>(".komponenten-tab");
+    function waehle(id: string) {
+      explosion!.dataset.aktiv = id;
+      tabs.forEach((tab) => {
+        const aktiv = tab.dataset.komponente === id;
+        tab.setAttribute("aria-selected", String(aktiv));
+        const panel = document.getElementById(
+          `panel-${tab.dataset.komponente}`,
+        );
+        if (panel) panel.hidden = !aktiv;
+      });
+      document
+        .querySelectorAll<HTMLButtonElement>(".hotspot")
+        .forEach((h) =>
+          h.classList.toggle("ist-aktiv", h.dataset.komponente === id),
+        );
+    }
+    document
+      .querySelectorAll<HTMLButtonElement>("[data-komponente]")
+      .forEach((knopf) =>
+        knopf.addEventListener("click", () =>
+          waehle(knopf.dataset.komponente || ""),
+        ),
+      );
+    waehle(explosion.dataset.aktiv || "");
+
+    // Rollenwechsel: gesperrte Felder werden per CSS ausgegraut.
+    const rollen = document.querySelectorAll<HTMLButtonElement>(".rolle");
+    rollen.forEach((knopf) =>
+      knopf.addEventListener("click", () => {
+        passApp.dataset.rolle = knopf.dataset.rolle;
+        rollen.forEach((r) =>
+          r.setAttribute("aria-pressed", String(r === knopf)),
+        );
+      }),
+    );
+
+    // Antworten aus dem Check (#a=…) für den Rückweg zum Ergebnis mitnehmen.
+    const zurueck = document.getElementById("pilot-zurueck");
+    if (zurueck instanceof HTMLAnchorElement && window.location.hash)
+      zurueck.hash = window.location.hash;
+  }
+
+  initPilot();
+</script>
