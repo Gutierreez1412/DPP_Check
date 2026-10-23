@@ -1161,7 +1161,7 @@ h2 {
   filter: blur(20px);
   transition:
     opacity 1.2s ease 1.5s,
-    left 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+    translate 0.9s cubic-bezier(0.65, 0, 0.35, 1);
   pointer-events: none;
 }
 
@@ -1476,13 +1476,15 @@ h2 {
   visibility: visible;
 }
 
-/* Vor dem Aufteilen nimmt die Spalte keine Höhe ein */
-.ergebnis-karte:not(.ist-aufgeteilt) .begruendung {
-  height: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
+/* Schmale Bildschirme: vor dem Aufteilen nimmt die Spalte keine Höhe ein */
+@media (max-width: 899px) {
+  .ergebnis-karte:not(.ist-aufgeteilt) .begruendung {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+  }
 }
 
 .begruendung__titel {
@@ -1624,30 +1626,42 @@ details[open] > .begruendung__kopf::after {
 
 @media (min-width: 900px) {
   /* Karte darf breiter werden als die Textspalte der Seite */
+  /*
+    Das zweispaltige Layout steht von Anfang an fest. Vor dem Aufteilen wird
+    nur die linke Spalte per transform in die Kartenmitte verschoben
+    (--versatz, per Skript gemessen) und gleitet dann zurück. So muss der
+    Browser während der Animation kein Layout neu berechnen.
+  */
   .ergebnis-karte {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 0fr);
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    column-gap: clamp(2rem, 4vw, 3.5rem);
     align-items: start;
     width: min(1120px, calc(100vw - 2rem));
     margin-inline: calc(50% - min(560px, 50vw - 1rem));
-    transition:
-      opacity 0.6s ease,
-      transform 0.6s ease,
-      grid-template-columns 0.9s cubic-bezier(0.65, 0, 0.35, 1),
-      column-gap 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  .ergebnis-karte::before {
+    will-change: translate;
+  }
+
+  .ergebnis-karte__haupt {
+    transform: translateX(var(--versatz, 0px));
+    transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+    will-change: transform;
+  }
+
+  .ergebnis-karte.ist-aufgeteilt .ergebnis-karte__haupt {
+    transform: none;
   }
 
   .ergebnis-karte[hidden] {
     display: none;
   }
 
-  .ergebnis-karte.ist-aufgeteilt {
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-    column-gap: clamp(2rem, 4vw, 3.5rem);
-  }
-
+  /* Der Lichtschein folgt dem Ergebnis nach links */
   .ergebnis-karte.ist-aufgeteilt::before {
-    left: 20%;
+    translate: calc(-50% - var(--versatz, 0px)) 0;
   }
 
   /* Pilot-Link als Fußzeile über beide Spalten */

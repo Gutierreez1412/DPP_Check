@@ -402,7 +402,24 @@ const texteFuerClient = {
     const winkel = { gruen: -60, gelb: 0, rot: 60 }[stufeId];
     const zeiger = document.getElementById("tacho-zeiger");
     karte.hidden = false;
+
+    // Versatz messen, um den das Ergebnis vor dem Aufteilen in die Kartenmitte
+    // geschoben wird (nur im zweispaltigen Layout ab 900px). Beim ersten Setzen
+    // ohne Übergang, damit nichts sichtbar hin- und herrutscht.
+    const haupt = karte.querySelector<HTMLElement>(".ergebnis-karte__haupt");
+    const zweispaltig = window.matchMedia("(min-width: 900px)");
+    const setzeVersatz = () => {
+      const versatz =
+        haupt && zweispaltig.matches
+          ? karte.clientWidth / 2 - (haupt.offsetLeft + haupt.offsetWidth / 2)
+          : 0;
+      karte.style.setProperty("--versatz", `${versatz}px`);
+    };
+    if (haupt) haupt.style.transition = "none";
+    setzeVersatz();
     void karte.offsetWidth;
+    if (haupt) haupt.style.transition = "";
+    window.addEventListener("resize", setzeVersatz);
     requestAnimationFrame(() => {
       karte.classList.add("ist-sichtbar");
       if (zeiger) zeiger.style.transform = `rotate(${winkel}deg)`;
