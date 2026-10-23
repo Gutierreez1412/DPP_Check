@@ -31,7 +31,7 @@ const seitentitel = title
     <meta name="generator" content={Astro.generator} />
     <title>{seitentitel}</title>
   </head>
-  <body>
+  <body class:list={{ breit }}>
     <header class="seite-kopf">
       <div class="seite-kopf__innen">
         <a class="seite-kopf__titel" href={`/${lang}/`}>{text(seite.titel)}</a>
@@ -41,7 +41,7 @@ const seitentitel = title
       </div>
     </header>
 
-    <main class:list={{ breit }}>
+    <main>
       <slot />
     </main>
 
