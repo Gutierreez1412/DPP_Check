@@ -1,5 +1,6 @@
 ---
 import seite from "../../inhalte/seite.json";
+import GrundlagenSlider from "./GrundlagenSlider.astro";
 
 interface Props {
   lang: "de" | "en";
@@ -42,7 +43,7 @@ const start = seite.startseite;
 </section>
 
 <section class="nutzen">
-  <ul class="nutzen__liste">
+  <ul class="nutzen__liste" style={`--anzahl:${start.nutzen.length}`}>
     {
       start.nutzen.map((punkt) => (
         <li class="nutzen__punkt">
@@ -53,5 +54,7 @@ const start = seite.startseite;
     }
   </ul>
 </section>
+
+<GrundlagenSlider lang={lang} />
 
 <p class="start-hinweis">{start.hinweis[lang]}</p>

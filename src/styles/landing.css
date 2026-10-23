@@ -161,7 +161,7 @@
   }
 
   .nutzen__liste {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(var(--anzahl, 3), 1fr);
     gap: 2rem;
   }
 }
@@ -203,4 +203,10 @@
 .analyse-platzhalter p {
   margin: 1rem 0 2rem;
   color: var(--farbe-text-schwach);
+}
+
+/* ESPR-Kurzinfo (Slider, Inhalt: inhalte/grundlagen.json) auf der Startseite */
+.start-haupt .grundlagen-slider {
+  margin-top: 0;
+  text-align: left;
 }

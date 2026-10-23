@@ -1,0 +1,76 @@
+---
+import grundlagen from "../../inhalte/grundlagen.json";
+import seite from "../../inhalte/seite.json";
+
+interface Props {
+  lang: "de" | "en";
+}
+
+const { lang } = Astro.props;
+const t = (feld: Record<"de" | "en", string>) => feld[lang];
+---
+
+<section class="grundlagen-slider" aria-labelledby="grundlagen-titel">
+  <div class="grundlagen-slider__kopf">
+    <h2 id="grundlagen-titel">{t(grundlagen.titel)}</h2>
+    <div class="grundlagen-slider__steuerung" hidden>
+      <button
+        type="button"
+        data-richtung="-1"
+        aria-label={t(seite.slider_zurueck)}>‹</button
+      >
+      <button
+        type="button"
+        data-richtung="1"
+        aria-label={t(seite.slider_weiter)}>›</button
+      >
+    </div>
+  </div>
+  <ul class="grundlagen-slider__spur" tabindex="0">
+    {
+      grundlagen.abschnitte.map((a) => (
+        <li class="grundlagen-karte">
+          <h3>{t(a.ueberschrift)}</h3>
+          <p class="grundlagen-karte__kern">{t(a.kern)}</p>
+          <p>{t(a.text)}</p>
+          <a href={a.quelle} target="_blank" rel="noopener">
+            {t(seite.quelle_label)}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<script>
+  document.querySelectorAll(".grundlagen-slider").forEach((slider) => {
+    const spur = slider.querySelector<HTMLElement>(".grundlagen-slider__spur");
+    const steuerung = slider.querySelector<HTMLElement>(
+      ".grundlagen-slider__steuerung",
+    );
+    if (!spur || !steuerung) return;
+    const knoepfe = steuerung.querySelectorAll<HTMLButtonElement>("button");
+    const [zurueck, weiter] = knoepfe;
+
+    const aktualisieren = () => {
+      const max = spur.scrollWidth - spur.clientWidth - 2;
+      steuerung.hidden = max <= 0;
+      zurueck.disabled = spur.scrollLeft <= 2;
+      weiter.disabled = spur.scrollLeft >= max;
+    };
+
+    knoepfe.forEach((knopf) =>
+      knopf.addEventListener("click", () => {
+        const karte = spur.querySelector<HTMLElement>("li");
+        const schritt = (karte?.offsetWidth ?? 280) + 16;
+        spur.scrollBy({
+          left: Number(knopf.dataset.richtung) * schritt,
+          behavior: "smooth",
+        });
+      }),
+    );
+    spur.addEventListener("scroll", aktualisieren, { passive: true });
+    window.addEventListener("resize", aktualisieren);
+    aktualisieren();
+  });
+</script>
