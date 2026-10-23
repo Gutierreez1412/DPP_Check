@@ -11,7 +11,7 @@ Abhängig von den Antworten landen Nutzer auf unterschiedlichen Seiten.
 Das Tool liefert **Einschätzungen und Scores, keine Rechtsberatung und keine
 Konformitätsnachweise**. Das muss in Texten und Disclaimern erkennbar sein.
 
-Betreiber: Future Response (Berlin). Zielgruppe: regulierungsbetroffener Mittelstand im DACH-Raum.
+Kooperationsprojekt mehrerer Partner (u. a. Future Response, Berlin); auf der Seite wird kein einzelner Partner als Betreiber genannt. Zielgruppe: regulierungsbetroffener Mittelstand im DACH-Raum.
 
 ## 2. Leitprinzipien
 
