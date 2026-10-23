@@ -28,13 +28,33 @@ type Feld = {
   dynamisch?: boolean;
   status?: string;
   hinweis?: Record<"de" | "en", string>;
+  datenpunkte?: number[];
 };
-const abschnitte = pilot.pass.abschnitte.map((a) => ({
-  ...a,
-  felder: a.felder as Feld[],
-}));
+// Datenpunkte nach Art. 77 und Anhang VI/XIII: Felder mit Beispielwert werden gezeigt, alle
+// übrigen Datenpunkte eines Registers nur unscharf angeteasert.
+const dpNachNr = Object.fromEntries(
+  pilot.pass.datenpunkte.map((d) => [d.nr, d]),
+);
+const abschnitte = pilot.pass.abschnitte.map((a) => {
+  const felder = a.felder as Feld[];
+  const gezeigt = new Set(felder.flatMap((f) => f.datenpunkte ?? []));
+  return {
+    ...a,
+    felder,
+    weitere: a.datenpunkte
+      .filter((nr) => !gezeigt.has(nr))
+      .map((nr) => dpNachNr[nr]),
+  };
+});
 const alleFelder = abschnitte.flatMap((a) => a.felder);
 const feldNachId = Object.fromEntries(alleFelder.map((f) => [f.id, f]));
+const dpZahl = {
+  gesamt: pilot.pass.datenpunkte.length,
+  lmt: pilot.pass.datenpunkte.filter(
+    (d) => d.lmt !== "spaeter" && d.lmt !== "entfaellt",
+  ).length,
+  beispiel: new Set(alleFelder.flatMap((f) => f.datenpunkte ?? [])).size,
+};
 
 /*
   Explosionszeichnung in isometrischer Projektion. Geometrie ist bewusst im
@@ -153,6 +173,45 @@ const qrFinder = [
   [0, qrN - 7],
 ];
 
+/*
+  Hero-Szene: E-Bike in Seitenansicht (Strichzeichnung), ein Sucher-Rahmen
+  markiert den Akku am Unterrohr, das Detail-Panel zeigt dessen Typenschild.
+*/
+const rad = { r: 48, hinten: [70, 170], vorne: [270, 170] };
+const speichen = ([cx, cy]: number[]) =>
+  Array.from({ length: 9 }, (_, k) => {
+    const w = (k * Math.PI) / 9;
+    const [dx, dy] = [Math.cos(w) * 42, Math.sin(w) * 42];
+    return `M${(cx - dx).toFixed(1)} ${(cy - dy).toFixed(1)}L${(cx + dx).toFixed(1)} ${(cy + dy).toFixed(1)}`;
+  }).join("");
+// Akku liegt leicht versetzt auf dem Unterrohr (Tretlager 150|175 → Steuerrohr 252|124).
+const akkuWinkel = (Math.atan2(124 - 175, 252 - 150) * 180) / Math.PI;
+const akku = { x: 197.4, y: 142.3 };
+const bike = { s: 0.52, x: 4, y: 8 };
+// Sucher-Rahmen um den Akku (Szenen-Koordinaten) und rechtes Detail-Panel.
+const sucher = {
+  x: akku.x * bike.s + bike.x - 24,
+  y: akku.y * bike.s + bike.y - 18,
+  b: 48,
+  h: 36,
+};
+const ecke = 6;
+const sucherPfad = [
+  `M${sucher.x} ${sucher.y + ecke}v${-ecke}h${ecke}`,
+  `M${sucher.x + sucher.b - ecke} ${sucher.y}h${ecke}v${ecke}`,
+  `M${sucher.x + sucher.b} ${sucher.y + sucher.h - ecke}v${ecke}h${-ecke}`,
+  `M${sucher.x + ecke} ${sucher.y + sucher.h}h${-ecke}v${-ecke}`,
+].join("");
+const panel = { x: 246, y: 6, b: 150, h: 120 };
+const strahl = [
+  [sucher.x + sucher.b, sucher.y],
+  [panel.x, panel.y + 4],
+  [panel.x, panel.y + panel.h - 4],
+  [sucher.x + sucher.b, sucher.y + sucher.h],
+]
+  .map((q) => q.map((n) => n.toFixed(1)).join(","))
+  .join(" ");
+
 const vb = { x: -95, y: -228, b: 395, h: 448 };
 const hotspot = (x: number, y: number, z: number) => {
   const [sx, sy] = iso(x, y, z);
@@ -195,19 +254,143 @@ const versatz: Record<string, number> = {
           <p class="pilot-produkt__name">{pilot.produkt.name}</p>
           <p class="pilot-schwach">{pilot.produkt.hersteller}</p>
         </div>
-        <div class="pilot-qr" aria-hidden="true">
-          <svg viewBox={`0 0 ${qrN} ${qrN}`} shape-rendering="crispEdges">
-            {qrGross.map(([x, y]) => <rect x={x} y={y} width="1" height="1" />)}
+      </div>
+
+      <div class="pilot-szene">
+        <svg viewBox="0 0 400 132" role="img" aria-label={t(p.szene_label)}>
+          <defs>
+            <linearGradient id="szene-strahl-verlauf" x1="0" x2="1">
+              <stop offset="0" stop-color="#45d4c0" stop-opacity="0.2"></stop>
+              <stop offset="1" stop-color="#45d4c0" stop-opacity="0.02"></stop>
+            </linearGradient>
+          </defs>
+
+          <line class="szene__boden" x1="6" y1="121.5" x2="236" y2="121.5"
+          ></line>
+
+          <g transform={`translate(${bike.x} ${bike.y}) scale(${bike.s})`}>
             {
-              qrFinder.map(([x, y]) => (
-                <path
-                  fill-rule="evenodd"
-                  d={`M${x} ${y}h7v7h-7zM${x + 1} ${y + 1}v5h5v-5zM${x + 2} ${y + 2}h3v3h-3z`}
-                />
+              [rad.hinten, rad.vorne].map(([cx, cy]) => (
+                <g>
+                  <path class="szene__speichen" d={speichen([cx, cy])} />
+                  <circle
+                    class="szene__linie szene__reifen"
+                    cx={cx}
+                    cy={cy}
+                    r={rad.r}
+                    pathLength="1"
+                  />
+                  <circle class="szene__nabe" cx={cx} cy={cy} r="4" />
+                </g>
               ))
             }
-          </svg>
-        </div>
+            <path
+              class="szene__linie"
+              pathLength="1"
+              d="M70 170L150 175L138 100M138 108L70 170M136 102L245 98M245 92L252 124L270 170M132 80L138 100M252 124L150 175"
+            ></path>
+            <path
+              class="szene__linie"
+              pathLength="1"
+              d="M245 92L241 80M232 79L252 76L259 81M117 80Q132 74 148 80M150 175L162 195M155 196L170 195"
+            ></path>
+            <circle class="szene__motor" cx="150" cy="175" r="11"></circle>
+            <g
+              class="szene__akku"
+              transform={`translate(${akku.x} ${akku.y}) rotate(${akkuWinkel.toFixed(2)})`}
+            >
+              <rect x="-38" y="-8" width="76" height="16" rx="5"></rect>
+            </g>
+          </g>
+
+          <polygon class="szene__strahl" points={strahl}></polygon>
+          <path class="szene__sucher" d={sucherPfad}></path>
+
+          <g class="szene__panel">
+            <rect
+              class="szene__panel-grund"
+              x={panel.x}
+              y={panel.y}
+              width={panel.b}
+              height={panel.h}
+              rx="8"></rect>
+            <text class="szene__label" x={panel.x + 10} y={panel.y + 15}
+              >{t(p.szene_schild).toUpperCase()}</text
+            >
+            <rect
+              class="szene__schild"
+              x={panel.x + 10}
+              y={panel.y + 23}
+              width={panel.b - 20}
+              height="66"
+              rx="4"></rect>
+            <svg
+              x={panel.x + 16}
+              y={panel.y + 29}
+              width="54"
+              height="54"
+              viewBox={`0 0 ${qrN} ${qrN}`}
+              shape-rendering="crispEdges"
+              class="szene__qr"
+            >
+              {
+                qrGross.map(([x, y]) => (
+                  <rect x={x} y={y} width="1" height="1" />
+                ))
+              }
+              {
+                qrFinder.map(([x, y]) => (
+                  <path
+                    fill-rule="evenodd"
+                    d={`M${x} ${y}h7v7h-7zM${x + 1} ${y + 1}v5h5v-5zM${x + 2} ${y + 2}h3v3h-3z`}
+                  />
+                ))
+              }
+            </svg>
+            <rect
+              class="szene__scan"
+              x={panel.x + 14}
+              y={panel.y + 29}
+              width="58"
+              height="1.4"></rect>
+            <text class="szene__schild-name" x={panel.x + 77} y={panel.y + 40}
+              >{pilot.produkt.name}</text
+            >
+            {
+              pilot.produkt.eckdaten.slice(0, 2).map((d, i) => (
+                <text
+                  class="szene__schild-daten"
+                  x={panel.x + 77}
+                  y={panel.y + 53 + i * 10}
+                >
+                  {d.wert}
+                </text>
+              ))
+            }
+            <rect
+              class="szene__schild-zeile"
+              x={panel.x + 77}
+              y={panel.y + 74}
+              width="40"
+              height="2.2"></rect>
+            <rect
+              class="szene__schild-zeile"
+              x={panel.x + 77}
+              y={panel.y + 79}
+              width="28"
+              height="2.2"></rect>
+            <circle
+              class="szene__punkt"
+              cx={panel.x + 13}
+              cy={panel.y + 106}
+              r="2.2"></circle>
+            <text
+              class="szene__label szene__label--akzent"
+              x={panel.x + 20}
+              y={panel.y + 108.5}>{t(p.szene_scan).toUpperCase()}</text
+            >
+          </g>
+        </svg>
       </div>
       <dl class="pilot-produkt__daten">
         {
@@ -466,86 +649,171 @@ const versatz: Record<string, number> = {
     <div class="pilot-pass__text">
       <h2 id="pilot-pass-titel" class="pilot-h2">{t(p.pass_titel)}</h2>
       <p>{t(p.pass_text)}</p>
+    </div>
 
-      <p class="pilot-pass__rolle-label">{t(p.rolle_label)}</p>
-      <div class="rollen" role="group" aria-label={t(p.rolle_label)}>
+    <div class="pass-viewer" id="pass-app" data-rolle="oeffentlich">
+      <header class="pass-viewer__leiste">
+        <div>
+          <p class="pass-viewer__scan pilot-mono">
+            <span class="pilot-puls" aria-hidden="true"></span>
+            {t(p.scan_hinweis)}
+          </p>
+          <p class="pass-viewer__name">
+            {pilot.produkt.name}
+            <span class="pass-viewer__marke">Battery Passport</span>
+          </p>
+          <p class="pilot-mono pass-viewer__id">{pilot.produkt.pass_id}</p>
+        </div>
+
+        <div class="pass-viewer__rollen">
+          <p class="pass-viewer__label">{t(p.rolle_label)}</p>
+          <div class="rollen" role="group" aria-label={t(p.rolle_label)}>
+            {
+              stufen.map((s, i) => (
+                <button
+                  type="button"
+                  class={`rolle rolle--${s.id}`}
+                  data-rolle={s.id}
+                  aria-pressed={i === 0 ? "true" : "false"}
+                >
+                  {t(s.name)}
+                </button>
+              ))
+            }
+          </div>
+          <p class="pass-viewer__wer">
+            {stufen.map((s) => <span data-wer={s.id}>{t(s.wer)}</span>)}
+          </p>
+        </div>
+      </header>
+
+      <dl class="pass-viewer__zahlen">
+        <div>
+          <dt>{t(p.dp_gesamt)}</dt>
+          <dd class="pilot-mono">{dpZahl.gesamt}</dd>
+        </div>
+        <div>
+          <dt>{t(p.dp_lmt)}</dt>
+          <dd class="pilot-mono">{dpZahl.lmt}</dd>
+        </div>
+        <div>
+          <dt>{t(p.dp_beispiel)}</dt>
+          <dd class="pilot-mono">{dpZahl.beispiel}</dd>
+        </div>
+        <div class="pass-viewer__balken" aria-hidden="true">
+          <span
+            style={`width:${((dpZahl.beispiel / dpZahl.gesamt) * 100).toFixed(1)}%`}
+          ></span>
+        </div>
+      </dl>
+
+      <div class="pass-viewer__koerper">
+        <div class="register" role="tablist" aria-label={t(p.register_label)}>
+          {
+            abschnitte.map((a, i) => (
+              <button
+                type="button"
+                role="tab"
+                class="register__tab"
+                id={`register-tab-${a.id}`}
+                data-register={a.id}
+                aria-selected={i === 0 ? "true" : "false"}
+                aria-controls={`register-${a.id}`}
+              >
+                <span class="pilot-mono register__nr">0{i + 1}</span>
+                <span>{t(a.titel)}</span>
+                <span class="pilot-mono register__anzahl">
+                  {a.datenpunkte.length}
+                </span>
+              </button>
+            ))
+          }
+        </div>
+
         {
-          stufen.map((s, i) => (
-            <button
-              type="button"
-              class={`rolle rolle--${s.id}`}
-              data-rolle={s.id}
-              aria-pressed={i === 0 ? "true" : "false"}
+          abschnitte.map((a, i) => (
+            <div
+              class="register__inhalt"
+              role="tabpanel"
+              id={`register-${a.id}`}
+              aria-labelledby={`register-tab-${a.id}`}
+              hidden={i !== 0}
             >
-              <strong>{t(s.name)}</strong>
-              <span>{t(s.wer)}</span>
-            </button>
+              <h3 class="register__titel">
+                <span class="pilot-mono register__nr">0{i + 1}</span>
+                {t(a.titel)}
+                <span class="pilot-mono register__titel-anzahl">
+                  {a.datenpunkte.length} {t(p.dp_einheit)}
+                </span>
+              </h3>
+              <dl class="register__felder">
+                {a.felder.map((f) => (
+                  <div class="feld" data-feld={f.id} data-stufe={f.stufe}>
+                    {f.datenpunkte && (
+                      <span class="pilot-mono feld__dp">
+                        DP {f.datenpunkte.join(" · ")}
+                      </span>
+                    )}
+                    <dt>
+                      {t(f.label)}
+                      {f.dynamisch && (
+                        <span class="feld__live" title={t(p.dynamisch)}>
+                          <span class="pilot-puls" aria-hidden="true" />
+                          live
+                        </span>
+                      )}
+                    </dt>
+                    <dd class="feld__wert">{t(f.wert)}</dd>
+                    <dd class="feld__sperre">
+                      <span aria-hidden="true">🔒</span> {t(p.gesperrt)}{" "}
+                      {stufeName[f.stufe]}
+                    </dd>
+                    {f.status === "unklar" && f.hinweis && (
+                      <dd class="feld__unklar">
+                        <details>
+                          <summary>{t(p.unklar)}</summary>
+                          {t(f.hinweis)}
+                        </details>
+                      </dd>
+                    )}
+                  </div>
+                ))}
+              </dl>
+
+              {a.weitere.length > 0 && (
+                <div class="weitere">
+                  <p class="weitere__titel pilot-mono">
+                    + {a.weitere.length} {t(p.teaser)}
+                  </p>
+                  <ul class="weitere__liste" aria-hidden="true">
+                    {a.weitere.map((d) => (
+                      <li
+                        class={`weitere__dp weitere__dp--${d.lmt}`}
+                        data-stufe={d.stufe}
+                      >
+                        <span class="weitere__kopf pilot-mono">
+                          DP {d.nr}
+                          {(d.lmt === "spaeter" || d.lmt === "entfaellt") && (
+                            <span class="weitere__tag">
+                              {t(p.dp_status[d.lmt as "spaeter" | "entfaellt"])}
+                            </span>
+                          )}
+                        </span>
+                        <span class="weitere__name">{t(d.name)}</span>
+                        <span class="weitere__wert" />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           ))
         }
       </div>
-    </div>
 
-    <div class="telefon">
-      <div class="telefon__rahmen">
-        <div class="telefon__kamera" aria-hidden="true"></div>
-        <div class="pass-app" id="pass-app" data-rolle="oeffentlich">
-          <div class="pass-app__kopf">
-            <p class="pass-app__scan pilot-mono">
-              <span class="pilot-puls" aria-hidden="true"></span>
-              {t(p.scan_hinweis)}
-            </p>
-            <p class="pass-app__marke">Battery Passport</p>
-            <p class="pass-app__name">{pilot.produkt.name}</p>
-            <p class="pilot-mono pass-app__id">{pilot.produkt.pass_id}</p>
-            <p class="pass-app__chips">
-              <span class="pass-app__chip">{t(pilot.produkt.typ)}</span>
-              <span class="pass-app__chip pass-app__chip--live">
-                <span class="pilot-puls" aria-hidden="true"></span>
-                Original
-              </span>
-            </p>
-          </div>
-
-          {
-            abschnitte.map((a, i) => (
-              <details class="pass-abschnitt" open={i < 2}>
-                <summary>
-                  <span>{t(a.titel)}</span>
-                  <span class="pass-abschnitt__anzahl pilot-mono">
-                    {a.felder.length}
-                  </span>
-                </summary>
-                <dl>
-                  {a.felder.map((f) => (
-                    <div class="feld" data-feld={f.id} data-stufe={f.stufe}>
-                      <dt>
-                        {t(f.label)}
-                        {f.dynamisch && (
-                          <span class="feld__live" title={t(p.dynamisch)}>
-                            <span class="pilot-puls" aria-hidden="true" />
-                            live
-                          </span>
-                        )}
-                      </dt>
-                      <dd class="feld__wert">{t(f.wert)}</dd>
-                      <dd class="feld__sperre">
-                        <span aria-hidden="true">🔒</span> {t(p.gesperrt)}{" "}
-                        {stufeName[f.stufe]}
-                      </dd>
-                      {f.status === "unklar" && f.hinweis && (
-                        <dd class="feld__unklar">
-                          <strong>{t(p.unklar)}:</strong> {t(f.hinweis)}
-                        </dd>
-                      )}
-                    </div>
-                  ))}
-                </dl>
-              </details>
-            ))
-          }
-          <p class="pass-app__fuss">{t(pilot.beispiel_hinweis)}</p>
-        </div>
-      </div>
+      <p class="pass-viewer__fuss">
+        {t(pilot.beispiel_hinweis)}
+      </p>
     </div>
   </section>
 
@@ -657,7 +925,23 @@ const versatz: Record<string, number> = {
       );
     waehle(explosion.dataset.aktiv || "");
 
-    // Rollenwechsel: gesperrte Felder werden per CSS ausgegraut.
+    // Register im Pass-Viewer.
+    const register =
+      document.querySelectorAll<HTMLButtonElement>(".register__tab");
+    register.forEach((tab) =>
+      tab.addEventListener("click", () =>
+        register.forEach((r) => {
+          const aktiv = r === tab;
+          r.setAttribute("aria-selected", String(aktiv));
+          const panel = document.getElementById(
+            `register-${r.dataset.register}`,
+          );
+          if (panel) panel.hidden = !aktiv;
+        }),
+      ),
+    );
+
+    // Rollenwechsel: gesperrte Felder werden per CSS unscharf dargestellt.
     const rollen = document.querySelectorAll<HTMLButtonElement>(".rolle");
     rollen.forEach((knopf) =>
       knopf.addEventListener("click", () => {
