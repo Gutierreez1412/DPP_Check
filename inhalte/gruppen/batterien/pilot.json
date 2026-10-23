@@ -65,6 +65,7 @@
         "de": "Manche Daten sind für alle sichtbar. Andere sehen nur Werkstätten, Recycler oder Behörden.",
         "en": "Some data is visible to everyone. Other data is only visible to repairers, recyclers or authorities."
       },
+      "zugriffsstufen_zeigen": true,
       "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#anx_XIII"
     }
   ],
