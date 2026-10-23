@@ -151,21 +151,166 @@ main.breit {
   font-size: 0.85rem;
 }
 
-.pilot-qr {
-  width: 4.75rem;
-  height: 4.75rem;
-  padding: 0.4rem;
-  flex-shrink: 0;
-  border-radius: 8px;
-  background: #fff;
-  color: var(--p-bg);
+/* Hero-Szene: E-Bike mit Sucher auf dem Akku und Typenschild-Panel.
+   Endzustand ist der Normalzustand, die Animationen spielen nur den Aufbau ab. */
+
+.pilot-szene {
+  margin: 1.1rem 0 0;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--p-linie);
 }
 
-.pilot-qr svg {
+.pilot-szene svg {
   display: block;
   width: 100%;
-  height: 100%;
-  fill: currentColor;
+  height: auto;
+}
+
+.szene__boden {
+  stroke: var(--p-linie);
+  stroke-dasharray: 2 3;
+}
+
+.szene__linie {
+  fill: none;
+  stroke: rgba(232, 240, 243, 0.55);
+  stroke-width: 3.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  animation: szene-zeichnen 1.2s cubic-bezier(0.6, 0, 0.2, 1) both;
+}
+
+.szene__reifen {
+  stroke-width: 6;
+}
+
+.szene__speichen {
+  stroke: rgba(232, 240, 243, 0.16);
+  stroke-width: 1.2;
+  animation: szene-einblenden 0.6s 0.8s both;
+}
+
+.szene__nabe,
+.szene__motor {
+  fill: var(--p-panel-2);
+  stroke: rgba(232, 240, 243, 0.55);
+  stroke-width: 2.4;
+  animation: szene-einblenden 0.5s 0.7s both;
+}
+
+.szene__akku rect {
+  fill: rgba(69, 212, 192, 0.3);
+  stroke: var(--p-akzent);
+  stroke-width: 2.6;
+}
+
+.szene__akku {
+  filter: drop-shadow(0 0 5px rgba(69, 212, 192, 0.65));
+  animation: szene-einblenden 0.5s 0.9s both;
+}
+
+.szene__sucher {
+  fill: none;
+  stroke: var(--p-akzent);
+  stroke-width: 1.4;
+  animation: szene-einblenden 0.4s 1.1s both;
+}
+
+.szene__strahl {
+  fill: url(#szene-strahl-verlauf);
+  stroke: rgba(69, 212, 192, 0.35);
+  stroke-width: 0.6;
+  stroke-dasharray: 2 2;
+  animation: szene-einblenden 0.5s 1.2s both;
+}
+
+.szene__panel {
+  animation: szene-panel 0.6s 1.3s cubic-bezier(0.2, 0.8, 0.3, 1) both;
+}
+
+.szene__panel-grund {
+  fill: var(--p-panel);
+  stroke: rgba(69, 212, 192, 0.4);
+  stroke-width: 0.8;
+}
+
+.szene__schild {
+  fill: #e8f0f3;
+}
+
+.szene__qr {
+  fill: var(--p-bg);
+}
+
+.szene__scan {
+  fill: var(--p-akzent);
+  filter: drop-shadow(0 0 2px var(--p-akzent));
+  animation: szene-scan 2.2s 2s ease-in-out infinite alternate;
+}
+
+.szene__schild-name {
+  font-family: var(--schrift-headline);
+  font-size: 7px;
+  font-weight: 700;
+  fill: #0b141a;
+}
+
+.szene__schild-daten {
+  font-family: var(--p-mono);
+  font-size: 7px;
+  fill: #3c4f59;
+}
+
+.szene__schild-zeile {
+  fill: #b9c7cd;
+}
+
+.szene__label {
+  font-family: var(--p-mono);
+  font-size: 6.5px;
+  letter-spacing: 0.12em;
+  fill: var(--p-schwach);
+}
+
+.szene__label--akzent {
+  fill: var(--p-akzent);
+}
+
+.szene__punkt {
+  fill: var(--p-akzent);
+  animation: szene-blinken 2s ease-in-out infinite;
+}
+
+@keyframes szene-zeichnen {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+
+@keyframes szene-einblenden {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes szene-panel {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+}
+
+@keyframes szene-scan {
+  to {
+    transform: translateY(54px);
+  }
+}
+
+@keyframes szene-blinken {
+  50% {
+    opacity: 0.3;
+  }
 }
 
 .pilot-produkt__daten {
@@ -645,130 +790,56 @@ main.breit {
   color: var(--p-behoerden);
 }
 
-/* ---------- Pass auf dem Telefon ---------- */
+/* ---------- Pass-Viewer ---------- */
 
 .pilot-pass {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 23rem);
-  gap: clamp(1.5rem, 5vw, 4rem);
-  align-items: center;
+  gap: 1.5rem;
 }
 
 .pilot-pass__text > p {
-  max-width: 50ch;
+  max-width: 60ch;
   margin: 0.6rem 0 0;
   color: var(--farbe-text-schwach);
 }
 
-.pilot-pass__rolle-label {
-  margin-top: 1.75rem !important;
-  font-size: 0.72rem !important;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.rollen {
-  display: grid;
-  gap: 0.5rem;
-  margin-top: 0.6rem;
-  max-width: 28rem;
-}
-
-.rolle {
-  --farbe: var(--p-oeffentlich);
-  display: grid;
-  gap: 0.1rem;
-  padding: 0.75rem 1rem 0.75rem 1.1rem;
-  border: 1px solid var(--farbe-rand);
-  border-left: 4px solid var(--farbe);
-  border-radius: 10px;
-  background: var(--farbe-oberflaeche);
-  color: var(--farbe-text);
-  font: inherit;
-  text-align: left;
-  cursor: pointer;
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.rolle--berechtigt {
-  --farbe: #c99a1c;
-}
-.rolle--behoerden {
-  --farbe: #7a6be0;
-}
-
-.rolle span {
-  font-size: 0.85rem;
-  color: var(--farbe-text-schwach);
-}
-
-.rolle:hover {
-  border-color: var(--farbe-rand-stark);
-  border-left-color: var(--farbe);
-}
-
-.rolle[aria-pressed="true"] {
-  border-color: var(--farbe);
-  box-shadow: 0 0 0 1px var(--farbe);
-}
-
-.telefon {
-  justify-self: center;
-  width: 100%;
-  max-width: 23rem;
-}
-
-.telefon__rahmen {
-  position: relative;
-  padding: 0.7rem;
-  border-radius: 2.6rem;
-  background: #05090c;
-  box-shadow:
-    inset 0 0 0 1px #2a3b45,
-    0 40px 80px -40px rgba(11, 20, 26, 0.8);
-}
-
-.telefon__kamera {
-  position: absolute;
-  z-index: 2;
-  top: 1.2rem;
-  left: 50%;
-  translate: -50% 0;
-  width: 5.5rem;
-  height: 1.4rem;
-  border-radius: 99px;
-  background: #05090c;
-}
-
-.pass-app {
-  height: 40rem;
-  overflow-y: auto;
-  padding: 3rem 1rem 1.25rem;
-  border-radius: 2rem;
+.pass-viewer {
+  overflow: hidden;
   color: var(--p-text);
-  background:
-    radial-gradient(
-      120% 50% at 100% 0%,
-      rgba(69, 212, 192, 0.22),
-      transparent 60%
-    ),
-    var(--p-bg);
-  scrollbar-width: thin;
-  scrollbar-color: #2a3b45 transparent;
+  background: var(--p-bg);
+  border: 1px solid #1d3340;
+  border-radius: 18px;
+  box-shadow: 0 30px 60px -35px rgba(11, 20, 26, 0.7);
 }
 
-.pass-app p {
+.pass-viewer p {
   margin: 0;
 }
 
-.pass-app__kopf {
-  padding: 0 0.25rem 1rem;
+.pass-viewer :focus-visible {
+  outline-color: var(--p-akzent);
 }
 
-.pass-app__scan {
+/* Kopfleiste: Produkt links, Rollenwahl rechts */
+
+.pass-viewer__leiste {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.25rem 2rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--p-linie);
+  background:
+    radial-gradient(
+      80% 140% at 0% 0%,
+      rgba(69, 212, 192, 0.16),
+      transparent 60%
+    ),
+    var(--p-bg);
+}
+
+.pass-viewer__scan {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -776,122 +847,284 @@ main.breit {
   color: var(--p-schwach);
 }
 
-.pass-app__marke {
-  margin-top: 1rem !important;
-  font-size: 0.7rem;
+.pass-viewer__name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  margin-top: 0.5rem !important;
+  font-family: var(--schrift-headline);
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+
+.pass-viewer__marke {
+  font-family: var(--schrift-text, inherit);
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--p-akzent);
 }
 
-.pass-app__name {
-  font-family: var(--schrift-headline);
-  font-size: 1.6rem;
-  line-height: 1.15;
-}
-
-.pass-app__id {
+.pass-viewer__id {
   margin-top: 0.2rem !important;
-  font-size: 0.66rem;
+  font-size: 0.68rem;
   color: var(--p-schwach);
   word-break: break-all;
 }
 
-.pass-app__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.8rem !important;
+.pass-viewer__label {
+  margin-bottom: 0.4rem !important;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--p-schwach);
 }
 
-.pass-app__chip {
+.rollen {
   display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.2rem 0.6rem;
-  border: 1px solid var(--p-linie);
-  border-radius: 99px;
-  font-size: 0.7rem;
-}
-
-.pass-app__chip--live {
-  border-color: rgba(69, 212, 192, 0.5);
-  color: var(--p-akzent);
-}
-
-.pass-abschnitt {
-  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.25rem;
   border: 1px solid var(--p-linie);
   border-radius: 12px;
   background: var(--p-panel);
 }
 
-.pass-abschnitt summary {
-  display: flex;
-  justify-content: space-between;
+.rolle {
+  --farbe: var(--p-oeffentlich);
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 0.9rem;
-  font-size: 0.88rem;
-  font-weight: 600;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--p-schwach);
+  font: inherit;
+  font-size: 0.8rem;
   cursor: pointer;
-  list-style: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
-.pass-abschnitt summary::-webkit-details-marker {
+.rolle::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--farbe);
+}
+
+.rolle--berechtigt {
+  --farbe: var(--p-berechtigt);
+}
+.rolle--behoerden {
+  --farbe: var(--p-behoerden);
+}
+
+.rolle:hover {
+  color: var(--p-text);
+}
+
+.rolle[aria-pressed="true"] {
+  background: var(--p-panel-2);
+  color: var(--p-text);
+  box-shadow: inset 0 0 0 1px var(--farbe);
+}
+
+.pass-viewer__wer {
+  margin-top: 0.4rem !important;
+  font-size: 0.72rem;
+  color: var(--p-schwach);
+}
+
+.pass-viewer__wer span {
   display: none;
 }
 
-.pass-abschnitt summary::after {
-  content: "+";
-  font-family: var(--p-mono);
-  color: var(--p-schwach);
+.pass-viewer[data-rolle="oeffentlich"] [data-wer="oeffentlich"],
+.pass-viewer[data-rolle="berechtigt"] [data-wer="berechtigt"],
+.pass-viewer[data-rolle="behoerden"] [data-wer="behoerden"] {
+  display: inline;
 }
 
-.pass-abschnitt[open] summary::after {
-  content: "–";
-}
+/* Kennzahlen-Leiste unter dem Kopf */
 
-.pass-abschnitt__anzahl {
-  margin-left: auto;
-  font-size: 0.68rem;
-  color: var(--p-schwach);
-}
-
-.pass-abschnitt dl {
+.pass-viewer__zahlen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.75rem;
   margin: 0;
-  padding: 0 0.9rem 0.4rem;
+  padding: 0.7rem 1.5rem;
+  border-bottom: 1px solid var(--p-linie);
+  background: var(--p-panel);
 }
+
+.pass-viewer__zahlen div:not(.pass-viewer__balken) {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.pass-viewer__zahlen dt {
+  font-size: 0.72rem;
+  color: var(--p-schwach);
+}
+
+.pass-viewer__zahlen dd {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--p-akzent);
+}
+
+.pass-viewer__balken {
+  flex: 1 1 8rem;
+  height: 4px;
+  border-radius: 99px;
+  background: var(--p-linie);
+  overflow: hidden;
+}
+
+.pass-viewer__balken span {
+  display: block;
+  height: 100%;
+  background: var(--p-akzent);
+}
+
+.register__anzahl {
+  margin-left: auto;
+  font-size: 0.66rem;
+  color: var(--p-schwach);
+}
+
+.register__titel-anzahl {
+  margin-left: auto;
+  font-family: var(--p-mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--p-schwach);
+}
+
+.feld__dp {
+  font-size: 0.6rem;
+  color: var(--p-schwach);
+  opacity: 0.8;
+}
+
+/* Register links, Inhalt rechts */
+
+.pass-viewer__koerper {
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  min-height: 23rem;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.75rem;
+  border-right: 1px solid var(--p-linie);
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.register__tab {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  padding: 0.6rem 0.75rem;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--p-schwach);
+  font: inherit;
+  font-size: 0.85rem;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.register__tab:hover {
+  color: var(--p-text);
+}
+
+.register__tab[aria-selected="true"] {
+  background: var(--p-akzent-soft);
+  color: var(--p-text);
+  box-shadow: inset 2px 0 0 var(--p-akzent);
+}
+
+.register__nr {
+  font-size: 0.68rem;
+  color: var(--p-akzent);
+}
+
+.register__inhalt {
+  padding: 1.25rem 1.5rem 1.5rem;
+  animation: einblenden 0.3s ease;
+}
+
+.register__titel {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+}
+
+.register__felder {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 0.6rem;
+  margin: 0;
+}
+
+/* Feld-Kacheln */
 
 .feld {
-  padding: 0.6rem 0;
-  border-top: 1px solid var(--p-linie);
+  --farbe: var(--p-oeffentlich);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--p-linie);
+  border-top: 2px solid var(--farbe);
+  border-radius: 10px;
+  background: var(--p-panel);
+}
+
+.feld[data-stufe="berechtigt"] {
+  --farbe: var(--p-berechtigt);
+}
+.feld[data-stufe="behoerden"] {
+  --farbe: var(--p-behoerden);
 }
 
 .feld dt {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--p-schwach);
 }
 
 .feld dd {
-  margin: 0.15rem 0 0;
+  margin: 0;
 }
 
 .feld__wert {
-  font-size: 0.88rem;
-  border-left: 2px solid var(--p-oeffentlich);
-  padding-left: 0.5rem;
-}
-
-.feld[data-stufe="berechtigt"] .feld__wert {
-  border-left-color: var(--p-berechtigt);
-}
-.feld[data-stufe="behoerden"] .feld__wert {
-  border-left-color: var(--p-behoerden);
+  font-size: 0.92rem;
+  transition:
+    filter 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .feld__live {
@@ -911,51 +1144,156 @@ main.breit {
 
 .feld__sperre {
   display: none;
-  font-size: 0.8rem;
-  color: var(--p-schwach);
+  align-self: flex-start;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--farbe);
+  border-radius: 99px;
+  font-size: 0.68rem;
+  color: var(--farbe);
 }
 
-.feld__unklar {
-  margin-top: 0.35rem !important;
-  padding: 0.4rem 0.55rem;
-  border-radius: 6px;
-  background: rgba(242, 193, 78, 0.1);
+.feld__unklar details {
   font-size: 0.7rem;
   line-height: 1.45;
   color: rgba(242, 193, 78, 0.9);
 }
 
-/* Gesperrte Felder je nach gewählter Rolle */
-.pass-app[data-rolle="oeffentlich"]
-  .feld:is([data-stufe="berechtigt"], [data-stufe="behoerden"])
-  .feld__wert,
-.pass-app[data-rolle="berechtigt"] .feld[data-stufe="behoerden"] .feld__wert {
+.feld__unklar summary {
+  display: inline-flex;
+  padding: 0.05rem 0.45rem;
+  border-radius: 6px;
+  background: rgba(242, 193, 78, 0.12);
+  cursor: pointer;
+  list-style: none;
+}
+
+.feld__unklar summary::-webkit-details-marker {
   display: none;
 }
 
-.pass-app[data-rolle="oeffentlich"]
-  .feld:is([data-stufe="berechtigt"], [data-stufe="behoerden"])
-  .feld__sperre,
-.pass-app[data-rolle="berechtigt"] .feld[data-stufe="behoerden"] .feld__sperre {
-  display: block;
+.feld__unklar summary::after {
+  content: " +";
 }
 
-.pass-app[data-rolle="oeffentlich"]
+.feld__unklar details[open] summary {
+  margin-bottom: 0.35rem;
+}
+
+.feld__unklar details[open] summary::after {
+  content: " –";
+}
+
+/* Gesperrte Felder je nach gewählter Rolle: unscharf statt ausgeblendet */
+.pass-viewer[data-rolle="oeffentlich"]
   .feld:is([data-stufe="berechtigt"], [data-stufe="behoerden"])
-  dt,
-.pass-app[data-rolle="berechtigt"] .feld[data-stufe="behoerden"] dt {
+  .feld__wert,
+.pass-viewer[data-rolle="berechtigt"]
+  .feld[data-stufe="behoerden"]
+  .feld__wert {
+  filter: blur(6px);
+  opacity: 0.6;
+  user-select: none;
+}
+
+.pass-viewer[data-rolle="oeffentlich"]
+  .feld:is([data-stufe="berechtigt"], [data-stufe="behoerden"])
+  .feld__sperre,
+.pass-viewer[data-rolle="berechtigt"]
+  .feld[data-stufe="behoerden"]
+  .feld__sperre {
+  display: inline-flex;
+}
+
+/* Weitere Datenpunkte des Batteriepasses: nur angeteasert (unscharf) */
+
+.weitere {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--p-linie);
+}
+
+.weitere__titel {
+  margin-bottom: 0.6rem !important;
+  font-size: 0.72rem;
+  color: var(--p-akzent);
+}
+
+.weitere__liste {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.weitere__dp {
+  --farbe: var(--p-oeffentlich);
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.5rem 0.6rem 0.6rem;
+  border: 1px solid var(--p-linie);
+  border-top: 2px solid color-mix(in srgb, var(--farbe) 55%, transparent);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+}
+
+.weitere__dp[data-stufe="berechtigt"] {
+  --farbe: var(--p-berechtigt);
+}
+.weitere__dp[data-stufe="behoerden"] {
+  --farbe: var(--p-behoerden);
+}
+
+.weitere__kopf {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.4rem;
+  font-size: 0.62rem;
+  color: var(--p-schwach);
+}
+
+.weitere__tag {
+  padding: 0 0.35rem;
+  border: 1px solid var(--p-linie);
+  border-radius: 4px;
+}
+
+.weitere__name {
+  font-size: 0.72rem;
+  line-height: 1.3;
+  color: var(--p-text);
+  filter: blur(3.5px);
+  user-select: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.weitere__wert {
+  display: block;
+  width: 70%;
+  height: 0.45rem;
+  border-radius: 99px;
+  background: rgba(232, 240, 243, 0.18);
+  filter: blur(2px);
+}
+
+.weitere__dp--spaeter,
+.weitere__dp--entfaellt {
+  border-style: dashed;
+  border-top-width: 1px;
+  background: transparent;
   opacity: 0.55;
 }
 
-.pass-app .feld {
-  animation: einblenden 0.3s ease;
-}
-
-.pass-app__fuss {
-  margin-top: 1rem !important;
-  font-size: 0.66rem;
+.pass-viewer__fuss {
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid var(--p-linie);
+  font-size: 0.68rem;
   color: var(--p-schwach);
-  text-align: center;
 }
 
 /* ---------- Lieferkette ---------- */
@@ -1120,8 +1458,7 @@ main.breit {
 
 @media (max-width: 860px) {
   .pilot-hero,
-  .pilot-explorer__raster,
-  .pilot-pass {
+  .pilot-explorer__raster {
     grid-template-columns: minmax(0, 1fr);
   }
   .pilot-schritte {
@@ -1133,12 +1470,24 @@ main.breit {
   .kette {
     grid-template-columns: minmax(0, 1fr);
   }
-  .pass-app {
-    height: 34rem;
+  .pass-viewer__koerper {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .register {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--p-linie);
+  }
+  .register__tab {
+    flex-shrink: 0;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .pilot-szene * {
+    animation: none !important;
+  }
   .ebene,
   .hotspot,
   .explosion__fuehrung line {
