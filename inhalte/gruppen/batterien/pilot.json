@@ -1,0 +1,623 @@
+{
+  "id": "batterien",
+
+  "eyebrow": {
+    "de": "DPP-Pilot · Batterien",
+    "en": "DPP pilot · Batteries"
+  },
+  "titel": {
+    "de": "So sieht ein digitaler Batteriepass aus",
+    "en": "What a digital battery passport looks like"
+  },
+  "einleitung": {
+    "de": "Ab dem 18. Februar 2027 braucht jede E-Bike-Batterie, jede Industriebatterie über 2 kWh und jede Fahrzeugbatterie in der EU einen digitalen Batteriepass. Er ist ein elektronischer Datensatz, den man über einen QR-Code auf der Batterie aufruft. Am Beispiel eines E-Bike-Akkus zeigen wir, welche Bauteile welche Daten liefern und was Kundinnen, Werkstätten und Behörden im Pass sehen.",
+    "en": "From 18 February 2027, every e-bike battery, every industrial battery above 2 kWh and every electric vehicle battery in the EU needs a digital battery passport. It is an electronic record accessed via a QR code on the battery. Using an e-bike battery as an example, we show which components provide which data and what customers, repair shops and authorities see in the passport."
+  },
+  "einleitung_quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#art_77",
+
+  "beispiel_hinweis": {
+    "de": "Fiktives Beispiel: Produkt, Hersteller und alle Werte sind erfunden und dienen nur der Veranschaulichung.",
+    "en": "Fictitious example: product, manufacturer and all values are made up for illustration only."
+  },
+
+  "produkt": {
+    "name": "VoltRahmen 625",
+    "typ": {
+      "de": "E-Bike-Akku (LMT-Batterie)",
+      "en": "E-bike battery (LMT battery)"
+    },
+    "hersteller": "Musterwerk Akkutechnik GmbH",
+    "pass_id": "BP-DE-MWA-0625-27-004812",
+    "eckdaten": [
+      { "label": { "de": "Energie", "en": "Energy" }, "wert": "625 Wh" },
+      { "label": { "de": "Spannung", "en": "Voltage" }, "wert": "36 V" },
+      { "label": { "de": "Zellen", "en": "Cells" }, "wert": "40 × 21700" },
+      { "label": { "de": "Gewicht", "en": "Weight" }, "wert": "3,4 kg" }
+    ]
+  },
+
+  "schritte": [
+    {
+      "titel": {
+        "de": "QR-Code auf der Batterie",
+        "en": "QR code on the battery"
+      },
+      "text": {
+        "de": "Jede Batterie bekommt eine eindeutige Kennung. Der QR-Code führt direkt zu ihrem Pass.",
+        "en": "Every battery gets a unique identifier. The QR code leads directly to its passport."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#art_77"
+    },
+    {
+      "titel": {
+        "de": "Daten aus der Lieferkette",
+        "en": "Data from the supply chain"
+      },
+      "text": {
+        "de": "Rohstofflieferanten, Zellhersteller und der Akkuhersteller liefern Daten zu. Verantwortlich für den Pass ist, wer die Batterie in der EU in Verkehr bringt.",
+        "en": "Raw material suppliers, cell manufacturers and the battery manufacturer contribute data. The party placing the battery on the EU market is responsible for the passport."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#art_77"
+    },
+    {
+      "titel": { "de": "Gestufter Zugriff", "en": "Tiered access" },
+      "text": {
+        "de": "Manche Daten sind für alle sichtbar. Andere sehen nur Werkstätten, Recycler oder Behörden.",
+        "en": "Some data is visible to everyone. Other data is only visible to repairers, recyclers or authorities."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#anx_XIII"
+    }
+  ],
+
+  "zugriffsstufen": [
+    {
+      "id": "oeffentlich",
+      "name": { "de": "Öffentlich", "en": "Public" },
+      "wer": {
+        "de": "Alle, z. B. Kundinnen und Kunden",
+        "en": "Everyone, e.g. customers"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#anx_XIII"
+    },
+    {
+      "id": "berechtigt",
+      "name": { "de": "Berechtigtes Interesse", "en": "Legitimate interest" },
+      "wer": {
+        "de": "z. B. Werkstätten, Wiederaufbereiter, Recycler",
+        "en": "e.g. repairers, remanufacturers, recyclers"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#anx_XIII"
+    },
+    {
+      "id": "behoerden",
+      "name": { "de": "Behörden", "en": "Authorities" },
+      "wer": {
+        "de": "Benannte Stellen, Marktüberwachung, EU-Kommission",
+        "en": "Notified bodies, market surveillance, European Commission"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#anx_XIII"
+    }
+  ],
+
+  "komponenten": [
+    {
+      "id": "deckel",
+      "ebene": "deckel",
+      "nummer": "01",
+      "name": { "de": "Gehäuse & Befestigung", "en": "Housing & fastening" },
+      "text": {
+        "de": "Schützt die Zellen und hält den Akku im Rahmen. Für Reparatur und Recycling zählt, wie er sich öffnen lässt: Schrauben, Clips, benötigtes Werkzeug.",
+        "en": "Protects the cells and holds the battery in the frame. For repair and recycling, what matters is how it opens: screws, clips, required tools."
+      },
+      "lieferant": { "de": "Akkuhersteller", "en": "Battery manufacturer" },
+      "felder": ["demontage", "ersatzteile", "sicherheit"]
+    },
+    {
+      "id": "bms",
+      "ebene": "bms",
+      "nummer": "02",
+      "name": {
+        "de": "Batteriemanagementsystem (BMS)",
+        "en": "Battery management system (BMS)"
+      },
+      "text": {
+        "de": "Die Elektronik überwacht Spannung, Temperatur und Ladezyklen. Sie liefert die laufend aktualisierten Daten zum Alterungszustand (State of Health).",
+        "en": "The electronics monitor voltage, temperature and charge cycles. They provide the continuously updated state-of-health data."
+      },
+      "lieferant": {
+        "de": "Akkuhersteller / BMS-Zulieferer",
+        "en": "Battery manufacturer / BMS supplier"
+      },
+      "felder": ["soh", "zyklen_aktuell", "status"]
+    },
+    {
+      "id": "zellen",
+      "ebene": "zellen",
+      "nummer": "03",
+      "name": { "de": "Zellmodul (40 Zellen)", "en": "Cell module (40 cells)" },
+      "text": {
+        "de": "40 Rundzellen bestimmen Kapazität, Spannung und Lebensdauer. Die Leistungsdaten und Testberichte stammen größtenteils vom Zellhersteller.",
+        "en": "40 cylindrical cells determine capacity, voltage and lifetime. Performance data and test reports mostly come from the cell manufacturer."
+      },
+      "lieferant": { "de": "Zellhersteller", "en": "Cell manufacturer" },
+      "felder": ["kapazitaet", "spannung", "lebensdauer", "co2", "testberichte"]
+    },
+    {
+      "id": "chemie",
+      "ebene": "zellen",
+      "nummer": "04",
+      "name": {
+        "de": "Zellchemie & Rohstoffe",
+        "en": "Cell chemistry & raw materials"
+      },
+      "text": {
+        "de": "In den Zellen stecken Lithium, Nickel, Kobalt, Mangan und Graphit. Der Pass zeigt Herkunft, Recyclinganteil und die Sorgfaltspflichten in der Lieferkette.",
+        "en": "The cells contain lithium, nickel, cobalt, manganese and graphite. The passport shows origin, recycled content and supply chain due diligence."
+      },
+      "lieferant": {
+        "de": "Rohstoff- und Kathodenlieferanten",
+        "en": "Raw material and cathode suppliers"
+      },
+      "felder": [
+        "chemie",
+        "rohstoffe",
+        "rezyklat",
+        "sorgfalt",
+        "zusammensetzung"
+      ]
+    },
+    {
+      "id": "wanne",
+      "ebene": "wanne",
+      "nummer": "05",
+      "name": { "de": "Typenschild & QR-Code", "en": "Type plate & QR code" },
+      "text": {
+        "de": "Auf dem Gehäuseboden sitzt der QR-Code. Er ist der Zugang zum Pass. Dazu kommen CE-Kennzeichnung, Sammelsymbol und die Konformitätserklärung.",
+        "en": "The QR code sits on the housing base and is the gateway to the passport. Add to that CE marking, collection symbol and declaration of conformity."
+      },
+      "lieferant": { "de": "Akkuhersteller", "en": "Battery manufacturer" },
+      "felder": [
+        "kennung",
+        "hersteller",
+        "kennzeichen",
+        "konformitaet",
+        "ruecknahme"
+      ]
+    }
+  ],
+
+  "pass": {
+    "abschnitte": [
+      {
+        "id": "allgemein",
+        "titel": { "de": "Allgemeine Angaben", "en": "General information" },
+        "felder": [
+          {
+            "id": "kennung",
+            "label": { "de": "Eindeutige Kennung", "en": "Unique identifier" },
+            "wert": {
+              "de": "BP-DE-MWA-0625-27-004812",
+              "en": "BP-DE-MWA-0625-27-004812"
+            },
+            "stufe": "oeffentlich"
+          },
+          {
+            "id": "hersteller",
+            "label": {
+              "de": "Hersteller, Ort und Datum der Herstellung",
+              "en": "Manufacturer, place and date of manufacture"
+            },
+            "wert": {
+              "de": "Musterwerk Akkutechnik GmbH, Musterstadt (DE), 03/2027",
+              "en": "Musterwerk Akkutechnik GmbH, Musterstadt (DE), 03/2027"
+            },
+            "stufe": "oeffentlich"
+          },
+          {
+            "id": "kategorie",
+            "label": { "de": "Batteriekategorie", "en": "Battery category" },
+            "wert": {
+              "de": "LMT-Batterie (Leichtverkehrsmittel)",
+              "en": "LMT battery (light means of transport)"
+            },
+            "stufe": "oeffentlich"
+          },
+          {
+            "id": "status",
+            "label": { "de": "Status der Batterie", "en": "Battery status" },
+            "wert": { "de": "Original", "en": "Original" },
+            "stufe": "berechtigt",
+            "dynamisch": true
+          }
+        ]
+      },
+      {
+        "id": "konformitaet",
+        "titel": {
+          "de": "Konformität & Kennzeichnung",
+          "en": "Compliance & labels"
+        },
+        "felder": [
+          {
+            "id": "kennzeichen",
+            "label": { "de": "Kennzeichnungen", "en": "Labels" },
+            "wert": {
+              "de": "CE, Symbol für getrennte Sammlung, Kapazitätslabel",
+              "en": "CE, separate collection symbol, capacity label"
+            },
+            "stufe": "oeffentlich"
+          },
+          {
+            "id": "konformitaet",
+            "label": {
+              "de": "EU-Konformitätserklärung",
+              "en": "EU declaration of conformity"
+            },
+            "wert": { "de": "PDF, Stand 02/2027", "en": "PDF, as of 02/2027" },
+            "stufe": "oeffentlich"
+          },
+          {
+            "id": "testberichte",
+            "label": {
+              "de": "Testberichte zum Nachweis der Konformität",
+              "en": "Test reports proving compliance"
+            },
+            "wert": { "de": "4 Dokumente", "en": "4 documents" },
+            "stufe": "behoerden"
+          }
+        ]
+      },
+      {
+        "id": "co2",
+        "titel": { "de": "CO₂-Fußabdruck", "en": "Carbon footprint" },
+        "felder": [
+          {
+            "id": "co2",
+            "label": {
+              "de": "CO₂-Fußabdruck über den Lebensweg",
+              "en": "Life-cycle carbon footprint"
+            },
+            "wert": {
+              "de": "72 kg CO₂e pro kWh · Klasse B",
+              "en": "72 kg CO₂e per kWh · class B"
+            },
+            "stufe": "oeffentlich",
+            "status": "unklar",
+            "hinweis": {
+              "de": "Ab wann diese Angabe für E-Bike-Akkus Pflicht ist, hängt von noch ausstehenden delegierten Rechtsakten ab (Art. 7).",
+              "en": "When this becomes mandatory for e-bike batteries depends on pending delegated acts (Art. 7)."
+            }
+          }
+        ]
+      },
+      {
+        "id": "lieferkette",
+        "titel": {
+          "de": "Sorgfaltspflichten Lieferkette",
+          "en": "Supply chain due diligence"
+        },
+        "felder": [
+          {
+            "id": "sorgfalt",
+            "label": {
+              "de": "Bericht zu Sorgfaltspflichten",
+              "en": "Due diligence report"
+            },
+            "wert": {
+              "de": "Bericht 2027, geprüft durch benannte Stelle",
+              "en": "Report 2027, verified by notified body"
+            },
+            "stufe": "oeffentlich",
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Starttermin der Sorgfaltspflichten (Art. 47 ff.) wurde per Omnibus-Verfahren verschoben. Aktuellen Stand prüfen.",
+              "en": "The start date of the due diligence obligations (Art. 47 ff.) was postponed via an omnibus procedure. Check current status."
+            }
+          }
+        ]
+      },
+      {
+        "id": "material",
+        "titel": {
+          "de": "Materialien & Zusammensetzung",
+          "en": "Materials & composition"
+        },
+        "felder": [
+          {
+            "id": "chemie",
+            "label": { "de": "Batteriechemie", "en": "Battery chemistry" },
+            "wert": {
+              "de": "Lithium-Ionen, NMC 811 / Graphit",
+              "en": "Lithium-ion, NMC 811 / graphite"
+            },
+            "stufe": "oeffentlich"
+          },
+          {
+            "id": "rohstoffe",
+            "label": {
+              "de": "Kritische Rohstoffe",
+              "en": "Critical raw materials"
+            },
+            "wert": {
+              "de": "Lithium, Nickel, Kobalt, Mangan, natürlicher Graphit",
+              "en": "Lithium, nickel, cobalt, manganese, natural graphite"
+            },
+            "stufe": "oeffentlich"
+          },
+          {
+            "id": "zusammensetzung",
+            "label": {
+              "de": "Detaillierte Zusammensetzung (Kathode, Anode, Elektrolyt)",
+              "en": "Detailed composition (cathode, anode, electrolyte)"
+            },
+            "wert": {
+              "de": "Materialliste, 38 Positionen",
+              "en": "Material list, 38 items"
+            },
+            "stufe": "berechtigt"
+          }
+        ]
+      },
+      {
+        "id": "kreislauf",
+        "titel": {
+          "de": "Kreislauf & Ressourcen",
+          "en": "Circularity & resources"
+        },
+        "felder": [
+          {
+            "id": "rezyklat",
+            "label": { "de": "Recyclinganteil", "en": "Recycled content" },
+            "wert": {
+              "de": "Kobalt 8 % · Lithium 3 % · Nickel 4 %",
+              "en": "Cobalt 8% · lithium 3% · nickel 4%"
+            },
+            "stufe": "oeffentlich",
+            "status": "unklar",
+            "hinweis": {
+              "de": "Die Dokumentationspflicht zum Recyclinganteil (Art. 8) startet später als der Pass. Termin für E-Bike-Akkus prüfen.",
+              "en": "The documentation obligation for recycled content (Art. 8) starts later than the passport. Check the date for e-bike batteries."
+            }
+          },
+          {
+            "id": "ruecknahme",
+            "label": {
+              "de": "Rückgabe und Recycling",
+              "en": "Take-back and recycling"
+            },
+            "wert": {
+              "de": "Kostenlose Rückgabe im Fachhandel, Infos zur Vermeidung von Abfall",
+              "en": "Free return at retailers, information on waste prevention"
+            },
+            "stufe": "oeffentlich"
+          },
+          {
+            "id": "demontage",
+            "label": {
+              "de": "Demontageanleitung (Explosionszeichnung, Werkzeuge)",
+              "en": "Dismantling information (exploded view, tools)"
+            },
+            "wert": {
+              "de": "12 Schritte · Torx T10, Kunststoffhebel",
+              "en": "12 steps · Torx T10, plastic lever"
+            },
+            "stufe": "berechtigt"
+          },
+          {
+            "id": "ersatzteile",
+            "label": {
+              "de": "Teilenummern & Bezugsquellen für Ersatzteile",
+              "en": "Part numbers & sources of spare parts"
+            },
+            "wert": {
+              "de": "9 Teile, Kontakt Ersatzteilservice",
+              "en": "9 parts, spare parts service contact"
+            },
+            "stufe": "berechtigt"
+          },
+          {
+            "id": "sicherheit",
+            "label": { "de": "Sicherheitshinweise", "en": "Safety measures" },
+            "wert": {
+              "de": "Vor dem Öffnen entladen, Brandschutzhinweise",
+              "en": "Discharge before opening, fire safety notes"
+            },
+            "stufe": "berechtigt"
+          }
+        ]
+      },
+      {
+        "id": "leistung",
+        "titel": {
+          "de": "Leistung & Haltbarkeit",
+          "en": "Performance & durability"
+        },
+        "felder": [
+          {
+            "id": "kapazitaet",
+            "label": { "de": "Nennkapazität", "en": "Rated capacity" },
+            "wert": { "de": "17,4 Ah (625 Wh)", "en": "17.4 Ah (625 Wh)" },
+            "stufe": "oeffentlich"
+          },
+          {
+            "id": "spannung",
+            "label": {
+              "de": "Spannung (min. / nominal / max.)",
+              "en": "Voltage (min / nominal / max)"
+            },
+            "wert": { "de": "30 V / 36 V / 42 V", "en": "30 V / 36 V / 42 V" },
+            "stufe": "oeffentlich"
+          },
+          {
+            "id": "lebensdauer",
+            "label": {
+              "de": "Erwartete Lebensdauer",
+              "en": "Expected lifetime"
+            },
+            "wert": { "de": "1.000 Ladezyklen", "en": "1,000 charge cycles" },
+            "stufe": "oeffentlich"
+          },
+          {
+            "id": "soh",
+            "label": {
+              "de": "Alterungszustand (State of Health)",
+              "en": "State of health"
+            },
+            "wert": { "de": "96 %", "en": "96%" },
+            "stufe": "berechtigt",
+            "dynamisch": true
+          },
+          {
+            "id": "zyklen_aktuell",
+            "label": {
+              "de": "Bisherige Ladezyklen",
+              "en": "Charge cycles so far"
+            },
+            "wert": { "de": "84", "en": "84" },
+            "stufe": "berechtigt",
+            "dynamisch": true
+          }
+        ]
+      }
+    ],
+    "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#anx_XIII",
+    "gliederung_quelle": "https://thebatterypass.eu/resources/"
+  },
+
+  "lieferkette": [
+    {
+      "id": "rohstoffe",
+      "rolle": { "de": "Rohstoffe", "en": "Raw materials" },
+      "beispiel": { "de": "Mine & Raffinerie", "en": "Mine & refinery" },
+      "liefert": {
+        "de": [
+          "Herkunft der Rohstoffe",
+          "Nachweise zu Sorgfaltspflichten",
+          "CO₂-Daten der Gewinnung"
+        ],
+        "en": [
+          "Origin of raw materials",
+          "Due diligence evidence",
+          "Carbon data of extraction"
+        ]
+      }
+    },
+    {
+      "id": "material",
+      "rolle": { "de": "Aktivmaterial", "en": "Active material" },
+      "beispiel": {
+        "de": "Kathoden- und Anodenhersteller",
+        "en": "Cathode and anode producers"
+      },
+      "liefert": {
+        "de": [
+          "Materialzusammensetzung",
+          "Recyclinganteil",
+          "CO₂-Daten der Verarbeitung"
+        ],
+        "en": [
+          "Material composition",
+          "Recycled content",
+          "Carbon data of processing"
+        ]
+      }
+    },
+    {
+      "id": "zelle",
+      "rolle": { "de": "Zellen", "en": "Cells" },
+      "beispiel": { "de": "Zellhersteller", "en": "Cell manufacturer" },
+      "liefert": {
+        "de": [
+          "Zellchemie und Leistungsdaten",
+          "Testberichte",
+          "CO₂-Daten der Zellfertigung"
+        ],
+        "en": [
+          "Cell chemistry and performance data",
+          "Test reports",
+          "Carbon data of cell production"
+        ]
+      }
+    },
+    {
+      "id": "akku",
+      "rolle": { "de": "Akkuhersteller", "en": "Battery manufacturer" },
+      "beispiel": {
+        "de": "Verantwortlich für den Pass",
+        "en": "Responsible for the passport"
+      },
+      "verantwortlich": true,
+      "liefert": {
+        "de": [
+          "Pass anlegen und QR-Code anbringen",
+          "Demontage, Ersatzteile, Sicherheit",
+          "Konformitätserklärung"
+        ],
+        "en": [
+          "Create passport and attach QR code",
+          "Dismantling, spare parts, safety",
+          "Declaration of conformity"
+        ]
+      }
+    },
+    {
+      "id": "nutzung",
+      "rolle": { "de": "Nutzung", "en": "Use phase" },
+      "beispiel": { "de": "BMS im E-Bike", "en": "BMS in the e-bike" },
+      "liefert": {
+        "de": [
+          "Alterungszustand (State of Health)",
+          "Ladezyklen",
+          "Besondere Ereignisse"
+        ],
+        "en": ["State of health", "Charge cycles", "Notable events"]
+      }
+    },
+    {
+      "id": "zweites_leben",
+      "rolle": {
+        "de": "Zweites Leben & Recycling",
+        "en": "Second life & recycling"
+      },
+      "beispiel": {
+        "de": "Werkstatt, Wiederaufbereiter, Recycler",
+        "en": "Repairer, remanufacturer, recycler"
+      },
+      "liefert": {
+        "de": [
+          "Statuswechsel (z. B. umgenutzt, Abfall)",
+          "Bei Umnutzung: neuer Pass, verknüpft mit dem alten"
+        ],
+        "en": [
+          "Status change (e.g. repurposed, waste)",
+          "On repurposing: new passport linked to the old one"
+        ]
+      }
+    }
+  ],
+  "lieferkette_quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#art_77",
+
+  "quellen": [
+    {
+      "label": {
+        "de": "Verordnung (EU) 2023/1542, Art. 77, 78 und Anhang XIII (Batteriepass)",
+        "en": "Regulation (EU) 2023/1542, Art. 77, 78 and Annex XIII (battery passport)"
+      },
+      "url": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
+    },
+    {
+      "label": {
+        "de": "Battery Pass Konsortium: Content Guidance (Gliederung in sieben Themenbereiche)",
+        "en": "Battery Pass consortium: Content Guidance (structure in seven content clusters)"
+      },
+      "url": "https://thebatterypass.eu/resources/"
+    },
+    {
+      "label": {
+        "de": "EU-Kommission: Digitaler Produktpass für Batterien",
+        "en": "European Commission: Digital Product Passport for batteries"
+      },
+      "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/batteries_en"
+    }
+  ]
+}

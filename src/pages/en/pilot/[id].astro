@@ -1,0 +1,40 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Platzhalter from "../../../components/Platzhalter.astro";
+import Pilot from "../../../components/Pilot.astro";
+import filter from "../../../../inhalte/filter.json";
+import seite from "../../../../inhalte/seite.json";
+import type pilotVorlage from "../../../../inhalte/gruppen/batterien/pilot.json";
+
+export function getStaticPaths() {
+  return filter.produktgruppen.map((gruppe) => ({
+    params: { id: gruppe.id },
+    props: { gruppe },
+  }));
+}
+
+const { gruppe } = Astro.props;
+
+const pilotDateien = import.meta.glob<typeof pilotVorlage>(
+  "../../../../inhalte/gruppen/*/pilot.json",
+  { eager: true, import: "default" },
+);
+const pilot = Object.entries(pilotDateien).find(([pfad]) =>
+  pfad.includes(`/gruppen/${gruppe.id}/`),
+)?.[1];
+---
+
+<Layout lang="en" title={`DPP-Pilot – ${gruppe.name.en}`} breit={!!pilot}>
+  {
+    pilot ? (
+      <Pilot lang="en" gruppe={gruppe} pilot={pilot} />
+    ) : (
+      <Platzhalter
+        titel={gruppe.name.en}
+        hinweis={seite.platzhalter_pilot.en}
+        zurueckHref={`/en/gruppe/${gruppe.id}/`}
+        zurueckLabel={seite.zurueck_zur_gruppe.en}
+      />
+    )
+  }
+</Layout>

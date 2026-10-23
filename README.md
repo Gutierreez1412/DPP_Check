@@ -34,6 +34,27 @@ pnpm build
 Erzeugt die fertige Website im Ordner `dist/`. Mit `pnpm preview` kann man dieses
 Build-Ergebnis lokal testen, so wie es später online aussehen würde.
 
+## Hosting (Testversion für Kollegen)
+
+Die Seite liegt auf **Cloudflare Pages** und ist passwortgeschützt:
+
+- **Adresse:** https://dpp-check.pages.dev/de/
+- **Cloudflare-Projekt:** `dpp-check` (Konto von Fabian Triller, hochgeladen mit `wrangler`)
+- **Passwortschutz:** [functions/\_middleware.js](./functions/_middleware.js) fragt per
+  Browser-Dialog nach dem Passwort (Benutzername beliebig). Das Passwort steht **nicht** im
+  Repo, sondern als Secret `SEITEN_PASSWORT` im Cloudflare-Projekt. Bei Fabian erfragen.
+- **Kein automatisches Deployment:** Änderungen sind erst live, wenn jemand neu hochlädt.
+
+Neuen Stand hochladen (im Projektordner ausführen, sonst fehlt der Passwortschutz):
+
+```sh
+pnpm run build
+wrangler pages deploy dist --project-name dpp-check --branch main
+```
+
+Passwort ändern: `wrangler pages secret put SEITEN_PASSWORT --project-name dpp-check`,
+danach neu hochladen. Einmalig vorher anmelden mit `wrangler login`.
+
 ## Vor jedem Commit
 
 ```sh
