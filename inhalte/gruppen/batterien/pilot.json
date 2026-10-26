@@ -165,7 +165,7 @@
         "de": "Akkuhersteller / BMS-Zulieferer",
         "en": "Battery manufacturer / BMS supplier"
       },
-      "felder": ["soh", "zyklen_aktuell", "status"]
+      "felder": ["soh", "status"]
     },
     {
       "id": "zellen",
@@ -598,20 +598,6 @@
             "stufe": "berechtigt",
             "dynamisch": true,
             "datenpunkte": [62]
-          },
-          {
-            "id": "zyklen_aktuell",
-            "label": {
-              "de": "Bisherige Ladezyklen",
-              "en": "Charge cycles so far"
-            },
-            "wert": {
-              "de": "84",
-              "en": "84"
-            },
-            "stufe": "berechtigt",
-            "dynamisch": true,
-            "datenpunkte": [68]
           }
         ]
       }
@@ -1437,12 +1423,8 @@
         "en": "BMS in the e-bike"
       },
       "liefert": {
-        "de": [
-          "Alterungszustand (State of Health)",
-          "Ladezyklen",
-          "Besondere Ereignisse"
-        ],
-        "en": ["State of health", "Charge cycles", "Notable events"]
+        "de": ["Alterungszustand (State of Health)", "Besondere Ereignisse"],
+        "en": ["State of health", "Notable events"]
       }
     },
     {

@@ -26,12 +26,12 @@
         "en": "What is the DPP?"
       },
       "kern": {
-        "de": "Ein Datensatz pro Produkt",
-        "en": "One record per product"
+        "de": "Digitaler Produktsteckbrief",
+        "en": "Digital product profile"
       },
       "text": {
-        "de": "Per QR-Code abrufbar, mit Informationen etwa zu Materialien, Herkunft, Reparatur und Recycling. Pflicht erst, wenn ein Rechtsakt ihn für die Produktgruppe vorschreibt.",
-        "en": "Accessible via QR code, with information on materials, origin, repair and recycling, for example. Mandatory only once an act requires it for the product group."
+        "de": "Ein Datensatz pro Produkt mit Angaben aus der ganzen Wertschöpfungskette, etwa zu Materialien, Herkunft, Reparatur und Recycling. Abrufbar per QR-Code am Produkt. Pflicht, sobald ein Rechtsakt die Produktgruppe erfasst.",
+        "en": "One record per product with data from across the value chain, e.g. on materials, origin, repair and recycling. Accessible via a QR code on the product. Mandatory once an act covers the product group."
       },
       "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en",
       "status": "gilt"

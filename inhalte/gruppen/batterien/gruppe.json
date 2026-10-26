@@ -2,8 +2,8 @@
   "id": "batterien",
   "name": { "de": "Batterien", "en": "Batteries" },
   "definition": {
-    "de": "Für Batterien gibt es eine eigene EU-Verordnung: die Batterieverordnung (EU) 2023/1542. Sie gilt seit Februar 2024 direkt in allen EU-Ländern und hat die frühere Batterie-Richtlinie abgelöst. Der digitale Produktpass kommt hier also nicht über die Ökodesign-Verordnung (ESPR), sondern ist direkt in der Batterieverordnung geregelt, als Batteriepass. Erfasst sind alle Batterien, die in der EU auf den Markt kommen, auch eingebaute: von Gerätebatterien über E-Bike- und Autobatterien bis zu Industrie- und Starterbatterien.",
-    "en": "Batteries have their own EU regulation: the Battery Regulation (EU) 2023/1542. It has applied directly in all EU countries since February 2024 and replaced the former Battery Directive. The digital product passport therefore does not come via the Ecodesign Regulation (ESPR) here, but is set out directly in the Battery Regulation, as the battery passport. It covers all batteries placed on the EU market, including built-in ones: from portable batteries to e-bike and car batteries, industrial and starter batteries."
+    "de": "Für Batterien gibt es eine eigene EU-Verordnung: die Batterieverordnung (EU) 2023/1542, seit Februar 2024 direkt in allen EU-Ländern gültig. Sie regelt den digitalen Produktpass selbst, als Batteriepass, und nicht über die Ökodesign-Verordnung (ESPR). Die Verordnung gilt für alle Batterien auf dem EU-Markt, den Batteriepass brauchen aber nur bestimmte Batteriearten.",
+    "en": "Batteries have their own EU regulation: the Battery Regulation (EU) 2023/1542, applicable directly in all EU countries since February 2024. It sets out the digital product passport itself, as the battery passport, rather than via the Ecodesign Regulation (ESPR). The regulation applies to all batteries on the EU market, but only certain battery types need a battery passport."
   },
   "definition_quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
 
@@ -127,8 +127,8 @@
         "en": "Who has to provide the Digital Product Passport (battery passport)?"
       },
       "antwort": {
-        "de": "Der Wirtschaftsakteur, der die fertige Batterie in der EU in Verkehr bringt – nicht der Zulieferer einzelner Zellen oder Module. Die Pflicht gilt ab dem 18. Februar 2027 für LMT-, Industrie- (über 2 kWh) und Fahrzeugbatterien.",
-        "en": "The economic operator who places the finished battery on the EU market – not the supplier of individual cells or modules. The obligation applies from 18 February 2027 for LMT, industrial (over 2 kWh) and electric vehicle batteries."
+        "de": "Der Wirtschaftsakteur, der die fertige Batterie in der EU in Verkehr bringt, meist der Hersteller – nicht der Zulieferer einzelner Zellen oder Module. Herstellerpflichten übernimmt auch, wer eine Batterie unter eigenem Namen oder eigener Marke vertreibt oder eine bereits in Verkehr gebrachte Batterie so verändert, dass ihre Konformität betroffen sein kann.",
+        "en": "The economic operator who places the finished battery on the EU market, usually the manufacturer – not the supplier of individual cells or modules. Manufacturer obligations also apply to anyone who sells a battery under their own name or trademark, or modifies a battery already on the market in a way that may affect its compliance."
       },
       "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
     },
@@ -156,8 +156,8 @@
     },
     {
       "frage": {
-        "de": "Gilt die Sorgfaltspflicht auch für kleinere Unternehmen?",
-        "en": "Does the due diligence obligation also apply to smaller companies?"
+        "de": "Gilt die Sorgfaltspflicht für Batterie-Rohstoffe auch für kleinere Unternehmen?",
+        "en": "Does the due diligence obligation for battery raw materials also apply to smaller companies?"
       },
       "antwort": {
         "de": "Nein. Unternehmen mit weniger als 40 Mio. Euro Nettoumsatz sind ausgenommen, sofern sie nicht Teil einer größeren Unternehmensgruppe über dieser Schwelle sind. Die Pflicht selbst gilt seit der Verschiebung durch Verordnung (EU) 2025/1561 ab dem 18. August 2027.",
