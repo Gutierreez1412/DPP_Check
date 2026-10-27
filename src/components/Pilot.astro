@@ -1,10 +1,25 @@
 ---
 import seite from "../../inhalte/seite.json";
 import pilotVorlage from "../../inhalte/gruppen/batterien/pilot.json";
+import GrafikBatterie from "./pilot/GrafikBatterie.astro";
+import GrafikTextil from "./pilot/GrafikTextil.astro";
 import "../styles/pilot.css";
 
 // Batterien ist die Vorlage für alle pilot.json-Dateien (PROJEKT.md, Ebene 4).
-type PilotDaten = typeof pilotVorlage;
+// Optional: "vorbehalt" für Beispiele, die noch auf keinem Rechtsakt beruhen.
+type PilotDaten = typeof pilotVorlage & {
+  vorbehalt?: {
+    titel: Record<"de" | "en", string>;
+    text: Record<"de" | "en", string>;
+    quelle: string;
+  };
+};
+
+// Je Produktgruppe eine eigene Zeichnung (Hero-Szene und Explosionszeichnung).
+const grafiken: Record<string, typeof GrafikBatterie> = {
+  batterien: GrafikBatterie,
+  textil: GrafikTextil,
+};
 
 interface Props {
   lang: "de" | "en";
@@ -15,6 +30,11 @@ interface Props {
 const { lang, gruppe, pilot } = Astro.props;
 const t = (feld: Record<"de" | "en", string>) => feld[lang];
 const p = seite.pilot;
+// Produktspezifische Beschriftungen (Szene, Zähler, Pass-Marke) aus pilot.json.
+const pt = pilot.texte;
+const Grafik = grafiken[pilot.id] ?? GrafikBatterie;
+// Vorausgewählt ist wie bisher das dritte Bauteil.
+const startKomponente = pilot.komponenten[2]?.id ?? pilot.komponenten[0].id;
 
 const stufen = pilot.zugriffsstufen;
 const stufeName = Object.fromEntries(stufen.map((s) => [s.id, t(s.name)]));
@@ -30,8 +50,10 @@ type Feld = {
   hinweis?: Record<"de" | "en", string>;
   datenpunkte?: number[];
 };
-// Datenpunkte nach Art. 77 und Anhang VI/XIII: Felder mit Beispielwert werden gezeigt, alle
-// übrigen Datenpunkte eines Registers nur unscharf angeteasert.
+// Datenpunkte laut Rechtsgrundlage bzw. Vorstudie: Felder mit Beispielwert werden gezeigt,
+// alle übrigen Datenpunkte eines Registers nur unscharf angeteasert. "relevanz" je
+// Datenpunkt; Werte mit Eintrag in texte.dp_status (z. B. später, entfällt, freiwillig)
+// zählen nicht als relevant und bekommen ein Etikett.
 const dpNachNr = Object.fromEntries(
   pilot.pass.datenpunkte.map((d) => [d.nr, d]),
 );
@@ -50,185 +72,9 @@ const alleFelder = abschnitte.flatMap((a) => a.felder);
 const feldNachId = Object.fromEntries(alleFelder.map((f) => [f.id, f]));
 const dpZahl = {
   gesamt: pilot.pass.datenpunkte.length,
-  lmt: pilot.pass.datenpunkte.filter(
-    (d) => d.lmt !== "spaeter" && d.lmt !== "entfaellt",
-  ).length,
+  relevant: pilot.pass.datenpunkte.filter((d) => !(d.relevanz in pt.dp_status))
+    .length,
   beispiel: new Set(alleFelder.flatMap((f) => f.datenpunkte ?? [])).size,
-};
-
-/*
-  Explosionszeichnung in isometrischer Projektion. Geometrie ist bewusst im
-  Code (reine Darstellung), die Texte zu den Bauteilen kommen aus pilot.json.
-  Jede Ebene hat eine Position im zusammengebauten Zustand (--zu = Versatz nach
-  unten); beim Laden fährt der Akku auseinander.
-*/
-const cos30 = Math.cos(Math.PI / 6);
-const iso = (x: number, y: number, z: number) => [
-  (x - y) * cos30,
-  (x + y) * 0.5 - z,
-];
-const pt = (x: number, y: number, z: number) =>
-  iso(x, y, z)
-    .map((n) => n.toFixed(1))
-    .join(",");
-const box = (
-  x0: number,
-  y0: number,
-  z0: number,
-  l: number,
-  w: number,
-  h: number,
-) => {
-  const [x1, y1, z1] = [x0 + l, y0 + w, z0 + h];
-  return {
-    oben: [pt(x0, y0, z1), pt(x1, y0, z1), pt(x1, y1, z1), pt(x0, y1, z1)].join(
-      " ",
-    ),
-    links: [
-      pt(x0, y1, z0),
-      pt(x1, y1, z0),
-      pt(x1, y1, z1),
-      pt(x0, y1, z1),
-    ].join(" "),
-    rechts: [
-      pt(x1, y0, z0),
-      pt(x1, y1, z0),
-      pt(x1, y1, z1),
-      pt(x1, y0, z1),
-    ].join(" "),
-  };
-};
-
-const L = 320;
-const W = 84;
-const Z = { wanne: 0, zellen: 64, bms: 140, deckel: 180 };
-
-const wanne = box(0, 0, Z.wanne, L, W, 30);
-const wanneInnen = box(10, 10, Z.wanne + 30, L - 20, W - 20, 0).oben;
-const halter = box(4, 4, Z.zellen, L - 8, W - 8, 8);
-const platine = box(70, 14, Z.bms, 180, 56, 4);
-const chips = [
-  box(92, 24, Z.bms + 4, 34, 22, 7),
-  box(146, 32, Z.bms + 4, 22, 14, 5),
-  box(190, 22, Z.bms + 4, 40, 28, 7),
-];
-const deckel = box(0, 0, Z.deckel, L, W, 24);
-const deckelInnen = box(14, 14, Z.deckel + 24, L - 28, W - 28, 0).oben;
-
-// 40 Rundzellen (10 × 4), von hinten nach vorne gezeichnet.
-const zr = 9;
-const zrx = zr * 1.2247;
-const zry = zr * 0.7071;
-const zelleUnten = Z.zellen + 8;
-const zelleOben = zelleUnten + 34;
-const zellen = Array.from({ length: 40 }, (_, k) => ({
-  x: 16 + (k % 10) * 32,
-  y: 12 + Math.floor(k / 10) * 20,
-}))
-  .sort((a, b) => a.x + a.y - (b.x + b.y))
-  .map(({ x, y }) => {
-    const [cx, oy] = iso(x, y, zelleOben);
-    const [, uy] = iso(x, y, zelleUnten);
-    return {
-      mantel: `M${(cx - zrx).toFixed(1)} ${oy.toFixed(1)}V${uy.toFixed(1)}A${zrx.toFixed(1)} ${zry.toFixed(1)} 0 0 0 ${(cx + zrx).toFixed(1)} ${uy.toFixed(1)}V${oy.toFixed(1)}Z`,
-      cx: cx.toFixed(1),
-      cy: oy.toFixed(1),
-    };
-  });
-
-// Hilfslinien der Explosionszeichnung an den vier Ecken.
-const fuehrung = [
-  [0, 0],
-  [L, 0],
-  [L, W],
-  [0, W],
-].map(([x, y]) => ({ von: iso(x, y, 30), bis: iso(x, y, Z.deckel) }));
-
-// Typenschild mit QR-Code auf der vorderen Längsseite der Wanne.
-const [ox, oy] = iso(0, W, 0);
-const schildMatrix = `matrix(${cos30.toFixed(4)} 0.5 0 -1 ${ox.toFixed(1)} ${oy.toFixed(1)})`;
-let seed = 625;
-const zufall = () => {
-  seed = (seed * 1103515245 + 12345) % 2147483648;
-  return seed / 2147483648;
-};
-const qrModule = Array.from({ length: 49 }, (_, k) => [
-  k % 7,
-  Math.floor(k / 7),
-])
-  .filter(([x, y]) => (x < 2 && y < 2) || (x > 4 && y > 4) || zufall() < 0.5)
-  .map(([x, y]) => ({ x: 26 + x * 2.4, y: 6 + y * 2.4 }));
-
-// Größerer Schein-QR-Code (21 × 21 mit Positionsmarken) für die Produktkarte.
-const qrN = 21;
-const imFinder = (x: number, y: number) =>
-  (x < 8 && y < 8) || (x > qrN - 9 && y < 8) || (x < 8 && y > qrN - 9);
-const qrGross = Array.from({ length: qrN * qrN }, (_, k) => [
-  k % qrN,
-  Math.floor(k / qrN),
-]).filter(([x, y]) => !imFinder(x, y) && zufall() < 0.46);
-const qrFinder = [
-  [0, 0],
-  [qrN - 7, 0],
-  [0, qrN - 7],
-];
-
-/*
-  Hero-Szene: E-Bike in Seitenansicht (Strichzeichnung), ein Sucher-Rahmen
-  markiert den Akku am Unterrohr, das Detail-Panel zeigt dessen Typenschild.
-*/
-const rad = { r: 48, hinten: [70, 170], vorne: [270, 170] };
-const speichen = ([cx, cy]: number[]) =>
-  Array.from({ length: 9 }, (_, k) => {
-    const w = (k * Math.PI) / 9;
-    const [dx, dy] = [Math.cos(w) * 42, Math.sin(w) * 42];
-    return `M${(cx - dx).toFixed(1)} ${(cy - dy).toFixed(1)}L${(cx + dx).toFixed(1)} ${(cy + dy).toFixed(1)}`;
-  }).join("");
-// Akku liegt leicht versetzt auf dem Unterrohr (Tretlager 150|175 → Steuerrohr 252|124).
-const akkuWinkel = (Math.atan2(124 - 175, 252 - 150) * 180) / Math.PI;
-const akku = { x: 197.4, y: 142.3 };
-const bike = { s: 0.52, x: 4, y: 8 };
-// Sucher-Rahmen um den Akku (Szenen-Koordinaten) und rechtes Detail-Panel.
-const sucher = {
-  x: akku.x * bike.s + bike.x - 24,
-  y: akku.y * bike.s + bike.y - 18,
-  b: 48,
-  h: 36,
-};
-const ecke = 6;
-const sucherPfad = [
-  `M${sucher.x} ${sucher.y + ecke}v${-ecke}h${ecke}`,
-  `M${sucher.x + sucher.b - ecke} ${sucher.y}h${ecke}v${ecke}`,
-  `M${sucher.x + sucher.b} ${sucher.y + sucher.h - ecke}v${ecke}h${-ecke}`,
-  `M${sucher.x + ecke} ${sucher.y + sucher.h}h${-ecke}v${-ecke}`,
-].join("");
-const panel = { x: 246, y: 6, b: 150, h: 120 };
-const strahl = [
-  [sucher.x + sucher.b, sucher.y],
-  [panel.x, panel.y + 4],
-  [panel.x, panel.y + panel.h - 4],
-  [sucher.x + sucher.b, sucher.y + sucher.h],
-]
-  .map((q) => q.map((n) => n.toFixed(1)).join(","))
-  .join(" ");
-
-const vb = { x: -95, y: -228, b: 395, h: 448 };
-const hotspot = (x: number, y: number, z: number) => {
-  const [sx, sy] = iso(x, y, z);
-  return `left:${(((sx - vb.x) / vb.b) * 100).toFixed(2)}%;top:${(((sy - vb.y) / vb.h) * 100).toFixed(2)}%`;
-};
-const hotspotPos: Record<string, string> = {
-  deckel: hotspot(L * 0.55, W * 0.5, Z.deckel + 24),
-  bms: hotspot(210, 36, Z.bms + 11),
-  zellen: hotspot(48, 72, zelleOben),
-  chemie: hotspot(250, 72, zelleOben),
-  wanne: hotspot(52, W, 16),
-};
-const versatz: Record<string, number> = {
-  wanne: 0,
-  zellen: Z.zellen,
-  bms: Z.bms - 40,
-  deckel: Z.deckel - 30,
 };
 ---
 
@@ -257,140 +103,12 @@ const versatz: Record<string, number> = {
       </div>
 
       <div class="pilot-szene">
-        <svg viewBox="0 0 400 132" role="img" aria-label={t(p.szene_label)}>
-          <defs>
-            <linearGradient id="szene-strahl-verlauf" x1="0" x2="1">
-              <stop offset="0" stop-color="#45d4c0" stop-opacity="0.2"></stop>
-              <stop offset="1" stop-color="#45d4c0" stop-opacity="0.02"></stop>
-            </linearGradient>
-          </defs>
-
-          <line class="szene__boden" x1="6" y1="121.5" x2="236" y2="121.5"
-          ></line>
-
-          <g transform={`translate(${bike.x} ${bike.y}) scale(${bike.s})`}>
-            {
-              [rad.hinten, rad.vorne].map(([cx, cy]) => (
-                <g>
-                  <path class="szene__speichen" d={speichen([cx, cy])} />
-                  <circle
-                    class="szene__linie szene__reifen"
-                    cx={cx}
-                    cy={cy}
-                    r={rad.r}
-                    pathLength="1"
-                  />
-                  <circle class="szene__nabe" cx={cx} cy={cy} r="4" />
-                </g>
-              ))
-            }
-            <path
-              class="szene__linie"
-              pathLength="1"
-              d="M70 170L150 175L138 100M138 108L70 170M136 102L245 98M245 92L252 124L270 170M132 80L138 100M252 124L150 175"
-            ></path>
-            <path
-              class="szene__linie"
-              pathLength="1"
-              d="M245 92L241 80M232 79L252 76L259 81M117 80Q132 74 148 80M150 175L162 195M155 196L170 195"
-            ></path>
-            <circle class="szene__motor" cx="150" cy="175" r="11"></circle>
-            <g
-              class="szene__akku"
-              transform={`translate(${akku.x} ${akku.y}) rotate(${akkuWinkel.toFixed(2)})`}
-            >
-              <rect x="-38" y="-8" width="76" height="16" rx="5"></rect>
-            </g>
-          </g>
-
-          <polygon class="szene__strahl" points={strahl}></polygon>
-          <path class="szene__sucher" d={sucherPfad}></path>
-
-          <g class="szene__panel">
-            <rect
-              class="szene__panel-grund"
-              x={panel.x}
-              y={panel.y}
-              width={panel.b}
-              height={panel.h}
-              rx="8"></rect>
-            <text class="szene__label" x={panel.x + 10} y={panel.y + 15}
-              >{t(p.szene_schild).toUpperCase()}</text
-            >
-            <rect
-              class="szene__schild"
-              x={panel.x + 10}
-              y={panel.y + 23}
-              width={panel.b - 20}
-              height="66"
-              rx="4"></rect>
-            <svg
-              x={panel.x + 16}
-              y={panel.y + 29}
-              width="54"
-              height="54"
-              viewBox={`0 0 ${qrN} ${qrN}`}
-              shape-rendering="crispEdges"
-              class="szene__qr"
-            >
-              {
-                qrGross.map(([x, y]) => (
-                  <rect x={x} y={y} width="1" height="1" />
-                ))
-              }
-              {
-                qrFinder.map(([x, y]) => (
-                  <path
-                    fill-rule="evenodd"
-                    d={`M${x} ${y}h7v7h-7zM${x + 1} ${y + 1}v5h5v-5zM${x + 2} ${y + 2}h3v3h-3z`}
-                  />
-                ))
-              }
-            </svg>
-            <rect
-              class="szene__scan"
-              x={panel.x + 14}
-              y={panel.y + 29}
-              width="58"
-              height="1.4"></rect>
-            <text class="szene__schild-name" x={panel.x + 77} y={panel.y + 40}
-              >{pilot.produkt.name}</text
-            >
-            {
-              pilot.produkt.eckdaten.slice(0, 2).map((d, i) => (
-                <text
-                  class="szene__schild-daten"
-                  x={panel.x + 77}
-                  y={panel.y + 53 + i * 10}
-                >
-                  {d.wert}
-                </text>
-              ))
-            }
-            <rect
-              class="szene__schild-zeile"
-              x={panel.x + 77}
-              y={panel.y + 74}
-              width="40"
-              height="2.2"></rect>
-            <rect
-              class="szene__schild-zeile"
-              x={panel.x + 77}
-              y={panel.y + 79}
-              width="28"
-              height="2.2"></rect>
-            <circle
-              class="szene__punkt"
-              cx={panel.x + 13}
-              cy={panel.y + 106}
-              r="2.2"></circle>
-            <text
-              class="szene__label szene__label--akzent"
-              x={panel.x + 20}
-              y={panel.y + 108.5}>{t(p.szene_scan).toUpperCase()}</text
-            >
-          </g>
-        </svg>
+        <Grafik
+          teil="szene"
+          lang={lang}
+          pilot={pilot}
+          aktiv={startKomponente}
+        />
       </div>
       <dl class="pilot-produkt__daten">
         {
@@ -405,6 +123,20 @@ const versatz: Record<string, number> = {
       <p class="pilot-mono pilot-produkt__id">ID {pilot.produkt.pass_id}</p>
     </div>
   </section>
+
+  {
+    pilot.vorbehalt && (
+      <aside class="pilot-vorbehalt" aria-label={t(pilot.vorbehalt.titel)}>
+        <p class="pilot-vorbehalt__titel">{t(pilot.vorbehalt.titel)}</p>
+        <p>
+          {t(pilot.vorbehalt.text)}{" "}
+          <a href={pilot.vorbehalt.quelle} target="_blank" rel="noopener">
+            {t(seite.quelle_label)}
+          </a>
+        </p>
+      </aside>
+    )
+  }
 
   <section class="pilot-abschnitt" aria-labelledby="pilot-schritte-titel">
     <h2 id="pilot-schritte-titel" class="pilot-h2">{t(p.schritte_titel)}</h2>
@@ -442,150 +174,12 @@ const versatz: Record<string, number> = {
     </div>
 
     <div class="pilot-explorer__raster">
-      <div class="explosion" id="explosion" data-aktiv="zellen">
-        <svg
-          viewBox={`${vb.x} ${vb.y} ${vb.b} ${vb.h}`}
-          role="img"
-          aria-label={pilot.produkt.name}
-        >
-          <defs>
-            <pattern
-              id="raster"
-              width="24"
-              height="24"
-              patternUnits="userSpaceOnUse"
-            >
-              <path d="M24 0H0V24" class="explosion__raster"></path>
-            </pattern>
-          </defs>
-          <rect x={vb.x} y={vb.y} width={vb.b} height={vb.h} fill="url(#raster)"
-          ></rect>
-
-          <g class="explosion__fuehrung">
-            {
-              fuehrung.map((f) => (
-                <line x1={f.von[0]} y1={f.von[1]} x2={f.bis[0]} y2={f.bis[1]} />
-              ))
-            }
-          </g>
-
-          <g class="ebene" data-ebene="wanne" style="--zu:0px">
-            <polygon class="flaeche flaeche--links" points={wanne.links}
-            ></polygon>
-            <polygon class="flaeche flaeche--rechts" points={wanne.rechts}
-            ></polygon>
-            <polygon class="flaeche flaeche--oben" points={wanne.oben}
-            ></polygon>
-            <polygon class="flaeche flaeche--innen" points={wanneInnen}
-            ></polygon>
-            <g transform={schildMatrix} class="schild">
-              <rect x="20" y="4" width="96" height="22" rx="1.5"></rect>
-              {
-                qrModule.map((m) => (
-                  <rect
-                    class="schild__qr"
-                    x={m.x}
-                    y={m.y}
-                    width="2.4"
-                    height="2.4"
-                  />
-                ))
-              }
-              <rect class="schild__zeile" x="48" y="19" width="56" height="2"
-              ></rect>
-              <rect class="schild__zeile" x="48" y="14" width="40" height="2"
-              ></rect>
-              <rect class="schild__zeile" x="48" y="9" width="48" height="2"
-              ></rect>
-            </g>
-          </g>
-
-          <g
-            class="ebene ebene--innen"
-            data-ebene="zellen"
-            style={`--zu:${versatz.zellen}px`}
-          >
-            <polygon class="flaeche flaeche--links" points={halter.links}
-            ></polygon>
-            <polygon class="flaeche flaeche--rechts" points={halter.rechts}
-            ></polygon>
-            <polygon class="flaeche flaeche--oben" points={halter.oben}
-            ></polygon>
-            {
-              zellen.map((z) => (
-                <g class="zelle">
-                  <path class="zelle__mantel" d={z.mantel} />
-                  <ellipse
-                    class="zelle__kopf"
-                    cx={z.cx}
-                    cy={z.cy}
-                    rx={zrx.toFixed(1)}
-                    ry={zry.toFixed(1)}
-                  />
-                  <ellipse
-                    class="zelle__pol"
-                    cx={z.cx}
-                    cy={z.cy}
-                    rx={(zrx * 0.38).toFixed(1)}
-                    ry={(zry * 0.38).toFixed(1)}
-                  />
-                </g>
-              ))
-            }
-          </g>
-
-          <g
-            class="ebene ebene--innen"
-            data-ebene="bms"
-            style={`--zu:${versatz.bms}px`}
-          >
-            <polygon class="flaeche flaeche--links" points={platine.links}
-            ></polygon>
-            <polygon class="flaeche flaeche--rechts" points={platine.rechts}
-            ></polygon>
-            <polygon class="flaeche flaeche--oben platine" points={platine.oben}
-            ></polygon>
-            {
-              chips.map((c) => (
-                <g class="chip">
-                  <polygon class="flaeche flaeche--links" points={c.links} />
-                  <polygon class="flaeche flaeche--rechts" points={c.rechts} />
-                  <polygon class="flaeche flaeche--oben" points={c.oben} />
-                </g>
-              ))
-            }
-          </g>
-
-          <g
-            class="ebene"
-            data-ebene="deckel"
-            style={`--zu:${versatz.deckel}px`}
-          >
-            <polygon class="flaeche flaeche--links" points={deckel.links}
-            ></polygon>
-            <polygon class="flaeche flaeche--rechts" points={deckel.rechts}
-            ></polygon>
-            <polygon class="flaeche flaeche--oben" points={deckel.oben}
-            ></polygon>
-            <polygon class="flaeche flaeche--innen" points={deckelInnen}
-            ></polygon>
-          </g>
-        </svg>
-
-        {
-          pilot.komponenten.map((k) => (
-            <button
-              type="button"
-              class="hotspot"
-              data-komponente={k.id}
-              style={hotspotPos[k.id]}
-              aria-label={t(k.name)}
-            >
-              <span>{k.nummer}</span>
-            </button>
-          ))
-        }
-      </div>
+      <Grafik
+        teil="explosion"
+        lang={lang}
+        pilot={pilot}
+        aktiv={startKomponente}
+      />
 
       <div class="pilot-explorer__info">
         <div class="komponenten-liste" role="tablist">
@@ -660,7 +254,7 @@ const versatz: Record<string, number> = {
           </p>
           <p class="pass-viewer__name">
             {pilot.produkt.name}
-            <span class="pass-viewer__marke">Battery Passport</span>
+            <span class="pass-viewer__marke">{t(pt.marke)}</span>
           </p>
           <p class="pilot-mono pass-viewer__id">{pilot.produkt.pass_id}</p>
         </div>
@@ -689,12 +283,12 @@ const versatz: Record<string, number> = {
 
       <dl class="pass-viewer__zahlen">
         <div>
-          <dt>{t(p.dp_gesamt)}</dt>
+          <dt>{t(pt.dp_gesamt)}</dt>
           <dd class="pilot-mono">{dpZahl.gesamt}</dd>
         </div>
         <div>
-          <dt>{t(p.dp_lmt)}</dt>
-          <dd class="pilot-mono">{dpZahl.lmt}</dd>
+          <dt>{t(pt.dp_relevant)}</dt>
+          <dd class="pilot-mono">{dpZahl.relevant}</dd>
         </div>
         <div>
           <dt>{t(p.dp_beispiel)}</dt>
@@ -708,7 +302,7 @@ const versatz: Record<string, number> = {
       </dl>
 
       <div class="pass-viewer__koerper">
-        <div class="register" role="tablist" aria-label={t(p.register_label)}>
+        <div class="register" role="tablist" aria-label={t(pt.register_label)}>
           {
             abschnitte.map((a, i) => (
               <button
@@ -788,14 +382,18 @@ const versatz: Record<string, number> = {
                   <ul class="weitere__liste" aria-hidden="true">
                     {a.weitere.map((d) => (
                       <li
-                        class={`weitere__dp weitere__dp--${d.lmt}`}
+                        class={`weitere__dp weitere__dp--${d.relevanz}`}
                         data-stufe={d.stufe}
                       >
                         <span class="weitere__kopf pilot-mono">
                           DP {d.nr}
-                          {(d.lmt === "spaeter" || d.lmt === "entfaellt") && (
+                          {d.relevanz in pt.dp_status && (
                             <span class="weitere__tag">
-                              {t(p.dp_status[d.lmt as "spaeter" | "entfaellt"])}
+                              {t(
+                                pt.dp_status[
+                                  d.relevanz as keyof typeof pt.dp_status
+                                ],
+                              )}
                             </span>
                           )}
                         </span>
@@ -886,7 +484,7 @@ const versatz: Record<string, number> = {
     const passApp = document.getElementById("pass-app");
     if (!explosion || !passApp) return;
 
-    // Akku auseinanderfahren, sobald die Grafik im Bild ist.
+    // Produkt auseinanderfahren, sobald die Grafik im Bild ist.
     const beobachter = new IntersectionObserver(
       (eintraege) => {
         if (eintraege.some((e) => e.isIntersecting)) {
