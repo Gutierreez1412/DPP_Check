@@ -51,12 +51,20 @@
       },
       "punkte": [
         {
+          "label": {
+            "de": "Eigene Marke",
+            "en": "Own brand"
+          },
           "text": {
             "de": "Ihr Name oder Ihre Marke steht auf der Batterie, unabhängig davon, ob Sie diese selbst herstellen, herstellen lassen oder zukaufen.",
             "en": "Your name or trademark appears on the battery, regardless of whether you manufacture it yourself, have it manufactured or buy it in."
           }
         },
         {
+          "label": {
+            "de": "Eigene Herstellung und Nutzung",
+            "en": "Own manufacture and use"
+          },
           "text": {
             "de": "Sie stellen die Batterie selbst her oder lassen sie herstellen und nutzen sie selbst.",
             "en": "You manufacture the battery yourself or have it manufactured, and use it yourself."
