@@ -497,10 +497,6 @@ fieldset.schritt--lang legend {
   color: var(--farbe-text-schwach);
 }
 
-.punkte li:not(:has(strong)) {
-  color: var(--farbe-text);
-}
-
 .punkte + .hinweis-text {
   margin-top: 1rem;
 }
