@@ -61,12 +61,6 @@
             "de": "Sie stellen die Batterie selbst her oder lassen sie herstellen und nutzen sie selbst.",
             "en": "You manufacture the battery yourself or have it manufactured, and use it yourself."
           }
-        },
-        {
-          "text": {
-            "de": "Sie lassen die Batterie speziell für Ihr Produkt entwickeln, auch wenn Ihr Name nur auf dem Endprodukt steht (z. B. E-Bike oder Maschine). [in Prüfung]",
-            "en": "You have the battery developed specifically for your product, even if your name only appears on the end product (e.g. e-bike or machine). [under review]"
-          }
         }
       ],
       "hinweis": {
@@ -79,8 +73,8 @@
     {
       "id": "drittland_import",
       "titel": {
-        "de": "Beziehen Sie Batterien direkt von einem Lieferanten außerhalb der EU und bringen Sie diese in der EU in Verkehr, indem Sie sie verkaufen, vermieten oder in Ihre Produkte einbauen und diese weitergeben?",
-        "en": "Do you source batteries directly from a supplier outside the EU and place them on the EU market by selling or renting them, or by building them into your products and passing these on?"
+        "de": "Beziehen Sie Batterien direkt von einem Lieferanten <u>außerhalb der EU</u> und bringen Sie diese in der EU in Verkehr, indem Sie sie verkaufen, vermieten oder in Ihre Produkte einbauen und diese weitergeben?",
+        "en": "Do you source batteries directly from a supplier <u>outside the EU</u> and place them on the EU market by selling or renting them, or by building them into your products and passing these on?"
       },
       "hinweis": {
         "de": "Gemeint sind Unternehmen mit Sitz in der EU, die Batterien aus einem Drittland in Verkehr bringen.",
@@ -158,8 +152,8 @@
           "en": "You are likely responsible as the manufacturer"
         },
         "text": {
-          "de": "Ihr Name oder Ihre Marke steht auf der Batterie, Sie nutzen eine selbst gebaute oder in Auftrag gegebene Batterie selbst, oder Sie haben die Batterie eigens für Ihr Produkt entwickeln lassen. Damit sind Sie für den Batteriepass verantwortlich (Art. 3 Nr. 33, Art. 44 Buchst. a, Art. 77 Abs. 4).",
-          "en": "Your name or trademark appears on the battery, you use a battery you built or had built yourself, or you had the battery developed specifically for your product. You are therefore responsible for the battery passport (Art. 3(33), Art. 44(a), Art. 77(4))."
+          "de": "Ihr Name oder Ihre Marke steht auf der Batterie, oder Sie nutzen eine selbst gebaute oder in Auftrag gegebene Batterie selbst. Damit sind Sie für den Batteriepass verantwortlich (Art. 3 Nr. 33, Art. 44 Buchst. a, Art. 77 Abs. 4).",
+          "en": "Your name or trademark appears on the battery, or you use a battery you built or had built yourself. You are therefore responsible for the battery passport (Art. 3(33), Art. 44(a), Art. 77(4))."
         },
         "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
         "status": "gilt"
