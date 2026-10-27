@@ -41,7 +41,14 @@ const keineAuswahlText = t(filter.uebersicht.keine_auswahl);
     );
     const params = new URLSearchParams(window.location.search);
     const ids = (params.get("gruppen") || "").split(",").filter(Boolean);
-    const rolle = params.get("rolle");
+    // Rollen (rolle, rolle_<gruppe>) unverändert an die Gruppenseiten weitergeben.
+    const rollenParams = new URLSearchParams();
+    params.forEach((wert, schluessel) => {
+      if (schluessel === "rolle" || schluessel.startsWith("rolle_")) {
+        rollenParams.set(schluessel, wert);
+      }
+    });
+    const rollenQuery = rollenParams.toString();
     const ausgewaehlt = alle.filter((g) => ids.includes(g.id));
 
     if (ausgewaehlt.length === 0) {
@@ -52,8 +59,8 @@ const keineAuswahlText = t(filter.uebersicht.keine_auswahl);
     ausgewaehlt.forEach((g) => {
       const li = document.createElement("li");
       const a = document.createElement("a");
-      a.href = rolle
-        ? `/${lang}/gruppe/${g.id}/?rolle=${rolle}`
+      a.href = rollenQuery
+        ? `/${lang}/gruppe/${g.id}/?${rollenQuery}`
         : `/${lang}/gruppe/${g.id}/`;
       a.className = "button";
       a.textContent = g.name[lang] || g.name.de;
