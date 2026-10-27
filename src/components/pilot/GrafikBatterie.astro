@@ -1,0 +1,312 @@
+---
+/*
+  Grafiken für den Batterie-Pilot: Hero-Szene (E-Bike mit Sucher auf dem Akku)
+  und Explosionszeichnung des Akkus in isometrischer Projektion. Geometrie ist
+  bewusst im Code (reine Darstellung), die Texte kommen aus pilot.json.
+  Jede Ebene hat eine Position im zusammengebauten Zustand (--zu = Versatz nach
+  unten); beim Laden fährt der Akku auseinander.
+*/
+import SzenePanel from "./SzenePanel.astro";
+import {
+  box,
+  cos30,
+  hotspotIn,
+  iso,
+  qrKlein,
+  zufallAus,
+  type ViewBox,
+} from "./geometrie";
+
+interface Props {
+  teil: "szene" | "explosion";
+  lang: "de" | "en";
+  pilot: {
+    produkt: { name: string; eckdaten: { wert: string }[] };
+    komponenten: {
+      id: string;
+      ebene: string;
+      nummer: string;
+      name: Record<"de" | "en", string>;
+    }[];
+    texte: Record<
+      "szene_label" | "szene_schild" | "szene_scan",
+      Record<"de" | "en", string>
+    >;
+  };
+  aktiv: string;
+}
+
+const { teil, lang, pilot, aktiv } = Astro.props;
+const t = (feld: Record<"de" | "en", string>) => feld[lang];
+
+const L = 320;
+const W = 84;
+const Z = { wanne: 0, zellen: 64, bms: 140, deckel: 180 };
+
+const wanne = box(0, 0, Z.wanne, L, W, 30);
+const wanneInnen = box(10, 10, Z.wanne + 30, L - 20, W - 20, 0).oben;
+const halter = box(4, 4, Z.zellen, L - 8, W - 8, 8);
+const platine = box(70, 14, Z.bms, 180, 56, 4);
+const chips = [
+  box(92, 24, Z.bms + 4, 34, 22, 7),
+  box(146, 32, Z.bms + 4, 22, 14, 5),
+  box(190, 22, Z.bms + 4, 40, 28, 7),
+];
+const deckel = box(0, 0, Z.deckel, L, W, 24);
+const deckelInnen = box(14, 14, Z.deckel + 24, L - 28, W - 28, 0).oben;
+
+// 40 Rundzellen (10 × 4), von hinten nach vorne gezeichnet.
+const zr = 9;
+const zrx = zr * 1.2247;
+const zry = zr * 0.7071;
+const zelleUnten = Z.zellen + 8;
+const zelleOben = zelleUnten + 34;
+const zellen = Array.from({ length: 40 }, (_, k) => ({
+  x: 16 + (k % 10) * 32,
+  y: 12 + Math.floor(k / 10) * 20,
+}))
+  .sort((a, b) => a.x + a.y - (b.x + b.y))
+  .map(({ x, y }) => {
+    const [cx, oy] = iso(x, y, zelleOben);
+    const [, uy] = iso(x, y, zelleUnten);
+    return {
+      mantel: `M${(cx - zrx).toFixed(1)} ${oy.toFixed(1)}V${uy.toFixed(1)}A${zrx.toFixed(1)} ${zry.toFixed(1)} 0 0 0 ${(cx + zrx).toFixed(1)} ${uy.toFixed(1)}V${oy.toFixed(1)}Z`,
+      cx: cx.toFixed(1),
+      cy: oy.toFixed(1),
+    };
+  });
+
+// Hilfslinien der Explosionszeichnung an den vier Ecken.
+const fuehrung = [
+  [0, 0],
+  [L, 0],
+  [L, W],
+  [0, W],
+].map(([x, y]) => ({ von: iso(x, y, 30), bis: iso(x, y, Z.deckel) }));
+
+// Typenschild mit QR-Code auf der vorderen Längsseite der Wanne.
+const [ox, oy] = iso(0, W, 0);
+const schildMatrix = `matrix(${cos30.toFixed(4)} 0.5 0 -1 ${ox.toFixed(1)} ${oy.toFixed(1)})`;
+const qrModule = qrKlein(zufallAus(625), 26, 6, 2.4);
+
+/*
+  Hero-Szene: E-Bike in Seitenansicht (Strichzeichnung), ein Sucher-Rahmen
+  markiert den Akku am Unterrohr, das Detail-Panel zeigt dessen Typenschild.
+*/
+const rad = { r: 48, hinten: [70, 170], vorne: [270, 170] };
+const speichen = ([cx, cy]: number[]) =>
+  Array.from({ length: 9 }, (_, k) => {
+    const w = (k * Math.PI) / 9;
+    const [dx, dy] = [Math.cos(w) * 42, Math.sin(w) * 42];
+    return `M${(cx - dx).toFixed(1)} ${(cy - dy).toFixed(1)}L${(cx + dx).toFixed(1)} ${(cy + dy).toFixed(1)}`;
+  }).join("");
+// Akku liegt leicht versetzt auf dem Unterrohr (Tretlager 150|175 → Steuerrohr 252|124).
+const akkuWinkel = (Math.atan2(124 - 175, 252 - 150) * 180) / Math.PI;
+const akku = { x: 197.4, y: 142.3 };
+const bike = { s: 0.52, x: 4, y: 8 };
+const sucher = {
+  x: akku.x * bike.s + bike.x - 24,
+  y: akku.y * bike.s + bike.y - 18,
+  b: 48,
+  h: 36,
+};
+
+const vb: ViewBox = { x: -95, y: -228, b: 395, h: 448 };
+const hotspot = hotspotIn(vb);
+const hotspotPos: Record<string, string> = {
+  deckel: hotspot(L * 0.55, W * 0.5, Z.deckel + 24),
+  bms: hotspot(210, 36, Z.bms + 11),
+  zellen: hotspot(48, 72, zelleOben),
+  chemie: hotspot(250, 72, zelleOben),
+  wanne: hotspot(52, W, 16),
+};
+const versatz: Record<string, number> = {
+  wanne: 0,
+  zellen: Z.zellen,
+  bms: Z.bms - 40,
+  deckel: Z.deckel - 30,
+};
+---
+
+{
+  teil === "szene" ? (
+    <svg
+      viewBox="0 0 400 132"
+      role="img"
+      aria-label={t(pilot.texte.szene_label)}
+    >
+      <defs>
+        <linearGradient id="szene-strahl-verlauf" x1="0" x2="1">
+          <stop offset="0" stop-color="#45d4c0" stop-opacity="0.2" />
+          <stop offset="1" stop-color="#45d4c0" stop-opacity="0.02" />
+        </linearGradient>
+      </defs>
+
+      <line class="szene__boden" x1="6" y1="121.5" x2="236" y2="121.5" />
+
+      <g transform={`translate(${bike.x} ${bike.y}) scale(${bike.s})`}>
+        {[rad.hinten, rad.vorne].map(([cx, cy]) => (
+          <g>
+            <path class="szene__speichen" d={speichen([cx, cy])} />
+            <circle
+              class="szene__linie szene__reifen"
+              cx={cx}
+              cy={cy}
+              r={rad.r}
+              pathLength="1"
+            />
+            <circle class="szene__nabe" cx={cx} cy={cy} r="4" />
+          </g>
+        ))}
+        <path
+          class="szene__linie"
+          pathLength="1"
+          d="M70 170L150 175L138 100M138 108L70 170M136 102L245 98M245 92L252 124L270 170M132 80L138 100M252 124L150 175"
+        />
+        <path
+          class="szene__linie"
+          pathLength="1"
+          d="M245 92L241 80M232 79L252 76L259 81M117 80Q132 74 148 80M150 175L162 195M155 196L170 195"
+        />
+        <circle class="szene__motor" cx="150" cy="175" r="11" />
+        <g
+          class="szene__akku"
+          transform={`translate(${akku.x} ${akku.y}) rotate(${akkuWinkel.toFixed(2)})`}
+        >
+          <rect x="-38" y="-8" width="76" height="16" rx="5" />
+        </g>
+      </g>
+
+      <SzenePanel
+        sucher={sucher}
+        name={pilot.produkt.name}
+        daten={pilot.produkt.eckdaten.map((d) => d.wert)}
+        schild={t(pilot.texte.szene_schild)}
+        scan={t(pilot.texte.szene_scan)}
+        seed={625}
+      />
+    </svg>
+  ) : (
+    <div class="explosion" id="explosion" data-aktiv={aktiv}>
+      <svg
+        viewBox={`${vb.x} ${vb.y} ${vb.b} ${vb.h}`}
+        role="img"
+        aria-label={pilot.produkt.name}
+      >
+        <defs>
+          <pattern
+            id="raster"
+            width="24"
+            height="24"
+            patternUnits="userSpaceOnUse"
+          >
+            <path d="M24 0H0V24" class="explosion__raster" />
+          </pattern>
+        </defs>
+        <rect
+          x={vb.x}
+          y={vb.y}
+          width={vb.b}
+          height={vb.h}
+          fill="url(#raster)"
+        />
+
+        <g class="explosion__fuehrung">
+          {fuehrung.map((f) => (
+            <line x1={f.von[0]} y1={f.von[1]} x2={f.bis[0]} y2={f.bis[1]} />
+          ))}
+        </g>
+
+        <g class="ebene" data-ebene="wanne" style="--zu:0px">
+          <polygon class="flaeche flaeche--links" points={wanne.links} />
+          <polygon class="flaeche flaeche--rechts" points={wanne.rechts} />
+          <polygon class="flaeche flaeche--oben" points={wanne.oben} />
+          <polygon class="flaeche flaeche--innen" points={wanneInnen} />
+          <g transform={schildMatrix} class="schild">
+            <rect x="20" y="4" width="96" height="22" rx="1.5" />
+            {qrModule.map((m) => (
+              <rect
+                class="schild__qr"
+                x={m.x}
+                y={m.y}
+                width="2.4"
+                height="2.4"
+              />
+            ))}
+            <rect class="schild__zeile" x="48" y="19" width="56" height="2" />
+            <rect class="schild__zeile" x="48" y="14" width="40" height="2" />
+            <rect class="schild__zeile" x="48" y="9" width="48" height="2" />
+          </g>
+        </g>
+
+        <g
+          class="ebene ebene--innen"
+          data-ebene="zellen"
+          style={`--zu:${versatz.zellen}px`}
+        >
+          <polygon class="flaeche flaeche--links" points={halter.links} />
+          <polygon class="flaeche flaeche--rechts" points={halter.rechts} />
+          <polygon class="flaeche flaeche--oben" points={halter.oben} />
+          {zellen.map((z) => (
+            <g class="zelle">
+              <path class="zelle__mantel" d={z.mantel} />
+              <ellipse
+                class="zelle__kopf"
+                cx={z.cx}
+                cy={z.cy}
+                rx={zrx.toFixed(1)}
+                ry={zry.toFixed(1)}
+              />
+              <ellipse
+                class="zelle__pol"
+                cx={z.cx}
+                cy={z.cy}
+                rx={(zrx * 0.38).toFixed(1)}
+                ry={(zry * 0.38).toFixed(1)}
+              />
+            </g>
+          ))}
+        </g>
+
+        <g
+          class="ebene ebene--innen"
+          data-ebene="bms"
+          style={`--zu:${versatz.bms}px`}
+        >
+          <polygon class="flaeche flaeche--links" points={platine.links} />
+          <polygon class="flaeche flaeche--rechts" points={platine.rechts} />
+          <polygon
+            class="flaeche flaeche--oben platine"
+            points={platine.oben}
+          />
+          {chips.map((c) => (
+            <g class="chip">
+              <polygon class="flaeche flaeche--links" points={c.links} />
+              <polygon class="flaeche flaeche--rechts" points={c.rechts} />
+              <polygon class="flaeche flaeche--oben" points={c.oben} />
+            </g>
+          ))}
+        </g>
+
+        <g class="ebene" data-ebene="deckel" style={`--zu:${versatz.deckel}px`}>
+          <polygon class="flaeche flaeche--links" points={deckel.links} />
+          <polygon class="flaeche flaeche--rechts" points={deckel.rechts} />
+          <polygon class="flaeche flaeche--oben" points={deckel.oben} />
+          <polygon class="flaeche flaeche--innen" points={deckelInnen} />
+        </g>
+      </svg>
+
+      {pilot.komponenten.map((k) => (
+        <button
+          type="button"
+          class="hotspot"
+          data-komponente={k.id}
+          style={hotspotPos[k.id]}
+          aria-label={t(k.name)}
+        >
+          <span>{k.nummer}</span>
+        </button>
+      ))}
+    </div>
+  )
+}

@@ -184,6 +184,25 @@ main h1 {
   font-size: 0.95rem;
 }
 
+/* Vorbehalt: Inhalte beruhen noch auf keinem Rechtsakt (z. B. Vorstudie). */
+.hinweisbox--vorbehalt {
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--farbe-ampel-gelb);
+}
+
+.hinweisbox--vorbehalt p {
+  margin: 0;
+}
+
+.hinweisbox--vorbehalt .hinweisbox__titel {
+  margin-bottom: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--farbe-text);
+}
+
 /*
   Rollen-Hinweis: Ergebnis der Rollen-Ermittlung (Ebene 1). Eigene Hinweisbox mit
   Akzentlinie, damit sie als Befund hervorsticht statt wie ein beliebiger Hinweis

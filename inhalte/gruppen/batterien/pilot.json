@@ -17,6 +17,46 @@
     "de": "Fiktives Beispiel: Produkt, Hersteller und alle Werte sind erfunden und dienen nur der Veranschaulichung.",
     "en": "Fictitious example: product, manufacturer and all values are made up for illustration only."
   },
+  "texte": {
+    "szene_label": {
+      "de": "E-Bike mit vergrößertem Akku: Das Typenschild trägt den QR-Code zum Batteriepass.",
+      "en": "E-bike with magnified battery: the label carries the QR code to the battery passport."
+    },
+    "szene_schild": {
+      "de": "Typenschild am Akku",
+      "en": "Label on the battery"
+    },
+    "szene_scan": {
+      "de": "Scan → Batteriepass",
+      "en": "Scan → battery passport"
+    },
+    "register_label": {
+      "de": "Bereiche des Batteriepasses",
+      "en": "Sections of the battery passport"
+    },
+    "dp_gesamt": {
+      "de": "Datenpunkte im Batteriepass",
+      "en": "Data points in the battery passport"
+    },
+    "dp_relevant": {
+      "de": "davon für E-Bike-Akkus relevant",
+      "en": "of which relevant for e-bike batteries"
+    },
+    "dp_status": {
+      "spaeter": {
+        "de": "später",
+        "en": "later"
+      },
+      "entfaellt": {
+        "de": "entfällt",
+        "en": "n/a"
+      }
+    },
+    "marke": {
+      "de": "Battery Passport",
+      "en": "Battery Passport"
+    }
+  },
   "produkt": {
     "name": "VoltRahmen 625",
     "typ": {
@@ -611,7 +651,7 @@
         },
         "quelle": "Art. 77(3)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 2,
@@ -621,7 +661,7 @@
         },
         "quelle": "Art. 77(3)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 3,
@@ -631,7 +671,7 @@
         },
         "quelle": "Anh. VI A (1)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 4,
@@ -641,7 +681,7 @@
         },
         "quelle": "Anh. VI A (1)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 5,
@@ -651,7 +691,7 @@
         },
         "quelle": "Anh. VI A (1)",
         "stufe": "oeffentlich",
-        "lmt": "optional"
+        "relevanz": "optional"
       },
       {
         "nr": 6,
@@ -661,7 +701,7 @@
         },
         "quelle": "Anh. VI A (2)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 7,
@@ -671,7 +711,7 @@
         },
         "quelle": "Anh. VI A (2)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 8,
@@ -681,7 +721,7 @@
         },
         "quelle": "Anh. VI A (3)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 9,
@@ -691,7 +731,7 @@
         },
         "quelle": "Anh. VI A (4)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 10,
@@ -701,7 +741,7 @@
         },
         "quelle": "Anh. VI A (5)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 11,
@@ -711,7 +751,7 @@
         },
         "quelle": "Anh. VI A (6)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 12,
@@ -721,7 +761,7 @@
         },
         "quelle": "Anh. VI A (7)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 13,
@@ -731,7 +771,7 @@
         },
         "quelle": "Anh. VI A (8)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 14,
@@ -741,7 +781,7 @@
         },
         "quelle": "Anh. VI A (9)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 15,
@@ -751,7 +791,7 @@
         },
         "quelle": "Anh. VI A (10)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 16,
@@ -761,7 +801,7 @@
         },
         "quelle": "Anh. XIII 1 (b)",
         "stufe": "oeffentlich",
-        "lmt": "entfaellt"
+        "relevanz": "entfaellt"
       },
       {
         "nr": 17,
@@ -771,7 +811,7 @@
         },
         "quelle": "Anh. XIII 1 (c)",
         "stufe": "oeffentlich",
-        "lmt": "spaeter"
+        "relevanz": "spaeter"
       },
       {
         "nr": 18,
@@ -781,7 +821,7 @@
         },
         "quelle": "Anh. XIII 1 (c)",
         "stufe": "oeffentlich",
-        "lmt": "spaeter"
+        "relevanz": "spaeter"
       },
       {
         "nr": 19,
@@ -791,7 +831,7 @@
         },
         "quelle": "Anh. XIII 1 (d)",
         "stufe": "oeffentlich",
-        "lmt": "spaeter"
+        "relevanz": "spaeter"
       },
       {
         "nr": 20,
@@ -801,7 +841,7 @@
         },
         "quelle": "Anh. XIII 1 (e)",
         "stufe": "oeffentlich",
-        "lmt": "spaeter"
+        "relevanz": "spaeter"
       },
       {
         "nr": 21,
@@ -811,7 +851,7 @@
         },
         "quelle": "Anh. XIII 1 (e)",
         "stufe": "oeffentlich",
-        "lmt": "spaeter"
+        "relevanz": "spaeter"
       },
       {
         "nr": 22,
@@ -821,7 +861,7 @@
         },
         "quelle": "Anh. XIII 1 (e)",
         "stufe": "oeffentlich",
-        "lmt": "spaeter"
+        "relevanz": "spaeter"
       },
       {
         "nr": 23,
@@ -831,7 +871,7 @@
         },
         "quelle": "Anh. XIII 1 (e)",
         "stufe": "oeffentlich",
-        "lmt": "spaeter"
+        "relevanz": "spaeter"
       },
       {
         "nr": 24,
@@ -841,7 +881,7 @@
         },
         "quelle": "Anh. XIII 1 (f)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 25,
@@ -851,7 +891,7 @@
         },
         "quelle": "Anh. XIII 1 (g)",
         "stufe": "oeffentlich",
-        "lmt": "entfaellt"
+        "relevanz": "entfaellt"
       },
       {
         "nr": 26,
@@ -861,7 +901,7 @@
         },
         "quelle": "Anh. XIII 1 (h)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 27,
@@ -871,7 +911,7 @@
         },
         "quelle": "Anh. XIII 1 (h)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 28,
@@ -881,7 +921,7 @@
         },
         "quelle": "Anh. XIII 1 (h)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 29,
@@ -891,7 +931,7 @@
         },
         "quelle": "Anh. XIII 1 (i)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 30,
@@ -901,7 +941,7 @@
         },
         "quelle": "Anh. XIII 1 (i)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 31,
@@ -911,7 +951,7 @@
         },
         "quelle": "Anh. XIII 1 (j)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 32,
@@ -921,7 +961,7 @@
         },
         "quelle": "Anh. XIII 1 (j)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 33,
@@ -931,7 +971,7 @@
         },
         "quelle": "Anh. XIII 1 (k)",
         "stufe": "oeffentlich",
-        "lmt": "entfaellt"
+        "relevanz": "entfaellt"
       },
       {
         "nr": 34,
@@ -941,7 +981,7 @@
         },
         "quelle": "Anh. XIII 1 (l)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 35,
@@ -951,7 +991,7 @@
         },
         "quelle": "Anh. XIII 1 (m)",
         "stufe": "oeffentlich",
-        "lmt": "falls_zutreffend"
+        "relevanz": "falls_zutreffend"
       },
       {
         "nr": 36,
@@ -961,7 +1001,7 @@
         },
         "quelle": "Anh. XIII 1 (n)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 37,
@@ -971,7 +1011,7 @@
         },
         "quelle": "Anh. XIII 1 (n)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 38,
@@ -981,7 +1021,7 @@
         },
         "quelle": "Anh. XIII 1 (o)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 39,
@@ -991,7 +1031,7 @@
         },
         "quelle": "Anh. XIII 1 (p)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 40,
@@ -1001,7 +1041,7 @@
         },
         "quelle": "Anh. XIII 1 (q)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 41,
@@ -1011,7 +1051,7 @@
         },
         "quelle": "Anh. XIII 1 (q)",
         "stufe": "oeffentlich",
-        "lmt": "falls_zutreffend"
+        "relevanz": "falls_zutreffend"
       },
       {
         "nr": 42,
@@ -1021,7 +1061,7 @@
         },
         "quelle": "Anh. XIII 1 (r)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 43,
@@ -1031,7 +1071,7 @@
         },
         "quelle": "Anh. XIII 1 (s)",
         "stufe": "oeffentlich",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 44,
@@ -1041,7 +1081,7 @@
         },
         "quelle": "Anh. XIII 1 (t)",
         "stufe": "oeffentlich",
-        "lmt": "spaeter"
+        "relevanz": "spaeter"
       },
       {
         "nr": 45,
@@ -1051,7 +1091,7 @@
         },
         "quelle": "Anh. XIII 2 (a)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 46,
@@ -1061,7 +1101,7 @@
         },
         "quelle": "Anh. XIII 2 (b)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 47,
@@ -1071,7 +1111,7 @@
         },
         "quelle": "Anh. XIII 2 (b)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 48,
@@ -1081,7 +1121,7 @@
         },
         "quelle": "Anh. XIII 2 (c)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 49,
@@ -1091,7 +1131,7 @@
         },
         "quelle": "Anh. XIII 2 (d)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 50,
@@ -1101,7 +1141,7 @@
         },
         "quelle": "Anh. XIII 3",
         "stufe": "behoerden",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 51,
@@ -1111,7 +1151,7 @@
         },
         "quelle": "Anh. XIII 4 (a)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 52,
@@ -1121,7 +1161,7 @@
         },
         "quelle": "Anh. XIII 4 (a)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 53,
@@ -1131,7 +1171,7 @@
         },
         "quelle": "Anh. XIII 4 (a)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 54,
@@ -1141,7 +1181,7 @@
         },
         "quelle": "Anh. XIII 4 (a)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 55,
@@ -1151,7 +1191,7 @@
         },
         "quelle": "Anh. XIII 4 (a)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 56,
@@ -1161,7 +1201,7 @@
         },
         "quelle": "Anh. XIII 4 (a)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 57,
@@ -1171,7 +1211,7 @@
         },
         "quelle": "Anh. XIII 4 (a)",
         "stufe": "berechtigt",
-        "lmt": "falls_zutreffend"
+        "relevanz": "falls_zutreffend"
       },
       {
         "nr": 58,
@@ -1181,7 +1221,7 @@
         },
         "quelle": "Anh. XIII 4 (a)",
         "stufe": "berechtigt",
-        "lmt": "falls_zutreffend"
+        "relevanz": "falls_zutreffend"
       },
       {
         "nr": 59,
@@ -1191,7 +1231,7 @@
         },
         "quelle": "Anh. XIII 4 (a)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 60,
@@ -1201,7 +1241,7 @@
         },
         "quelle": "Anh. XIII 4 (a)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 61,
@@ -1211,7 +1251,7 @@
         },
         "quelle": "Anh. XIII 4 (b)",
         "stufe": "berechtigt",
-        "lmt": "entfaellt"
+        "relevanz": "entfaellt"
       },
       {
         "nr": 62,
@@ -1221,7 +1261,7 @@
         },
         "quelle": "Anh. XIII 4 (b)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 63,
@@ -1231,7 +1271,7 @@
         },
         "quelle": "Anh. XIII 4 (b)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 64,
@@ -1241,7 +1281,7 @@
         },
         "quelle": "Anh. XIII 4 (b)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 65,
@@ -1251,7 +1291,7 @@
         },
         "quelle": "Anh. XIII 4 (b)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 66,
@@ -1261,7 +1301,7 @@
         },
         "quelle": "Anh. XIII 4 (b)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 67,
@@ -1271,7 +1311,7 @@
         },
         "quelle": "Anh. XIII 4 (c)",
         "stufe": "berechtigt",
-        "lmt": "pflicht"
+        "relevanz": "pflicht"
       },
       {
         "nr": 68,
@@ -1281,7 +1321,7 @@
         },
         "quelle": "Anh. XIII 4 (d)",
         "stufe": "berechtigt",
-        "lmt": "falls_zutreffend"
+        "relevanz": "falls_zutreffend"
       },
       {
         "nr": 69,
@@ -1291,7 +1331,7 @@
         },
         "quelle": "Anh. XIII 4 (d)",
         "stufe": "berechtigt",
-        "lmt": "falls_zutreffend"
+        "relevanz": "falls_zutreffend"
       },
       {
         "nr": 70,
@@ -1301,7 +1341,7 @@
         },
         "quelle": "Anh. XIII 4 (d)",
         "stufe": "berechtigt",
-        "lmt": "falls_zutreffend"
+        "relevanz": "falls_zutreffend"
       },
       {
         "nr": 71,
@@ -1311,7 +1351,7 @@
         },
         "quelle": "Anh. XIII 4 (d)",
         "stufe": "berechtigt",
-        "lmt": "falls_zutreffend"
+        "relevanz": "falls_zutreffend"
       }
     ],
     "datenpunkte_quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng#anx_XIII",

@@ -113,6 +113,31 @@ body.breit :is(main, .seite-kopf__innen, .seite-fuss__innen) {
   text-transform: uppercase;
 }
 
+/* Vorbehalt für Beispiele, die noch auf keinem Rechtsakt beruhen (z. B. Textil:
+   Inhalte aus der JRC-Vorstudie). */
+.pilot-vorbehalt {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--farbe-rand);
+  border-left: 4px solid var(--farbe-ampel-gelb);
+  border-radius: var(--radius);
+  background: var(--farbe-flaeche);
+  color: var(--farbe-text-schwach);
+  font-size: 0.92rem;
+}
+
+.pilot-vorbehalt p {
+  margin: 0;
+}
+
+.pilot-vorbehalt .pilot-vorbehalt__titel {
+  margin-bottom: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--farbe-text);
+}
+
 .pilot-produkt {
   position: relative;
   padding: 1.5rem;
@@ -281,6 +306,10 @@ body.breit :is(main, .seite-kopf__innen, .seite-fuss__innen) {
 .szene__punkt {
   fill: var(--p-akzent);
   animation: szene-blinken 2s ease-in-out infinite;
+}
+
+.szene__linie--duenn {
+  stroke-width: 2;
 }
 
 @keyframes szene-zeichnen {
@@ -606,6 +635,62 @@ body.breit :is(main, .seite-kopf__innen, .seite-fuss__innen) {
 
 .explosion[data-aktiv="chemie"] .zelle__pol {
   fill: var(--p-berechtigt);
+}
+
+/* Textil: flach liegendes T-Shirt mit Stoff, Nähten und Etikett als Ebenen. */
+.stoff__reihen {
+  fill: none;
+  stroke: rgba(173, 214, 224, 0.12);
+  stroke-width: 0.7;
+  transition: stroke 0.35s ease;
+}
+
+.naehte__umriss {
+  fill: rgba(15, 29, 37, 0.55);
+  stroke-dasharray: 4 3;
+}
+
+.naehte__linie {
+  fill: none;
+  stroke: rgba(173, 214, 224, 0.75);
+  stroke-width: 1.4;
+  stroke-dasharray: 3 2.5;
+  stroke-linecap: round;
+  transition: stroke 0.35s ease;
+}
+
+.explosion--textil[data-aktiv="etikett"] .ebene[data-ebene="etikett"],
+.explosion--textil[data-aktiv="naehte"] .ebene[data-ebene="naehte"],
+.explosion--textil[data-aktiv="stoff"] .ebene[data-ebene="stoff"],
+.explosion--textil[data-aktiv="farbe"] .ebene[data-ebene="stoff"] {
+  opacity: 1;
+}
+
+.explosion--textil[data-aktiv="stoff"] [data-ebene="stoff"] .flaeche,
+.explosion--textil[data-aktiv="naehte"] [data-ebene="naehte"] .flaeche {
+  stroke: var(--p-akzent);
+}
+
+.explosion--textil[data-aktiv="stoff"] .stoff {
+  fill: #2f6e69;
+}
+
+.explosion--textil[data-aktiv="naehte"] .naehte__linie {
+  stroke: var(--p-akzent);
+}
+
+.explosion--textil[data-aktiv="farbe"] .stoff {
+  fill: #4a4630;
+  stroke: var(--p-berechtigt);
+}
+
+.explosion--textil[data-aktiv="farbe"] .stoff__reihen {
+  stroke: rgba(242, 193, 78, 0.45);
+}
+
+.explosion--textil[data-aktiv="etikett"] .schild rect:first-child {
+  fill: #ffffff;
+  filter: drop-shadow(0 0 3px var(--p-akzent));
 }
 
 .hotspot {
@@ -1283,7 +1368,8 @@ body.breit :is(main, .seite-kopf__innen, .seite-fuss__innen) {
 }
 
 .weitere__dp--spaeter,
-.weitere__dp--entfaellt {
+.weitere__dp--entfaellt,
+.weitere__dp--freiwillig {
   border-style: dashed;
   border-top-width: 1px;
   background: transparent;

@@ -1,0 +1,108 @@
+---
+// Gemeinsamer Teil der Hero-Szene: Sucher-Rahmen um das markierte Bauteil,
+// Lichtstrahl und Detail-Panel mit Schein-QR-Code. Wird innerhalb des
+// Szenen-SVG der jeweiligen Produktgrafik eingebunden.
+import {
+  qrFinder,
+  qrMuster,
+  qrN,
+  strahlPunkte,
+  sucherPfad,
+  szenePanel as panel,
+  zufallAus,
+  type Rahmen,
+} from "./geometrie";
+
+interface Props {
+  sucher: Rahmen;
+  name: string;
+  daten: string[];
+  schild: string;
+  scan: string;
+  seed: number;
+}
+
+const { sucher, name, daten, schild, scan, seed } = Astro.props;
+const qrGross = qrMuster(zufallAus(seed));
+---
+
+<polygon class="szene__strahl" points={strahlPunkte(sucher)}></polygon>
+<path class="szene__sucher" d={sucherPfad(sucher)}></path>
+
+<g class="szene__panel">
+  <rect
+    class="szene__panel-grund"
+    x={panel.x}
+    y={panel.y}
+    width={panel.b}
+    height={panel.h}
+    rx="8"></rect>
+  <text class="szene__label" x={panel.x + 10} y={panel.y + 15}
+    >{schild.toUpperCase()}</text
+  >
+  <rect
+    class="szene__schild"
+    x={panel.x + 10}
+    y={panel.y + 23}
+    width={panel.b - 20}
+    height="66"
+    rx="4"></rect>
+  <svg
+    x={panel.x + 16}
+    y={panel.y + 29}
+    width="54"
+    height="54"
+    viewBox={`0 0 ${qrN} ${qrN}`}
+    shape-rendering="crispEdges"
+    class="szene__qr"
+  >
+    {qrGross.map(([x, y]) => <rect x={x} y={y} width="1" height="1" />)}
+    {
+      qrFinder.map(([x, y]) => (
+        <path
+          fill-rule="evenodd"
+          d={`M${x} ${y}h7v7h-7zM${x + 1} ${y + 1}v5h5v-5zM${x + 2} ${y + 2}h3v3h-3z`}
+        />
+      ))
+    }
+  </svg>
+  <rect
+    class="szene__scan"
+    x={panel.x + 14}
+    y={panel.y + 29}
+    width="58"
+    height="1.4"></rect>
+  <text class="szene__schild-name" x={panel.x + 77} y={panel.y + 40}
+    >{name}</text
+  >
+  {
+    daten.slice(0, 2).map((wert, i) => (
+      <text
+        class="szene__schild-daten"
+        x={panel.x + 77}
+        y={panel.y + 53 + i * 10}
+      >
+        {wert}
+      </text>
+    ))
+  }
+  <rect
+    class="szene__schild-zeile"
+    x={panel.x + 77}
+    y={panel.y + 74}
+    width="40"
+    height="2.2"></rect>
+  <rect
+    class="szene__schild-zeile"
+    x={panel.x + 77}
+    y={panel.y + 79}
+    width="28"
+    height="2.2"></rect>
+  <circle class="szene__punkt" cx={panel.x + 13} cy={panel.y + 106} r="2.2"
+  ></circle>
+  <text
+    class="szene__label szene__label--akzent"
+    x={panel.x + 20}
+    y={panel.y + 108.5}>{scan.toUpperCase()}</text
+  >
+</g>

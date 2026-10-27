@@ -28,6 +28,8 @@ export interface GruppenDaten {
   definition: Zweisprachig;
   definition_quelle: string;
   weiterfuehrend?: { label: Zweisprachig; url: string };
+  // Hinweis, wenn Inhalte noch auf keinem Rechtsakt beruhen (z. B. Vorstudie).
+  vorbehalt?: { titel: Zweisprachig; text: Zweisprachig; quelle: string };
   zeitstrahl: Meilenstein[];
   faq: FaqEintrag[];
 }
@@ -45,6 +47,20 @@ const quelleLabel = t(seite.quelle_label);
 <section>
   <h1 class="nur-screenreader">{t(daten.name)}</h1>
   <RollenHinweis lang={lang} />
+
+  {
+    daten.vorbehalt && (
+      <aside class="hinweisbox hinweisbox--vorbehalt">
+        <p class="hinweisbox__titel">{t(daten.vorbehalt.titel)}</p>
+        <p>
+          {t(daten.vorbehalt.text)}{" "}
+          <a href={daten.vorbehalt.quelle} target="_blank" rel="noopener">
+            {quelleLabel}
+          </a>
+        </p>
+      </aside>
+    )
+  }
 
   <div class="cta-band">
     <div class="cta-band__text">
