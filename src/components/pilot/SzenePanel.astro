@@ -24,6 +24,8 @@ interface Props {
 
 const { sucher, name, daten, schild, scan, seed } = Astro.props;
 const qrGross = qrMuster(zufallAus(seed));
+// Lange Produktnamen verkleinern, damit sie auf dem Schild bleiben (ca. 60 px Platz).
+const nameGroesse = Math.min(7, 60 / (name.length * 0.62)).toFixed(2);
 ---
 
 <polygon class="szene__strahl" points={strahlPunkte(sucher)}></polygon>
@@ -72,8 +74,11 @@ const qrGross = qrMuster(zufallAus(seed));
     y={panel.y + 29}
     width="58"
     height="1.4"></rect>
-  <text class="szene__schild-name" x={panel.x + 77} y={panel.y + 40}
-    >{name}</text
+  <text
+    class="szene__schild-name"
+    x={panel.x + 77}
+    y={panel.y + 40}
+    style={`font-size:${nameGroesse}px`}>{name}</text
   >
   {
     daten.slice(0, 2).map((wert, i) => (
