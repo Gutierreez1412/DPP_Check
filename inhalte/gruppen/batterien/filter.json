@@ -1,0 +1,235 @@
+{
+  "gruppe": "batterien",
+  "quelle_regel": "Entscheidungsbaum Batteriepass (Future Response), Art. 77 Verordnung (EU) 2023/1542. Texte vorläufig, Feinschliff folgt.",
+  "fragen": [
+    {
+      "id": "batterietyp",
+      "titel": {
+        "de": "Bringen Sie ab dem 18. Februar 2027 eine der folgenden Batteriekategorien in der EU in Verkehr, geben Sie diese an Endnutzer ab oder verwenden Sie sie selbst?",
+        "en": "From 18 February 2027, do you place any of the following battery categories on the EU market, make them available to end users or use them yourself?"
+      },
+      "punkte": [
+        {
+          "label": {
+            "de": "LV-Batterie",
+            "en": "LV battery"
+          },
+          "text": {
+            "de": "Antriebsbatterie bis 25 kg, z. B. für E-Bikes, Pedelecs oder E-Scooter",
+            "en": "Traction battery up to 25 kg, e.g. for e-bikes, pedelecs or e-scooters"
+          }
+        },
+        {
+          "label": {
+            "de": "Elektrofahrzeugbatterie",
+            "en": "Electric vehicle battery"
+          },
+          "text": {
+            "de": "E-Autos, Busse, Lkw (auch Hybrid), E-Fahrzeuge über 25 kg",
+            "en": "Electric cars, buses, trucks (incl. hybrids), e-vehicles over 25 kg"
+          }
+        },
+        {
+          "label": {
+            "de": "Industriebatterie über 2 kWh",
+            "en": "Industrial battery over 2 kWh"
+          },
+          "text": {
+            "de": "z. B. Stromspeicher, auch Heimspeicher, oder Batterien für Maschinen",
+            "en": "e.g. energy storage, including home storage, or batteries for machinery"
+          }
+        }
+      ],
+      "bei_ja": "weiter",
+      "bei_nein": "kein_batteriepass"
+    },
+    {
+      "id": "eigene_marke",
+      "titel": {
+        "de": "Trifft mindestens einer der folgenden Fälle auf Sie zu?",
+        "en": "Does at least one of the following cases apply to you?"
+      },
+      "punkte": [
+        {
+          "text": {
+            "de": "Ihr Name oder Ihre Marke steht auf der Batterie, unabhängig davon, ob Sie diese selbst herstellen, herstellen lassen oder zukaufen.",
+            "en": "Your name or trademark appears on the battery, regardless of whether you manufacture it yourself, have it manufactured or buy it in."
+          }
+        },
+        {
+          "text": {
+            "de": "Sie stellen die Batterie selbst her oder lassen sie herstellen und nutzen sie selbst.",
+            "en": "You manufacture the battery yourself or have it manufactured, and use it yourself."
+          }
+        },
+        {
+          "text": {
+            "de": "Sie lassen die Batterie speziell für Ihr Produkt entwickeln, auch wenn Ihr Name nur auf dem Endprodukt steht (z. B. E-Bike oder Maschine). [in Prüfung]",
+            "en": "You have the battery developed specifically for your product, even if your name only appears on the end product (e.g. e-bike or machine). [under review]"
+          }
+        }
+      ],
+      "hinweis": {
+        "de": "Antworten Sie mit Nein, wenn Sie Standardbatterien unter dem Namen des Lieferanten lediglich weiterverkaufen oder in Ihre Produkte einbauen.",
+        "en": "Answer No if you merely resell standard batteries under the supplier's name or build them into your products."
+      },
+      "bei_ja": "erzeuger",
+      "bei_nein": "weiter"
+    },
+    {
+      "id": "drittland_import",
+      "titel": {
+        "de": "Beziehen Sie Batterien direkt von einem Lieferanten außerhalb der EU und bringen Sie diese in der EU in Verkehr, indem Sie sie verkaufen, vermieten oder in Ihre Produkte einbauen und diese weitergeben?",
+        "en": "Do you source batteries directly from a supplier outside the EU and place them on the EU market by selling or renting them, or by building them into your products and passing these on?"
+      },
+      "hinweis": {
+        "de": "Gemeint sind Unternehmen mit Sitz in der EU, die Batterien aus einem Drittland in Verkehr bringen.",
+        "en": "This refers to companies established in the EU that place batteries from a third country on the market."
+      },
+      "bei_ja": "einfuehrer",
+      "bei_nein": "weiter"
+    },
+    {
+      "id": "bearbeitet",
+      "titel": {
+        "de": "Bereiten Sie genutzte oder zugekaufte Batterien auf, verändern Sie diese oder setzen Sie diese für einen neuen Zweck ein, bevor die Batterien weitergegeben oder von Ihnen selbst genutzt werden?",
+        "en": "Do you refurbish used or purchased batteries, modify them or repurpose them before passing them on or using them yourself?"
+      },
+      "hinweis": {
+        "de": "Dazu zählen z. B. Prüfen und Reparieren (sofern dadurch die Konformität der Batterie beeinträchtigt werden kann), Tausch von Zellen oder Modulen, Eingriffe an Gehäuse oder Batteriemanagementsystem oder eine E-Auto-Batterie als Heimspeicher.",
+        "en": "This includes e.g. testing and repairing (if this may affect the battery's conformity), replacing cells or modules, interventions on the casing or battery management system, or an EV battery used as home storage."
+      },
+      "bei_ja": "neuer_pass",
+      "bei_nein": "weiter"
+    }
+  ],
+  "schlussergebnis": "nicht_passpflichtig",
+  "sonderfaelle": {
+    "titel": {
+      "de": "Sonderfälle",
+      "en": "Special cases"
+    },
+    "text": {
+      "de": "Für Sonderfälle gelten besondere Regelungen, z. B. bei Batterien für Militär und Raumfahrt (Art. 1 Abs. 5) oder Altbatterien (Art. 77 Abs. 7).",
+      "en": "Special rules apply to special cases, e.g. batteries for military and space use (Art. 1(5)) or waste batteries (Art. 77(7))."
+    }
+  },
+  "rollenergebnis": {
+    "weiter_hinweis": {
+      "de": "Beides bedarf einer Einzelfallprüfung. Erste Einschätzung auf Basis Ihrer Angaben, keine abschließende rechtliche Bewertung.",
+      "en": "Both require a case-by-case assessment. Initial assessment based on your answers, not a final legal determination."
+    },
+    "varianten": {
+      "kein_batteriepass": {
+        "weitere_pflichten": {
+          "titel": {
+            "de": "Weitere Pflichten",
+            "en": "Further obligations"
+          },
+          "text": {
+            "de": "Der Batteriepass ist nur ein Teil der Batterieverordnung (EU) 2023/1542. Auch ohne Batteriepass können weitere Pflichten für Sie gelten.",
+            "en": "The battery passport is only one part of the Battery Regulation (EU) 2023/1542. Even without a battery passport, further obligations may apply to you."
+          }
+        },
+        "titel": {
+          "de": "Kein Batteriepass",
+          "en": "No battery passport"
+        },
+        "text": {
+          "de": "Sie haben keine Batterie mit Pass-Pflicht (LV-, Elektrofahrzeug- oder Industriebatterie über 2 kWh) oder sie wird nicht ab dem 18. Februar 2027 in Verkehr gebracht, abgegeben oder von Ihnen verwendet. Andere Pflichten der Verordnung können trotzdem gelten.",
+          "en": "You do not have a battery that requires a passport (LV, electric vehicle or industrial battery over 2 kWh), or it will not be placed on the market, made available or used by you from 18 February 2027. Other obligations under the regulation may still apply."
+        },
+        "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
+        "status": "gilt"
+      },
+      "erzeuger": {
+        "weitere_pflichten": {
+          "titel": {
+            "de": "Weitere Pflichten",
+            "en": "Further obligations"
+          },
+          "text": {
+            "de": "Der Batteriepass ist nur ein Teil der Batterieverordnung (EU) 2023/1542. Als Erzeuger können weitere Pflichten für Sie gelten.",
+            "en": "The battery passport is only one part of the Battery Regulation (EU) 2023/1542. As a manufacturer, further obligations may apply to you."
+          }
+        },
+        "titel": {
+          "de": "Sie sind voraussichtlich als Erzeuger verantwortlich",
+          "en": "You are likely responsible as the manufacturer"
+        },
+        "text": {
+          "de": "Ihr Name oder Ihre Marke steht auf der Batterie, Sie nutzen eine selbst gebaute oder in Auftrag gegebene Batterie selbst, oder Sie haben die Batterie eigens für Ihr Produkt entwickeln lassen. Damit sind Sie für den Batteriepass verantwortlich (Art. 3 Nr. 33, Art. 44 Buchst. a, Art. 77 Abs. 4).",
+          "en": "Your name or trademark appears on the battery, you use a battery you built or had built yourself, or you had the battery developed specifically for your product. You are therefore responsible for the battery passport (Art. 3(33), Art. 44(a), Art. 77(4))."
+        },
+        "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
+        "status": "gilt"
+      },
+      "einfuehrer": {
+        "weitere_pflichten": {
+          "titel": {
+            "de": "Weitere Pflichten",
+            "en": "Further obligations"
+          },
+          "text": {
+            "de": "Der Batteriepass ist nur ein Teil der Batterieverordnung (EU) 2023/1542. Als Einführer können weitere Pflichten für Sie gelten.",
+            "en": "The battery passport is only one part of the Battery Regulation (EU) 2023/1542. As an importer, further obligations may apply to you."
+          }
+        },
+        "titel": {
+          "de": "Sie sind voraussichtlich als Einführer verantwortlich",
+          "en": "You are likely responsible as the importer"
+        },
+        "text": {
+          "de": "Sie beziehen die Batterie direkt von einem Anbieter außerhalb der EU und geben sie in der EU weiter, ohne dass ein EU-Lieferant dazwischensteht. Damit sind Sie für den Batteriepass verantwortlich (Art. 3 Nr. 64, Art. 77 Abs. 4).",
+          "en": "You buy the battery directly from a supplier outside the EU and pass it on in the EU with no EU supplier in between. You are therefore responsible for the battery passport (Art. 3(64), Art. 77(4))."
+        },
+        "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
+        "status": "gilt"
+      },
+      "neuer_pass": {
+        "weitere_pflichten": {
+          "titel": {
+            "de": "Weitere Pflichten",
+            "en": "Further obligations"
+          },
+          "text": {
+            "de": "Der Batteriepass ist nur ein Teil der Batterieverordnung (EU) 2023/1542. Als Aufbereiter können weitere Pflichten für Sie gelten.",
+            "en": "The battery passport is only one part of the Battery Regulation (EU) 2023/1542. As a refurbisher, further obligations may apply to you."
+          }
+        },
+        "titel": {
+          "de": "Sie gelten als Erzeuger und brauchen einen neuen Pass",
+          "en": "You are considered a manufacturer and need a new passport"
+        },
+        "text": {
+          "de": "Sie haben eine gebrauchte Batterie bearbeitet, z. B. aufbereitet, umgenutzt oder umgebaut. Damit gelten Sie als Erzeuger (Art. 38 Abs. 11, Art. 44 Buchst. b und c) und sind für den neuen Batteriepass verantwortlich, der mit dem Ursprungspass verknüpft wird (Art. 77 Abs. 7).",
+          "en": "You have processed a used battery, e.g. prepared, repurposed or remanufactured it. You are therefore considered a manufacturer (Art. 38(11), Art. 44(b) and (c)) and are responsible for the new battery passport, which is linked to the original passport (Art. 77(7))."
+        },
+        "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
+        "status": "gilt"
+      },
+      "nicht_passpflichtig": {
+        "weitere_pflichten": {
+          "titel": {
+            "de": "Weitere Pflichten",
+            "en": "Further obligations"
+          },
+          "text": {
+            "de": "Der Batteriepass ist nur ein Teil der Batterieverordnung (EU) 2023/1542. Auch als Händler oder Nutzer können weitere Pflichten für Sie gelten.",
+            "en": "The battery passport is only one part of the Battery Regulation (EU) 2023/1542. As a distributor or user too, further obligations may apply to you."
+          }
+        },
+        "titel": {
+          "de": "Nicht pass-pflichtig",
+          "en": "Not subject to a passport"
+        },
+        "text": {
+          "de": "Nach Ihren Angaben sind Sie nicht für den Batteriepass verantwortlich. Als Händler oder Nutzer sollten Sie trotzdem darauf achten, dass die Batterien den Vorgaben der Verordnung entsprechen und die zugehörigen Unterlagen und Kennzeichnungen vorhanden sind.",
+          "en": "Based on your answers, you are not responsible for the battery passport. As a distributor or user, you should still make sure the batteries comply with the regulation and that the related documents and labelling are in place."
+        },
+        "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
+        "status": "gilt"
+      }
+    }
+  }
+}
