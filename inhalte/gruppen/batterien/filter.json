@@ -73,8 +73,8 @@
     {
       "id": "drittland_import",
       "titel": {
-        "de": "Beziehen Sie Batterien direkt von einem Lieferanten außerhalb der EU und bringen Sie diese in der EU in Verkehr, indem Sie sie verkaufen, vermieten oder in Ihre Produkte einbauen und diese weitergeben?",
-        "en": "Do you source batteries directly from a supplier outside the EU and place them on the EU market by selling or renting them, or by building them into your products and passing these on?"
+        "de": "Beziehen Sie Batterien direkt von einem Lieferanten <u>außerhalb der EU</u> und bringen Sie diese in der EU in Verkehr, indem Sie sie verkaufen, vermieten oder in Ihre Produkte einbauen und diese weitergeben?",
+        "en": "Do you source batteries directly from a supplier <u>outside the EU</u> and place them on the EU market by selling or renting them, or by building them into your products and passing these on?"
       },
       "hinweis": {
         "de": "Gemeint sind Unternehmen mit Sitz in der EU, die Batterien aus einem Drittland in Verkehr bringen.",
