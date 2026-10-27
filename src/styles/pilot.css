@@ -646,15 +646,15 @@ body.breit :is(main, .seite-kopf__innen, .seite-fuss__innen) {
 }
 
 .naehte__umriss {
-  fill: rgba(15, 29, 37, 0.55);
+  fill: rgba(42, 67, 81, 0.35);
   stroke-dasharray: 4 3;
 }
 
 .naehte__linie {
   fill: none;
-  stroke: rgba(173, 214, 224, 0.75);
-  stroke-width: 1.4;
-  stroke-dasharray: 3 2.5;
+  stroke: rgba(232, 240, 243, 0.85);
+  stroke-width: 2;
+  stroke-dasharray: 4 3;
   stroke-linecap: round;
   transition: stroke 0.35s ease;
 }
