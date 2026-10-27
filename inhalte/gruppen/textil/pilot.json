@@ -1,0 +1,1197 @@
+{
+  "id": "textil",
+  "eyebrow": {
+    "de": "DPP-Pilot · Textil",
+    "en": "DPP pilot · Textiles"
+  },
+  "titel": {
+    "de": "So könnte ein digitaler Produktpass für Kleidung aussehen",
+    "en": "What a digital product passport for clothing could look like"
+  },
+  "einleitung": {
+    "de": "Für Kleidung ist der Digitale Produktpass noch nicht vorgeschrieben: Den delegierten Rechtsakt plant die EU-Kommission für Ende 2027. Wie der Pass aussehen könnte, zeigt eine Studie ihrer Gemeinsamen Forschungsstelle (JRC). Am Beispiel eines T-Shirts zeigen wir, welche Teile welche Daten liefern und was Kundinnen, Recycler und Behörden nach diesem Vorschlag im Pass sehen würden.",
+    "en": "The Digital Product Passport is not yet mandatory for clothing: the European Commission plans the delegated act for the end of 2027. A study by its Joint Research Centre (JRC) shows what the passport could look like. Using a T-shirt as an example, we show which parts provide which data and what customers, recyclers and authorities would see in the passport under this proposal."
+  },
+  "einleitung_quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/textile-apparel_en",
+  "beispiel_hinweis": {
+    "de": "Fiktives Beispiel: Produkt, Hersteller und alle Werte sind erfunden und dienen nur der Veranschaulichung.",
+    "en": "Fictitious example: product, manufacturer and all values are made up for illustration only."
+  },
+  "vorbehalt": {
+    "titel": {
+      "de": "Entwurf auf Basis der Vorstudie",
+      "en": "Draft based on the preparatory study"
+    },
+    "text": {
+      "de": "Dieser Pass ist kein gültiges Muster. Datenpunkte, Zugriffsstufen und Granularität folgen dem Vorschlag der JRC-Studie vom Mai 2026, die als Input für den delegierten Rechtsakt zu Textilbekleidung dient. Der endgültige Inhalt kann abweichen.",
+      "en": "This passport is not a valid template. Data points, access levels and granularity follow the proposal of the JRC study from May 2026, which serves as input for the delegated act on textile apparel. The final content may differ."
+    },
+    "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+  },
+  "texte": {
+    "szene_label": {
+      "de": "T-Shirt auf dem Bügel mit vergrößertem Etikett: Es trägt den QR-Code zum Produktpass.",
+      "en": "T-shirt on a hanger with magnified label: it carries the QR code to the product passport."
+    },
+    "szene_schild": {
+      "de": "Etikett im Nacken",
+      "en": "Neck label"
+    },
+    "szene_scan": {
+      "de": "Scan → Produktpass",
+      "en": "Scan → product passport"
+    },
+    "register_label": {
+      "de": "Bereiche des Produktpasses",
+      "en": "Sections of the product passport"
+    },
+    "dp_gesamt": {
+      "de": "Datenpunkte im Vorschlag",
+      "en": "Data points in the proposal"
+    },
+    "dp_relevant": {
+      "de": "davon als Pflicht vorgeschlagen",
+      "en": "of which proposed as mandatory"
+    },
+    "dp_status": {
+      "freiwillig": {
+        "de": "freiwillig",
+        "en": "voluntary"
+      }
+    },
+    "marke": {
+      "de": "Digital Product Passport",
+      "en": "Digital Product Passport"
+    }
+  },
+  "produkt": {
+    "name": "Nordfaden Basic Tee",
+    "typ": {
+      "de": "T-Shirt (Textilbekleidung)",
+      "en": "T-shirt (textile apparel)"
+    },
+    "hersteller": "Musterwerk Textil GmbH",
+    "pass_id": "DPP-DE-MWT-TEE01-L2703",
+    "eckdaten": [
+      {
+        "label": {
+          "de": "Gewicht",
+          "en": "Weight"
+        },
+        "wert": "165 g"
+      },
+      {
+        "label": {
+          "de": "Größe",
+          "en": "Size"
+        },
+        "wert": "M"
+      },
+      {
+        "label": {
+          "de": "Fasern",
+          "en": "Fibres"
+        },
+        "wert": "60 % CO / 40 % PES"
+      },
+      {
+        "label": {
+          "de": "Rezyklatanteil",
+          "en": "Recycled content"
+        },
+        "wert": "40 %"
+      }
+    ]
+  },
+  "schritte": [
+    {
+      "titel": {
+        "de": "QR-Code am Etikett",
+        "en": "QR code on the label"
+      },
+      "text": {
+        "de": "Jedes Kleidungsstück führt über einen Datenträger wie einen QR-Code zu seinem Pass. Vorgeschlagen ist mindestens eine Kennung je Charge, eine Kennung je Einzelstück wäre freiwillig.",
+        "en": "Every garment leads to its passport via a data carrier such as a QR code. As a minimum, one identifier per batch is proposed; an identifier per item would be voluntary."
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+    },
+    {
+      "titel": {
+        "de": "Daten aus der Lieferkette",
+        "en": "Data from the supply chain"
+      },
+      "text": {
+        "de": "Faser-, Garn- und Stofflieferanten, Färberei und Nähbetrieb liefern Daten zu. Verantwortlich für den Pass ist, wer das Kleidungsstück in der EU in Verkehr bringt.",
+        "en": "Fibre, yarn and fabric suppliers, dye house and garment maker contribute data. The party placing the garment on the EU market is responsible for the passport."
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+    },
+    {
+      "titel": {
+        "de": "Gestufter Zugriff",
+        "en": "Tiered access"
+      },
+      "text": {
+        "de": "Vieles soll für alle sichtbar sein. Manche Angaben sehen nur Berechtigte wie Recycler, Nachweise nur Behörden.",
+        "en": "Much is to be visible to everyone. Some information is only visible to persons with a legitimate interest such as recyclers, evidence only to authorities."
+      },
+      "zugriffsstufen_zeigen": true,
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+    }
+  ],
+  "zugriffsstufen": [
+    {
+      "id": "oeffentlich",
+      "name": {
+        "de": "Öffentlich",
+        "en": "Public"
+      },
+      "wer": {
+        "de": "Alle, z. B. Kundinnen und Kunden",
+        "en": "Everyone, e.g. customers"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+    },
+    {
+      "id": "berechtigt",
+      "name": {
+        "de": "Berechtigtes Interesse",
+        "en": "Legitimate interest"
+      },
+      "wer": {
+        "de": "z. B. Recycler, Sortierbetriebe",
+        "en": "e.g. recyclers, sorting facilities"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+    },
+    {
+      "id": "behoerden",
+      "name": {
+        "de": "Behörden",
+        "en": "Authorities"
+      },
+      "wer": {
+        "de": "Benannte Stellen, Marktüberwachung, Zoll, EU-Kommission",
+        "en": "Notified bodies, market surveillance, customs, European Commission"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+    }
+  ],
+  "komponenten": [
+    {
+      "id": "etikett",
+      "ebene": "etikett",
+      "nummer": "01",
+      "name": {
+        "de": "Etikett & QR-Code",
+        "en": "Label & QR code"
+      },
+      "text": {
+        "de": "Das eingenähte Etikett trägt Faserangabe und Pflegesymbole, der QR-Code führt zum Pass. Dort bleiben Kennung, Hersteller und Pflegehinweise lesbar, auch wenn das Etikett verblasst oder herausgeschnitten wird.",
+        "en": "The sewn-in label carries fibre information and care symbols, the QR code leads to the passport. There, identifier, manufacturer and care instructions remain readable even if the label fades or is cut out."
+      },
+      "lieferant": {
+        "de": "Marke / Hersteller",
+        "en": "Brand / manufacturer"
+      },
+      "felder": ["kennung", "hersteller", "pflege", "garantie"]
+    },
+    {
+      "id": "naehte",
+      "ebene": "naehte",
+      "nummer": "02",
+      "name": {
+        "de": "Nähgarn & Zutaten",
+        "en": "Sewing thread & trims"
+      },
+      "text": {
+        "de": "Nähgarn, Bündchen und Etikettenband halten das Shirt zusammen. Für Recycler zählt, was sich vor dem Recycling abtrennen lässt.",
+        "en": "Sewing thread, ribbing and label tape hold the shirt together. For recyclers, what matters is what can be removed before recycling."
+      },
+      "lieferant": {
+        "de": "Nähbetrieb, Zutatenlieferanten",
+        "en": "Garment maker, trim suppliers"
+      },
+      "felder": ["zutaten", "zerlegung"]
+    },
+    {
+      "id": "stoff",
+      "ebene": "stoff",
+      "nummer": "03",
+      "name": {
+        "de": "Oberstoff (Single Jersey)",
+        "en": "Main fabric (single jersey)"
+      },
+      "text": {
+        "de": "Der Stoff bestimmt Zusammensetzung, Rezyklatanteil und wie robust das Shirt ist. Die Werte stammen aus Spinnerei, Strickerei und Prüfberichten.",
+        "en": "The fabric determines composition, recycled content and how durable the shirt is. The values come from spinning mill, knitting mill and test reports."
+      },
+      "lieferant": {
+        "de": "Faser- und Stofflieferanten, Prüflabor",
+        "en": "Fibre and fabric suppliers, test lab"
+      },
+      "felder": ["fasern", "rezyklat", "pruefung", "recycling"]
+    },
+    {
+      "id": "farbe",
+      "ebene": "stoff",
+      "nummer": "04",
+      "name": {
+        "de": "Färbung & Ausrüstung",
+        "en": "Dyeing & finishing"
+      },
+      "text": {
+        "de": "Beim Färben und Ausrüsten kommen Chemikalien zum Einsatz. Der Pass soll besorgniserregende Stoffe nennen, die im fertigen Shirt stecken, vorgeschlagen je Charge, weil sich Farbtöne unterscheiden.",
+        "en": "Chemicals are used in dyeing and finishing. The passport is to name substances of concern contained in the finished shirt, proposed per batch, as shades differ."
+      },
+      "lieferant": {
+        "de": "Färberei / Ausrüster",
+        "en": "Dye house / finisher"
+      },
+      "felder": ["stoffe", "stoffe_ort"]
+    }
+  ],
+  "pass": {
+    "abschnitte": [
+      {
+        "id": "identifikation",
+        "titel": {
+          "de": "Produkt & Hersteller",
+          "en": "Product & manufacturer"
+        },
+        "datenpunkte": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+        "felder": [
+          {
+            "id": "kennung",
+            "label": {
+              "de": "Modell- und Chargen-ID",
+              "en": "Model and batch ID"
+            },
+            "wert": {
+              "de": "Modell TEE01 · Charge L2703",
+              "en": "Model TEE01 · batch L2703"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [2, 3]
+          },
+          {
+            "id": "hersteller",
+            "label": {
+              "de": "Hersteller und Produktionsstätte",
+              "en": "Manufacturer and production site"
+            },
+            "wert": {
+              "de": "Musterwerk Textil GmbH, Musterstadt (DE) · genäht in Musterort (PT)",
+              "en": "Musterwerk Textil GmbH, Musterstadt (DE) · sewn in Musterort (PT)"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [7, 9]
+          },
+          {
+            "id": "kategorie",
+            "label": {
+              "de": "Produktkategorie und Warennummer",
+              "en": "Product category and commodity code"
+            },
+            "wert": {
+              "de": "T-Shirt, gestrickt · HS 6109",
+              "en": "T-shirt, knitted · HS 6109"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [4, 5]
+          },
+          {
+            "id": "kontakt",
+            "label": {
+              "de": "Kontakt für Behörden",
+              "en": "Contact for authorities"
+            },
+            "wert": {
+              "de": "Ansprechperson Produktkonformität",
+              "en": "Product compliance contact"
+            },
+            "stufe": "behoerden",
+            "datenpunkte": [8]
+          }
+        ]
+      },
+      {
+        "id": "material",
+        "titel": {
+          "de": "Material & Rezyklat",
+          "en": "Material & recycled content"
+        },
+        "datenpunkte": [10, 11, 24, 25, 26, 27, 28, 29, 30, 31, 32],
+        "felder": [
+          {
+            "id": "fasern",
+            "label": {
+              "de": "Faserzusammensetzung",
+              "en": "Fibre composition"
+            },
+            "wert": {
+              "de": "60 % Baumwolle, 40 % Polyester",
+              "en": "60% cotton, 40% polyester"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [10]
+          },
+          {
+            "id": "rezyklat",
+            "label": {
+              "de": "Rezyklatanteil und Herkunft",
+              "en": "Recycled content and origin"
+            },
+            "wert": {
+              "de": "40 % recyceltes Polyester · Verbraucherabfall",
+              "en": "40% recycled polyester · consumer waste"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [24, 25]
+          },
+          {
+            "id": "rezyklat_menge",
+            "label": {
+              "de": "Gewicht ohne Zutaten und recycelte Menge",
+              "en": "Weight excluding trims and recycled amount"
+            },
+            "wert": {
+              "de": "158 g, davon 63 g recycelt",
+              "en": "158 g, of which 63 g recycled"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [26, 27]
+          },
+          {
+            "id": "zutaten",
+            "label": {
+              "de": "Zutaten",
+              "en": "Trims"
+            },
+            "wert": {
+              "de": "Nähgarn, Halsbündchen, Etikett · keine Knöpfe oder Reißverschlüsse",
+              "en": "Sewing thread, neck rib, label · no buttons or zips"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [11]
+          },
+          {
+            "id": "bio",
+            "label": {
+              "de": "Bio-Anteil (freiwillig)",
+              "en": "Organic content (voluntary)"
+            },
+            "wert": {
+              "de": "60 % Bio-Baumwolle",
+              "en": "60% organic cotton"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [29]
+          }
+        ]
+      },
+      {
+        "id": "chemie",
+        "titel": {
+          "de": "Stoffe & Chemikalien",
+          "en": "Substances & chemicals"
+        },
+        "datenpunkte": [17, 18, 19, 20, 21],
+        "felder": [
+          {
+            "id": "stoffe",
+            "label": {
+              "de": "Besorgniserregende Stoffe und Konzentration",
+              "en": "Substances of concern and concentration"
+            },
+            "wert": {
+              "de": "Liste je Charge, inkl. aller Farbtöne",
+              "en": "List per batch, incl. all shades"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [17, 19]
+          },
+          {
+            "id": "sicher",
+            "label": {
+              "de": "Hinweise zur sicheren Verwendung",
+              "en": "Instructions for safe use"
+            },
+            "wert": {
+              "de": "Die Angabe der Stoffe genügt für eine sichere Verwendung.",
+              "en": "The identification of the substances is enough to allow safe use."
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [20]
+          },
+          {
+            "id": "stoffe_ort",
+            "label": {
+              "de": "Ort der Stoffe im Produkt",
+              "en": "Location of substances in the product"
+            },
+            "wert": {
+              "de": "Oberstoff, Druck, Etikett",
+              "en": "Main fabric, print, label"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [18]
+          },
+          {
+            "id": "zerlegung",
+            "label": {
+              "de": "Hinweise zu Zerlegung und Recycling",
+              "en": "Disassembly and recycling information"
+            },
+            "wert": {
+              "de": "Etikett und Bündchen vor dem Recycling abtrennen",
+              "en": "Remove label and ribbing before recycling"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [21]
+          }
+        ]
+      },
+      {
+        "id": "haltbarkeit",
+        "titel": {
+          "de": "Haltbarkeit & Recyclingfähigkeit",
+          "en": "Durability & recyclability"
+        },
+        "datenpunkte": [12, 13, 14, 15, 16, 22, 23],
+        "felder": [
+          {
+            "id": "robustheit",
+            "label": {
+              "de": "Robustheitsscore",
+              "en": "Durability score"
+            },
+            "wert": {
+              "de": "Methode folgt im Rechtsakt",
+              "en": "Method to follow in the legal act"
+            },
+            "stufe": "oeffentlich",
+            "status": "unklar",
+            "hinweis": {
+              "de": "Die Berechnungsmethode legt erst der delegierte Rechtsakt fest; die Vorstudie verweist auf die vorbereitende Ökodesign-Studie.",
+              "en": "The calculation method will only be set by the delegated act; the preparatory study refers to the ecodesign preparatory study."
+            },
+            "datenpunkte": [12]
+          },
+          {
+            "id": "pruefung",
+            "label": {
+              "de": "Prüfergebnisse (Maßänderung, Verdrehung, Sichtprüfung)",
+              "en": "Test results (dimensional change, spirality, visual inspection)"
+            },
+            "wert": {
+              "de": "−3 % · 4 % · bestanden",
+              "en": "−3% · 4% · passed"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [13, 14, 15]
+          },
+          {
+            "id": "recycling",
+            "label": {
+              "de": "Recyclingfähigkeitsscore",
+              "en": "Recyclability score"
+            },
+            "wert": {
+              "de": "Methode folgt im Rechtsakt",
+              "en": "Method to follow in the legal act"
+            },
+            "stufe": "oeffentlich",
+            "status": "unklar",
+            "hinweis": {
+              "de": "Die Berechnungsmethode legt erst der delegierte Rechtsakt fest; die Vorstudie verweist auf die vorbereitende Ökodesign-Studie.",
+              "en": "The calculation method will only be set by the delegated act; the preparatory study refers to the ecodesign preparatory study."
+            },
+            "datenpunkte": [22]
+          },
+          {
+            "id": "nachweis",
+            "label": {
+              "de": "Konformitätsnachweise",
+              "en": "Conformity certificates"
+            },
+            "wert": {
+              "de": "2 Dokumente",
+              "en": "2 documents"
+            },
+            "stufe": "behoerden",
+            "datenpunkte": [16, 23]
+          }
+        ]
+      },
+      {
+        "id": "fussabdruck",
+        "titel": {
+          "de": "CO₂- & Umweltfußabdruck",
+          "en": "Carbon & environmental footprint"
+        },
+        "datenpunkte": [33, 34, 35, 36, 37],
+        "felder": [
+          {
+            "id": "fussabdruck",
+            "label": {
+              "de": "Leistungsklasse CO₂- und Umweltfußabdruck",
+              "en": "Carbon and environmental footprint class"
+            },
+            "wert": {
+              "de": "Klassen folgen im Rechtsakt",
+              "en": "Classes to follow in the legal act"
+            },
+            "stufe": "oeffentlich",
+            "status": "unklar",
+            "hinweis": {
+              "de": "Vorgeschlagen ist eine Berechnung nach den PEF-Regeln für Bekleidung und Schuhe; die Leistungsklassen legt erst der delegierte Rechtsakt fest.",
+              "en": "Calculation under the PEF rules for apparel and footwear is proposed; the performance classes will only be set by the delegated act."
+            },
+            "datenpunkte": [33]
+          },
+          {
+            "id": "gewicht",
+            "label": {
+              "de": "Gewicht inklusive Zutaten",
+              "en": "Weight including trims"
+            },
+            "wert": {
+              "de": "165 g",
+              "en": "165 g"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [36]
+          },
+          {
+            "id": "fussabdruck_wert",
+            "label": {
+              "de": "Absoluter Wert und Berechnungsparameter",
+              "en": "Absolute value and calculation parameters"
+            },
+            "wert": {
+              "de": "kg CO₂e je kg Produkt, Berechnungsdaten",
+              "en": "kg CO₂e per kg product, calculation data"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [34, 35]
+          }
+        ]
+      },
+      {
+        "id": "pflege",
+        "titel": {
+          "de": "Pflege, Garantie & Reparatur",
+          "en": "Care, warranty & repair"
+        },
+        "datenpunkte": [38, 39, 40, 41],
+        "felder": [
+          {
+            "id": "pflege",
+            "label": {
+              "de": "Pflegehinweise",
+              "en": "Care instructions"
+            },
+            "wert": {
+              "de": "Waschen bei 40 °C, nicht im Trockner, Bügeln mit mittlerer Temperatur",
+              "en": "Wash at 40 °C, do not tumble dry, iron at medium temperature"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [38]
+          },
+          {
+            "id": "garantie",
+            "label": {
+              "de": "Garantiedauer",
+              "en": "Warranty duration"
+            },
+            "wert": {
+              "de": "Gesetzliche Gewährleistung 2 Jahre, keine zusätzliche Garantie",
+              "en": "2-year legal guarantee, no additional commercial guarantee"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [41]
+          },
+          {
+            "id": "reparatur",
+            "label": {
+              "de": "Reparaturservice der Marke (freiwillig)",
+              "en": "Brand repair service (voluntary)"
+            },
+            "wert": {
+              "de": "Kontakt und Ablauf online",
+              "en": "Contact and process online"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [40]
+          }
+        ]
+      }
+    ],
+    "datenpunkte": [
+      {
+        "nr": 1,
+        "name": {
+          "de": "Eindeutige Produktkennung (Einzelstück, SGTIN)",
+          "en": "Unique product ID (item, SGTIN)"
+        },
+        "quelle": "Anh. III (b)",
+        "stufe": "oeffentlich",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 2,
+        "name": {
+          "de": "Chargen-ID (GTIN + Losnummer)",
+          "en": "Batch ID (GTIN + lot number)"
+        },
+        "quelle": "Anh. III (b)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 3,
+        "name": {
+          "de": "Modell-ID (GTIN-13)",
+          "en": "Model ID (GTIN-13)"
+        },
+        "quelle": "Anh. III (c)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 4,
+        "name": {
+          "de": "ESPR- und PEFCR-Produktkategorie",
+          "en": "ESPR and PEFCR product category"
+        },
+        "quelle": "Geltungsbereich DA",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 5,
+        "name": {
+          "de": "Warennummer (HS, TARIC)",
+          "en": "Commodity code (HS, TARIC)"
+        },
+        "quelle": "Anh. III (d)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 6,
+        "name": {
+          "de": "Kennung des Wirtschaftsakteurs (GLN, EORI)",
+          "en": "Unique operator identifier (GLN, EORI)"
+        },
+        "quelle": "Anh. III (g), (j), (k)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 7,
+        "name": {
+          "de": "Name und Anschrift des Wirtschaftsakteurs",
+          "en": "Operator name and address"
+        },
+        "quelle": "Anh. III (g), (j), (k)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 8,
+        "name": {
+          "de": "Kontaktdaten des Wirtschaftsakteurs",
+          "en": "Operator contact details"
+        },
+        "quelle": "Anh. III (g), (j), (k)",
+        "stufe": "behoerden",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 9,
+        "name": {
+          "de": "Kennung der Produktionsstätte (GLN)",
+          "en": "Unique facility identifier (GLN)"
+        },
+        "quelle": "Anh. III (i)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 10,
+        "name": {
+          "de": "Faserzusammensetzung",
+          "en": "Fibre composition"
+        },
+        "quelle": "Anh. I (d), III (a)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 11,
+        "name": {
+          "de": "Spezifikation der Zutaten (z. B. Knöpfe, Reißverschlüsse)",
+          "en": "Components specification (e.g. buttons, zips)"
+        },
+        "quelle": "Art. 7(2)(b), Anh. I (b)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 12,
+        "name": {
+          "de": "Robustheitsscore",
+          "en": "Durability score"
+        },
+        "quelle": "Art. 7(2)(b), Anh. I (a)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 13,
+        "name": {
+          "de": "Sichtprüfung (ISO 15487)",
+          "en": "Visual inspection (ISO 15487)"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 14,
+        "name": {
+          "de": "Verdrehung (ISO 16322-3)",
+          "en": "Spirality (ISO 16322-3)"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 15,
+        "name": {
+          "de": "Maßänderung (ISO 3759)",
+          "en": "Dimensional change (ISO 3759)"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 16,
+        "name": {
+          "de": "Konformitätsnachweis Robustheit",
+          "en": "Conformity certification, durability"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "behoerden",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 17,
+        "name": {
+          "de": "Besorgniserregende Stoffe (Name, CAS-/EC-Nummer)",
+          "en": "Substances of concern (name, CAS/EC number)"
+        },
+        "quelle": "Art. 7(5), Anh. I (f)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 18,
+        "name": {
+          "de": "Ort der Stoffe im Produkt",
+          "en": "Location of substances in the product"
+        },
+        "quelle": "Art. 7(5), Anh. I (f)",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 19,
+        "name": {
+          "de": "Konzentration der Stoffe",
+          "en": "Concentration of substances"
+        },
+        "quelle": "Art. 7(5), Anh. I (f)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 20,
+        "name": {
+          "de": "Hinweise zur sicheren Verwendung",
+          "en": "Instructions for safe use"
+        },
+        "quelle": "Art. 7(5), Anh. I (f)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 21,
+        "name": {
+          "de": "Hinweise zu Zerlegung, Wiederverwendung und Recycling",
+          "en": "Information on disassembly, reuse and recycling"
+        },
+        "quelle": "Art. 7(5), Anh. I (f)",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 22,
+        "name": {
+          "de": "Recyclingfähigkeitsscore",
+          "en": "Recyclability score"
+        },
+        "quelle": "Anh. I (d), III (a)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 23,
+        "name": {
+          "de": "Konformitätsnachweis Recyclingfähigkeit",
+          "en": "Conformity certification, recyclability"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "behoerden",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 24,
+        "name": {
+          "de": "Rezyklatanteil (Gewichtsprozent)",
+          "en": "Recycled content (% by weight)"
+        },
+        "quelle": "Anh. I (h)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 25,
+        "name": {
+          "de": "Herkunft des Rezyklats (Abfallart)",
+          "en": "Origin of recycled content (type of waste)"
+        },
+        "quelle": "Anh. I (h)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 26,
+        "name": {
+          "de": "Gewicht ohne Zutaten",
+          "en": "Weight excluding trims"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 27,
+        "name": {
+          "de": "Menge des recycelten Materials (kg)",
+          "en": "Amount of recycled material (kg)"
+        },
+        "quelle": "Anh. I (h), III (e)",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 28,
+        "name": {
+          "de": "Konformitätsnachweis Rezyklat",
+          "en": "Conformity certification, recycled content"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "behoerden",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 29,
+        "name": {
+          "de": "Bio-Anteil (Gewichtsprozent)",
+          "en": "Organic content (% by weight)"
+        },
+        "quelle": "Anh. III (a)",
+        "stufe": "oeffentlich",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 30,
+        "name": {
+          "de": "Menge des Bio-Materials (kg)",
+          "en": "Amount of organic material (kg)"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "berechtigt",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 31,
+        "name": {
+          "de": "Konformitätsnachweis Bio-Anteil",
+          "en": "Conformity certification, organic content"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "behoerden",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 32,
+        "name": {
+          "de": "EU-Umweltzeichen",
+          "en": "EU Ecolabel"
+        },
+        "quelle": "Anh. III (a)",
+        "stufe": "oeffentlich",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 33,
+        "name": {
+          "de": "CO₂- und Umweltfußabdruck (Leistungsklasse)",
+          "en": "Carbon and environmental footprint (performance class)"
+        },
+        "quelle": "Anh. I (n)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 34,
+        "name": {
+          "de": "CO₂- und Umweltfußabdruck (absoluter Wert)",
+          "en": "Carbon and environmental footprint (absolute value)"
+        },
+        "quelle": "Anh. I (n), III (e)",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 35,
+        "name": {
+          "de": "Berechnungsparameter des Fußabdrucks",
+          "en": "Footprint calculation parameters"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 36,
+        "name": {
+          "de": "Gewicht (inklusive Zutaten)",
+          "en": "Weight (including trims)"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 37,
+        "name": {
+          "de": "Konformitätserklärung Fußabdruck",
+          "en": "Conformity declaration, footprint"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "behoerden",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 38,
+        "name": {
+          "de": "Pflegehinweise",
+          "en": "Care instructions"
+        },
+        "quelle": "Anh. III (a), (f)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 39,
+        "name": {
+          "de": "Reparaturanleitung",
+          "en": "Repair instructions"
+        },
+        "quelle": "Art. 7(2)(b), Anh. I (b)",
+        "stufe": "oeffentlich",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 40,
+        "name": {
+          "de": "Kontakt zum Reparaturservice der Marke",
+          "en": "Contact of repair services offered by the brand"
+        },
+        "quelle": "Art. 7(2)(b), Anh. I (b)",
+        "stufe": "oeffentlich",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 41,
+        "name": {
+          "de": "Garantiedauer",
+          "en": "Warranty duration"
+        },
+        "quelle": "Art. 7(2)(b), Anh. I (a)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      }
+    ],
+    "datenpunkte_quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf",
+    "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf",
+    "gliederung_quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+  },
+  "lieferkette": [
+    {
+      "id": "faser",
+      "rolle": {
+        "de": "Fasern",
+        "en": "Fibres"
+      },
+      "beispiel": {
+        "de": "Baumwollanbau, Recycler",
+        "en": "Cotton farming, recycler"
+      },
+      "liefert": {
+        "de": [
+          "Herkunft und Bio-Nachweis",
+          "Rezyklat-Nachweis",
+          "Daten für den Fußabdruck"
+        ],
+        "en": [
+          "Origin and organic evidence",
+          "Recycled content evidence",
+          "Data for the footprint"
+        ]
+      }
+    },
+    {
+      "id": "stoff",
+      "rolle": {
+        "de": "Garn & Stoff",
+        "en": "Yarn & fabric"
+      },
+      "beispiel": {
+        "de": "Spinnerei, Strickerei",
+        "en": "Spinning and knitting mill"
+      },
+      "liefert": {
+        "de": [
+          "Faserzusammensetzung",
+          "Prüfwerte zur Robustheit",
+          "Energie- und Prozessdaten"
+        ],
+        "en": [
+          "Fibre composition",
+          "Durability test values",
+          "Energy and process data"
+        ]
+      }
+    },
+    {
+      "id": "faerberei",
+      "rolle": {
+        "de": "Färben & Ausrüsten",
+        "en": "Dyeing & finishing"
+      },
+      "beispiel": {
+        "de": "Färberei, Ausrüster",
+        "en": "Dye house, finisher"
+      },
+      "liefert": {
+        "de": [
+          "Eingesetzte Chemikalien",
+          "Besorgniserregende Stoffe je Charge"
+        ],
+        "en": ["Chemicals used", "Substances of concern per batch"]
+      }
+    },
+    {
+      "id": "konfektion",
+      "rolle": {
+        "de": "Konfektion",
+        "en": "Garment making"
+      },
+      "beispiel": {
+        "de": "Nähbetrieb",
+        "en": "Garment maker"
+      },
+      "liefert": {
+        "de": ["Produktionsstätte (GLN)", "Chargen-ID", "Zutaten"],
+        "en": ["Production site (GLN)", "Batch ID", "Trims"]
+      }
+    },
+    {
+      "id": "marke",
+      "rolle": {
+        "de": "Marke / Hersteller",
+        "en": "Brand / manufacturer"
+      },
+      "beispiel": {
+        "de": "Verantwortlich für den Pass",
+        "en": "Responsible for the passport"
+      },
+      "verantwortlich": true,
+      "liefert": {
+        "de": [
+          "Pass anlegen und QR-Code anbringen",
+          "Pflege, Garantie, Konformität",
+          "Kennung im EU-Register hinterlegen"
+        ],
+        "en": [
+          "Create passport and attach QR code",
+          "Care, warranty, compliance",
+          "Register identifier in the EU registry"
+        ]
+      }
+    },
+    {
+      "id": "nutzung",
+      "rolle": {
+        "de": "Nutzung & Sortierung",
+        "en": "Use & sorting"
+      },
+      "beispiel": {
+        "de": "Kundschaft, Second-Hand, Sortierbetrieb",
+        "en": "Customers, second-hand, sorting facility"
+      },
+      "liefert": {
+        "de": [
+          "Pflegehinweise auch ohne Etikett",
+          "Faserdaten für Sortierung und Recycling"
+        ],
+        "en": [
+          "Care instructions even without label",
+          "Fibre data for sorting and recycling"
+        ]
+      }
+    }
+  ],
+  "lieferkette_quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf",
+  "quellen": [
+    {
+      "label": {
+        "de": "JRC (2026): Study on DPP content for textile apparel products under ESPR (Datenpunkte, Granularität, Zugriffsrechte)",
+        "en": "JRC (2026): Study on DPP content for textile apparel products under ESPR (data points, granularity, access rights)"
+      },
+      "url": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+    },
+    {
+      "label": {
+        "de": "Verordnung (EU) 2024/1781 (ESPR), Art. 9–13 und Anhang III (Digitaler Produktpass)",
+        "en": "Regulation (EU) 2024/1781 (ESPR), Art. 9–13 and Annex III (Digital Product Passport)"
+      },
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng"
+    },
+    {
+      "label": {
+        "de": "EU-Kommission: Digitaler Produktpass für Textilbekleidung",
+        "en": "European Commission: Digital Product Passport for textile apparel"
+      },
+      "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/textile-apparel_en"
+    }
+  ]
+}

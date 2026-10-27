@@ -1,0 +1,158 @@
+{
+  "rechtsgrundlage": {
+    "de": "JRC-Vorstudie zum Produktpass für Textilbekleidung (2026) auf Basis der ESPR (EU) 2024/1781",
+    "en": "JRC preparatory study on the product passport for textile apparel (2026), based on the ESPR (EU) 2024/1781"
+  },
+  "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf",
+  "daten_intro": {
+    "de": "Auswahl; Umfang nach Vorschlag der JRC-Vorstudie, noch nicht verbindlich.",
+    "en": "Selection; scope as proposed by the JRC preparatory study, not yet binding."
+  },
+  "daten_aufwand": {
+    "gruen": {
+      "de": "Diese Angaben liegen bei Ihnen bereits vor.",
+      "en": "You already have this information."
+    },
+    "gelb": {
+      "de": "Für die meisten Produkte liegen sie vor, die Lücken sollten Sie gezielt schließen.",
+      "en": "It is available for most products; close the gaps in a targeted way."
+    },
+    "rot": {
+      "de": "Diese Angaben fehlen bei Ihnen weitgehend oder sind unklar und müssen erst beschafft werden.",
+      "en": "This information is largely missing or unclear and must first be obtained."
+    }
+  },
+  "fragen": {
+    "q1": {
+      "fakt": {
+        "de": "Vorgeschlagen ist mindestens ein Pass je Charge, gefüllt mit Angaben je Modell oder je Charge.",
+        "en": "As a minimum, one passport per batch is proposed, filled with information per model or per batch."
+      },
+      "aufwand": {
+        "gruen": {
+          "de": "Bei wenigen Produkttypen bleibt der Datenumfang überschaubar.",
+          "en": "With few product types, the amount of data remains manageable."
+        },
+        "gelb": {
+          "de": "Bei Ihrer Zahl an Produkttypen entsteht ein spürbarer Datenumfang.",
+          "en": "With your number of product types, the amount of data is noticeable."
+        },
+        "rot": {
+          "de": "Bei Ihrer großen Zahl an Produkttypen ist der Umfang der zu erhebenden und zu pflegenden Daten hoch.",
+          "en": "With your large number of product types, the amount of data to collect and maintain is high."
+        }
+      },
+      "bezug": {
+        "de": "JRC-Vorstudie, Kap. 9.1 (Tab. 13)",
+        "en": "JRC preparatory study, Section 9.1 (Table 13)"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+    },
+    "q2": {
+      "fakt": {
+        "de": "Pflichtig ist nur, wer das fertige Kleidungsstück in der EU in Verkehr bringt; die Daten zu Fasern, Garnen und Stoffen kommen aber aus der vorgelagerten Lieferkette.",
+        "en": "Only whoever places the finished garment on the EU market is obliged; however, the data on fibres, yarns and fabrics comes from the upstream supply chain."
+      },
+      "aufwand": {
+        "gruen": {
+          "de": "Bei wenigen Lieferanten bleiben Datenanfragen und Abstimmungen überschaubar.",
+          "en": "With few suppliers, data requests and coordination remain manageable."
+        },
+        "gelb": {
+          "de": "Bei Ihrer Zahl an Lieferanten sind einige Datenanfragen und Abstimmungen nötig.",
+          "en": "With your number of suppliers, a fair number of data requests and coordination is needed."
+        },
+        "rot": {
+          "de": "Bei Ihrer großen Zahl an Lieferanten sind viele Datenanfragen und Abstimmungen nötig.",
+          "en": "With your large number of suppliers, many data requests and a lot of coordination are needed."
+        }
+      },
+      "aufwand_zuerst": true,
+      "bezug": {
+        "de": "JRC-Vorstudie, Kap. 4.3 (Box 1)",
+        "en": "JRC preparatory study, Section 4.3 (Box 1)"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+    },
+    "q7": {
+      "fakt": {
+        "de": "Den delegierten Rechtsakt für Textilbekleidung plant die EU-Kommission für das 4. Quartal 2027.",
+        "en": "The European Commission plans the delegated act for textile apparel for the fourth quarter of 2027."
+      },
+      "aufwand": {
+        "gruen": {
+          "de": "Mit laufendem Pilot oder laufender Datenerhebung sind Sie auf einem guten Weg.",
+          "en": "With a pilot or data collection under way, you are on a good path."
+        },
+        "gelb": {
+          "de": "Mit benanntem Projekt können Sie die Zeit bis zum Rechtsakt für die Datenerhebung nutzen.",
+          "en": "With a project in place, you can use the time until the legal act for data collection."
+        },
+        "rot": {
+          "de": "Der Aufbau steht noch aus; die Zeit bis zum Rechtsakt sollten Sie für erste Schritte nutzen.",
+          "en": "Set-up has not started yet; use the time until the legal act for first steps."
+        }
+      },
+      "bezug": {
+        "de": "EU-Kommission, Digitaler Produktpass für Textilbekleidung",
+        "en": "European Commission, Digital Product Passport for textile apparel"
+      },
+      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/textile-apparel_en"
+    },
+    "q3": {
+      "fakt": {
+        "de": "Vorgeschlagen sind die Faserzusammensetzung nach der Textilkennzeichnungsverordnung und Angaben zu Zutaten wie Knöpfen oder Reißverschlüssen.",
+        "en": "Fibre composition under the Textile Labelling Regulation and information on components such as buttons or zips are proposed."
+      },
+      "bezug": {
+        "de": "JRC-Vorstudie, Tab. 7",
+        "en": "JRC preparatory study, Table 7"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+    },
+    "q4": {
+      "fakt": {
+        "de": "Besorgniserregende Stoffe gehören nach ESPR in den Pass; vorgeschlagen sind Name, Konzentration und Ort im Produkt, je Charge.",
+        "en": "Under the ESPR, substances of concern belong in the passport; name, concentration and location in the product, per batch, are proposed."
+      },
+      "bezug": {
+        "de": "Art. 7 Abs. 5 ESPR; JRC-Vorstudie, Tab. 7 und 13",
+        "en": "Art. 7(5) ESPR; JRC preparatory study, Tables 7 and 13"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+    },
+    "q5": {
+      "fakt": {
+        "de": "Vorgeschlagen sind CO₂- und Umweltfußabdruck als Leistungsklasse je Modell, berechnet nach den PEF-Regeln für Bekleidung und Schuhe.",
+        "en": "Carbon and environmental footprint as a performance class per model, calculated under the PEF rules for apparel and footwear, are proposed."
+      },
+      "bezug": {
+        "de": "JRC-Vorstudie, Tab. 7 und 8",
+        "en": "JRC preparatory study, Tables 7 and 8"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+    },
+    "q6": {
+      "fakt": {
+        "de": "Vorgeschlagen sind der Rezyklatanteil in Gewichtsprozent und die Herkunft des Rezyklats (Produktions- oder Verbraucherabfall).",
+        "en": "Recycled content as a percentage by weight and the origin of the recycled material (production or consumer waste) are proposed."
+      },
+      "bezug": {
+        "de": "JRC-Vorstudie, Tab. 7",
+        "en": "JRC preparatory study, Table 7"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+    },
+    "q8": {
+      "fakt": {
+        "de": "Vorgeschlagen sind ein Recyclingfähigkeitsscore und, für Berechtigte wie Recycler, Hinweise zu Zerlegung, Wiederverwendung und Recycling.",
+        "en": "A recyclability score and, for persons with a legitimate interest such as recyclers, information on disassembly, reuse and recycling are proposed."
+      },
+      "bezug": {
+        "de": "JRC-Vorstudie, Tab. 7 und 14",
+        "en": "JRC preparatory study, Tables 7 and 14"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
+    }
+  }
+}
