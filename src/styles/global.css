@@ -235,6 +235,25 @@ main h1 {
   max-width: 68ch;
 }
 
+/* Disclaimer unter der Rolle: "Weitere Pflichten", "Sonderfälle" und der
+   Hinweis zur Einzelfallprüfung als ein ruhiger Block mit Trennlinie. */
+.rollen-disclaimer {
+  margin-top: 1.1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--farbe-rand);
+}
+
+.rollen-disclaimer p {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+  color: var(--farbe-text);
+}
+
+.rollen-disclaimer .hinweis-text {
+  margin-bottom: 0;
+  color: var(--farbe-text-schwach);
+}
+
 .rollen-hinweis #rollen-quelle {
   display: inline-block;
   margin-top: 0.75rem;
@@ -442,10 +461,53 @@ fieldset.schritt legend {
   width: 100%;
 }
 
+/* Lange Fragen etwas kleiner, damit sie nicht den ganzen Bildschirm füllen. */
+fieldset.schritt--lang legend {
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  line-height: 1.3;
+}
+
 .hinweis-text {
   color: var(--farbe-text-schwach);
   font-size: 0.95rem;
   margin-top: 0.6rem;
+}
+
+/* Aufzählung unter einer Frage (z. B. die pass-pflichtigen Batterietypen):
+   je Eintrag eine kleine Karte mit Titel und Erklärung untereinander. */
+.punkte {
+  display: grid;
+  gap: 0.6rem;
+  list-style: none;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  max-width: 44rem;
+}
+
+.punkte li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.75rem 1rem;
+  background: var(--farbe-oberflaeche);
+  border: 1px solid var(--farbe-rand);
+  border-left: 4px solid var(--farbe-primaer);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  color: var(--farbe-text-schwach);
+}
+
+.punkte li:not(:has(strong)) {
+  color: var(--farbe-text);
+}
+
+.punkte + .hinweis-text {
+  margin-top: 1rem;
+}
+
+.punkte strong {
+  color: var(--farbe-text);
+  font-size: 1rem;
 }
 
 .optionen {

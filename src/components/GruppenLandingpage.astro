@@ -46,7 +46,7 @@ const quelleLabel = t(seite.quelle_label);
 
 <section>
   <h1 class="nur-screenreader">{t(daten.name)}</h1>
-  <RollenHinweis lang={lang} />
+  <RollenHinweis lang={lang} gruppeId={daten.id} />
 
   {
     daten.vorbehalt && (

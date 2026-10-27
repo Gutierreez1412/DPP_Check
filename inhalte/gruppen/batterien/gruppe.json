@@ -69,32 +69,6 @@
       "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
     },
     {
-      "datum": "2027-08-18",
-      "titel": {
-        "de": "Sorgfaltspflichten in der Lieferkette",
-        "en": "Supply chain due diligence obligations"
-      },
-      "beschreibung": {
-        "de": "Unternehmen über 40 Mio. Euro Nettoumsatz müssen konzernweite Sorgfaltspflichten zu Rohstoffen in der Batterie-Lieferkette erfüllen. Der Termin wurde durch die Änderungsverordnung (EU) 2025/1561 von ursprünglich 2025 auf 2027 verschoben.",
-        "en": "Companies with net turnover above €40 million must meet group-wide due diligence obligations for raw materials in the battery supply chain. The deadline was postponed from the original 2025 to 2027 by amending Regulation (EU) 2025/1561."
-      },
-      "status": "gilt",
-      "quelle": "https://eur-lex.europa.eu/eli/reg/2025/1561/oj/eng"
-    },
-    {
-      "datum": "2028-02-18",
-      "titel": {
-        "de": "CO2-Fußabdruck-Deklaration für EV-Batterien",
-        "en": "Carbon footprint declaration for EV batteries"
-      },
-      "beschreibung": {
-        "de": "Fahrzeugbatterien müssen ab diesem Datum eine CO2-Fußabdruck-Deklaration vorweisen. Die genauen Grenzwerte legt die EU-Kommission noch in einem eigenen delegierten Rechtsakt fest.",
-        "en": "From this date, EV batteries must carry a carbon footprint declaration. The exact thresholds will still be set by the European Commission in a separate delegated act."
-      },
-      "status": "geplant",
-      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
-    },
-    {
       "datum": "2031-08-18",
       "titel": {
         "de": "Mindestrezyklatanteile Pflicht",
@@ -127,7 +101,7 @@
         "en": "Who has to provide the Digital Product Passport (battery passport)?"
       },
       "antwort": {
-        "de": "Der Wirtschaftsakteur, der die fertige Batterie in der EU in Verkehr bringt, meist der Hersteller – nicht der Zulieferer einzelner Zellen oder Module. Herstellerpflichten übernimmt auch, wer eine Batterie unter eigenem Namen oder eigener Marke vertreibt oder eine bereits in Verkehr gebrachte Batterie so verändert, dass ihre Konformität betroffen sein kann.",
+        "de": "Der Wirtschaftsakteur, der die fertige Batterie in der EU in Verkehr bringt, meist der Hersteller – nicht der Zulieferer einzelner Zellen oder Module. Die Pflichten eines Erzeugers (Art. 38) übernimmt auch, wer eine Batterie unter eigenem Namen oder eigener Marke vertreibt oder eine bereits in Verkehr gebrachte Batterie so verändert, dass ihre Konformität betroffen sein kann.",
         "en": "The economic operator who places the finished battery on the EU market, usually the manufacturer – not the supplier of individual cells or modules. Manufacturer obligations also apply to anyone who sells a battery under their own name or trademark, or modifies a battery already on the market in a way that may affect its compliance."
       },
       "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
@@ -160,10 +134,10 @@
         "en": "Does the due diligence obligation for battery raw materials also apply to smaller companies?"
       },
       "antwort": {
-        "de": "Nein. Unternehmen mit weniger als 40 Mio. Euro Nettoumsatz sind ausgenommen, sofern sie nicht Teil einer größeren Unternehmensgruppe über dieser Schwelle sind. Die Pflicht selbst gilt seit der Verschiebung durch Verordnung (EU) 2025/1561 ab dem 18. August 2027.",
-        "en": "No. Companies with net turnover below €40 million are exempt, unless they are part of a larger corporate group above that threshold. Following the postponement by Regulation (EU) 2025/1561, the obligation itself applies from 18 August 2027."
+        "de": "Nein. Unternehmen mit weniger als 40 Mio. Euro Nettoumsatz sind ausgenommen, sofern sie nicht Teil einer größeren Unternehmensgruppe über dieser Schwelle sind (Art. 47).",
+        "en": "No. Companies with net turnover below €40 million are exempt, unless they are part of a larger corporate group above that threshold (Art. 47)."
       },
-      "quelle": "https://eur-lex.europa.eu/eli/reg/2025/1561/oj/eng"
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng"
     }
   ]
 }

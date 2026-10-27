@@ -2,16 +2,41 @@
 import filter from "../../inhalte/filter.json";
 import seite from "../../inhalte/seite.json";
 
+type Zweisprachig = Record<"de" | "en", string>;
+
 interface Props {
   lang: "de" | "en";
+  // Gruppe mit eigener Fragenreihe (inhalte/gruppen/<id>/filter.json): deren
+  // Rollen statt der ESPR-Rollen aus filter.json.
+  gruppeId?: string;
 }
 
-const { lang } = Astro.props;
-const t = (feld: Record<"de" | "en", string>) => feld[lang];
+const { lang, gruppeId } = Astro.props;
+const t = (feld: Zweisprachig) => feld[lang];
+
+interface Rollenergebnis {
+  weiter_hinweis: Zweisprachig;
+  varianten: typeof filter.rollenergebnis.varianten;
+}
+
+const eigeneModule = import.meta.glob<{
+  default: {
+    gruppe: string;
+    rollenergebnis: Rollenergebnis;
+    sonderfaelle?: { titel: Zweisprachig; text: Zweisprachig };
+  };
+}>("../../inhalte/gruppen/*/filter.json", { eager: true });
+const eigenes = Object.values(eigeneModule).find(
+  (modul) => modul.default.gruppe === gruppeId,
+)?.default;
+const ergebnis: Rollenergebnis =
+  eigenes?.rollenergebnis ?? filter.rollenergebnis;
 
 const texteFuerClient = {
-  varianten: filter.rollenergebnis.varianten,
-  weiterHinweis: t(filter.rollenergebnis.weiter_hinweis),
+  varianten: ergebnis.varianten,
+  weiterHinweis: t(ergebnis.weiter_hinweis),
+  // Gruppen mit eigener Fragenreihe bekommen ihre Rolle unter rolle_<id>.
+  rolleParam: eigenes ? `rolle_${gruppeId}` : "rolle",
   quelleLabel: t(seite.quelle_label),
   lang,
 };
@@ -21,7 +46,21 @@ const texteFuerClient = {
   <p class="eyebrow">{t(seite.rollen_eyebrow)}</p>
   <h2 id="rollen-titel"></h2>
   <p id="rollen-text"></p>
-  <p class="hinweis-text" id="rollen-weiter-hinweis"></p>
+  <div class="rollen-disclaimer">
+    <p id="rollen-weitere" hidden>
+      <strong id="rollen-weitere-titel"></strong>
+      <span id="rollen-weitere-text"></span>
+    </p>
+    {
+      eigenes?.sonderfaelle && (
+        <p>
+          <strong>{t(eigenes.sonderfaelle.titel)}:</strong>{" "}
+          {t(eigenes.sonderfaelle.text)}
+        </p>
+      )
+    }
+    <p class="hinweis-text" id="rollen-weiter-hinweis"></p>
+  </div>
   <a id="rollen-quelle" target="_blank" rel="noopener"></a>
 </div>
 
@@ -38,22 +77,27 @@ const texteFuerClient = {
     const titelEl = document.getElementById("rollen-titel");
     const textEl = document.getElementById("rollen-text");
     const weiterEl = document.getElementById("rollen-weiter-hinweis");
+    const weitereEl = document.getElementById("rollen-weitere");
+    const weitereTitelEl = document.getElementById("rollen-weitere-titel");
+    const weitereTextEl = document.getElementById("rollen-weitere-text");
     const quelleEl = document.getElementById("rollen-quelle");
     if (
       !texteEl ||
       !box ||
       !titelEl ||
       !textEl ||
+      !weitereEl ||
+      !weitereTitelEl ||
+      !weitereTextEl ||
       !weiterEl ||
       !(quelleEl instanceof HTMLAnchorElement)
     ) {
       return;
     }
 
-    const { varianten, weiterHinweis, quelleLabel, lang } = JSON.parse(
-      texteEl.textContent || "{}",
-    );
-    const rolleId = new URLSearchParams(window.location.search).get("rolle");
+    const { varianten, weiterHinweis, rolleParam, quelleLabel, lang } =
+      JSON.parse(texteEl.textContent || "{}");
+    const rolleId = new URLSearchParams(window.location.search).get(rolleParam);
     const variante =
       rolleId && Object.hasOwn(varianten, rolleId)
         ? varianten[rolleId]
@@ -62,6 +106,11 @@ const texteFuerClient = {
 
     titelEl.textContent = variante.titel[lang];
     textEl.textContent = variante.text[lang];
+    if (variante.weitere_pflichten) {
+      weitereTitelEl.textContent = `${variante.weitere_pflichten.titel[lang]}:`;
+      weitereTextEl.textContent = variante.weitere_pflichten.text[lang];
+      weitereEl.hidden = false;
+    }
     weiterEl.textContent = weiterHinweis;
     quelleEl.href = variante.quelle;
     quelleEl.textContent = quelleLabel;
