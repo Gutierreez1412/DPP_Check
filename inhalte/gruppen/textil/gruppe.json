@@ -1,12 +1,14 @@
 {
   "id": "textil",
-  "name": { "de": "Textil", "en": "Textiles" },
+  "name": {
+    "de": "Textil",
+    "en": "Textiles"
+  },
   "definition": {
-    "de": "Für Kleidung kommt der Digitale Produktpass über die Ökodesign-Verordnung (ESPR, Verordnung (EU) 2024/1781). Die EU-Kommission hat Textilbekleidung als vorrangige Produktgruppe benannt. Pflichten entstehen erst mit dem zugehörigen delegierten Rechtsakt. Nach der Vorstudie der Kommission soll er Bekleidung und Bekleidungszubehör erfassen, die zu mindestens 80 % aus Textilfasern bestehen, etwa T-Shirts, Hosen, Jacken, Unterwäsche oder Mützen. Ausgenommen sein sollen unter anderem persönliche Schutzausrüstung, Medizinprodukte, Spielzeug und Kleidung mit Elektronik.",
-    "en": "For clothing, the Digital Product Passport comes via the Ecodesign Regulation (ESPR, Regulation (EU) 2024/1781). The European Commission has named textile apparel as a priority product group. Obligations only arise with the related delegated act. According to the Commission's preparatory study, it is to cover apparel and clothing accessories made of at least 80% textile fibres, such as T-shirts, trousers, jackets, underwear or hats. Exclusions are to include personal protective equipment, medical devices, toys and clothing with electronics."
+    "de": "Für Kleidung kommt der Digitale Produktpass über die Ökodesign-Verordnung (ESPR, Verordnung (EU) 2024/1781); die EU-Kommission hat Textilbekleidung als vorrangige Produktgruppe benannt. Betroffen sind laut Vorstudie Bekleidung und Bekleidungszubehör mit mindestens 80 % Textilfasern, etwa T-Shirts, Hosen, Jacken oder Mützen. Nicht dazu gehören Schuhe, Schutzausrüstung, Medizinprodukte und Kleidung mit Elektronik. Entscheidend ist am Ende der delegierte Rechtsakt.",
+    "en": "For clothing, the Digital Product Passport comes via the Ecodesign Regulation (ESPR, Regulation (EU) 2024/1781); the European Commission has named textile apparel as a priority product group. According to the preparatory study, apparel and clothing accessories with at least 80% textile fibres are covered, such as T-shirts, trousers, jackets or hats. Footwear, protective equipment, medical devices and clothing with electronics are not included. The delegated act will ultimately be decisive."
   },
   "definition_quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf",
-
   "weiterfuehrend": {
     "label": {
       "de": "Mehr erfahren: Digitaler Produktpass für Textilbekleidung bei der EU-Kommission",
@@ -14,7 +16,6 @@
     },
     "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/textile-apparel_en"
   },
-
   "vorbehalt": {
     "titel": {
       "de": "Hinweis: Vorstudie, noch kein Rechtsakt",
@@ -26,7 +27,6 @@
     },
     "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
   },
-
   "zeitstrahl": [
     {
       "datum": "2024-07-18",
@@ -120,7 +120,6 @@
       "quelle": "https://environment.ec.europa.eu/news/ban-destruction-unsold-clothes-and-shoes-enters-application-2026-07-17_en"
     }
   ],
-
   "faq": [
     {
       "frage": {
