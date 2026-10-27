@@ -4,7 +4,7 @@ Briefing für Claude Code. Diese Datei zuerst lesen, bevor etwas gebaut oder ge�
 
 ## 1. Ziel
 
-Eine Website, mit der Unternehmen in wenigen Minuten einschätzen, wie stark sie vom
+Eine Website, mit der Unternehmen einschätzen, wie stark sie vom
 Digitalen Produktpass (DPP) bzw. der ESPR und verwandten Produktverordnungen betroffen sind.
 Abhängig von den Antworten landen Nutzer auf unterschiedlichen Seiten.
 

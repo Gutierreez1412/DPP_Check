@@ -4,12 +4,12 @@
     "en": "DPP Impact Check"
   },
   "untertitel": {
-    "de": "In wenigen Minuten einschätzen, wie stark Ihr Unternehmen vom Digitalen Produktpass betroffen ist.",
-    "en": "Assess in a few minutes how strongly your company is affected by the Digital Product Passport."
+    "de": "Einschätzen, wie stark Ihr Unternehmen vom Digitalen Produktpass betroffen ist.",
+    "en": "Assess how strongly your company is affected by the Digital Product Passport."
   },
   "datenschutz_hinweis": {
-    "de": "Dauert unter zwei Minuten. Ihre Antworten bleiben in Ihrem Browser und werden nicht gespeichert oder gesendet.",
-    "en": "Takes under two minutes. Your answers stay in your browser and are not stored or sent."
+    "de": "Ihre Antworten bleiben in Ihrem Browser und werden nicht gespeichert oder gesendet.",
+    "en": "Your answers stay in your browser and are not stored or sent."
   },
   "sprachumschalter": {
     "de": "EN",
@@ -258,8 +258,8 @@
     "en": "How strongly are you affected?"
   },
   "cta_text": {
-    "de": "Beantworten Sie wenige Fragen zu Ihren Produkten und erhalten Sie in unter zwei Minuten eine erste Einschätzung. Ihre Antworten bleiben in Ihrem Browser.",
-    "en": "Answer a few questions about your products and get a first assessment in under two minutes. Your answers stay in your browser."
+    "de": "Beantworten Sie wenige Fragen zu Ihren Produkten und erhalten Sie eine erste Einschätzung. Ihre Antworten bleiben in Ihrem Browser.",
+    "en": "Answer a few questions about your products and get a first assessment. Your answers stay in your browser."
   },
   "cta_beratung_link": {
     "de": "Oder direkt einen Beratungstermin anfragen",
@@ -434,8 +434,8 @@
         "en": "How strongly does the Digital Product Passport affect your company?"
       },
       "unterzeile": {
-        "de": "Als Hersteller, Marke oder Importeur schätzen Sie Ihre Betroffenheit durch den Digitalen Produktpass in wenigen Minuten ein.",
-        "en": "As a manufacturer, brand or importer, you can assess how the Digital Product Passport affects you in just a few minutes."
+        "de": "Als Hersteller, Marke oder Importeur schätzen Sie Ihre Betroffenheit durch den Digitalen Produktpass ein.",
+        "en": "As a manufacturer, brand or importer, you can assess how the Digital Product Passport affects you."
       }
     },
     "kooperation": {
