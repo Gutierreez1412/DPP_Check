@@ -164,7 +164,7 @@ const texteFuerClient = {
               data-frage={f.id}
               hidden
             >
-              <legend>{t(f.titel)}</legend>
+              <legend set:html={t(f.titel)} />
               {f.punkte && (
                 <ul class="punkte">
                   {f.punkte.map((p) => (
