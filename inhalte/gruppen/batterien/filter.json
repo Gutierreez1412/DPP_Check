@@ -73,8 +73,8 @@
     {
       "id": "drittland_import",
       "titel": {
-        "de": "Beziehen Sie Batterien direkt von einem Lieferanten <u>außerhalb der EU</u> und bringen Sie diese in der EU in Verkehr, indem Sie sie verkaufen, vermieten oder in Ihre Produkte einbauen und diese weitergeben?",
-        "en": "Do you source batteries directly from a supplier <u>outside the EU</u> and place them on the EU market by selling or renting them, or by building them into your products and passing these on?"
+        "de": "Kaufen Sie Batterien direkt von einem Lieferanten <u>außerhalb der EU</u> und verkaufen, vermieten oder verbauen Sie diese in Produkte, die Sie in der EU anbieten?",
+        "en": "Do you buy batteries directly from a supplier <u>outside the EU</u> and sell or rent them, or build them into products that you offer in the EU?"
       },
       "hinweis": {
         "de": "Gemeint sind Unternehmen mit Sitz in der EU, die Batterien aus einem Drittland in Verkehr bringen.",
@@ -86,12 +86,12 @@
     {
       "id": "bearbeitet",
       "titel": {
-        "de": "Bereiten Sie genutzte oder zugekaufte Batterien auf, verändern Sie diese oder setzen Sie diese für einen neuen Zweck ein, bevor die Batterien weitergegeben oder von Ihnen selbst genutzt werden?",
-        "en": "Do you refurbish used or purchased batteries, modify them or repurpose them before passing them on or using them yourself?"
+        "de": "Bereiten Sie Batterien auf, verändern Sie diese oder nutzen Sie sie für einen neuen Zweck, bevor Sie sie weitergeben oder selbst einsetzen?",
+        "en": "Do you refurbish batteries, modify them or repurpose them before passing them on or using them yourself?"
       },
       "hinweis": {
-        "de": "Dazu zählen z. B. Prüfen und Reparieren (sofern dadurch die Konformität der Batterie beeinträchtigt werden kann), Tausch von Zellen oder Modulen, Eingriffe an Gehäuse oder Batteriemanagementsystem oder eine E-Auto-Batterie als Heimspeicher.",
-        "en": "This includes e.g. testing and repairing (if this may affect the battery's conformity), replacing cells or modules, interventions on the casing or battery management system, or an EV battery used as home storage."
+        "de": "Dazu zählen z. B. Reparaturen mit Einfluss auf die Konformität, der Austausch von Zellen oder Modulen sowie die Umrüstung einer E-Auto-Batterie zum Heimspeicher.",
+        "en": "This includes e.g. repairs affecting conformity, the replacement of cells or modules, and the conversion of an EV battery into home storage."
       },
       "bei_ja": "neuer_pass",
       "bei_nein": "weiter"
