@@ -153,12 +153,14 @@ const texteFuerClient = {
       eigeneFilter.flatMap((e) =>
         e.fragen.map((f) => {
           const schrittId = `${e.gruppe}-${f.id}`;
+          // Einheitliche Schriftgröße je Gruppe: sobald eine Frage lang ist,
+          // gelten alle Fragen der Gruppe als lang.
+          const gruppeHatLangeFrage = e.fragen.some(
+            (x) => x.titel.de.length > 90,
+          );
           return (
             <fieldset
-              class:list={[
-                "schritt",
-                { "schritt--lang": f.titel.de.length > 90 },
-              ]}
+              class:list={["schritt", { "schritt--lang": gruppeHatLangeFrage }]}
               id={`schritt-${schrittId}`}
               data-abschnitt={e.gruppe}
               data-frage={f.id}
