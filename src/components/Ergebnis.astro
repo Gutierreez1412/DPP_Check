@@ -54,6 +54,9 @@ interface Begruendungen {
     string,
     {
       fakt: Text;
+      // Abweichende Punktwerte je Antwort-ID für diese Gruppe, z. B. wenn der
+      // Rechtsakt noch weit entfernt ist und kein "hoher Handlungsbedarf" entsteht.
+      scores?: Record<string, number>;
       aufwand?: AufwandJeStufe;
       aufwand_zuerst?: boolean;
       bezug: Text;
@@ -108,7 +111,7 @@ const texteFuerClient = {
       antworten: f.antworten.map((a) => ({
         id: a.id,
         text: t(a.text),
-        score: a.score,
+        score: b?.scores?.[a.id] ?? a.score,
       })),
     };
   }),
