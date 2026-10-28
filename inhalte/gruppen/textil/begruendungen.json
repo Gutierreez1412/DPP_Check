@@ -101,7 +101,7 @@
     },
     "q3": {
       "fakt": {
-        "de": "Vorgeschlagen sind die Faserzusammensetzung nach der Textilkennzeichnungsverordnung und Angaben zu Zutaten wie Knöpfen oder Reißverschlüssen.",
+        "de": "Vorgeschlagen sind die Faserzusammensetzung nach der Textilkennzeichnungsverordnung und Angaben zu Kleinteilen wie Knöpfen oder Reißverschlüssen.",
         "en": "Fibre composition under the Textile Labelling Regulation and information on components such as buttons or zips are proposed."
       },
       "bezug": {
@@ -123,8 +123,8 @@
     },
     "q5": {
       "fakt": {
-        "de": "Vorgeschlagen sind CO₂- und Umweltfußabdruck als Leistungsklasse je Modell, berechnet nach den PEF-Regeln für Bekleidung und Schuhe.",
-        "en": "Carbon and environmental footprint as a performance class per model, calculated under the PEF rules for apparel and footwear, are proposed."
+        "de": "Vorgeschlagen sind CO₂- und Umweltfußabdruck als Leistungsklasse je Modell, berechnet nach den PEF-Regeln für Bekleidung, ggf. auch für Schuhe.",
+        "en": "Carbon and environmental footprint as a performance class per model, calculated under the PEF rules for apparel, possibly also for footwear, are proposed."
       },
       "bezug": {
         "de": "JRC-Vorstudie, Tab. 7 und 8",
