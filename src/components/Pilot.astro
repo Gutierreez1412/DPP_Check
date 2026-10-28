@@ -57,8 +57,12 @@ type Feld = {
 const dpNachNr = Object.fromEntries(
   pilot.pass.datenpunkte.map((d) => [d.nr, d]),
 );
+// Je Register zeigt das Beispiel höchstens so viele Felder mit Wert (die ersten
+// laut pilot.json); alle weiteren Datenpunkte erscheinen nur unscharf. So bleibt
+// der Detailgrad gering und das Beispiel ersetzt keine Beratung.
+const MAX_FELDER = 2;
 const abschnitte = pilot.pass.abschnitte.map((a) => {
-  const felder = a.felder as Feld[];
+  const felder = (a.felder as Feld[]).slice(0, MAX_FELDER);
   const gezeigt = new Set(felder.flatMap((f) => f.datenpunkte ?? []));
   return {
     ...a,
@@ -68,13 +72,16 @@ const abschnitte = pilot.pass.abschnitte.map((a) => {
       .map((nr) => dpNachNr[nr]),
   };
 });
-const alleFelder = abschnitte.flatMap((a) => a.felder);
+// Die Bauteil-Liste oben nennt weiterhin alle Felder (nur Namen, keine Werte).
+const alleFelder = pilot.pass.abschnitte.flatMap((a) => a.felder as Feld[]);
 const feldNachId = Object.fromEntries(alleFelder.map((f) => [f.id, f]));
 const dpZahl = {
   gesamt: pilot.pass.datenpunkte.length,
   relevant: pilot.pass.datenpunkte.filter((d) => !(d.relevanz in pt.dp_status))
     .length,
-  beispiel: new Set(alleFelder.flatMap((f) => f.datenpunkte ?? [])).size,
+  beispiel: new Set(
+    abschnitte.flatMap((a) => a.felder).flatMap((f) => f.datenpunkte ?? []),
+  ).size,
 };
 ---
 
