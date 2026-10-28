@@ -637,7 +637,7 @@ body.breit :is(main, .seite-kopf__innen, .seite-fuss__innen) {
   fill: var(--p-berechtigt);
 }
 
-/* Textil: flach liegendes T-Shirt mit Stoff, Nähten und Etikett als Ebenen. */
+/* Textil: flach liegender Hoodie mit Stoff, Nähten (samt Kordel und Metallösen) und Etikett als Ebenen. */
 .stoff__reihen {
   fill: none;
   stroke: rgba(173, 214, 224, 0.12);
@@ -657,6 +657,36 @@ body.breit :is(main, .seite-kopf__innen, .seite-fuss__innen) {
   stroke-dasharray: 4 3;
   stroke-linecap: round;
   transition: stroke 0.35s ease;
+}
+
+.naehte__kordel {
+  fill: none;
+  stroke: rgba(232, 240, 243, 0.6);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  transition: stroke 0.35s ease;
+}
+
+.naehte__oese {
+  fill: rgba(214, 226, 232, 0.95);
+  stroke: rgba(20, 38, 48, 0.9);
+  stroke-width: 0.8;
+  transition: fill 0.35s ease;
+}
+
+.szene__oese {
+  fill: rgba(214, 226, 232, 0.9);
+  stroke: rgba(20, 38, 48, 0.9);
+  stroke-width: 0.6;
+  animation: szene-einblenden 0.6s 0.8s both;
+}
+
+.explosion--textil[data-aktiv="naehte"] .naehte__kordel {
+  stroke: var(--p-akzent);
+}
+
+.explosion--textil[data-aktiv="naehte"] .naehte__oese {
+  fill: var(--p-akzent);
 }
 
 .explosion--textil[data-aktiv="etikett"] .ebene[data-ebene="etikett"],
