@@ -201,7 +201,7 @@
       "ebene": "naehte",
       "nummer": "02",
       "name": {
-        "de": "Nähgarn & Zutaten",
+        "de": "Nähte & Kleinteile",
         "en": "Sewing thread & trims"
       },
       "text": {
@@ -209,7 +209,7 @@
         "en": "Sewing thread, ribbing, drawstring and metal eyelets hold the hoodie together and make it usable. For recyclers, what matters is what can be removed before recycling, above all the metal."
       },
       "lieferant": {
-        "de": "Nähbetrieb, Zutatenlieferanten",
+        "de": "Nähbetrieb, Lieferanten der Kleinteile",
         "en": "Garment maker, trim suppliers"
       },
       "felder": ["zutaten", "zerlegung"]
@@ -352,7 +352,7 @@
           {
             "id": "rezyklat_menge",
             "label": {
-              "de": "Gewicht ohne Zutaten und recycelte Menge",
+              "de": "Gewicht ohne Kleinteile und recycelte Menge",
               "en": "Weight excluding trims and recycled amount"
             },
             "wert": {
@@ -365,7 +365,7 @@
           {
             "id": "zutaten",
             "label": {
-              "de": "Zutaten",
+              "de": "Kleinteile",
               "en": "Trims"
             },
             "wert": {
@@ -545,15 +545,15 @@
             "stufe": "oeffentlich",
             "status": "unklar",
             "hinweis": {
-              "de": "Vorgeschlagen ist eine Berechnung nach den PEF-Regeln für Bekleidung und Schuhe; die Leistungsklassen legt erst der delegierte Rechtsakt fest.",
-              "en": "Calculation under the PEF rules for apparel and footwear is proposed; the performance classes will only be set by the delegated act."
+              "de": "Vorgeschlagen ist eine Berechnung nach den PEF-Regeln für Bekleidung, ggf. auch für Schuhe; die Leistungsklassen legt erst der delegierte Rechtsakt fest.",
+              "en": "Calculation under the PEF rules for apparel, possibly also for footwear, is proposed; the performance classes will only be set by the delegated act."
             },
             "datenpunkte": [33]
           },
           {
             "id": "gewicht",
             "label": {
-              "de": "Gewicht inklusive Zutaten",
+              "de": "Gewicht inklusive Kleinteile",
               "en": "Weight including trims"
             },
             "wert": {
@@ -732,7 +732,7 @@
       {
         "nr": 11,
         "name": {
-          "de": "Spezifikation der Zutaten (z. B. Knöpfe, Reißverschlüsse)",
+          "de": "Spezifikation der Kleinteile (z. B. Knöpfe, Reißverschlüsse)",
           "en": "Components specification (e.g. buttons, zips)"
         },
         "quelle": "Art. 7(2)(b), Anh. I (b)",
@@ -882,7 +882,7 @@
       {
         "nr": 26,
         "name": {
-          "de": "Gewicht ohne Zutaten",
+          "de": "Gewicht ohne Kleinteile",
           "en": "Weight excluding trims"
         },
         "quelle": "Anh. III (e)",
@@ -982,7 +982,7 @@
       {
         "nr": 36,
         "name": {
-          "de": "Gewicht (inklusive Zutaten)",
+          "de": "Gewicht (inklusive Kleinteile)",
           "en": "Weight (including trims)"
         },
         "quelle": "Anh. III (e)",
@@ -1120,7 +1120,11 @@
         "en": "Garment maker"
       },
       "liefert": {
-        "de": ["Produktionsstätte (GLN)", "Chargen-ID", "Zutaten"],
+        "de": [
+          "Produktionsstätte (GLN)",
+          "Chargen-ID",
+          "Kleinteile (z. B. Kordel, Metallösen)"
+        ],
         "en": ["Production site (GLN)", "Batch ID", "Trims"]
       }
     },
