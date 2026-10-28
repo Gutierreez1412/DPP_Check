@@ -5,8 +5,8 @@
     "en": "Textiles"
   },
   "definition": {
-    "de": "Für Kleidung kommt der Digitale Produktpass über die Ökodesign-Verordnung (ESPR, Verordnung (EU) 2024/1781); die EU-Kommission hat Textilbekleidung als vorrangige Produktgruppe benannt. Betroffen sind laut Vorstudie Bekleidung und Bekleidungszubehör mit mindestens 80 % Textilfasern, etwa T-Shirts, Hosen, Jacken oder Mützen. Ausgenommen sind Schutzausrüstung, Medizinprodukte und Kleidung mit Elektronik; Schuhe sind nicht Teil der Vorstudie. Entscheidend ist am Ende der delegierte Rechtsakt.",
-    "en": "For clothing, the Digital Product Passport comes via the Ecodesign Regulation (ESPR, Regulation (EU) 2024/1781); the European Commission has named textile apparel as a priority product group. According to the preparatory study, apparel and clothing accessories with at least 80% textile fibres are covered, such as T-shirts, trousers, jackets or hats. Protective equipment, medical devices and clothing with electronics are excluded; footwear is not part of the preparatory study. The delegated act will ultimately be decisive."
+    "de": "Für Kleidung wird der Digitale Produktpass durch die Ökodesign-Verordnung (ESPR, EU 2024/1781) geregelt. Textilbekleidung ist eine prioritäre Produktgruppe. Laut Vorstudie betrifft dies Kleidung und Zubehör mit mindestens 80 % Textilfasern, etwa T-Shirts, Hosen, Jacken und Mützen. Ausgenommen sind Schutzausrüstung, Medizinprodukte und Kleidung mit Elektronik. Für Schuhe ist eine Studie bis Ende 2027 vorgesehen; sie sind im ersten Arbeitsplan nicht berücksichtigt. Verbindlich sind letztlich die Vorgaben des delegierten Rechtsakts.",
+    "en": "For clothing, the Digital Product Passport is governed by the Ecodesign Regulation (ESPR, EU 2024/1781). Textile apparel is a priority product group. According to the preparatory study, this covers clothing and accessories with at least 80% textile fibres, such as T-shirts, trousers, jackets and hats. Protective equipment, medical devices and clothing with electronics are excluded. A study on footwear is planned by the end of 2027; footwear is not covered by the first working plan. Ultimately, the requirements of the delegated act are binding."
   },
   "definition_quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf",
   "weiterfuehrend": {
@@ -22,8 +22,8 @@
       "en": "Note: preparatory study, not yet a legal act"
     },
     "text": {
-      "de": "Für Textilbekleidung gibt es noch keinen delegierten Rechtsakt. Die Angaben zu Inhalten, Datenpunkten und Zugriffsrechten im Check und im Pilot beruhen auf einer Studie der Gemeinsamen Forschungsstelle (JRC) der EU-Kommission vom Mai 2026. Sie dient als Input für den Rechtsakt, ist aber kein finaler Inhalt und muss noch mit Interessengruppen abgestimmt werden.",
-      "en": "There is no delegated act for textile apparel yet. The information on content, data points and access rights in the check and the pilot is based on a study by the European Commission's Joint Research Centre (JRC) from May 2026. It serves as input for the legal act, but is not final content and still has to be consulted on with stakeholders."
+      "de": "Für Textilbekleidung gibt es noch keinen delegierten Rechtsakt. Die Angaben zu Inhalten, Datenpunkten und Zugriffsrechten im Check und im Pilot beruhen auf einer Studie der Gemeinsamen Forschungsstelle (JRC) der EU-Kommission vom Mai 2026. Sie dient als Grundlage für die weitere Ausarbeitung des Rechtsakts, legt dessen Inhalte aber nicht abschließend fest.",
+      "en": "There is no delegated act for textile apparel yet. The information on content, data points and access rights in the check and the pilot is based on a study by the European Commission's Joint Research Centre (JRC) from May 2026. It serves as a basis for the further development of the legal act, but does not definitively set its content."
     },
     "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
   },
@@ -48,8 +48,8 @@
         "en": "Working plan: textile apparel is a priority"
       },
       "beschreibung": {
-        "de": "Im ESPR-Arbeitsplan 2025–2030 nennt die EU-Kommission Textilien mit Schwerpunkt Bekleidung als eine der ersten Produktgruppen für Ökodesign-Anforderungen und Produktpass.",
-        "en": "In the ESPR working plan 2025–2030, the European Commission names textiles, focusing on apparel, as one of the first product groups for ecodesign requirements and the product passport."
+        "de": "Im ESPR-Arbeitsplan 2025–2030 priorisiert die EU-Kommission Textilien, insbesondere Bekleidung, für Ökodesign-Anforderungen und den Produktpass.",
+        "en": "In the ESPR working plan 2025–2030, the European Commission prioritises textiles, in particular apparel, for ecodesign requirements and the product passport."
       },
       "status": "gilt",
       "quelle": "https://environment.ec.europa.eu/document/download/5f7ff5e2-ebe9-4bd4-a139-db881bd6398f_en?filename=FAQ-UPDATE-4th-Iteration_clean.pdf"
@@ -74,8 +74,8 @@
         "en": "Ban on destroying unsold clothing"
       },
       "beschreibung": {
-        "de": "Große Unternehmen dürfen unverkaufte Kleidung, Bekleidungszubehör und Schuhe nicht mehr vernichten und müssen jährlich offenlegen, was sie entsorgt haben. Ausnahmen gelten etwa für beschädigte oder gefälschte Ware.",
-        "en": "Large companies may no longer destroy unsold clothing, clothing accessories and footwear and must disclose annually what they have discarded. Exceptions apply, for example, to damaged or counterfeit goods."
+        "de": "Große Unternehmen dürfen unverkaufte Kleidung, Bekleidungszubehör und Schuhe nicht mehr vernichten und müssen jährlich offenlegen, was sie entsorgt haben.",
+        "en": "Large companies may no longer destroy unsold clothing, clothing accessories and footwear and must disclose annually what they have discarded."
       },
       "status": "gilt",
       "quelle": "https://environment.ec.europa.eu/news/ban-destruction-unsold-clothes-and-shoes-enters-application-2026-07-17_en"
@@ -87,8 +87,8 @@
         "en": "Delegated act for textile apparel"
       },
       "beschreibung": {
-        "de": "Die EU-Kommission plant, Ökodesign-Anforderungen und Produktpass für Textilbekleidung in einem gemeinsamen delegierten Rechtsakt zu beschließen. Der Zeitplan kann sich noch ändern.",
-        "en": "The European Commission plans to adopt ecodesign requirements and the product passport for textile apparel in a joint delegated act. The timeline may still change."
+        "de": "Die EU-Kommission plant, Ökodesign-Anforderungen und Produktpass für Textilbekleidung in einem gemeinsamen delegierten Rechtsakt zu beschließen.",
+        "en": "The European Commission plans to adopt ecodesign requirements and the product passport for textile apparel in a joint delegated act."
       },
       "status": "geplant",
       "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/textile-apparel_en"
@@ -134,17 +134,6 @@
     },
     {
       "frage": {
-        "de": "Wer muss den Produktpass bereitstellen?",
-        "en": "Who has to provide the product passport?"
-      },
-      "antwort": {
-        "de": "Wer das Kleidungsstück in der EU in Verkehr bringt: der Hersteller, also auch wer unter eigenem Namen oder eigener Marke verkauft. Sitzt der Hersteller außerhalb der EU, ist der Importeur verantwortlich. Händler müssen vor dem Verkauf prüfen, ob ein Pass vorhanden ist.",
-        "en": "Whoever places the garment on the EU market: the manufacturer, which includes anyone selling under their own name or brand. If the manufacturer is based outside the EU, the importer is responsible. Distributors must check that a passport is available before selling."
-      },
-      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/textile-apparel_en"
-    },
-    {
-      "frage": {
         "de": "Welche Daten soll der Pass für Kleidung enthalten?",
         "en": "What data should the passport for clothing contain?"
       },
@@ -160,8 +149,8 @@
         "en": "Does every single garment need its own passport?"
       },
       "antwort": {
-        "de": "Nach dem Vorschlag nicht. Mindestens vorgesehen ist ein Pass je Charge, gefüllt mit Angaben je Modell oder je Charge. Eine Kennung für jedes einzelne Stück wäre freiwillig, weil Einzelkennzeichnung in der Branche bisher kaum verbreitet ist.",
-        "en": "Not according to the proposal. As a minimum, one passport per batch is foreseen, filled with information per model or per batch. An identifier for every single item would be voluntary, as item-level marking is still rare in the industry."
+        "de": "Die JRC-Vorstudie schlägt eine Chargen-Kennung als Mindestanforderung vor. Eine Kennung je Einzelstück wird noch geprüft und wäre nach aktuellem Vorschlag freiwillig. Verbindlich sind erst die Vorgaben des delegierten Rechtsakts.",
+        "en": "The JRC preparatory study proposes a batch identifier as the minimum requirement. An identifier per item is still under analysis and, according to the current proposal, would be voluntary. Only the requirements of the delegated act are binding."
       },
       "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
     },
@@ -175,17 +164,6 @@
         "en": "Three levels are proposed: much is public, such as fibre composition or care instructions. Some information, such as where substances are located in the product, is intended only for persons with a legitimate interest such as recyclers. Evidence and test documents are visible to authorities only."
       },
       "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
-    },
-    {
-      "frage": {
-        "de": "Was gilt für Kleidung schon heute?",
-        "en": "What already applies to clothing today?"
-      },
-      "antwort": {
-        "de": "Seit dem 19. Juli 2026 dürfen große Unternehmen unverkaufte Kleidung, Bekleidungszubehör und Schuhe nicht mehr vernichten; mittlere Unternehmen folgen 2030. Kleinst- und Kleinunternehmen sind ausgenommen. Wer Ausnahmen nutzt, muss sie belegen und jährlich offenlegen, was entsorgt wurde.",
-        "en": "Since 19 July 2026, large companies may no longer destroy unsold clothing, clothing accessories and footwear; medium-sized companies follow in 2030. Micro and small companies are exempt. Companies relying on exemptions must provide proof and disclose annually what they have discarded."
-      },
-      "quelle": "https://environment.ec.europa.eu/news/ban-destruction-unsold-clothes-and-shoes-enters-application-2026-07-17_en"
     }
   ]
 }
