@@ -9,8 +9,8 @@
     "en": "What a digital product passport for clothing could look like"
   },
   "einleitung": {
-    "de": "Für Kleidung ist der Digitale Produktpass noch nicht vorgeschrieben: Den delegierten Rechtsakt plant die EU-Kommission für Ende 2027. Wie der Pass aussehen könnte, zeigt eine Studie ihrer Gemeinsamen Forschungsstelle (JRC). Am Beispiel eines T-Shirts zeigen wir, welche Teile welche Daten liefern und was Kundinnen, Recycler und Behörden nach diesem Vorschlag im Pass sehen würden.",
-    "en": "The Digital Product Passport is not yet mandatory for clothing: the European Commission plans the delegated act for the end of 2027. A study by its Joint Research Centre (JRC) shows what the passport could look like. Using a T-shirt as an example, we show which parts provide which data and what customers, recyclers and authorities would see in the passport under this proposal."
+    "de": "Für Kleidung ist der Digitale Produktpass noch nicht vorgeschrieben: Den delegierten Rechtsakt plant die EU-Kommission für Ende 2027. Wie der Pass aussehen könnte, zeigt eine Studie ihrer Gemeinsamen Forschungsstelle (JRC). Am Beispiel eines Hoodies mit Kordel und Metallösen zeigen wir, welche Teile welche Daten liefern und was Kundinnen, Recycler und Behörden nach diesem Vorschlag im Pass sehen würden.",
+    "en": "The Digital Product Passport is not yet mandatory for clothing: the European Commission plans the delegated act for the end of 2027. A study by its Joint Research Centre (JRC) shows what the passport could look like. Using a hoodie with drawstring and metal eyelets as an example, we show which parts provide which data and what customers, recyclers and authorities would see in the passport under this proposal."
   },
   "einleitung_quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/textile-apparel_en",
   "beispiel_hinweis": {
@@ -30,8 +30,8 @@
   },
   "texte": {
     "szene_label": {
-      "de": "T-Shirt auf dem Bügel mit vergrößertem Etikett: Es trägt den QR-Code zum Produktpass.",
-      "en": "T-shirt on a hanger with magnified label: it carries the QR code to the product passport."
+      "de": "Hoodie auf dem Bügel mit vergrößertem Etikett: Es trägt den QR-Code zum Produktpass.",
+      "en": "Hoodie on a hanger with magnified label: it carries the QR code to the product passport."
     },
     "szene_schild": {
       "de": "Etikett im Nacken",
@@ -65,20 +65,20 @@
     }
   },
   "produkt": {
-    "name": "Nordfaden Basic Tee",
+    "name": "Nordfaden Hoodie",
     "typ": {
-      "de": "T-Shirt (Textilbekleidung)",
-      "en": "T-shirt (textile apparel)"
+      "de": "Hoodie (Textilbekleidung)",
+      "en": "Hoodie (textile apparel)"
     },
     "hersteller": "Musterwerk Textil GmbH",
-    "pass_id": "DPP-DE-MWT-TEE01-L2703",
+    "pass_id": "DPP-DE-MWT-HOD01-L2703",
     "eckdaten": [
       {
         "label": {
           "de": "Gewicht",
           "en": "Weight"
         },
-        "wert": "165 g"
+        "wert": "480 g"
       },
       {
         "label": {
@@ -92,14 +92,14 @@
           "de": "Fasern",
           "en": "Fibres"
         },
-        "wert": "60 % CO / 40 % PES"
+        "wert": "80 % CO / 20 % PES"
       },
       {
         "label": {
           "de": "Rezyklatanteil",
           "en": "Recycled content"
         },
-        "wert": "40 %"
+        "wert": "20 %"
       }
     ]
   },
@@ -110,8 +110,8 @@
         "en": "QR code on the label"
       },
       "text": {
-        "de": "Jedes Kleidungsstück führt über einen Datenträger wie einen QR-Code zu seinem Pass. Vorgeschlagen ist mindestens eine Kennung je Charge, eine Kennung je Einzelstück wäre freiwillig.",
-        "en": "Every garment leads to its passport via a data carrier such as a QR code. As a minimum, one identifier per batch is proposed; an identifier per item would be voluntary."
+        "de": "Das Kleidungsstück soll über einen Datenträger wie einen QR-Code zum Pass führen. Die JRC-Vorstudie schlägt mindestens eine Chargen-Kennung vor. Eine Kennung je Einzelstück wird noch geprüft.",
+        "en": "The garment is to lead to the passport via a data carrier such as a QR code. The JRC preparatory study proposes at least a batch identifier. An identifier per item is still under analysis."
       },
       "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
     },
@@ -205,8 +205,8 @@
         "en": "Sewing thread & trims"
       },
       "text": {
-        "de": "Nähgarn, Bündchen und Etikettenband halten das Shirt zusammen. Für Recycler zählt, was sich vor dem Recycling abtrennen lässt.",
-        "en": "Sewing thread, ribbing and label tape hold the shirt together. For recyclers, what matters is what can be removed before recycling."
+        "de": "Nähgarn, Bündchen, Kordel und Metallösen halten den Hoodie zusammen und machen ihn nutzbar. Für Recycler zählt, was sich vor dem Recycling abtrennen lässt, vor allem das Metall.",
+        "en": "Sewing thread, ribbing, drawstring and metal eyelets hold the hoodie together and make it usable. For recyclers, what matters is what can be removed before recycling, above all the metal."
       },
       "lieferant": {
         "de": "Nähbetrieb, Zutatenlieferanten",
@@ -219,12 +219,12 @@
       "ebene": "stoff",
       "nummer": "03",
       "name": {
-        "de": "Oberstoff (Single Jersey)",
-        "en": "Main fabric (single jersey)"
+        "de": "Oberstoff (French Terry)",
+        "en": "Main fabric (French terry)"
       },
       "text": {
-        "de": "Der Stoff bestimmt Zusammensetzung, Rezyklatanteil und wie robust das Shirt ist. Die Werte stammen aus Spinnerei, Strickerei und Prüfberichten.",
-        "en": "The fabric determines composition, recycled content and how durable the shirt is. The values come from spinning mill, knitting mill and test reports."
+        "de": "Der Stoff bestimmt Zusammensetzung, Rezyklatanteil und wie robust der Hoodie ist. Die Werte stammen aus Spinnerei, Strickerei und Prüfberichten.",
+        "en": "The fabric determines composition, recycled content and how durable the hoodie is. The values come from spinning mill, knitting mill and test reports."
       },
       "lieferant": {
         "de": "Faser- und Stofflieferanten, Prüflabor",
@@ -241,8 +241,8 @@
         "en": "Dyeing & finishing"
       },
       "text": {
-        "de": "Beim Färben und Ausrüsten kommen Chemikalien zum Einsatz. Der Pass soll besorgniserregende Stoffe nennen, die im fertigen Shirt stecken, vorgeschlagen je Charge, weil sich Farbtöne unterscheiden.",
-        "en": "Chemicals are used in dyeing and finishing. The passport is to name substances of concern contained in the finished shirt, proposed per batch, as shades differ."
+        "de": "Beim Färben und Ausrüsten kommen Chemikalien zum Einsatz. Der Pass soll besorgniserregende Stoffe nennen, die im fertigen Hoodie stecken, vorgeschlagen je Charge, weil sich Farbtöne unterscheiden.",
+        "en": "Chemicals are used in dyeing and finishing. The passport is to name substances of concern contained in the finished hoodie, proposed per batch, as shades differ."
       },
       "lieferant": {
         "de": "Färberei / Ausrüster",
@@ -268,8 +268,8 @@
               "en": "Model and batch ID"
             },
             "wert": {
-              "de": "Modell TEE01 · Charge L2703",
-              "en": "Model TEE01 · batch L2703"
+              "de": "Modell HOD01 · Charge L2703",
+              "en": "Model HOD01 · batch L2703"
             },
             "stufe": "oeffentlich",
             "datenpunkte": [2, 3]
@@ -294,8 +294,8 @@
               "en": "Product category and commodity code"
             },
             "wert": {
-              "de": "T-Shirt, gestrickt · HS 6109",
-              "en": "T-shirt, knitted · HS 6109"
+              "de": "Hoodie, gestrickt · HS 6110",
+              "en": "Hoodie, knitted · HS 6110"
             },
             "stufe": "oeffentlich",
             "datenpunkte": [4, 5]
@@ -330,8 +330,8 @@
               "en": "Fibre composition"
             },
             "wert": {
-              "de": "60 % Baumwolle, 40 % Polyester",
-              "en": "60% cotton, 40% polyester"
+              "de": "80 % Baumwolle, 20 % Polyester",
+              "en": "80% cotton, 20% polyester"
             },
             "stufe": "oeffentlich",
             "datenpunkte": [10]
@@ -343,8 +343,8 @@
               "en": "Recycled content and origin"
             },
             "wert": {
-              "de": "40 % recyceltes Polyester · Verbraucherabfall",
-              "en": "40% recycled polyester · consumer waste"
+              "de": "20 % recyceltes Polyester · Verbraucherabfall",
+              "en": "20% recycled polyester · consumer waste"
             },
             "stufe": "oeffentlich",
             "datenpunkte": [24, 25]
@@ -356,8 +356,8 @@
               "en": "Weight excluding trims and recycled amount"
             },
             "wert": {
-              "de": "158 g, davon 63 g recycelt",
-              "en": "158 g, of which 63 g recycled"
+              "de": "465 g, davon 93 g recycelt",
+              "en": "465 g, of which 93 g recycled"
             },
             "stufe": "berechtigt",
             "datenpunkte": [26, 27]
@@ -369,8 +369,8 @@
               "en": "Trims"
             },
             "wert": {
-              "de": "Nähgarn, Halsbündchen, Etikett · keine Knöpfe oder Reißverschlüsse",
-              "en": "Sewing thread, neck rib, label · no buttons or zips"
+              "de": "Nähgarn, Kordel, Metallösen, Bündchen, Etikett · kein Reißverschluss",
+              "en": "Sewing thread, drawstring, metal eyelets, ribbing, label · no zip"
             },
             "stufe": "oeffentlich",
             "datenpunkte": [11]
@@ -382,8 +382,8 @@
               "en": "Organic content (voluntary)"
             },
             "wert": {
-              "de": "60 % Bio-Baumwolle",
-              "en": "60% organic cotton"
+              "de": "80 % Bio-Baumwolle",
+              "en": "80% organic cotton"
             },
             "stufe": "oeffentlich",
             "datenpunkte": [29]
@@ -431,8 +431,8 @@
               "en": "Location of substances in the product"
             },
             "wert": {
-              "de": "Oberstoff, Druck, Etikett",
-              "en": "Main fabric, print, label"
+              "de": "Oberstoff, Kordel, Metallösen, Etikett",
+              "en": "Main fabric, drawstring, metal eyelets, label"
             },
             "stufe": "berechtigt",
             "datenpunkte": [18]
@@ -444,8 +444,8 @@
               "en": "Disassembly and recycling information"
             },
             "wert": {
-              "de": "Etikett und Bündchen vor dem Recycling abtrennen",
-              "en": "Remove label and ribbing before recycling"
+              "de": "Metallösen, Kordel und Etikett vor dem Recycling entfernen",
+              "en": "Remove metal eyelets, drawstring and label before recycling"
             },
             "stufe": "berechtigt",
             "datenpunkte": [21]
@@ -557,8 +557,8 @@
               "en": "Weight including trims"
             },
             "wert": {
-              "de": "165 g",
-              "en": "165 g"
+              "de": "480 g",
+              "en": "480 g"
             },
             "stufe": "oeffentlich",
             "datenpunkte": [36]

@@ -1,8 +1,9 @@
 ---
 /*
-  Grafiken für den Textil-Pilot: Hero-Szene (T-Shirt auf dem Bügel, Sucher auf
-  dem Nackenetikett) und Explosionszeichnung des flach liegenden T-Shirts in
-  isometrischer Projektion: Stoff, Nähte und Etikett mit QR-Code als Ebenen.
+  Grafiken für den Textil-Pilot: Hero-Szene (Hoodie auf dem Bügel, Sucher auf
+  dem Nackenetikett) und Explosionszeichnung des flach liegenden Hoodies in
+  isometrischer Projektion: Stoff, Nähte mit Kordel und Metallösen sowie
+  Etikett mit QR-Code als Ebenen.
   Gleiches Prinzip wie beim Akku: --zu ist der Versatz in den zusammengebauten
   Zustand, beim Laden fährt das Shirt auseinander.
 */
@@ -39,92 +40,131 @@ interface Props {
 const { teil, lang, pilot, aktiv } = Astro.props;
 const t = (feld: Record<"de" | "en", string>) => feld[lang];
 
-// Flach liegendes T-Shirt in Ebenen-Koordinaten (u quer, v längs, Ausschnitt oben).
-const shirt = [
-  [85, 0],
-  [50, 10],
-  [0, 45],
-  [22, 82],
-  [50, 68],
-  [50, 200],
+// Flach liegender Hoodie in Ebenen-Koordinaten (u quer, v längs, Kapuze oben):
+// Kapuze, lange Ärmel mit Bündchen, Körper.
+const hoodie = [
+  [110, -26],
+  [124, -23],
+  [136, -14],
+  [140, 0],
+  [137, 10],
+  [170, 16],
+  [226, 60],
+  [238, 138],
+  [216, 142],
+  [205, 92],
+  [170, 84],
   [170, 200],
-  [170, 68],
-  [198, 82],
-  [220, 45],
-  [170, 10],
-  [135, 0],
-  [126, 14],
-  [110, 19],
-  [94, 14],
+  [50, 200],
+  [50, 84],
+  [15, 92],
+  [4, 142],
+  [-18, 138],
+  [-6, 60],
+  [50, 16],
+  [83, 10],
+  [80, 0],
+  [84, -14],
+  [96, -23],
 ];
 const Z = { stoff: 0, naehte: 90, etikett: 170 };
-const flaeche = (z: number) => shirt.map(([u, v]) => pt(u, v, z)).join(" ");
+const flaeche = (z: number) => hoodie.map(([u, v]) => pt(u, v, z)).join(" ");
 const linie = (punkte: number[][], z: number) =>
   "M" + punkte.map(([u, v]) => pt(u, v, z).replace(",", " ")).join("L");
 
-// Maschenreihen des Jerseys, auf die Shirt-Form zugeschnitten.
-const reihen = Array.from({ length: 24 }, (_, k) =>
+// Maschenreihen des Sweatstoffs, auf die Hoodie-Form zugeschnitten.
+const reihen = Array.from({ length: 29 }, (_, k) =>
   linie(
     [
-      [0, 8 + k * 8],
-      [220, 8 + k * 8],
+      [-20, -24 + k * 8],
+      [240, -24 + k * 8],
     ],
     Z.stoff,
   ),
 ).join("");
 
-// Nähte: Halsbündchen, Ärmelansatz, Seitennähte, Ärmel- und Saumnaht.
+// Nähte: Kapuzenansatz, Ärmel- und Seitennähte, Saum, Ärmelbündchen, Känguru-Tasche.
 const naehte = [
   [
-    [88, 4],
-    [96, 18],
-    [110, 24],
-    [124, 18],
-    [132, 4],
+    [83, 10],
+    [96, 22],
+    [110, 28],
+    [124, 22],
+    [137, 10],
   ],
   [
-    [50, 10],
+    [50, 16],
     [50, 200],
   ],
   [
-    [170, 10],
+    [170, 16],
     [170, 200],
   ],
   [
-    [50, 192],
-    [170, 192],
+    [50, 186],
+    [170, 186],
   ],
   [
-    [6, 48],
-    [27, 79],
+    [-14.6, 116],
+    [8.8, 120],
   ],
   [
-    [214, 48],
-    [193, 79],
+    [234.6, 116],
+    [211.2, 120],
+  ],
+  [
+    [80, 120],
+    [70, 172],
+    [150, 172],
+    [140, 120],
   ],
 ]
   .map((p) => linie(p, Z.naehte))
   .join("");
 
+// Kordel durch die Kapuze und Metallösen am Kapuzenansatz.
+const kordel = [
+  [
+    [101, 32],
+    [99, 50],
+    [100, 70],
+    [98, 96],
+  ],
+  [
+    [119, 32],
+    [121, 50],
+    [120, 70],
+    [122, 92],
+  ],
+]
+  .map((p) => linie(p, Z.naehte))
+  .join("");
+const oesen = [101, 119].map((u) =>
+  Array.from({ length: 12 }, (_, k) => {
+    const w = (k / 12) * 2 * Math.PI;
+    return pt(u + 2.8 * Math.cos(w), 32 + 2.8 * Math.sin(w), Z.naehte);
+  }).join(" "),
+);
+
 // Nackenetikett: lokales Koordinatensystem auf der Ebene (a entlang u, b entlang v).
-const etikett = { u: 86, v: 2, b: 48, h: 24 };
+const etikett = { u: 86, v: 10, b: 48, h: 24 };
 const [ex, ey] = iso(etikett.u, etikett.v, Z.etikett);
 const etikettMatrix = `matrix(${cos30.toFixed(4)} 0.5 ${(-cos30).toFixed(4)} 0.5 ${ex.toFixed(1)} ${ey.toFixed(1)})`;
 const qrModule = qrKlein(zufallAus(160), 2.5, 2.5, 2.7);
 
 const fuehrung = [
-  [0, 45, Z.naehte],
-  [220, 45, Z.naehte],
+  [-18, 138, Z.naehte],
+  [238, 138, Z.naehte],
   [50, 200, Z.naehte],
   [170, 200, Z.naehte],
-  [110, 10, Z.etikett],
+  [110, 14, Z.etikett],
 ].map(([u, v, z]) => ({ von: iso(u, v, Z.stoff), bis: iso(u, v, z) }));
 
 const vb: ViewBox = { x: -160, y: -150, b: 330, h: 355 };
 const hotspot = hotspotIn(vb);
 const hotspotPos: Record<string, string> = {
   etikett: hotspot(etikett.u + etikett.b / 2, etikett.v + 4, Z.etikett),
-  naehte: hotspot(50, 150, Z.naehte),
+  naehte: hotspot(119, 40, Z.naehte),
   stoff: hotspot(110, 115, Z.stoff),
   farbe: hotspot(150, 178, Z.stoff),
 };
@@ -134,7 +174,7 @@ const versatz: Record<string, number> = {
   etikett: Z.etikett - 1,
 };
 
-// Hero-Szene: T-Shirt auf dem Bügel, das Etikett im Nacken ist markiert.
+// Hero-Szene: Hoodie auf dem Bügel, das Etikett im Nacken ist markiert.
 const sucher = { x: 96, y: 13, b: 48, h: 36 };
 ---
 
@@ -155,19 +195,26 @@ const sucher = { x: 96, y: 13, b: 48, h: 36 };
       <path
         class="szene__linie szene__linie--duenn"
         pathLength="1"
-        d="M120 20V12Q120 8 123 6.5Q127 4.5 126 1M120 20L86 33H154Z"
+        d="M120 13V9Q120 6 123 4.5Q126 3 125.5 1M120 20L88 34H152Z"
       />
       <path
         class="szene__linie"
         pathLength="1"
-        d="M108 27Q120 37 132 27L148 31L166 52L156 61L152 55V116H88V55L84 61L74 52L92 31Z"
+        d="M104 29Q120 41 136 29L150 33L166 40L174 112H162L160 62H152V116H88V62H80L78 112H66L74 40L90 33Z"
+      />
+      <path
+        class="szene__linie szene__linie--duenn"
+        pathLength="1"
+        d="M104 29Q98 14 120 13Q142 14 136 29"
       />
       <path
         class="szene__speichen"
-        d="M77 49L86.5 57M163 49L153.5 57M88 110H152M111 29.5Q120 36 129 29.5"
+        d="M113 36V54M127 36V52M67 104H77M163 104H173M88 109H152M96 86L92 108M144 86L148 108M96 86H144"
       />
+      <circle class="szene__oese" cx="113" cy="35" r="1.6" />
+      <circle class="szene__oese" cx="127" cy="35" r="1.6" />
       <g class="szene__akku">
-        <rect x="114" y="28" width="12" height="7" rx="1.5" />
+        <rect x="114" y="19" width="12" height="7" rx="1.5" />
       </g>
 
       <SzenePanel
@@ -200,7 +247,7 @@ const sucher = { x: 96, y: 13, b: 48, h: 36 };
           >
             <path d="M24 0H0V24" class="explosion__raster" />
           </pattern>
-          <clipPath id="shirt-form">
+          <clipPath id="hoodie-form">
             <polygon points={flaeche(Z.stoff)} />
           </clipPath>
         </defs>
@@ -227,7 +274,11 @@ const sucher = { x: 96, y: 13, b: 48, h: 36 };
             class="flaeche flaeche--oben stoff"
             points={flaeche(Z.stoff)}
           />
-          <path class="stoff__reihen" d={reihen} clip-path="url(#shirt-form)" />
+          <path
+            class="stoff__reihen"
+            d={reihen}
+            clip-path="url(#hoodie-form)"
+          />
         </g>
 
         <g class="ebene" data-ebene="naehte" style={`--zu:${versatz.naehte}px`}>
@@ -236,6 +287,10 @@ const sucher = { x: 96, y: 13, b: 48, h: 36 };
             points={flaeche(Z.naehte)}
           />
           <path class="naehte__linie" d={naehte} />
+          <path class="naehte__kordel" d={kordel} />
+          {oesen.map((p) => (
+            <polygon class="naehte__oese" points={p} />
+          ))}
         </g>
 
         <g

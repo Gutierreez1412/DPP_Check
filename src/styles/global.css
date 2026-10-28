@@ -597,6 +597,7 @@ h2 {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr);
   gap: 0.75rem 2.5rem;
+  align-items: first baseline;
   padding-top: 2.5rem;
   margin-top: 2.5rem;
   border-top: 1px solid var(--farbe-rand);
@@ -608,6 +609,10 @@ h2 {
 
 .block__inhalt {
   min-width: 0;
+}
+
+.block__inhalt > :first-child {
+  margin-top: 0;
 }
 
 .zeitstrahl-block {
