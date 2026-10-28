@@ -79,14 +79,15 @@
         "de": "Den delegierten Rechtsakt für Textilbekleidung plant die EU-Kommission für das 4. Quartal 2027.",
         "en": "The European Commission plans the delegated act for textile apparel for the fourth quarter of 2027."
       },
+      "scores": { "a": 0, "b": 0, "c": 1, "d": 1 },
       "aufwand": {
         "gruen": {
-          "de": "Mit laufendem Pilot oder laufender Datenerhebung sind Sie auf einem guten Weg.",
-          "en": "With a pilot or data collection under way, you are on a good path."
+          "de": "Mit Pilot, Datenerhebung oder benanntem Projekt sind Sie auf einem guten Weg.",
+          "en": "With a pilot, data collection or a project in place, you are on a good path."
         },
         "gelb": {
-          "de": "Mit benanntem Projekt können Sie die Zeit bis zum Rechtsakt für die Datenerhebung nutzen.",
-          "en": "With a project in place, you can use the time until the legal act for data collection."
+          "de": "Bis zum Rechtsakt bleibt Zeit, die Sie für Projektaufbau und Datenerhebung nutzen können.",
+          "en": "There is time until the legal act, which you can use for setting up a project and collecting data."
         },
         "rot": {
           "de": "Der Aufbau steht noch aus; die Zeit bis zum Rechtsakt sollten Sie für erste Schritte nutzen.",
