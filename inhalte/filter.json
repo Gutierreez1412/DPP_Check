@@ -17,22 +17,22 @@
 
   "schritt1": {
     "titel": {
-      "de": "Welche Produktgruppen betreffen Sie?",
-      "en": "Which product groups apply to you?"
+      "de": "Welche Produktgruppe betrifft Sie?",
+      "en": "Which product group applies to you?"
     },
     "hinweis": {
-      "de": "Mehrfachauswahl möglich.",
-      "en": "Multiple selection possible."
+      "de": "Bitte wählen Sie eine Produktgruppe. Für weitere Gruppen starten Sie den Check erneut.",
+      "en": "Please select one product group. To check further groups, start the check again."
     },
     "fehler_keine_auswahl": {
-      "de": "Bitte wählen Sie mindestens eine Produktgruppe aus.",
-      "en": "Please select at least one product group."
+      "de": "Bitte wählen Sie eine Produktgruppe aus.",
+      "en": "Please select a product group."
     }
   },
   "schritt2": {
     "titel": {
-      "de": "Verkaufen Sie Produkte unter Ihrem eigenen Namen oder Ihrer eigenen Marke?",
-      "en": "Do you sell products under your own name or brand?"
+      "de": "Bringen Sie Produkte unter Ihrem Namen oder Ihrer Marke auf den Markt, egal ob selbst gefertigt oder von Dritten produziert?",
+      "en": "Do you place products on the market under your name or brand, whether made by yourself or produced by third parties?"
     }
   },
   "schritt3": {
