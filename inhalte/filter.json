@@ -41,8 +41,8 @@
       "en": "Do you modify purchased products or use them for a different purpose?"
     },
     "hinweis": {
-      "de": "z. B. Umbau, Veredelung, Set-Bildung, Aufbereitung, neuer Verwendungszweck",
-      "en": "e.g. rework, refinishing, creating sets, reconditioning, new intended use"
+      "de": "z. B. Veredelung, Set-Bildung, Umbau, Aufbereitung, neuer Verwendungszweck",
+      "en": "e.g. refinishing, creating sets, rework, reconditioning, new intended use"
     }
   },
   "fehler_keine_antwort": {
@@ -98,8 +98,8 @@
           "en": "You may have acquired manufacturer responsibility"
         },
         "text": {
-          "de": "Weil Sie bezogene Produkte verändern, könnte es sein, dass Sie dadurch eine Herstellerverantwortung nach Art. 34 ESPR erhalten haben oder erhalten könnten – nämlich dann, wenn die Veränderung die Konformität des Produkts mit den geltenden Anforderungen beeinträchtigt. Ob das bei Ihnen zutrifft, hängt von der Art und dem Umfang Ihrer Veränderung ab.",
-          "en": "Because you modify purchased products, you may have acquired – or could acquire – manufacturer responsibility under Art. 34 ESPR, namely if the modification affects the product's compliance with the applicable requirements. Whether this applies to you depends on the type and extent of your modification."
+          "de": "Weil Sie bezogene Produkte verändern, könnte es sein, dass Sie dadurch eine Herstellerverantwortung nach Art. 34 ESPR erhalten haben – nämlich dann, wenn die Veränderung die Konformität des Produkts mit den geltenden Anforderungen beeinträchtigt. Als Hersteller wären Sie für den Digitalen Produktpass verantwortlich. Ob das bei Ihnen zutrifft, hängt von der Art und dem Umfang Ihrer Veränderung ab.",
+          "en": "Because you modify purchased products, you may have acquired manufacturer responsibility under Art. 34 ESPR, namely if the modification affects the product's compliance with the applicable requirements. As a manufacturer, you would be responsible for the Digital Product Passport. Whether this applies to you depends on the type and extent of your modification."
         },
         "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng",
         "status": "unklar"
