@@ -15,8 +15,8 @@
             "en": "LV battery"
           },
           "text": {
-            "de": "Antriebsbatterie bis 25 kg, z. B. für E-Bikes, Pedelecs oder E-Scooter",
-            "en": "Traction battery up to 25 kg, e.g. for e-bikes, pedelecs or e-scooters"
+            "de": "Antriebsbatterie bis 25 kg, z. B. für E-Bikes, E-Scooter und Motorräder (Klasse L)",
+            "en": "Traction battery up to 25 kg, e.g. for e-bikes, e-scooters and motorcycles (class L)"
           }
         },
         {
@@ -25,8 +25,8 @@
             "en": "Electric vehicle battery"
           },
           "text": {
-            "de": "E-Autos, Busse, Lkw (auch Hybrid), E-Fahrzeuge über 25 kg",
-            "en": "Electric cars, buses, trucks (incl. hybrids), e-vehicles over 25 kg"
+            "de": "Antriebsbatterie für Pkw, Busse, Lkw (auch Hybrid) und Klasse-L-Batterien über 25 kg.",
+            "en": "Traction battery for cars, buses, trucks (incl. hybrids) and class L batteries over 25 kg."
           }
         },
         {
