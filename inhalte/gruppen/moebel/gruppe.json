@@ -1,0 +1,132 @@
+{
+  "id": "moebel",
+  "name": {
+    "de": "Möbel",
+    "en": "Furniture"
+  },
+  "definition": {
+    "de": "Die Ökodesign-Verordnung (ESPR, EU 2024/1781, Art. 18) nennt Möbel als prioritäre Produktgruppe. Nach dem Entwurf der Vorstudie sind Möbel vorläufig freistehende oder eingebaute Einheiten zum Aufbewahren, Ablegen oder Aufhängen von Gegenständen oder zum Ruhen, Sitzen, Essen, Lernen oder Arbeiten, drinnen wie draußen; Bettgestelle, Beine, Sockel und Kopfteile zählen dazu. Matratzen werden getrennt behandelt: Sie gelten als eigene Produktgruppe und sind nicht Teil dieser Möbelgruppe. Verbindlich ist letztlich der delegierte Rechtsakt.",
+    "en": "The Ecodesign Regulation (ESPR, EU 2024/1781, Art. 18) names furniture as a priority product group. According to the draft of the preparatory study, furniture is provisionally defined as free-standing or built-in units for storing, placing or hanging items or for resting, sitting, eating, studying or working, indoors or outdoors; bed frames, legs, bases and headboards are included. Mattresses are treated separately: they are a product group of their own and not part of this furniture group. Ultimately, the delegated act is binding."
+  },
+  "definition_quelle": "https://espr-euecolabel-furniture.eu/media/16",
+  "weiterfuehrend": {
+    "label": {
+      "de": "Mehr erfahren: Vorstudie zu Ökodesign-Anforderungen für Möbel (Projektseite)",
+      "en": "Learn more: preparatory study on ecodesign requirements for furniture (project website)"
+    },
+    "url": "https://espr-euecolabel-furniture.eu/preparatory-study"
+  },
+  "vorbehalt": {
+    "titel": {
+      "de": "Hinweis: Entwurf einer Vorstudie, noch kein Rechtsakt",
+      "en": "Note: draft of a preparatory study, not yet a legal act"
+    },
+    "text": {
+      "de": "Für Möbel gibt es noch keinen delegierten Rechtsakt. Die Angaben zu Datenpunkten, Zugriffsrechten und Granularität im Check und im Pilot beruhen auf dem Entwurf der Vorstudie zu den Pass-Inhalten (Version 1, September 2026), den ein Beraterteam im Auftrag der EU-Kommission erstellt hat. Der Entwurf ist noch nicht mit den Beteiligten abgestimmt und legt den Rechtsakt nicht fest.",
+      "en": "There is no delegated act for furniture yet. The information on data points, access rights and granularity in the check and the pilot is based on the draft of the preparatory study on passport content (version 1, September 2026), prepared by a team of consultants on behalf of the European Commission. The draft has not yet been validated with stakeholders and does not set the legal act."
+    },
+    "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+  },
+  "zeitstrahl": [
+    {
+      "datum": "2024-07-18",
+      "titel": {
+        "de": "Ökodesign-Verordnung in Kraft",
+        "en": "Ecodesign Regulation in force"
+      },
+      "beschreibung": {
+        "de": "Die ESPR schafft den Rahmen für den Digitalen Produktpass. Welche Produkte ihn wann brauchen, legen erst delegierte Rechtsakte je Produktgruppe fest.",
+        "en": "The ESPR creates the framework for the Digital Product Passport. Which products need it, and when, is only set by delegated acts per product group."
+      },
+      "status": "gilt",
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng"
+    },
+    {
+      "datum": "2025-04-16",
+      "titel": {
+        "de": "Arbeitsplan: Möbel hat Vorrang",
+        "en": "Working plan: furniture is a priority"
+      },
+      "beschreibung": {
+        "de": "Im ESPR-Arbeitsplan 2025–2030 führt die EU-Kommission Möbel als prioritäre Produktgruppe auf. Matratzen sind als eigene Produktgruppe geführt.",
+        "en": "In the ESPR working plan 2025–2030, the European Commission lists furniture as a priority product group. Mattresses are listed as a separate product group."
+      },
+      "status": "gilt",
+      "quelle": "https://environment.ec.europa.eu/document/download/5f7ff5e2-ebe9-4bd4-a139-db881bd6398f_en?filename=FAQ-UPDATE-4th-Iteration_clean.pdf"
+    },
+    {
+      "datum": "2026-10-06",
+      "titel": {
+        "de": "Erstes Stakeholder-Treffen zur Vorstudie",
+        "en": "First stakeholder meeting on the preparatory study"
+      },
+      "beschreibung": {
+        "de": "Ein Beraterteam im Auftrag der Kommission legt einen Entwurf zu den Pass-Inhalten für Möbel vor (Version 1, Stand 22.09.2026). Rückmeldungen sind bis Ende November 2026 vorgesehen. Das ist ein Vorschlag, noch keine Pflicht.",
+        "en": "A team of consultants on behalf of the Commission presents a draft on passport content for furniture (version 1, as of 22 September 2026). Feedback is foreseen until the end of November 2026. This is a proposal, not yet an obligation."
+      },
+      "status": "gilt",
+      "quelle": "https://espr-euecolabel-furniture.eu/preparatory-study"
+    },
+    {
+      "datum": "2028",
+      "titel": {
+        "de": "Delegierter Rechtsakt für Möbel",
+        "en": "Delegated act for furniture"
+      },
+      "beschreibung": {
+        "de": "Die EU-Kommission nennt 2028 als Richtwert für den delegierten Rechtsakt mit den Pass-Anforderungen für Möbel. Der Zeitplan kann sich ändern.",
+        "en": "The European Commission gives 2028 as the indicative timeline for the delegated act setting the passport requirements for furniture. The timeline may change."
+      },
+      "status": "geplant",
+      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en"
+    },
+    {
+      "datum": "TBD",
+      "titel": {
+        "de": "Produktpass wird Pflicht",
+        "en": "Product passport becomes mandatory"
+      },
+      "beschreibung": {
+        "de": "Ab wann Möbel einen Produktpass brauchen, legt erst der delegierte Rechtsakt fest. Danach haben die Unternehmen laut EU-Kommission eine Übergangsfrist von mindestens 18 Monaten.",
+        "en": "When furniture will need a product passport is only set by the delegated act. After that, according to the European Commission, economic operators have a transition period of at least 18 months."
+      },
+      "status": "unklar",
+      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en"
+    }
+  ],
+  "faq": [
+    {
+      "frage": {
+        "de": "Ab wann brauche ich für Möbel einen Digitalen Produktpass?",
+        "en": "From when do I need a Digital Product Passport for furniture?"
+      },
+      "antwort": {
+        "de": "Das steht noch nicht fest. Die EU-Kommission nennt 2028 als Richtwert für den delegierten Rechtsakt für Möbel. Erst dieser Rechtsakt legt fest, ab wann der Pass Pflicht wird und was genau er enthalten muss. Danach gilt laut Kommission eine Übergangsfrist von mindestens 18 Monaten.",
+        "en": "This has not been decided yet. The European Commission gives 2028 as the indicative timeline for the delegated act for furniture. Only this act will set from when the passport is mandatory and exactly what it must contain. According to the Commission, a transition period of at least 18 months then applies."
+      },
+      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en"
+    },
+    {
+      "frage": {
+        "de": "Welche Daten sollen im Pass stehen?",
+        "en": "Which data is the passport to contain?"
+      },
+      "antwort": {
+        "de": "Der Entwurf der Vorstudie (September 2026) schlägt unter anderem als Pflicht vor: Modell- und Chargen-ID, Hersteller- und Werksangaben, Haupt- und Polstermaterialien, Haltbarkeit, Reparierbarkeit und Recyclingfähigkeit, besorgniserregende Stoffe, Rezyklatanteil, Pflege-, Montage- und Reparaturanleitungen, Ersatzteile, Garantiedauer sowie Rücknahmehinweise. CO₂- und Umweltfußabdruck sind noch offen. Angaben zum einzelnen Stück, etwa die Reparaturhistorie, wären freiwillig. Das ist ein Vorschlag, noch nicht mit den Beteiligten abgestimmt.",
+        "en": "The draft of the preparatory study (September 2026) proposes as mandatory, among other things: model and batch ID, manufacturer and plant details, main and upholstery materials, durability, repairability and recyclability, substances of concern, recycled content, care, assembly and repair instructions, spare parts, warranty duration and take-back information. Carbon and environmental footprint are still open. Information on the individual item, such as repair history, would be voluntary. This is a proposal, not yet validated with stakeholders."
+      },
+      "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+    },
+    {
+      "frage": {
+        "de": "Gilt der Pass auch für Matratzen?",
+        "en": "Does the passport also apply to mattresses?"
+      },
+      "antwort": {
+        "de": "Nach dem Entwurf der Vorstudie nicht: Matratzen fallen nicht unter die vorläufige Möbeldefinition, der Arbeitsplan führt sie als eigene Produktgruppe. Welche Anforderungen im Einzelnen für Matratzen gelten, ist noch offen.",
+        "en": "According to the draft of the preparatory study, no: mattresses do not fall under the provisional definition of furniture, the working plan lists them as a separate product group. Which requirements apply to mattresses in detail is still open."
+      },
+      "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+    }
+  ]
+}

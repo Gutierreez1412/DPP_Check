@@ -1,0 +1,164 @@
+{
+  "rechtsgrundlage": {
+    "de": "Entwurf der Vorstudie zu den Pass-Inhalten für Möbel (Version 1, September 2026) auf Basis der ESPR (EU) 2024/1781",
+    "en": "Draft of the preparatory study on passport content for furniture (version 1, September 2026), based on the ESPR (EU) 2024/1781"
+  },
+  "quelle": "https://espr-euecolabel-furniture.eu/media/16",
+  "daten_intro": {
+    "de": "Auswahl; Umfang nach Vorschlag des Entwurfs, noch nicht verbindlich.",
+    "en": "Selection; scope as proposed by the draft, not yet binding."
+  },
+  "daten_aufwand": {
+    "gruen": {
+      "de": "Diese Angaben liegen bei Ihnen bereits vor.",
+      "en": "You already have this information."
+    },
+    "gelb": {
+      "de": "Für die meisten Produkte liegen sie vor, die Lücken sollten Sie gezielt schließen.",
+      "en": "It is available for most products; close the gaps in a targeted way."
+    },
+    "rot": {
+      "de": "Diese Angaben fehlen bei Ihnen weitgehend oder sind unklar und müssen erst beschafft werden.",
+      "en": "This information is largely missing or unclear and must first be obtained."
+    }
+  },
+  "fragen": {
+    "q1": {
+      "fakt": {
+        "de": "Vorgeschlagen sind Modell-ID und Chargen-ID als Pflicht; eine Kennung je Einzelstück ist noch offen. Die meisten Beteiligten halten die Modellebene für den praktikablen Standard.",
+        "en": "Model ID and batch ID are proposed as mandatory; an identifier per item is still open. Most stakeholders consider the model level the practical baseline."
+      },
+      "aufwand": {
+        "gruen": {
+          "de": "Bei wenigen Produkttypen bleibt der Datenumfang überschaubar.",
+          "en": "With few product types, the amount of data remains manageable."
+        },
+        "gelb": {
+          "de": "Bei Ihrer Zahl an Produkttypen entsteht ein spürbarer Datenumfang.",
+          "en": "With your number of product types, the amount of data is noticeable."
+        },
+        "rot": {
+          "de": "Bei Ihrer großen Zahl an Produkttypen ist der Umfang der zu erhebenden und zu pflegenden Daten hoch.",
+          "en": "With your large number of product types, the amount of data to collect and maintain is high."
+        }
+      },
+      "bezug": {
+        "de": "Entwurf Vorstudie Möbel, Tab. 9-2 und Kap. 7.4",
+        "en": "Draft preparatory study on furniture, Table 9-2 and Section 7.4"
+      },
+      "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+    },
+    "q2": {
+      "fakt": {
+        "de": "Pflichtig ist, wer das fertige Möbelstück in der EU in Verkehr bringt (Art. 27 und 34 ESPR), bei Herstellern außerhalb der EU der Importeur; Daten zu Holz, Schaum, Textil, Beschlägen und Chemie liegen oft nur bei Lieferanten, meist als PDF oder Zertifikat.",
+        "en": "Whoever places the finished piece of furniture on the EU market is obliged (Art. 27 and 34 ESPR), for manufacturers outside the EU the importer; data on wood, foam, textile, fittings and chemicals often only sits with suppliers, mostly as PDF or certificate."
+      },
+      "aufwand": {
+        "gruen": {
+          "de": "Bei wenigen Lieferanten bleiben Datenanfragen und Abstimmungen überschaubar.",
+          "en": "With few suppliers, data requests and coordination remain manageable."
+        },
+        "gelb": {
+          "de": "Bei Ihrer Zahl an Lieferanten sind einige Datenanfragen und Abstimmungen nötig.",
+          "en": "With your number of suppliers, a fair number of data requests and coordination is needed."
+        },
+        "rot": {
+          "de": "Bei Ihrer großen Zahl an Lieferanten sind viele Datenanfragen und Abstimmungen nötig.",
+          "en": "With your large number of suppliers, many data requests and a lot of coordination are needed."
+        }
+      },
+      "aufwand_zuerst": true,
+      "bezug": {
+        "de": "Entwurf Vorstudie Möbel, Kap. 2.1.1, 5.1 und 7.2",
+        "en": "Draft preparatory study on furniture, Sections 2.1.1, 5.1 and 7.2"
+      },
+      "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+    },
+    "q7": {
+      "fakt": {
+        "de": "Den delegierten Rechtsakt für Möbel nennt die EU-Kommission mit 2028 als Richtwert; danach gilt eine Übergangsfrist von mindestens 18 Monaten.",
+        "en": "The European Commission gives 2028 as the indicative timeline for the delegated act for furniture; a transition period of at least 18 months then applies."
+      },
+      "scores": {
+        "a": 0,
+        "b": 0,
+        "c": 1,
+        "d": 1
+      },
+      "aufwand": {
+        "gruen": {
+          "de": "Mit Pilot, Datenerhebung oder benanntem Projekt sind Sie auf einem guten Weg.",
+          "en": "With a pilot, data collection or a project in place, you are on a good path."
+        },
+        "gelb": {
+          "de": "Bis zum Rechtsakt bleibt Zeit, die Sie für Projektaufbau und Datenerhebung nutzen können.",
+          "en": "There is time until the legal act, which you can use for setting up a project and collecting data."
+        },
+        "rot": {
+          "de": "Der Aufbau steht noch aus; die Zeit bis zum Rechtsakt sollten Sie für erste Schritte nutzen.",
+          "en": "Set-up has not started yet; use the time until the legal act for first steps."
+        }
+      },
+      "bezug": {
+        "de": "EU-Kommission, Digitaler Produktpass, Zeitplan",
+        "en": "European Commission, Digital Product Passport, timeline"
+      },
+      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en"
+    },
+    "q3": {
+      "fakt": {
+        "de": "Vorgeschlagen sind Haupt- sowie Polster- und Bezugsmaterialien als Pflicht; Beschläge, Bauteilkennungen, Abmessungen, Gewicht und Klebstoffe sind noch offen oder nur bedingt vorgesehen.",
+        "en": "Primary materials as well as upholstery and cover materials are proposed as mandatory; fittings, component identifiers, dimensions, weight and adhesives are still open or only conditionally provided for."
+      },
+      "bezug": {
+        "de": "Entwurf Vorstudie Möbel, Tab. 9-2",
+        "en": "Draft preparatory study on furniture, Table 9-2"
+      },
+      "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+    },
+    "q4": {
+      "fakt": {
+        "de": "Vorgeschlagen sind besorgniserregende Stoffe je Bauteil oder Charge mit gestuftem Zugriff (Art. 7 Abs. 5 ESPR), dazu Angaben zu Holz- und Flammschutzmitteln und Hinweise zur sicheren Verwendung. Welche Stoffe erfasst werden, legt der Rechtsakt fest.",
+        "en": "Substances of concern per component or batch with tiered access (Art. 7(5) ESPR) are proposed, plus information on wood preservatives and flame retardants and instructions for safe use. Which substances are covered will be set by the delegated act."
+      },
+      "bezug": {
+        "de": "Art. 7 Abs. 5 ESPR; Entwurf Vorstudie Möbel, Tab. 9-2",
+        "en": "Art. 7(5) ESPR; draft preparatory study on furniture, Table 9-2"
+      },
+      "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+    },
+    "q5": {
+      "fakt": {
+        "de": "CO₂- und Umweltfußabdruck sind als Ergebnis je Modell vorgesehen (Nachweise eingeschränkt), ob und nach welcher Methode sie verlangt werden, ist offen. Die Branche hat dazu bisher wenig vergleichbare Daten.",
+        "en": "Carbon and environmental footprint are foreseen as a result per model (evidence restricted); whether and by which method they are required is open. The sector has so far little comparable data."
+      },
+      "bezug": {
+        "de": "Entwurf Vorstudie Möbel, Tab. 9-2 und Kap. 7.4",
+        "en": "Draft preparatory study on furniture, Table 9-2 and Section 7.4"
+      },
+      "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+    },
+    "q6": {
+      "fakt": {
+        "de": "Vorgeschlagen ist der Rezyklatanteil in Prozent je Modell oder Charge als Pflicht; Art und Menge des Rezyklats sind noch offen. Nachweise gibt es bisher meist für einzelne Materialien, nicht je Möbelstück.",
+        "en": "Recycled content in percent per model or batch is proposed as mandatory; type and amount of recycled material are still open. Evidence so far mostly exists for individual materials, not per piece of furniture."
+      },
+      "bezug": {
+        "de": "Entwurf Vorstudie Möbel, Tab. 9-2 und Kap. 6.2.2",
+        "en": "Draft preparatory study on furniture, Table 9-2 and Section 6.2.2"
+      },
+      "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+    },
+    "q8": {
+      "fakt": {
+        "de": "Vorgeschlagen sind Hinweise zu Zerlegung, Wiederverwendung, Recycling und Entsorgung sowie zu Verbindungsarten für Berechtigte, dazu öffentliche Rücknahmehinweise. Bei Recyclern kommen solche Angaben bisher kaum an.",
+        "en": "Information on disassembly, reuse, recycling and disposal as well as on joining methods for persons with a legitimate interest is proposed, plus public take-back information. So far, such information barely reaches recyclers."
+      },
+      "bezug": {
+        "de": "Entwurf Vorstudie Möbel, Tab. 9-2 und Kap. 7.1",
+        "en": "Draft preparatory study on furniture, Table 9-2 and Section 7.1"
+      },
+      "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+    }
+  }
+}
