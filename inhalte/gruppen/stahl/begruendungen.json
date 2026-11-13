@@ -1,0 +1,159 @@
+{
+  "rechtsgrundlage": {
+    "de": "JRC-Entwurf zu den Pass-Inhalten für Eisen und Stahl (2026) auf Basis der ESPR (EU) 2024/1781",
+    "en": "JRC draft on passport content for iron and steel (2026), based on the ESPR (EU) 2024/1781"
+  },
+  "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf",
+  "daten_intro": {
+    "de": "Auswahl; Umfang nach Vorschlag des JRC-Entwurfs, noch nicht verbindlich.",
+    "en": "Selection; scope as proposed by the JRC draft, not yet binding."
+  },
+  "daten_aufwand": {
+    "gruen": {
+      "de": "Diese Angaben liegen bei Ihnen bereits vor.",
+      "en": "You already have this information."
+    },
+    "gelb": {
+      "de": "Für die meisten Produkte liegen sie vor, die Lücken sollten Sie gezielt schließen.",
+      "en": "It is available for most products; close the gaps in a targeted way."
+    },
+    "rot": {
+      "de": "Diese Angaben fehlen bei Ihnen weitgehend oder sind unklar und müssen erst beschafft werden.",
+      "en": "This information is largely missing or unclear and must first be obtained."
+    }
+  },
+  "fragen": {
+    "q1": {
+      "fakt": {
+        "de": "Vorgeschlagen ist die Schmelznummer als Kennung je Charge; Angaben wie Produktnummer, Stahlsorte und Warennummer kommen je Modell hinzu.",
+        "en": "The heat number is proposed as the identifier per batch; information such as product number, steel grade and commodity code is added per model."
+      },
+      "aufwand": {
+        "gruen": {
+          "de": "Bei wenigen Produkttypen bleibt der Datenumfang überschaubar.",
+          "en": "With few product types, the amount of data remains manageable."
+        },
+        "gelb": {
+          "de": "Bei Ihrer Zahl an Produkttypen entsteht ein spürbarer Datenumfang.",
+          "en": "With your number of product types, the amount of data is noticeable."
+        },
+        "rot": {
+          "de": "Bei Ihrer großen Zahl an Produkttypen ist der Umfang der zu erhebenden und zu pflegenden Daten hoch.",
+          "en": "With your large number of product types, the amount of data to collect and maintain is high."
+        }
+      },
+      "bezug": {
+        "de": "JRC-Entwurf Stahl, Kap. 7.1.1 (Tab. 8) und Kap. 9.1",
+        "en": "JRC draft on steel, Section 7.1.1 (Table 8) and Section 9.1"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    },
+    "q2": {
+      "fakt": {
+        "de": "Pflichtig ist, wer das Stahlprodukt in der EU in Verkehr bringt, bei Herstellern außerhalb der EU der Importeur; Angaben der Vorstufen müssen aus Stahlwerk, Walzwerk und Handel kommen und bei Weiterverarbeitung übernommen werden.",
+        "en": "Whoever places the steel product on the EU market is obliged, for manufacturers outside the EU the importer; information from earlier stages must come from steel mill, rolling mill and trade and be inherited on further processing."
+      },
+      "aufwand": {
+        "gruen": {
+          "de": "Bei wenigen Lieferanten bleiben Datenanfragen und Abstimmungen überschaubar.",
+          "en": "With few suppliers, data requests and coordination remain manageable."
+        },
+        "gelb": {
+          "de": "Bei Ihrer Zahl an Lieferanten sind einige Datenanfragen und Abstimmungen nötig.",
+          "en": "With your number of suppliers, a fair number of data requests and coordination is needed."
+        },
+        "rot": {
+          "de": "Bei Ihrer großen Zahl an Lieferanten sind viele Datenanfragen und Abstimmungen nötig.",
+          "en": "With your large number of suppliers, many data requests and a lot of coordination are needed."
+        }
+      },
+      "aufwand_zuerst": true,
+      "bezug": {
+        "de": "JRC-Entwurf Stahl, Kap. 2.1.2 und 9.3.1",
+        "en": "JRC draft on steel, Sections 2.1.2 and 9.3.1"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    },
+    "q7": {
+      "fakt": {
+        "de": "Den delegierten Rechtsakt für Eisen und Stahl plant die EU-Kommission für das 4. Quartal 2026.",
+        "en": "The European Commission plans the delegated act for iron and steel for the fourth quarter of 2026."
+      },
+      "scores": { "a": 0, "b": 0, "c": 1, "d": 1 },
+      "aufwand": {
+        "gruen": {
+          "de": "Mit Pilot, Datenerhebung oder benanntem Projekt sind Sie auf einem guten Weg.",
+          "en": "With a pilot, data collection or a project in place, you are on a good path."
+        },
+        "gelb": {
+          "de": "Nach dem Rechtsakt bleibt Zeit bis zur Anwendung, die Sie für Projektaufbau und Datenerhebung nutzen können.",
+          "en": "After the legal act there is time until it applies, which you can use for setting up a project and collecting data."
+        },
+        "rot": {
+          "de": "Der Aufbau steht noch aus; die Zeit bis zur Anwendung sollten Sie für erste Schritte nutzen.",
+          "en": "Set-up has not started yet; use the time until application for first steps."
+        }
+      },
+      "bezug": {
+        "de": "EU-Kommission, Digitaler Produktpass für Eisen und Stahl",
+        "en": "European Commission, Digital Product Passport for iron and steel"
+      },
+      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/iron-steel_en"
+    },
+    "q3": {
+      "fakt": {
+        "de": "Vorgeschlagen sind Stahlsorte (nach EN 10020) und Stahlbezeichnung (nach EN 10027-2), Herstellungsverfahren und Produktkategorie; die vollständigen Werkszeugnis-Werte (EN 10204) wären freiwillig.",
+        "en": "Steel grade (under EN 10020) and steel designation (under EN 10027-2), production route and product category are proposed; the full mill test certificate values (EN 10204) would be voluntary."
+      },
+      "bezug": {
+        "de": "JRC-Entwurf Stahl, Kap. 7.1.1 (Tab. 8) und Kap. 7.2 (Tab. 12)",
+        "en": "JRC draft on steel, Section 7.1.1 (Table 8) and Section 7.2 (Table 12)"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    },
+    "q4": {
+      "fakt": {
+        "de": "Besorgniserregende Stoffe gehören nach ESPR in den Pass; vorgeschlagen sind Name und Konzentration je Charge, abgeleitet aus der chemischen Analyse im Werkszeugnis. Welche Stoffe bei Stahl genau gelistet werden, ist in der Konsultation noch offen.",
+        "en": "Under the ESPR, substances of concern belong in the passport; name and concentration per batch, derived from the chemical analysis in the mill test certificate, are proposed. Which substances will exactly be listed for steel is still open in the consultation."
+      },
+      "bezug": {
+        "de": "Art. 7 Abs. 5 ESPR; JRC-Entwurf Stahl, Kap. 7.1.3 (Tab. 10)",
+        "en": "Art. 7(5) ESPR; JRC draft on steel, Section 7.1.3 (Table 10)"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    },
+    "q5": {
+      "fakt": {
+        "de": "Vorgeschlagen sind eine Erklärung zum CO₂-Fußabdruck des Produkts samt Konformitätsnachweis. Die Berechnungsmethode wird derzeit entwickelt und soll mit EU-Emissionshandel, CBAM und Umweltproduktdeklarationen (EN 15804) abgestimmt sein.",
+        "en": "A declaration on the product's carbon footprint including a conformity certificate is proposed. The calculation method is currently being developed and is to be aligned with the EU Emissions Trading System, CBAM and environmental product declarations (EN 15804)."
+      },
+      "bezug": {
+        "de": "JRC-Entwurf Stahl, Kap. 7.1.4 (Tab. 11)",
+        "en": "JRC draft on steel, Section 7.1.4 (Table 11)"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    },
+    "q6": {
+      "fakt": {
+        "de": "Vorgeschlagen sind der Rezyklatanteil (angelehnt an ISO 14021) und die Aufteilung in Produktions- und Verbraucherschrott samt Konformitätsnachweis. Wie der Anteil nachgewiesen wird, etwa per Massenbilanz je Auftrag oder Standort, regelt erst der Rechtsakt.",
+        "en": "The recycled content (based on ISO 14021) and its split into pre-consumer and post-consumer scrap, including a conformity certificate, are proposed. How the share is evidenced, for example by mass balance per order or per site, will only be set by the legal act."
+      },
+      "bezug": {
+        "de": "JRC-Entwurf Stahl, Kap. 7.1.4 (Tab. 11) und Kap. 9.1 (Box 1)",
+        "en": "JRC draft on steel, Section 7.1.4 (Table 11) and Section 9.1 (Box 1)"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    },
+    "q8": {
+      "fakt": {
+        "de": "Zusätzliche Pflichtangaben zu Zerlegung, Wiederverwendung oder Entsorgung hat die JRC für Stahl als Zwischenprodukt bisher nicht festgestellt; für das Recycling zählen vor allem die Stoffangaben und der Rezyklatanteil im Pass.",
+        "en": "The JRC has so far identified no additional mandatory information on disassembly, reuse or disposal for steel as an intermediate product; for recycling, what mainly counts are the substance information and recycled content in the passport."
+      },
+      "bezug": {
+        "de": "JRC-Entwurf Stahl, Kap. 7.1.3",
+        "en": "JRC draft on steel, Section 7.1.3"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    }
+  }
+}
