@@ -1,0 +1,294 @@
+---
+/*
+  Grafiken für den Möbel-Pilot: Hero-Szene (Polsterstuhl von der Seite, Sucher
+  auf dem Typenschild unter dem Sitz) und Explosionszeichnung in isometrischer
+  Projektion: Typenschild, Holzgestell mit Rückenlehne sowie Polster mit Bezug
+  als Ebenen.
+  Gleiches Prinzip wie bei den anderen Pilot-Grafiken: --zu ist der Versatz in
+  den zusammengebauten Zustand, beim Laden fährt der Stuhl auseinander.
+*/
+import SzenePanel from "./SzenePanel.astro";
+import {
+  box,
+  cos30,
+  hotspotIn,
+  iso,
+  qrKlein,
+  zufallAus,
+  type ViewBox,
+} from "./geometrie";
+
+interface Props {
+  teil: "szene" | "explosion";
+  lang: "de" | "en";
+  pilot: {
+    produkt: { name: string; eckdaten: { wert: string }[] };
+    komponenten: {
+      id: string;
+      ebene: string;
+      nummer: string;
+      name: Record<"de" | "en", string>;
+    }[];
+    texte: Record<
+      "szene_label" | "szene_schild" | "szene_scan",
+      Record<"de" | "en", string>
+    >;
+  };
+  aktiv: string;
+}
+
+const { teil, lang, pilot, aktiv } = Astro.props;
+const t = (feld: Record<"de" | "en", string>) => feld[lang];
+
+// Höhen der Ebenen im auseinandergefahrenen Zustand. Das Typenschild schwebt
+// unter dem Stuhl, das Polster darüber.
+const Z = { gestell: 0, polster: 165, etikett: -70 };
+const SITZ = 70; // Oberkante der Zargen (Sitzhöhe im Modell)
+
+// Holzgestell: Beine, Zargen, Rückenlehne. [x, y, z, Länge, Breite, Höhe]
+// Gezeichnet wird von hinten nach vorn (x + y aufsteigend).
+const teile = [
+  [0, 0, 0, 8, 8, 60],
+  [92, 0, 0, 8, 8, 60],
+  [0, 92, 0, 8, 8, 60],
+  [92, 92, 0, 8, 8, 60],
+  [8, 0, 60, 84, 8, 10],
+  [8, 92, 60, 84, 8, 10],
+  [0, 8, 60, 8, 84, 10],
+  [92, 8, 60, 8, 84, 10],
+  [0, 0, SITZ, 8, 8, 55],
+  [0, 92, SITZ, 8, 8, 55],
+  [0, 8, 80, 8, 84, 8],
+  [8, 1, 24, 84, 6, 6],
+  [8, 93, 24, 84, 6, 6],
+]
+  .sort((a, b) => a[0] + a[1] - (b[0] + b[1]) || a[2] - b[2])
+  .map(([x, y, z, l, w, h]) => box(x, y, z, l, w, h));
+
+// Polster (Schaumstoff) und Bezug als zwei flache Quader.
+const schaum = box(4, 4, Z.polster, 92, 92, 14);
+// Gepolsterte Rückenlehne zwischen den Pfosten, gehört zur Polster-Ebene.
+const lehne = box(0, 10, Z.polster + 14, 12, 80, 32);
+const lehneBezug = box(-3, 12, Z.polster + 17, 3, 76, 26);
+const bezug = box(0, 0, Z.polster + 14, 100, 100, 6);
+const naehte = [34, 66]
+  .map((u) => {
+    const [ax, ay] = iso(u, 4, Z.polster + 20);
+    const [bx, by] = iso(u, 96, Z.polster + 20);
+    return `M${ax.toFixed(1)} ${ay.toFixed(1)}L${bx.toFixed(1)} ${by.toFixed(1)}`;
+  })
+  .join("");
+
+// Typenschild in der Ebene unter dem Stuhl.
+const etikett = { u: 30, v: 36, b: 40, h: 28 };
+const [ex, ey] = iso(etikett.u, etikett.v, Z.etikett);
+const etikettMatrix = `matrix(${cos30.toFixed(4)} 0.5 ${(-cos30).toFixed(4)} 0.5 ${ex.toFixed(1)} ${ey.toFixed(1)})`;
+const qrModule = qrKlein(zufallAus(2814), 2.5, 2.5, 3);
+
+// Führungslinien zwischen den Ebenen.
+const fuehrung = [
+  ...[
+    [8, 8],
+    [92, 8],
+    [8, 92],
+    [92, 92],
+  ].map(([u, v]) => ({
+    von: iso(u, v, SITZ),
+    bis: iso(u, v, Z.polster),
+  })),
+  ...[
+    [30, 36],
+    [70, 64],
+  ].map(([u, v]) => ({
+    von: iso(u, v, Z.etikett),
+    bis: iso(u, v, 0),
+  })),
+];
+
+const vb: ViewBox = { x: -125, y: -215, b: 250, h: 375 };
+const hotspot = hotspotIn(vb);
+const hotspotPos: Record<string, string> = {
+  etikett: hotspot(
+    etikett.u + etikett.b / 2,
+    etikett.v + etikett.h / 2,
+    Z.etikett,
+  ),
+  gestell: hotspot(96, 96, 30),
+  polster: hotspot(100, 28, Z.polster + 7),
+  stoffe: hotspot(28, 100, Z.polster + 7),
+};
+// Abstand in den zusammengebauten Zustand: Polster liegt auf den Zargen, das
+// Typenschild sitzt unter dem Sitz.
+const versatz: Record<string, number> = {
+  etikett: Z.etikett - (SITZ - 12),
+  gestell: 0,
+  polster: Z.polster - SITZ,
+};
+
+// Hero-Szene: Stuhl von der Seite, das Typenschild unter dem Sitz ist markiert.
+const sucher = { x: 88, y: 80, b: 36, h: 24 };
+---
+
+{
+  teil === "szene" ? (
+    <svg
+      viewBox="0 0 400 132"
+      role="img"
+      aria-label={t(pilot.texte.szene_label)}
+    >
+      <defs>
+        <linearGradient id="szene-strahl-verlauf" x1="0" x2="1">
+          <stop offset="0" stop-color="#45d4c0" stop-opacity="0.2" />
+          <stop offset="1" stop-color="#45d4c0" stop-opacity="0.02" />
+        </linearGradient>
+      </defs>
+
+      <line class="szene__boden" x1="30" y1="118" x2="200" y2="118" />
+      <path
+        class="szene__linie szene__linie--duenn"
+        pathLength="1"
+        d="M56 118L62 80L54 20"
+      />
+      <path
+        class="szene__linie szene__linie--duenn"
+        pathLength="1"
+        d="M66 77V84H140V77M140 84L145 118M60 108H142"
+      />
+      <path
+        class="szene__linie"
+        pathLength="1"
+        d="M52 28C51 18 66 15 69 22L74 52C75 59 64 61 61 55Z"
+      />
+      <rect
+        class="szene__linie"
+        pathLength="1"
+        x="58"
+        y="62"
+        width="92"
+        height="15"
+        rx="7"
+      />
+      <path class="szene__speichen" d="M60 34L65 50M78 69.5H130M138 69.5H142" />
+      <g class="szene__akku">
+        <rect x="96" y="87" width="20" height="11" rx="1.5" />
+      </g>
+
+      <SzenePanel
+        sucher={sucher}
+        name={pilot.produkt.name}
+        daten={pilot.produkt.eckdaten.map((d) => d.wert)}
+        schild={t(pilot.texte.szene_schild)}
+        scan={t(pilot.texte.szene_scan)}
+        seed={2814}
+      />
+    </svg>
+  ) : (
+    <div
+      class="explosion explosion--moebel"
+      id="explosion"
+      data-aktiv={aktiv}
+      style={`aspect-ratio:${vb.b} / ${vb.h}`}
+    >
+      <svg
+        viewBox={`${vb.x} ${vb.y} ${vb.b} ${vb.h}`}
+        role="img"
+        aria-label={pilot.produkt.name}
+      >
+        <defs>
+          <pattern
+            id="raster"
+            width="24"
+            height="24"
+            patternUnits="userSpaceOnUse"
+          >
+            <path d="M24 0H0V24" class="explosion__raster" />
+          </pattern>
+        </defs>
+        <rect
+          x={vb.x}
+          y={vb.y}
+          width={vb.b}
+          height={vb.h}
+          fill="url(#raster)"
+        />
+
+        <g class="explosion__fuehrung">
+          {fuehrung.map((f) => (
+            <line x1={f.von[0]} y1={f.von[1]} x2={f.bis[0]} y2={f.bis[1]} />
+          ))}
+        </g>
+
+        <g
+          class="ebene"
+          data-ebene="etikett"
+          style={`--zu:${versatz.etikett}px`}
+        >
+          <g transform={etikettMatrix} class="schild">
+            <rect x="0" y="0" width={etikett.b} height={etikett.h} rx="1" />
+            {qrModule.map((m) => (
+              <rect class="schild__qr" x={m.x} y={m.y} width="3" height="3" />
+            ))}
+            <rect class="schild__zeile" x="26" y="5" width="11" height="2.4" />
+            <rect class="schild__zeile" x="26" y="11" width="8" height="2.4" />
+            <rect class="schild__zeile" x="26" y="17" width="10" height="2.4" />
+          </g>
+        </g>
+
+        <g
+          class="ebene"
+          data-ebene="gestell"
+          style={`--zu:${versatz.gestell}px`}
+        >
+          {teile.map((b) => (
+            <>
+              <polygon class="flaeche flaeche--rechts" points={b.rechts} />
+              <polygon class="flaeche flaeche--links" points={b.links} />
+              <polygon class="flaeche flaeche--oben gestell" points={b.oben} />
+            </>
+          ))}
+        </g>
+
+        <g
+          class="ebene"
+          data-ebene="polster"
+          style={`--zu:${versatz.polster}px`}
+        >
+          <polygon class="flaeche flaeche--rechts" points={lehne.rechts} />
+          <polygon class="flaeche flaeche--links" points={lehne.links} />
+          <polygon
+            class="flaeche flaeche--oben polster__bezug"
+            points={lehne.oben}
+          />
+          <polygon
+            class="flaeche flaeche--links polster__bezug"
+            points={lehneBezug.links}
+          />
+          <polygon class="flaeche flaeche--rechts" points={schaum.rechts} />
+          <polygon class="flaeche flaeche--links" points={schaum.links} />
+          <polygon
+            class="flaeche flaeche--rechts polster__bezug"
+            points={bezug.rechts}
+          />
+          <polygon
+            class="flaeche flaeche--links polster__bezug"
+            points={bezug.links}
+          />
+          <polygon class="flaeche flaeche--oben polster" points={bezug.oben} />
+          <path class="polster__naht" d={naehte} />
+        </g>
+      </svg>
+
+      {pilot.komponenten.map((k) => (
+        <button
+          type="button"
+          class="hotspot"
+          data-komponente={k.id}
+          style={hotspotPos[k.id]}
+          aria-label={t(k.name)}
+        >
+          <span>{k.nummer}</span>
+        </button>
+      ))}
+    </div>
+  )
+}
