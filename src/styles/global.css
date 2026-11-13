@@ -547,6 +547,45 @@ fieldset.schritt--lang legend {
   flex-shrink: 0;
 }
 
+.weitere-gruppen {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--farbe-rand);
+}
+
+.weitere-gruppen h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.weitere-gruppen__liste {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  gap: 0.6rem;
+}
+
+.weitere-gruppen__liste li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.7rem 1rem;
+  border: 1px dashed var(--farbe-rand);
+  border-radius: var(--radius);
+  opacity: 0.75;
+  cursor: default;
+}
+
+.weitere-gruppen__name {
+  font-weight: 500;
+}
+
+.weitere-gruppen__stand {
+  font-size: 0.85rem;
+}
+
 .fehler {
   color: var(--farbe-ampel-rot);
   font-size: 0.9rem;

@@ -1,20 +1,146 @@
 {
   "produktgruppen": [
-    { "id": "batterien", "name": { "de": "Batterien", "en": "Batteries" } },
-    { "id": "stahl", "name": { "de": "Stahl", "en": "Steel" } },
-    { "id": "textil", "name": { "de": "Textil", "en": "Textiles" } },
-    { "id": "moebel", "name": { "de": "Möbel", "en": "Furniture" } },
+    {
+      "id": "batterien",
+      "name": {
+        "de": "Batterien",
+        "en": "Batteries"
+      }
+    },
+    {
+      "id": "stahl",
+      "name": {
+        "de": "Stahl",
+        "en": "Steel"
+      }
+    },
+    {
+      "id": "textil",
+      "name": {
+        "de": "Textil",
+        "en": "Textiles"
+      }
+    },
+    {
+      "id": "moebel",
+      "name": {
+        "de": "Möbel",
+        "en": "Furniture"
+      }
+    },
     {
       "id": "bauprodukte",
-      "name": { "de": "Bauprodukte", "en": "Construction products" }
+      "name": {
+        "de": "Bauprodukte",
+        "en": "Construction products"
+      }
     }
   ],
-
+  "weitere_gruppen": {
+    "titel": {
+      "de": "Noch nicht im Check",
+      "en": "Not yet in the check"
+    },
+    "text": {
+      "de": "Diese Produktgruppen sind vom Digitalen Produktpass voraussichtlich betroffen, liegen aber zu weit in der Zukunft oder haben eine zu unsichere Datenlage. Sie sind deshalb nicht Teil des Tools.",
+      "en": "These product groups are expected to be affected by the Digital Product Passport, but are too far in the future or the data basis is too uncertain. They are therefore not part of the tool."
+    },
+    "quelle": "https://eudigitalproductpassport.org/de/regulations/delegated-acts",
+    "gruppen": [
+      {
+        "id": "aluminium",
+        "name": {
+          "de": "Aluminium",
+          "en": "Aluminium"
+        },
+        "stand": {
+          "de": "Vorstudie, Rechtsakt erwartet 2028 bis 2029",
+          "en": "Preparatory study, act expected 2028 to 2029"
+        }
+      },
+      {
+        "id": "matratzen",
+        "name": {
+          "de": "Matratzen",
+          "en": "Mattresses"
+        },
+        "stand": {
+          "de": "Vorstudie, Rechtsakt erwartet 2028 bis 2029",
+          "en": "Preparatory study, act expected 2028 to 2029"
+        }
+      },
+      {
+        "id": "reifen",
+        "name": {
+          "de": "Reifen",
+          "en": "Tyres"
+        },
+        "stand": {
+          "de": "Vorstudie, Rechtsakt erwartet 2028",
+          "en": "Preparatory study, act expected 2028"
+        }
+      },
+      {
+        "id": "ikt",
+        "name": {
+          "de": "Unterhaltungselektronik und IKT",
+          "en": "Consumer electronics and ICT"
+        },
+        "stand": {
+          "de": "Vorstudie, Rechtsakt erwartet 2028",
+          "en": "Preparatory study, act expected 2028"
+        }
+      },
+      {
+        "id": "spielzeug",
+        "name": {
+          "de": "Spielzeug",
+          "en": "Toys"
+        },
+        "stand": {
+          "de": "Pflicht-Pass ab 01.08.2030 (VO (EU) 2025/2509)",
+          "en": "Mandatory passport from 1 Aug 2030 (Reg. (EU) 2025/2509)"
+        }
+      },
+      {
+        "id": "wasch-reinigungsmittel",
+        "name": {
+          "de": "Wasch- und Reinigungsmittel, Tenside",
+          "en": "Detergents, cleaning products and surfactants"
+        },
+        "stand": {
+          "de": "Gilt ab 23.09.2029 (VO (EU) 2026/405)",
+          "en": "Applies from 23 Sep 2029 (Reg. (EU) 2026/405)"
+        }
+      },
+      {
+        "id": "chemikalien",
+        "name": {
+          "de": "Chemikalien",
+          "en": "Chemicals"
+        },
+        "stand": {
+          "de": "Keine delegierte Rechtsgrundlage, in Prüfung",
+          "en": "No delegated legal basis, under review"
+        }
+      },
+      {
+        "id": "schuhe",
+        "name": {
+          "de": "Schuhe",
+          "en": "Footwear"
+        },
+        "stand": {
+          "de": "Keine delegierte Rechtsgrundlage, in Prüfung",
+          "en": "No delegated legal basis, under review"
+        }
+      }
+    ]
+  },
   "fortschritt_vorlage": {
     "de": "Schritt {n} von {gesamt}",
     "en": "Step {n} of {gesamt}"
   },
-
   "schritt1": {
     "titel": {
       "de": "Welche Produktgruppe betrifft Sie?",
@@ -24,6 +150,7 @@
       "de": "Bitte wählen Sie eine Produktgruppe. Für weitere Gruppen starten Sie den Check erneut.",
       "en": "Please select one product group. To check further groups, start the check again."
     },
+    "quelle_label": { "de": "Quelle", "en": "Source" },
     "fehler_keine_auswahl": {
       "de": "Bitte wählen Sie eine Produktgruppe aus.",
       "en": "Please select a product group."
@@ -49,16 +176,26 @@
     "de": "Bitte wählen Sie eine Antwort aus.",
     "en": "Please select an answer."
   },
-
   "antworten": {
-    "ja": { "de": "Ja", "en": "Yes" },
-    "nein": { "de": "Nein", "en": "No" }
+    "ja": {
+      "de": "Ja",
+      "en": "Yes"
+    },
+    "nein": {
+      "de": "Nein",
+      "en": "No"
+    }
   },
   "buttons": {
-    "weiter": { "de": "Weiter", "en": "Next" },
-    "zurueck": { "de": "Zurück", "en": "Back" }
+    "weiter": {
+      "de": "Weiter",
+      "en": "Next"
+    },
+    "zurueck": {
+      "de": "Zurück",
+      "en": "Back"
+    }
   },
-
   "uebersicht": {
     "titel": {
       "de": "Ihre ausgewählten Produktgruppen",
@@ -73,7 +210,6 @@
       "en": "No selection found. Please start the check again."
     }
   },
-
   "rollenergebnis": {
     "weiter_hinweis": {
       "de": "Erste Einschätzung auf Basis Ihrer Angaben, keine abschließende rechtliche Bewertung.",
