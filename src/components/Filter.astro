@@ -8,6 +8,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = (feld: Record<"de" | "en", string>) => feld[lang];
 const gruppen = filter.produktgruppen;
+const weitere = filter.weitere_gruppen;
 
 interface Zweisprachig {
   de: string;
@@ -87,6 +88,27 @@ const texteFuerClient = {
         <button type="button" class="button" data-weiter="1"
           >{t(filter.buttons.weiter)}</button
         >
+      </div>
+
+      <div class="weitere-gruppen">
+        <h3>{t(weitere.titel)}</h3>
+        <p class="hinweis-text">{t(weitere.text)}</p>
+        <ul class="weitere-gruppen__liste">
+          {
+            weitere.gruppen.map((g) => (
+              <li>
+                <span class="weitere-gruppen__name">{t(g.name)}</span>
+                <span class="weitere-gruppen__stand">{t(g.stand)}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="hinweis-text">
+          {t(filter.schritt1.quelle_label)}:
+          <a href={weitere.quelle} target="_blank" rel="noopener noreferrer"
+            >eudigitalproductpassport.org</a
+          >
+        </p>
       </div>
     </fieldset>
 
