@@ -1,0 +1,1085 @@
+{
+  "id": "stahl",
+  "eyebrow": {
+    "de": "DPP-Pilot · Stahl",
+    "en": "DPP pilot · Steel"
+  },
+  "titel": {
+    "de": "So könnte ein digitaler Produktpass für Stahl aussehen",
+    "en": "What a digital product passport for steel could look like"
+  },
+  "einleitung": {
+    "de": "Für Eisen und Stahl ist der Digitale Produktpass noch nicht vorgeschrieben: Den delegierten Rechtsakt plant die EU-Kommission für das vierte Quartal 2026. Wie der Pass aussehen könnte, zeigt ein Entwurf ihrer Gemeinsamen Forschungsstelle (JRC) vom März 2026. Am Beispiel eines warmgewalzten Stahl-Coils zeigen wir, welche Stufen der Herstellung welche Daten liefern und was Einkäufer, Recycler und Behörden nach diesem Vorschlag im Pass sehen würden.",
+    "en": "The Digital Product Passport is not yet mandatory for iron and steel: the European Commission plans the delegated act for the fourth quarter of 2026. A draft by its Joint Research Centre (JRC) from March 2026 shows what the passport could look like. Using a hot-rolled steel coil as an example, we show which production stages provide which data and what buyers, recyclers and authorities would see in the passport under this proposal."
+  },
+  "einleitung_quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/iron-steel_en",
+  "beispiel_hinweis": {
+    "de": "Fiktives Beispiel: Produkt, Hersteller und alle Werte sind erfunden und dienen nur der Veranschaulichung.",
+    "en": "Fictitious example: product, manufacturer and all values are made up for illustration only."
+  },
+  "vorbehalt": {
+    "titel": {
+      "de": "Entwurf auf Basis der Vorstudie",
+      "en": "Draft based on the preparatory study"
+    },
+    "text": {
+      "de": "Dieser Pass ist kein gültiges Muster. Datenpunkte, Zugriffsstufen und Granularität folgen dem Entwurf der JRC vom März 2026, der als Input für den delegierten Rechtsakt zu Eisen und Stahl dient. Der endgültige Inhalt kann abweichen, insbesondere bei CO₂-Fußabdruck und Rezyklatanteil, deren Methoden noch entwickelt werden.",
+      "en": "This passport is not a valid template. Data points, access levels and granularity follow the JRC draft from March 2026, which serves as input for the delegated act on iron and steel. The final content may differ, in particular for the carbon footprint and recycled content, whose methods are still being developed."
+    },
+    "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+  },
+  "texte": {
+    "szene_label": {
+      "de": "Warmband-Coil auf dem Auflager mit vergrößertem Etikett: Es trägt den QR-Code zum Produktpass.",
+      "en": "Hot-rolled coil on its cradle with magnified label: it carries the QR code to the product passport."
+    },
+    "szene_schild": {
+      "de": "Coil-Etikett",
+      "en": "Coil label"
+    },
+    "szene_scan": {
+      "de": "Scan → Produktpass",
+      "en": "Scan → product passport"
+    },
+    "register_label": {
+      "de": "Bereiche des Produktpasses",
+      "en": "Sections of the product passport"
+    },
+    "dp_gesamt": {
+      "de": "Datenpunkte im Vorschlag",
+      "en": "Data points in the proposal"
+    },
+    "dp_relevant": {
+      "de": "davon als Pflicht vorgeschlagen",
+      "en": "of which proposed as mandatory"
+    },
+    "dp_status": {
+      "freiwillig": {
+        "de": "freiwillig",
+        "en": "voluntary"
+      },
+      "offen": {
+        "de": "noch offen",
+        "en": "still open"
+      }
+    },
+    "marke": {
+      "de": "Digital Product Passport",
+      "en": "Digital Product Passport"
+    }
+  },
+  "produkt": {
+    "name": "Nordstahl Warmband",
+    "typ": {
+      "de": "Warmgewalztes Band (Coil), Stahl-Zwischenprodukt",
+      "en": "Hot-rolled coil, intermediate steel product"
+    },
+    "hersteller": "Musterstahl GmbH",
+    "pass_id": "DPP-DE-MST-HRC01-H583921",
+    "eckdaten": [
+      {
+        "label": {
+          "de": "Gewicht",
+          "en": "Weight"
+        },
+        "wert": "24,6 t"
+      },
+      {
+        "label": {
+          "de": "Sorte",
+          "en": "Grade"
+        },
+        "wert": "S355MC"
+      },
+      {
+        "label": {
+          "de": "Dicke × Breite",
+          "en": "Thickness × width"
+        },
+        "wert": "3,0 × 1.250 mm"
+      },
+      {
+        "label": {
+          "de": "Rezyklatanteil",
+          "en": "Recycled content"
+        },
+        "wert": "17 %"
+      }
+    ]
+  },
+  "schritte": [
+    {
+      "titel": {
+        "de": "QR-Code am Coil-Etikett",
+        "en": "QR code on the coil label"
+      },
+      "text": {
+        "de": "Das Coil soll über einen Datenträger wie einen QR-Code zum Pass führen. Der JRC-Entwurf schlägt die Schmelznummer als Kennung je Charge vor. Eine Kennung je Coil wäre nur in Sonderfällen vorgesehen, wenn sie in der Branche ohnehin üblich ist.",
+        "en": "The coil is to lead to the passport via a data carrier such as a QR code. The JRC draft proposes the heat number as the identifier per batch. An identifier per coil would only be provided in special cases where it is already common in the industry."
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    },
+    {
+      "titel": {
+        "de": "Daten aus Stahlwerk und Walzwerk",
+        "en": "Data from steel mill and rolling mill"
+      },
+      "text": {
+        "de": "Rohstofflieferanten, Stahlwerk und Walzwerk liefern Werkszeugnis-Daten, Stoffangaben, Rezyklatanteil und Daten für den CO₂-Fußabdruck. Verantwortlich für den Pass ist, wer das Stahlprodukt in der EU in Verkehr bringt, bei Herstellern außerhalb der EU der Importeur.",
+        "en": "Raw material suppliers, steel mill and rolling mill contribute mill test certificate data, substance information, recycled content and data for the carbon footprint. The party placing the steel product on the EU market is responsible for the passport, for manufacturers outside the EU the importer."
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    },
+    {
+      "titel": {
+        "de": "Gestufter Zugriff",
+        "en": "Tiered access"
+      },
+      "text": {
+        "de": "Vieles soll für alle sichtbar sein, etwa Sorte, Herkunft und CO₂-Fußabdruck. Berechnungsparameter, Werkszeugnis-Werte und Details zum Rezyklat sehen nur Berechtigte, Nachweise nur Behörden. Bei den besorgniserregenden Stoffen ist die Stufe im Entwurf nicht einheitlich.",
+        "en": "Much is to be visible to everyone, such as grade, origin and carbon footprint. Calculation parameters, mill test certificate values and details on recycled content are only visible to persons with a legitimate interest, evidence only to authorities. For substances of concern, the level is not consistent in the draft."
+      },
+      "zugriffsstufen_zeigen": true,
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    }
+  ],
+  "zugriffsstufen": [
+    {
+      "id": "oeffentlich",
+      "name": {
+        "de": "Öffentlich",
+        "en": "Public"
+      },
+      "wer": {
+        "de": "Alle, z. B. Einkäufer und Kunden",
+        "en": "Everyone, e.g. buyers and customers"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    },
+    {
+      "id": "berechtigt",
+      "name": {
+        "de": "Berechtigtes Interesse",
+        "en": "Legitimate interest"
+      },
+      "wer": {
+        "de": "z. B. Recyclingbetriebe",
+        "en": "e.g. recycling operators"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    },
+    {
+      "id": "behoerden",
+      "name": {
+        "de": "Behörden",
+        "en": "Authorities"
+      },
+      "wer": {
+        "de": "Benannte Stellen, Marktüberwachung, Zoll, EU-Kommission",
+        "en": "Notified bodies, market surveillance, customs, European Commission"
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    }
+  ],
+  "komponenten": [
+    {
+      "id": "etikett",
+      "ebene": "etikett",
+      "nummer": "01",
+      "name": {
+        "de": "Coil-Etikett & QR-Code",
+        "en": "Coil label & QR code"
+      },
+      "text": {
+        "de": "Das Etikett am Coil trägt Schmelznummer, Sorte und Maße, der QR-Code führt zum Pass. Dort bleiben Kennung, Hersteller und Warennummer abrufbar, auch wenn das Etikett beschädigt wird oder verloren geht.",
+        "en": "The label on the coil carries heat number, grade and dimensions, the QR code leads to the passport. There, identifier, manufacturer and commodity code remain available even if the label is damaged or lost."
+      },
+      "lieferant": {
+        "de": "Hersteller (Werk)",
+        "en": "Manufacturer (plant)"
+      },
+      "felder": ["kennung", "hersteller", "kategorie", "coil_serie"]
+    },
+    {
+      "id": "coil",
+      "ebene": "coil",
+      "nummer": "02",
+      "name": {
+        "de": "Stahlband (Coil)",
+        "en": "Steel strip (coil)"
+      },
+      "text": {
+        "de": "Beim Warmwalzen entsteht aus der Bramme das Band mit seinen Maßen und seinem Gewicht. Sorte und Kennwerte stammen aus dem Werkszeugnis. Die vollständigen Werkszeugnis-Werte wären freiwillig und für Berechtigte gedacht.",
+        "en": "In hot rolling, the slab becomes the strip with its dimensions and weight. Grade and properties come from the mill test certificate. The full mill test certificate values would be voluntary and intended for persons with a legitimate interest."
+      },
+      "lieferant": {
+        "de": "Walzwerk, Qualitätssicherung",
+        "en": "Rolling mill, quality assurance"
+      },
+      "felder": ["guete", "mtc", "cbam", "dop"]
+    },
+    {
+      "id": "schmelze",
+      "ebene": "bramme",
+      "nummer": "03",
+      "name": {
+        "de": "Schmelze & Bramme (Stahlwerk)",
+        "en": "Heat & slab (steel mill)"
+      },
+      "text": {
+        "de": "Im Stahlwerk entsteht je Schmelze (Heat) die chemische Zusammensetzung. Hier liegen Herstellungsverfahren, Schmelz- und Gießland sowie die Angaben zu besorgniserregenden Stoffen, jeweils je Schmelze.",
+        "en": "In the steel mill, the chemical composition is created per heat. This is where the production route, country of melt and pour and the information on substances of concern originate, each per heat."
+      },
+      "lieferant": {
+        "de": "Stahlwerk (Hochofen/Konverter oder Elektroofen)",
+        "en": "Steel mill (blast furnace/converter or electric arc furnace)"
+      },
+      "felder": ["route", "herkunft", "stoffe", "eol"]
+    },
+    {
+      "id": "umwelt",
+      "ebene": "bramme",
+      "nummer": "04",
+      "name": {
+        "de": "CO₂-Fußabdruck & Rezyklat",
+        "en": "Carbon footprint & recycled content"
+      },
+      "text": {
+        "de": "Die Umweltdaten entstehen schon bei Rohstoffen und Schmelze: Erz oder Eisenschwamm, Schrottanteil, Energie. Vorgeschlagen sind eine CO₂-Fußabdruck-Erklärung und der Rezyklatanteil mit Aufteilung nach Schrottart, jeweils mit Konformitätsnachweis.",
+        "en": "The environmental data arise as early as raw materials and heat: ore or sponge iron, scrap share, energy. A carbon footprint declaration and the recycled content split by scrap type are proposed, each with a conformity certificate."
+      },
+      "lieferant": {
+        "de": "Rohstofflieferanten, Stahlwerk, Hersteller",
+        "en": "Raw material suppliers, steel mill, manufacturer"
+      },
+      "felder": ["fussabdruck", "rezyklat", "rezyklat_split", "nachweis"]
+    }
+  ],
+  "pass": {
+    "abschnitte": [
+      {
+        "id": "identifikation",
+        "titel": {
+          "de": "Produkt & Hersteller",
+          "en": "Product & manufacturer"
+        },
+        "datenpunkte": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 30],
+        "felder": [
+          {
+            "id": "kennung",
+            "label": {
+              "de": "Schmelznummer und Cast/Los",
+              "en": "Heat number and cast/lot"
+            },
+            "wert": {
+              "de": "Schmelze 583921 · Cast 12",
+              "en": "Heat 583921 · cast 12"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [1, 2]
+          },
+          {
+            "id": "hersteller",
+            "label": {
+              "de": "Hersteller und Werk",
+              "en": "Manufacturer and plant"
+            },
+            "wert": {
+              "de": "Musterstahl GmbH, Musterstadt (DE) · Werk Musterhütte",
+              "en": "Musterstahl GmbH, Musterstadt (DE) · Musterhütte plant"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [7, 8, 10]
+          },
+          {
+            "id": "kategorie",
+            "label": {
+              "de": "Produktkategorie, Warennummer und GTIN",
+              "en": "Product category, commodity code and GTIN"
+            },
+            "wert": {
+              "de": "Warmgewalztes Band · CN 7208 · GTIN folgt",
+              "en": "Hot-rolled coil · CN 7208 · GTIN to follow"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [4, 5, 6]
+          },
+          {
+            "id": "produktnummer",
+            "label": {
+              "de": "Produktnummer (Modellebene)",
+              "en": "Product number (model level)"
+            },
+            "wert": {
+              "de": "HRC-S355MC-3,0×1250",
+              "en": "HRC-S355MC-3.0×1250"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [30]
+          },
+          {
+            "id": "coil_serie",
+            "label": {
+              "de": "Seriennummer je Coil (nur in Sonderfällen)",
+              "en": "Serial number per coil (special cases only)"
+            },
+            "wert": {
+              "de": "Coil C-041733",
+              "en": "Coil C-041733"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [3]
+          },
+          {
+            "id": "bestellung",
+            "label": {
+              "de": "Bestellnummer des Kunden",
+              "en": "Customer order number"
+            },
+            "wert": {
+              "de": "Auftrag 4500-1187",
+              "en": "Order 4500-1187"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [11]
+          },
+          {
+            "id": "kontakt",
+            "label": {
+              "de": "Kontakt für Behörden",
+              "en": "Contact for authorities"
+            },
+            "wert": {
+              "de": "Ansprechperson Produktkonformität",
+              "en": "Product compliance contact"
+            },
+            "stufe": "behoerden",
+            "datenpunkte": [9]
+          }
+        ]
+      },
+      {
+        "id": "material",
+        "titel": {
+          "de": "Stahlsorte & Herkunft",
+          "en": "Steel grade & origin"
+        },
+        "datenpunkte": [12, 13, 14, 15, 16, 17],
+        "felder": [
+          {
+            "id": "guete",
+            "label": {
+              "de": "Stahlsorte und Bezeichnung",
+              "en": "Steel grade and designation"
+            },
+            "wert": {
+              "de": "S355MC · Werkstoffnummer 1.0976",
+              "en": "S355MC · material number 1.0976"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [12, 13]
+          },
+          {
+            "id": "route",
+            "label": {
+              "de": "Herstellungsverfahren",
+              "en": "Production route"
+            },
+            "wert": {
+              "de": "Hochofen und Konverter (BF-BOF)",
+              "en": "Blast furnace and converter (BF-BOF)"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [14]
+          },
+          {
+            "id": "herkunft",
+            "label": {
+              "de": "Ursprungsland, Schmelz- und Gießland, Herstellungsdatum",
+              "en": "Country of origin, country of melt and pour, manufacturing date"
+            },
+            "wert": {
+              "de": "Ursprung DE · geschmolzen und gegossen in DE · gefertigt 03/2027",
+              "en": "Origin DE · melted and cast in DE · manufactured 03/2027"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [15, 16, 17]
+          }
+        ]
+      },
+      {
+        "id": "chemie",
+        "titel": {
+          "de": "Stoffe & Chemikalien",
+          "en": "Substances & chemicals"
+        },
+        "datenpunkte": [18, 19, 31],
+        "felder": [
+          {
+            "id": "stoffe",
+            "label": {
+              "de": "Besorgniserregende Stoffe und Konzentration",
+              "en": "Substances of concern and concentration"
+            },
+            "wert": {
+              "de": "Liste je Schmelze, mit Konzentration",
+              "en": "List per heat, with concentration"
+            },
+            "stufe": "oeffentlich",
+            "status": "unklar",
+            "hinweis": {
+              "de": "Welche Stoffe bei Stahl gelistet werden, ist in der Konsultation noch offen: In der Diskussion sind u. a. Blei sowie Kupfer und Zinn, eine erweiterte Option würde alle nach CLP eingestuften Stoffe umfassen. Auch die Zugriffsstufe ist im Entwurf nicht einheitlich: Kap. 9.2 sieht öffentlichen Zugriff vor, die Zusammenfassung in Kap. 10 „berechtigtes Interesse oder nur Behörden“.",
+              "en": "Which substances will be listed for steel is still open in the consultation: lead as well as copper and tin are under discussion, among others; an extended option would cover all substances classified under CLP. The access level is also not consistent in the draft: Section 9.2 provides for public access, the summary in Section 10 “legitimate interest or authorities only”."
+            },
+            "datenpunkte": [18, 19]
+          },
+          {
+            "id": "eol",
+            "label": {
+              "de": "Hinweise zu Zerlegung und Recycling",
+              "en": "Disassembly and recycling information"
+            },
+            "wert": {
+              "de": "Für Stahl noch nicht ausgestaltet",
+              "en": "Not yet specified for steel"
+            },
+            "stufe": "berechtigt",
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf führt diese Angabe (Art. 7 Abs. 5 Buchst. e) je Schmelze auf, hat aber für Stahl als Zwischenprodukt bisher keine zusätzlichen Pflichtangaben zu Zerlegung oder Entsorgung festgestellt.",
+              "en": "The draft lists this information (Art. 7(5)(e)) per heat, but has so far identified no additional mandatory information on disassembly or disposal for steel as an intermediate product."
+            },
+            "datenpunkte": [31]
+          }
+        ]
+      },
+      {
+        "id": "fussabdruck",
+        "titel": {
+          "de": "CO₂-Fußabdruck & Rezyklat",
+          "en": "Carbon footprint & recycled content"
+        },
+        "datenpunkte": [20, 21, 22, 23, 24, 25],
+        "felder": [
+          {
+            "id": "fussabdruck",
+            "label": {
+              "de": "CO₂-Fußabdruck des Produkts",
+              "en": "Carbon footprint of the product"
+            },
+            "wert": {
+              "de": "Methode folgt im Rechtsakt",
+              "en": "Method to follow in the legal act"
+            },
+            "stufe": "oeffentlich",
+            "status": "unklar",
+            "hinweis": {
+              "de": "Die Berechnungsmethode wird parallel entwickelt und soll mit EU-Emissionshandel, CBAM und EN 15804 abgestimmt sein; Wert und mögliche Leistungsklassen legt erst der delegierte Rechtsakt fest.",
+              "en": "The calculation method is being developed in parallel and is to be aligned with the EU Emissions Trading System, CBAM and EN 15804; the value and possible performance classes will only be set by the delegated act."
+            },
+            "datenpunkte": [20]
+          },
+          {
+            "id": "rezyklat",
+            "label": {
+              "de": "Rezyklatanteil",
+              "en": "Recycled content"
+            },
+            "wert": {
+              "de": "17 % Schrott im Stahl",
+              "en": "17% scrap in the steel"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [23]
+          },
+          {
+            "id": "rezyklat_split",
+            "label": {
+              "de": "Aufteilung in Produktions- und Verbraucherschrott",
+              "en": "Split into pre-consumer and post-consumer scrap"
+            },
+            "wert": {
+              "de": "6 % Produktionsschrott · 11 % Verbraucherschrott",
+              "en": "6% pre-consumer scrap · 11% post-consumer scrap"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [24]
+          },
+          {
+            "id": "parameter",
+            "label": {
+              "de": "Berechnungsparameter des Fußabdrucks",
+              "en": "Footprint calculation parameters"
+            },
+            "wert": {
+              "de": "Eingangsdaten der Berechnung",
+              "en": "Input data of the calculation"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [22]
+          },
+          {
+            "id": "nachweis",
+            "label": {
+              "de": "Konformitätsnachweise (CO₂, Rezyklat)",
+              "en": "Conformity certificates (carbon, recycled content)"
+            },
+            "wert": {
+              "de": "2 Dokumente",
+              "en": "2 documents"
+            },
+            "stufe": "behoerden",
+            "datenpunkte": [21, 25]
+          }
+        ]
+      },
+      {
+        "id": "werkszeugnis",
+        "titel": {
+          "de": "Werkszeugnis & weitere Nachweise (freiwillig)",
+          "en": "Mill test certificate & further evidence (voluntary)"
+        },
+        "datenpunkte": [26, 27, 28, 29],
+        "felder": [
+          {
+            "id": "mtc",
+            "label": {
+              "de": "Werkszeugnis-Werte (chemische Analyse, Kennwerte)",
+              "en": "Mill test certificate values (chemical analysis, properties)"
+            },
+            "wert": {
+              "de": "Streckgrenze 398 MPa · Zugfestigkeit 482 MPa",
+              "en": "Yield strength 398 MPa · tensile strength 482 MPa"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [26]
+          },
+          {
+            "id": "cbam",
+            "label": {
+              "de": "CBAM-Meldekennung",
+              "en": "CBAM report ID"
+            },
+            "wert": {
+              "de": "Verweis auf den CBAM-Bericht",
+              "en": "Reference to the CBAM report"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [27]
+          },
+          {
+            "id": "dop",
+            "label": {
+              "de": "Leistungserklärung (Bauprodukte)",
+              "en": "Declaration of performance (construction products)"
+            },
+            "wert": {
+              "de": "nur falls als Bauprodukt geliefert",
+              "en": "only if supplied as a construction product"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [28]
+          },
+          {
+            "id": "reach",
+            "label": {
+              "de": "REACH-Unterlagen",
+              "en": "REACH documentation"
+            },
+            "wert": {
+              "de": "Verweis auf das Dokument",
+              "en": "Reference to the document"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [29]
+          }
+        ]
+      }
+    ],
+    "datenpunkte": [
+      {
+        "nr": 1,
+        "name": {
+          "de": "Schmelznummer (Heat, EN 10168)",
+          "en": "Heat number (EN 10168)"
+        },
+        "quelle": "Anh. III (b)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 2,
+        "name": {
+          "de": "Cast- oder Losnummer (zusätzlich, falls relevant)",
+          "en": "Cast or lot number (additional, if relevant)"
+        },
+        "quelle": "Anh. III (b)",
+        "stufe": "oeffentlich",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 3,
+        "name": {
+          "de": "Seriennummer je Einzelstück (nur in Sonderfällen, z. B. Coils)",
+          "en": "Serial number per item (special cases only, e.g. coils)"
+        },
+        "quelle": "Anh. III (b)",
+        "stufe": "oeffentlich",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 4,
+        "name": {
+          "de": "Globale Handelsartikelnummer (GTIN)",
+          "en": "Global Trade Item Number (GTIN)"
+        },
+        "quelle": "Anh. III (c)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 5,
+        "name": {
+          "de": "Warennummer (CN/HS, TARIC)",
+          "en": "Commodity code (CN/HS, TARIC)"
+        },
+        "quelle": "Anh. III (d)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 6,
+        "name": {
+          "de": "ESPR-Produktkategorie",
+          "en": "ESPR product category"
+        },
+        "quelle": "Geltungsbereich DA",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 7,
+        "name": {
+          "de": "Kennung der Wirtschaftsakteure (Hersteller, Importeur, weitere; z. B. EORI, LEI, GLN)",
+          "en": "Unique operator identifiers (manufacturer, importer, others; e.g. EORI, LEI, GLN)"
+        },
+        "quelle": "Anh. III (h)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 8,
+        "name": {
+          "de": "Name, Marke und Anschrift von Hersteller bzw. Importeur",
+          "en": "Name, trademark and address of manufacturer or importer"
+        },
+        "quelle": "Anh. III (g), (j)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 9,
+        "name": {
+          "de": "Kontaktdaten von Hersteller bzw. Importeur",
+          "en": "Contact details of manufacturer or importer"
+        },
+        "quelle": "Anh. III (g), (j)",
+        "stufe": "behoerden",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 10,
+        "name": {
+          "de": "Kennung der Produktionsstätte (UFI)",
+          "en": "Unique facility identifier (UFI)"
+        },
+        "quelle": "Anh. III (i)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 11,
+        "name": {
+          "de": "Bestellnummer des Kunden (EN 10168)",
+          "en": "Customer order number (EN 10168)"
+        },
+        "quelle": "Branchenpraxis",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 12,
+        "name": {
+          "de": "Stahlsorte (Klassifizierung nach EN 10020)",
+          "en": "Steel grade classification (EN 10020)"
+        },
+        "quelle": "Branchenpraxis",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 13,
+        "name": {
+          "de": "Stahlbezeichnung (EN 10027-2)",
+          "en": "Steel designation (EN 10027-2)"
+        },
+        "quelle": "Branchenpraxis",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 14,
+        "name": {
+          "de": "Herstellungsverfahren (Technologieroute)",
+          "en": "Production route (technology route)"
+        },
+        "quelle": "Branchenpraxis",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 15,
+        "name": {
+          "de": "Ursprungsland",
+          "en": "Country of origin"
+        },
+        "quelle": "Branchenpraxis",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 16,
+        "name": {
+          "de": "Schmelz- und Gießland (Melt & Pour)",
+          "en": "Country of melt and pour"
+        },
+        "quelle": "Branchenpraxis",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 17,
+        "name": {
+          "de": "Herstellungsdatum",
+          "en": "Manufacturing date"
+        },
+        "quelle": "Branchenpraxis",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 18,
+        "name": {
+          "de": "Besorgniserregende Stoffe (Name, CAS-/EC-Nummer)",
+          "en": "Substances of concern (name, CAS/EC number)"
+        },
+        "quelle": "Art. 7(5)(a)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 19,
+        "name": {
+          "de": "Konzentration der Stoffe (Wert, Höchstwert oder Spanne)",
+          "en": "Concentration of substances (value, maximum or range)"
+        },
+        "quelle": "Art. 7(5)(c)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 20,
+        "name": {
+          "de": "CO₂-Fußabdruck des Produkts (Erklärung)",
+          "en": "Product carbon footprint (declaration)"
+        },
+        "quelle": "Anh. I (n), Art. 5(1)(o)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 21,
+        "name": {
+          "de": "Konformitätsnachweis CO₂-Fußabdruck",
+          "en": "Conformity certification, carbon footprint"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "behoerden",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 22,
+        "name": {
+          "de": "Berechnungsparameter des CO₂-Fußabdrucks",
+          "en": "Carbon footprint calculation parameters"
+        },
+        "quelle": "JRC-Entwurf, Tab. 15",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 23,
+        "name": {
+          "de": "Rezyklatanteil (Erklärung)",
+          "en": "Recycled content (declaration)"
+        },
+        "quelle": "Anh. I (h), Art. 5(1)(k)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 24,
+        "name": {
+          "de": "Aufteilung in Produktions- und Verbraucherschrott",
+          "en": "Pre-/post-consumer material split"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 25,
+        "name": {
+          "de": "Konformitätsnachweis Rezyklat",
+          "en": "Conformity certification, recycled content"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "behoerden",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 26,
+        "name": {
+          "de": "Werkszeugnis-Werte (EN 10204)",
+          "en": "Mill test certificate values (EN 10204)"
+        },
+        "quelle": "Art. 7(2)(b)",
+        "stufe": "berechtigt",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 27,
+        "name": {
+          "de": "CBAM-Meldekennung",
+          "en": "CBAM report ID"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "berechtigt",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 28,
+        "name": {
+          "de": "Leistungserklärung nach Bauproduktenverordnung (DoP)",
+          "en": "Declaration of performance under the Construction Products Regulation (DoP)"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "berechtigt",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 29,
+        "name": {
+          "de": "REACH-Unterlagen",
+          "en": "REACH documentation"
+        },
+        "quelle": "Anh. III (e)",
+        "stufe": "berechtigt",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 30,
+        "name": {
+          "de": "Produktnummer (Modellebene, EN 10168)",
+          "en": "Product number (model level, EN 10168)"
+        },
+        "quelle": "Anh. III (b)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 31,
+        "name": {
+          "de": "Hinweise zu Zerlegung, Wiederverwendung, Recycling und Entsorgung",
+          "en": "Information on disassembly, reuse, recycling and end-of-life management"
+        },
+        "quelle": "Art. 7(5)(e)",
+        "stufe": "berechtigt",
+        "relevanz": "offen"
+      }
+    ],
+    "datenpunkte_quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf",
+    "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf",
+    "gliederung_quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+  },
+  "lieferkette": [
+    {
+      "id": "rohstoffe",
+      "rolle": {
+        "de": "Rohstoffe",
+        "en": "Raw materials"
+      },
+      "beispiel": {
+        "de": "Erzlieferant, Schrotthändler",
+        "en": "Ore supplier, scrap dealer"
+      },
+      "liefert": {
+        "de": [
+          "Herkunft von Erz oder Eisenschwamm",
+          "Schrottart (Produktions- oder Verbraucherschrott)",
+          "Daten für den CO₂-Fußabdruck"
+        ],
+        "en": [
+          "Origin of ore or sponge iron",
+          "Type of scrap (pre-consumer or post-consumer)",
+          "Data for the carbon footprint"
+        ]
+      }
+    },
+    {
+      "id": "schmelze",
+      "rolle": {
+        "de": "Schmelze & Guss",
+        "en": "Melting & casting"
+      },
+      "beispiel": {
+        "de": "Stahlwerk",
+        "en": "Steel mill"
+      },
+      "liefert": {
+        "de": [
+          "Schmelznummer und chemische Analyse",
+          "Stoffangaben je Schmelze",
+          "Herstellungsverfahren, Schmelz- und Gießland"
+        ],
+        "en": [
+          "Heat number and chemical analysis",
+          "Substance information per heat",
+          "Production route, country of melt and pour"
+        ]
+      }
+    },
+    {
+      "id": "walzwerk",
+      "rolle": {
+        "de": "Walzen & Veredeln",
+        "en": "Rolling & finishing"
+      },
+      "beispiel": {
+        "de": "Warmbandwalzwerk",
+        "en": "Hot strip mill"
+      },
+      "liefert": {
+        "de": [
+          "Produktionsstätte (UFI)",
+          "Herstellungsdatum und Coil-Kennung",
+          "Werkszeugnis mit Kennwerten"
+        ],
+        "en": [
+          "Production facility (UFI)",
+          "Manufacturing date and coil identifier",
+          "Mill test certificate with properties"
+        ]
+      }
+    },
+    {
+      "id": "hersteller",
+      "rolle": {
+        "de": "Hersteller / Importeur",
+        "en": "Manufacturer / importer"
+      },
+      "beispiel": {
+        "de": "Verantwortlich für den Pass",
+        "en": "Responsible for the passport"
+      },
+      "verantwortlich": true,
+      "liefert": {
+        "de": [
+          "Pass anlegen und QR-Code am Coil anbringen",
+          "CO₂-Fußabdruck und Rezyklat erklären, Konformität nachweisen",
+          "Kennung im EU-Register hinterlegen"
+        ],
+        "en": [
+          "Create passport and attach QR code to the coil",
+          "Declare carbon footprint and recycled content, prove conformity",
+          "Register identifier in the EU registry"
+        ]
+      }
+    },
+    {
+      "id": "weiterverarbeitung",
+      "rolle": {
+        "de": "Weiterverarbeitung",
+        "en": "Further processing"
+      },
+      "beispiel": {
+        "de": "Service-Center, Umformer",
+        "en": "Service centre, forming shop"
+      },
+      "liefert": {
+        "de": [
+          "Gültige Daten der Vorstufe übernehmen",
+          "Geänderte Angaben neu erklären, z. B. Oberfläche",
+          "Bei Inverkehrbringen unter eigenem Namen: Herstellerpflichten"
+        ],
+        "en": [
+          "Inherit valid data from the previous stage",
+          "Declare changed information anew, e.g. surface",
+          "When placing on the market under own name: manufacturer obligations"
+        ]
+      }
+    },
+    {
+      "id": "recycling",
+      "rolle": {
+        "de": "Nutzung & Recycling",
+        "en": "Use & recycling"
+      },
+      "beispiel": {
+        "de": "Stahlverarbeiter, Schrotthandel, Recycler",
+        "en": "Steel processors, scrap trade, recyclers"
+      },
+      "liefert": {
+        "de": [
+          "Stoffangaben für die Schrottqualität",
+          "Rezyklatanteil und Herkunft des Stahls"
+        ],
+        "en": [
+          "Substance information for scrap quality",
+          "Recycled content and origin of the steel"
+        ]
+      }
+    }
+  ],
+  "lieferkette_quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf",
+  "quellen": [
+    {
+      "label": {
+        "de": "JRC (2026): Study on DPP content for iron and steel products under ESPR (Datenpunkte, Granularität, Zugriffsrechte)",
+        "en": "JRC (2026): Study on DPP content for iron and steel products under ESPR (data points, granularity, access rights)"
+      },
+      "url": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    },
+    {
+      "label": {
+        "de": "JRC (2026): ESPR Iron & Steel, Folien zur zweiten Stakeholder-Konsultation vom 13. April 2026",
+        "en": "JRC (2026): ESPR Iron & Steel, slides of the second stakeholder consultation of 13 April 2026"
+      },
+      "url": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-04/JRC_2SHC_ESPR_Steel_13April2026SentSH.pdf"
+    },
+    {
+      "label": {
+        "de": "Verordnung (EU) 2024/1781 (ESPR), Art. 9–13 und Anhang III (Digitaler Produktpass)",
+        "en": "Regulation (EU) 2024/1781 (ESPR), Art. 9–13 and Annex III (Digital Product Passport)"
+      },
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng"
+    },
+    {
+      "label": {
+        "de": "EU-Kommission: Digitaler Produktpass für Eisen und Stahl",
+        "en": "European Commission: Digital Product Passport for iron and steel"
+      },
+      "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/iron-steel_en"
+    }
+  ]
+}

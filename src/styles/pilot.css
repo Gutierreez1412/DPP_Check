@@ -775,6 +775,67 @@ body.breit :is(main, .seite-kopf__innen, .seite-fuss__innen) {
   filter: drop-shadow(0 0 3px var(--p-akzent));
 }
 
+/* Stahl: Bramme (Stahlwerk), aufgewickeltes Coil und Etikett als Ebenen. */
+.bramme__spuren {
+  fill: none;
+  stroke: rgba(173, 214, 224, 0.14);
+  stroke-width: 0.8;
+  stroke-dasharray: 6 4;
+  transition: stroke 0.35s ease;
+}
+
+.coil__ringe {
+  fill: none;
+  stroke: rgba(173, 214, 224, 0.16);
+  stroke-width: 0.8;
+  transition: stroke 0.35s ease;
+}
+
+.coil__auge {
+  fill: #0b141a;
+  stroke: rgba(173, 214, 224, 0.4);
+  stroke-width: 0.8;
+}
+
+.explosion--stahl[data-aktiv="etikett"] .ebene[data-ebene="etikett"],
+.explosion--stahl[data-aktiv="coil"] .ebene[data-ebene="coil"],
+.explosion--stahl[data-aktiv="schmelze"] .ebene[data-ebene="bramme"],
+.explosion--stahl[data-aktiv="umwelt"] .ebene[data-ebene="bramme"] {
+  opacity: 1;
+}
+
+.explosion--stahl[data-aktiv="coil"] [data-ebene="coil"] .flaeche,
+.explosion--stahl[data-aktiv="schmelze"] [data-ebene="bramme"] .flaeche {
+  stroke: var(--p-akzent);
+}
+
+.explosion--stahl[data-aktiv="coil"] .coil,
+.explosion--stahl[data-aktiv="schmelze"] .bramme {
+  fill: #2f6e69;
+}
+
+.explosion--stahl[data-aktiv="coil"] .coil__ringe,
+.explosion--stahl[data-aktiv="schmelze"] .bramme__spuren {
+  stroke: rgba(69, 212, 192, 0.5);
+}
+
+.explosion--stahl[data-aktiv="umwelt"] [data-ebene="bramme"] .flaeche {
+  stroke: var(--p-berechtigt);
+}
+
+.explosion--stahl[data-aktiv="umwelt"] .bramme {
+  fill: #4a4630;
+}
+
+.explosion--stahl[data-aktiv="umwelt"] .bramme__spuren {
+  stroke: rgba(242, 193, 78, 0.45);
+}
+
+.explosion--stahl[data-aktiv="etikett"] .schild rect:first-child {
+  fill: #ffffff;
+  filter: drop-shadow(0 0 3px var(--p-akzent));
+}
+
 .hotspot {
   position: absolute;
   translate: -50% -50%;

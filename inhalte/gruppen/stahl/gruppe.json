@@ -1,0 +1,145 @@
+{
+  "id": "stahl",
+  "name": {
+    "de": "Stahl",
+    "en": "Steel"
+  },
+  "definition": {
+    "de": "Für Eisen und Stahl regelt die Ökodesign-Verordnung (ESPR, EU 2024/1781) den Digitalen Produktpass. Erfasst werden Stahl-Zwischenprodukte, vom Halbzeug (z. B. Brammen) bis zum Coil, nicht Endprodukte mit Stahlanteil. Laut JRC-Entwurf umfasst das mindestens warmgewalztes Band, Walzdraht, kaltgewalztes verzinktes Band, Elektroband und nichtrostenden Stahl (Typ 304). Ob auch Endprodukte mit hohem Stahlanteil einbezogen werden, wird noch diskutiert. Verbindlich ist letztlich der delegierte Rechtsakt.",
+    "en": "For iron and steel, the Ecodesign Regulation (ESPR, EU 2024/1781) governs the Digital Product Passport. It covers steel intermediate products, from semi-finished products (e.g. slabs) to coils, not end products containing steel. According to the JRC draft, this includes at least hot-rolled coil, wire rod, galvanised cold-rolled coil, electrical steel and stainless steel (type 304). Whether end products with a high steel content will also be included is still under discussion. Ultimately, the delegated act is binding."
+  },
+  "definition_quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf",
+  "weiterfuehrend": {
+    "label": {
+      "de": "Mehr erfahren: Digitaler Produktpass für Eisen und Stahl bei der EU-Kommission",
+      "en": "Learn more: Digital Product Passport for iron and steel at the European Commission"
+    },
+    "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/iron-steel_en"
+  },
+  "vorbehalt": {
+    "titel": {
+      "de": "Hinweis: Entwurf einer Vorstudie, noch kein Rechtsakt",
+      "en": "Note: draft of a preparatory study, not yet a legal act"
+    },
+    "text": {
+      "de": "Für Eisen und Stahl gibt es noch keinen delegierten Rechtsakt. Die Angaben zu Inhalten, Datenpunkten und Zugriffsrechten im Check und im Pilot beruhen auf dem Entwurf der Gemeinsamen Forschungsstelle (JRC) der EU-Kommission zu den Pass-Inhalten vom März 2026 und den Folien der Stakeholder-Konsultation vom 13. April 2026. Sie dienen als Grundlage für den Rechtsakt, legen dessen Inhalte aber nicht abschließend fest. Die Methoden zu CO₂-Fußabdruck und Rezyklatanteil werden noch parallel entwickelt.",
+      "en": "There is no delegated act for iron and steel yet. The information on content, data points and access rights in the check and the pilot is based on the draft of the European Commission's Joint Research Centre (JRC) on passport content from March 2026 and the slides of the stakeholder consultation of 13 April 2026. They serve as a basis for the legal act, but do not definitively set its content. The methods for the carbon footprint and recycled content are still being developed in parallel."
+    },
+    "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+  },
+  "zeitstrahl": [
+    {
+      "datum": "2024-07-18",
+      "titel": {
+        "de": "Ökodesign-Verordnung in Kraft",
+        "en": "Ecodesign Regulation in force"
+      },
+      "beschreibung": {
+        "de": "Die ESPR schafft den Rahmen für den Digitalen Produktpass. Welche Produkte ihn wann brauchen, legen erst delegierte Rechtsakte je Produktgruppe fest.",
+        "en": "The ESPR creates the framework for the Digital Product Passport. Which products need it, and when, is only set by delegated acts per product group."
+      },
+      "status": "gilt",
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng"
+    },
+    {
+      "datum": "2025-04-16",
+      "titel": {
+        "de": "Arbeitsplan: Eisen und Stahl hat Vorrang",
+        "en": "Working plan: iron and steel is a priority"
+      },
+      "beschreibung": {
+        "de": "Im ESPR-Arbeitsplan 2025–2030 führt die EU-Kommission Eisen und Stahl als prioritäre Produktgruppe auf. Stahl ist das erste Zwischenprodukt, das die ESPR regeln soll.",
+        "en": "In the ESPR working plan 2025–2030, the European Commission lists iron and steel as a priority product group. Steel is the first intermediate product to be regulated under the ESPR."
+      },
+      "status": "gilt",
+      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/iron-steel_en"
+    },
+    {
+      "datum": "2026-03-23",
+      "titel": {
+        "de": "JRC-Entwurf zu den Pass-Inhalten",
+        "en": "JRC draft on passport content"
+      },
+      "beschreibung": {
+        "de": "Die Gemeinsame Forschungsstelle der Kommission veröffentlicht einen Entwurf zu Datenpunkten, Granularität und Zugriffsrechten des Stahlpasses. Das ist ein Vorschlag, noch keine Pflicht.",
+        "en": "The Commission's Joint Research Centre publishes a draft on data points, granularity and access rights for the steel passport. This is a proposal, not yet an obligation."
+      },
+      "status": "gilt",
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    },
+    {
+      "datum": "2026-04-13",
+      "titel": {
+        "de": "Zweite Stakeholder-Konsultation der JRC",
+        "en": "Second JRC stakeholder consultation"
+      },
+      "beschreibung": {
+        "de": "Die JRC stellt den Entwurf der Vorstudie zu Pass, CO₂-Fußabdruck, Rezyklat und Stoffen vor. Schriftliche Rückmeldungen waren bis zum 11. Mai 2026 möglich.",
+        "en": "The JRC presents the draft preparatory study on the passport, carbon footprint, recycled content and substances. Written feedback was possible until 11 May 2026."
+      },
+      "status": "gilt",
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-04/JRC_2SHC_ESPR_Steel_13April2026SentSH.pdf"
+    },
+    {
+      "datum": "Q4 2026",
+      "titel": {
+        "de": "Delegierter Rechtsakt für Eisen und Stahl",
+        "en": "Delegated act for iron and steel"
+      },
+      "beschreibung": {
+        "de": "Die EU-Kommission plant laut ESPR-Arbeitsplan, den delegierten Rechtsakt mit den Anforderungen für Eisen- und Stahlprodukte im 4. Quartal 2026 zu beschließen. Der Zeitplan kann sich ändern.",
+        "en": "According to the ESPR working plan, the European Commission plans to adopt the delegated act setting requirements for iron and steel products in the fourth quarter of 2026. The timeline may change."
+      },
+      "status": "geplant",
+      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/iron-steel_en"
+    },
+    {
+      "datum": "TBD",
+      "titel": {
+        "de": "Produktpass wird Pflicht",
+        "en": "Product passport becomes mandatory"
+      },
+      "beschreibung": {
+        "de": "Ab wann Stahlprodukte einen Produktpass brauchen, legt erst der delegierte Rechtsakt fest. Nach der ESPR gelten neue Anforderungen grundsätzlich frühestens 18 Monate nach dessen Inkrafttreten.",
+        "en": "When steel products will need a product passport is only set by the delegated act. Under the ESPR, new requirements generally apply no earlier than 18 months after it enters into force."
+      },
+      "status": "unklar",
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng"
+    }
+  ],
+  "faq": [
+    {
+      "frage": {
+        "de": "Gibt es Überschneidungen mit dem Produktpass für Bauprodukte?",
+        "en": "Is there an overlap with the product passport for construction products?"
+      },
+      "antwort": {
+        "de": "Ja. Die überarbeitete Bauproduktenverordnung sieht einen eigenen Produktpass vor, der auch viele Stahlprodukte wie Bewehrungsstahl oder Profile betrifft. Der JRC-Entwurf hält deshalb ein hohes Maß an Interoperabilität zwischen beiden Pässen für nötig, vor allem bei der Produktkennung.",
+        "en": "Yes. The revised Construction Products Regulation provides for its own product passport, which also affects many steel products such as rebar or profiles. The JRC draft therefore considers a high degree of interoperability between the two passports necessary, especially for product identification."
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    },
+    {
+      "frage": {
+        "de": "Ab wann brauche ich für Stahl einen Digitalen Produktpass?",
+        "en": "From when do I need a Digital Product Passport for steel?"
+      },
+      "antwort": {
+        "de": "Das steht noch nicht fest. Die EU-Kommission plant den delegierten Rechtsakt für Eisen und Stahl für das 4. Quartal 2026. Erst dieser Rechtsakt legt fest, ab wann der Pass Pflicht wird und was genau er enthalten muss.",
+        "en": "This has not been decided yet. The European Commission plans the delegated act for iron and steel for the fourth quarter of 2026. Only this act will set from when the passport is mandatory and exactly what it must contain."
+      },
+      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/iron-steel_en"
+    },
+    {
+      "frage": {
+        "de": "Wer sieht welche Daten im Pass?",
+        "en": "Who can see which data in the passport?"
+      },
+      "antwort": {
+        "de": "Vorgeschlagen sind drei Stufen: Vieles ist öffentlich, etwa Stahlsorte, Herkunft, CO₂-Fußabdruck und Rezyklatanteil. Sensible Angaben wie die Berechnungsparameter des Fußabdrucks oder die Werkszeugnis-Werte sind nur für Berechtigte gedacht. Konformitätsnachweise und Kontaktdaten sehen nur Behörden. Bei den besorgniserregenden Stoffen ist die Stufe im Entwurf nicht einheitlich.",
+        "en": "Three levels are proposed: much is public, such as steel grade, origin, carbon footprint and recycled content. Sensitive information such as the footprint calculation parameters or the mill test certificate values is intended only for persons with a legitimate interest. Conformity certificates and contact details are visible to authorities only. For substances of concern, the level is not consistent in the draft."
+      },
+      "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
+    }
+  ]
+}
