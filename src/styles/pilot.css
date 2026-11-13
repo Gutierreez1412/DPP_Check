@@ -723,6 +723,58 @@ body.breit :is(main, .seite-kopf__innen, .seite-fuss__innen) {
   filter: drop-shadow(0 0 3px var(--p-akzent));
 }
 
+/* Möbel: Typenschild, Holzgestell und Polster mit Bezug als Ebenen. */
+.polster__naht {
+  fill: none;
+  stroke: rgba(232, 240, 243, 0.55);
+  stroke-width: 1.4;
+  stroke-dasharray: 3 2.5;
+  stroke-linecap: round;
+  transition: stroke 0.35s ease;
+}
+
+.polster__bezug {
+  fill: #2f4a58;
+}
+
+.explosion--moebel[data-aktiv="etikett"] .ebene[data-ebene="etikett"],
+.explosion--moebel[data-aktiv="gestell"] .ebene[data-ebene="gestell"],
+.explosion--moebel[data-aktiv="polster"] .ebene[data-ebene="polster"],
+.explosion--moebel[data-aktiv="stoffe"] .ebene[data-ebene="polster"] {
+  opacity: 1;
+}
+
+.explosion--moebel[data-aktiv="gestell"] [data-ebene="gestell"] .flaeche,
+.explosion--moebel[data-aktiv="polster"] [data-ebene="polster"] .flaeche {
+  stroke: var(--p-akzent);
+}
+
+.explosion--moebel[data-aktiv="gestell"] .gestell,
+.explosion--moebel[data-aktiv="polster"] .polster {
+  fill: #2f6e69;
+}
+
+.explosion--moebel[data-aktiv="polster"] .polster__naht {
+  stroke: var(--p-akzent);
+}
+
+.explosion--moebel[data-aktiv="stoffe"] [data-ebene="polster"] .flaeche {
+  stroke: var(--p-berechtigt);
+}
+
+.explosion--moebel[data-aktiv="stoffe"] .polster {
+  fill: #4a4630;
+}
+
+.explosion--moebel[data-aktiv="stoffe"] .polster__naht {
+  stroke: rgba(242, 193, 78, 0.7);
+}
+
+.explosion--moebel[data-aktiv="etikett"] .schild rect:first-child {
+  fill: #ffffff;
+  filter: drop-shadow(0 0 3px var(--p-akzent));
+}
+
 /* Stahl: Bramme (Stahlwerk), aufgewickeltes Coil und Etikett als Ebenen. */
 .bramme__spuren {
   fill: none;

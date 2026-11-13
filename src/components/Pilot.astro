@@ -3,6 +3,7 @@ import seite from "../../inhalte/seite.json";
 import pilotVorlage from "../../inhalte/gruppen/batterien/pilot.json";
 import GrafikBatterie from "./pilot/GrafikBatterie.astro";
 import GrafikTextil from "./pilot/GrafikTextil.astro";
+import GrafikMoebel from "./pilot/GrafikMoebel.astro";
 import GrafikStahl from "./pilot/GrafikStahl.astro";
 import "../styles/pilot.css";
 
@@ -20,6 +21,7 @@ type PilotDaten = typeof pilotVorlage & {
 const grafiken: Record<string, typeof GrafikBatterie> = {
   batterien: GrafikBatterie,
   textil: GrafikTextil,
+  moebel: GrafikMoebel,
   stahl: GrafikStahl,
 };
 

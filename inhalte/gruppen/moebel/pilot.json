@@ -1,0 +1,1821 @@
+{
+  "id": "moebel",
+  "eyebrow": {
+    "de": "DPP-Pilot · Möbel",
+    "en": "DPP pilot · Furniture"
+  },
+  "titel": {
+    "de": "So könnte ein digitaler Produktpass für Möbel aussehen",
+    "en": "What a digital product passport for furniture could look like"
+  },
+  "einleitung": {
+    "de": "Für Möbel ist der Digitale Produktpass noch nicht vorgeschrieben: Die EU-Kommission nennt 2028 als Richtwert für den delegierten Rechtsakt. Wie der Pass aussehen könnte, zeigt der Entwurf einer Vorstudie, die ein Beraterteam im Auftrag der Kommission erstellt (Stand September 2026). Am Beispiel eines Polsterstuhls zeigen wir, welche Teile welche Daten liefern und was Käufer, Recycler und Behörden nach diesem Vorschlag im Pass sehen würden.",
+    "en": "The Digital Product Passport is not yet mandatory for furniture: the European Commission gives 2028 as the indicative timeline for the delegated act. A draft of a preparatory study, prepared by a team of consultants on behalf of the Commission (as of September 2026), shows what the passport could look like. Using an upholstered chair as an example, we show which parts provide which data and what buyers, recyclers and authorities would see in the passport under this proposal."
+  },
+  "einleitung_quelle": "https://espr-euecolabel-furniture.eu/media/16",
+  "beispiel_hinweis": {
+    "de": "Fiktives Beispiel: Produkt, Hersteller und alle Werte sind erfunden und dienen nur der Veranschaulichung.",
+    "en": "Fictitious example: product, manufacturer and all values are made up for illustration only."
+  },
+  "vorbehalt": {
+    "titel": {
+      "de": "Entwurf auf Basis der Vorstudie",
+      "en": "Draft based on the preparatory study"
+    },
+    "text": {
+      "de": "Dieser Pass ist kein gültiges Muster. Datenpunkte, Zugriffsstufen und Granularität folgen dem Entwurf der Vorstudie zu den Pass-Inhalten für Möbel (Version 1, September 2026). Er beschreibt einen Datenbedarf, der noch nicht mit den Beteiligten abgestimmt ist. Was als Pflicht, freiwillig oder noch offen gilt, kann der Rechtsakt anders festlegen.",
+      "en": "This passport is not a valid template. Data points, access levels and granularity follow the draft of the preparatory study on passport content for furniture (version 1, September 2026). It describes a data need that has not yet been validated with stakeholders. What counts as mandatory, voluntary or still open may be set differently by the delegated act."
+    },
+    "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+  },
+  "texte": {
+    "szene_label": {
+      "de": "Polsterstuhl mit vergrößertem Typenschild unter dem Sitz: Es trägt den QR-Code zum Produktpass.",
+      "en": "Upholstered chair with magnified rating plate under the seat: it carries the QR code to the product passport."
+    },
+    "szene_schild": {
+      "de": "Typenschild",
+      "en": "Rating plate"
+    },
+    "szene_scan": {
+      "de": "Scan → Produktpass",
+      "en": "Scan → product passport"
+    },
+    "register_label": {
+      "de": "Bereiche des Produktpasses",
+      "en": "Sections of the product passport"
+    },
+    "dp_gesamt": {
+      "de": "Datenpunkte im Vorschlag",
+      "en": "Data points in the proposal"
+    },
+    "dp_relevant": {
+      "de": "davon als Pflicht vorgeschlagen",
+      "en": "of which proposed as mandatory"
+    },
+    "dp_status": {
+      "freiwillig": {
+        "de": "freiwillig",
+        "en": "voluntary"
+      },
+      "offen": {
+        "de": "noch offen",
+        "en": "still open"
+      }
+    },
+    "marke": {
+      "de": "Digital Product Passport",
+      "en": "Digital Product Passport"
+    }
+  },
+  "produkt": {
+    "name": "Nordholz Stuhl",
+    "typ": {
+      "de": "Polsterstuhl mit Holzgestell (Möbel)",
+      "en": "Upholstered chair with wooden frame (furniture)"
+    },
+    "hersteller": "Musterholz Möbel GmbH",
+    "pass_id": "DPP-DE-MHM-STU01-L2814",
+    "eckdaten": [
+      {
+        "label": {
+          "de": "Gewicht",
+          "en": "Weight"
+        },
+        "wert": "6,2 kg"
+      },
+      {
+        "label": {
+          "de": "Gestell",
+          "en": "Frame"
+        },
+        "wert": "Buche massiv"
+      },
+      {
+        "label": {
+          "de": "Bezug",
+          "en": "Cover"
+        },
+        "wert": "Polyester-Webstoff"
+      },
+      {
+        "label": {
+          "de": "Sitzhöhe",
+          "en": "Seat height"
+        },
+        "wert": "46 cm"
+      }
+    ]
+  },
+  "schritte": [
+    {
+      "titel": {
+        "de": "QR-Code am Typenschild",
+        "en": "QR code on the rating plate"
+      },
+      "text": {
+        "de": "Das Möbelstück soll über einen Datenträger wie einen QR-Code zum Pass führen. Der Entwurf schlägt Modell-ID und Chargen-ID als Pflicht vor, eine Kennung je Einzelstück ist offen. Die meisten Beteiligten halten die Modellebene für den praktikablen Standard.",
+        "en": "The piece of furniture is to lead to the passport via a data carrier such as a QR code. The draft proposes model ID and batch ID as mandatory, an identifier per item is open. Most stakeholders consider the model level the practical baseline."
+      },
+      "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+    },
+    {
+      "titel": {
+        "de": "Daten aus der Lieferkette",
+        "en": "Data from the supply chain"
+      },
+      "text": {
+        "de": "Lieferanten für Holz, Schaum, Textil und Chemie sowie das Möbelwerk liefern Daten zu. Verantwortlich für den Pass ist, wer das Möbelstück in der EU in Verkehr bringt, bei Herstellern außerhalb der EU der Importeur.",
+        "en": "Suppliers of wood, foam, textile and chemicals as well as the furniture plant contribute data. The party placing the piece of furniture on the EU market is responsible for the passport, for manufacturers outside the EU the importer."
+      },
+      "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+    },
+    {
+      "titel": {
+        "de": "Gestufter Zugriff",
+        "en": "Tiered access"
+      },
+      "text": {
+        "de": "Vieles soll für alle sichtbar sein, etwa Materialien, Anleitungen und Garantie. Details zu Stoffen, Bauteilen und Zerlegung sehen nur Berechtigte wie Recycler und Reparaturbetriebe, Prüfberichte und Nachweise nur Behörden.",
+        "en": "Much is to be visible to everyone, such as materials, instructions and warranty. Details on substances, components and disassembly are only visible to persons with a legitimate interest such as recyclers and repair businesses, test reports and evidence only to authorities."
+      },
+      "zugriffsstufen_zeigen": true,
+      "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+    }
+  ],
+  "zugriffsstufen": [
+    {
+      "id": "oeffentlich",
+      "name": {
+        "de": "Öffentlich",
+        "en": "Public"
+      },
+      "wer": {
+        "de": "Alle, z. B. Käuferinnen und Käufer",
+        "en": "Everyone, e.g. buyers"
+      },
+      "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+    },
+    {
+      "id": "berechtigt",
+      "name": {
+        "de": "Berechtigtes Interesse",
+        "en": "Legitimate interest"
+      },
+      "wer": {
+        "de": "z. B. Recycler, Reparaturbetriebe",
+        "en": "e.g. recyclers, repair businesses"
+      },
+      "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+    },
+    {
+      "id": "behoerden",
+      "name": {
+        "de": "Behörden",
+        "en": "Authorities"
+      },
+      "wer": {
+        "de": "Marktüberwachung, Zoll, EU-Kommission",
+        "en": "Market surveillance, customs, European Commission"
+      },
+      "quelle": "https://espr-euecolabel-furniture.eu/media/16"
+    }
+  ],
+  "komponenten": [
+    {
+      "id": "etikett",
+      "ebene": "etikett",
+      "nummer": "01",
+      "name": {
+        "de": "Typenschild & QR-Code",
+        "en": "Rating plate & QR code"
+      },
+      "text": {
+        "de": "Das Typenschild unter dem Sitz trägt die Kennung, der QR-Code führt zum Pass. Dort bleiben Modell, Charge, Hersteller und Warennummer abrufbar, auch wenn das Schild abgenutzt oder abgelöst wird.",
+        "en": "The rating plate under the seat carries the identifier, the QR code leads to the passport. There, model, batch, manufacturer and commodity code remain available even if the plate is worn or detached."
+      },
+      "lieferant": {
+        "de": "Hersteller (Möbelwerk)",
+        "en": "Manufacturer (furniture plant)"
+      },
+      "felder": ["modell", "hersteller", "charge", "einzel"]
+    },
+    {
+      "id": "gestell",
+      "ebene": "gestell",
+      "nummer": "02",
+      "name": {
+        "de": "Holzgestell & Verbindungen",
+        "en": "Wooden frame & joints"
+      },
+      "text": {
+        "de": "Beine, Zargen und Rückenlehne aus Buche halten den Stuhl zusammen. Für Haltbarkeit und Reparatur zählen Material, Verbindungen und Ersatzteile. Haltbarkeit, Reparierbarkeit und Recyclingfähigkeit sind im Entwurf als Pflicht vorgeschlagen, die Methode legt der Rechtsakt fest.",
+        "en": "Legs, rails and backrest made of beech hold the chair together. For durability and repair, what counts are material, joints and spare parts. Durability, repairability and recyclability are proposed as mandatory in the draft, the method will be set by the delegated act."
+      },
+      "lieferant": {
+        "de": "Möbelwerk, Holzlieferant",
+        "en": "Furniture plant, wood supplier"
+      },
+      "felder": [
+        "hauptmaterial",
+        "holzherkunft",
+        "verbindungen",
+        "haltbarkeit",
+        "reparierbarkeit"
+      ]
+    },
+    {
+      "id": "polster",
+      "ebene": "polster",
+      "nummer": "03",
+      "name": {
+        "de": "Polster & Bezug",
+        "en": "Padding & cover"
+      },
+      "text": {
+        "de": "Schaumstoff und Bezugsstoff bestimmen Komfort, Material und Recyclingfähigkeit der Sitzfläche. Die Werte stammen von den Lieferanten von Schaum und Textil. Rezyklatanteil und Fußabdruck sind im Entwurf teils Pflicht, teils noch offen.",
+        "en": "Foam and cover fabric determine the comfort, material and recyclability of the seat. The values come from the suppliers of foam and textile. Recycled content and footprint are partly mandatory, partly still open in the draft."
+      },
+      "lieferant": {
+        "de": "Schaumhersteller, Weberei",
+        "en": "Foam manufacturer, weaving mill"
+      },
+      "felder": [
+        "polstermaterial",
+        "rezyklat",
+        "rezyklat_art",
+        "umweltbilanz",
+        "pflege"
+      ]
+    },
+    {
+      "id": "stoffe",
+      "ebene": "polster",
+      "nummer": "04",
+      "name": {
+        "de": "Stoffe & Chemikalien",
+        "en": "Substances & chemicals"
+      },
+      "text": {
+        "de": "In Schaum, Bezug, Klebern und Oberflächenbehandlung können besorgniserregende Stoffe stecken. Die ESPR verlangt dazu Angaben, der Entwurf sieht gestuften Zugriff, Hinweise zur sicheren Verwendung und zur Zerlegung vor.",
+        "en": "Foam, cover, adhesives and surface treatment may contain substances of concern. The ESPR requires information on this, the draft provides for tiered access, instructions for safe use and for disassembly."
+      },
+      "lieferant": {
+        "de": "Lieferanten von Schaum, Textil, Klebern und Oberflächen",
+        "en": "Suppliers of foam, textile, adhesives and surface treatments"
+      },
+      "felder": ["stoffe", "flammschutz", "sicher", "zerlegung"]
+    }
+  ],
+  "pass": {
+    "abschnitte": [
+      {
+        "id": "identifikation",
+        "titel": {
+          "de": "Produkt & Hersteller",
+          "en": "Product & manufacturer"
+        },
+        "datenpunkte": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+        "felder": [
+          {
+            "id": "modell",
+            "label": {
+              "de": "Modell-ID und Warennummer",
+              "en": "Model ID and commodity code"
+            },
+            "wert": {
+              "de": "Modell STU01 · CN 9401",
+              "en": "Model STU01 · CN 9401"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [3, 4]
+          },
+          {
+            "id": "hersteller",
+            "label": {
+              "de": "Hersteller und Importeur",
+              "en": "Manufacturer and importer"
+            },
+            "wert": {
+              "de": "Musterholz Möbel GmbH, Musterstadt (DE)",
+              "en": "Musterholz Möbel GmbH, Musterstadt (DE)"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [5, 6]
+          },
+          {
+            "id": "charge",
+            "label": {
+              "de": "Chargen-ID und Werk",
+              "en": "Batch ID and plant"
+            },
+            "wert": {
+              "de": "Charge 14/2028 · Werk Musterwald",
+              "en": "Batch 14/2028 · Musterwald plant"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [2, 8]
+          },
+          {
+            "id": "einzel",
+            "label": {
+              "de": "Kennung je Einzelstück",
+              "en": "Identifier per item"
+            },
+            "wert": {
+              "de": "Stuhl Nr. 000417",
+              "en": "Chair no. 000417"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [1],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob eine Kennung je Einzelstück verlangt wird.",
+              "en": "The draft leaves open whether an identifier per item is required."
+            }
+          },
+          {
+            "id": "ursprung",
+            "label": {
+              "de": "Herstellungsland",
+              "en": "Country of manufacture"
+            },
+            "wert": {
+              "de": "Deutschland",
+              "en": "Germany"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [7],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob und wie diese Angabe verlangt wird; die Methode legt der Rechtsakt fest.",
+              "en": "The draft leaves open whether and how this information is required; the method will be set by the delegated act."
+            }
+          },
+          {
+            "id": "holzherkunft",
+            "label": {
+              "de": "Holzherkunft",
+              "en": "Wood origin"
+            },
+            "wert": {
+              "de": "Buche, Herkunftsland DE · Sorgfaltserklärung liegt vor",
+              "en": "Beech, country of origin DE · due-diligence statement available"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [9]
+          }
+        ]
+      },
+      {
+        "id": "material",
+        "titel": {
+          "de": "Material & Bauteile",
+          "en": "Material & components"
+        },
+        "datenpunkte": [10, 11, 12, 13, 14, 15, 16],
+        "felder": [
+          {
+            "id": "hauptmaterial",
+            "label": {
+              "de": "Hauptmaterialien",
+              "en": "Primary materials"
+            },
+            "wert": {
+              "de": "Buche massiv, Stahlschrauben",
+              "en": "Solid beech, steel screws"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [10]
+          },
+          {
+            "id": "polstermaterial",
+            "label": {
+              "de": "Polster- und Bezugsmaterialien",
+              "en": "Upholstery and cover materials"
+            },
+            "wert": {
+              "de": "PU-Schaum, Bezug 100 % Polyester",
+              "en": "PU foam, cover 100% polyester"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [11]
+          },
+          {
+            "id": "beschlaege",
+            "label": {
+              "de": "Beschläge und Verbindungselemente",
+              "en": "Hardware and fixtures"
+            },
+            "wert": {
+              "de": "Schrauben, Dübel, Einlegemuttern",
+              "en": "Screws, dowels, insert nuts"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [12],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob und wie diese Angabe verlangt wird; die Methode legt der Rechtsakt fest.",
+              "en": "The draft leaves open whether and how this information is required; the method will be set by the delegated act."
+            }
+          },
+          {
+            "id": "komponenten",
+            "label": {
+              "de": "Bauteilkennung und -spezifikation",
+              "en": "Component identifier and specification"
+            },
+            "wert": {
+              "de": "Teilenummer je Bauteil",
+              "en": "Part number per component"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [13],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob und wie diese Angabe verlangt wird; die Methode legt der Rechtsakt fest.",
+              "en": "The draft leaves open whether and how this information is required; the method will be set by the delegated act."
+            }
+          },
+          {
+            "id": "masse",
+            "label": {
+              "de": "Abmessungen und Gewicht",
+              "en": "Dimensions and weight"
+            },
+            "wert": {
+              "de": "Sitzhöhe 46 cm · 6,2 kg",
+              "en": "Seat height 46 cm · 6.2 kg"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [14, 15],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob und wie diese Angabe verlangt wird; die Methode legt der Rechtsakt fest.",
+              "en": "The draft leaves open whether and how this information is required; the method will be set by the delegated act."
+            }
+          },
+          {
+            "id": "klebstoffe",
+            "label": {
+              "de": "Klebstoffe und Beschichtungen",
+              "en": "Adhesives and coatings"
+            },
+            "wert": {
+              "de": "Holzleim, Wasserlack",
+              "en": "Wood glue, water-based lacquer"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [16],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob und wie diese Angabe verlangt wird; die Methode legt der Rechtsakt fest.",
+              "en": "The draft leaves open whether and how this information is required; the method will be set by the delegated act."
+            }
+          }
+        ]
+      },
+      {
+        "id": "leistung",
+        "titel": {
+          "de": "Haltbarkeit & Recyclingfähigkeit",
+          "en": "Durability & recyclability"
+        },
+        "datenpunkte": [17, 18, 19, 20],
+        "felder": [
+          {
+            "id": "haltbarkeit",
+            "label": {
+              "de": "Haltbarkeit",
+              "en": "Durability"
+            },
+            "wert": {
+              "de": "Methode folgt im Rechtsakt",
+              "en": "Method to follow in the legal act"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [18],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Als Pflicht vorgeschlagen; Berechnung und Nachweis legt der Rechtsakt fest.",
+              "en": "Proposed as mandatory; calculation and evidence will be set by the delegated act."
+            }
+          },
+          {
+            "id": "reparierbarkeit",
+            "label": {
+              "de": "Reparierbarkeit",
+              "en": "Repairability"
+            },
+            "wert": {
+              "de": "Methode folgt im Rechtsakt",
+              "en": "Method to follow in the legal act"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [19],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Als Pflicht vorgeschlagen; Berechnung und Nachweis legt der Rechtsakt fest.",
+              "en": "Proposed as mandatory; calculation and evidence will be set by the delegated act."
+            }
+          },
+          {
+            "id": "recyclingfaehigkeit",
+            "label": {
+              "de": "Recyclingfähigkeit",
+              "en": "Recyclability"
+            },
+            "wert": {
+              "de": "Methode folgt im Rechtsakt",
+              "en": "Method to follow in the legal act"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [20],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Als Pflicht vorgeschlagen; Berechnung und Nachweis legt der Rechtsakt fest.",
+              "en": "Proposed as mandatory; calculation and evidence will be set by the delegated act."
+            }
+          },
+          {
+            "id": "stabilitaet",
+            "label": {
+              "de": "Stabilität und Festigkeit",
+              "en": "Stability and strength"
+            },
+            "wert": {
+              "de": "Prüfberichte zu Stabilität liegen vor",
+              "en": "Test reports on stability available"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [17],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob und wie diese Angabe verlangt wird; die Methode legt der Rechtsakt fest.",
+              "en": "The draft leaves open whether and how this information is required; the method will be set by the delegated act."
+            }
+          }
+        ]
+      },
+      {
+        "id": "chemie",
+        "titel": {
+          "de": "Stoffe & Chemikalien",
+          "en": "Substances & chemicals"
+        },
+        "datenpunkte": [21, 22, 23, 24, 25, 26],
+        "felder": [
+          {
+            "id": "stoffe",
+            "label": {
+              "de": "Besorgniserregende Stoffe",
+              "en": "Substances of concern"
+            },
+            "wert": {
+              "de": "Liste je Bauteil, mit Konzentration",
+              "en": "List per component, with concentration"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [21],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Die ESPR verlangt Angaben zu besorgniserregenden Stoffen (Art. 7 Abs. 5); der Entwurf sieht gestuften Zugriff vor. Welche Stoffe bei Möbeln erfasst werden, legt der Rechtsakt fest.",
+              "en": "The ESPR requires information on substances of concern (Art. 7(5)); the draft provides for tiered access. Which substances are covered for furniture will be set by the delegated act."
+            }
+          },
+          {
+            "id": "sicher",
+            "label": {
+              "de": "Hinweise zur sicheren Verwendung",
+              "en": "Instructions for safe use"
+            },
+            "wert": {
+              "de": "Hinweise zu Nutzung und Pflege des Stuhls",
+              "en": "Instructions on use and care of the chair"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [26]
+          },
+          {
+            "id": "holzschutz",
+            "label": {
+              "de": "Holzschutzmittel",
+              "en": "Preservatives (wood treatment)"
+            },
+            "wert": {
+              "de": "Keine Holzschutzbehandlung",
+              "en": "No wood treatment"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [24]
+          },
+          {
+            "id": "flammschutz",
+            "label": {
+              "de": "Flammschutzmittel",
+              "en": "Flame retardants"
+            },
+            "wert": {
+              "de": "Im Schaum: nach Angabe des Lieferanten",
+              "en": "In the foam: as stated by the supplier"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [25],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob und wie diese Angabe verlangt wird; die Methode legt der Rechtsakt fest.",
+              "en": "The draft leaves open whether and how this information is required; the method will be set by the delegated act."
+            }
+          },
+          {
+            "id": "voc",
+            "label": {
+              "de": "VOC- und Formaldehydemissionen",
+              "en": "VOC and formaldehyde emissions"
+            },
+            "wert": {
+              "de": "Prüfergebnis liegt vor",
+              "en": "Test result available"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [22],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob und wie diese Angabe verlangt wird; die Methode legt der Rechtsakt fest.",
+              "en": "The draft leaves open whether and how this information is required; the method will be set by the delegated act."
+            }
+          },
+          {
+            "id": "brand",
+            "label": {
+              "de": "Brennverhalten",
+              "en": "Flammability"
+            },
+            "wert": {
+              "de": "Prüfergebnis, Nachweis nur für Behörden",
+              "en": "Test result, evidence for authorities only"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [23],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob und wie diese Angabe verlangt wird; die Methode legt der Rechtsakt fest.",
+              "en": "The draft leaves open whether and how this information is required; the method will be set by the delegated act."
+            }
+          }
+        ]
+      },
+      {
+        "id": "kreislauf",
+        "titel": {
+          "de": "Kreislauf & Rezyklat",
+          "en": "Circularity & recycled content"
+        },
+        "datenpunkte": [27, 28, 29, 30, 31, 32, 33],
+        "felder": [
+          {
+            "id": "verbindungen",
+            "label": {
+              "de": "Verbindungs- und Befestigungsarten",
+              "en": "Joining methods and fastening types"
+            },
+            "wert": {
+              "de": "Verschraubt und gedübelt, nicht verklebt",
+              "en": "Screwed and doweled, not glued"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [27]
+          },
+          {
+            "id": "zerlegung",
+            "label": {
+              "de": "Hinweise zu Zerlegung und Recycling",
+              "en": "Disassembly and recycling information"
+            },
+            "wert": {
+              "de": "Schrauben lösen, Polster vom Gestell trennen, Bezug abziehen",
+              "en": "Undo screws, separate padding from frame, remove cover"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [28]
+          },
+          {
+            "id": "trennweg",
+            "label": {
+              "de": "Trenn- und Recyclingwege",
+              "en": "Separation and recycling routes"
+            },
+            "wert": {
+              "de": "Holz, Metall und Schaum getrennt sammeln",
+              "en": "Collect wood, metal and foam separately"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [29],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob und wie diese Angabe verlangt wird; die Methode legt der Rechtsakt fest.",
+              "en": "The draft leaves open whether and how this information is required; the method will be set by the delegated act."
+            }
+          },
+          {
+            "id": "rezyklat",
+            "label": {
+              "de": "Rezyklatanteil",
+              "en": "Recycled content"
+            },
+            "wert": {
+              "de": "Methode folgt im Rechtsakt",
+              "en": "Method to follow in the legal act"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [30, 33],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Als Pflicht vorgeschlagen; Berechnung und Nachweis legt der Rechtsakt fest.",
+              "en": "Proposed as mandatory; calculation and evidence will be set by the delegated act."
+            }
+          },
+          {
+            "id": "rezyklat_art",
+            "label": {
+              "de": "Art und Berechnungsgrundlage des Rezyklats",
+              "en": "Type and basis of recycled content"
+            },
+            "wert": {
+              "de": "Abfallart und Gewicht je Material",
+              "en": "Type of waste and weight per material"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [31, 32],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob und wie diese Angabe verlangt wird; die Methode legt der Rechtsakt fest.",
+              "en": "The draft leaves open whether and how this information is required; the method will be set by the delegated act."
+            }
+          }
+        ]
+      },
+      {
+        "id": "nachweise",
+        "titel": {
+          "de": "Nachweise & Zertifikate",
+          "en": "Evidence & certificates"
+        },
+        "datenpunkte": [34, 35, 36, 37, 38, 39],
+        "felder": [
+          {
+            "id": "zertifikate",
+            "label": {
+              "de": "Zertifikate und Prüfberichte",
+              "en": "Certificates and test reports"
+            },
+            "wert": {
+              "de": "3 Dokumente",
+              "en": "3 documents"
+            },
+            "stufe": "behoerden",
+            "datenpunkte": [35]
+          },
+          {
+            "id": "qs",
+            "label": {
+              "de": "Ergebnisse der Qualitätssicherung",
+              "en": "Quality assurance results"
+            },
+            "wert": {
+              "de": "Prüfprotokoll je Modell",
+              "en": "Test record per model"
+            },
+            "stufe": "behoerden",
+            "datenpunkte": [34]
+          },
+          {
+            "id": "stoffnachweis",
+            "label": {
+              "de": "Einhaltung von Stoffbeschränkungen",
+              "en": "Compliance with substance restrictions"
+            },
+            "wert": {
+              "de": "Konformitätsunterlage",
+              "en": "Conformity document"
+            },
+            "stufe": "behoerden",
+            "datenpunkte": [38]
+          },
+          {
+            "id": "biozide",
+            "label": {
+              "de": "Biozidbehandlung",
+              "en": "Biocidal treatment"
+            },
+            "wert": {
+              "de": "Keine Biozidbehandlung",
+              "en": "No biocidal treatment"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [37]
+          },
+          {
+            "id": "forst",
+            "label": {
+              "de": "Forstzertifikat (freiwillig)",
+              "en": "Forestry certificate (voluntary)"
+            },
+            "wert": {
+              "de": "FSC Chain of Custody",
+              "en": "FSC chain of custody"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [36]
+          },
+          {
+            "id": "umweltzeichen",
+            "label": {
+              "de": "Umweltzeichen (freiwillig)",
+              "en": "Eco-label (voluntary)"
+            },
+            "wert": {
+              "de": "EU-Umweltzeichen für Möbel",
+              "en": "EU Ecolabel for furniture"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [39]
+          }
+        ]
+      },
+      {
+        "id": "fussabdruck",
+        "titel": {
+          "de": "CO₂- & Umweltfußabdruck",
+          "en": "Carbon & environmental footprint"
+        },
+        "datenpunkte": [40, 41, 42],
+        "felder": [
+          {
+            "id": "fussabdruck",
+            "label": {
+              "de": "CO₂-Fußabdruck",
+              "en": "Carbon footprint"
+            },
+            "wert": {
+              "de": "Methode folgt im Rechtsakt",
+              "en": "Method to follow in the legal act"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [40],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf sieht das Ergebnis als öffentlich, die Nachweise als eingeschränkt vor; ob und wie der Fußabdruck verlangt wird, ist offen.",
+              "en": "The draft foresees the result as public and the evidence as restricted; whether and how the footprint is required is open."
+            }
+          },
+          {
+            "id": "umweltbilanz",
+            "label": {
+              "de": "Umweltfußabdruck (Ökobilanz, EPD)",
+              "en": "Environmental footprint (LCA, EPD)"
+            },
+            "wert": {
+              "de": "Methode folgt im Rechtsakt",
+              "en": "Method to follow in the legal act"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [41],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob und wie diese Angabe verlangt wird; die Methode legt der Rechtsakt fest.",
+              "en": "The draft leaves open whether and how this information is required; the method will be set by the delegated act."
+            }
+          },
+          {
+            "id": "methode",
+            "label": {
+              "de": "Methode, Datenquelle und Prüfstatus",
+              "en": "Method, data source and verification status"
+            },
+            "wert": {
+              "de": "Berechnungsmethode und Prüfstatus",
+              "en": "Calculation method and verification status"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [42],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob und wie diese Angabe verlangt wird; die Methode legt der Rechtsakt fest.",
+              "en": "The draft leaves open whether and how this information is required; the method will be set by the delegated act."
+            }
+          }
+        ]
+      },
+      {
+        "id": "anleitungen",
+        "titel": {
+          "de": "Anleitungen, Reparatur & Garantie",
+          "en": "Instructions, repair & warranty"
+        },
+        "datenpunkte": [43, 44, 45, 46, 47, 48],
+        "felder": [
+          {
+            "id": "pflege",
+            "label": {
+              "de": "Pflegehinweise",
+              "en": "Care instructions"
+            },
+            "wert": {
+              "de": "Holz feucht abwischen, Bezug absaugen",
+              "en": "Wipe wood with a damp cloth, vacuum the cover"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [43]
+          },
+          {
+            "id": "montage",
+            "label": {
+              "de": "Montageanleitung",
+              "en": "Assembly instructions"
+            },
+            "wert": {
+              "de": "Anleitung als PDF und Video",
+              "en": "Instructions as PDF and video"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [44]
+          },
+          {
+            "id": "reparaturanleitung",
+            "label": {
+              "de": "Reparaturanleitung",
+              "en": "Repair instructions"
+            },
+            "wert": {
+              "de": "Polster neu beziehen, Schrauben nachziehen",
+              "en": "Re-cover the padding, retighten screws"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [45]
+          },
+          {
+            "id": "ersatzteile",
+            "label": {
+              "de": "Ersatzteile",
+              "en": "Spare parts"
+            },
+            "wert": {
+              "de": "Ersatzbezug und Schraubensatz mit Teilenummer",
+              "en": "Replacement cover and screw set with part number"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [46]
+          },
+          {
+            "id": "reparaturkontakt",
+            "label": {
+              "de": "Reparaturdienst der Marke",
+              "en": "Brand repair service"
+            },
+            "wert": {
+              "de": "Kontakt und Ablauf online",
+              "en": "Contact and process online"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [47],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob und wie diese Angabe verlangt wird; die Methode legt der Rechtsakt fest.",
+              "en": "The draft leaves open whether and how this information is required; the method will be set by the delegated act."
+            }
+          },
+          {
+            "id": "garantie",
+            "label": {
+              "de": "Garantiedauer",
+              "en": "Warranty duration"
+            },
+            "wert": {
+              "de": "2 Jahre gesetzliche Gewährleistung, 5 Jahre Herstellergarantie",
+              "en": "2-year legal guarantee, 5-year manufacturer warranty"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [48]
+          }
+        ]
+      },
+      {
+        "id": "lebenszyklus",
+        "titel": {
+          "de": "Lebenszyklus & Rücknahme",
+          "en": "Life cycle & take-back"
+        },
+        "datenpunkte": [49, 50, 51, 52, 53, 54, 55],
+        "felder": [
+          {
+            "id": "ruecknahme",
+            "label": {
+              "de": "Rücknahme- und Entsorgungshinweise",
+              "en": "Take-back and disposal information"
+            },
+            "wert": {
+              "de": "Rücknahme über Händler und kommunale Sammelstellen",
+              "en": "Take-back via retailers and municipal collection points"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [55]
+          },
+          {
+            "id": "herstelldatum",
+            "label": {
+              "de": "Herstellungsdatum (freiwillig)",
+              "en": "Manufacturing date (voluntary)"
+            },
+            "wert": {
+              "de": "März 2028",
+              "en": "March 2028"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [49]
+          },
+          {
+            "id": "nutzungsdauer",
+            "label": {
+              "de": "Erwartete Nutzungsdauer (freiwillig)",
+              "en": "Expected lifetime (voluntary)"
+            },
+            "wert": {
+              "de": "Methode folgt im Rechtsakt",
+              "en": "Method to follow in the legal act"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [50],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Der Entwurf lässt offen, ob und wie diese Angabe verlangt wird; die Methode legt der Rechtsakt fest.",
+              "en": "The draft leaves open whether and how this information is required; the method will be set by the delegated act."
+            }
+          },
+          {
+            "id": "zustand",
+            "label": {
+              "de": "Zustandsbewertung (freiwillig)",
+              "en": "Condition assessment (voluntary)"
+            },
+            "wert": {
+              "de": "Zustand bei Weiterverkauf",
+              "en": "Condition on resale"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [51]
+          },
+          {
+            "id": "historie",
+            "label": {
+              "de": "Reparatur- und Wechselhistorie (freiwillig)",
+              "en": "Repair and replacement history (voluntary)"
+            },
+            "wert": {
+              "de": "Neuer Bezug 2031",
+              "en": "New cover 2031"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [52, 53]
+          },
+          {
+            "id": "nutzungsende",
+            "label": {
+              "de": "Datum Nutzungsende (freiwillig)",
+              "en": "End-of-use date (voluntary)"
+            },
+            "wert": {
+              "de": "Wird bei Entsorgung eingetragen",
+              "en": "Entered on disposal"
+            },
+            "stufe": "behoerden",
+            "datenpunkte": [54]
+          }
+        ]
+      }
+    ],
+    "datenpunkte": [
+      {
+        "nr": 1,
+        "name": {
+          "de": "Kennung je Einzelstück (UPI)",
+          "en": "Identifier per item (UPI)"
+        },
+        "quelle": "Anh. III (b)",
+        "stufe": "berechtigt",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 2,
+        "name": {
+          "de": "Chargen-ID",
+          "en": "Batch ID"
+        },
+        "quelle": "Anh. III (b); GPSR Art. 9(5)",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 3,
+        "name": {
+          "de": "Modell-ID",
+          "en": "Model ID"
+        },
+        "quelle": "Anh. III (b), (c); GPSR Art. 9(5)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 4,
+        "name": {
+          "de": "Produktkategorie und Warennummer (CN)",
+          "en": "Product category and commodity code (CN)"
+        },
+        "quelle": "Anh. III (d)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 5,
+        "name": {
+          "de": "Hersteller (Name, Anschrift, E-Mail)",
+          "en": "Manufacturer (name, postal and electronic address)"
+        },
+        "quelle": "Anh. III (g); GPSR Art. 9(6)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 6,
+        "name": {
+          "de": "Importeur bzw. verantwortliche Person in der EU",
+          "en": "Importer or EU responsible person"
+        },
+        "quelle": "Anh. III; GPSR Art. 11, 16",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 7,
+        "name": {
+          "de": "Herstellungs- bzw. Ursprungsland",
+          "en": "Country of origin or manufacture"
+        },
+        "quelle": "Konsultation",
+        "stufe": "oeffentlich",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 8,
+        "name": {
+          "de": "Kennung der Produktionsstätte",
+          "en": "Unique facility identifier"
+        },
+        "quelle": "Anh. III (i)",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 9,
+        "name": {
+          "de": "Holzherkunft (Ernteort)",
+          "en": "Harvest origin of wood"
+        },
+        "quelle": "EUDR Art. 9",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 10,
+        "name": {
+          "de": "Hauptmaterialien",
+          "en": "Primary materials used"
+        },
+        "quelle": "Konsultation",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 11,
+        "name": {
+          "de": "Polster- und Bezugsmaterialien",
+          "en": "Upholstery and cover materials"
+        },
+        "quelle": "TLR Art. 5–14; Konsultation",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 12,
+        "name": {
+          "de": "Beschläge und Verbindungselemente",
+          "en": "Hardware and fixtures"
+        },
+        "quelle": "Konsultation",
+        "stufe": "berechtigt",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 13,
+        "name": {
+          "de": "Bauteilkennung und -spezifikation",
+          "en": "Component identifier and specification"
+        },
+        "quelle": "Konsultation",
+        "stufe": "berechtigt",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 14,
+        "name": {
+          "de": "Abmessungen",
+          "en": "Dimensions"
+        },
+        "quelle": "Konsultation",
+        "stufe": "oeffentlich",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 15,
+        "name": {
+          "de": "Gewicht",
+          "en": "Weight"
+        },
+        "quelle": "Anh. I (j)",
+        "stufe": "oeffentlich",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 16,
+        "name": {
+          "de": "Klebstoffe und Beschichtungen",
+          "en": "Adhesives and coatings"
+        },
+        "quelle": "REACH/BPR; Konsultation",
+        "stufe": "berechtigt",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 17,
+        "name": {
+          "de": "Stabilität und Festigkeit",
+          "en": "Stability and strength"
+        },
+        "quelle": "GPSR; EN-Normen",
+        "stufe": "berechtigt",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 18,
+        "name": {
+          "de": "Haltbarkeit",
+          "en": "Durability"
+        },
+        "quelle": "Art. 7(2)(b)(i); Anh. I (a)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 19,
+        "name": {
+          "de": "Reparierbarkeit",
+          "en": "Repairability"
+        },
+        "quelle": "Art. 7(2)(b); Anh. I (b)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 20,
+        "name": {
+          "de": "Recyclingfähigkeit",
+          "en": "Recyclability"
+        },
+        "quelle": "Art. 7(2)(b); Anh. I",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 21,
+        "name": {
+          "de": "Besorgniserregende Stoffe",
+          "en": "Substances of concern"
+        },
+        "quelle": "Art. 7(5); REACH Art. 33; WFD/SCIP",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 22,
+        "name": {
+          "de": "VOC- und Formaldehydemissionen",
+          "en": "VOC and formaldehyde emissions"
+        },
+        "quelle": "REACH (Formaldehyd); Konsultation",
+        "stufe": "oeffentlich",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 23,
+        "name": {
+          "de": "Brennverhalten",
+          "en": "Flammability"
+        },
+        "quelle": "Geltende Sicherheitsvorgaben",
+        "stufe": "oeffentlich",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 24,
+        "name": {
+          "de": "Holzschutzmittel",
+          "en": "Preservatives (wood treatment)"
+        },
+        "quelle": "BPR Art. 58",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 25,
+        "name": {
+          "de": "Flammschutzmittel",
+          "en": "Flame retardants"
+        },
+        "quelle": "Art. 7(5); REACH/POP",
+        "stufe": "berechtigt",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 26,
+        "name": {
+          "de": "Hinweise zur sicheren Verwendung",
+          "en": "Instructions for safe use"
+        },
+        "quelle": "REACH Art. 33; GPSR Art. 9(7); BPR",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 27,
+        "name": {
+          "de": "Verbindungs- und Befestigungsarten",
+          "en": "Joining methods and fastening types"
+        },
+        "quelle": "Konsultation",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 28,
+        "name": {
+          "de": "Hinweise zu Zerlegung, Wiederverwendung, Recycling und Entsorgung",
+          "en": "Information on disassembly, reuse, recycling and end-of-life management"
+        },
+        "quelle": "Art. 7(2)(b)(iii); Art. 7(5)(e); WFD/SCIP",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 29,
+        "name": {
+          "de": "Hinweise zu Trenn- und Recyclingwegen",
+          "en": "Recycling and separation route information"
+        },
+        "quelle": "Konsultation",
+        "stufe": "berechtigt",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 30,
+        "name": {
+          "de": "Rezyklatanteil (%)",
+          "en": "Recycled content (%)"
+        },
+        "quelle": "Art. 7(2)(b); Anh. I (h)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 31,
+        "name": {
+          "de": "Art des Rezyklats (Abfallart)",
+          "en": "Type of waste / recycled feedstock"
+        },
+        "quelle": "Konsultation",
+        "stufe": "oeffentlich",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 32,
+        "name": {
+          "de": "Gewicht für die Rezyklatberechnung",
+          "en": "Weight for the recycled content calculation"
+        },
+        "quelle": "Berechnungsgrundlage",
+        "stufe": "berechtigt",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 33,
+        "name": {
+          "de": "Menge recyceltes Material",
+          "en": "Amount of recycled material"
+        },
+        "quelle": "Anh. I (h)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 34,
+        "name": {
+          "de": "Ergebnisse der Qualitätssicherung",
+          "en": "Quality assurance results"
+        },
+        "quelle": "GPSR; EN-Normen",
+        "stufe": "behoerden",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 35,
+        "name": {
+          "de": "Zertifikate und Prüfberichte",
+          "en": "Technical certificates and test reports"
+        },
+        "quelle": "Geltende Konformitätsvorgaben",
+        "stufe": "behoerden",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 36,
+        "name": {
+          "de": "Forstzertifikate (FSC/PEFC)",
+          "en": "Forestry certifications (FSC/PEFC)"
+        },
+        "quelle": "FSC/PEFC",
+        "stufe": "oeffentlich",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 37,
+        "name": {
+          "de": "Angaben zur Biozidbehandlung",
+          "en": "Biocidal treatment information"
+        },
+        "quelle": "BPR Art. 58",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 38,
+        "name": {
+          "de": "Einhaltung von Stoffbeschränkungen",
+          "en": "Compliance with substance restrictions"
+        },
+        "quelle": "REACH Anh. XVII; POP-Verordnung",
+        "stufe": "behoerden",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 39,
+        "name": {
+          "de": "Umweltzeichen",
+          "en": "Eco-labels"
+        },
+        "quelle": "EU-Umweltzeichen u. a.",
+        "stufe": "oeffentlich",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 40,
+        "name": {
+          "de": "CO₂-Fußabdruck",
+          "en": "Carbon footprint"
+        },
+        "quelle": "Anh. I (n)",
+        "stufe": "oeffentlich",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 41,
+        "name": {
+          "de": "Umweltfußabdruck (Ökobilanz, PCF oder EPD)",
+          "en": "Environmental footprint (LCA, PCF or EPD)"
+        },
+        "quelle": "Konsultation",
+        "stufe": "oeffentlich",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 42,
+        "name": {
+          "de": "Methode, Datenquelle und Prüfstatus des Fußabdrucks",
+          "en": "Methodology, data source and verification status of the footprint"
+        },
+        "quelle": "Konsultation (UC23)",
+        "stufe": "berechtigt",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 43,
+        "name": {
+          "de": "Pflegehinweise",
+          "en": "Care instructions"
+        },
+        "quelle": "Art. 7(2)(b)(ii)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 44,
+        "name": {
+          "de": "Montageanleitung",
+          "en": "Assembly instructions"
+        },
+        "quelle": "Art. 7(2)(b)(ii)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 45,
+        "name": {
+          "de": "Reparaturanleitung",
+          "en": "Repair instructions"
+        },
+        "quelle": "Art. 7(2)(b)(ii)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 46,
+        "name": {
+          "de": "Ersatzteile (Verfügbarkeit, Kennung, Bezug)",
+          "en": "Spare parts (availability, identifier, sourcing)"
+        },
+        "quelle": "Art. 7(2)(b)(ii)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 47,
+        "name": {
+          "de": "Kontakt zu Reparaturdiensten der Marke",
+          "en": "Contact of repair services offered by the brand"
+        },
+        "quelle": "Konsultation",
+        "stufe": "oeffentlich",
+        "relevanz": "offen"
+      },
+      {
+        "nr": 48,
+        "name": {
+          "de": "Garantiedauer",
+          "en": "Warranty duration"
+        },
+        "quelle": "Verbraucherrechte-RL i. d. F. (EU) 2024/825",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 49,
+        "name": {
+          "de": "Herstellungsdatum",
+          "en": "Manufacturing date"
+        },
+        "quelle": "Konsultation (UC5)",
+        "stufe": "oeffentlich",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 50,
+        "name": {
+          "de": "Erwartete Nutzungsdauer",
+          "en": "Expected lifetime"
+        },
+        "quelle": "Konsultation",
+        "stufe": "oeffentlich",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 51,
+        "name": {
+          "de": "Zustandsbewertung",
+          "en": "Condition assessment"
+        },
+        "quelle": "Konsultation (UC20–21)",
+        "stufe": "berechtigt",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 52,
+        "name": {
+          "de": "Reparatur- und Aufarbeitungshistorie",
+          "en": "Repair and refurbishment history"
+        },
+        "quelle": "Konsultation (UC20–21)",
+        "stufe": "berechtigt",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 53,
+        "name": {
+          "de": "Historie des Bauteilwechsels",
+          "en": "Component replacement history"
+        },
+        "quelle": "Konsultation (UC21)",
+        "stufe": "berechtigt",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 54,
+        "name": {
+          "de": "Datum des Nutzungsendes bzw. der Entsorgung",
+          "en": "End-of-use or end-of-life date"
+        },
+        "quelle": "Konsultation (UC5)",
+        "stufe": "behoerden",
+        "relevanz": "freiwillig"
+      },
+      {
+        "nr": 55,
+        "name": {
+          "de": "Rücknahme-, Rückgabe- und Entsorgungshinweise",
+          "en": "Take-back, return and disposal information"
+        },
+        "quelle": "Konsultation; EPR",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      }
+    ],
+    "datenpunkte_quelle": "https://espr-euecolabel-furniture.eu/media/16",
+    "quelle": "https://espr-euecolabel-furniture.eu/media/16",
+    "gliederung_quelle": "https://espr-euecolabel-furniture.eu/media/16"
+  },
+  "lieferkette": [
+    {
+      "id": "holz",
+      "rolle": {
+        "de": "Holz & Holzwerkstoffe",
+        "en": "Wood & wood-based panels"
+      },
+      "beispiel": {
+        "de": "Sägewerk, Plattenhersteller",
+        "en": "Sawmill, panel manufacturer"
+      },
+      "liefert": {
+        "de": [
+          "Material- und Holzartangaben",
+          "Stoffangaben zu Klebern und Oberflächen",
+          "Daten für den Fußabdruck"
+        ],
+        "en": [
+          "Material and wood species information",
+          "Substance information on adhesives and surfaces",
+          "Data for the footprint"
+        ]
+      }
+    },
+    {
+      "id": "polster",
+      "rolle": {
+        "de": "Schaum & Textil",
+        "en": "Foam & textile"
+      },
+      "beispiel": {
+        "de": "Schaumhersteller, Weberei",
+        "en": "Foam manufacturer, weaving mill"
+      },
+      "liefert": {
+        "de": [
+          "Materialzusammensetzung",
+          "Stoffangaben zu Schaum und Bezug",
+          "Rezyklat-Nachweise"
+        ],
+        "en": [
+          "Material composition",
+          "Substance information on foam and cover",
+          "Recycled content evidence"
+        ]
+      }
+    },
+    {
+      "id": "moebelwerk",
+      "rolle": {
+        "de": "Fertigung & Montage",
+        "en": "Manufacturing & assembly"
+      },
+      "beispiel": {
+        "de": "Möbelwerk",
+        "en": "Furniture plant"
+      },
+      "liefert": {
+        "de": [
+          "Produktionsstätte",
+          "Modell- und Chargenkennung",
+          "Hinweise zu Verbindungen und Zerlegung"
+        ],
+        "en": [
+          "Production site",
+          "Model and batch identifier",
+          "Information on joints and disassembly"
+        ]
+      }
+    },
+    {
+      "id": "hersteller",
+      "rolle": {
+        "de": "Hersteller / Importeur",
+        "en": "Manufacturer / importer"
+      },
+      "beispiel": {
+        "de": "Verantwortlich für den Pass",
+        "en": "Responsible for the passport"
+      },
+      "verantwortlich": true,
+      "liefert": {
+        "de": [
+          "Pass anlegen und QR-Code am Typenschild anbringen",
+          "Konformitätsunterlagen und Sicherheitshinweise",
+          "Kennung im EU-Register hinterlegen"
+        ],
+        "en": [
+          "Create passport and attach QR code to the rating plate",
+          "Conformity documents and safety instructions",
+          "Register identifier in the EU registry"
+        ]
+      }
+    },
+    {
+      "id": "handel",
+      "rolle": {
+        "de": "Handel",
+        "en": "Trade"
+      },
+      "beispiel": {
+        "de": "Möbelhaus, Onlinehandel",
+        "en": "Furniture store, online retail"
+      },
+      "liefert": {
+        "de": [
+          "Prüfen, ob ein Pass vorhanden ist",
+          "Pass über den QR-Code zugänglich halten"
+        ],
+        "en": [
+          "Check that a passport is available",
+          "Keep the passport accessible via the QR code"
+        ]
+      }
+    },
+    {
+      "id": "nutzung",
+      "rolle": {
+        "de": "Nutzung & Recycling",
+        "en": "Use & recycling"
+      },
+      "beispiel": {
+        "de": "Käufer, Reparaturbetrieb, Recycler",
+        "en": "Buyers, repair business, recycler"
+      },
+      "liefert": {
+        "de": [
+          "Pflege- und Sicherheitshinweise auch ohne Beipackzettel",
+          "Stoff- und Zerlegungshinweise für Recycling"
+        ],
+        "en": [
+          "Care and safety instructions even without a leaflet",
+          "Substance and disassembly information for recycling"
+        ]
+      }
+    }
+  ],
+  "lieferkette_quelle": "https://espr-euecolabel-furniture.eu/media/16",
+  "quellen": [
+    {
+      "label": {
+        "de": "Vorstudie zu Ökodesign-Anforderungen für Möbel, Phase I: DPP-Inhalte für Möbel unter der ESPR, Entwurf Version 1 (Stand September 2026), Tab. 9-2",
+        "en": "Preparatory study on ecodesign requirements for furniture, Phase I: DPP content for furniture under the ESPR, draft version 1 (as of September 2026), Table 9-2"
+      },
+      "url": "https://espr-euecolabel-furniture.eu/media/16"
+    },
+    {
+      "label": {
+        "de": "Projektseite der Vorstudie zu Möbeln",
+        "en": "Project website of the preparatory study on furniture"
+      },
+      "url": "https://espr-euecolabel-furniture.eu/preparatory-study"
+    },
+    {
+      "label": {
+        "de": "Verordnung (EU) 2024/1781 (ESPR), Art. 5, 7 und 9 sowie Anhang III (Produktaspekte, Informationsanforderungen, Digitaler Produktpass)",
+        "en": "Regulation (EU) 2024/1781 (ESPR), Art. 5, 7 and 9 and Annex III (product aspects, information requirements, Digital Product Passport)"
+      },
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng"
+    },
+    {
+      "label": {
+        "de": "EU-Kommission: Digitaler Produktpass (Zeitplan, Datenträger)",
+        "en": "European Commission: Digital Product Passport (timeline, data carrier)"
+      },
+      "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en"
+    }
+  ]
+}
