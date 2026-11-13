@@ -1,0 +1,282 @@
+---
+/*
+  Grafiken für den Stahl-Pilot: Hero-Szene (Warmband-Coil auf dem Auflager,
+  Sucher auf dem Coil-Etikett) und Explosionszeichnung in isometrischer
+  Projektion: Bramme (Stahlwerk), aufgewickeltes Coil und Etikett mit QR-Code
+  als Ebenen.
+  Gleiches Prinzip wie bei Akku und Hoodie: --zu ist der Versatz in den
+  zusammengebauten Zustand, beim Laden fährt das Coil auseinander.
+*/
+import SzenePanel from "./SzenePanel.astro";
+import {
+  box,
+  hotspotIn,
+  iso,
+  pt,
+  qrKlein,
+  zufallAus,
+  cos30,
+  type ViewBox,
+} from "./geometrie";
+
+interface Props {
+  teil: "szene" | "explosion";
+  lang: "de" | "en";
+  pilot: {
+    produkt: { name: string; eckdaten: { wert: string }[] };
+    komponenten: {
+      id: string;
+      ebene: string;
+      nummer: string;
+      name: Record<"de" | "en", string>;
+    }[];
+    texte: Record<
+      "szene_label" | "szene_schild" | "szene_scan",
+      Record<"de" | "en", string>
+    >;
+  };
+  aktiv: string;
+}
+
+const { teil, lang, pilot, aktiv } = Astro.props;
+const t = (feld: Record<"de" | "en", string>) => feld[lang];
+
+// Höhen der drei Ebenen im auseinandergefahrenen Zustand.
+const Z = { bramme: 0, coil: 95, etikett: 190 };
+const HB = 22; // Dicke der Bramme
+const HC = 40; // Höhe des Coils
+const mitte = { x: 100, y: 60 }; // Mittelpunkt von Bramme und Coil (u, v)
+const R = 50; // Außenradius des Coils
+
+// Bramme als flacher Quader (Länge 200, Breite 120).
+const bramme = box(0, 0, Z.bramme, 200, 120, HB);
+const gussspuren = [30, 60, 90]
+  .map(
+    (v) =>
+      `M${pt(8, v, Z.bramme + HB).replace(",", " ")}L${pt(192, v, Z.bramme + HB).replace(",", " ")}`,
+  )
+  .join("");
+
+// Kreis bzw. Kreisbogen auf einer Ebene: Winkel w in Ebenen-Koordinaten, die
+// isometrische Projektion macht daraus eine Ellipse.
+const bogen = (r: number, z: number, w0: number, w1: number, n = 28) =>
+  Array.from({ length: n + 1 }, (_, k) => {
+    const w = w0 + ((w1 - w0) * k) / n;
+    return pt(mitte.x + r * Math.cos(w), mitte.y + r * Math.sin(w), z);
+  }).join(" ");
+const kreis = (r: number, z: number) => bogen(r, z, 0, 2 * Math.PI, 40);
+
+const coilOben = Z.coil + HC;
+// Sichtbare Mantelfläche: vorderer Halbkreis oben und unten.
+const mantel =
+  bogen(R, coilOben, -Math.PI / 4, (3 * Math.PI) / 4) +
+  " " +
+  bogen(R, Z.coil, (3 * Math.PI) / 4, -Math.PI / 4);
+// Wicklungen auf der Stirnseite des Coils.
+const ringe = [27, 33, 39, 45]
+  .map(
+    (r) =>
+      "M" + kreis(r, coilOben).split(" ").join("L").replaceAll(",", " ") + "Z",
+  )
+  .join("");
+
+// Etikett (Schild) in der Ebene über dem Coil.
+const etikett = { u: 76, v: 46, b: 48, h: 28 };
+const [ex, ey] = iso(etikett.u, etikett.v, Z.etikett);
+const etikettMatrix = `matrix(${cos30.toFixed(4)} 0.5 ${(-cos30).toFixed(4)} 0.5 ${ex.toFixed(1)} ${ey.toFixed(1)})`;
+const qrModule = qrKlein(zufallAus(311), 2.5, 2.5, 3.1);
+
+// Führungslinien zwischen den Ebenen.
+const fuehrung = [
+  ...[
+    [40, 20],
+    [160, 20],
+    [40, 100],
+    [160, 100],
+  ].map(([u, v]) => ({
+    von: iso(u, v, Z.bramme + HB),
+    bis: iso(u, v, Z.coil),
+  })),
+  ...[
+    [76, 46],
+    [124, 74],
+  ].map(([u, v]) => ({
+    von: iso(u, v, coilOben),
+    bis: iso(u, v, Z.etikett),
+  })),
+];
+
+const vb: ViewBox = { x: -150, y: -170, b: 340, h: 345 };
+const hotspot = hotspotIn(vb);
+const hotspotPos: Record<string, string> = {
+  etikett: hotspot(
+    etikett.u + etikett.b / 2,
+    etikett.v + etikett.h / 2,
+    Z.etikett,
+  ),
+  coil: hotspot(130, 95, Z.coil + HC / 2),
+  schmelze: hotspot(60, 100, Z.bramme + HB),
+  umwelt: hotspot(165, 35, Z.bramme + HB),
+};
+// Abstand in den zusammengebauten Zustand: Coil liegt auf der Bramme, das
+// Etikett oben auf dem Coil.
+const coilAbgesenkt = Z.coil - (Z.bramme + HB);
+const versatz: Record<string, number> = {
+  bramme: 0,
+  coil: coilAbgesenkt,
+  etikett: Z.etikett - (coilOben - coilAbgesenkt) - 1,
+};
+
+// Hero-Szene: Coil auf dem Auflager, das Etikett auf der Stirnseite ist markiert.
+const sucher = { x: 106, y: 44, b: 36, h: 30 };
+---
+
+{
+  teil === "szene" ? (
+    <svg
+      viewBox="0 0 400 132"
+      role="img"
+      aria-label={t(pilot.texte.szene_label)}
+    >
+      <defs>
+        <linearGradient id="szene-strahl-verlauf" x1="0" x2="1">
+          <stop offset="0" stop-color="#45d4c0" stop-opacity="0.2" />
+          <stop offset="1" stop-color="#45d4c0" stop-opacity="0.02" />
+        </linearGradient>
+      </defs>
+
+      <line class="szene__boden" x1="20" y1="118" x2="236" y2="118" />
+      <path
+        class="szene__linie szene__linie--duenn"
+        pathLength="1"
+        d="M62 106L50 118H142L130 106"
+      />
+      <circle
+        class="szene__linie"
+        pathLength="1"
+        cx="96"
+        cy="62"
+        r="44"
+        transform="rotate(-90 96 62)"
+      />
+      <circle
+        class="szene__linie szene__linie--duenn"
+        pathLength="1"
+        cx="96"
+        cy="62"
+        r="14"
+        transform="rotate(-90 96 62)"
+      />
+      <g fill="none">
+        {[22, 29, 36].map((r) => (
+          <circle class="szene__speichen" cx="96" cy="62" r={r} />
+        ))}
+      </g>
+      <path
+        class="szene__linie szene__linie--duenn"
+        pathLength="1"
+        d="M96 18H214Q222 18 222 26V110"
+      />
+      <g class="szene__akku">
+        <rect x="112" y="52" width="22" height="14" rx="1.5" />
+      </g>
+
+      <SzenePanel
+        sucher={sucher}
+        name={pilot.produkt.name}
+        daten={pilot.produkt.eckdaten.map((d) => d.wert)}
+        schild={t(pilot.texte.szene_schild)}
+        scan={t(pilot.texte.szene_scan)}
+        seed={2031}
+      />
+    </svg>
+  ) : (
+    <div
+      class="explosion explosion--stahl"
+      id="explosion"
+      data-aktiv={aktiv}
+      style={`aspect-ratio:${vb.b} / ${vb.h}`}
+    >
+      <svg
+        viewBox={`${vb.x} ${vb.y} ${vb.b} ${vb.h}`}
+        role="img"
+        aria-label={pilot.produkt.name}
+      >
+        <defs>
+          <pattern
+            id="raster"
+            width="24"
+            height="24"
+            patternUnits="userSpaceOnUse"
+          >
+            <path d="M24 0H0V24" class="explosion__raster" />
+          </pattern>
+        </defs>
+        <rect
+          x={vb.x}
+          y={vb.y}
+          width={vb.b}
+          height={vb.h}
+          fill="url(#raster)"
+        />
+
+        <g class="explosion__fuehrung">
+          {fuehrung.map((f) => (
+            <line x1={f.von[0]} y1={f.von[1]} x2={f.bis[0]} y2={f.bis[1]} />
+          ))}
+        </g>
+
+        <g class="ebene" data-ebene="bramme" style={`--zu:${versatz.bramme}px`}>
+          <polygon class="flaeche flaeche--rechts" points={bramme.rechts} />
+          <polygon class="flaeche flaeche--links" points={bramme.links} />
+          <polygon class="flaeche flaeche--oben bramme" points={bramme.oben} />
+          <path class="bramme__spuren" d={gussspuren} />
+        </g>
+
+        <g class="ebene" data-ebene="coil" style={`--zu:${versatz.coil}px`}>
+          <polygon class="flaeche flaeche--links" points={mantel} />
+          <polygon
+            class="flaeche flaeche--oben coil"
+            points={kreis(R, coilOben)}
+          />
+          <path class="coil__ringe" d={ringe} />
+          <polygon class="coil__auge" points={kreis(21, coilOben)} />
+        </g>
+
+        <g
+          class="ebene"
+          data-ebene="etikett"
+          style={`--zu:${versatz.etikett}px`}
+        >
+          <g transform={etikettMatrix} class="schild">
+            <rect x="0" y="0" width={etikett.b} height={etikett.h} rx="1" />
+            {qrModule.map((m) => (
+              <rect
+                class="schild__qr"
+                x={m.x}
+                y={m.y}
+                width="3.1"
+                height="3.1"
+              />
+            ))}
+            <rect class="schild__zeile" x="27" y="5" width="18" height="2.4" />
+            <rect class="schild__zeile" x="27" y="11" width="13" height="2.4" />
+            <rect class="schild__zeile" x="27" y="17" width="16" height="2.4" />
+          </g>
+        </g>
+      </svg>
+
+      {pilot.komponenten.map((k) => (
+        <button
+          type="button"
+          class="hotspot"
+          data-komponente={k.id}
+          style={hotspotPos[k.id]}
+          aria-label={t(k.name)}
+        >
+          <span>{k.nummer}</span>
+        </button>
+      ))}
+    </div>
+  )
+}
