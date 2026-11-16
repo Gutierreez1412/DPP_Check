@@ -20,8 +20,8 @@ Kooperationsprojekt mehrerer Partner (u. a. Future Response, Berlin); auf der Se
    Änderungen sollen ohne Eingriff in den Code möglich sein.
 2. **Statische Website, kein Backend.** Muss später leicht auf eine bestehende Website
    umziehbar sein (GitHub-Repo, Hosting z. B. GitHub Pages, Netlify oder Vercel).
-3. **Zweisprachig: Deutsch und Englisch** mit Sprachumschalter. Alle Texte liegen pro Sprache
-   in den Konfigurationsdateien.
+3. **Nur Deutsch.** Die englische Version wurde entfernt, es gibt keinen Sprachumschalter mehr.
+   Die englischen Texte bleiben in den Konfigurationsdateien erhalten.
 4. **Nutzer ohne Programmierkenntnisse.** Änderungen erklären, kurz und in einfachem Deutsch.
    Vor größeren Umbauten Rückfrage. Nach jeder Änderung die Seite lokal startbar halten.
 5. **Quellenprinzip.** Jede inhaltliche Aussage im Zeitstrahl, in den FAQ und in den
@@ -218,7 +218,7 @@ falls in `fragen.json` ein Feld `schwellen` steht.
 
 - Statische Seite, empfohlen: **Astro** (alternativ reines HTML/JS/Vite). Claude Code wählt,
   begründet die Wahl kurz und hält es einfach.
-- Sprache über Sprachumschalter, Standard Deutsch. URL-Schema z. B. `/de/…` und `/en/…`.
+- Nur Deutsch, URL-Schema `/de/…`.
 - Responsive (Mobile zuerst), barrierearm (Kontraste, Tastatur, sinnvolle Labels).
 - Zustand der Antworten nur im Browser (kein Speichern). Kein Tracking.
 - Kontaktformular: Attrappe, aber so gebaut, dass später ein Dienst (z. B. Netlify Forms,
