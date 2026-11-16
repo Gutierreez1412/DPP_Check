@@ -11,10 +11,6 @@
     "de": "Ihre Antworten bleiben in Ihrem Browser und werden nicht gespeichert oder gesendet.",
     "en": "Your answers stay in your browser and are not stored or sent."
   },
-  "sprachumschalter": {
-    "de": "EN",
-    "en": "DE"
-  },
   "disclaimer": {
     "de": "Dieses Tool liefert unverbindliche Einschätzungen und Scores. Es ersetzt keine Rechtsberatung und keinen Konformitätsnachweis.",
     "en": "This tool provides non-binding assessments and scores. It does not replace legal advice or proof of conformity."
@@ -414,18 +410,6 @@
       "alt": {
         "de": "Platzhalter-Logo",
         "en": "Placeholder logo"
-      }
-    },
-    "sprachwechsel": {
-      "de": {
-        "label": "EN",
-        "titel": "Switch to English",
-        "link": "/en/"
-      },
-      "en": {
-        "label": "DE",
-        "titel": "Auf Deutsch wechseln",
-        "link": "/de/"
       }
     },
     "hero": {

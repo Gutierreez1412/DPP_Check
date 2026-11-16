@@ -5,15 +5,12 @@ import seite from "../../inhalte/seite.json";
 
 interface Props {
   lang: "de" | "en";
-  /** Zieladresse des Sprachumschalters (die gleiche Seite in der anderen Sprache). */
-  wechselHref: string;
   title?: string;
 }
 
-const { lang, wechselHref, title } = Astro.props;
+const { lang, title } = Astro.props;
 const start = seite.startseite;
 const startLink = `/${lang}/`;
-const wechsel = start.sprachwechsel[lang];
 const seitentitel = title
   ? `${title} – ${start.seitentitel[lang]}`
   : start.seitentitel[lang];
@@ -40,13 +37,6 @@ const seitentitel = title
             )
           }
         </a>
-        <a
-          class="sprachumschalter"
-          href={wechselHref}
-          hreflang={wechsel.label.toLowerCase()}
-          title={wechsel.titel}
-          aria-label={wechsel.titel}>{wechsel.label}</a
-        >
       </div>
     </header>
 

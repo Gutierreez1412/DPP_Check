@@ -80,7 +80,7 @@ Push und jede Pull Request gegen `main`.
 - **Aussehen/Design**: zentrale Farben und Abstände stehen als Variablen ganz oben in
   `src/styles/global.css` (z. B. `--farbe-primaer`). Das aktuelle Design ist bewusst ein
   neutraler Platzhalter und wird später ausgetauscht.
-- **Aufbau der Seiten** (HTML-Struktur, Sprachumschalter, Logik): liegt im Ordner `src/`.
+- **Aufbau der Seiten** (HTML-Struktur, Logik): liegt im Ordner `src/`.
   Hier ist beim Ändern Vorsicht geboten – im Zweifel vorher fragen.
 
 ## Projektordner: was ist was?
