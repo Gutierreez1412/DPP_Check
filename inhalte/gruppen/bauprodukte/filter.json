@@ -1,0 +1,147 @@
+{
+  "gruppe": "bauprodukte",
+  "quelle_regel": "Entscheidungsbaum Bauproduktenverordnung (Future Response), Art. 26 und Art. 22 Verordnung (EU) 2024/3110 (CPR). Texte vorläufig, Feinschliff folgt.",
+  "fragen": [
+    {
+      "id": "produktfamilie",
+      "titel": {
+        "de": "Ist Ihr Produkt ein Bauprodukt, ein Bausatz oder ein wesentlicher Bestandteil, der dauerhaft in ein Gebäude oder Ingenieurbauwerk (z. B. Straße, Brücke, Tunnel) eingebaut wird?",
+        "en": "Is your product a construction product, a kit or an essential component that is permanently incorporated into a building or civil engineering work (e.g. road, bridge, tunnel)?"
+      },
+      "bei_ja": "weiter",
+      "bei_nein": "nicht_im_fokus"
+    },
+    {
+      "id": "eigene_marke",
+      "titel": {
+        "de": "Vertreiben Sie das Produkt unter Ihrem eigenen Namen oder Ihrer eigenen Handelsmarke?",
+        "en": "Do you place the product on the market under your own name or trademark?"
+      },
+      "bei_ja": "hersteller_marke",
+      "bei_nein": "weiter"
+    },
+    {
+      "id": "veraendert",
+      "titel": {
+        "de": "Trifft mindestens einer der folgenden Fälle auf Sie zu?",
+        "en": "Does at least one of the following cases apply to you?"
+      },
+      "punkte": [
+        {
+          "label": {
+            "de": "Produkt verändert",
+            "en": "Product modified"
+          },
+          "text": {
+            "de": "Sie ändern das Produkt, so dass die Konformität beeinträchtigt werden kann, z. B. durch nachträgliches Zuschneiden, Bohren oder Beschichten eines Bauteils.",
+            "en": "You change the product in a way that may affect its conformity, e.g. by cutting, drilling or coating a component after the fact."
+          }
+        },
+        {
+          "label": {
+            "de": "Anderer Verwendungszweck",
+            "en": "Different intended use"
+          },
+          "text": {
+            "de": "Sie stellen das Produkt für einen anderen als den vom Hersteller vorgesehenen Verwendungszweck bereit, z. B. einen Dämmstoff für die Fassade, der nur für den Innenbereich vorgesehen ist.",
+            "en": "You make the product available for a purpose other than the one intended by the manufacturer, e.g. an insulation material for facades that is only intended for indoor use."
+          }
+        },
+        {
+          "label": {
+            "de": "Andere Merkmale angegeben",
+            "en": "Different characteristics stated"
+          },
+          "text": {
+            "de": "Sie geben Merkmale des Produkts an, die von den vom Hersteller erklärten Merkmalen abweichen, z. B. eine höhere Druckfestigkeit oder eine andere Brandschutzklasse, als der Hersteller sie angibt.",
+            "en": "You state characteristics of the product that differ from those declared by the manufacturer, e.g. a higher compressive strength or a different fire class than the manufacturer states."
+          }
+        }
+      ],
+      "hinweis": {
+        "de": "Antworten Sie mit Nein, wenn Sie nur Herstellerangaben übersetzen oder die äußere Verpackung austauschen.",
+        "en": "Answer No if you only translate the manufacturer's information or replace the outer packaging."
+      },
+      "bei_ja": "hersteller_veraendert",
+      "bei_nein": "weiter"
+    },
+    {
+      "id": "gebraucht",
+      "titel": {
+        "de": "Bringen Sie ein gebrauchtes oder wiederaufbereitetes Produkt erstmals in der EU in Verkehr?",
+        "en": "Do you place a used or refurbished product on the EU market for the first time?"
+      },
+      "bei_ja": "hersteller_gebraucht",
+      "bei_nein": "einfuehrer_haendler"
+    }
+  ],
+  "schlussergebnis": "einfuehrer_haendler",
+  "rollenergebnis": {
+    "weiter_hinweis": {
+      "de": "Erste Einschätzung auf Basis Ihrer Angaben, keine abschließende rechtliche Bewertung. Die Einordnung bedarf einer Einzelfallprüfung.",
+      "en": "Initial assessment based on your answers, not a final legal determination. The classification requires a case-by-case assessment."
+    },
+    "varianten": {
+      "nicht_im_fokus": {
+        "titel": {
+          "de": "Ihr Produkt könnte derzeit nicht im Fokus stehen",
+          "en": "Your product might currently not be in focus"
+        },
+        "text": {
+          "de": "Nach Ihren Angaben wird Ihr Produkt möglicherweise nicht dauerhaft in ein Bauwerk eingebaut und wäre dann kein Bauprodukt im Sinne der Bauproduktenverordnung (EU) 2024/3110 (Art. 3). Ein Digitaler Produktpass nach dieser Verordnung wäre für Sie dann derzeit nicht relevant. Andere Rechtsakte können trotzdem gelten.",
+          "en": "According to your answers, your product might not be permanently incorporated into a construction work and would then not be a construction product within the meaning of the Construction Products Regulation (EU) 2024/3110 (Art. 3). A Digital Product Passport under this regulation would then currently not be relevant for you. Other legal acts may still apply."
+        },
+        "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
+        "status": "gilt"
+      },
+      "hersteller_marke": {
+        "titel": {
+          "de": "Sie könnten als Hersteller gelten",
+          "en": "You could be considered a manufacturer"
+        },
+        "text": {
+          "de": "Wer ein Produkt unter seinem eigenen Namen oder seiner Handelsmarke in Verkehr bringt, gilt als Hersteller (Art. 26 Abs. 1 Buchst. a). Dann könnten für Sie die Herstellerpflichten nach Art. 22 gelten, darunter Leistungs- und Konformitätserklärung, technische Dokumentation, CE-Kennzeichnung und der digitale Produktpass. Den Pass müsste der Hersteller spätestens 18 Monate nach Inkrafttreten des delegierten Rechtsakts nach Art. 75 Abs. 1 bereitstellen (Art. 22 Abs. 7, Art. 76, Art. 80 Abs. 1).",
+          "en": "Anyone who places a product on the market under their own name or trademark is considered a manufacturer (Art. 26(1)(a)). The manufacturer obligations under Art. 22 could then apply to you, including the declaration of performance and conformity, technical documentation, CE marking and the digital product passport. The manufacturer would have to provide the passport no later than 18 months after the delegated act under Art. 75(1) enters into force (Art. 22(7), Art. 76, Art. 80(1))."
+        },
+        "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
+        "status": "gilt"
+      },
+      "hersteller_veraendert": {
+        "titel": {
+          "de": "Sie könnten als Hersteller gelten",
+          "en": "You could be considered a manufacturer"
+        },
+        "text": {
+          "de": "Wer ein Produkt so ändert, dass die Konformität beeinträchtigt werden kann, es für einen anderen als den vom Hersteller angegebenen Verwendungszweck bereitstellt oder abweichende Merkmale angibt, gilt als Hersteller (Art. 26 Abs. 1 Buchst. b bis d). Dann könnten für Sie die Herstellerpflichten nach Art. 22 gelten, darunter Leistungs- und Konformitätserklärung, technische Dokumentation, CE-Kennzeichnung und der digitale Produktpass. Den Pass müsste der Hersteller spätestens 18 Monate nach Inkrafttreten des delegierten Rechtsakts nach Art. 75 Abs. 1 bereitstellen (Art. 22 Abs. 7, Art. 76, Art. 80 Abs. 1).",
+          "en": "Anyone who changes a product in a way that may affect its conformity, makes it available for a use other than the one declared by the manufacturer or states different characteristics is considered a manufacturer (Art. 26(1)(b) to (d)). The manufacturer obligations under Art. 22 could then apply to you, including the declaration of performance and conformity, technical documentation, CE marking and the digital product passport. The manufacturer would have to provide the passport no later than 18 months after the delegated act under Art. 75(1) enters into force (Art. 22(7), Art. 76, Art. 80(1))."
+        },
+        "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
+        "status": "gilt"
+      },
+      "hersteller_gebraucht": {
+        "titel": {
+          "de": "Sie könnten als Hersteller gelten",
+          "en": "You could be considered a manufacturer"
+        },
+        "text": {
+          "de": "Auch wer bestimmte gebrauchte oder wiederaufbereitete Produkte in Verkehr bringt, kann als Hersteller gelten (Art. 26 Abs. 2). Dann könnten für Sie die Herstellerpflichten nach Art. 22 gelten, darunter Leistungs- und Konformitätserklärung, technische Dokumentation, CE-Kennzeichnung und der digitale Produktpass. Den Pass müsste der Hersteller spätestens 18 Monate nach Inkrafttreten des delegierten Rechtsakts nach Art. 75 Abs. 1 bereitstellen (Art. 22 Abs. 7, Art. 76, Art. 80 Abs. 1).",
+          "en": "Anyone who places certain used or refurbished products on the market can also be considered a manufacturer (Art. 26(2)). The manufacturer obligations under Art. 22 could then apply to you, including the declaration of performance and conformity, technical documentation, CE marking and the digital product passport. The manufacturer would have to provide the passport no later than 18 months after the delegated act under Art. 75(1) enters into force (Art. 22(7), Art. 76, Art. 80(1))."
+        },
+        "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
+        "status": "gilt"
+      },
+      "einfuehrer_haendler": {
+        "titel": {
+          "de": "Sie könnten Einführer bzw. Händler bleiben",
+          "en": "You could remain an importer or distributor"
+        },
+        "text": {
+          "de": "Nach Ihren Angaben träfe keiner der Fälle des Art. 26 zu, in denen ein Einführer oder Händler als Hersteller gilt. Dann wären für Sie die Pflichten der Einführer (Art. 24) bzw. der Händler (Art. 25) maßgeblich. Den digitalen Produktpass müsste in diesem Fall der Hersteller bereitstellen (Art. 22 Abs. 7).",
+          "en": "According to your answers, none of the cases in Art. 26 in which an importer or distributor is considered a manufacturer would apply. The obligations of importers (Art. 24) or distributors (Art. 25) would then be relevant for you. In this case, the manufacturer would have to provide the digital product passport (Art. 22(7))."
+        },
+        "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
+        "status": "gilt"
+      }
+    }
+  }
+}

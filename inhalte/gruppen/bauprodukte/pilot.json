@@ -1,0 +1,936 @@
+{
+  "id": "bauprodukte",
+  "eyebrow": {
+    "de": "DPP-Pilot · Bauprodukte",
+    "en": "DPP pilot · Construction products"
+  },
+  "titel": {
+    "de": "So könnte ein digitaler Produktpass für Bauprodukte aussehen",
+    "en": "What a digital product passport for construction products could look like"
+  },
+  "einleitung": {
+    "de": "Für Bauprodukte sieht die Bauproduktenverordnung (EU) 2024/3110 einen eigenen Digitalen Produktpass vor. Wann er Pflicht wird, legt ein delegierter Rechtsakt fest, den die EU-Kommission für Q2 2027 als Richtwert nennt. Am Beispiel von Zement im Sack zeigen wir, welche Teile welche Daten liefern und was Kunden, Demonteure und Behörden im Pass sehen könnten.",
+    "en": "The Construction Products Regulation (EU) 2024/3110 provides for a Digital Product Passport of its own for construction products. When it becomes mandatory is set by a delegated act, for which the European Commission gives Q2 2027 as the indicative timeline. Using bagged cement as an example, we show which parts provide which data and what customers, dismantlers and authorities could see in the passport."
+  },
+  "einleitung_quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en#dpp-timeline",
+  "beispiel_hinweis": {
+    "de": "Fiktives Beispiel: Produkt, Hersteller und alle Werte sind erfunden und dienen nur der Veranschaulichung.",
+    "en": "Fictitious example: product, manufacturer and all values are made up for illustration only."
+  },
+  "vorbehalt": {
+    "titel": {
+      "de": "Beispiel nach der Verordnung, Rechtsakt zum Pass steht noch aus",
+      "en": "Example based on the regulation, the act on the passport is still pending"
+    },
+    "text": {
+      "de": "Dieser Pass ist kein gültiges Muster. Die Datenpunkte folgen der Verordnung (EU) 2024/3110 (Art. 22, Art. 76 und Anhang IV). Welche Akteure auf welche Informationen zugreifen dürfen, legt erst der delegierte Rechtsakt fest (Art. 75 Abs. 2). Die Zuordnung der Zugriffsstufen im Beispiel ist deshalb nur veranschaulicht.",
+      "en": "This passport is not a valid template. The data points follow Regulation (EU) 2024/3110 (Art. 22, Art. 76 and Annex IV). Which actors may access which information is only set by the delegated act (Art. 75(2)). The assignment of access levels in the example is therefore for illustration only."
+    },
+    "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+  },
+  "texte": {
+    "szene_label": {
+      "de": "Zementsack auf Palette mit vergrößertem Etikett: Es trägt den QR-Code zum Produktpass.",
+      "en": "Bag of cement on a pallet with magnified label: it carries the QR code to the product passport."
+    },
+    "szene_schild": {
+      "de": "Sack-Etikett",
+      "en": "Bag label"
+    },
+    "szene_scan": {
+      "de": "Scan → Produktpass",
+      "en": "Scan → product passport"
+    },
+    "register_label": {
+      "de": "Bereiche des Produktpasses",
+      "en": "Sections of the product passport"
+    },
+    "dp_gesamt": {
+      "de": "Datenpunkte laut Verordnung",
+      "en": "Data points under the regulation"
+    },
+    "dp_relevant": {
+      "de": "davon als Pflicht genannt",
+      "en": "of which stated as mandatory"
+    },
+    "dp_status": {
+      "bedingt": {
+        "de": "gegebenenfalls",
+        "en": "where applicable"
+      }
+    },
+    "marke": {
+      "de": "Digital Product Passport",
+      "en": "Digital Product Passport"
+    }
+  },
+  "produkt": {
+    "name": "Nordzement CEM II",
+    "typ": {
+      "de": "Zement im 25-kg-Sack (Bauprodukt)",
+      "en": "Cement in a 25 kg bag (construction product)"
+    },
+    "hersteller": "Musterzement GmbH",
+    "pass_id": "DPP-DE-MZE-CEM2-Z2311",
+    "eckdaten": [
+      {
+        "label": {
+          "de": "Gebinde",
+          "en": "Pack"
+        },
+        "wert": "25-kg-Sack"
+      },
+      {
+        "label": {
+          "de": "Zementart",
+          "en": "Cement type"
+        },
+        "wert": "CEM II/A-LL"
+      },
+      {
+        "label": {
+          "de": "Festigkeitsklasse",
+          "en": "Strength class"
+        },
+        "wert": "42,5 N"
+      },
+      {
+        "label": {
+          "de": "Druckfestigkeit (28 Tage)",
+          "en": "Compressive strength (28 days)"
+        },
+        "wert": "≥ 42,5 MPa"
+      }
+    ]
+  },
+  "schritte": [
+    {
+      "titel": {
+        "de": "Datenträger am Produkt",
+        "en": "Data carrier on the product"
+      },
+      "text": {
+        "de": "Der Sack trägt einen Datenträger wie einen QR-Code, der zum Pass führt. Er ist mit dem eindeutigen Kenncode des Produkttyps verbunden. Der Hersteller bringt ihn an und muss außerdem jeden Produkttyp mit einem eigenen Identifizierungscode kennzeichnen.",
+        "en": "The bag carries a data carrier such as a QR code that leads to the passport. It is linked to the unique identifier of the product type. The manufacturer affixes it and must also mark each product type with its own identification code."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    },
+    {
+      "titel": {
+        "de": "Daten aus Hersteller und Lieferkette",
+        "en": "Data from the manufacturer and supply chain"
+      },
+      "text": {
+        "de": "Der Hersteller stellt den Pass bereit. Er enthält die Leistungs- und Konformitätserklärung, die technische Dokumentation, die CE-Kennzeichnung, die Produktinformationen und Verknüpfungen zu wesentlichen Bestandteilen mit eigenem Pass.",
+        "en": "The manufacturer provides the passport. It contains the declaration of performance and conformity, the technical documentation, the CE marking, the product information and links to essential components that have a passport of their own."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    },
+    {
+      "titel": {
+        "de": "Zugriff nach Rolle",
+        "en": "Access by role"
+      },
+      "text": {
+        "de": "Der Pass ist über den Datenträger kostenlos zugänglich, mit unterschiedlichen Zugangsstufen. Wer was sehen darf, regelt der delegierte Rechtsakt und berücksichtigt dabei geistiges Eigentum, sensible Geschäftsinformationen und die Sicherheit von Bauwerken.",
+        "en": "The passport is accessible free of charge via the data carrier, with different access levels. Who may see what is regulated by the delegated act, which takes into account intellectual property, sensitive business information and the safety of construction works."
+      },
+      "zugriffsstufen_zeigen": true,
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    }
+  ],
+  "zugriffsstufen": [
+    {
+      "id": "oeffentlich",
+      "name": {
+        "de": "Kunden und Nutzer",
+        "en": "Customers and users"
+      },
+      "wer": {
+        "de": "Käufer, Planer, Bauausführende und Nutzer",
+        "en": "Buyers, planners, contractors and users"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    },
+    {
+      "id": "berechtigt",
+      "name": {
+        "de": "Wirtschaftsteilnehmer und Demonteure",
+        "en": "Economic operators and dismantlers"
+      },
+      "wer": {
+        "de": "z. B. Händler sowie Rückbau- und Recyclingbetriebe",
+        "en": "e.g. distributors and deconstruction and recycling companies"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    },
+    {
+      "id": "behoerden",
+      "name": {
+        "de": "Behörden",
+        "en": "Authorities"
+      },
+      "wer": {
+        "de": "Zuständige nationale Behörden, z. B. Marktüberwachung",
+        "en": "Competent national authorities, e.g. market surveillance"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    }
+  ],
+  "komponenten": [
+    {
+      "id": "etikett",
+      "ebene": "etikett",
+      "nummer": "01",
+      "name": {
+        "de": "Sack-Etikett & QR-Code",
+        "en": "Bag label & QR code"
+      },
+      "text": {
+        "de": "Das Etikett trägt Zementart, Festigkeitsklasse, Charge und CE-Kennzeichnung, der QR-Code führt zum Pass. Dort bleiben Hersteller, Kontakt und Kennung abrufbar, auch wenn das Etikett beschädigt wird.",
+        "en": "The label carries the cement type, strength class, batch and CE marking, the QR code leads to the passport. There, manufacturer, contact and identifier remain available even if the label is damaged."
+      },
+      "lieferant": {
+        "de": "Hersteller (Werk)",
+        "en": "Manufacturer (plant)"
+      },
+      "felder": ["kenncode", "hersteller", "ce", "pic"]
+    },
+    {
+      "id": "zement",
+      "ebene": "zement",
+      "nummer": "02",
+      "name": {
+        "de": "Zement im Sack",
+        "en": "Cement in the bag"
+      },
+      "text": {
+        "de": "Der Zement bestimmt die Leistung: Festigkeitsklasse und Erstarrungsbeginn stehen in der Leistungs- und Konformitätserklärung, die wichtigsten Werkstoffe in den Produktinformationen. Bei Zement kommt der Klimawirkung besonderes Gewicht zu.",
+        "en": "The cement determines the performance: strength class and initial setting time are stated in the declaration of performance and conformity, the main materials in the product information. For cement, the climate impact carries particular weight."
+      },
+      "lieferant": {
+        "de": "Hersteller (Produktion und Prüfung)",
+        "en": "Manufacturer (production and testing)"
+      },
+      "felder": ["werkstoffe", "dop", "umwelt", "klima"]
+    },
+    {
+      "id": "verpackung",
+      "ebene": "verpackung",
+      "nummer": "03",
+      "name": {
+        "de": "Palette & Verpackung",
+        "en": "Pallet & packaging"
+      },
+      "text": {
+        "de": "Sack und Palette tragen die Verarbeitungs- und Sicherheitshinweise und gehören zum Rückbau- und Recyclingkonzept. Wesentliche Bestandteile mit eigenem Pass würden hier verknüpft.",
+        "en": "Bag and pallet carry the processing and safety instructions and are part of the deconstruction and recycling concept. Essential components with a passport of their own would be linked here."
+      },
+      "lieferant": {
+        "de": "Hersteller und Verpackungslieferant",
+        "en": "Manufacturer and packaging supplier"
+      },
+      "felder": ["montage", "vertraeglichkeit", "rueckbau", "bestandteile"]
+    }
+  ],
+  "pass": {
+    "abschnitte": [
+      {
+        "id": "identifikation",
+        "titel": {
+          "de": "Produkt & Hersteller",
+          "en": "Product & manufacturer"
+        },
+        "datenpunkte": [1, 2, 3, 4, 10, 15],
+        "felder": [
+          {
+            "id": "kenncode",
+            "label": {
+              "de": "Kenncode des Produkttyps und Charge",
+              "en": "Product type identifier and batch"
+            },
+            "wert": {
+              "de": "Typ NZ-CEM2-425N · Charge Z2311",
+              "en": "Type NZ-CEM2-425N · batch Z2311"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [1, 2, 15]
+          },
+          {
+            "id": "hersteller",
+            "label": {
+              "de": "Hersteller und Kontakt",
+              "en": "Manufacturer and contact"
+            },
+            "wert": {
+              "de": "Musterzement GmbH, Musterstadt (DE)",
+              "en": "Musterzement GmbH, Musterstadt (DE)"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [3]
+          },
+          {
+            "id": "kontakt_einbau",
+            "label": {
+              "de": "Ansprechperson für Einbau, Wartung und Rückbau",
+              "en": "Contact for installation, maintenance and deconstruction"
+            },
+            "wert": {
+              "de": "Technischer Kundendienst",
+              "en": "Technical customer service"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [4]
+          },
+          {
+            "id": "pic",
+            "label": {
+              "de": "Produktinformationsstelle für das Bauwesen",
+              "en": "Product contact point for construction"
+            },
+            "wert": {
+              "de": "Stelle des Mitgliedstaats, in dem das Produkt bereitgestellt wird",
+              "en": "Contact point of the Member State where the product is made available"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [10]
+          }
+        ]
+      },
+      {
+        "id": "verwendung",
+        "titel": {
+          "de": "Verwendung & Werkstoffe",
+          "en": "Use & materials"
+        },
+        "datenpunkte": [5, 6, 7, 8, 9],
+        "felder": [
+          {
+            "id": "zweck",
+            "label": {
+              "de": "Verwendungszweck und Verwender",
+              "en": "Intended use and users"
+            },
+            "wert": {
+              "de": "Beton, Mörtel und Estrich · Betonwerke und Bauunternehmen",
+              "en": "Concrete, mortar and screed · precast plants and contractors"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [5, 6]
+          },
+          {
+            "id": "werkstoffe",
+            "label": {
+              "de": "Wichtigste Werkstoffe",
+              "en": "Main materials"
+            },
+            "wert": {
+              "de": "Portlandzementklinker, Kalkstein, Gips",
+              "en": "Portland cement clinker, limestone, gypsum"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [9]
+          },
+          {
+            "id": "bedingungen",
+            "label": {
+              "de": "Verwendungsbedingungen",
+              "en": "Conditions of use"
+            },
+            "wert": {
+              "de": "Trocken lagern, Verarbeitung nach Herstellerangabe",
+              "en": "Store dry, process as stated by the manufacturer"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [7]
+          },
+          {
+            "id": "nutzungsdauer",
+            "label": {
+              "de": "Geschätzte Nutzungsdauer",
+              "en": "Estimated service life"
+            },
+            "wert": {
+              "de": "Im Bauwerk bis zu 50 Jahre",
+              "en": "Up to 50 years in the construction work"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [8]
+          }
+        ]
+      },
+      {
+        "id": "konformitaet",
+        "titel": {
+          "de": "Leistung & Konformität",
+          "en": "Performance & conformity"
+        },
+        "datenpunkte": [11, 12, 13, 14],
+        "felder": [
+          {
+            "id": "dop",
+            "label": {
+              "de": "Leistungs- und Konformitätserklärung",
+              "en": "Declaration of performance and conformity"
+            },
+            "wert": {
+              "de": "Festigkeitsklasse 42,5 N · Erstarrungsbeginn ≥ 60 min",
+              "en": "Strength class 42.5 N · initial setting time ≥ 60 min"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [11]
+          },
+          {
+            "id": "ce",
+            "label": {
+              "de": "CE-Kennzeichnung",
+              "en": "CE marking"
+            },
+            "wert": {
+              "de": "CE-Kennzeichnung angebracht",
+              "en": "CE marking affixed"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [13]
+          },
+          {
+            "id": "technik",
+            "label": {
+              "de": "Technische Dokumentation",
+              "en": "Technical documentation"
+            },
+            "wert": {
+              "de": "Prüfberichte und Verfahrensbeschreibung",
+              "en": "Test reports and procedure description"
+            },
+            "stufe": "behoerden",
+            "datenpunkte": [12]
+          },
+          {
+            "id": "umwelt",
+            "label": {
+              "de": "Nachhaltigkeitsleistung im Umweltbereich",
+              "en": "Environmental sustainability performance"
+            },
+            "wert": {
+              "de": "Berechnung liegt der technischen Dokumentation bei",
+              "en": "Calculation is part of the technical documentation"
+            },
+            "stufe": "behoerden",
+            "datenpunkte": [14]
+          }
+        ]
+      },
+      {
+        "id": "lebenszyklus",
+        "titel": {
+          "de": "Einbau, Nutzung & Rückbau",
+          "en": "Installation, use & deconstruction"
+        },
+        "datenpunkte": [16, 17, 18, 19, 20, 21],
+        "felder": [
+          {
+            "id": "montage",
+            "label": {
+              "de": "Verarbeitungs- und Sicherheitshinweise",
+              "en": "Processing and safety instructions"
+            },
+            "wert": {
+              "de": "Haut- und Augenschutz, Staub vermeiden",
+              "en": "Skin and eye protection, avoid dust"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [16, 19]
+          },
+          {
+            "id": "rueckbau",
+            "label": {
+              "de": "Empfehlungen zu Rückbau und Recycling",
+              "en": "Recommendations on deconstruction and recycling"
+            },
+            "wert": {
+              "de": "Leere Säcke und Paletten getrennt sammeln, Betonbruch recycelbar",
+              "en": "Collect empty bags and pallets separately, concrete rubble is recyclable"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [20]
+          },
+          {
+            "id": "vertraeglichkeit",
+            "label": {
+              "de": "Verträglichkeit mit anderen Produkten",
+              "en": "Compatibility with other products"
+            },
+            "wert": {
+              "de": "Geeignet für übliche Gesteinskörnungen und Zusatzmittel",
+              "en": "Suitable for common aggregates and admixtures"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [17]
+          },
+          {
+            "id": "wartung",
+            "label": {
+              "de": "Wartungsbedarf",
+              "en": "Maintenance needs"
+            },
+            "wert": {
+              "de": "Kein Wartungsbedarf des Zements im Bauwerk",
+              "en": "No maintenance needs for the cement in the construction work"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [18]
+          },
+          {
+            "id": "klima",
+            "label": {
+              "de": "Klimawirkung je Tonne Zement (gegebenenfalls)",
+              "en": "Climate impact per tonne of cement (where applicable)"
+            },
+            "wert": {
+              "de": "Auswirkungen auf den Klimawandel — insgesamt",
+              "en": "Impact on climate change, total"
+            },
+            "stufe": "oeffentlich",
+            "datenpunkte": [21],
+            "status": "unklar",
+            "hinweis": {
+              "de": "Laut Arbeitsplan der Kommission soll für Zement eine verpflichtende Kennzeichnung des Treibhauspotenzials kommen, sobald die neuen Zementnormen verbindlich sind (Kap. 3.4). Ob und wie sie im Pass erscheint, ist offen.",
+              "en": "According to the Commission's working plan, a mandatory label showing the global warming potential is to be introduced for cement once the new cement standards are made mandatory (Section 3.4). Whether and how it appears in the passport is open."
+            }
+          }
+        ]
+      },
+      {
+        "id": "verknuepfungen",
+        "titel": {
+          "de": "Bestandteile & Verknüpfungen",
+          "en": "Components & links"
+        },
+        "datenpunkte": [22, 23],
+        "felder": [
+          {
+            "id": "bestandteile",
+            "label": {
+              "de": "Pässe wesentlicher Bestandteile",
+              "en": "Passports of essential components"
+            },
+            "wert": {
+              "de": "Kein Bestandteil mit eigenem Pass",
+              "en": "No component with a passport of its own"
+            },
+            "stufe": "berechtigt",
+            "datenpunkte": [22]
+          },
+          {
+            "id": "unionsrecht",
+            "label": {
+              "de": "Unterlagen nach anderem Unionsrecht",
+              "en": "Documents under other Union law"
+            },
+            "wert": {
+              "de": "Nur falls anderes Unionsrecht sie verlangt",
+              "en": "Only if other Union law requires them"
+            },
+            "stufe": "behoerden",
+            "datenpunkte": [23]
+          }
+        ]
+      }
+    ],
+    "datenpunkte": [
+      {
+        "nr": 1,
+        "name": {
+          "de": "Eindeutiger Kenncode des Produkttyps",
+          "en": "Unique identifier of the product type"
+        },
+        "quelle": "Art. 22 Abs. 5; Anh. IV Nr. 1.1",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 2,
+        "name": {
+          "de": "Chargen- oder Seriennummer, soweit verfügbar",
+          "en": "Batch or serial number, where available"
+        },
+        "quelle": "Art. 22 Abs. 5",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 3,
+        "name": {
+          "de": "Name und Kontaktdaten des Herstellers oder Bevollmächtigten",
+          "en": "Name and contact details of the manufacturer or authorised representative"
+        },
+        "quelle": "Anh. IV Nr. 1.3",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 4,
+        "name": {
+          "de": "Kontakt für Installation, Wartung, Rückbau, Risiken und Produktversagen",
+          "en": "Contact for installation, maintenance, deconstruction, risks and product failure"
+        },
+        "quelle": "Anh. IV Nr. 1.4",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 5,
+        "name": {
+          "de": "Angegebene Verwendungszwecke",
+          "en": "Declared intended uses"
+        },
+        "quelle": "Anh. IV Nr. 1.2 a",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 6,
+        "name": {
+          "de": "Vorgesehene Verwender",
+          "en": "Intended users"
+        },
+        "quelle": "Anh. IV Nr. 1.2 b",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 7,
+        "name": {
+          "de": "Verwendungsbedingungen",
+          "en": "Conditions of use"
+        },
+        "quelle": "Anh. IV Nr. 1.2 c",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 8,
+        "name": {
+          "de": "Geschätzte durchschnittliche und minimale Nutzungsdauer",
+          "en": "Estimated average and minimum service life"
+        },
+        "quelle": "Anh. IV Nr. 1.2 d",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 9,
+        "name": {
+          "de": "Wichtigste verwendete Werkstoffe",
+          "en": "Main materials used"
+        },
+        "quelle": "Anh. IV Nr. 1.2 e",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 10,
+        "name": {
+          "de": "Kontaktdaten der Produktinformationsstelle für das Bauwesen",
+          "en": "Contact details of the product contact point for construction"
+        },
+        "quelle": "Anh. IV Nr. 1.5",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 11,
+        "name": {
+          "de": "Leistungs- und Konformitätserklärung",
+          "en": "Declaration of performance and conformity"
+        },
+        "quelle": "Art. 76 Abs. 2 a (i)",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 12,
+        "name": {
+          "de": "Technische Dokumentation",
+          "en": "Technical documentation"
+        },
+        "quelle": "Art. 76 Abs. 2 a (iii); Art. 22 Abs. 3",
+        "stufe": "behoerden",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 13,
+        "name": {
+          "de": "CE-Kennzeichnung",
+          "en": "CE marking"
+        },
+        "quelle": "Art. 76 Abs. 2 a (iv); Art. 22 Abs. 9",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 14,
+        "name": {
+          "de": "Berechnung der Nachhaltigkeitsleistung im Umweltbereich",
+          "en": "Calculation of environmental sustainability performance"
+        },
+        "quelle": "Art. 22 Abs. 3 f",
+        "stufe": "behoerden",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 15,
+        "name": {
+          "de": "Eindeutige Kennungen",
+          "en": "Unique identifiers"
+        },
+        "quelle": "Art. 76 Abs. 2 a (v); Art. 79",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 16,
+        "name": {
+          "de": "Sicherheit bei Transport, Installation, Demontage, Wartung, Rückbau und Abriss",
+          "en": "Safety during transport, installation, disassembly, maintenance, deconstruction and demolition"
+        },
+        "quelle": "Anh. IV Nr. 2.1",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 17,
+        "name": {
+          "de": "Verträglichkeit mit anderen Produkten und Integration in Systeme",
+          "en": "Compatibility with other products and integration into systems"
+        },
+        "quelle": "Anh. IV Nr. 2.2",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 18,
+        "name": {
+          "de": "Wartungsbedarf während der Nutzungsdauer",
+          "en": "Maintenance needs during service life"
+        },
+        "quelle": "Anh. IV Nr. 2.3",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 19,
+        "name": {
+          "de": "Sicherheit bei der Verwendung",
+          "en": "Safety in use"
+        },
+        "quelle": "Anh. IV Nr. 2.4",
+        "stufe": "oeffentlich",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 20,
+        "name": {
+          "de": "Empfehlungen zu Reparatur, Demontage, Wiederverwendung, Wiederaufbereitung, Recycling und Lagerung",
+          "en": "Recommendations on repair, disassembly, reuse, refurbishment, recycling and storage"
+        },
+        "quelle": "Anh. IV Nr. 2.7",
+        "stufe": "berechtigt",
+        "relevanz": "pflicht"
+      },
+      {
+        "nr": 21,
+        "name": {
+          "de": "Leistung bei Klimawirkung und Humantoxizität",
+          "en": "Performance on climate change impact and human toxicity"
+        },
+        "quelle": "Anh. IV Nr. 2.8",
+        "stufe": "oeffentlich",
+        "relevanz": "bedingt"
+      },
+      {
+        "nr": 22,
+        "name": {
+          "de": "Datenträger wesentlicher Bestandteile mit eigenem Pass",
+          "en": "Data carriers of essential components with a passport of their own"
+        },
+        "quelle": "Art. 76 Abs. 2 a (vii)",
+        "stufe": "berechtigt",
+        "relevanz": "bedingt"
+      },
+      {
+        "nr": 23,
+        "name": {
+          "de": "Unterlagen nach anderem Unionsrecht",
+          "en": "Documents required under other Union law"
+        },
+        "quelle": "Art. 76 Abs. 2 a (vi)",
+        "stufe": "behoerden",
+        "relevanz": "bedingt"
+      }
+    ],
+    "datenpunkte_quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
+    "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
+    "gliederung_quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+  },
+  "lieferkette": [
+    {
+      "id": "rohstoffe",
+      "rolle": {
+        "de": "Rohstoffe",
+        "en": "Raw materials"
+      },
+      "beispiel": {
+        "de": "Kalksteinbruch, Gipslieferant",
+        "en": "Limestone quarry, gypsum supplier"
+      },
+      "liefert": {
+        "de": [
+          "Herkunft und Art der Rohstoffe",
+          "Angaben zu Stoffen und Werkstoffen",
+          "Daten für die Umweltbewertung"
+        ],
+        "en": [
+          "Origin and type of raw materials",
+          "Information on substances and materials",
+          "Data for the environmental assessment"
+        ]
+      }
+    },
+    {
+      "id": "hersteller",
+      "rolle": {
+        "de": "Hersteller",
+        "en": "Manufacturer"
+      },
+      "beispiel": {
+        "de": "Zementwerk",
+        "en": "Cement plant"
+      },
+      "verantwortlich": true,
+      "liefert": {
+        "de": [
+          "Leistungs- und Konformitätserklärung",
+          "Technische Dokumentation und CE-Kennzeichnung",
+          "Digitaler Produktpass (Art. 22 Abs. 7)"
+        ],
+        "en": [
+          "Declaration of performance and conformity",
+          "Technical documentation and CE marking",
+          "Digital product passport (Art. 22(7))"
+        ]
+      }
+    },
+    {
+      "id": "haendler",
+      "rolle": {
+        "de": "Einführer und Händler",
+        "en": "Importers and distributors"
+      },
+      "beispiel": {
+        "de": "Baustoffhandel",
+        "en": "Building materials trade"
+      },
+      "liefert": {
+        "de": [
+          "Pass und Datenträger zum Produkt",
+          "Informationen für den Kunden",
+          "Herstellerpflichten, falls sie nach Art. 26 als Hersteller gelten"
+        ],
+        "en": [
+          "Passport and data carrier for the product",
+          "Information for the customer",
+          "Manufacturer obligations, if they are considered manufacturers under Art. 26"
+        ]
+      }
+    },
+    {
+      "id": "einbau",
+      "rolle": {
+        "de": "Einbau",
+        "en": "Installation"
+      },
+      "beispiel": {
+        "de": "Betonwerk, Bauunternehmen",
+        "en": "Precast plant, construction company"
+      },
+      "liefert": {
+        "de": [
+          "Einsatz im Beton oder Mörtel",
+          "Rückmeldungen zu Verarbeitung und Verträglichkeit"
+        ],
+        "en": [
+          "Use in concrete or mortar",
+          "Feedback on processing and compatibility"
+        ]
+      }
+    },
+    {
+      "id": "nutzung",
+      "rolle": {
+        "de": "Nutzung",
+        "en": "Use"
+      },
+      "beispiel": {
+        "de": "Gebäudeeigentümer, Betreiber",
+        "en": "Building owner, operator"
+      },
+      "liefert": {
+        "de": [
+          "Wartungs- und Instandhaltungshistorie des Bauwerks",
+          "Nutzungsdauer im Bauwerk"
+        ],
+        "en": [
+          "Maintenance and repair history of the construction work",
+          "Service life in the construction work"
+        ]
+      }
+    },
+    {
+      "id": "rueckbau",
+      "rolle": {
+        "de": "Rückbau",
+        "en": "Deconstruction"
+      },
+      "beispiel": {
+        "de": "Abbruch- und Betonrecyclingbetrieb",
+        "en": "Demolition and concrete recycling company"
+      },
+      "liefert": {
+        "de": [
+          "Hinweise zu Rückbau und Betonrecycling",
+          "Angaben zu Entsorgung der Verpackung"
+        ],
+        "en": [
+          "Instructions on deconstruction and concrete recycling",
+          "Information on packaging disposal"
+        ]
+      }
+    }
+  ],
+  "lieferkette_quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
+  "quellen": [
+    {
+      "label": {
+        "de": "Verordnung (EU) 2024/3110 (Bauproduktenverordnung), insbesondere Art. 22, 75 bis 80 und Anhang IV",
+        "en": "Regulation (EU) 2024/3110 (Construction Products Regulation), in particular Art. 22, 75 to 80 and Annex IV"
+      },
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    },
+    {
+      "label": {
+        "de": "EU-Kommission (2025): Arbeitsplan zur Bauproduktenverordnung 2026–2029, COM(2025) 772 (u. a. geplante Kennzeichnung für Zement, Kap. 3.4)",
+        "en": "European Commission (2025): CPR working plan 2026–2029, COM(2025) 772 (incl. planned label for cement, Section 3.4)"
+      },
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:52025DC0772"
+    },
+    {
+      "label": {
+        "de": "EU-Kommission: Digitaler Produktpass, Zeitplan",
+        "en": "European Commission: Digital Product Passport, timeline"
+      },
+      "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en#dpp-timeline"
+    }
+  ]
+}
