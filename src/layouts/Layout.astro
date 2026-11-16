@@ -12,13 +12,6 @@ const { lang, title, breit = false } = Astro.props;
 
 const text = (feld: Record<"de" | "en", string>) => feld[lang];
 
-const andereSprache = lang === "de" ? "en" : "de";
-const aktuellerPfad = Astro.url.pathname;
-const pfadAndereSprache = aktuellerPfad.replace(
-  /^\/(de|en)(\/|$)/,
-  `/${andereSprache}$2`,
-);
-
 const seitentitel = title
   ? `${title} – ${text(seite.titel)}`
   : text(seite.titel);
@@ -35,9 +28,6 @@ const seitentitel = title
     <header class="seite-kopf">
       <div class="seite-kopf__innen">
         <a class="seite-kopf__titel" href={`/${lang}/`}>{text(seite.titel)}</a>
-        <a class="sprachumschalter" href={pfadAndereSprache}
-          >{text(seite.sprachumschalter)}</a
-        >
       </div>
     </header>
 
