@@ -836,6 +836,45 @@ body.breit :is(main, .seite-kopf__innen, .seite-fuss__innen) {
   filter: drop-shadow(0 0 3px var(--p-akzent));
 }
 
+/* Bauprodukte: Palette mit Verpackung, Sack mit Zement und Etikett als Ebenen. */
+.palette__latten,
+.sack__falten {
+  fill: none;
+  stroke: rgba(173, 214, 224, 0.14);
+  stroke-width: 0.8;
+  stroke-dasharray: 6 4;
+  transition: stroke 0.35s ease;
+}
+
+.explosion--bauprodukte[data-aktiv="etikett"] .ebene[data-ebene="etikett"],
+.explosion--bauprodukte[data-aktiv="zement"] .ebene[data-ebene="zement"],
+.explosion--bauprodukte[data-aktiv="verpackung"]
+  .ebene[data-ebene="verpackung"] {
+  opacity: 1;
+}
+
+.explosion--bauprodukte[data-aktiv="zement"] [data-ebene="zement"] .flaeche,
+.explosion--bauprodukte[data-aktiv="verpackung"]
+  [data-ebene="verpackung"]
+  .flaeche {
+  stroke: var(--p-akzent);
+}
+
+.explosion--bauprodukte[data-aktiv="zement"] .sack,
+.explosion--bauprodukte[data-aktiv="verpackung"] .palette {
+  fill: #2f6e69;
+}
+
+.explosion--bauprodukte[data-aktiv="zement"] .sack__falten,
+.explosion--bauprodukte[data-aktiv="verpackung"] .palette__latten {
+  stroke: rgba(69, 212, 192, 0.5);
+}
+
+.explosion--bauprodukte[data-aktiv="etikett"] .schild rect:first-child {
+  fill: #ffffff;
+  filter: drop-shadow(0 0 3px var(--p-akzent));
+}
+
 .hotspot {
   position: absolute;
   translate: -50% -50%;

@@ -1,0 +1,164 @@
+{
+  "rechtsgrundlage": {
+    "de": "Bauproduktenverordnung (EU) 2024/3110 und Arbeitsplan der EU-Kommission 2026–2029 (COM(2025) 772)",
+    "en": "Construction Products Regulation (EU) 2024/3110 and the European Commission working plan 2026–2029 (COM(2025) 772)"
+  },
+  "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
+  "daten_intro": {
+    "de": "Auswahl; Umfang nach Verordnung und Arbeitsplan, Einzelheiten legt der delegierte Rechtsakt fest.",
+    "en": "Selection; scope as per the regulation and working plan, details are set by the delegated act."
+  },
+  "daten_aufwand": {
+    "gruen": {
+      "de": "Diese Angaben liegen bei Ihnen bereits vor.",
+      "en": "You already have this information."
+    },
+    "gelb": {
+      "de": "Für die meisten Produkte liegen sie vor, die Lücken sollten Sie gezielt schließen.",
+      "en": "It is available for most products; close the gaps in a targeted way."
+    },
+    "rot": {
+      "de": "Diese Angaben fehlen bei Ihnen weitgehend oder sind unklar und müssen erst beschafft werden.",
+      "en": "This information is largely missing or unclear and must first be obtained."
+    }
+  },
+  "fragen": {
+    "q1": {
+      "fakt": {
+        "de": "Der Produktpass ist dem Produkttyp und seinem eindeutigen Kenncode zugeordnet (Art. 76 Abs. 2). Der Hersteller muss jeden Produkttyp mit einem eigenen Identifizierungscode und, soweit verfügbar, mit einer Chargen- oder Seriennummer kennzeichnen (Art. 22 Abs. 5).",
+        "en": "The product passport is linked to the product type and its unique identifier (Art. 76(2)). The manufacturer must mark each product type with its own identification code and, where available, a batch or serial number (Art. 22(5))."
+      },
+      "aufwand": {
+        "gruen": {
+          "de": "Bei wenigen Produkttypen bleibt der Datenumfang überschaubar.",
+          "en": "With few product types, the amount of data remains manageable."
+        },
+        "gelb": {
+          "de": "Bei Ihrer Zahl an Produkttypen entsteht ein spürbarer Datenumfang.",
+          "en": "With your number of product types, the amount of data is noticeable."
+        },
+        "rot": {
+          "de": "Bei Ihrer großen Zahl an Produkttypen ist der Umfang der zu erhebenden und zu pflegenden Daten hoch.",
+          "en": "With your large number of product types, the amount of data to collect and maintain is high."
+        }
+      },
+      "bezug": {
+        "de": "Bauproduktenverordnung, Art. 22 Abs. 5 und Art. 76 Abs. 2",
+        "en": "Construction Products Regulation, Art. 22(5) and Art. 76(2)"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    },
+    "q2": {
+      "fakt": {
+        "de": "Im Pass sind auch die Datenträger wesentlicher Bestandteile zu verknüpfen, für die ein eigener Pass vorliegt (Art. 76 Abs. 2). Wesentliche Bestandteile sind Bauteile oder Ersatzteile, die eine harmonisierte technische Spezifikation als wesentlich für Bestimmung, Sicherheit oder Leistung des Produkts festlegt (Art. 3).",
+        "en": "The passport must also link the data carriers of essential components for which a passport of their own exists (Art. 76(2)). Essential components are components or spare parts that a harmonised technical specification defines as essential for the determination, safety or performance of a product (Art. 3)."
+      },
+      "aufwand": {
+        "gruen": {
+          "de": "Bei wenigen Lieferanten bleiben Datenanfragen und Abstimmungen überschaubar.",
+          "en": "With few suppliers, data requests and coordination remain manageable."
+        },
+        "gelb": {
+          "de": "Bei Ihrer Zahl an Lieferanten sind einige Datenanfragen und Abstimmungen nötig.",
+          "en": "With your number of suppliers, a fair number of data requests and coordination is needed."
+        },
+        "rot": {
+          "de": "Bei Ihrer großen Zahl an Lieferanten sind viele Datenanfragen und Abstimmungen nötig.",
+          "en": "With your large number of suppliers, many data requests and a lot of coordination are needed."
+        }
+      },
+      "aufwand_zuerst": true,
+      "bezug": {
+        "de": "Bauproduktenverordnung, Art. 3 und Art. 76 Abs. 2",
+        "en": "Construction Products Regulation, Art. 3 and Art. 76(2)"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    },
+    "q7": {
+      "fakt": {
+        "de": "Die EU-Kommission nennt Q2 2027 als Richtwert für den delegierten Rechtsakt zu Bauprodukten. Die Pflicht zum Produktpass beginnt 18 Monate nach dessen Inkrafttreten; schon sechs Monate nach Inkrafttreten muss das System einsatzfähig sein (Art. 22 Abs. 7, Art. 80 Abs. 1).",
+        "en": "The European Commission gives Q2 2027 as the indicative timeline for the delegated act on construction products. The product passport obligation starts 18 months after it enters into force; the system must be operational as early as six months after entry into force (Art. 22(7), Art. 80(1))."
+      },
+      "scores": {
+        "a": 0,
+        "b": 0,
+        "c": 1,
+        "d": 1
+      },
+      "aufwand": {
+        "gruen": {
+          "de": "Mit Pilot, Datenerhebung oder benanntem Projekt sind Sie auf einem guten Weg.",
+          "en": "With a pilot, data collection or a project in place, you are on a good path."
+        },
+        "gelb": {
+          "de": "Bis zum Rechtsakt bleibt Zeit, die Sie für Projektaufbau und Datenerhebung nutzen können.",
+          "en": "There is time until the legal act, which you can use for setting up a project and collecting data."
+        },
+        "rot": {
+          "de": "Der Aufbau steht noch aus; die Zeit bis zum Rechtsakt sollten Sie für erste Schritte nutzen.",
+          "en": "Set-up has not started yet; use the time until the legal act for first steps."
+        }
+      },
+      "bezug": {
+        "de": "EU-Kommission, Digitaler Produktpass, Zeitplan; Art. 22 Abs. 7 und Art. 80 Abs. 1",
+        "en": "European Commission, Digital Product Passport, timeline; Art. 22(7) and Art. 80(1)"
+      },
+      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en#dpp-timeline"
+    },
+    "q3": {
+      "fakt": {
+        "de": "Der Pass enthält die allgemeinen Produktinformationen, dazu gehören die wichtigsten verwendeten Werkstoffe (Art. 76 Abs. 2, Anhang IV Nr. 1.2). Laut Arbeitsplan sollen Angaben zu wesentlichen Merkmalen und Materialien aufgenommen werden.",
+        "en": "The passport contains the general product information, which includes the main materials used (Art. 76(2), Annex IV No 1.2). According to the working plan, information on essential characteristics and materials is to be included."
+      },
+      "bezug": {
+        "de": "Bauproduktenverordnung, Anhang IV Nr. 1.2; Arbeitsplan, Kap. 3.3",
+        "en": "Construction Products Regulation, Annex IV No 1.2; working plan, Section 3.3"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    },
+    "q4": {
+      "fakt": {
+        "de": "Freisetzung und Gehalt von gefährlichen Stoffen gehören zu den wesentlichen Merkmalen horizontaler Art (Anhang X Nr. 5). Welche Stoffe erfasst werden, legen die harmonisierten technischen Spezifikationen je Produktfamilie fest. Laut Arbeitsplan soll 2026 ein Normungsauftrag für zusätzliche Stoffe und Materialien, z. B. Mikroplastik, und Bewertungsmethoden folgen.",
+        "en": "Release and content of dangerous substances are among the essential characteristics of a horizontal nature (Annex X No 5). Which substances are covered is set by the harmonised technical specifications for each product family. According to the working plan, a standardisation request for additional substances and materials, e.g. microplastics, and assessment methods is to follow in 2026."
+      },
+      "bezug": {
+        "de": "Bauproduktenverordnung, Anhang X Nr. 5; Arbeitsplan, Kap. 3.2.3",
+        "en": "Construction Products Regulation, Annex X No 5; working plan, Section 3.2.3"
+      },
+      "quelle": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:52025DC0772"
+    },
+    "q5": {
+      "fakt": {
+        "de": "Die Verordnung legt wesentliche Umweltmerkmale aus der Lebenszyklusbewertung fest, an erster Stelle die Auswirkungen auf den Klimawandel insgesamt (Anhang II). Die technische Dokumentation enthält die Berechnung der Nachhaltigkeitsleistung im Umweltbereich (Art. 22 Abs. 3), sie gehört zum Pass (Art. 76 Abs. 2). Angaben zur Klimawirkung stehen gegebenenfalls auch in den Produktinformationen (Anhang IV Nr. 2.8).",
+        "en": "The regulation sets essential environmental characteristics from the life cycle assessment, first of all the impact on climate change in total (Annex II). The technical documentation contains the calculation of environmental sustainability performance (Art. 22(3)) and is part of the passport (Art. 76(2)). Information on the climate impact is, where applicable, also part of the product information (Annex IV No 2.8)."
+      },
+      "bezug": {
+        "de": "Bauproduktenverordnung, Anhang II, Art. 22 Abs. 3 und Anhang IV Nr. 2.8",
+        "en": "Construction Products Regulation, Annex II, Art. 22(3) and Annex IV No 2.8"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    },
+    "q6": {
+      "fakt": {
+        "de": "Den Mindestanteil an Rezyklat nennt die Verordnung als Beispiel für Umweltaspekte, zu denen freiwillige harmonisierte Normen den Stand der Technik festlegen können (Anhang III Nr. 3.2). Konkrete Vorgaben für den Pass legt der delegierte Rechtsakt fest (Art. 75 Abs. 2).",
+        "en": "The regulation names the minimum recycled content as an example of environmental aspects for which voluntary harmonised standards can set the state of the art (Annex III No 3.2). Specific requirements for the passport are set by the delegated act (Art. 75(2))."
+      },
+      "bezug": {
+        "de": "Bauproduktenverordnung, Anhang III Nr. 3.2 und Art. 75 Abs. 2",
+        "en": "Construction Products Regulation, Annex III No 3.2 and Art. 75(2)"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    },
+    "q8": {
+      "fakt": {
+        "de": "Der Pass enthält Gebrauchsanweisungen und Sicherheitsinformationen (Art. 76 Abs. 2) mit Empfehlungen zu Reparatur, Demontage, Wiederverwendung, Wiederaufbereitung und Recycling (Anhang IV Nr. 2.7). Laut Arbeitsplan soll der Pass auch zeigen, wie das Produkt sicher verwendet, repariert, wiederverwendet, recycelt und entsorgt werden kann.",
+        "en": "The passport contains instructions for use and safety information (Art. 76(2)) with recommendations for repair, disassembly, reuse, refurbishment and recycling (Annex IV No 2.7). According to the working plan, the passport is also to show how the product can be safely used, repaired, reused, recycled and disposed of."
+      },
+      "bezug": {
+        "de": "Bauproduktenverordnung, Anhang IV Nr. 2.7; Arbeitsplan, Kap. 3.3",
+        "en": "Construction Products Regulation, Annex IV No 2.7; working plan, Section 3.3"
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    }
+  }
+}

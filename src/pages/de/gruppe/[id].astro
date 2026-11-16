@@ -37,7 +37,7 @@ const daten = Object.values(alleGruppenDaten).find(
         zurueckHref="/de/filter/"
         zurueckLabel={seite.zurueck_zur_auswahl.de}
       >
-        <RollenHinweis lang="de" slot="vor-hinweis" />
+        <RollenHinweis lang="de" gruppeId={gruppe.id} slot="vor-hinweis" />
       </Platzhalter>
     )
   }

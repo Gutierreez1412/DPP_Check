@@ -5,6 +5,7 @@ import GrafikBatterie from "./pilot/GrafikBatterie.astro";
 import GrafikTextil from "./pilot/GrafikTextil.astro";
 import GrafikMoebel from "./pilot/GrafikMoebel.astro";
 import GrafikStahl from "./pilot/GrafikStahl.astro";
+import GrafikBauprodukte from "./pilot/GrafikBauprodukte.astro";
 import "../styles/pilot.css";
 
 // Batterien ist die Vorlage für alle pilot.json-Dateien (PROJEKT.md, Ebene 4).
@@ -23,6 +24,7 @@ const grafiken: Record<string, typeof GrafikBatterie> = {
   textil: GrafikTextil,
   moebel: GrafikMoebel,
   stahl: GrafikStahl,
+  bauprodukte: GrafikBauprodukte,
 };
 
 interface Props {

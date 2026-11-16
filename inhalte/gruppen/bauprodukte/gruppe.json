@@ -1,0 +1,154 @@
+{
+  "id": "bauprodukte",
+  "name": {
+    "de": "Bauprodukte",
+    "en": "Construction products"
+  },
+  "definition": {
+    "de": "Die Bauproduktenverordnung (EU) 2024/3110 regelt die Vermarktung von Bauprodukten und enthält einen eigenen Digitalen Produktpass (Art. 75 bis 80). Bauprodukte sind Bauelemente oder Bausätze, die dauerhaft in Bauwerke eingebaut werden sollen (Art. 3). Laut Arbeitsplan der EU-Kommission erhält jedes Produkt, das unter harmonisierte technische Spezifikationen der Verordnung fällt, einen Produktpass, sobald dieser per delegiertem Rechtsakt verpflichtend ist.",
+    "en": "The Construction Products Regulation (EU) 2024/3110 governs the marketing of construction products and contains its own Digital Product Passport (Art. 75 to 80). Construction products are construction elements or kits intended to be permanently incorporated into construction works (Art. 3). According to the European Commission's working plan, every product covered by harmonised technical specifications under the regulation will have a product passport once it is made mandatory by delegated act."
+  },
+  "definition_quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
+  "weiterfuehrend": {
+    "label": {
+      "de": "Mehr erfahren: Arbeitsplan der EU-Kommission zur Bauproduktenverordnung 2026–2029 (COM(2025) 772)",
+      "en": "Learn more: European Commission working plan for the Construction Products Regulation 2026–2029 (COM(2025) 772)"
+    },
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:52025DC0772"
+  },
+  "vorbehalt": {
+    "titel": {
+      "de": "Hinweis: Pflicht hängt noch von einem delegierten Rechtsakt ab",
+      "en": "Note: the obligation still depends on a delegated act"
+    },
+    "text": {
+      "de": "Wann der Produktpass für Bauprodukte Pflicht wird, legt nicht die Verordnung selbst fest, sondern ein delegierter Rechtsakt der Kommission nach Art. 75 Abs. 1. Die EU-Kommission nennt dafür Q2 2027 als Richtwert. Die Angaben auf dieser Seite beruhen ausschließlich auf der Verordnung (EU) 2024/3110, dem Arbeitsplan der Kommission und ihrem Zeitplan zum Digitalen Produktpass.",
+      "en": "When the product passport becomes mandatory for construction products is not set by the regulation itself but by a delegated act of the Commission under Art. 75(1). The European Commission gives Q2 2027 as the indicative timeline. The information on this page is based solely on Regulation (EU) 2024/3110, the Commission's working plan and its timeline for the Digital Product Passport."
+    },
+    "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+  },
+  "zeitstrahl": [
+    {
+      "datum": "2025-01-07",
+      "titel": {
+        "de": "Bauproduktenverordnung in Kraft",
+        "en": "Construction Products Regulation in force"
+      },
+      "beschreibung": {
+        "de": "Die Verordnung (EU) 2024/3110 wurde am 18. Dezember 2024 im Amtsblatt veröffentlicht und trat am zwanzigsten Tag danach in Kraft. Einzelne Teile, darunter die Begriffsbestimmungen, gelten schon seit diesem Tag.",
+        "en": "Regulation (EU) 2024/3110 was published in the Official Journal on 18 December 2024 and entered into force on the twentieth day after publication. Some parts, including the definitions, have applied since that day."
+      },
+      "status": "gilt",
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    },
+    {
+      "datum": "2025-12-16",
+      "titel": {
+        "de": "Erster Arbeitsplan zur Bauproduktenverordnung",
+        "en": "First working plan for the Construction Products Regulation"
+      },
+      "beschreibung": {
+        "de": "Die EU-Kommission legt den ersten Arbeitsplan 2026–2029 vor. Darin nennt sie den Digitalen Produktpass eine Säule der Verordnung. Sie hat die Normung zu Datenträgern, Infrastruktur und Dateninteroperabilität bereits angestoßen.",
+        "en": "The European Commission presents the first working plan for 2026–2029. It names the Digital Product Passport as a key pillar of the regulation. It has already initiated standardisation on data carriers, infrastructure and data interoperability."
+      },
+      "status": "gilt",
+      "quelle": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:52025DC0772"
+    },
+    {
+      "datum": "2026-01-08",
+      "titel": {
+        "de": "Verordnung gilt grundsätzlich",
+        "en": "Regulation applies in general"
+      },
+      "beschreibung": {
+        "de": "Die Verordnung gilt ab dem 8. Januar 2026. Für eine Produktfamilie gelten die Pflichten der Wirtschaftsteilnehmer aber erst ein Jahr nach dem Durchführungsrechtsakt, der die jeweilige harmonisierte Norm verbindlich macht, sofern nichts anderes festgelegt ist (Art. 95 Abs. 9).",
+        "en": "The regulation applies from 8 January 2026. For a product family, however, the obligations of economic operators apply only one year after the implementing act that makes the relevant harmonised standard mandatory, unless a later date is set (Art. 95(9))."
+      },
+      "status": "gilt",
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    },
+    {
+      "datum": "Q2 2027",
+      "titel": {
+        "de": "Delegierter Rechtsakt zum Produktpasssystem",
+        "en": "Delegated act on the product passport system"
+      },
+      "beschreibung": {
+        "de": "Die EU-Kommission nennt Q2 2027 als Richtwert für den delegierten Rechtsakt zu Bauprodukten (Art. 75 Abs. 1). Der Zeitplan ist indikativ und kann sich ändern. Sechs Monate nach Inkrafttreten muss das System voll einsatzfähig sein (Art. 80 Abs. 1).",
+        "en": "The European Commission gives Q2 2027 as the indicative timeline for the delegated act on construction products (Art. 75(1)). The timeline is indicative and may change. Six months after entry into force, the system must be fully operational (Art. 80(1))."
+      },
+      "status": "geplant",
+      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en#dpp-timeline"
+    },
+    {
+      "datum": "TBD",
+      "titel": {
+        "de": "Produktpass wird Pflicht",
+        "en": "Product passport becomes mandatory"
+      },
+      "beschreibung": {
+        "de": "18 Monate nach Inkrafttreten des delegierten Rechtsakts gelten die Pflichten zum Produktpass. Bis dahin kann das System freiwillig genutzt werden (Art. 22 Abs. 7, Art. 80 Abs. 1).",
+        "en": "18 months after the delegated act enters into force, the product passport obligations apply. Until then, the system can be used on a voluntary basis (Art. 22(7), Art. 80(1))."
+      },
+      "status": "unklar",
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    }
+  ],
+  "faq": [
+    {
+      "frage": {
+        "de": "Ab wann brauche ich für Bauprodukte einen Digitalen Produktpass?",
+        "en": "From when do I need a Digital Product Passport for construction products?"
+      },
+      "antwort": {
+        "de": "Das steht noch nicht fest. Die EU-Kommission nennt Q2 2027 als Richtwert für den delegierten Rechtsakt zu Bauprodukten. Die Pflicht beginnt 18 Monate nach dessen Inkrafttreten (Art. 22 Abs. 7, Art. 80 Abs. 1). Bis dahin kann das System freiwillig genutzt werden.",
+        "en": "This has not been decided yet. The European Commission gives Q2 2027 as the indicative timeline for the delegated act on construction products. The obligation starts 18 months after it enters into force (Art. 22(7), Art. 80(1)). Until then, the system can be used on a voluntary basis."
+      },
+      "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en#dpp-timeline"
+    },
+    {
+      "frage": {
+        "de": "Wer muss den Produktpass bereitstellen?",
+        "en": "Who has to provide the product passport?"
+      },
+      "antwort": {
+        "de": "Der Hersteller (Art. 22 Abs. 7). Einführer und Händler können als Hersteller gelten, etwa wenn sie ein Produkt unter eigenem Namen oder eigener Marke in Verkehr bringen. Dann tragen sie auch die Herstellerpflichten (Art. 26 Abs. 1).",
+        "en": "The manufacturer (Art. 22(7)). Importers and distributors can be considered manufacturers, for example when they place a product on the market under their own name or trademark. They then also bear the manufacturer obligations (Art. 26(1))."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    },
+    {
+      "frage": {
+        "de": "Wann gilt ein Einführer oder Händler als Hersteller?",
+        "en": "When is an importer or distributor considered a manufacturer?"
+      },
+      "antwort": {
+        "de": "Nach Art. 26 Abs. 1, wenn er ein Produkt unter eigenem Namen oder eigener Handelsmarke in Verkehr bringt, es so ändert, dass die Übereinstimmung beeinträchtigt werden kann, es für einen anderen Verwendungszweck bereitstellt, abweichende Merkmale angibt oder die Herstellerrolle übernimmt. Auch bestimmte gebrauchte und wiederaufbereitete Produkte sind erfasst (Abs. 2). Nicht darunter fällt, wer nur Herstellerinformationen übersetzt oder die äußere Verpackung ersetzt, ohne den Zustand des Produkts zu beeinträchtigen (Abs. 3). Er muss den Hersteller darüber unterrichten (Abs. 4).",
+        "en": "Under Art. 26(1), when they place a product on the market under their own name or trademark, change it in a way that may affect compliance, make it available for a different intended use, state different characteristics or decide to take on the role of manufacturer. Certain used and refurbished products are also covered (para. 2). This does not apply to those who only translate the manufacturer's information or replace the outer packaging without affecting the condition of the product (para. 3). They must inform the manufacturer of this (para. 4)."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    },
+    {
+      "frage": {
+        "de": "Was soll im Produktpass stehen?",
+        "en": "What is the product passport to contain?"
+      },
+      "antwort": {
+        "de": "Nach Art. 76 Abs. 2 unter anderem die Leistungs- und Konformitätserklärung, die allgemeinen Produktinformationen, Gebrauchsanweisungen und Sicherheitsinformationen, die technische Dokumentation, die CE-Kennzeichnung, eindeutige Kennungen und weitere nach Unionsrecht erforderliche Unterlagen. Der Pass ist über einen Datenträger kostenlos zugänglich, mit unterschiedlichen Zugangsstufen. Die Einzelheiten legt der delegierte Rechtsakt fest.",
+        "en": "According to Art. 76(2), among other things the declaration of performance and conformity, the general product information, instructions for use and safety information, the technical documentation, the CE marking, unique identifiers and other documents required under Union law. The passport is accessible free of charge via a data carrier, with different levels of access. The details are set by the delegated act."
+      },
+      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
+    },
+    {
+      "frage": {
+        "de": "Gilt der Produktpass für alle Bauprodukte?",
+        "en": "Does the product passport apply to all construction products?"
+      },
+      "antwort": {
+        "de": "Laut Arbeitsplan erhält jedes Produkt, das unter harmonisierte technische Spezifikationen oder Europäische Bewertungsdokumente nach der Bauproduktenverordnung fällt, einen Produktpass, sobald das System einsatzbereit und per delegiertem Rechtsakt verpflichtend ist. Produkte, die noch nach der früheren Verordnung (EU) Nr. 305/2011 geregelt sind, nennt der Arbeitsplan dabei ausdrücklich nicht.",
+        "en": "According to the working plan, every product covered by harmonised technical specifications or European Assessment Documents under the Construction Products Regulation will have a product passport once the system is operational and made mandatory by delegated act. The working plan expressly does not include products still governed by the former Regulation (EU) No 305/2011."
+      },
+      "quelle": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:52025DC0772"
+    }
+  ]
+}

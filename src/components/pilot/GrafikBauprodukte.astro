@@ -1,0 +1,246 @@
+---
+/*
+  Grafiken für den Bauprodukte-Pilot: Hero-Szene (Zementsack auf Palette,
+  Sucher auf dem Sack-Etikett) und Explosionszeichnung in isometrischer
+  Projektion: Palette mit Verpackung, Sack mit Zement und Etikett mit QR-Code
+  als Ebenen.
+  Gleiches Prinzip wie bei Stahl: --zu ist der Versatz in den zusammengebauten
+  Zustand, beim Laden fährt der Stapel auseinander.
+*/
+import SzenePanel from "./SzenePanel.astro";
+import {
+  box,
+  hotspotIn,
+  iso,
+  pt,
+  qrKlein,
+  zufallAus,
+  cos30,
+  type ViewBox,
+} from "./geometrie";
+
+interface Props {
+  teil: "szene" | "explosion";
+  lang: "de" | "en";
+  pilot: {
+    produkt: { name: string; eckdaten: { wert: string }[] };
+    komponenten: {
+      id: string;
+      ebene: string;
+      nummer: string;
+      name: Record<"de" | "en", string>;
+    }[];
+    texte: Record<
+      "szene_label" | "szene_schild" | "szene_scan",
+      Record<"de" | "en", string>
+    >;
+  };
+  aktiv: string;
+}
+
+const { teil, lang, pilot, aktiv } = Astro.props;
+const t = (feld: Record<"de" | "en", string>) => feld[lang];
+
+// Höhen der drei Ebenen im auseinandergefahrenen Zustand.
+const Z = { palette: 0, sack: 75, etikett: 150 };
+const HP = 10; // Höhe der Palette
+const HS = 26; // Höhe des Sacks
+
+const palette = box(0, 0, Z.palette, 160, 110, HP);
+const sack = box(15, 15, Z.sack, 130, 80, HS);
+// Latten auf der Oberseite der Palette und Faltkante auf dem Sack.
+const latten = [22, 55, 88]
+  .map(
+    (v) =>
+      `M${pt(6, v, Z.palette + HP).replace(",", " ")}L${pt(154, v, Z.palette + HP).replace(",", " ")}`,
+  )
+  .join("");
+const falten = `M${pt(22, 55, Z.sack + HS).replace(",", " ")}L${pt(138, 55, Z.sack + HS).replace(",", " ")}`;
+
+// Etikett in der Ebene über dem Sack.
+const etikett = { u: 58, v: 40, b: 48, h: 28 };
+const [ex, ey] = iso(etikett.u, etikett.v, Z.etikett);
+const etikettMatrix = `matrix(${cos30.toFixed(4)} 0.5 ${(-cos30).toFixed(4)} 0.5 ${ex.toFixed(1)} ${ey.toFixed(1)})`;
+const qrModule = qrKlein(zufallAus(733), 2.5, 2.5, 3.1);
+
+// Führungslinien zwischen den Ebenen.
+const fuehrung = [
+  ...[
+    [25, 25],
+    [135, 25],
+    [25, 85],
+    [135, 85],
+  ].map(([u, v]) => ({
+    von: iso(u, v, Z.palette + HP),
+    bis: iso(u, v, Z.sack),
+  })),
+  ...[
+    [58, 40],
+    [106, 68],
+  ].map(([u, v]) => ({
+    von: iso(u, v, Z.sack + HS),
+    bis: iso(u, v, Z.etikett),
+  })),
+];
+
+const vb: ViewBox = { x: -125, y: -125, b: 290, h: 290 };
+const hotspot = hotspotIn(vb);
+const hotspotPos: Record<string, string> = {
+  etikett: hotspot(
+    etikett.u + etikett.b / 2,
+    etikett.v + etikett.h / 2,
+    Z.etikett,
+  ),
+  zement: hotspot(120, 95, Z.sack + HS / 2),
+  verpackung: hotspot(100, 110, Z.palette + HP / 2),
+};
+// Abstand in den zusammengebauten Zustand: Sack steht auf der Palette, das
+// Etikett oben auf dem Sack.
+const sackAbgesenkt = Z.sack - (Z.palette + HP);
+const versatz: Record<string, number> = {
+  verpackung: 0,
+  zement: sackAbgesenkt,
+  etikett: Z.etikett - (Z.sack + HS - sackAbgesenkt) - 1,
+};
+
+// Hero-Szene: Zementsack auf Palette, das Etikett auf dem Sack ist markiert.
+const sucher = { x: 112, y: 64, b: 52, h: 36 };
+---
+
+{
+  teil === "szene" ? (
+    <svg
+      viewBox="0 0 400 132"
+      role="img"
+      aria-label={t(pilot.texte.szene_label)}
+    >
+      <defs>
+        <linearGradient id="szene-strahl-verlauf" x1="0" x2="1">
+          <stop offset="0" stop-color="#45d4c0" stop-opacity="0.2" />
+          <stop offset="1" stop-color="#45d4c0" stop-opacity="0.02" />
+        </linearGradient>
+      </defs>
+
+      <line class="szene__boden" x1="20" y1="118" x2="236" y2="118" />
+      <path
+        class="szene__linie szene__linie--duenn"
+        pathLength="1"
+        d="M34 118V106H204V118M34 112H204M76 106V118M119 106V118M162 106V118"
+      />
+      <path
+        class="szene__linie"
+        pathLength="1"
+        d="M52 104V66Q52 56 62 56H176Q186 56 186 66V104Z"
+      />
+      <path
+        class="szene__linie szene__linie--duenn"
+        pathLength="1"
+        d="M56 62Q119 52 182 62M58 98Q119 108 180 98"
+      />
+      <g class="szene__akku">
+        <rect x="118" y="70" width="40" height="24" rx="1.5" />
+      </g>
+
+      <SzenePanel
+        sucher={sucher}
+        name={pilot.produkt.name}
+        daten={pilot.produkt.eckdaten.map((d) => d.wert)}
+        schild={t(pilot.texte.szene_schild)}
+        scan={t(pilot.texte.szene_scan)}
+        seed={4177}
+      />
+    </svg>
+  ) : (
+    <div
+      class="explosion explosion--bauprodukte"
+      id="explosion"
+      data-aktiv={aktiv}
+      style={`aspect-ratio:${vb.b} / ${vb.h}`}
+    >
+      <svg
+        viewBox={`${vb.x} ${vb.y} ${vb.b} ${vb.h}`}
+        role="img"
+        aria-label={pilot.produkt.name}
+      >
+        <defs>
+          <pattern
+            id="raster"
+            width="24"
+            height="24"
+            patternUnits="userSpaceOnUse"
+          >
+            <path d="M24 0H0V24" class="explosion__raster" />
+          </pattern>
+        </defs>
+        <rect
+          x={vb.x}
+          y={vb.y}
+          width={vb.b}
+          height={vb.h}
+          fill="url(#raster)"
+        />
+
+        <g class="explosion__fuehrung">
+          {fuehrung.map((f) => (
+            <line x1={f.von[0]} y1={f.von[1]} x2={f.bis[0]} y2={f.bis[1]} />
+          ))}
+        </g>
+
+        <g
+          class="ebene"
+          data-ebene="verpackung"
+          style={`--zu:${versatz.verpackung}px`}
+        >
+          <polygon class="flaeche flaeche--rechts" points={palette.rechts} />
+          <polygon class="flaeche flaeche--links" points={palette.links} />
+          <polygon
+            class="flaeche flaeche--oben palette"
+            points={palette.oben}
+          />
+          <path class="palette__latten" d={latten} />
+        </g>
+
+        <g class="ebene" data-ebene="zement" style={`--zu:${versatz.zement}px`}>
+          <polygon class="flaeche flaeche--rechts" points={sack.rechts} />
+          <polygon class="flaeche flaeche--links" points={sack.links} />
+          <polygon class="flaeche flaeche--oben sack" points={sack.oben} />
+          <path class="sack__falten" d={falten} />
+        </g>
+
+        <g
+          class="ebene"
+          data-ebene="etikett"
+          style={`--zu:${versatz.etikett}px`}
+        >
+          <g transform={etikettMatrix} class="schild">
+            <rect x="0" y="0" width={etikett.b} height={etikett.h} rx="1" />
+            {qrModule.map((m) => (
+              <rect
+                class="schild__qr"
+                x={m.x}
+                y={m.y}
+                width="3.1"
+                height="3.1"
+              />
+            ))}
+            <rect class="schild__zeile" x="27" y="5" width="18" height="2.4" />
+            <rect class="schild__zeile" x="27" y="11" width="13" height="2.4" />
+            <rect class="schild__zeile" x="27" y="17" width="16" height="2.4" />
+          </g>
+        </g>
+      </svg>
+
+      {pilot.komponenten.map((k) => (
+        <button
+          type="button"
+          class="hotspot"
+          data-komponente={k.id}
+          style={hotspotPos[k.id]}
+          aria-label={t(k.name)}
+        >
+          <span>{k.nummer}</span>
+        </button>
+      ))}
+    </div>
+  )
+}
