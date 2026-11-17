@@ -1,6 +1,7 @@
 ---
 import seite from "../../inhalte/seite.json";
 import pilotVorlage from "../../inhalte/gruppen/batterien/pilot.json";
+import Beratungsformular from "./Beratungsformular.astro";
 import GrafikBatterie from "./pilot/GrafikBatterie.astro";
 import GrafikTextil from "./pilot/GrafikTextil.astro";
 import GrafikMoebel from "./pilot/GrafikMoebel.astro";
@@ -483,6 +484,18 @@ const dpZahl = {
       }
     </ul>
   </section>
+
+  <div class="cta-band">
+    <div class="cta-band__text">
+      <h2>{t(p.beratung_titel)}</h2>
+      <p>{t(p.beratung_text)}</p>
+    </div>
+    <div class="cta-band__aktion">
+      <a class="button button--hell" href="#beratung">{t(p.beratung_button)}</a>
+    </div>
+  </div>
+
+  <Beratungsformular lang={lang} gruppenName={t(gruppe.name)} />
 
   <p class="check__zurueck">
     <a id="pilot-zurueck" href={`/${lang}/ergebnis/${gruppe.id}/`}

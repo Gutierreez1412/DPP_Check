@@ -1357,7 +1357,7 @@ body.breit :is(main, .seite-kopf__innen, .seite-fuss__innen) {
 
 /* Feld-Kacheln */
 
-.feld {
+.pass-viewer .feld {
   --farbe: var(--p-oeffentlich);
   display: flex;
   flex-direction: column;
@@ -1369,14 +1369,14 @@ body.breit :is(main, .seite-kopf__innen, .seite-fuss__innen) {
   background: var(--p-panel);
 }
 
-.feld[data-stufe="berechtigt"] {
+.pass-viewer .feld[data-stufe="berechtigt"] {
   --farbe: var(--p-berechtigt);
 }
-.feld[data-stufe="behoerden"] {
+.pass-viewer .feld[data-stufe="behoerden"] {
   --farbe: var(--p-behoerden);
 }
 
-.feld dt {
+.pass-viewer .feld dt {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1384,7 +1384,7 @@ body.breit :is(main, .seite-kopf__innen, .seite-fuss__innen) {
   color: var(--p-schwach);
 }
 
-.feld dd {
+.pass-viewer .feld dd {
   margin: 0;
 }
 
@@ -1765,4 +1765,10 @@ body.breit :is(main, .seite-kopf__innen, .seite-fuss__innen) {
   .kette::after {
     display: none;
   }
+}
+
+/* Beratungs-Abschnitt am Ende: Abstand regelt das Grid des .pilot */
+.pilot > .cta-band,
+.pilot > .beratung {
+  margin-top: 0;
 }

@@ -1102,6 +1102,11 @@ h2 {
   color: var(--farbe-text-schwach);
 }
 
+.beratung p.einwilligung {
+  display: block;
+  margin: 0;
+}
+
 .beratung .einwilligung input {
   margin-top: 0.2rem;
   flex-shrink: 0;

@@ -76,17 +76,19 @@ const clientTexte = {
 
     {
       mitErgebnis && (
-        <label class="einwilligung feld--breit" id="b-ergebnis-zeile">
-          <input type="checkbox" name="ergebnis_mitsenden" />
-          <span>{t(seite.ergebnis.mitsenden)}</span>
-        </label>
+        <p class="einwilligung feld--breit" id="b-ergebnis-zeile">
+          {t(seite.ergebnis.mitsenden)}
+        </p>
       )
     }
 
-    <label class="einwilligung feld--breit">
-      <input type="checkbox" name="einwilligung" required />
-      <span>{t(b.einwilligung)}</span>
-    </label>
+    <p class="einwilligung feld--breit">
+      {t(b.einwilligung).split("{datenschutz}")[0]}<a
+        href={b.datenschutz_url}
+        target="_blank"
+        rel="noopener noreferrer">{t(b.datenschutz_link)}</a
+      >{t(b.einwilligung).split("{datenschutz}")[1]}
+    </p>
 
     <div class="beratung__aktion feld--breit">
       <button class="button" type="submit">{t(b.senden)}</button>
@@ -121,9 +123,9 @@ const clientTexte = {
         `${texte.labels.nachricht}:`,
         wert("nachricht"),
       ];
-      // Das Check-Ergebnis legt die Ergebnisseite am Formular ab; es geht nur
-      // mit, wenn der Nutzer das Häkchen gesetzt hat.
-      if (d.get("ergebnis_mitsenden") && form.dataset.ergebnis) {
+      // Das Check-Ergebnis legt die Ergebnisseite am Formular ab und geht
+      // immer mit, sobald es vorliegt.
+      if (form.dataset.ergebnis) {
         zeilen.push("", "", ...JSON.parse(form.dataset.ergebnis));
       }
       const betreff = `${texte.betreff} – ${texte.gruppenName}`;
