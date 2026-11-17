@@ -1,4 +1,5 @@
 ---
+import { QUELLEN_ANZEIGEN } from "../config";
 import filter from "../../inhalte/filter.json";
 import seite from "../../inhalte/seite.json";
 
@@ -9,9 +10,11 @@ interface Props {
   // Gruppe mit eigener Fragenreihe (inhalte/gruppen/<id>/filter.json): deren
   // Rollen statt der ESPR-Rollen aus filter.json.
   gruppeId?: string;
+  // Die Seite zeigt schon einen Vorbehalt, der die "erste Einschätzung" abdeckt.
+  ohneEinschaetzung?: boolean;
 }
 
-const { lang, gruppeId } = Astro.props;
+const { lang, gruppeId, ohneEinschaetzung = false } = Astro.props;
 const t = (feld: Zweisprachig) => feld[lang];
 
 interface Rollenergebnis {
@@ -34,11 +37,11 @@ const ergebnis: Rollenergebnis =
 
 const texteFuerClient = {
   varianten: ergebnis.varianten,
-  weiterHinweis: t(ergebnis.weiter_hinweis),
+  weiterHinweis: ohneEinschaetzung ? "" : t(ergebnis.weiter_hinweis),
   // Gruppen mit eigener Fragenreihe bekommen ihre Rolle unter rolle_<id>.
   rolleParam: eigenes ? `rolle_${gruppeId}` : "rolle",
   gruppeId,
-  quelleLabel: t(seite.quelle_label),
+  quelleLabel: QUELLEN_ANZEIGEN ? t(seite.quelle_label) : "",
   lang,
 };
 ---
@@ -127,6 +130,7 @@ const texteFuerClient = {
       weitereEl.hidden = false;
     }
     weiterEl.textContent = weiterHinweis;
+    quelleEl.hidden = !quelleLabel;
     quelleEl.href = variante.quelle;
     quelleEl.textContent = quelleLabel;
 

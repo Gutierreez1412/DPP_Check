@@ -1,4 +1,5 @@
 ---
+import { QUELLEN_ANZEIGEN } from "../config";
 import filter from "../../inhalte/filter.json";
 
 interface Props {
@@ -103,12 +104,20 @@ const texteFuerClient = {
             ))
           }
         </ul>
-        <p class="hinweis-text">
-          {t(filter.schritt1.quelle_label)}:
-          <a href={weitere.quelle} target="_blank" rel="noopener noreferrer"
-            >eudigitalproductpassport.org</a
-          >
-        </p>
+        {
+          QUELLEN_ANZEIGEN && (
+            <p class="hinweis-text">
+              {t(filter.schritt1.quelle_label)}:
+              <a
+                href={weitere.quelle}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                eudigitalproductpassport.org
+              </a>
+            </p>
+          )
+        }
       </div>
     </fieldset>
 

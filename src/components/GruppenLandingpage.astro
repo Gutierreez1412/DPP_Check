@@ -1,4 +1,5 @@
 ---
+import { QUELLEN_ANZEIGEN } from "../config";
 import seite from "../../inhalte/seite.json";
 import RollenHinweis from "./RollenHinweis.astro";
 import Beratungsformular from "./Beratungsformular.astro";
@@ -46,18 +47,35 @@ const quelleLabel = t(seite.quelle_label);
 
 <section>
   <h1 class="nur-screenreader">{t(daten.name)}</h1>
-  <RollenHinweis lang={lang} gruppeId={daten.id} />
+  <RollenHinweis
+    lang={lang}
+    gruppeId={daten.id}
+    ohneEinschaetzung={Boolean(daten.vorbehalt)}
+  />
 
   {
     daten.vorbehalt && (
       <aside class="hinweisbox hinweisbox--vorbehalt">
         <p class="hinweisbox__titel">{t(daten.vorbehalt.titel)}</p>
-        <p>
-          {t(daten.vorbehalt.text)}{" "}
-          <a href={daten.vorbehalt.quelle} target="_blank" rel="noopener">
-            {quelleLabel}
-          </a>
-        </p>
+        {t(daten.vorbehalt.text)
+          .split("\n")
+          .map((absatz, i, alle) => (
+            <p>
+              {absatz}
+              {QUELLEN_ANZEIGEN && i === alle.length - 1 && (
+                <>
+                  {" "}
+                  <a
+                    href={daten.vorbehalt!.quelle}
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    {quelleLabel}
+                  </a>
+                </>
+              )}
+            </p>
+          ))}
       </aside>
     )
   }
@@ -80,12 +98,16 @@ const quelleLabel = t(seite.quelle_label);
     <h2>{t(seite.definition_titel)}</h2>
     <div class="block__inhalt">
       <p class="definition">{t(daten.definition)}</p>
-      <p class="quelle-hinweis">
-        <a href={daten.definition_quelle} target="_blank" rel="noopener"
-          >{quelleLabel}</a
-        >
+      <p class="quelle-hinweis" hidden={!QUELLEN_ANZEIGEN}>
         {
-          daten.weiterfuehrend && (
+          QUELLEN_ANZEIGEN && (
+            <a href={daten.definition_quelle} target="_blank" rel="noopener">
+              {quelleLabel}
+            </a>
+          )
+        }
+        {
+          QUELLEN_ANZEIGEN && daten.weiterfuehrend && (
             <>
               {" · "}
               <a href={daten.weiterfuehrend.url} target="_blank" rel="noopener">
@@ -110,9 +132,11 @@ const quelleLabel = t(seite.quelle_label);
             </span>
             <strong>{t(m.titel)}</strong>
             <p>{t(m.beschreibung)}</p>
-            <a href={m.quelle} target="_blank" rel="noopener">
-              {quelleLabel}
-            </a>
+            {QUELLEN_ANZEIGEN && (
+              <a href={m.quelle} target="_blank" rel="noopener">
+                {quelleLabel}
+              </a>
+            )}
           </li>
         ))
       }
@@ -128,9 +152,11 @@ const quelleLabel = t(seite.quelle_label);
             <details class="faq-eintrag">
               <summary>{t(f.frage)}</summary>
               <p>{t(f.antwort)}</p>
-              <a href={f.quelle} target="_blank" rel="noopener">
-                {quelleLabel}
-              </a>
+              {QUELLEN_ANZEIGEN && (
+                <a href={f.quelle} target="_blank" rel="noopener">
+                  {quelleLabel}
+                </a>
+              )}
             </details>
           ))
         }
