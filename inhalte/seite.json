@@ -179,12 +179,12 @@
       "en": "Possible effort drivers"
     },
     "pdf_treiber_intro": {
-      "de": "Nach Ihren Antworten könnten vor allem diese Bereiche den Aufwand bestimmen:",
-      "en": "Based on your answers, these areas could mainly drive the effort:"
+      "de": "Nach Ihren Antworten könnten vor allem die Bereiche mit hohem oder mittlerem Handlungsbedarf den Aufwand bestimmen:",
+      "en": "Based on your answers, the areas with high or medium need for action could mainly drive the effort:"
     },
     "pdf_keine_treiber": {
-      "de": "Nach Ihren Antworten ergäben sich keine ausgeprägten Aufwandstreiber.",
-      "en": "Based on your answers, no pronounced effort drivers would emerge."
+      "de": "Nach Ihren Antworten ergäben sich in keinem Bereich ausgeprägte Aufwandstreiber:",
+      "en": "Based on your answers, no area would show pronounced effort drivers:"
     },
     "pdf_umfang_titel": {
       "de": "Mögliche Einschätzung des Umfangs",
@@ -193,18 +193,6 @@
     "pdf_umfang_satz": {
       "de": "Auf Basis Ihrer Antworten könnte der Umfang des Handlungsbedarfs als „{stufe}“ eingeschätzt werden.",
       "en": "Based on your answers, the scope of the need for action could be assessed as “{stufe}”."
-    },
-    "pdf_stand_titel": {
-      "de": "Stand der Daten",
-      "en": "Status of the data"
-    },
-    "pdf_stand_fehlt": {
-      "de": "wird noch ergänzt",
-      "en": "to be added"
-    },
-    "pdf_quellen": {
-      "de": "Quellen und Begründungen stehen in der Online-Version des Checks.",
-      "en": "Sources and reasoning are available in the online version of the check."
     },
     "pdf_seite": {
       "de": "Seite",
@@ -590,9 +578,5 @@
         "en": "Back to start page"
       }
     }
-  },
-  "datenstand": {
-    "de": "",
-    "en": ""
   }
 }

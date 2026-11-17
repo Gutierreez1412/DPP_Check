@@ -1,5 +1,8 @@
 {
   "id": "batterien",
+  "pdf_einleitung": {
+    "de": "Die EU-Batterieverordnung schreibt ab Februar 2027 für bestimmte Batterien einen digitalen Batteriepass vor. Dieser schafft Transparenz über wichtige Produktinformationen wie Zusammensetzung, CO₂-Fußabdruck und Recyclinganteile. Dafür müssen relevante Daten entlang der gesamten Lieferkette gesammelt und bereitgestellt werden."
+  },
   "name": { "de": "Batterien", "en": "Batteries" },
   "definition": {
     "de": "Für Batterien gibt es eine eigene EU-Verordnung: die Batterieverordnung (EU) 2023/1542, seit Februar 2024 direkt in allen EU-Ländern gültig. Sie regelt den digitalen Produktpass selbst, als Batteriepass, und nicht über die Ökodesign-Verordnung (ESPR). Die Verordnung gilt für alle Batterien auf dem EU-Markt, den Batteriepass brauchen aber nur bestimmte Batteriearten.",

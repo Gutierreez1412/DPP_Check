@@ -231,8 +231,8 @@
         "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng",
         "status": "gilt",
         "pdf_kurz": {
-          "de": "Als Hersteller wären Sie hauptverantwortlich für den Digitalen Produktpass, einschließlich Konformitätsbewertung, technischer Dokumentation und EU-Konformitätserklärung (Art. 27 und 34 ESPR).",
-          "en": "As a manufacturer, you would bear the main responsibility for the Digital Product Passport, including conformity assessment, technical documentation and the EU declaration of conformity (Art. 27 and 34 ESPR)."
+          "de": "Als Hersteller wären Sie hauptverantwortlich für den Digitalen Produktpass, einschließlich Konformitätsbewertung, technischer Dokumentation und EU-Konformitätserklärung.",
+          "en": "As a manufacturer, you would bear the main responsibility for the Digital Product Passport, including conformity assessment, technical documentation and the EU declaration of conformity."
         }
       },
       "hersteller_screening": {
@@ -247,8 +247,8 @@
         "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng",
         "status": "unklar",
         "pdf_kurz": {
-          "de": "Sollte Ihre Veränderung die Konformität des Produkts beeinträchtigen, wären Sie als Hersteller für den Digitalen Produktpass verantwortlich (Art. 34 ESPR). Das hinge von Art und Umfang Ihrer Veränderung ab.",
-          "en": "If your modification affected the product's compliance, you would be responsible for the Digital Product Passport as a manufacturer (Art. 34 ESPR). That would depend on the type and extent of your modification."
+          "de": "Sollte Ihre Veränderung die Konformität des Produkts beeinträchtigen, wären Sie als Hersteller für den Digitalen Produktpass verantwortlich. Das hinge von Art und Umfang Ihrer Veränderung ab.",
+          "en": "If your modification affected the product's compliance, you would be responsible for the Digital Product Passport as a manufacturer. That would depend on the type and extent of your modification."
         }
       },
       "importeur_vertreiber": {
@@ -263,8 +263,8 @@
         "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng",
         "status": "gilt",
         "pdf_kurz": {
-          "de": "Als Importeur bzw. Vertreiber könnten Sie prüfen müssen, ob CE-Kennzeichnung, Digitaler Produktpass und Konformitätsunterlagen vorhanden sind, sobald diese Anforderungen für Ihre Produktgruppe gelten (Art. 29 bzw. Art. 30 ESPR).",
-          "en": "As an importer or distributor, you could have to check that CE marking, the Digital Product Passport and conformity documents are in place once these requirements apply to your product group (Art. 29 and Art. 30 ESPR)."
+          "de": "Als Importeur bzw. Vertreiber könnten Sie prüfen müssen, ob CE-Kennzeichnung, Digitaler Produktpass und Konformitätsunterlagen vorhanden sind, sobald diese Anforderungen für Ihre Produktgruppe gelten.",
+          "en": "As an importer or distributor, you could have to check that CE marking, the Digital Product Passport and conformity documents are in place once these requirements apply to your product group."
         }
       }
     }

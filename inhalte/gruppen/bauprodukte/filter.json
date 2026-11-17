@@ -110,8 +110,8 @@
         "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
         "status": "gilt",
         "pdf_kurz": {
-          "de": "Als Hersteller könnten für Sie die Herstellerpflichten nach Art. 22 gelten, darunter der digitale Produktpass. Diesen müssten Sie spätestens 18 Monate nach Inkrafttreten des delegierten Rechtsakts nach Art. 75 Abs. 1 bereitstellen (Art. 22 Abs. 7, Art. 76, Art. 80 Abs. 1).",
-          "en": "As a manufacturer, the manufacturer obligations under Art. 22 could apply to you, including the digital product passport. You would have to provide it no later than 18 months after the delegated act under Art. 75 para. 1 enters into force (Art. 22 para. 7, Art. 76, Art. 80 para. 1)."
+          "de": "Als Hersteller könnten für Sie die Herstellerpflichten gelten, darunter der digitale Produktpass. Diesen müssten Sie spätestens 18 Monate nach Inkrafttreten des delegierten Rechtsakts bereitstellen.",
+          "en": "As a manufacturer, the manufacturer obligations could apply to you, including the digital product passport. You would have to provide it no later than 18 months after the delegated act enters into force."
         }
       },
       "hersteller_veraendert": {
@@ -126,8 +126,8 @@
         "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
         "status": "gilt",
         "pdf_kurz": {
-          "de": "Als Hersteller könnten für Sie die Herstellerpflichten nach Art. 22 gelten, darunter der digitale Produktpass. Diesen müssten Sie spätestens 18 Monate nach Inkrafttreten des delegierten Rechtsakts nach Art. 75 Abs. 1 bereitstellen (Art. 22 Abs. 7, Art. 76, Art. 80 Abs. 1).",
-          "en": "As a manufacturer, the manufacturer obligations under Art. 22 could apply to you, including the digital product passport. You would have to provide it no later than 18 months after the delegated act under Art. 75 para. 1 enters into force (Art. 22 para. 7, Art. 76, Art. 80 para. 1)."
+          "de": "Als Hersteller könnten für Sie die Herstellerpflichten gelten, darunter der digitale Produktpass. Diesen müssten Sie spätestens 18 Monate nach Inkrafttreten des delegierten Rechtsakts bereitstellen.",
+          "en": "As a manufacturer, the manufacturer obligations could apply to you, including the digital product passport. You would have to provide it no later than 18 months after the delegated act enters into force."
         }
       },
       "hersteller_gebraucht": {
@@ -142,8 +142,8 @@
         "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
         "status": "gilt",
         "pdf_kurz": {
-          "de": "Als Hersteller könnten für Sie die Herstellerpflichten nach Art. 22 gelten, darunter der digitale Produktpass. Diesen müssten Sie spätestens 18 Monate nach Inkrafttreten des delegierten Rechtsakts nach Art. 75 Abs. 1 bereitstellen (Art. 22 Abs. 7, Art. 76, Art. 80 Abs. 1).",
-          "en": "As a manufacturer, the manufacturer obligations under Art. 22 could apply to you, including the digital product passport. You would have to provide it no later than 18 months after the delegated act under Art. 75 para. 1 enters into force (Art. 22 para. 7, Art. 76, Art. 80 para. 1)."
+          "de": "Als Hersteller könnten für Sie die Herstellerpflichten gelten, darunter der digitale Produktpass. Diesen müssten Sie spätestens 18 Monate nach Inkrafttreten des delegierten Rechtsakts bereitstellen.",
+          "en": "As a manufacturer, the manufacturer obligations could apply to you, including the digital product passport. You would have to provide it no later than 18 months after the delegated act enters into force."
         }
       },
       "einfuehrer_haendler": {
@@ -158,8 +158,8 @@
         "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
         "status": "gilt",
         "pdf_kurz": {
-          "de": "Als Einführer bzw. Händler wären für Sie die Pflichten nach Art. 24 bzw. Art. 25 maßgeblich. Den digitalen Produktpass müsste der Hersteller bereitstellen (Art. 22 Abs. 7).",
-          "en": "As an importer or distributor, the obligations under Art. 24 and Art. 25 would apply to you. The manufacturer would have to provide the digital product passport (Art. 22 para. 7)."
+          "de": "Als Einführer bzw. Händler wären für Sie die Einführer- bzw. Händlerpflichten maßgeblich. Den digitalen Produktpass müsste der Hersteller bereitstellen.",
+          "en": "As an importer or distributor, the importer or distributor obligations would apply to you. The manufacturer would have to provide the digital product passport."
         }
       }
     }

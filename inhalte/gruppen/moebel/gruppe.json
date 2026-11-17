@@ -1,5 +1,8 @@
 {
   "id": "moebel",
+  "pdf_einleitung": {
+    "de": "Die EU-Ökodesign-Verordnung (ESPR) bildet den Rahmen für digitale Produktpässe und legt über delegierte Rechtsakte Anforderungen für einzelne Produktgruppen fest. Möbel wurden als prioritäre Produktgruppe eingestuft, ein entsprechender Rechtsakt ist für 2028 vorgesehen. Der Produktpass soll Transparenz über Produktinformationen wie Materialien, eingesetzte Chemikalien und Recyclinganteile schaffen. Dafür müssen relevante Daten entlang der Lieferkette gesammelt werden."
+  },
   "name": {
     "de": "Möbel",
     "en": "Furniture"
