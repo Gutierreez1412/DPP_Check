@@ -57,5 +57,9 @@
   "hinweis": {
     "de": "Hinweis: Selbsteinschätzung Ihres Vorbereitungsgrads auf Basis Ihrer Angaben und der voraussichtlichen Datenpunkte (noch nicht alle final beschlossen). Kein Konformitätsnachweis, keine Feststellung der rechtlichen Betroffenheit, keine Rechtsberatung.",
     "en": "Note: Self-assessment of your level of preparedness based on your answers and the expected data points (not all finally adopted yet). Not proof of conformity, not a determination of legal applicability, not legal advice."
+  },
+  "hinweis_beschlossen": {
+    "de": "Hinweis: Selbsteinschätzung Ihres Vorbereitungsgrads auf Basis Ihrer Angaben und der Datenpunkte der geltenden Verordnung. Kein Konformitätsnachweis, keine Feststellung der rechtlichen Betroffenheit, keine Rechtsberatung.",
+    "en": "Note: Self-assessment of your level of preparedness based on your answers and the data points of the regulation in force. Not proof of conformity, not a determination of legal applicability, not legal advice."
   }
 }
