@@ -1,14 +1,28 @@
 ---
+import { Image } from "astro:assets";
 import seite from "../../inhalte/seite.json";
+import personBild from "../assets/dominik-ehrenreich.jpg";
 
 interface Props {
   lang: "de" | "en";
   gruppenName: string;
   /** Auf der Ergebnisseite: Häkchen "Ergebnis mitsenden" anzeigen. */
   mitErgebnis?: boolean;
+  /** Ansprechpartner (Steckbrief mit Foto) links neben dem Formular zeigen. */
+  mitPerson?: boolean;
+  /** Eigene Überschrift/Einleitung (z. B. Pilot-Seite) statt der Standardtexte */
+  titel?: Record<"de" | "en", string>;
+  text?: Record<"de" | "en", string>;
 }
 
-const { lang, gruppenName, mitErgebnis = false } = Astro.props;
+const {
+  lang,
+  gruppenName,
+  mitErgebnis = false,
+  mitPerson = false,
+  titel,
+  text,
+} = Astro.props;
 const t = (feld: Record<"de" | "en", string>) => feld[lang];
 const b = seite.beratung;
 
@@ -29,9 +43,30 @@ const clientTexte = {
 ---
 
 <section class="beratung" id="beratung" aria-labelledby="beratung-titel">
-  <div class="beratung__intro">
-    <h2 id="beratung-titel">{t(b.titel)}</h2>
-    <p>{t(b.text)}</p>
+  <div class="beratung__links">
+    <div class="beratung__intro">
+      <h2 id="beratung-titel">{t(titel ?? b.titel)}</h2>
+      <p>{t(text ?? b.text)}</p>
+    </div>
+
+    {
+      mitPerson && (
+        <figure class="beratung__person">
+          <Image
+            src={personBild}
+            alt={b.person.name}
+            width={480}
+            height={480}
+            loading="lazy"
+          />
+          <figcaption>
+            <strong>{b.person.name}</strong>
+            <span class="beratung__rolle">{t(b.person.rolle)}</span>
+            <span>{t(b.person.text)}</span>
+          </figcaption>
+        </figure>
+      )
+    }
   </div>
 
   <form class="beratung__form" id="beratung-form">
@@ -92,7 +127,6 @@ const clientTexte = {
 
     <div class="beratung__aktion feld--breit">
       <button class="button" type="submit">{t(b.senden)}</button>
-      <p class="beratung__hinweis">{t(b.hinweis)}</p>
     </div>
   </form>
 

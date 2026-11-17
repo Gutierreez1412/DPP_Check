@@ -5,9 +5,11 @@ import seite from "../../inhalte/seite.json";
 interface Props {
   lang: "de" | "en";
   gruppe: { id: string; name: Record<"de" | "en", string> };
+  /** Die Seite zeigt Überschrift und Einleitung schon selbst (Hero) */
+  ohneKopf?: boolean;
 }
 
-const { lang, gruppe } = Astro.props;
+const { lang, gruppe, ohneKopf = false } = Astro.props;
 const t = (feld: Record<"de" | "en", string>) => feld[lang];
 const c = seite.check;
 const fragen = fragenDaten.fragen;
@@ -21,9 +23,17 @@ const texteFuerClient = {
 ---
 
 <section class="check">
-  <p class="eyebrow-klein">{t(c.eyebrow)} · {t(gruppe.name)}</p>
-  <h1>{t(c.titel)}</h1>
-  <p class="lede">{t(c.intro)}</p>
+  {
+    !ohneKopf && (
+      <>
+        <p class="eyebrow-klein">
+          {t(c.eyebrow)} · {t(gruppe.name)}
+        </p>
+        <h1>{t(c.titel)}</h1>
+        <p class="lede">{t(c.intro)}</p>
+      </>
+    )
+  }
 
   <div class="assistent">
     <p class="fortschritt" id="check-fortschritt-text" aria-live="polite"></p>

@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import seite from "../../inhalte/seite.json";
 import GrundlagenSlider from "./GrundlagenSlider.astro";
+import heroBild from "../assets/hero-dpp.jpg";
 
 interface Props {
   lang: "de" | "en";
@@ -10,51 +12,64 @@ const { lang } = Astro.props;
 const start = seite.startseite;
 ---
 
-<section class="hero-start">
-  <h1>{start.hero.ueberschrift[lang]}</h1>
-  <p class="hero-start__unterzeile">{start.hero.unterzeile[lang]}</p>
+<section class="hero hero-start">
+  <div class="wrap hero-start__innen">
+    <div class="hero-start__text">
+      <span class="tag tag-stand">{start.hero.kicker[lang]}</span>
+      <h1>{start.hero.ueberschrift[lang]}</h1>
+      <p class="lead">{start.hero.unterzeile[lang]}</p>
+      <div class="hero-start__aktion">
+        <a class="button button--gross" href={start.cta.link[lang]}
+          >{start.cta.text[lang]} →</a
+        >
+        <span class="hero-start__fakt">{start.hero.fakt[lang]}</span>
+      </div>
+    </div>
+    <Image
+      class="hero-start__bild"
+      src={heroBild}
+      alt=""
+      width={1920}
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
 </section>
 
-<section class="kooperation" aria-label={start.kooperation.verbindung[lang]}>
-  {
-    start.kooperation.logos.map((logo, i) => (
-      <>
-        {i > 0 && (
-          <span class="kooperation__verbindung">
-            {start.kooperation.verbindung[lang]}
-          </span>
-        )}
-        {logo.bild ? (
-          <img class="kooperation__logo" src={logo.bild} alt={logo.alt[lang]} />
-        ) : (
-          <span class="logo-platzhalter" role="img" aria-label={logo.alt[lang]}>
-            {logo.beschriftung[lang]}
-          </span>
-        )}
-      </>
-    ))
-  }
+<section class="section" id="ueber">
+  <div class="wrap">
+    <ul class="nutzen__liste">
+      {
+        start.nutzen.map((punkt, i) => (
+          <li class={i === 1 ? "card-inverse" : "card"}>
+            <span class="tag">{`0${i + 1}`}</span>
+            <h2>{punkt.titel[lang]}</h2>
+            <p class={i === 1 ? "" : "muted"}>{punkt.text[lang]}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </section>
 
-<section class="start-aktion">
-  <a class="button button--gross" href={start.cta.link[lang]}
-    >{start.cta.text[lang]}</a
-  >
+<div class="section section-alt" id="grundlagen">
+  <div class="wrap">
+    <GrundlagenSlider lang={lang} />
+  </div>
+</div>
+
+<section class="section start-abschluss">
+  <div class="wrap">
+    <hr class="rule-gradient" />
+    <div class="start-abschluss__innen">
+      <div>
+        <h2>{start.cta_band.ueberschrift[lang]}</h2>
+        <p class="muted">{start.cta_band.text[lang]}</p>
+      </div>
+      <a class="button button--gross" href={start.cta.link[lang]}
+        >{start.cta.text[lang]} →</a
+      >
+    </div>
+    <p class="start-hinweis">{start.hinweis[lang]}</p>
+  </div>
 </section>
-
-<section class="nutzen">
-  <ul class="nutzen__liste" style={`--anzahl:${start.nutzen.length}`}>
-    {
-      start.nutzen.map((punkt) => (
-        <li class="nutzen__punkt">
-          <h2>{punkt.titel[lang]}</h2>
-          <p>{punkt.text[lang]}</p>
-        </li>
-      ))
-    }
-  </ul>
-</section>
-
-<GrundlagenSlider lang={lang} />
-
-<p class="start-hinweis">{start.hinweis[lang]}</p>

@@ -1,19 +1,37 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import StartLayout from "../../../layouts/StartLayout.astro";
 import Filter from "../../../components/Filter.astro";
-import ProduktpassGrafik from "../../../components/ProduktpassGrafik.astro";
 import seite from "../../../../inhalte/seite.json";
+import heroBild from "../../../assets/hero-filter.png";
 ---
 
-<Layout lang="de">
-  <div class="hero">
-    <div>
-      <h1>{seite.titel.de}</h1>
-      <p class="lede">{seite.untertitel.de}</p>
-      <p class="hinweis-text">{seite.datenschutz_hinweis.de}</p>
+<StartLayout lang="de" schlicht fusshinweis={seite.disclaimer.de}>
+  <section class="hero hero-start hero-start--kompakt">
+    <Image
+      class="hero-start__bild"
+      src={heroBild}
+      alt=""
+      width={1920}
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="wrap hero-start__innen">
+      <div class="hero-start__text">
+        <span class="tag tag-stand"
+          >{seite.startseite.analyse_platzhalter.titel.de}</span
+        >
+        <h1>{seite.untertitel.de}</h1>
+        <p class="lead">{seite.datenschutz_hinweis.de}</p>
+      </div>
     </div>
-    <ProduktpassGrafik lang="de" />
-  </div>
+  </section>
 
-  <Filter lang="de" />
-</Layout>
+  <section class="section">
+    <div class="wrap">
+      <div class="filter-panel">
+        <Filter lang="de" />
+      </div>
+    </div>
+  </section>
+</StartLayout>

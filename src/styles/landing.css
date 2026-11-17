@@ -1,212 +1,1390 @@
 /*
-  Landingpage (Startseite). Nutzt nur die Variablen aus global.css
-  (Farben, Schrift, Radius, Abstände) – das Corporate Design wird dort
-  an einer Stelle gesetzt. Die Landingpage verwendet bewusst nur eine
-  serifenlose Schrift (zwei Schnitte: normal und halbfett).
+  Landingpage (Startseite) im Future-Response-Design (hell): weiße Flächen,
+  Tinte #161616, Haarlinien, eckige Karten, Inter. Der Verlauf Indigo → Peach
+  ist der einzige Akzent. Alle Regeln hängen an `.landing`, damit die übrigen
+  Seiten (global.css) unverändert bleiben.
 */
 
 .landing {
-  --schrift-headline: var(--schrift);
+  --color-bg-alt: #fafafa;
+  --color-inverse: #161616;
+  --color-on-inverse: #ffffff;
+  --color-on-inverse-muted: #b9b9b9;
+  --color-text: #161616;
+  --color-text-muted: #555555;
+  --color-border: #e2e2e0;
+  --color-control: #949494;
+  --color-focus: #4b47c4;
+  --gradient-accent: linear-gradient(
+    90deg,
+    #5b5bd6 0%,
+    #c27bc0 55%,
+    #f2a676 100%
+  );
+  --wrap: 77.5rem;
+  --shadow-nav: 0 6px 30px rgba(22, 22, 22, 0.08);
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+  background: #fff;
+  color: var(--color-text);
+  line-height: 1.55;
 }
 
 .landing h1,
+.landing h2,
+.landing h3 {
+  font-family: inherit;
+  color: var(--color-text);
+  margin: 0;
+}
+.landing h1 {
+  font-size: clamp(2.4rem, 5.2vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  max-width: 18ch;
+}
 .landing h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+.landing a {
+  color: var(--color-focus);
+}
+.landing :focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }
 
-.start-kopf {
-  border-bottom: 1px solid var(--farbe-rand);
-}
-
-.start-kopf__innen {
-  max-width: var(--breite-inhalt);
+.landing .wrap {
+  max-width: var(--wrap);
   margin: 0 auto;
-  padding: 1rem var(--abstand-seite);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  padding: 0 2rem;
+}
+.landing .section {
+  padding: clamp(3rem, 7vw, 5rem) 0;
+}
+.landing .section-alt {
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.landing .muted {
+  color: var(--color-text-muted);
+}
+.landing .lead {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--color-text); /* auf dem Hero immer Tinte */
+  max-width: 34rem;
+  margin: 0;
 }
 
-.start-logo {
+/* --- Buttons: Tinte ist die Aktionsfarbe ------------------------------ */
+.landing .button {
   display: inline-flex;
-  text-decoration: none;
-}
-
-.start-logo img {
-  display: block;
-  height: 2.25rem;
-  width: auto;
-}
-
-/* Graue Platzhalter-Box für Logos (eigenes Logo und Partnerlogos) */
-.logo-platzhalter {
-  display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  min-height: 5rem;
-  padding: 0.75rem 1rem;
-  background: var(--farbe-flaeche);
-  border: 1px dashed var(--farbe-rand-stark);
-  border-radius: var(--radius);
-  color: var(--farbe-text-schwach);
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-.logo-platzhalter--klein {
+  gap: 0.5rem;
   width: auto;
-  min-width: 7rem;
-  min-height: 2.25rem;
-  padding: 0.25rem 0.9rem;
+  max-width: none;
+  min-height: 0;
+  padding: 0.75rem 1.1rem;
+  font-size: 0.94rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+  background: var(--color-text);
+  border: 1px solid var(--color-text);
+  border-radius: 2px;
+  text-decoration: none;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+.landing .button:hover {
+  background: #232323;
+  color: #fff;
+  text-decoration: none;
+}
+.landing .button:active {
+  transform: translateY(1px);
+}
+.landing .button--gross {
+  padding: 1rem 1.6rem;
+  font-size: 1.02rem;
 }
 
-.start-haupt {
-  max-width: 44rem;
-  margin: 0 auto;
-  padding: clamp(2.5rem, 8vw, 5rem) var(--abstand-seite) 0;
+/* --- Kopf: schwebende Pille ------------------------------------------- */
+.landing .start-kopf {
+  position: absolute;
+  inset: 1rem 0 auto 0;
+  z-index: 10;
+  border: 0;
+}
+.landing .start-kopf .wrap {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
+}
+.landing .nav-pill {
+  display: flex;
   align-items: center;
-  text-align: center;
-  gap: clamp(2.5rem, 6vw, 3.5rem);
+  width: fit-content;
+  max-width: 100%;
+  gap: 1.5rem;
+  padding: 0.6rem 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: var(--shadow-nav);
 }
-
-.start-haupt > section,
-.start-haupt > p {
-  margin: 0;
-  width: 100%;
-}
-
-.hero-start h1 {
-  max-width: 22ch;
-  margin: 0 auto;
-  font-size: clamp(1.9rem, 5.5vw, 2.9rem);
-  line-height: 1.15;
-}
-
-.hero-start__unterzeile {
-  max-width: 52ch;
-  margin: 1.25rem auto 0;
-  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
-  color: var(--farbe-text-schwach);
-}
-
-.kooperation {
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
+.landing .start-logo {
+  display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  max-width: 34rem;
-  margin: 0 auto;
+  color: var(--color-text);
+  text-decoration: none;
 }
-
-.kooperation__logo {
-  max-width: 100%;
-  max-height: 5rem;
+.landing .start-logo__fr svg {
+  display: block;
+  height: 1.5rem;
   width: auto;
 }
-
-.kooperation__verbindung {
-  font-size: 0.85rem;
-  color: var(--farbe-text-schwach);
+.landing .start-logo__produkt {
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--color-border);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.landing .nav-link {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+.landing .nav-link:hover {
+  color: var(--color-text);
+  text-decoration: none;
+}
+.landing .nav-pill .button {
+  margin-left: 1rem;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.88rem;
 }
 
-@media (min-width: 600px) {
-  .kooperation {
-    grid-template-columns: 1fr auto 1fr;
-    gap: 1.25rem;
-  }
+/* --- Hero: Foto als Fläche, links aufgehellt für Tinte-Text ----------- */
+.landing .start-haupt {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  text-align: left;
 }
-
-.button--gross {
-  min-height: 3.75rem;
-  padding: 1rem 2.5rem;
-  font-size: clamp(1.05rem, 2.6vw, 1.2rem);
+.landing .hero-start {
+  position: relative;
+  isolation: isolate;
+  min-height: min(46rem, 100svh);
+  display: flex;
+  align-items: center;
+  padding: 7rem 0 4rem;
+  background: #dfe7f3;
+  overflow: hidden;
+}
+.landing .hero-start__innen {
   width: 100%;
-  max-width: 24rem;
+}
+/* Foto als Vollfläche, links aufgehellt für Tinte-Text */
+.landing .hero-start__bild {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 50%;
+}
+.landing .hero-start::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.94) 0%,
+    rgba(255, 255, 255, 0.85) 38%,
+    rgba(255, 255, 255, 0) 75%
+  );
+}
+.landing .hero-start__text {
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.landing .tag {
+  display: inline-block;
+  padding: 0.3rem 0.55rem;
+  font-size: 0.74rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-control);
+  background: transparent;
+}
+.landing .tag-stand {
+  color: var(--color-text);
+  border-color: var(--color-text);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.7);
+}
+.landing .hero-start__aktion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+}
+.landing .hero-start__fakt {
+  font-size: 0.82rem;
+  color: var(--color-text);
 }
 
-.nutzen__liste {
+/* --- Nutzen: eckige Karten, eine inverse -------------------------------- */
+.landing .nutzen__liste {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.5rem;
   text-align: left;
 }
-
-.nutzen__punkt {
-  padding-top: 1rem;
-  border-top: 3px solid var(--farbe-primaer);
-}
-
-.nutzen__punkt h2 {
-  font-size: 1.15rem;
-  margin-bottom: 0.5rem;
-}
-
-.nutzen__punkt p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--farbe-text-schwach);
-}
-
-@media (min-width: 720px) {
-  .start-haupt {
-    max-width: var(--breite-inhalt);
-  }
-
-  .nutzen__liste {
-    grid-template-columns: repeat(var(--anzahl, 3), 1fr);
-    gap: 2rem;
-  }
-}
-
-.start-hinweis {
-  max-width: 52ch;
-  font-size: 0.9rem;
-  color: var(--farbe-text-schwach);
-}
-
-.start-fuss {
-  margin-top: clamp(3rem, 8vw, 5rem);
-  border-top: 1px solid var(--farbe-rand);
-}
-
-.start-fuss__innen {
-  max-width: var(--breite-inhalt);
-  margin: 0 auto;
-  padding: 1.25rem var(--abstand-seite);
+.landing .card,
+.landing .card-inverse {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.75rem;
+  border-radius: 0;
+  transition: transform 0.15s ease;
+}
+.landing .card {
+  background: #fff;
+  border: 1px solid var(--color-text);
+}
+.landing .card-inverse {
+  background: var(--color-inverse);
+  color: var(--color-on-inverse);
+  border: 1px solid var(--color-inverse);
+}
+.landing .card:hover,
+.landing .card-inverse:hover {
+  transform: translateY(-2px);
+}
+.landing .card-inverse h2 {
+  color: var(--color-on-inverse);
+}
+.landing .card-inverse .tag {
+  color: var(--color-on-inverse);
+  border-color: var(--color-on-inverse);
+}
+.landing .card h2,
+.landing .card-inverse h2 {
+  font-size: 1.5rem;
+}
+.landing .card p,
+.landing .card-inverse p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* --- Grundlagen-Slider auf hellem Band --------------------------------- */
+.landing .grundlagen-slider {
+  margin: 0;
+  text-align: left;
+}
+.landing .grundlagen-karte {
+  background: #fff;
+  border: 1px solid var(--color-text);
+  border-radius: 0;
+  box-shadow: none;
+}
+.landing .grundlagen-karte h3 {
+  font-family: inherit;
+  font-weight: 600;
+}
+.landing .grundlagen-slider__steuerung button {
+  border-radius: 2px;
+  border-color: var(--color-text);
+  color: var(--color-text);
+  background: transparent;
+}
+
+/* --- Abschluss-Band ----------------------------------------------------- */
+.landing .rule-gradient {
+  height: 2px;
+  border: 0;
+  background: var(--gradient-accent);
+  margin: 0 0 2.5rem;
+}
+.landing .start-abschluss__innen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+}
+.landing .start-abschluss__innen p {
+  margin: 0.75rem 0 0;
+  max-width: 38rem;
+}
+.landing .start-hinweis {
+  max-width: 52ch;
+  margin: 2.5rem 0 0;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+/* --- Footer: immer invers ----------------------------------------------- */
+.landing .start-fuss {
+  margin: 0;
+  border: 0;
+  background: var(--color-inverse);
+  color: var(--color-on-inverse-muted);
+  font-size: 0.875rem;
+  padding: 2rem 0;
+}
+.landing .start-fuss__innen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+}
+.landing .start-fuss__logo svg {
+  display: block;
+  height: 1.5rem;
+  width: auto;
+}
+.landing .start-fuss__links {
+  display: flex;
   gap: 1.5rem;
-  font-size: 0.9rem;
+}
+.landing .start-fuss a {
+  color: var(--color-on-inverse);
 }
 
-.start-fuss__innen a {
-  color: var(--farbe-text-schwach);
+/* --- Schmale Bildschirme ------------------------------------------------- */
+@media (max-width: 40rem) {
+  .landing .wrap {
+    padding: 0 1.25rem;
+  }
+  .landing .nav-link--mobil-aus {
+    display: none;
+  }
+  .landing .hero-start::before {
+    background: rgba(255, 255, 255, 0.88);
+  }
+  .landing .hero-start__aktion .button,
+  .landing .start-abschluss__innen .button {
+    width: 100%;
+  }
 }
 
-.start-fuss__innen a:hover {
-  color: var(--farbe-primaer);
+@media (prefers-reduced-motion: reduce) {
+  .landing * {
+    transition: none !important;
+  }
 }
 
 /* Platzhalterseite /analyse */
-.analyse-platzhalter h1 {
+.landing .analyse-platzhalter p {
+  margin: 1rem 0 2rem;
+  color: var(--color-text-muted);
+}
+
+/* Korrekturen gegenüber global.css */
+.landing a {
+  text-decoration: none;
+}
+.landing .nav-link:hover,
+.landing .start-fuss a:hover {
+  text-decoration: underline;
+}
+.landing .grundlagen-slider {
+  padding-top: 0;
+  border-top: 0;
+}
+.landing .grundlagen-slider__kopf h2 {
+  font-family: inherit;
+}
+.landing .grundlagen-karte h3 {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.landing .grundlagen-karte .grundlagen-karte__kern {
+  font-family: inherit;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.landing .start-abschluss {
+  display: block;
+  margin: 0;
+  padding: clamp(3rem, 7vw, 5rem) 0;
+  background: #fff;
+  color: var(--color-text);
+  border: 0;
+}
+.landing .start-abschluss h2 {
+  color: var(--color-text);
+}
+.landing .start-abschluss p {
+  color: var(--color-text-muted);
+}
+
+/* --- Unterseite „Filter“: kompakter Hero + Assistent im FR-Design ------- */
+.landing .hero-start--kompakt {
+  min-height: 26rem;
+  padding: 7.5rem 0 3.5rem;
+}
+.landing .hero-start--kompakt h1 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  max-width: 22ch;
+}
+.landing .hero-start--kompakt .lead {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.landing .start-fuss__hinweis {
+  flex-basis: 100%;
+  margin: 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-inverse-line, #3a3a3a);
+  max-width: 70ch;
+  font-size: 0.8rem;
+}
+
+.landing .filter-panel {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: #fff;
+  border: 1px solid var(--color-text);
+}
+.landing .assistent {
+  margin: 0;
+}
+.landing .fortschritt {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-focus);
+}
+.landing .fortschrittsbalken {
+  height: 2px;
+  margin-bottom: 2rem;
+  background: #cfcfcc;
+  overflow: hidden;
+}
+.landing .fortschrittsbalken__fuellung {
+  background: var(--gradient-accent);
+}
+.landing fieldset.schritt legend {
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
+.landing fieldset.schritt--lang legend {
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+}
+.landing .hinweis-text {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+.landing .optionen {
+  gap: 0.75rem;
+}
+.landing .option {
+  border: 1px solid var(--color-control);
+  border-radius: 0;
+  background: #fff;
+  font-weight: 500;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+.landing .option:hover {
+  border-color: var(--color-text);
+  transform: translateY(-1px);
+}
+.landing .option:has(input:checked) {
+  border-color: var(--color-text);
+  background: #fff;
+  box-shadow: inset 0 0 0 1px var(--color-text);
+}
+.landing .option input {
+  accent-color: var(--color-text);
+}
+.landing .option:has(input:focus-visible) {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+.landing .punkte li {
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-text);
+  border-radius: 0;
+  background: var(--color-bg-alt);
+}
+.landing .weitere-gruppen {
+  border-top: 1px solid var(--color-border);
+}
+.landing .weitere-gruppen h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.landing .weitere-gruppen__liste li {
+  border: 1px dashed var(--color-control);
+  border-radius: 0;
+}
+.landing .fehler {
+  color: #b3261e;
+  font-weight: 500;
+}
+.landing .button--sekundaer {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+.landing .button--sekundaer:hover {
+  background: #f4f4f3;
+  color: var(--color-text);
+}
+.landing .aktionen {
+  flex-wrap: wrap;
+}
+@media (max-width: 40rem) {
+  .landing .aktionen .button {
+    flex: 1 1 100%;
+  }
+}
+.landing fieldset.schritt legend:focus,
+.landing fieldset.schritt legend:focus-visible {
+  outline: none;
+}
+.landing .button--ghost {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+.landing .button--ghost:hover {
+  background: #f4f4f3;
+  color: var(--color-text);
+}
+
+/* --- Unterseite „Gruppe / Rolle“: global.css-Variablen auf FR umlegen ------
+   Alle Komponenten dieser Seite (Rollenbox, Zeitstrahl, FAQ, Formular) nutzen
+   die --farbe-*-Variablen; hier werden sie einmal auf das FR-Design gesetzt. */
+.landing {
+  --farbe-hintergrund: #ffffff;
+  --farbe-oberflaeche: #ffffff;
+  --farbe-flaeche: #fafafa;
+  --farbe-text: #161616;
+  --farbe-text-schwach: #555555;
+  --farbe-primaer: #161616;
+  --farbe-primaer-hover: #232323;
+  --farbe-primaer-soft: #f4f4f3;
+  --farbe-primaer-text: #ffffff;
+  --farbe-rand: #e2e2e0;
+  --farbe-rand-stark: #949494;
+  --schrift: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --schrift-headline: var(--schrift);
+  --radius: 0;
+}
+.landing .start-inhalt {
+  padding-top: clamp(2rem, 5vw, 3.5rem);
+}
+.landing .nur-screenreader {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.landing .block h2,
+.landing .zeitstrahl-block h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+/* Rollenbox: der Befund der Seite, daher als inverse Karte */
+.landing .rollen-hinweis {
+  background: var(--color-inverse);
+  color: var(--color-on-inverse);
+  border: 1px solid var(--color-inverse);
+  border-radius: 0;
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+.landing .rollen-hinweis h2,
+.landing .rollen-disclaimer p {
+  color: var(--color-on-inverse);
+}
+.landing .rollen-hinweis .eyebrow,
+.landing .rollen-disclaimer .hinweis-text {
+  color: var(--color-on-inverse-muted);
+}
+.landing .rollen-disclaimer {
+  border-top-color: #3a3a3a;
+}
+.landing .rollen-hinweis a {
+  color: var(--color-on-inverse);
+}
+.landing .hinweisbox {
+  border-radius: 0;
+  background: var(--color-bg-alt);
+}
+.landing .hinweisbox--vorbehalt {
+  border-left-color: #9a4a00;
+}
+/* Abschluss-Band mit Check-Button: inverse Fläche, heller Button */
+.landing .cta-band {
+  background: var(--color-inverse);
+  border-radius: 0;
+  margin-top: 1.5rem;
+}
+.landing .cta-band h2,
+.landing .cta-band p,
+.landing .cta-band__link {
+  color: var(--color-on-inverse);
+}
+.landing .button--hell {
+  background: #fff;
+  color: var(--color-text);
+  border-color: #fff;
+}
+.landing .button--hell:hover {
+  background: #f4f4f3;
+  color: var(--color-text);
+}
+.landing .status-badge {
+  border-radius: 999px;
+}
+
+/* Korrekturen Gruppenseite */
+.landing .rollen-hinweis.hinweisbox {
+  background: var(--color-inverse);
+  color: var(--color-on-inverse);
+}
+.landing .hero-start__bild--rolle {
+  object-position: 72% 28%;
+}
+.landing .beratung {
+  margin-top: 2.5rem;
+  border-radius: 0;
+  border: 1px solid var(--color-text);
+}
+.landing .beratung__intro h2 {
+  font-size: 1.5rem;
+}
+.landing .zeitstrahl-block h2 {
+  margin-bottom: 2rem;
+}
+.landing .aktionen--landingpage {
+  margin-top: 2.5rem;
+}
+.landing .hinweisbox--vorbehalt {
+  margin-top: 1rem;
+}
+
+/* --- Gruppenseite leichter: hell, Haarlinien, Schwarz nur für Aktionen --- */
+.landing .rollen-hinweis.hinweisbox {
+  position: relative;
+  background: #fff;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+.landing .rollen-hinweis.hinweisbox::before {
+  content: "";
+  position: absolute;
+  inset: -1px -1px auto -1px;
+  height: 2px;
+  background: var(--gradient-accent);
+}
+.landing .rollen-hinweis h2,
+.landing .rollen-disclaimer p {
+  color: var(--color-text);
+}
+.landing .rollen-hinweis .eyebrow {
+  color: var(--color-focus);
+}
+.landing .rollen-disclaimer .hinweis-text {
+  color: var(--color-text-muted);
+}
+.landing .rollen-disclaimer {
+  border-top-color: var(--color-border);
+}
+.landing .rollen-hinweis a {
+  color: var(--color-focus);
+}
+
+.landing .cta-band {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+.landing .cta-band h2,
+.landing .cta-band p {
+  color: var(--color-text);
+}
+.landing .cta-band p {
+  opacity: 1;
+  color: var(--color-text-muted);
+}
+.landing .cta-band__link {
+  color: var(--color-focus);
+}
+.landing .cta-band .button--hell {
+  background: var(--color-text);
+  color: #fff;
+  border-color: var(--color-text);
+}
+.landing .cta-band .button--hell:hover {
+  background: #232323;
+  color: #fff;
+}
+
+.landing .beratung {
+  border: 1px solid var(--color-border);
+}
+.landing .grundlagen-karte,
+.landing .start-inhalt .faq-eintrag {
+  border-color: var(--color-border);
+}
+
+/* --- Zeitstrahl nach future-response.de/csrd: Raster, Haarlinie, eckige Marker --- */
+.landing .zeitstrahl {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--anzahl, 5), minmax(0, 1fr));
+  gap: 0;
+  margin: 3.5rem 0 0;
+  padding: 0;
+  overflow: visible;
+}
+.landing .zeitstrahl::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 6px;
+  height: 1px;
+  background: #cfcfcc;
+}
+.landing .zeitstrahl__eintrag {
+  position: relative;
+  flex: none;
+  display: grid;
+  gap: 0.3rem;
+  align-content: start;
+  justify-items: start;
+  padding: 1.9rem 1rem 0 0;
+}
+.landing .zeitstrahl__eintrag::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: auto;
+  width: 13px;
+  height: 13px;
+  background: #fff;
+  border: 1px solid var(--color-text);
+  border-radius: 0;
+}
+.landing .zeitstrahl__eintrag::after {
+  content: none;
+}
+.landing .zeitstrahl__eintrag[data-status="gilt"]::before {
+  background: var(--color-text);
+}
+.landing .zeitstrahl__eintrag[data-status="unklar"]::before {
+  border-style: dashed;
+}
+.landing .zeitstrahl__datum {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.landing .zeitstrahl__eintrag .status-badge {
+  margin: 0.15rem 0 0.35rem;
+  padding: 0.1rem 0.5rem 0.1rem 0.4rem;
+  font-size: 0.7rem;
+  border-color: var(--color-border);
+}
+.landing .zeitstrahl__eintrag strong {
+  margin: 0;
+  font-size: 0.97rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.landing .zeitstrahl__eintrag p {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+@media (max-width: 860px) {
+  .landing .zeitstrahl {
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+  }
+  .landing .zeitstrahl::before {
+    left: 6px;
+    right: auto;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    height: auto;
+  }
+  .landing .zeitstrahl__eintrag {
+    padding: 0 0 1.5rem 2rem;
+  }
+}
+.landing .zeitstrahl-block {
+  padding-bottom: 2.5rem;
+}
+
+/* Hero ohne Foto: Himmel-Verlauf als Platzhalter (Designsystem) */
+.landing .hero-start--platzhalter {
+  background: linear-gradient(180deg, #8fb8e6 0%, #d9b8e8 55%, #f4c3c9 100%);
+}
+
+/* Marker nach Datum: gefüllt = vorbei, hohl = kommt (sobald das Skript es weiß) */
+.landing .zeitstrahl__eintrag[data-zeit="kommt"]::before {
+  background: #fff;
+}
+.landing .zeitstrahl__eintrag[data-zeit="vorbei"]::before {
+  background: var(--color-text);
+}
+
+/* Zeitstrahl: schmale Bildschirme untereinander */
+@media (max-width: 860px) {
+  .landing .zeitstrahl {
+    flex-direction: column;
+  }
+  .landing .zeitstrahl__eintrag {
+    flex: none;
+  }
+}
+
+/* --- Kontakt: zwei Spalten wie future-response.de/csrd ------------------- */
+.landing .beratung {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+  margin-top: 3rem;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+}
+.landing .beratung__links {
+  display: grid;
+  gap: 2rem;
+}
+.landing .beratung__intro {
+  max-width: 34rem;
+  margin: 0;
+}
+.landing .beratung__intro h2 {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.landing .beratung__intro p {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+.landing .beratung__person {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  margin: 0;
+  background: #fff;
+  max-width: 34rem;
+}
+.landing .beratung__person img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 9rem;
+  object-fit: cover;
+}
+.landing .beratung__person figcaption {
+  display: grid;
+  gap: 0.25rem;
+  align-content: center;
+  padding: 1rem 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+.landing .beratung__person strong {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+.landing .beratung__rolle {
+  color: var(--color-text);
+}
+/* Formular als weiße Karte mit Eck-Kreuzen */
+.landing .beratung__form {
+  position: relative;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: #fff;
+}
+.landing .beratung__form::before {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  pointer-events: none;
+  background:
+    linear-gradient(#161616, #161616) left 0 top 7px / 15px 1px,
+    linear-gradient(#161616, #161616) left 7px top 0 / 1px 15px,
+    linear-gradient(#161616, #161616) right 0 top 7px / 15px 1px,
+    linear-gradient(#161616, #161616) right 7px top 0 / 1px 15px,
+    linear-gradient(#161616, #161616) left 0 bottom 7px / 15px 1px,
+    linear-gradient(#161616, #161616) left 7px bottom 0 / 1px 15px,
+    linear-gradient(#161616, #161616) right 0 bottom 7px / 15px 1px,
+    linear-gradient(#161616, #161616) right 7px bottom 0 / 1px 15px;
+  background-repeat: no-repeat;
+}
+.landing .beratung input[type="text"],
+.landing .beratung input[type="email"],
+.landing .beratung input[type="date"],
+.landing .beratung select,
+.landing .beratung textarea {
+  border-color: var(--color-control);
+  border-radius: 2px;
+}
+.landing .beratung__aktion {
+  flex-wrap: wrap;
+  gap: 1rem 1.25rem;
+}
+@media (max-width: 860px) {
+  .landing .beratung {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .landing .beratung__person {
+    grid-template-columns: 7rem minmax(0, 1fr);
+  }
+}
+@media (max-width: 40rem) {
+  .landing .beratung__form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Ansprechpartner: hochkant wie in der Referenz (Foto oben, Steckbrief darunter) */
+.landing .beratung__person {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 20rem;
+}
+.landing .beratung__person img {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 1 / 1;
+}
+.landing .beratung__person figcaption {
+  align-content: start;
+  padding: 1rem 1.25rem 1.25rem;
+}
+@media (max-width: 860px) {
+  .landing .beratung__person {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 18rem;
+  }
+}
+
+/* Kontaktbereich straffer: weniger Rand um den Inhalt */
+.landing .beratung {
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  margin-top: 2rem;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+}
+.landing .beratung__links {
+  gap: 1.25rem;
+  align-content: start;
+}
+.landing .beratung__intro h2 {
+  margin-bottom: 0.6rem;
+}
+.landing .beratung__form {
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  gap: 0.85rem 1rem;
+}
+.landing .beratung__form::before {
+  inset: -6px;
+}
+.landing .beratung__person {
+  max-width: 17rem;
+}
+.landing .beratung__person figcaption {
+  padding: 0.85rem 1rem 1rem;
+}
+.landing .beratung__aktion {
+  margin-top: 0.25rem;
+}
+
+/* Kontakt: linke Spalte füllt die Höhe des Formulars, Steckbrief unten bündig */
+.landing .beratung {
+  align-items: stretch;
+}
+.landing .beratung__links {
+  grid-template-rows: auto 1fr;
+}
+.landing .beratung__person {
+  align-self: end;
+  max-width: none;
+  grid-template-columns: 12rem minmax(0, 1fr);
+}
+.landing .beratung__person figcaption {
+  align-content: center;
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+}
+.landing .beratung__person strong {
+  font-size: 1.05rem;
+}
+@media (max-width: 860px) {
+  .landing .beratung__person {
+    grid-template-columns: 8rem minmax(0, 1fr);
+    max-width: none;
+  }
+}
+@media (max-width: 40rem) {
+  .landing .beratung__person {
+    grid-template-columns: 6rem minmax(0, 1fr);
+  }
+  .landing .beratung__person figcaption {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* --- Check (Fragen zum Umfang): Kategorie-Label, Antwortliste, Auswertung --- */
+.landing .check__kategorie {
+  margin-bottom: 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--color-focus);
+}
+.landing .optionen--liste {
+  max-width: none;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.6rem;
+}
+.landing .optionen--liste .option {
+  min-height: 3.4rem;
+}
+.landing .check__zurueck {
+  margin: 1.5rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.9rem;
+}
+.landing .check__auswertung {
+  color: var(--color-text-muted);
+}
+.landing .check__puls {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--gradient-accent);
+}
+.landing .check__puls::before,
+.landing .check__puls::after {
+  border-color: #c27bc0;
+}
+/* Der Rückweg steht schon als Button in der Leiste oben */
+.landing .check__zurueck {
+  display: none;
+}
+
+/* --- Ergebnis: heller Look statt dunkler Tacho-Karte ----------------------
+   Die Animation (Einschwingen, Aufteilen) bleibt, nur Farben und Formen
+   folgen dem FR-Design. Status: success / warning / danger. */
+.landing .ergebnis-karte {
+  --tacho-gruen: #0b7a5f;
+  --tacho-gelb: #9a4a00;
+  --tacho-rot: #b3261e;
+  --tacho-hintergrund: #ffffff;
+  color: var(--color-text);
+  background-color: #fff;
+  background-image: var(--gradient-accent);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  box-shadow: none;
+  text-align: left;
+}
+.landing .ergebnis-karte::before {
+  display: none;
+}
+@media (min-width: 900px) {
+  .landing .ergebnis-karte {
+    width: auto;
+    margin-inline: 0;
+  }
+}
+.landing .ergebnis-karte__eyebrow {
+  display: none;
+}
+.landing .ergebnis-karte__haupt {
+  text-align: center;
+}
+.landing .tacho {
+  margin-top: 0.5rem;
+}
+.landing .tacho__spur {
+  stroke: #e2e2e0;
+}
+.landing .ergebnis-karte .tacho__segment {
+  filter: none !important;
+}
+.landing .tacho__zeiger line {
+  stroke: var(--color-text);
+}
+.landing .tacho__zeiger circle {
+  fill: #fff;
+  stroke: var(--color-text);
+}
+.landing .tacho__legende {
+  color: #6b6b6b;
+}
+.landing .tacho__label {
+  color: var(--color-text-muted);
+}
+.landing .tacho__stufe {
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-shadow: none;
+}
+.landing .ergebnis-karte__titel {
+  max-width: none;
+  margin-top: 1.25rem;
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+  font-weight: 600;
+  color: var(--color-text);
+}
+.landing .ergebnis-karte__text {
+  color: var(--color-text-muted);
+}
+.landing .ergebnis-karte .button--hell {
+  background: var(--color-text);
+  color: #fff;
+  border-color: var(--color-text);
+}
+.landing .ergebnis-karte .button--hell:hover {
+  background: #232323;
+}
+.landing .ergebnis-karte__link {
+  color: var(--color-focus);
+}
+.landing .ergebnis-karte__link:hover {
+  color: var(--color-text);
+}
+.landing .ergebnis-karte__pdf {
+  color: var(--color-text-muted);
+}
+.landing .ergebnis-karte__pdf:hover {
+  color: var(--color-text);
+}
+.landing .ergebnis-karte :focus-visible {
+  outline-color: var(--color-focus);
+}
+.landing .ergebnis-karte__pilot {
+  border-top-color: var(--color-border);
+  color: var(--color-text);
+}
+.landing .ergebnis-karte__pilot:hover {
+  color: var(--color-focus);
+}
+.landing .ergebnis-karte__pilot-qr {
+  border-radius: 0;
+  background:
+    linear-gradient(90deg, var(--color-text) 50%, transparent 0) 0 0 / 6px 6px,
+    linear-gradient(var(--color-text) 50%, transparent 0) 0 0 / 6px 6px;
+  outline-color: var(--color-text);
+}
+.landing .ergebnis-karte__pilot-text {
+  text-decoration-color: var(--color-control);
+}
+/* Begründungen */
+.landing .begruendung {
+  border-top-color: var(--color-border);
+}
+.landing .begruendung__titel {
+  font-family: inherit;
+  font-size: clamp(1.25rem, 2.4vw, 1.5rem);
+  font-weight: 600;
+  color: var(--color-text);
+}
+.landing .begruendung__intro {
+  color: var(--color-text-muted);
+}
+.landing .begruendung a {
+  color: var(--color-focus);
+}
+.landing .begruendung__blocktitel {
+  letter-spacing: 0.08em;
+  color: var(--color-focus);
+}
+.landing .begruendung__blockintro {
+  color: var(--color-text-muted);
+}
+.landing .begruendung__liste {
+  border-top-color: var(--color-border);
+}
+.landing .begruendung__punkt {
+  border-bottom-color: var(--color-border);
+}
+.landing .begruendung__kopf::after {
+  border-color: var(--color-text-muted);
+}
+.landing .begruendung__kategorie {
+  color: var(--color-text);
+}
+.landing .begruendung__stufe {
+  border-color: color-mix(in srgb, var(--farbe) 40%, #fff);
+  background: color-mix(in srgb, var(--farbe) 10%, #fff);
+}
+.landing .begruendung__warum {
+  color: var(--color-text-muted);
+}
+.landing .begruendung__warum a {
+  color: var(--color-text-muted);
+}
+.landing .ergebnis__hinweis {
+  margin: 1rem 0 0;
+  color: var(--color-text-muted);
+}
+.landing .ergebnis__fehlt {
+  background: var(--color-bg-alt);
+}
+
+/* Ergebnis-Farben ruhiger: aktives Segment in Statusfarbe, der Rest neutral grau,
+   große Stufe in Tinte (Farbe trägt nur das Segment und die Pillen). */
+.landing .ergebnis-karte {
+  --tacho-gruen: #0b7a5f;
+  --tacho-gelb: #e08a00;
+  --tacho-rot: #b3261e;
+}
+.landing
+  .ergebnis-karte.ist-sichtbar[data-stufe="gruen"]
+  .tacho__segment:not(.tacho__segment--gruen),
+.landing
+  .ergebnis-karte.ist-sichtbar[data-stufe="gelb"]
+  .tacho__segment:not(.tacho__segment--gelb),
+.landing
+  .ergebnis-karte.ist-sichtbar[data-stufe="rot"]
+  .tacho__segment:not(.tacho__segment--rot) {
+  stroke: #e2e2e0;
+  opacity: 1;
+}
+.landing .tacho__stufe {
+  color: var(--color-text);
+}
+.landing .ist-sichtbar[data-stufe="gruen"] .tacho__legende [data-id="gruen"],
+.landing .ist-sichtbar[data-stufe="gelb"] .tacho__legende [data-id="gelb"],
+.landing .ist-sichtbar[data-stufe="rot"] .tacho__legende [data-id="rot"] {
+  color: var(--color-text);
+}
+/* Pillen: gleiche Statusfarben, Text dunkel genug für Kontrast */
+.landing .begruendung__punkt {
+  --farbe: #9a4a00;
+}
+.landing .begruendung__punkt[data-stufe="gruen"] {
+  --farbe: #0b7a5f;
+}
+.landing .begruendung__punkt[data-stufe="rot"] {
+  --farbe: #b3261e;
+}
+
+/* Hinweis unter der Ergebnis-Karte: volle Breite wie die Karte */
+.landing .ergebnis__hinweis {
   max-width: none;
 }
 
-.analyse-platzhalter p {
-  margin: 1rem 0 2rem;
-  color: var(--farbe-text-schwach);
+/* Kontakt kompakt und ohne weiße Flächen: grauer Block, Formular direkt darauf */
+.landing .beratung {
+  background: #f4f4f3;
+  border: 0;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  padding: clamp(1rem, 2.5vw, 1.75rem);
+  margin-top: 1.5rem;
 }
-
-/* ESPR-Kurzinfo (Slider, Inhalt: inhalte/grundlagen.json) auf der Startseite */
-.start-haupt .grundlagen-slider {
-  margin-top: 0;
-  text-align: left;
+.landing .beratung__form {
+  padding: 0;
+  background: transparent;
+  gap: 0.7rem 1rem;
+}
+.landing .beratung__form::before {
+  display: none;
+}
+.landing .beratung .feld {
+  gap: 0.2rem;
+}
+.landing .beratung input[type="text"],
+.landing .beratung input[type="email"],
+.landing .beratung input[type="date"],
+.landing .beratung select {
+  min-height: 2.4rem;
+  padding: 0.4rem 0.65rem;
+}
+.landing .beratung textarea {
+  min-height: 4.5rem;
+  padding: 0.5rem 0.65rem;
+}
+.landing .beratung .einwilligung {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.landing .beratung__intro h2 {
+  margin-bottom: 0.5rem;
+}
+.landing .beratung__intro p {
+  font-size: 1rem;
+}
+.landing .beratung__person {
+  background: transparent;
+  border-top: 1px solid var(--color-border-strong, #cfcfcc);
+  grid-template-columns: 9rem minmax(0, 1fr);
+  align-items: center;
+  gap: 1.25rem;
+  padding-top: 1.25rem;
+}
+.landing .beratung__person figcaption {
+  padding: 0;
+}
+@media (max-width: 40rem) {
+  .landing .beratung__person {
+    grid-template-columns: 6rem minmax(0, 1fr);
+    gap: 1rem;
+  }
 }

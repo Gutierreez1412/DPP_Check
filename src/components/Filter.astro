@@ -337,7 +337,7 @@ const texteFuerClient = {
       const legende = aktiv.querySelector("legend");
       if (legende instanceof HTMLElement) {
         legende.setAttribute("tabindex", "-1");
-        legende.focus();
+        legende.focus({ preventScroll: true });
       }
     }
 

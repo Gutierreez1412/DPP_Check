@@ -1,0 +1,211 @@
+/*
+  Pilot-Seite im hellen FR-Design. Ergänzt pilot.css:
+  1. Variablen auf helle Flächen und FR-Akzente umlegen,
+  2. eckige Formen statt Rundungen,
+  3. Stellen, die der Farbgenerator (pilot-hell.generiert.css) nicht allein
+     lösen kann (Typenschild, QR-Code, Chips).
+  Status: Öffentlich = success, Berechtigtes Interesse = warning, Behörden = Orchid.
+*/
+.landing .pilot {
+  --p-bg: #fafafa;
+  --p-panel: #ffffff;
+  --p-panel-2: #f4f4f3;
+  --p-linie: #e2e2e0;
+  --p-text: #161616;
+  --p-schwach: #555555;
+  --p-akzent: #4b47c4;
+  --p-akzent-soft: rgba(75, 71, 196, 0.08);
+  --p-oeffentlich: #0b7a5f;
+  --p-berechtigt: #9a4a00;
+  --p-behoerden: #9b3f98;
+  --p-mono:
+    ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Consolas, monospace;
+}
+
+/* Rundungen raus (Pillen und Punkte bleiben) */
+.landing .pilot-produkt,
+.landing .pilot-produkt__daten,
+.landing .pilot-schritte li:not(.stufe-chip),
+.landing .pilot-konsole,
+.landing .komponenten-tab,
+.landing .komponente,
+.landing .komponente__felder,
+.landing .pass-viewer,
+.landing .rollen,
+.landing .rolle,
+.landing .register__tab,
+.landing .pass-viewer .feld,
+.landing .feld__unklar summary,
+.landing .weitere__dp,
+.landing .weitere__tag,
+.landing .kette__glied,
+.landing .kette__nr,
+.landing .pilot-vorbehalt {
+  border-radius: 0;
+}
+
+/* Produkt-Karte im Hero: weiße Karte mit Haarlinie und feinem Verlaufsstrich */
+.landing .pilot-produkt {
+  background: #fff;
+  border: 1px solid var(--p-linie);
+  background-image: var(--gradient-accent);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+}
+.landing .pilot-produkt__name {
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.landing .pilot-produkt__daten {
+  background: var(--p-panel-2);
+}
+
+/* Konsole-Abschnitte (Bauteile, Pass-Ansicht, Lieferkette): helle Flächen */
+.landing .pilot-konsole,
+.landing .pass-viewer {
+  background-color: #fff;
+  border: 1px solid var(--p-linie);
+  color: var(--p-text);
+}
+.landing .pilot-konsole h2,
+.landing .pilot-konsole h3,
+.landing .pass-viewer h2,
+.landing .pass-viewer h3 {
+  font-family: inherit;
+  color: var(--p-text);
+}
+
+/* Typenschild, QR-Code */
+.landing .szene__schild {
+  fill: #fff;
+  stroke: #cfcfcc;
+  stroke-width: 0.6;
+}
+.landing .szene__qr {
+  fill: #161616;
+}
+.landing .szene__schild-name {
+  fill: #161616;
+}
+.landing .szene__schild-daten {
+  fill: #555;
+}
+.landing .szene__schild-zeile {
+  fill: #e2e2e0;
+}
+
+/* Rückweg zum Ergebnis sichtbar (Link trägt die Antworten im Anker) */
+.landing .pilot .check__zurueck {
+  display: block;
+}
+
+/* Hero der Pilot-Seite: Text links, Produkt-Karte rechts, ohne eigene Überschrift */
+.landing .pilot-hero {
+  align-items: start;
+}
+.landing .pilot-hero__lede {
+  color: var(--color-text);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+.landing .pilot-beispiel span {
+  border-style: solid;
+  border-color: var(--color-control);
+  color: var(--color-text);
+}
+.landing .pilot-vorbehalt {
+  background: var(--color-bg-alt);
+  border-left-color: #9a4a00;
+}
+
+/* Abschnittsüberschriften im FR-Stil */
+.landing .pilot-h2 {
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.landing .pilot-schritte li:not(.stufe-chip) {
+  background: #fff;
+  border: 1px solid var(--p-linie);
+}
+.landing .pilot-schritte h3 {
+  font-family: inherit;
+  font-weight: 600;
+}
+
+/* Typenschilder in den Zeichnungen: weiße Schilder mit dünner Linie */
+.landing .schild rect {
+  fill: #fff;
+  stroke: rgba(22, 22, 22, 0.35);
+}
+.landing .schild .schild__zeile {
+  fill: #cfcfcc;
+}
+.landing [class*="explosion--"][data-aktiv="etikett"] .schild rect:first-child,
+.landing .explosion[data-aktiv="etikett"] .schild rect:first-child {
+  fill: #fff;
+  stroke: var(--p-akzent);
+  filter: none;
+}
+
+/* Nummern-Punkte an der Zeichnung: weiß mit Indigo-Rand */
+.landing .hotspot {
+  background: #fff;
+  color: var(--p-akzent);
+}
+.landing .hotspot:hover,
+.landing .hotspot.ist-aktiv {
+  background: var(--p-akzent);
+  color: #fff;
+}
+
+/* Zugriffs-Chips in Schritt 3: Status-Farben mit Wort, gut lesbar auf Weiß */
+.landing .stufe-chip--hell.stufe-chip--oeffentlich {
+  color: #0b7a5f;
+}
+.landing .stufe-chip--hell.stufe-chip--berechtigt {
+  color: #9a4a00;
+}
+.landing .stufe-chip--hell.stufe-chip--behoerden {
+  color: #9b3f98;
+}
+
+/* Pass-Ansicht: die eine dunkle Fläche der Seite (neutrales Schwarz, Indigo-Akzent) */
+.landing .pilot .pass-viewer {
+  --p-bg: #161616;
+  --p-panel: #1f1f1f;
+  --p-panel-2: #262626;
+  --p-linie: #3a3a3a;
+  --p-text: #ffffff;
+  --p-schwach: #b9b9b9;
+  --p-akzent: #a5a2f5;
+  --p-akzent-soft: rgba(165, 162, 245, 0.16);
+  --p-oeffentlich: #4cc38a;
+  --p-berechtigt: #f2ad66;
+  --p-behoerden: #dba0da;
+  background-color: #161616;
+  border: 1px solid #161616;
+  border-radius: 0;
+  box-shadow: none;
+}
+.landing .pilot .pass-viewer .rollen,
+.landing .pilot .pass-viewer .rolle,
+.landing .pilot .pass-viewer .register__tab,
+.landing .pilot .pass-viewer .feld,
+.landing .pilot .pass-viewer .feld__unklar summary,
+.landing .pilot .pass-viewer .weitere__dp,
+.landing .pilot .pass-viewer .weitere__tag {
+  border-radius: 0;
+}
+.landing .pilot .pass-viewer .rolle {
+  border-radius: 99px;
+}
+.landing .pilot .pass-viewer :focus-visible {
+  outline-color: #fff;
+}
+
+/* Eckdaten der Produkt-Karte in Schwarz statt Indigo */
+.landing .pilot-produkt__daten dd {
+  color: var(--color-text);
+}

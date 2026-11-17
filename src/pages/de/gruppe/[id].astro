@@ -1,5 +1,5 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
+import StartLayout from "../../../layouts/StartLayout.astro";
 import Platzhalter from "../../../components/Platzhalter.astro";
 import GruppenLandingpage, {
   type GruppenDaten,
@@ -26,19 +26,41 @@ const daten = Object.values(alleGruppenDaten).find(
 )?.default;
 ---
 
-<Layout lang="de" title={gruppe.name.de}>
-  {
-    daten ? (
-      <GruppenLandingpage lang="de" daten={daten} />
-    ) : (
-      <Platzhalter
-        titel={gruppe.name.de}
-        hinweis={seite.platzhalter_gruppenseite.de}
-        zurueckHref="/de/filter/"
-        zurueckLabel={seite.zurueck_zur_auswahl.de}
-      >
-        <RollenHinweis lang="de" gruppeId={gruppe.id} slot="vor-hinweis" />
-      </Platzhalter>
-    )
-  }
-</Layout>
+<StartLayout
+  lang="de"
+  title={gruppe.name.de}
+  schlicht
+  zurueck={{ href: "/de/filter/", label: seite.zurueck_zur_auswahl.de }}
+  fusshinweis={seite.disclaimer.de}
+>
+  <!-- Platzhalter: Himmel-Verlauf des Designsystems statt Foto. Passendes Bild später als <Image> hier einsetzen (Datei: src/assets/hero-rolle.jpg liegt bereit). -->
+  <section class="hero hero-start hero-start--kompakt hero-start--platzhalter">
+    <div class="wrap hero-start__innen">
+      <div class="hero-start__text">
+        <span class="tag tag-stand"
+          >{seite.startseite.analyse_platzhalter.titel.de}</span
+        >
+        <h1>{seite.produktgruppe_label.de} {gruppe.name.de}</h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="section start-inhalt">
+    <div class="wrap">
+      {
+        daten ? (
+          <GruppenLandingpage lang="de" daten={daten} ohneTitel />
+        ) : (
+          <Platzhalter
+            titel={gruppe.name.de}
+            hinweis={seite.platzhalter_gruppenseite.de}
+            zurueckHref="/de/filter/"
+            zurueckLabel={seite.zurueck_zur_auswahl.de}
+          >
+            <RollenHinweis lang="de" gruppeId={gruppe.id} slot="vor-hinweis" />
+          </Platzhalter>
+        )
+      }
+    </div>
+  </div>
+</StartLayout>

@@ -1,5 +1,5 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
+import StartLayout from "../../../layouts/StartLayout.astro";
 import Platzhalter from "../../../components/Platzhalter.astro";
 import Pilot from "../../../components/Pilot.astro";
 import filter from "../../../../inhalte/filter.json";
@@ -24,17 +24,45 @@ const pilot = Object.entries(pilotDateien).find(([pfad]) =>
 )?.[1];
 ---
 
-<Layout lang="de" title={`DPP-Pilot – ${gruppe.name.de}`} breit={!!pilot}>
+<StartLayout
+  lang="de"
+  title={`DPP-Pilot – ${gruppe.name.de}`}
+  schlicht
+  zurueck={{
+    href: `/de/gruppe/${gruppe.id}/`,
+    label: seite.zurueck_zur_gruppe.de,
+  }}
+  fusshinweis={seite.disclaimer.de}
+>
   {
     pilot ? (
-      <Pilot lang="de" gruppe={gruppe} pilot={pilot} />
+      <>
+        {/* Platzhalter: Himmel-Verlauf des Designsystems statt Foto. */}
+        <section class="hero hero-start hero-start--kompakt hero-start--platzhalter">
+          <div class="wrap hero-start__innen">
+            <div class="hero-start__text">
+              <span class="tag tag-stand">{pilot.eyebrow.de}</span>
+              <h1>{pilot.titel.de}</h1>
+            </div>
+          </div>
+        </section>
+        <section class="section pilot-seite">
+          <div class="wrap">
+            <Pilot lang="de" gruppe={gruppe} pilot={pilot} ohneKopf />
+          </div>
+        </section>
+      </>
     ) : (
-      <Platzhalter
-        titel={gruppe.name.de}
-        hinweis={seite.platzhalter_pilot.de}
-        zurueckHref={`/de/gruppe/${gruppe.id}/`}
-        zurueckLabel={seite.zurueck_zur_gruppe.de}
-      />
+      <section class="section">
+        <div class="wrap">
+          <Platzhalter
+            titel={gruppe.name.de}
+            hinweis={seite.platzhalter_pilot.de}
+            zurueckHref={`/de/gruppe/${gruppe.id}/`}
+            zurueckLabel={seite.zurueck_zur_gruppe.de}
+          />
+        </div>
+      </section>
     )
   }
-</Layout>
+</StartLayout>
