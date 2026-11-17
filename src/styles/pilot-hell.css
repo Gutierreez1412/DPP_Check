@@ -104,6 +104,15 @@
 .landing .pilot-hero {
   align-items: start;
 }
+/* Kachel ragt auf Desktop in den Farbverlauf-Kopf hinein, damit links unten
+   weniger Leerraum bleibt. */
+@media (min-width: 861px) {
+  .landing .pilot-produkt {
+    margin-top: -13rem;
+    z-index: 2;
+    box-shadow: 0 12px 32px rgba(22, 22, 22, 0.08);
+  }
+}
 .landing .pilot-hero__lede {
   color: var(--color-text);
   font-size: 1.1rem;
@@ -125,13 +134,22 @@
   font-weight: 600;
   letter-spacing: -0.01em;
 }
-.landing .pilot-schritte li:not(.stufe-chip) {
-  background: #fff;
-  border: 1px solid var(--p-linie);
+/* Drei Schritte: gleiche Karten wie auf der Startseite (card / card-inverse,
+   Stil in landing.css) */
+.landing .pilot-schritte {
+  gap: 1.5rem;
 }
 .landing .pilot-schritte h3 {
+  margin: 0;
   font-family: inherit;
+  font-size: 1.5rem;
   font-weight: 600;
+}
+.landing .pilot-schritte p.muted {
+  color: var(--color-text-muted);
+}
+.landing .pilot-schritte .card-inverse p {
+  color: var(--color-on-inverse);
 }
 
 /* Typenschilder in den Zeichnungen: weiße Schilder mit dünner Linie */
@@ -171,26 +189,23 @@
   color: #9b3f98;
 }
 
-/* Pass-Ansicht: die eine dunkle Fläche der Seite (neutrales Schwarz, Indigo-Akzent) */
+/* Pass-Ansicht: Formen wie in pilot.css (Kacheln, Pillen-Rollen, Register mit
+   Akzentstreifen), Farben hell: Weiß, Schwarz, Haarlinien. */
 .landing .pilot .pass-viewer {
-  --p-bg: #161616;
-  --p-panel: #1f1f1f;
-  --p-panel-2: #262626;
-  --p-linie: #3a3a3a;
-  --p-text: #ffffff;
-  --p-schwach: #b9b9b9;
-  --p-akzent: #a5a2f5;
-  --p-akzent-soft: rgba(165, 162, 245, 0.16);
-  --p-oeffentlich: #4cc38a;
-  --p-berechtigt: #f2ad66;
-  --p-behoerden: #dba0da;
-  background-color: #161616;
-  border: 1px solid #161616;
+  --p-bg: #fff;
+  --p-panel: #fff;
+  --p-panel-2: #f6f6f5;
+  --p-linie: #dcdcda;
+  --p-text: #161616;
+  --p-schwach: #5c5c5a;
+  --p-akzent: #161616;
+  --p-akzent-soft: #f1f1ef;
+  background: #fff;
+  border: 1px solid var(--color-text);
   border-radius: 0;
   box-shadow: none;
 }
 .landing .pilot .pass-viewer .rollen,
-.landing .pilot .pass-viewer .rolle,
 .landing .pilot .pass-viewer .register__tab,
 .landing .pilot .pass-viewer .feld,
 .landing .pilot .pass-viewer .feld__unklar summary,
@@ -202,7 +217,97 @@
   border-radius: 99px;
 }
 .landing .pilot .pass-viewer :focus-visible {
-  outline-color: #fff;
+  outline-color: var(--color-text);
+}
+/* Farbe: Kopf mit zarter Tönung im FR-Verlauf (wie der Seiten-Kopf), Gradient-
+   Linie oben, Kennzahlen und Register in abgestuften Grautönen, Inhalt auf
+   #fafafa mit weißen Kacheln. */
+.landing .pilot .pass-viewer {
+  position: relative;
+  background: var(--color-bg-alt);
+}
+.landing .pilot .pass-viewer::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--gradient-accent);
+}
+.landing .pilot .pass-viewer__leiste {
+  padding-top: 1.6rem;
+  background:
+    radial-gradient(
+      70% 160% at 100% 0%,
+      rgba(242, 166, 118, 0.22),
+      transparent 65%
+    ),
+    radial-gradient(
+      80% 160% at 0% 0%,
+      rgba(91, 91, 214, 0.14),
+      transparent 65%
+    ),
+    #fff;
+}
+.landing .pilot .pass-viewer__zahlen {
+  background: var(--color-bg-sunken);
+}
+.landing .pilot .pass-viewer__zahlen dd {
+  font-weight: 600;
+}
+.landing .pilot .pass-viewer__balken {
+  height: 3px;
+  border-radius: 0;
+  background: #d9d9d6;
+}
+.landing .pilot .pass-viewer__balken span {
+  background: var(--gradient-accent);
+}
+.landing .pilot .register {
+  background: var(--color-bg-sunken);
+}
+.landing .pilot .register__tab[aria-selected="true"] {
+  background: #fff;
+  box-shadow: none;
+  position: relative;
+  font-weight: 600;
+}
+.landing .pilot .register__tab[aria-selected="true"]::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, #5b5bd6, #c27bc0 55%, #f2a676);
+}
+.landing .pilot .register__inhalt {
+  background: var(--color-bg-alt);
+}
+.landing .pilot .pass-viewer .rollen {
+  background: #fff;
+  border-color: var(--color-control);
+}
+.landing .pilot .rolle[aria-pressed="true"] {
+  background: var(--color-text);
+  color: #fff;
+  box-shadow: none;
+}
+.landing .pilot .pass-viewer__fuss {
+  background: #fff;
+}
+.landing .pilot .feld__unklar details {
+  color: #7a4a00;
+}
+.landing .pilot .feld__unklar summary {
+  background: #fbf0dc;
+}
+.landing .pilot .weitere__dp {
+  background: #fff;
+  border-top-color: var(--color-text);
+}
+.landing .pilot .pass-viewer .feld {
+  border-top-color: var(--color-text);
+}
+.landing .pilot .weitere__wert {
+  background: rgba(22, 22, 22, 0.14);
 }
 
 /* Eckdaten der Produkt-Karte in Schwarz statt Indigo */
