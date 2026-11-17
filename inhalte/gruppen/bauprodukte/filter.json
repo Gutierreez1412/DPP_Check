@@ -68,8 +68,8 @@
     {
       "id": "gebraucht",
       "titel": {
-        "de": "Bringen Sie ein gebrauchtes oder wiederaufbereitetes Produkt erstmals in der EU in Verkehr?",
-        "en": "Do you place a used or refurbished product on the EU market for the first time?"
+        "de": "Bringen Sie Bauprodukte in Verkehr, die schon einmal eingebaut waren, z. B. aus einem Rückbau, oder die danach aufgearbeitet wurden?",
+        "en": "Do you place construction products on the market that were already installed once, e.g. from a deconstruction, or that were reworked afterwards?"
       },
       "bei_ja": "hersteller_gebraucht",
       "bei_nein": "einfuehrer_haendler"
