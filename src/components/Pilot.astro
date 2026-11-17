@@ -171,10 +171,10 @@ const dpZahl = {
     <ol class="pilot-schritte">
       {
         pilot.schritte.map((s, i) => (
-          <li>
-            <span class="pilot-mono pilot-schritte__nr">0{i + 1}</span>
+          <li class={i === 1 ? "card-inverse" : "card"}>
+            <span class="tag">0{i + 1}</span>
             <h3>{t(s.titel)}</h3>
-            <p>{t(s.text)}</p>
+            <p class={i === 1 ? "" : "muted"}>{t(s.text)}</p>
             {"zugriffsstufen_zeigen" in s && s.zugriffsstufen_zeigen && (
               <ul class="pilot-schritte__stufen">
                 {stufen.map((st) => (

@@ -223,7 +223,7 @@
         "de": "Zellhersteller",
         "en": "Cell manufacturer"
       },
-      "felder": ["kapazitaet", "spannung", "lebensdauer", "co2", "testberichte"]
+      "felder": ["kapazitaet", "spannung", "lebensdauer", "testberichte"]
     },
     {
       "id": "chemie",
@@ -241,13 +241,7 @@
         "de": "Rohstoff- und Kathodenlieferanten",
         "en": "Raw material and cathode suppliers"
       },
-      "felder": [
-        "chemie",
-        "rohstoffe",
-        "rezyklat",
-        "sorgfalt",
-        "zusammensetzung"
-      ]
+      "felder": ["chemie", "rohstoffe", "zusammensetzung", "erneuerbar"]
     },
     {
       "id": "wanne",
@@ -397,58 +391,17 @@
         "datenpunkte": [17, 18, 19, 20, 21, 22, 23, 24],
         "felder": [
           {
-            "id": "co2",
+            "id": "erneuerbar",
             "label": {
-              "de": "CO₂-Fußabdruck über den Lebensweg",
-              "en": "Life-cycle carbon footprint"
+              "de": "Anteil erneuerbarer Inhalte",
+              "en": "Share of renewable content"
             },
             "wert": {
-              "de": "Noch nicht verpflichtend: Format folgt per Rechtsakt",
-              "en": "Not yet mandatory: format to follow in a legal act"
+              "de": "2 %",
+              "en": "2 %"
             },
             "stufe": "oeffentlich",
-            "status": "unklar",
-            "hinweis": {
-              "de": "Die Angabe zum CO₂-Fußabdruck wird erst Pflicht, wenn die zugehörigen delegierten und Durchführungsrechtsakte (Art. 7) vorliegen.",
-              "en": "The carbon footprint information only becomes mandatory once the related delegated and implementing acts (Art. 7) are in place."
-            },
-            "datenpunkte": [17, 18]
-          },
-          {
-            "id": "sorgfalt",
-            "label": {
-              "de": "Bericht zu Sorgfaltspflichten",
-              "en": "Due diligence report"
-            },
-            "wert": {
-              "de": "Noch nicht verpflichtend: voraussichtlich ab August 2027",
-              "en": "Not yet mandatory: expected from August 2027"
-            },
-            "stufe": "oeffentlich",
-            "status": "unklar",
-            "hinweis": {
-              "de": "Der Start der Sorgfaltspflichten (Art. 47 ff., Art. 48(1)) wurde per Omnibus-Verfahren verschoben. Aktuellen Stand prüfen.",
-              "en": "The start of the due diligence obligations (Art. 47 ff., Art. 48(1)) was postponed via an omnibus procedure. Check current status."
-            },
-            "datenpunkte": [19]
-          },
-          {
-            "id": "rezyklat",
-            "label": {
-              "de": "Recyclinganteil",
-              "en": "Recycled content"
-            },
-            "wert": {
-              "de": "Noch nicht verpflichtend: folgt mit Art. 8",
-              "en": "Not yet mandatory: follows Art. 8"
-            },
-            "stufe": "oeffentlich",
-            "status": "unklar",
-            "hinweis": {
-              "de": "Die Dokumentationspflicht zum Recyclinganteil (Art. 8) hängt vom delegierten Rechtsakt zur Berechnungsmethode ab und startet später als der Pass.",
-              "en": "The documentation obligation for recycled content (Art. 8) depends on the delegated act on the calculation method and starts later than the passport."
-            },
-            "datenpunkte": [20, 21, 22]
+            "datenpunkte": [24]
           }
         ]
       },
