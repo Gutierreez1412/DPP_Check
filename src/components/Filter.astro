@@ -441,6 +441,12 @@ const texteFuerClient = {
 
       if (schritt.id === "schritt-2") {
         state.eigenerName = antwort.value;
+        if (antwort.value === "ja") {
+          // Rolle schon geklärt (Hersteller): Frage 3 entfällt.
+          state.wesentlicheAenderung = null;
+          weiterNach("espr");
+          return;
+        }
         gehZu(schritte.find((s) => s.id === "schritt-3"));
       } else if (schritt.id === "schritt-3") {
         state.wesentlicheAenderung = antwort.value;
