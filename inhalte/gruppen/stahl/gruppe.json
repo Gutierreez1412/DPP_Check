@@ -8,8 +8,8 @@
     "en": "Steel"
   },
   "definition": {
-    "de": "Für Eisen und Stahl regelt die Ökodesign-Verordnung (ESPR, EU 2024/1781) den Digitalen Produktpass. Erfasst werden Stahl-Zwischenprodukte, vom Halbzeug (z. B. Brammen) bis zum Coil, nicht Endprodukte mit Stahlanteil. Laut JRC-Entwurf umfasst das mindestens warmgewalztes Band, Walzdraht, kaltgewalztes verzinktes Band, Elektroband und nichtrostenden Stahl (Typ 304). Ob auch Endprodukte mit hohem Stahlanteil einbezogen werden, wird noch diskutiert. Verbindlich ist letztlich der delegierte Rechtsakt.",
-    "en": "For iron and steel, the Ecodesign Regulation (ESPR, EU 2024/1781) governs the Digital Product Passport. It covers steel intermediate products, from semi-finished products (e.g. slabs) to coils, not end products containing steel. According to the JRC draft, this includes at least hot-rolled coil, wire rod, galvanised cold-rolled coil, electrical steel and stainless steel (type 304). Whether end products with a high steel content will also be included is still under discussion. Ultimately, the delegated act is binding."
+    "de": "Für Eisen und Stahl regelt die Ökodesign-Verordnung (ESPR, EU 2024/1781) den Digitalen Produktpass. Voraussichtlich erfasst werden Stahl-Zwischenprodukte, vom Halbzeug (z. B. Brammen) bis zum Coil, nicht Endprodukte mit Stahlanteil. Laut JRC-Entwurf umfasst das mindestens warmgewalztes Band, Walzdraht, kaltgewalztes verzinktes Band, Elektroband und nichtrostenden Stahl. Ob auch Endprodukte mit hohem Stahlanteil einbezogen werden, wird noch diskutiert. Verbindlich ist letztlich der delegierte Rechtsakt.",
+    "en": "For iron and steel, the Ecodesign Regulation (ESPR, EU 2024/1781) governs the Digital Product Passport. It is expected to cover steel intermediate products, from semi-finished products (e.g. slabs) to coils, not end products containing steel. According to the JRC draft, this includes at least hot-rolled coil, wire rod, galvanised cold-rolled coil, electrical steel and stainless steel. Whether end products with a high steel content will also be included is still under discussion. Ultimately, the delegated act is binding."
   },
   "definition_quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf",
   "weiterfuehrend": {
@@ -139,8 +139,8 @@
         "en": "Who can see which data in the passport?"
       },
       "antwort": {
-        "de": "Vorgeschlagen sind drei Stufen: Vieles ist öffentlich, etwa Stahlsorte, Herkunft, CO₂-Fußabdruck und Rezyklatanteil. Sensible Angaben wie die Berechnungsparameter des Fußabdrucks oder die Werkszeugnis-Werte sind nur für Berechtigte gedacht. Konformitätsnachweise und Kontaktdaten sehen nur Behörden. Bei den besorgniserregenden Stoffen ist die Stufe im Entwurf nicht einheitlich.",
-        "en": "Three levels are proposed: much is public, such as steel grade, origin, carbon footprint and recycled content. Sensitive information such as the footprint calculation parameters or the mill test certificate values is intended only for persons with a legitimate interest. Conformity certificates and contact details are visible to authorities only. For substances of concern, the level is not consistent in the draft."
+        "de": "Vorgeschlagen sind drei Stufen: Vieles ist öffentlich, etwa Stahlsorte, Herkunft, CO₂-Fußabdruck und Rezyklatanteil. Sensible Angaben wie die Berechnungsparameter des Fußabdrucks oder die Werkszeugnis-Werte sind nur für Berechtigte gedacht. Konformitätsnachweise und Kontaktdaten sehen nur Behörden.",
+        "en": "Three levels are proposed: much is public, such as steel grade, origin, carbon footprint and recycled content. Sensitive information such as the footprint calculation parameters or the mill test certificate values is intended only for persons with a legitimate interest. Conformity certificates and contact details are visible to authorities only."
       },
       "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
     }
