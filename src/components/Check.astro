@@ -117,7 +117,6 @@ const texteFuerClient = {
     );
     const auswertung = document.getElementById("check-auswertung");
     let aktuell = 1;
-    let autoWeiter: number | undefined;
 
     // Kommt der Nutzer über "Antworten ändern" zurück, stehen die bisherigen
     // Antworten im Adress-Anker (#a=…) und werden vorausgewählt.
@@ -165,8 +164,6 @@ const texteFuerClient = {
     }
 
     function weiter() {
-      window.clearTimeout(autoWeiter);
-      autoWeiter = undefined;
       const el = schritte[aktuell - 1];
       const fehlerEl = el.querySelector<HTMLElement>(".fehler");
       if (!gewaehlt(el)) {
@@ -206,16 +203,9 @@ const texteFuerClient = {
         return;
       }
       if (ziel.closest("[data-zurueck]")) {
-        window.clearTimeout(autoWeiter);
-        autoWeiter = undefined;
         zeigeSchritt(aktuell - 1);
-        return;
       }
-      // Bei Maus/Touch geht es nach der Auswahl automatisch weiter. Bei Tastatur
-      // (Pfeiltasten, detail = 0) nicht, damit man in Ruhe auswählen kann.
-      if (ziel.closest(".option") && e.detail > 0 && autoWeiter === undefined) {
-        autoWeiter = window.setTimeout(weiter, reduzierteBewegung ? 0 : 320);
-      }
+      // Kein automatisches Weiterspringen: Es geht nur per Klick auf "Weiter".
     });
 
     zeigeSchritt(1);

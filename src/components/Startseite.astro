@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import seite from "../../inhalte/seite.json";
-import GrundlagenSlider from "./GrundlagenSlider.astro";
+import GrundlagenUebersicht from "./GrundlagenUebersicht.astro";
 import heroBild from "../assets/hero-dpp.jpg";
 
 interface Props {
@@ -54,7 +54,7 @@ const start = seite.startseite;
 
 <div class="section section-alt" id="grundlagen">
   <div class="wrap">
-    <GrundlagenSlider lang={lang} />
+    <GrundlagenUebersicht lang={lang} />
   </div>
 </div>
 
