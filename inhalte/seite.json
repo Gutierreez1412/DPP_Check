@@ -571,14 +571,14 @@
           "de": "Impressum",
           "en": "Legal notice"
         },
-        "link": "#"
+        "link": "https://www.future-response.de/impressum/"
       },
       "datenschutz": {
         "text": {
           "de": "Datenschutz",
           "en": "Privacy policy"
         },
-        "link": "#"
+        "link": "https://www.future-response.de/datenschutzerklaerung/"
       }
     },
     "analyse_platzhalter": {
