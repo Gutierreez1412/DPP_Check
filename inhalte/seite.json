@@ -4,7 +4,7 @@
     "en": "DPP Compass"
   },
   "untertitel": {
-    "de": "Einschätzen, wie stark Ihr Unternehmen vom Digitalen Produktpass betroffen ist.",
+    "de": "Einschätzen, ob und wie stark Ihr Unternehmen vom Digitalen Produktpass betroffen ist.",
     "en": "Assess how strongly your company is affected by the Digital Product Passport."
   },
   "datenschutz_hinweis": {
@@ -305,8 +305,8 @@
       "en": "What would this look like for your products?"
     },
     "beratung_text": {
-      "de": "Dieses Beispiel ist bewusst vereinfacht. Wir besprechen gern mit Ihnen, welche Daten Ihr Produktpass tatsächlich braucht.",
-      "en": "This example is deliberately simplified. We are happy to discuss which data your product passport actually needs."
+      "de": "Dieses Beispiel ist bewusst vereinfacht. Wir besprechen gern mit Ihnen, welche Daten Ihr Produktpass tatsächlich braucht. Teilen Sie uns Ihren Wunschtermin mit, wir melden uns zur Bestätigung.",
+      "en": "This example is deliberately simplified. We are happy to discuss which data your product passport actually needs. Suggest a preferred date and we will get back to you to confirm."
     },
     "beratung_button": {
       "de": "Beratungstermin anfragen",
@@ -336,12 +336,12 @@
   "beratung": {
     "empfaenger": "beratung@example.com",
     "titel": {
-      "de": "Beratungstermin anfragen",
-      "en": "Request a consultation"
+      "de": "Lassen Sie uns über Ihre Situation sprechen",
+      "en": "Let us talk about your situation"
     },
     "text": {
-      "de": "Sie möchten Ihre Betroffenheit mit uns besprechen? Nennen Sie uns einen Wunschtermin, wir melden uns zur Bestätigung.",
-      "en": "Want to discuss how you are affected? Suggest a preferred date and we will get back to you to confirm."
+      "de": "Sie möchten den Digitalen Produktpass in Ihrem Unternehmen aufgleisen? Lassen Sie uns gemeinsam die nächsten Schritte besprechen und zeigen, wie wir Sie dabei unterstützen können. Teilen Sie uns Ihren Wunschtermin mit. Wir melden uns zur Bestätigung.",
+      "en": "We go through your result, classify your role and tell you openly what you can handle yourself. Suggest a preferred date and we will get back to you to confirm."
     },
     "feld_name": {
       "de": "Name",
@@ -405,6 +405,17 @@
     "mail_gruppe": {
       "de": "Produktgruppe",
       "en": "Product group"
+    },
+    "person": {
+      "name": "Dominik Ehrenreich",
+      "rolle": {
+        "de": "Geschäftsführer, Future Response",
+        "en": "Managing Director, Future Response"
+      },
+      "text": {
+        "de": "Begleitet seit über zehn Jahren globale Unternehmen bei Nachhaltigkeitsprozessen und regulatorischer Compliance – von der Strategie bis zur Umsetzung.",
+        "en": "Has supported global companies for over ten years with sustainability processes and regulatory compliance – from strategy to implementation."
+      }
     }
   },
   "slider_zurueck": {
@@ -481,12 +492,12 @@
     "logo": {
       "bild": null,
       "beschriftung": {
-        "de": "Logo",
-        "en": "Logo"
+        "de": "DPP Compass",
+        "en": "DPP Compass"
       },
       "alt": {
-        "de": "Platzhalter-Logo",
-        "en": "Placeholder logo"
+        "de": "DPP Compass",
+        "en": "DPP Compass"
       }
     },
     "hero": {
@@ -497,6 +508,14 @@
       "unterzeile": {
         "de": "Hersteller, Markeninhaber und Importeure erhalten hier einen ersten Überblick.",
         "en": "Manufacturers, brand owners and importers get a first overview here."
+      },
+      "kicker": {
+        "de": "Ein Produkt von Future Response",
+        "en": "A Future Response product"
+      },
+      "fakt": {
+        "de": "Einige kurze Fragen · ohne Registrierung",
+        "en": "A few short questions · no registration"
       }
     },
     "kooperation": {
@@ -594,6 +613,34 @@
         "de": "Zurück zur Startseite",
         "en": "Back to start page"
       }
+    },
+    "nav": {
+      "ueber": {
+        "de": "Worum es geht",
+        "en": "What it is about"
+      },
+      "grundlagen": {
+        "de": "ESPR kurz erklärt",
+        "en": "ESPR explained"
+      },
+      "cta": {
+        "de": "Check starten",
+        "en": "Start check"
+      }
+    },
+    "cta_band": {
+      "ueberschrift": {
+        "de": "Klarheit, bevor die Pflicht kommt.",
+        "en": "Clarity before the obligation arrives."
+      },
+      "text": {
+        "de": "Prüfen Sie in wenigen Minuten, welche Rolle Sie voraussichtlich einnehmen.",
+        "en": "Find out in a few minutes which role you are likely to take on."
+      }
     }
+  },
+  "produktgruppe_label": {
+    "de": "Produktgruppe",
+    "en": "Product group"
   }
 }
