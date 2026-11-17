@@ -79,8 +79,12 @@
   },
   "ergebnis": {
     "eyebrow": {
-      "de": "Ihr Ergebnis",
-      "en": "Your result"
+      "de": "Umfang der Betroffenheit und Handlungsbedarf",
+      "en": "Extent of impact and need for action"
+    },
+    "produktgruppe_label": {
+      "de": "Produktgruppe",
+      "en": "Product group"
     },
     "skala_label": {
       "de": "Handlungsbedarf",
@@ -418,14 +422,6 @@
       }
     }
   },
-  "slider_zurueck": {
-    "de": "Vorherige Karte",
-    "en": "Previous card"
-  },
-  "slider_weiter": {
-    "de": "Nächste Karte",
-    "en": "Next card"
-  },
   "quelle_label": {
     "de": "Quelle",
     "en": "Source"
@@ -510,8 +506,8 @@
         "en": "Manufacturers, brand owners and importers get a first overview here."
       },
       "kicker": {
-        "de": "Ein Produkt von Future Response",
-        "en": "A Future Response product"
+        "de": "DPP Compass by Future Response",
+        "en": "DPP Compass by Future Response"
       },
       "fakt": {
         "de": "Einige kurze Fragen · ohne Registrierung",
@@ -566,7 +562,7 @@
         },
         "text": {
           "de": "Ob Sie betroffen sind, sollten Sie zuerst klären. Mit wenigen Fragen erfahren Sie, ob Sie voraussichtlich eine Rolle bei der Erstellung eines Digitalen Produktpasses einnehmen.",
-          "en": "Whether you are affected is the first question to clarify. After three short questions, you will see whether you are likely to count as a manufacturer and which obligations could apply to you."
+          "en": "Whether you are affected is the first question to clarify. After a few short questions, you will see whether you are likely to have a role in creating a Digital Product Passport."
         }
       },
       {
@@ -575,8 +571,8 @@
           "en": "How much effort is involved?"
         },
         "text": {
-          "de": "Wenn klar ist, ob Sie Herstellerverantwortung tragen, schätzen wir im zweiten Schritt anhand weniger Fragen Ihren voraussichtlichen Umsetzungsaufwand ein.",
-          "en": "Once it is clear whether you bear manufacturer responsibility, a few questions in the second step estimate your likely implementation effort."
+          "de": "Wenn klar ist, dass Sie für den Digitalen Produktpass verantwortlich sind, schätzen wir im zweiten Schritt anhand weniger Fragen Ihren voraussichtlichen Umsetzungsaufwand ein.",
+          "en": "Once it is clear that you are responsible for the Digital Product Passport, a few questions in the second step estimate your likely implementation effort."
         }
       }
     ],

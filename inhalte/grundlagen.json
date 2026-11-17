@@ -1,10 +1,29 @@
 {
   "titel": {
-    "de": "ESPR und Digitaler Produktpass – kurz erklärt",
-    "en": "ESPR and the Digital Product Passport – in brief"
+    "de": "ESPR und Digitaler Produktpass kurz erklärt",
+    "en": "ESPR and the Digital Product Passport in brief"
+  },
+  "stand": {
+    "de": "Stand: November 2026",
+    "en": "As of: November 2026"
+  },
+  "einleitung": {
+    "text": {
+      "de": "Ziel ist die Kreislaufwirtschaft: Produktinformationen werden über den gesamten Lebenszyklus transparent und für Kundschaft, Werkstätten, Recycler und Behörden verfügbar.",
+      "en": "The goal is a circular economy: product information becomes transparent across the entire life cycle and available to customers, repairers, recyclers and authorities."
+    },
+    "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng"
+  },
+  "fuss": {
+    "de": "Ob und wie stark Ihre Produkte betroffen sind, klärt die Betroffenheitsanalyse.",
+    "en": "Whether and how strongly your products are affected is clarified by the impact assessment."
   },
   "abschnitte": [
     {
+      "tag": {
+        "de": "Fakt",
+        "en": "Fact"
+      },
       "ueberschrift": {
         "de": "Was ist die ESPR?",
         "en": "What is the ESPR?"
@@ -14,13 +33,17 @@
         "en": "In force since 07/2024"
       },
       "text": {
-        "de": "Die Ökodesign-Verordnung (EU) 2024/1781 ist der Rahmen für den DPP. Was für welche Produktgruppe gilt, regeln eigene Rechtsakte. Manche Gruppen haben eigene Verordnungen mit DPP-Vorgaben, z. B. Batterien, Bauprodukte und Spielzeug.",
+        "de": "Die Ökodesign-Verordnung bildet den übergeordneten Rahmen für den Digitalen Produktpass. Die konkreten Anforderungen legen je nach Produktgruppe eigene Rechtsakte fest. Einige Gruppen haben zudem eigene Verordnungen mit DPP-Vorgaben, etwa Batterien, Bauprodukte und Spielzeug.",
         "en": "The Ecodesign Regulation (EU) 2024/1781 is the framework for the DPP. What applies to which product group is set out in separate acts. Some groups have their own regulations with DPP requirements, e.g. batteries, construction products and toys."
       },
       "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng",
       "status": "gilt"
     },
     {
+      "tag": {
+        "de": "Fakt",
+        "en": "Fact"
+      },
       "ueberschrift": {
         "de": "Was ist der DPP?",
         "en": "What is the DPP?"
@@ -30,13 +53,17 @@
         "en": "Digital product profile"
       },
       "text": {
-        "de": "Ein Datensatz pro Produkt mit Angaben aus der ganzen Wertschöpfungskette, etwa zu Materialien, Herkunft, Reparatur und Recycling. Abrufbar per QR-Code am Produkt. Pflicht, sobald ein Rechtsakt die Produktgruppe erfasst.",
+        "de": "Ein Datensatz pro Produkt mit Angaben aus der ganzen Wertschöpfungskette, etwa zu Materialien, Herkunft, Reparatur und Recycling. Abrufbar per QR-Code am Produkt. Pflicht, sobald ein Rechtsakt die Produktgruppe erfasst oder die Verordnung es vorschreibt.",
         "en": "One record per product with data from across the value chain, e.g. on materials, origin, repair and recycling. Accessible via a QR code on the product. Mandatory once an act covers the product group."
       },
       "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en",
       "status": "gilt"
     },
     {
+      "tag": {
+        "de": "Zeitplan",
+        "en": "Timeline"
+      },
       "ueberschrift": {
         "de": "Ab wann gilt das?",
         "en": "When does it apply?"
@@ -53,6 +80,10 @@
       "status": "geplant"
     },
     {
+      "tag": {
+        "de": "Ihre Aufgabe",
+        "en": "Your task"
+      },
       "ueberschrift": {
         "de": "Warum jetzt handeln?",
         "en": "Why act now?"
@@ -66,23 +97,8 @@
         "en": "Much of the information for the passport sits with suppliers, e.g. on materials, origin or CO₂. Obtaining, checking and providing it in a structured way across complex supply chains takes time."
       },
       "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en",
-      "status": "gilt"
-    },
-    {
-      "ueberschrift": {
-        "de": "Was ist das Ziel?",
-        "en": "What is the goal?"
-      },
-      "kern": {
-        "de": "Kreislaufwirtschaft stärken",
-        "en": "Strengthen the circular economy"
-      },
-      "text": {
-        "de": "Produktinformationen werden über den gesamten Lebenszyklus transparent und für Kundschaft, Werkstätten, Recycler und Behörden verfügbar.",
-        "en": "Product information becomes transparent across the entire life cycle and available to customers, repairers, recyclers and authorities."
-      },
-      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/1781/oj/eng",
-      "status": "gilt"
+      "status": "gilt",
+      "dunkel": true
     }
   ]
 }

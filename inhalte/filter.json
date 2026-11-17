@@ -147,8 +147,8 @@
       "en": "Which product group applies to you?"
     },
     "hinweis": {
-      "de": "Bitte wählen Sie eine Produktgruppe. Für weitere Gruppen starten Sie den Check erneut.",
-      "en": "Please select one product group. To check further groups, start the check again."
+      "de": "Bitte wählen Sie eine Produktgruppe. Berücksichtigt sind nur Produktgruppen, für die eine Verordnung oder Vorstudie ausreichend Datenpunkte für die Vorbereitung liefert.",
+      "en": "Please select one product group. Only product groups are included for which a regulation or preliminary study provides enough data points for preparation."
     },
     "quelle_label": {
       "de": "Quelle",
