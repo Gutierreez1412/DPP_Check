@@ -103,8 +103,8 @@
       "en": "Go to the check"
     },
     "mitsenden": {
-      "de": "Ergebnis des Checks mitsenden (Produktgruppe, Antworten, Punkte und Einstufung).",
-      "en": "Include the check result (product group, answers, points and rating)."
+      "de": "Das Ergebnis des Checks (Produktgruppe, Antworten, Punkte und Einstufung) wird Ihrer Anfrage automatisch beigefügt.",
+      "en": "The check result (product group, answers, points and rating) is automatically added to your request."
     },
     "mail_titel": {
       "de": "Ergebnis des Betroffenheitschecks",
@@ -299,6 +299,18 @@
     "zurueck_ergebnis": {
       "de": "Zurück zum Ergebnis",
       "en": "Back to the result"
+    },
+    "beratung_titel": {
+      "de": "Wie sähe das bei Ihren Produkten aus?",
+      "en": "What would this look like for your products?"
+    },
+    "beratung_text": {
+      "de": "Dieses Beispiel ist bewusst vereinfacht. Wir besprechen gern mit Ihnen, welche Daten Ihr Produktpass tatsächlich braucht.",
+      "en": "This example is deliberately simplified. We are happy to discuss which data your product passport actually needs."
+    },
+    "beratung_button": {
+      "de": "Beratungstermin anfragen",
+      "en": "Request a consultation"
     }
   },
   "zeitstrahl_titel": {
@@ -370,9 +382,14 @@
       }
     ],
     "einwilligung": {
-      "de": "Ich bin damit einverstanden, dass die Projektpartner meine Angaben zur Bearbeitung dieser Anfrage verwenden. Datenschutzerklärung: folgt.",
-      "en": "I agree that the project partners use my details to process this request. Privacy policy: to follow."
+      "de": "Mit dem Absenden werden Ihre Angaben zur Bearbeitung Ihrer Anfrage verarbeitet. Details in unserer {datenschutz}.",
+      "en": "By submitting, your details are processed to handle your request. Details in our {datenschutz}."
     },
+    "datenschutz_link": {
+      "de": "Datenschutzerklärung",
+      "en": "privacy policy"
+    },
+    "datenschutz_url": "https://www.future-response.de/datenschutzerklaerung/",
     "senden": {
       "de": "Terminanfrage vorbereiten",
       "en": "Prepare request"
