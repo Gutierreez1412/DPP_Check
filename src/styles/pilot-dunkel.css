@@ -1,0 +1,438 @@
+/* Dunkle Pass-Ansicht (einzige schwarze Fläche der Pilot-Seite). Einmalig aus pilot.css erzeugt, neutrales Schwarz + Indigo. */
+.landing .pilot .pilot-pass {
+  display: grid;
+  gap: 1.5rem;
+}
+.landing .pilot .pilot-pass__text > p {
+  max-width: 60ch;
+  margin: 0.6rem 0 0;
+  color: var(--farbe-text-schwach);
+}
+.landing .pilot .pass-viewer {
+  overflow: hidden;
+  color: var(--p-text);
+  background: var(--p-bg);
+  border: 1px solid rgb(36, 36, 36);
+  border-radius: 18px;
+  box-shadow: 0 30px 60px -35px rgba(14, 14, 14, 0.7);
+}
+.landing .pilot .pass-viewer p {
+  margin: 0;
+}
+.landing .pilot .pass-viewer :focus-visible {
+  outline-color: var(--p-akzent);
+}
+.landing .pilot .pass-viewer__leiste {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.25rem 2rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--p-linie);
+  background:
+    radial-gradient(
+      80% 140% at 0% 0%,
+      rgba(165, 162, 245, 0.16),
+      transparent 60%
+    ),
+    var(--p-bg);
+}
+.landing .pilot .pass-viewer__scan {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.68rem;
+  color: var(--p-schwach);
+}
+.landing .pilot .pass-viewer__name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  margin-top: 0.5rem !important;
+  font-family: var(--schrift-headline);
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+.landing .pilot .pass-viewer__marke {
+  font-family: var(--schrift-text, inherit);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--p-akzent);
+}
+.landing .pilot .pass-viewer__id {
+  margin-top: 0.2rem !important;
+  font-size: 0.68rem;
+  color: var(--p-schwach);
+  word-break: break-all;
+}
+.landing .pilot .pass-viewer__label {
+  margin-bottom: 0.4rem !important;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--p-schwach);
+}
+.landing .pilot .rollen {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid var(--p-linie);
+  border-radius: 12px;
+  background: var(--p-panel);
+}
+.landing .pilot .rolle {
+  --farbe: var(--p-oeffentlich);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--p-schwach);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.landing .pilot .rolle::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--farbe);
+}
+.landing .pilot .rolle--berechtigt {
+  --farbe: var(--p-berechtigt);
+}
+.landing .pilot .rolle--behoerden {
+  --farbe: var(--p-behoerden);
+}
+.landing .pilot .rolle:hover {
+  color: var(--p-text);
+}
+.landing .pilot .rolle[aria-pressed="true"] {
+  background: var(--p-panel-2);
+  color: var(--p-text);
+  box-shadow: inset 0 0 0 1px var(--farbe);
+}
+.landing .pilot .pass-viewer__wer {
+  margin-top: 0.4rem !important;
+  font-size: 0.72rem;
+  color: var(--p-schwach);
+}
+.landing .pilot .pass-viewer__wer span {
+  display: none;
+}
+.landing .pilot .pass-viewer[data-rolle="oeffentlich"] [data-wer="oeffentlich"],
+.landing .pilot .pass-viewer[data-rolle="berechtigt"] [data-wer="berechtigt"],
+.landing .pilot .pass-viewer[data-rolle="behoerden"] [data-wer="behoerden"] {
+  display: inline;
+}
+.landing .pilot .pass-viewer__zahlen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.75rem;
+  margin: 0;
+  padding: 0.7rem 1.5rem;
+  border-bottom: 1px solid var(--p-linie);
+  background: var(--p-panel);
+}
+.landing .pilot .pass-viewer__zahlen div:not(.pass-viewer__balken) {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+.landing .pilot .pass-viewer__zahlen dt {
+  font-size: 0.72rem;
+  color: var(--p-schwach);
+}
+.landing .pilot .pass-viewer__zahlen dd {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--p-akzent);
+}
+.landing .pilot .pass-viewer__balken {
+  flex: 1 1 8rem;
+  height: 4px;
+  border-radius: 99px;
+  background: var(--p-linie);
+  overflow: hidden;
+}
+.landing .pilot .pass-viewer__balken span {
+  display: block;
+  height: 100%;
+  background: var(--p-akzent);
+}
+.landing .pilot .register__anzahl {
+  margin-left: auto;
+  font-size: 0.66rem;
+  color: var(--p-schwach);
+}
+.landing .pilot .register__titel-anzahl {
+  margin-left: auto;
+  font-family: var(--p-mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--p-schwach);
+}
+.landing .pilot .feld__dp {
+  font-size: 0.6rem;
+  color: var(--p-schwach);
+  opacity: 0.8;
+}
+.landing .pilot .pass-viewer__koerper {
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  min-height: 23rem;
+}
+.landing .pilot .register {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.75rem;
+  border-right: 1px solid var(--p-linie);
+  background: rgba(255, 255, 255, 0.015);
+}
+.landing .pilot .register__tab {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  padding: 0.6rem 0.75rem;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--p-schwach);
+  font: inherit;
+  font-size: 0.85rem;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.landing .pilot .register__tab:hover {
+  color: var(--p-text);
+}
+.landing .pilot .register__tab[aria-selected="true"] {
+  background: var(--p-akzent-soft);
+  color: var(--p-text);
+  box-shadow: inset 2px 0 0 var(--p-akzent);
+}
+.landing .pilot .register__nr {
+  font-size: 0.68rem;
+  color: var(--p-akzent);
+}
+.landing .pilot .register__inhalt {
+  padding: 1.25rem 1.5rem 1.5rem;
+  animation: einblenden 0.3s ease;
+}
+.landing .pilot .register__titel {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+}
+.landing .pilot .register__felder {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 0.6rem;
+  margin: 0;
+}
+.landing .pilot .pass-viewer .feld {
+  --farbe: var(--p-oeffentlich);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--p-linie);
+  border-top: 2px solid var(--farbe);
+  border-radius: 10px;
+  background: var(--p-panel);
+}
+.landing .pilot .pass-viewer .feld[data-stufe="berechtigt"] {
+  --farbe: var(--p-berechtigt);
+}
+.landing .pilot .pass-viewer .feld[data-stufe="behoerden"] {
+  --farbe: var(--p-behoerden);
+}
+.landing .pilot .pass-viewer .feld dt {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  color: var(--p-schwach);
+}
+.landing .pilot .pass-viewer .feld dd {
+  margin: 0;
+}
+.landing .pilot .feld__wert {
+  font-size: 0.92rem;
+  transition:
+    filter 0.3s ease,
+    opacity 0.3s ease;
+}
+.landing .pilot .feld__live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--p-mono);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: var(--p-akzent);
+}
+.landing .pilot .feld__live .pilot-puls {
+  width: 0.35rem;
+  height: 0.35rem;
+}
+.landing .pilot .feld__sperre {
+  display: none;
+  align-self: flex-start;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--farbe);
+  border-radius: 99px;
+  font-size: 0.68rem;
+  color: var(--farbe);
+}
+.landing .pilot .feld__unklar details {
+  font-size: 0.7rem;
+  line-height: 1.45;
+  color: rgba(242, 193, 78, 0.9);
+}
+.landing .pilot .feld__unklar summary {
+  display: inline-flex;
+  padding: 0.05rem 0.45rem;
+  border-radius: 6px;
+  background: rgba(242, 193, 78, 0.12);
+  cursor: pointer;
+  list-style: none;
+}
+.landing .pilot .feld__unklar summary::-webkit-details-marker {
+  display: none;
+}
+.landing .pilot .feld__unklar summary::after {
+  content: " +";
+}
+.landing .pilot .feld__unklar details[open] summary {
+  margin-bottom: 0.35rem;
+}
+.landing .pilot .feld__unklar details[open] summary::after {
+  content: " –";
+}
+.landing
+  .pilot
+  .pass-viewer[data-rolle="oeffentlich"]
+  .feld:is([data-stufe="berechtigt"], .landing .pilot [data-stufe="behoerden"])
+  .feld__wert,
+.landing
+  .pilot
+  .pass-viewer[data-rolle="berechtigt"]
+  .feld[data-stufe="behoerden"]
+  .feld__wert {
+  filter: blur(6px);
+  opacity: 0.6;
+  user-select: none;
+}
+.landing
+  .pilot
+  .pass-viewer[data-rolle="oeffentlich"]
+  .feld:is([data-stufe="berechtigt"], .landing .pilot [data-stufe="behoerden"])
+  .feld__sperre,
+.landing
+  .pilot
+  .pass-viewer[data-rolle="berechtigt"]
+  .feld[data-stufe="behoerden"]
+  .feld__sperre {
+  display: inline-flex;
+}
+.landing .pilot .weitere {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--p-linie);
+}
+.landing .pilot .weitere__titel {
+  margin-bottom: 0.6rem !important;
+  font-size: 0.72rem;
+  color: var(--p-akzent);
+}
+.landing .pilot .weitere__liste {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.landing .pilot .weitere__dp {
+  --farbe: var(--p-oeffentlich);
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.5rem 0.6rem 0.6rem;
+  border: 1px solid var(--p-linie);
+  border-top: 2px solid color-mix(in srgb, var(--farbe) 55%, transparent);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+}
+.landing .pilot .weitere__dp[data-stufe="berechtigt"] {
+  --farbe: var(--p-berechtigt);
+}
+.landing .pilot .weitere__dp[data-stufe="behoerden"] {
+  --farbe: var(--p-behoerden);
+}
+.landing .pilot .weitere__kopf {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.4rem;
+  font-size: 0.62rem;
+  color: var(--p-schwach);
+}
+.landing .pilot .weitere__tag {
+  padding: 0 0.35rem;
+  border: 1px solid var(--p-linie);
+  border-radius: 4px;
+}
+.landing .pilot .weitere__name {
+  font-size: 0.72rem;
+  line-height: 1.3;
+  color: var(--p-text);
+  filter: blur(3.5px);
+  user-select: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.landing .pilot .weitere__wert {
+  display: block;
+  width: 70%;
+  height: 0.45rem;
+  border-radius: 99px;
+  background: rgba(238, 238, 238, 0.18);
+  filter: blur(2px);
+}
+.landing .pilot .weitere__dp--spaeter,
+.landing .pilot .weitere__dp--entfaellt,
+.landing .pilot .weitere__dp--freiwillig {
+  border-style: dashed;
+  border-top-width: 1px;
+  background: transparent;
+  opacity: 0.55;
+}
+.landing .pilot .pass-viewer__fuss {
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid var(--p-linie);
+  font-size: 0.68rem;
+  color: var(--p-schwach);
+}

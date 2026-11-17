@@ -231,7 +231,7 @@ const texteFuerClient = {
         </ol>
       </div>
 
-      <h1 class="ergebnis-karte__titel" id="ergebnis-titel"></h1>
+      <h2 class="ergebnis-karte__titel" id="ergebnis-titel"></h2>
       <p class="ergebnis-karte__text" id="ergebnis-text"></p>
 
       <div class="ergebnis-karte__aktionen">
@@ -313,7 +313,12 @@ const texteFuerClient = {
 
   <p class="ergebnis__hinweis">{hinweisText}</p>
 
-  <Beratungsformular lang={lang} gruppenName={t(gruppe.name)} mitErgebnis />
+  <Beratungsformular
+    lang={lang}
+    gruppenName={t(gruppe.name)}
+    mitErgebnis
+    mitPerson
+  />
 
   <p class="check__zurueck">
     <a href={`/${lang}/gruppe/${gruppe.id}/`}>{t(seite.zurueck_zur_gruppe)}</a>

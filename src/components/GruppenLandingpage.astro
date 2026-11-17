@@ -38,15 +38,17 @@ export interface GruppenDaten {
 interface Props {
   lang: "de" | "en";
   daten: GruppenDaten;
+  /** Die Seite zeigt den Titel schon selbst (Hero) */
+  ohneTitel?: boolean;
 }
 
-const { lang, daten } = Astro.props;
+const { lang, daten, ohneTitel = false } = Astro.props;
 const t = (feld: Zweisprachig) => feld[lang];
 const quelleLabel = t(seite.quelle_label);
 ---
 
 <section>
-  <h1 class="nur-screenreader">{t(daten.name)}</h1>
+  {ohneTitel ? null : <h1 class="nur-screenreader">{t(daten.name)}</h1>}
   <RollenHinweis
     lang={lang}
     gruppeId={daten.id}
@@ -125,7 +127,11 @@ const quelleLabel = t(seite.quelle_label);
     <ol class="zeitstrahl" style={`--anzahl:${daten.zeitstrahl.length}`}>
       {
         daten.zeitstrahl.map((m) => (
-          <li class="zeitstrahl__eintrag" data-status={m.status}>
+          <li
+            class="zeitstrahl__eintrag"
+            data-status={m.status}
+            data-datum={m.datum}
+          >
             <span class="zeitstrahl__datum">{m.datum}</span>
             <span class={`status-badge status-badge--${m.status}`}>
               {t(seite.status_label[m.status])}
@@ -164,7 +170,7 @@ const quelleLabel = t(seite.quelle_label);
     </div>
   </div>
 
-  <Beratungsformular lang={lang} gruppenName={t(daten.name)} />
+  <Beratungsformular lang={lang} gruppenName={t(daten.name)} mitPerson />
 
   <div class="aktionen aktionen--landingpage">
     <a class="button" href={`/${lang}/check/${daten.id}/`}
@@ -175,3 +181,19 @@ const quelleLabel = t(seite.quelle_label);
     >
   </div>
 </section>
+
+<script>
+  // Marker nach Datum: gefüllt = vorbei, hohl = kommt noch. Nur ISO-Datum
+  // (JJJJ-MM-TT) oder Jahr; "TBD" o. Ä. bleibt ohne Datum (Marker nach Status).
+  const zeitpunkt = (text: string) => {
+    const m = /^(\d{4})(?:-(\d{2})-(\d{2}))?$/.exec(text.trim());
+    return m ? new Date(+m[1], m[2] ? +m[2] - 1 : 0, m[3] ? +m[3] : 1) : null;
+  };
+  const jetzt = new Date();
+  document
+    .querySelectorAll<HTMLElement>(".zeitstrahl__eintrag[data-datum]")
+    .forEach((el) => {
+      const z = zeitpunkt(el.dataset.datum ?? "");
+      if (z) el.dataset.zeit = z > jetzt ? "kommt" : "vorbei";
+    });
+</script>

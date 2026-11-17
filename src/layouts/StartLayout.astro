@@ -2,13 +2,21 @@
 import "../styles/global.css";
 import "../styles/landing.css";
 import seite from "../../inhalte/seite.json";
+import logoInk from "../assets/fr-logo-ink.svg?raw";
+import logoInverse from "../assets/fr-logo-inverse.svg?raw";
 
 interface Props {
   lang: "de" | "en";
   title?: string;
+  /** Unterseite: Pille ohne Anker-Links und ohne Check-Button */
+  schlicht?: boolean;
+  /** Kleingedrucktes im Footer (z. B. Disclaimer) */
+  fusshinweis?: string;
+  /** Unterseite: Ziel des Buttons rechts in der Pille (Standard: Startseite) */
+  zurueck?: { href: string; label: string };
 }
 
-const { lang, title } = Astro.props;
+const { lang, title, schlicht = false, fusshinweis, zurueck } = Astro.props;
 const start = seite.startseite;
 const startLink = `/${lang}/`;
 const seitentitel = title
@@ -25,18 +33,38 @@ const seitentitel = title
   </head>
   <body class="landing">
     <header class="start-kopf">
-      <div class="start-kopf__innen">
-        <a class="start-logo" href={startLink}>
+      <div class="wrap">
+        <nav class="nav-pill" aria-label="Navigation">
+          <a
+            class="start-logo"
+            href={startLink}
+            aria-label={`Future Response – ${start.logo.alt[lang]}`}
+          >
+            <span class="start-logo__fr" set:html={logoInk} />
+            <span class="start-logo__produkt"
+              >{start.logo.beschriftung[lang]}</span
+            >
+          </a>
           {
-            start.logo.bild ? (
-              <img src={start.logo.bild} alt={start.logo.alt[lang]} />
+            !schlicht ? (
+              <>
+                <a class="nav-link nav-link--mobil-aus" href="#ueber">
+                  {start.nav.ueber[lang]}
+                </a>
+                <a class="nav-link nav-link--mobil-aus" href="#grundlagen">
+                  {start.nav.grundlagen[lang]}
+                </a>
+                <a class="button" href={start.cta.link[lang]}>
+                  {start.nav.cta[lang]}
+                </a>
+              </>
             ) : (
-              <span class="logo-platzhalter logo-platzhalter--klein">
-                {start.logo.beschriftung[lang]}
-              </span>
+              <a class="button button--ghost" href={zurueck?.href ?? startLink}>
+                {zurueck?.label ?? seite.zur_startseite[lang]}
+              </a>
             )
           }
-        </a>
+        </nav>
       </div>
     </header>
 
@@ -44,18 +72,22 @@ const seitentitel = title
       <slot />
     </main>
 
-    <footer class="start-fuss">
-      <nav
-        class="start-fuss__innen"
-        aria-label={lang === "de" ? "Rechtliches" : "Legal"}
-      >
-        <a href={start.footer.impressum.link}
-          >{start.footer.impressum.text[lang]}</a
+    <footer class="footer start-fuss">
+      <div class="wrap start-fuss__innen">
+        <span class="start-fuss__logo" set:html={logoInverse} />
+        <nav
+          class="start-fuss__links"
+          aria-label={lang === "de" ? "Rechtliches" : "Legal"}
         >
-        <a href={start.footer.datenschutz.link}
-          >{start.footer.datenschutz.text[lang]}</a
-        >
-      </nav>
+          <a href={start.footer.impressum.link}
+            >{start.footer.impressum.text[lang]}</a
+          >
+          <a href={start.footer.datenschutz.link}
+            >{start.footer.datenschutz.text[lang]}</a
+          >
+        </nav>
+        {fusshinweis && <p class="start-fuss__hinweis">{fusshinweis}</p>}
+      </div>
     </footer>
   </body>
 </html>

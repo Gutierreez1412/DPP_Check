@@ -1,0 +1,234 @@
+/* Einmalig aus pilot.css erzeugt (Dunkelfarben -> helle FR-Farben); ab jetzt von Hand pflegbar. Ergänzungen und Korrekturen stehen in pilot-hell.css. */
+.landing .pilot-produkt {
+  background:
+    linear-gradient(140deg, rgba(75, 71, 196, 0.16), transparent 45%),
+    var(--p-bg);
+  border: 1px solid hsl(240, 6%, 89.1%);
+  box-shadow: none;
+}
+.landing .szene__linie {
+  stroke: rgba(22, 22, 22, 0.55);
+}
+.landing .szene__speichen {
+  stroke: rgba(22, 22, 22, 0.16);
+}
+.landing .szene__nabe,
+.landing .szene__motor {
+  stroke: rgba(22, 22, 22, 0.55);
+}
+.landing .szene__akku rect {
+  fill: rgba(75, 71, 196, 0.3);
+}
+.landing .szene__akku {
+  filter: none;
+}
+.landing .szene__strahl {
+  stroke: rgba(75, 71, 196, 0.35);
+}
+.landing .szene__panel-grund {
+  stroke: rgba(75, 71, 196, 0.4);
+}
+.landing .szene__schild {
+  fill: rgb(22, 22, 22);
+}
+.landing .szene__schild-name {
+  fill: hsl(240, 6%, 83.6%);
+}
+.landing .szene__schild-daten {
+  fill: hsl(240, 6%, 94.6%);
+}
+.landing .szene__schild-zeile {
+  fill: rgb(22, 22, 22);
+}
+.landing .pilot-konsole {
+  background-image: radial-gradient(
+    rgba(22, 22, 22, 0.06) 1px,
+    transparent 1px
+  );
+  box-shadow: none;
+}
+.landing .explosion__raster {
+  stroke: rgba(75, 71, 196, 0.07);
+}
+.landing .explosion__fuehrung line {
+  stroke: rgba(75, 71, 196, 0.45);
+}
+.landing .flaeche {
+  stroke: rgba(22, 22, 22, 0.55);
+}
+.landing .flaeche--oben {
+  fill: hsl(240, 6%, 92.1%);
+}
+.landing .flaeche--links {
+  fill: hsl(240, 6%, 88.5%);
+}
+.landing .flaeche--rechts {
+  fill: hsl(240, 6%, 86.7%);
+}
+.landing .flaeche--innen {
+  fill: hsl(240, 6%, 85.1%);
+}
+.landing .platine {
+  fill: hsl(244, 55%, 92%);
+}
+.landing .chip .flaeche--oben {
+  fill: hsl(240, 6%, 84.5%);
+}
+.landing .schild rect {
+  fill: rgb(22, 22, 22);
+}
+.landing .schild .schild__zeile {
+  fill: rgb(22, 22, 22);
+}
+.landing .zelle__mantel {
+  fill: hsl(240, 6%, 89.5%);
+  stroke: rgba(22, 22, 22, 0.4);
+}
+.landing .zelle__kopf {
+  fill: hsl(240, 6%, 96%);
+  stroke: rgba(22, 22, 22, 0.55);
+}
+.landing .zelle__pol {
+  fill: rgb(22, 22, 22);
+}
+.landing .explosion[data-aktiv="deckel"] [data-ebene="deckel"] .flaeche--oben,
+.landing .explosion[data-aktiv="wanne"] [data-ebene="wanne"] .flaeche--oben,
+.landing .explosion[data-aktiv="zellen"] .zelle__kopf {
+  fill: hsl(244, 55%, 92%);
+}
+.landing .explosion[data-aktiv="chemie"] .zelle__kopf {
+  fill: hsl(28, 75%, 90%);
+}
+.landing .stoff__reihen {
+  stroke: rgba(22, 22, 22, 0.12);
+}
+.landing .naehte__umriss {
+  fill: rgba(22, 22, 22, 0.14);
+}
+.landing .naehte__linie {
+  stroke: rgba(22, 22, 22, 0.85);
+}
+.landing .naehte__kordel {
+  stroke: rgba(22, 22, 22, 0.6);
+}
+.landing .naehte__oese {
+  fill: rgba(255, 255, 255, 0.95);
+  stroke: rgba(22, 22, 22, 0.36);
+}
+.landing .szene__oese {
+  fill: rgba(255, 255, 255, 0.9);
+  stroke: rgba(22, 22, 22, 0.36);
+}
+.landing .explosion--textil[data-aktiv="stoff"] .stoff {
+  fill: hsl(244, 55%, 92%);
+}
+.landing .explosion--textil[data-aktiv="farbe"] .stoff {
+  fill: hsl(28, 75%, 90%);
+}
+.landing .explosion--textil[data-aktiv="farbe"] .stoff__reihen {
+  stroke: rgba(217, 119, 6, 0.45);
+}
+.landing .explosion--textil[data-aktiv="etikett"] .schild rect:first-child {
+  fill: rgb(22, 22, 22);
+}
+.landing .polster__naht {
+  stroke: rgba(22, 22, 22, 0.55);
+}
+.landing .polster__bezug {
+  fill: hsl(240, 6%, 93.2%);
+}
+.landing .explosion--moebel[data-aktiv="gestell"] .gestell,
+.landing .explosion--moebel[data-aktiv="polster"] .polster {
+  fill: hsl(244, 55%, 92%);
+}
+.landing .explosion--moebel[data-aktiv="stoffe"] .polster {
+  fill: hsl(28, 75%, 90%);
+}
+.landing .explosion--moebel[data-aktiv="stoffe"] .polster__naht {
+  stroke: rgba(217, 119, 6, 0.7);
+}
+.landing .explosion--moebel[data-aktiv="etikett"] .schild rect:first-child {
+  fill: rgb(22, 22, 22);
+}
+.landing .bramme__spuren {
+  stroke: rgba(22, 22, 22, 0.14);
+}
+.landing .coil__ringe {
+  stroke: rgba(22, 22, 22, 0.16);
+}
+.landing .coil__auge {
+  fill: hsl(240, 6%, 83.6%);
+  stroke: rgba(22, 22, 22, 0.4);
+}
+.landing .explosion--stahl[data-aktiv="coil"] .coil,
+.landing .explosion--stahl[data-aktiv="schmelze"] .bramme {
+  fill: hsl(244, 55%, 92%);
+}
+.landing .explosion--stahl[data-aktiv="coil"] .coil__ringe,
+.landing .explosion--stahl[data-aktiv="schmelze"] .bramme__spuren {
+  stroke: rgba(75, 71, 196, 0.5);
+}
+.landing .explosion--stahl[data-aktiv="umwelt"] .bramme {
+  fill: hsl(28, 75%, 90%);
+}
+.landing .explosion--stahl[data-aktiv="umwelt"] .bramme__spuren {
+  stroke: rgba(217, 119, 6, 0.45);
+}
+.landing .explosion--stahl[data-aktiv="etikett"] .schild rect:first-child {
+  fill: rgb(22, 22, 22);
+}
+.landing .palette__latten,
+.landing .sack__falten {
+  stroke: rgba(22, 22, 22, 0.14);
+}
+.landing .explosion--bauprodukte[data-aktiv="zement"] .sack,
+.landing .explosion--bauprodukte[data-aktiv="verpackung"] .palette {
+  fill: hsl(244, 55%, 92%);
+}
+.landing .explosion--bauprodukte[data-aktiv="zement"] .sack__falten,
+.landing .explosion--bauprodukte[data-aktiv="verpackung"] .palette__latten {
+  stroke: rgba(75, 71, 196, 0.5);
+}
+.landing
+  .explosion--bauprodukte[data-aktiv="etikett"]
+  .schild
+  rect:first-child {
+  fill: rgb(22, 22, 22);
+}
+.landing .hotspot {
+  background: rgba(22, 22, 22, 0.34);
+}
+.landing .komponenten-tab:hover {
+  border-color: rgba(75, 71, 196, 0.5);
+}
+.landing .pass-viewer {
+  border: 1px solid hsl(240, 6%, 89.1%);
+  box-shadow: none;
+}
+.landing .pass-viewer__leiste {
+  background:
+    radial-gradient(
+      80% 140% at 0% 0%,
+      rgba(75, 71, 196, 0.16),
+      transparent 60%
+    ),
+    var(--p-bg);
+}
+.landing .register {
+  background: rgba(22, 22, 22, 0.015);
+}
+.landing .feld__unklar details {
+  color: rgba(217, 119, 6, 0.9);
+}
+.landing .feld__unklar summary {
+  background: rgba(217, 119, 6, 0.12);
+}
+.landing .weitere__dp {
+  background: rgba(22, 22, 22, 0.02);
+}
+.landing .weitere__wert {
+  background: rgba(22, 22, 22, 0.18);
+}
+.landing .kette__glied.ist-verantwortlich {
+  box-shadow: none;
+}

@@ -9,6 +9,9 @@ import GrafikMoebel from "./pilot/GrafikMoebel.astro";
 import GrafikStahl from "./pilot/GrafikStahl.astro";
 import GrafikBauprodukte from "./pilot/GrafikBauprodukte.astro";
 import "../styles/pilot.css";
+import "../styles/pilot-hell.generiert.css";
+import "../styles/pilot-dunkel.css";
+import "../styles/pilot-hell.css";
 
 // Batterien ist die Vorlage für alle pilot.json-Dateien (PROJEKT.md, Ebene 4).
 // Optional: "vorbehalt" für Beispiele, die noch auf keinem Rechtsakt beruhen.
@@ -33,9 +36,11 @@ interface Props {
   lang: "de" | "en";
   gruppe: { id: string; name: Record<"de" | "en", string> };
   pilot: PilotDaten;
+  /** Die Seite zeigt Label und Überschrift schon selbst (Hero) */
+  ohneKopf?: boolean;
 }
 
-const { lang, gruppe, pilot } = Astro.props;
+const { lang, gruppe, pilot, ohneKopf = false } = Astro.props;
 const t = (feld: Record<"de" | "en", string>) => feld[lang];
 const p = seite.pilot;
 // Produktspezifische Beschriftungen (Szene, Zähler, Pass-Marke) aus pilot.json.
@@ -96,11 +101,17 @@ const dpZahl = {
 <div class="pilot">
   <section class="pilot-hero">
     <div class="pilot-hero__text">
-      <p class="pilot-eyebrow">
-        <span class="pilot-puls" aria-hidden="true"></span>
-        {t(pilot.eyebrow)}
-      </p>
-      <h1>{t(pilot.titel)}</h1>
+      {
+        !ohneKopf && (
+          <>
+            <p class="pilot-eyebrow">
+              <span class="pilot-puls" aria-hidden="true" />
+              {t(pilot.eyebrow)}
+            </p>
+            <h1>{t(pilot.titel)}</h1>
+          </>
+        )
+      }
       <p class="pilot-hero__lede">{t(pilot.einleitung)}</p>
       <p class="pilot-beispiel">
         <span>{t(p.beispiel_badge)}</span>
@@ -492,17 +503,13 @@ const dpZahl = {
     )
   }
 
-  <div class="cta-band">
-    <div class="cta-band__text">
-      <h2>{t(p.beratung_titel)}</h2>
-      <p>{t(p.beratung_text)}</p>
-    </div>
-    <div class="cta-band__aktion">
-      <a class="button button--hell" href="#beratung">{t(p.beratung_button)}</a>
-    </div>
-  </div>
-
-  <Beratungsformular lang={lang} gruppenName={t(gruppe.name)} />
+  <Beratungsformular
+    lang={lang}
+    gruppenName={t(gruppe.name)}
+    mitPerson
+    titel={p.beratung_titel}
+    text={p.beratung_text}
+  />
 
   <p class="check__zurueck">
     <a id="pilot-zurueck" href={`/${lang}/ergebnis/${gruppe.id}/`}
