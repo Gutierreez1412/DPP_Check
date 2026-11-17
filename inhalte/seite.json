@@ -1,7 +1,7 @@
 {
   "titel": {
-    "de": "DPP-Betroffenheitscheck",
-    "en": "DPP Impact Check"
+    "de": "DPP Compass",
+    "en": "DPP Compass"
   },
   "untertitel": {
     "de": "Einschätzen, wie stark Ihr Unternehmen vom Digitalen Produktpass betroffen ist.",
@@ -399,8 +399,8 @@
       "en": "Your email app opens with a prepared message. Your details are only sent once you click send there."
     },
     "betreff": {
-      "de": "Beratungstermin DPP-Betroffenheitscheck",
-      "en": "DPP impact check consultation"
+      "de": "Beratungstermin DPP Compass",
+      "en": "DPP Compass consultation"
     },
     "mail_gruppe": {
       "de": "Produktgruppe",
@@ -475,8 +475,8 @@
   },
   "startseite": {
     "seitentitel": {
-      "de": "DPP-Betroffenheitscheck",
-      "en": "DPP Impact Check"
+      "de": "DPP Compass",
+      "en": "DPP Compass"
     },
     "logo": {
       "bild": null,
