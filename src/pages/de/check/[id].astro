@@ -35,7 +35,9 @@ const c = seite.check;
   fusshinweis={seite.disclaimer.de}
 >
   <!-- Platzhalter: Himmel-Verlauf des Designsystems statt Foto. -->
-  <section class="hero hero-start hero-start--kompakt hero-start--platzhalter">
+  <section
+    class="hero hero-start hero-start--kompakt hero-start--platzhalter hero-start--check"
+  >
     <div class="wrap hero-start__innen">
       <div class="hero-start__text">
         <span class="tag tag-stand">{c.eyebrow.de} · {gruppe.name.de}</span>
@@ -45,7 +47,7 @@ const c = seite.check;
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section--check">
     <div class="wrap">
       {
         freigeschaltet ? (

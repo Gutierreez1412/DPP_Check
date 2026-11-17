@@ -23,8 +23,8 @@
       "en": "Draft based on the preparatory study"
     },
     "text": {
-      "de": "Dieser Pass ist kein gültiges Muster. Datenpunkte, Zugriffsstufen und Granularität folgen dem Entwurf der JRC vom März 2026, der als Input für den delegierten Rechtsakt zu Eisen und Stahl dient. Der endgültige Inhalt kann abweichen, insbesondere bei CO₂-Fußabdruck und Rezyklatanteil, deren Methoden noch entwickelt werden.",
-      "en": "This passport is not a valid template. Data points, access levels and granularity follow the JRC draft from March 2026, which serves as input for the delegated act on iron and steel. The final content may differ, in particular for the carbon footprint and recycled content, whose methods are still being developed."
+      "de": "Dieser Pass ist kein gültiges Muster. Datenpunkte, Zugriffsstufen und Granularität folgen dem Entwurf der JRC vom März 2026, der als Input für den delegierten Rechtsakt zu Eisen und Stahl dient. Der endgültige Inhalt kann abweichen.",
+      "en": "This passport is not a valid template. Data points, access levels and granularity follow the JRC draft from March 2026, which serves as input for the delegated act on iron and steel. The final content may differ."
     },
     "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
   },
@@ -114,8 +114,8 @@
         "en": "QR code on the coil label"
       },
       "text": {
-        "de": "Das Coil soll über einen Datenträger wie einen QR-Code zum Pass führen. Der JRC-Entwurf schlägt die Schmelznummer als Kennung je Charge vor. Eine Kennung je Coil wäre nur in Sonderfällen vorgesehen, wenn sie in der Branche ohnehin üblich ist.",
-        "en": "The coil is to lead to the passport via a data carrier such as a QR code. The JRC draft proposes the heat number as the identifier per batch. An identifier per coil would only be provided in special cases where it is already common in the industry."
+        "de": "Das Coil soll über einen Datenträger wie einen QR-Code zum Pass führen. Der JRC-Entwurf schlägt die Schmelznummer als Kennung je Charge vor. Eine Kennung je Coil wäre nur in Sonderfällen vorgesehen.",
+        "en": "The coil is to lead to the passport via a data carrier such as a QR code. The JRC draft proposes the heat number as the identifier per batch. An identifier per coil would only be provided in special cases."
       },
       "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
     },
@@ -125,8 +125,8 @@
         "en": "Data from steel mill and rolling mill"
       },
       "text": {
-        "de": "Rohstofflieferanten, Stahlwerk und Walzwerk liefern Werkszeugnis-Daten, Stoffangaben, Rezyklatanteil und Daten für den CO₂-Fußabdruck. Verantwortlich für den Pass ist, wer das Stahlprodukt in der EU in Verkehr bringt, bei Herstellern außerhalb der EU der Importeur.",
-        "en": "Raw material suppliers, steel mill and rolling mill contribute mill test certificate data, substance information, recycled content and data for the carbon footprint. The party placing the steel product on the EU market is responsible for the passport, for manufacturers outside the EU the importer."
+        "de": "Rohstofflieferanten, Stahlwerk und Walzwerk liefern Werkszeugnis-Daten, Stoffangaben, Rezyklatanteil und Daten für den CO₂-Fußabdruck. Zuständig für den Pass ist laut ESPR der Hersteller oder Importeur, Details regelt der delegierte Rechtsakt.",
+        "en": "Raw material suppliers, steel mill and rolling mill contribute mill test certificate data, substance information, recycled content and data for the carbon footprint. Under the ESPR, the manufacturer or importer is responsible for the passport; the details are set by the delegated act."
       },
       "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
     },
@@ -136,8 +136,8 @@
         "en": "Tiered access"
       },
       "text": {
-        "de": "Vieles soll für alle sichtbar sein, etwa Sorte, Herkunft und CO₂-Fußabdruck. Berechnungsparameter, Werkszeugnis-Werte und Details zum Rezyklat sehen nur Berechtigte, Nachweise nur Behörden. Bei den besorgniserregenden Stoffen ist die Stufe im Entwurf nicht einheitlich.",
-        "en": "Much is to be visible to everyone, such as grade, origin and carbon footprint. Calculation parameters, mill test certificate values and details on recycled content are only visible to persons with a legitimate interest, evidence only to authorities. For substances of concern, the level is not consistent in the draft."
+        "de": "Vieles soll für alle sichtbar sein, etwa Sorte, Herkunft und CO₂-Fußabdruck. Berechnungsparameter, Werkszeugnis-Werte und Details zum Rezyklat sehen nur Berechtigte, Nachweise nur Behörden.",
+        "en": "Much is to be visible to everyone, such as grade, origin and carbon footprint. Calculation parameters, mill test certificate values and details on recycled content are only visible to persons with a legitimate interest, evidence only to authorities."
       },
       "zugriffsstufen_zeigen": true,
       "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-03/Submission_ESPR%20Steel%20DPP%20Content%20Proposal_0.pdf"
