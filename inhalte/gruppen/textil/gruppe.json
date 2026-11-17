@@ -1,5 +1,8 @@
 {
   "id": "textil",
+  "pdf_einleitung": {
+    "de": "Die EU-Ökodesign-Verordnung (ESPR) bildet den Rahmen für digitale Produktpässe und legt über delegierte Rechtsakte Anforderungen für einzelne Produktgruppen fest. Textilbekleidung wurde priorisiert, ein entsprechender Rechtsakt ist für 2027 vorgesehen. Der Produktpass soll Transparenz über Produktinformationen wie Faserzusammensetzung, Chemikalien und Recyclinganteile schaffen. Dafür müssen relevante Daten entlang der Lieferkette gesammelt werden."
+  },
   "name": {
     "de": "Textil",
     "en": "Textiles"

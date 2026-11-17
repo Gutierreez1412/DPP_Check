@@ -144,8 +144,8 @@
         "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
         "status": "gilt",
         "pdf_kurz": {
-          "de": "Nach Ihren Angaben bestünde keine Pflicht zu einem Batteriepass, der für LV-, Elektrofahrzeug- und Industriebatterien über 2 kWh ab dem 18. Februar 2027 vorgesehen ist.",
-          "en": "Based on your answers, there would be no obligation to provide a battery passport, which applies to LMT, electric vehicle and industrial batteries above 2 kWh from 18 February 2027."
+          "de": "Nach Ihren Angaben bestünde keine Pflicht zu einem Batteriepass, der für LV-Batterien, Elektrofahrzeugbatterien und Industriebatterien über 2 kWh ab dem 18. Februar 2027 vorgesehen ist.",
+          "en": "Based on your answers, there would be no obligation to provide a battery passport, which applies to LMT batteries, electric vehicle batteries and industrial batteries above 2 kWh from 18 February 2027."
         }
       },
       "erzeuger": {
@@ -170,8 +170,8 @@
         "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
         "status": "gilt",
         "pdf_kurz": {
-          "de": "Als Erzeuger wären Sie für die Erstellung des Batteriepasses verantwortlich (Art. 3 Nr. 33, Art. 44 Buchst. a, Art. 77 Abs. 4).",
-          "en": "As a producer, you would be responsible for creating the battery passport (Art. 3 No. 33, Art. 44 point (a), Art. 77 para. 4)."
+          "de": "Als Erzeuger wären Sie für die Erstellung des Batteriepasses verantwortlich.",
+          "en": "As a producer, you would be responsible for creating the battery passport."
         }
       },
       "einfuehrer": {
@@ -196,8 +196,8 @@
         "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
         "status": "gilt",
         "pdf_kurz": {
-          "de": "Wenn Sie die Batterie aus einem Drittland (außerhalb der EU) importieren, wären Sie als Einführer für den Batteriepass verantwortlich (Art. 3 Nr. 64, Art. 77 Abs. 4).",
-          "en": "If you import the battery from a third country (outside the EU), you would be responsible for the battery passport as an importer (Art. 3 No. 64, Art. 77 para. 4)."
+          "de": "Wenn Sie die Batterie aus einem Drittland (außerhalb der EU) importieren, wären Sie als Einführer für den Batteriepass verantwortlich.",
+          "en": "If you import the battery from a third country (outside the EU), you would be responsible for the battery passport as an importer."
         }
       },
       "neuer_pass": {
@@ -222,8 +222,8 @@
         "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
         "status": "gilt",
         "pdf_kurz": {
-          "de": "Als Erzeuger (Art. 38 Abs. 11, Art. 44 Buchst. b und c) wären Sie für einen neuen Batteriepass verantwortlich, der mit dem Ursprungspass verknüpft würde (Art. 77 Abs. 7).",
-          "en": "As a producer (Art. 38 para. 11, Art. 44 points (b) and (c)), you would be responsible for a new battery passport linked to the original passport (Art. 77 para. 7)."
+          "de": "Als Erzeuger wären Sie für die Erstellung eines neuen Batteriepasses verantwortlich, der mit dem Ursprungspass verknüpft würde.",
+          "en": "As a producer, you would be responsible for creating a new battery passport linked to the original passport."
         }
       },
       "nicht_passpflichtig": {

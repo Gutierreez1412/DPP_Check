@@ -1,5 +1,8 @@
 {
   "id": "bauprodukte",
+  "pdf_einleitung": {
+    "de": "Die EU-Bauproduktenverordnung führt einen digitalen Produktpass für Bauprodukte ein, die dauerhaft in Bauwerke eingebaut werden. Dieser soll Transparenz über wichtige Produktinformationen wie Materialien, Werkstoffe und Umweltmerkmale schaffen. Auch die Produktpässe wesentlicher Bestandteile müssen verknüpft werden. Ein entsprechender delegierter Rechtsakt ist für 2027 vorgesehen."
+  },
   "name": {
     "de": "Bauprodukte",
     "en": "Construction products"
