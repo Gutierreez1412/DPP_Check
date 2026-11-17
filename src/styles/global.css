@@ -175,6 +175,10 @@ main h1 {
   margin: 0;
 }
 
+.hinweisbox--vorbehalt p:not(.hinweisbox__titel) + p {
+  margin-top: 0.6rem;
+}
+
 .hinweisbox--vorbehalt .hinweisbox__titel {
   margin-bottom: 0.35rem;
   font-size: 0.75rem;
@@ -233,6 +237,15 @@ main h1 {
 .rollen-disclaimer .hinweis-text {
   margin-bottom: 0;
   color: var(--farbe-text-schwach);
+}
+
+/* Ohne sichtbaren Absatz (z. B. Einschätzung steht schon im Vorbehalt) entfällt der Block samt Trennlinie. */
+.rollen-disclaimer:not(:has(p:not([hidden]):not(:empty))) {
+  display: none;
+}
+
+.rollen-hinweis #rollen-quelle[hidden] {
+  display: none;
 }
 
 .rollen-hinweis #rollen-quelle {

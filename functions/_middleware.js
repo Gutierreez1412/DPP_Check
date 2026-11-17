@@ -21,7 +21,7 @@ function anmeldungNoetig() {
   return new Response("Anmeldung erforderlich.", {
     status: 401,
     headers: {
-      "WWW-Authenticate": 'Basic realm="DPP-Check", charset="UTF-8"',
+      "WWW-Authenticate": 'Basic realm="DPP Compass", charset="UTF-8"',
       "Cache-Control": "no-store",
     },
   });

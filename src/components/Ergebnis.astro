@@ -1,4 +1,5 @@
 ---
+import { QUELLEN_ANZEIGEN } from "../config";
 import fragenDaten from "../../inhalte/fragen.json";
 import ampel from "../../inhalte/ampel.json";
 import seite from "../../inhalte/seite.json";
@@ -253,7 +254,7 @@ const texteFuerClient = {
         {t(e.begruendung_titel)}
       </h2>
       {
-        begruendungen && (
+        begruendungen && QUELLEN_ANZEIGEN && (
           <p class="begruendung__intro">
             {t(e.begruendung_bezug)}{" "}
             <a href={begruendungen.quelle} target="_blank" rel="noopener">
@@ -303,7 +304,7 @@ const texteFuerClient = {
           </summary>
           <p class="begruendung__warum">
             <span></span>
-            <a target="_blank" rel="noopener"></a>
+            {QUELLEN_ANZEIGEN && <a target="_blank" rel="noopener" />}
           </p>
         </details>
       </li>
@@ -392,18 +393,20 @@ const texteFuerClient = {
       // Aufwand bedeutet, am Ende klein der Artikel. Ohne Begründungsdatei steht
       // dort nur die gewählte Antwort.
       const text = feld("warum").querySelector("span")!;
-      const link = feld("warum").querySelector("a")!;
+      const link = feld("warum").querySelector("a");
       if (frage.begruendung) {
         const { fakt, aufwand, aufwandZuerst, bezug, quelle } =
           frage.begruendung;
         const saetze = [fakt, aufwand?.[stufeId] ?? ""];
         if (aufwandZuerst) saetze.reverse();
         text.textContent = `${saetze.join(" ").trim()} `;
-        link.href = quelle;
-        link.textContent = bezug;
+        if (link) {
+          link.href = quelle;
+          link.textContent = bezug;
+        }
       } else {
         text.textContent = `${texte.ihreAntwort}: ${antwort.text}`;
-        link.remove();
+        link?.remove();
       }
       liste.append(el);
     });
@@ -443,7 +446,7 @@ const texteFuerClient = {
 
     const datum = new Date().toLocaleDateString(p.datumSprache);
     const daten = {
-      dateiname: `DPP-Check-${texte.gruppeId}.pdf`,
+      dateiname: `DPP-Compass-${texte.gruppeId}.pdf`,
       eyebrow: p.eyebrow,
       titel: p.titel,
       gruppeLabel: p.gruppe,

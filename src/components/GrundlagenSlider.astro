@@ -1,4 +1,5 @@
 ---
+import { QUELLEN_ANZEIGEN } from "../config";
 import grundlagen from "../../inhalte/grundlagen.json";
 import seite from "../../inhalte/seite.json";
 
@@ -33,9 +34,11 @@ const t = (feld: Record<"de" | "en", string>) => feld[lang];
           <h3>{t(a.ueberschrift)}</h3>
           <p class="grundlagen-karte__kern">{t(a.kern)}</p>
           <p>{t(a.text)}</p>
-          <a href={a.quelle} target="_blank" rel="noopener">
-            {t(seite.quelle_label)}
-          </a>
+          {QUELLEN_ANZEIGEN && (
+            <a href={a.quelle} target="_blank" rel="noopener">
+              {t(seite.quelle_label)}
+            </a>
+          )}
         </li>
       ))
     }
