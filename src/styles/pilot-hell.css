@@ -148,6 +148,7 @@
 .landing .pilot-schritte p.muted {
   color: var(--color-text-muted);
 }
+.landing .pilot-schritte .card-inverse h3,
 .landing .pilot-schritte .card-inverse p {
   color: var(--color-on-inverse);
 }
