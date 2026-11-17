@@ -27,11 +27,11 @@ const hatPilot = Object.keys(pilotDateien).some((pfad) =>
 const gruppenDateien = import.meta.glob("../../inhalte/gruppen/*/gruppe.json", {
   eager: true,
   import: "default",
-}) as Record<string, { vorbehalt?: unknown }>;
-const hatVorbehalt = Object.entries(gruppenDateien).some(
-  ([pfad, daten]) =>
-    pfad.includes(`/gruppen/${gruppe.id}/`) && Boolean(daten.vorbehalt),
-);
+}) as Record<string, { vorbehalt?: unknown; pdf_einleitung?: { de: string } }>;
+const gruppenDaten = Object.entries(gruppenDateien).find(([pfad]) =>
+  pfad.includes(`/gruppen/${gruppe.id}/`),
+)?.[1];
+const hatVorbehalt = Boolean(gruppenDaten?.vorbehalt);
 const hinweisText = t(hatVorbehalt ? ampel.hinweis : ampel.hinweis_beschlossen);
 
 // Tacho: Halbkreis in drei gleich großen Segmenten. Die Nadel zeigt bewusst
@@ -115,6 +115,7 @@ const texteFuerClient = {
   },
   pdf: {
     eyebrow: t(seite.titel),
+    einleitung: gruppenDaten?.pdf_einleitung?.de ?? "",
     seiteLabel: t(e.pdf_seite),
     titel: t(e.pdf_titel),
     gruppe: t(e.pdf_gruppe),
@@ -130,9 +131,6 @@ const texteFuerClient = {
     keineTreiber: t(e.pdf_keine_treiber),
     umfangTitel: t(e.pdf_umfang_titel),
     umfangSatz: t(e.pdf_umfang_satz),
-    standTitel: t(e.pdf_stand_titel),
-    stand: t(seite.datenstand) || t(e.pdf_stand_fehlt),
-    quellen: t(e.pdf_quellen),
     hinweis: hinweisText,
     datumSprache: lang === "de" ? "de-DE" : "en-GB",
   },
@@ -433,15 +431,14 @@ const texteFuerClient = {
         ? (texte.rollen.titel[rolleId] as string)
         : null;
 
-    // Aufwandstreiber: Fragen mit mindestens mittlerem Handlungsbedarf,
-    // höchster zuerst.
+    // Alle Bereiche, höchster Handlungsbedarf zuerst. Als Aufwandstreiber gelten
+    // die mit mindestens mittlerem Handlungsbedarf.
     const treiber = fragen
       .map((f, i) => ({ frage: f, antwort: antworten[i] }))
       .map((x) => ({
         ...x,
         stufeId: stufeFuer(x.antwort.score, texte.schwellenJeFrage),
       }))
-      .filter((x) => x.stufeId !== "gruen")
       .sort((a, b) => b.antwort.score - a.antwort.score);
 
     const datum = new Date().toLocaleDateString(p.datumSprache);
@@ -462,20 +459,20 @@ const texteFuerClient = {
       rolleWeitereLabel: p.rolleWeitereLabel,
       rolleWeitere: rollenTitel ? p.rolleWeitere : "",
       aufwandTitel: p.aufwandTitel,
-      treiberIntro: treiber.length ? p.treiberIntro : p.keineTreiber,
+      treiberIntro: treiber.some((x) => x.stufeId !== "gruen")
+        ? p.treiberIntro
+        : p.keineTreiber,
       treiber: treiber.map((x) => ({
         kategorie: x.frage.kategorie,
         antwort: x.antwort.text,
         stufe: texte.stufen[x.stufeId].kurz,
-        stufeId: x.stufeId as "gelb" | "rot",
+        stufeId: x.stufeId as "gruen" | "gelb" | "rot",
       })),
       umfangTitel: p.umfangTitel,
       umfangLabel: p.umfangLabel,
       umfangStufe: stufe.kurz,
       umfangText: p.umfangSatz.replace("{stufe}", stufe.kurz),
-      standTitel: p.standTitel,
-      stand: p.stand,
-      quellen: p.quellen,
+      einleitung: p.einleitung,
       hinweis: p.hinweis,
       seiteLabel: p.seiteLabel,
       logoSvg: document.getElementById("pdf-logo")?.innerHTML ?? "",

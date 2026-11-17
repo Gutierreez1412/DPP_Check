@@ -12,7 +12,7 @@ export interface PdfTreiber {
   kategorie: string;
   antwort: string;
   stufe: string;
-  stufeId: "gelb" | "rot";
+  stufeId: "gruen" | "gelb" | "rot";
 }
 
 export interface PdfDaten {
@@ -36,9 +36,7 @@ export interface PdfDaten {
   umfangLabel: string;
   umfangStufe: string;
   umfangText: string;
-  standTitel: string;
-  stand: string;
-  quellen: string;
+  einleitung: string;
   hinweis: string;
   seiteLabel: string;
   logoSvg: string;
@@ -54,13 +52,14 @@ const LEISE = farbe("#6b6b6b");
 const LINIE = farbe("#e2e2e0");
 const GELB = farbe("#9a4a00");
 const ROT = farbe("#b3261e");
+const GRUEN = farbe("#0b7a5f");
 const WEISS = farbe("#ffffff");
 const WEISS_SCHWACH = farbe("#b9b9b9");
 
 const SEITE = { b: 595.28, h: 841.89 };
-const RAND = 56;
-const OBEN = 52;
-const UNTEN = 48;
+const RAND = 48;
+const OBEN = 40;
+const UNTEN = 38;
 const BREITE = SEITE.b - 2 * RAND;
 
 // Die eingebettete Inter-Teilmenge (latin) kennt keine tiefgestellte 2.
@@ -259,15 +258,24 @@ export async function erzeugePdf(d: PdfDaten) {
     groesse: 21,
     zeilenhoehe: 1.18,
     breite: BREITE,
-    abstand: 6,
+    abstand: 8,
   });
+  // Einleitung zur Branche: Verordnung bzw. ESPR-Arbeitsplan und grober Zeitplan
+  if (d.einleitung) {
+    absatz(d.einleitung, {
+      groesse: 9.5,
+      farbe: SCHWACH,
+      zeilenhoehe: 1.45,
+      abstand: 2,
+    });
+  }
 
   // ── Abschnitte (nummeriert, mit Haarlinie wie auf der CSRD-Seite)
   const abschnitt = (nr: string, titel: string, mindest = 70) => {
     platz(mindest);
-    y -= 9;
+    y -= 10;
     linie();
-    y -= 12;
+    y -= 13;
     seite.drawText(nr, {
       x: RAND,
       y: y - 8,
@@ -282,7 +290,7 @@ export async function erzeugePdf(d: PdfDaten) {
       font: f.semi,
       color: SCHWACH,
     });
-    y -= 17;
+    y -= 15;
   };
 
   // 01 Rolle
@@ -313,9 +321,13 @@ export async function erzeugePdf(d: PdfDaten) {
   // 02 Aufwandstreiber
   abschnitt("02", d.aufwandTitel);
   absatz(d.treiberIntro, { abstand: 6 });
-  for (const t of d.treiber) {
-    const zeilenH = 19;
-    platz(zeilenH + 4);
+  // Zweispaltig: je Zelle Bereich (fett) mit Stufe als Wort im eckigen Tag
+  // und darunter die Antwort. Luftiger und besser lesbar als eine enge Liste.
+  const spaltenGap = 20;
+  const spaltenB = (BREITE - spaltenGap) / 2;
+  const zeileH = 38;
+  for (let i = 0; i < d.treiber.length; i += 2) {
+    platz(zeileH + 4);
     const oben = y;
     seite.drawLine({
       start: { x: RAND, y: oben },
@@ -323,45 +335,54 @@ export async function erzeugePdf(d: PdfDaten) {
       thickness: 0.5,
       color: LINIE,
     });
-    // Stufe als Wort im eckigen Tag (nie nur Farbe)
-    const tagText = sauber(t.stufe);
-    const tagB = f.semi.widthOfTextAtSize(tagText, 8) + 12;
-    const tagFarbe = t.stufeId === "rot" ? ROT : GELB;
-    const tagX = SEITE.b - RAND - tagB;
-    seite.drawRectangle({
-      x: tagX,
-      y: oben - zeilenH + 5,
-      width: tagB,
-      height: 14,
-      borderColor: tagFarbe,
-      borderWidth: 0.8,
+    d.treiber.slice(i, i + 2).forEach((t, spalte) => {
+      const x0 = RAND + spalte * (spaltenB + spaltenGap);
+      const tagText = sauber(t.stufe);
+      const tagB = f.semi.widthOfTextAtSize(tagText, 8) + 12;
+      const tagFarbe =
+        t.stufeId === "rot" ? ROT : t.stufeId === "gelb" ? GELB : GRUEN;
+      const tagX = x0 + spaltenB - tagB;
+      seite.drawRectangle({
+        x: tagX,
+        y: oben - 21,
+        width: tagB,
+        height: 14,
+        borderColor: tagFarbe,
+        borderWidth: 0.8,
+      });
+      seite.drawText(tagText, {
+        x: tagX + 6,
+        y: oben - 17,
+        size: 8,
+        font: f.semi,
+        color: tagFarbe,
+      });
+      // Bereichsname nie abschneiden: bei Platzmangel etwas kleiner setzen
+      const kat = sauber(t.kategorie);
+      let katGroesse = 10;
+      while (
+        katGroesse > 8 &&
+        f.semi.widthOfTextAtSize(kat, katGroesse) > spaltenB - tagB - 8
+      ) {
+        katGroesse -= 0.5;
+      }
+      seite.drawText(kat, {
+        x: x0,
+        y: oben - 17,
+        size: katGroesse,
+        font: f.semi,
+        color: TINTE,
+      });
+      const antwortZeile = umbruch(t.antwort, f.reg, 9.5, spaltenB)[0] ?? "";
+      seite.drawText(antwortZeile, {
+        x: x0,
+        y: oben - 31,
+        size: 9.5,
+        font: f.reg,
+        color: SCHWACH,
+      });
     });
-    seite.drawText(tagText, {
-      x: tagX + 6,
-      y: oben - zeilenH + 9,
-      size: 8,
-      font: f.semi,
-      color: tagFarbe,
-    });
-    const kat = sauber(t.kategorie);
-    seite.drawText(kat, {
-      x: RAND,
-      y: oben - 14,
-      size: 10,
-      font: f.semi,
-      color: TINTE,
-    });
-    const katB = f.semi.widthOfTextAtSize(kat, 10);
-    const rest = tagX - (RAND + katB + 10) - 8;
-    const antwortZeile = umbruch(t.antwort, f.reg, 10, rest)[0] ?? "";
-    seite.drawText(antwortZeile, {
-      x: RAND + katB + 10,
-      y: oben - 14,
-      size: 10,
-      font: f.reg,
-      color: SCHWACH,
-    });
-    y -= zeilenH;
+    y -= zeileH;
   }
   if (d.treiber.length) {
     linie();
@@ -369,7 +390,7 @@ export async function erzeugePdf(d: PdfDaten) {
 
   // 03 Umfang: eine invertierte Karte (Tinte), wie die Zusammenfassungs-Karte der Website
   const textZeilen = umbruch(d.umfangText, f.reg, 10.5, BREITE - 40);
-  const kartenH = 68 + textZeilen.length * 15;
+  const kartenH = 62 + textZeilen.length * 15;
   // Überschrift und Karte bleiben zusammen auf einer Seite
   abschnitt("03", d.umfangTitel, kartenH + 60);
   seite.drawRectangle({
@@ -379,7 +400,7 @@ export async function erzeugePdf(d: PdfDaten) {
     height: kartenH,
     color: TINTE,
   });
-  let ky = y - 20;
+  let ky = y - 18;
   seite.drawText(sauber(d.umfangLabel).toUpperCase(), {
     x: RAND + 20,
     y: ky,
@@ -387,7 +408,7 @@ export async function erzeugePdf(d: PdfDaten) {
     font: f.semi,
     color: WEISS_SCHWACH,
   });
-  ky -= 28;
+  ky -= 27;
   seite.drawText(sauber(d.umfangStufe), {
     x: RAND + 20,
     y: ky,
@@ -408,19 +429,11 @@ export async function erzeugePdf(d: PdfDaten) {
   }
   y -= kartenH + 6;
 
-  // Fuß: Stand der Daten, Quellenhinweis und Disclaimer
-  platz(84);
-  y -= 18;
+  // Fuß: Disclaimer
+  platz(50);
+  y -= 16;
   linie();
   y -= 8;
-  absatz(`${d.standTitel}: ${d.stand}`, {
-    schrift: f.semi,
-    groesse: 8.5,
-    farbe: SCHWACH,
-    breite: BREITE,
-    abstand: 3,
-  });
-  absatz(d.quellen, { groesse: 8, farbe: LEISE, breite: BREITE, abstand: 3 });
   absatz(d.hinweis, { groesse: 8, farbe: LEISE, breite: BREITE });
 
   // Seitenzahlen unten rechts, Marke links
@@ -429,14 +442,14 @@ export async function erzeugePdf(d: PdfDaten) {
     const zahl = sauber(`${d.seiteLabel} ${i + 1} / ${seiten.length}`);
     s.drawText(zahl, {
       x: SEITE.b - RAND - f.reg.widthOfTextAtSize(zahl, 8),
-      y: 30,
+      y: 24,
       size: 8,
       font: f.reg,
       color: LEISE,
     });
     s.drawText("Future Response", {
       x: RAND,
-      y: 30,
+      y: 24,
       size: 8,
       font: f.reg,
       color: LEISE,
