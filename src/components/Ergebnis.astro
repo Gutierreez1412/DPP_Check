@@ -2,7 +2,9 @@
 import fragenDaten from "../../inhalte/fragen.json";
 import ampel from "../../inhalte/ampel.json";
 import seite from "../../inhalte/seite.json";
+import filter from "../../inhalte/filter.json";
 import Beratungsformular from "./Beratungsformular.astro";
+import frLogo from "../assets/fr-logo.svg?raw";
 
 interface Props {
   lang: "de" | "en";
@@ -18,6 +20,19 @@ const pilotDateien = import.meta.glob("../../inhalte/gruppen/*/pilot.json");
 const hatPilot = Object.keys(pilotDateien).some((pfad) =>
   pfad.includes(`/gruppen/${gruppe.id}/`),
 );
+
+// Gruppen ohne "vorbehalt" in gruppe.json (derzeit Batterien) beruhen auf einem
+// geltenden Rechtsakt: dort passt der Hinweis "noch nicht alle final beschlossen"
+// nicht.
+const gruppenDateien = import.meta.glob("../../inhalte/gruppen/*/gruppe.json", {
+  eager: true,
+  import: "default",
+}) as Record<string, { vorbehalt?: unknown }>;
+const hatVorbehalt = Object.entries(gruppenDateien).some(
+  ([pfad, daten]) =>
+    pfad.includes(`/gruppen/${gruppe.id}/`) && Boolean(daten.vorbehalt),
+);
+const hinweisText = t(hatVorbehalt ? ampel.hinweis : ampel.hinweis_beschlossen);
 
 // Tacho: Halbkreis in drei gleich großen Segmenten. Die Nadel zeigt bewusst
 // auf die Mitte des Segments, nicht auf den genauen Punktwert (der Gesamtscore
@@ -72,8 +87,55 @@ const begruendungen = Object.entries(begruendungsDateien).find(([pfad]) =>
   pfad.includes(`/gruppen/${gruppe.id}/`),
 )?.[1];
 
+// Rollen für den PDF-Export: dieselbe Quelle wie RollenHinweis (eigene
+// Fragenreihe der Gruppe, sonst die ESPR-Rollen aus filter.json). Nur die
+// Titel, die sind schon im Konjunktiv formuliert.
+type Rollenvarianten = Record<string, { titel: Text; pdf_kurz: Text }>;
+const eigeneFilter = import.meta.glob<{
+  default: {
+    gruppe: string;
+    rollenergebnis: { weiter_hinweis: Text; varianten: Rollenvarianten };
+  };
+}>("../../inhalte/gruppen/*/filter.json", { eager: true });
+const eigenerFilter = Object.values(eigeneFilter).find(
+  (modul) => modul.default.gruppe === gruppe.id,
+)?.default;
+const rollenQuelle = eigenerFilter?.rollenergebnis ?? filter.rollenergebnis;
+const rollenVarianten: Rollenvarianten = rollenQuelle.varianten;
+
 const texteFuerClient = {
   gruppeId: gruppe.id,
+  rollen: {
+    titel: Object.fromEntries(
+      Object.entries(rollenVarianten).map(([id, v]) => [id, t(v.titel)]),
+    ),
+    kurz: Object.fromEntries(
+      Object.entries(rollenVarianten).map(([id, v]) => [id, t(v.pdf_kurz)]),
+    ),
+  },
+  pdf: {
+    eyebrow: t(seite.titel),
+    seiteLabel: t(e.pdf_seite),
+    titel: t(e.pdf_titel),
+    gruppe: t(e.pdf_gruppe),
+    erstellt: t(e.pdf_erstellt),
+    rolleTitel: t(e.pdf_rolle_titel),
+    rolleFehlt: t(e.pdf_rolle_fehlt),
+    rolleDppLabel: t(e.pdf_rolle_dpp_label),
+    rolleWeitereLabel: t(e.pdf_rolle_weitere_label),
+    rolleWeitere: t(e.pdf_rolle_weitere),
+    umfangLabel: t(e.skala_label),
+    aufwandTitel: t(e.pdf_aufwand_titel),
+    treiberIntro: t(e.pdf_treiber_intro),
+    keineTreiber: t(e.pdf_keine_treiber),
+    umfangTitel: t(e.pdf_umfang_titel),
+    umfangSatz: t(e.pdf_umfang_satz),
+    standTitel: t(e.pdf_stand_titel),
+    stand: t(seite.datenstand) || t(e.pdf_stand_fehlt),
+    quellen: t(e.pdf_quellen),
+    hinweis: hinweisText,
+    datumSprache: lang === "de" ? "de-DE" : "en-GB",
+  },
   gruppenName: t(gruppe.name),
   schwellen: ampel.schwellen,
   schwellenJeFrage: ampel.schwellen_je_frage,
@@ -183,6 +245,9 @@ const texteFuerClient = {
           href={`/${lang}/check/${gruppe.id}/`}>{t(e.antworten_aendern)}</a
         >
       </div>
+      <button type="button" class="ergebnis-karte__pdf" id="ergebnis-pdf">
+        {t(e.pdf_button)}
+      </button>
     </div>
 
     <aside class="begruendung" aria-labelledby="begruendung-titel">
@@ -247,7 +312,7 @@ const texteFuerClient = {
     </template>
   </div>
 
-  <p class="ergebnis__hinweis">{t(ampel.hinweis)}</p>
+  <p class="ergebnis__hinweis">{hinweisText}</p>
 
   <Beratungsformular lang={lang} gruppenName={t(gruppe.name)} mitErgebnis />
 
@@ -255,6 +320,8 @@ const texteFuerClient = {
     <a href={`/${lang}/gruppe/${gruppe.id}/`}>{t(seite.zurueck_zur_gruppe)}</a>
   </p>
 </section>
+
+<div id="pdf-logo" hidden set:html={frLogo} />
 
 <script
   type="application/json"
@@ -344,6 +411,91 @@ const texteFuerClient = {
     });
   }
 
+  // PDF-Zusammenfassung: wird beim Klick erst erzeugt und direkt heruntergeladen.
+  // Alle Aussagen im Konjunktiv; die Rolle nur, wenn sie in dieser Sitzung
+  // ermittelt wurde.
+  function bereitePdfVor(
+    texte: any,
+    fragen: Frage[],
+    antworten: Antwort[],
+    stufe: { kurz: string },
+  ) {
+    const p = texte.pdf;
+
+    let rolleId: string | null = null;
+    try {
+      rolleId = sessionStorage.getItem(`dpp-rolle-${texte.gruppeId}`);
+    } catch {
+      // Speicher nicht verfügbar: Rollenabschnitt zeigt den Hinweis.
+    }
+    const rollenTitel =
+      rolleId && Object.hasOwn(texte.rollen.titel, rolleId)
+        ? (texte.rollen.titel[rolleId] as string)
+        : null;
+
+    // Aufwandstreiber: Fragen mit mindestens mittlerem Handlungsbedarf,
+    // höchster zuerst.
+    const treiber = fragen
+      .map((f, i) => ({ frage: f, antwort: antworten[i] }))
+      .map((x) => ({
+        ...x,
+        stufeId: stufeFuer(x.antwort.score, texte.schwellenJeFrage),
+      }))
+      .filter((x) => x.stufeId !== "gruen")
+      .sort((a, b) => b.antwort.score - a.antwort.score);
+
+    const datum = new Date().toLocaleDateString(p.datumSprache);
+    const daten = {
+      dateiname: `DPP-Check-${texte.gruppeId}.pdf`,
+      eyebrow: p.eyebrow,
+      titel: p.titel,
+      gruppeLabel: p.gruppe,
+      gruppe: texte.gruppenName,
+      erstelltLabel: p.erstellt,
+      datum,
+      rolleTitel: p.rolleTitel,
+      rolleText: rollenTitel ?? p.rolleFehlt,
+      rolleDppLabel: p.rolleDppLabel,
+      rolleDpp: rollenTitel
+        ? (texte.rollen.kurz[rolleId as string] as string)
+        : "",
+      rolleWeitereLabel: p.rolleWeitereLabel,
+      rolleWeitere: rollenTitel ? p.rolleWeitere : "",
+      aufwandTitel: p.aufwandTitel,
+      treiberIntro: treiber.length ? p.treiberIntro : p.keineTreiber,
+      treiber: treiber.map((x) => ({
+        kategorie: x.frage.kategorie,
+        antwort: x.antwort.text,
+        stufe: texte.stufen[x.stufeId].kurz,
+        stufeId: x.stufeId as "gelb" | "rot",
+      })),
+      umfangTitel: p.umfangTitel,
+      umfangLabel: p.umfangLabel,
+      umfangStufe: stufe.kurz,
+      umfangText: p.umfangSatz.replace("{stufe}", stufe.kurz),
+      standTitel: p.standTitel,
+      stand: p.stand,
+      quellen: p.quellen,
+      hinweis: p.hinweis,
+      seiteLabel: p.seiteLabel,
+      logoSvg: document.getElementById("pdf-logo")?.innerHTML ?? "",
+    };
+
+    const knopf = document.getElementById("ergebnis-pdf");
+    knopf?.addEventListener("click", async () => {
+      knopf.setAttribute("disabled", "");
+      try {
+        // Erst beim Klick laden, damit die Seite selbst schlank bleibt.
+        const { erzeugePdf } = await import("../scripts/pdf-export");
+        await erzeugePdf(daten);
+      } catch (fehler) {
+        console.error("PDF-Export fehlgeschlagen", fehler);
+      } finally {
+        knopf.removeAttribute("disabled");
+      }
+    });
+  }
+
   function initErgebnis() {
     const texteEl = document.getElementById("ergebnis-texte");
     const karte = document.getElementById("ergebnis-karte");
@@ -376,6 +528,7 @@ const texteFuerClient = {
     const stufeId = stufeFuer(summe, texte.schwellen);
     const stufe = texte.stufen[stufeId];
     fuelleBegruendungen(texte, fragen, antworten);
+    bereitePdfVor(texte, fragen, antworten, stufe);
 
     karte.dataset.stufe = stufeId;
     document.getElementById("tacho-stufe")!.textContent = stufe.kurz;

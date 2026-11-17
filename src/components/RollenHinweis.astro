@@ -37,6 +37,7 @@ const texteFuerClient = {
   weiterHinweis: t(ergebnis.weiter_hinweis),
   // Gruppen mit eigener Fragenreihe bekommen ihre Rolle unter rolle_<id>.
   rolleParam: eigenes ? `rolle_${gruppeId}` : "rolle",
+  gruppeId,
   quelleLabel: t(seite.quelle_label),
   lang,
 };
@@ -95,14 +96,28 @@ const texteFuerClient = {
       return;
     }
 
-    const { varianten, weiterHinweis, rolleParam, quelleLabel, lang } =
-      JSON.parse(texteEl.textContent || "{}");
+    const {
+      varianten,
+      weiterHinweis,
+      rolleParam,
+      gruppeId,
+      quelleLabel,
+      lang,
+    } = JSON.parse(texteEl.textContent || "{}");
     const rolleId = new URLSearchParams(window.location.search).get(rolleParam);
     const variante =
       rolleId && Object.hasOwn(varianten, rolleId)
         ? varianten[rolleId]
         : undefined;
     if (!variante) return;
+
+    // Für den PDF-Export auf der Ergebnisseite merken (nur in dieser Sitzung,
+    // nur im Browser). Dort stehen die Rollen-Parameter nicht mehr in der URL.
+    try {
+      sessionStorage.setItem(`dpp-rolle-${gruppeId}`, rolleId ?? "");
+    } catch {
+      // Speicher nicht verfügbar: das PDF kommt dann ohne Rolle aus.
+    }
 
     titelEl.textContent = variante.titel[lang];
     textEl.textContent = variante.text[lang];

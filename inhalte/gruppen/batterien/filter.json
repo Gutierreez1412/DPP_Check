@@ -142,7 +142,11 @@
           "en": "You do not have a battery that requires a passport (LV, electric vehicle or industrial battery over 2 kWh), or it will not be placed on the market, made available or used by you from 18 February 2027. Other obligations under the regulation may still apply."
         },
         "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
-        "status": "gilt"
+        "status": "gilt",
+        "pdf_kurz": {
+          "de": "Nach Ihren Angaben bestünde keine Pflicht zu einem Batteriepass, der für LV-, Elektrofahrzeug- und Industriebatterien über 2 kWh ab dem 18. Februar 2027 vorgesehen ist.",
+          "en": "Based on your answers, there would be no obligation to provide a battery passport, which applies to LMT, electric vehicle and industrial batteries above 2 kWh from 18 February 2027."
+        }
       },
       "erzeuger": {
         "weitere_pflichten": {
@@ -164,7 +168,11 @@
           "en": "Your name or trademark appears on the battery, or you use a battery you built or had built yourself. You are therefore responsible for the battery passport (Art. 3(33), Art. 44(a), Art. 77(4))."
         },
         "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
-        "status": "gilt"
+        "status": "gilt",
+        "pdf_kurz": {
+          "de": "Als Erzeuger wären Sie für die Erstellung des Batteriepasses verantwortlich (Art. 3 Nr. 33, Art. 44 Buchst. a, Art. 77 Abs. 4).",
+          "en": "As a producer, you would be responsible for creating the battery passport (Art. 3 No. 33, Art. 44 point (a), Art. 77 para. 4)."
+        }
       },
       "einfuehrer": {
         "weitere_pflichten": {
@@ -186,7 +194,11 @@
           "en": "You buy the battery directly from a supplier outside the EU and pass it on in the EU with no EU supplier in between. You are therefore responsible for the battery passport (Art. 3(64), Art. 77(4))."
         },
         "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
-        "status": "gilt"
+        "status": "gilt",
+        "pdf_kurz": {
+          "de": "Wenn Sie die Batterie aus einem Drittland (außerhalb der EU) importieren, wären Sie als Einführer für den Batteriepass verantwortlich (Art. 3 Nr. 64, Art. 77 Abs. 4).",
+          "en": "If you import the battery from a third country (outside the EU), you would be responsible for the battery passport as an importer (Art. 3 No. 64, Art. 77 para. 4)."
+        }
       },
       "neuer_pass": {
         "weitere_pflichten": {
@@ -208,7 +220,11 @@
           "en": "You have processed a used battery, e.g. prepared, repurposed or remanufactured it. You are therefore considered a manufacturer (Art. 38(11), Art. 44(b) and (c)) and are responsible for the new battery passport, which is linked to the original passport (Art. 77(7))."
         },
         "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
-        "status": "gilt"
+        "status": "gilt",
+        "pdf_kurz": {
+          "de": "Als Erzeuger (Art. 38 Abs. 11, Art. 44 Buchst. b und c) wären Sie für einen neuen Batteriepass verantwortlich, der mit dem Ursprungspass verknüpft würde (Art. 77 Abs. 7).",
+          "en": "As a producer (Art. 38 para. 11, Art. 44 points (b) and (c)), you would be responsible for a new battery passport linked to the original passport (Art. 77 para. 7)."
+        }
       },
       "nicht_passpflichtig": {
         "weitere_pflichten": {
@@ -230,7 +246,11 @@
           "en": "Based on your answers, you are not responsible for the battery passport. As a distributor or user, you should still make sure the batteries comply with the regulation and that the related documents and labelling are in place."
         },
         "quelle": "https://eur-lex.europa.eu/eli/reg/2023/1542/oj/eng",
-        "status": "gilt"
+        "status": "gilt",
+        "pdf_kurz": {
+          "de": "Nach Ihren Angaben wären Sie nicht für den Batteriepass verantwortlich. Als Händler oder Nutzer sollten Sie darauf achten, dass die zugehörigen Unterlagen und Kennzeichnungen vorhanden sind.",
+          "en": "Based on your answers, you would not be responsible for the battery passport. As a distributor or user, you should make sure the related documents and markings are in place."
+        }
       }
     }
   }

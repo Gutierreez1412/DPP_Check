@@ -92,7 +92,11 @@
           "en": "According to your answers, your product might not be permanently incorporated into a construction work and would then not be a construction product within the meaning of the Construction Products Regulation (EU) 2024/3110 (Art. 3). A Digital Product Passport under this regulation would then currently not be relevant for you. Other legal acts may still apply."
         },
         "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
-        "status": "gilt"
+        "status": "gilt",
+        "pdf_kurz": {
+          "de": "Ein Digitaler Produktpass nach der Bauproduktenverordnung (EU) 2024/3110 wäre für Sie derzeit nicht relevant.",
+          "en": "A Digital Product Passport under the Construction Products Regulation (EU) 2024/3110 would currently not be relevant to you."
+        }
       },
       "hersteller_marke": {
         "titel": {
@@ -104,7 +108,11 @@
           "en": "Anyone who places a product on the market under their own name or trademark is considered a manufacturer (Art. 26(1)(a)). The manufacturer obligations under Art. 22 could then apply to you, including the declaration of performance and conformity, technical documentation, CE marking and the digital product passport. The manufacturer would have to provide the passport no later than 18 months after the delegated act under Art. 75(1) enters into force (Art. 22(7), Art. 76, Art. 80(1))."
         },
         "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
-        "status": "gilt"
+        "status": "gilt",
+        "pdf_kurz": {
+          "de": "Als Hersteller könnten für Sie die Herstellerpflichten nach Art. 22 gelten, darunter der digitale Produktpass. Diesen müssten Sie spätestens 18 Monate nach Inkrafttreten des delegierten Rechtsakts nach Art. 75 Abs. 1 bereitstellen (Art. 22 Abs. 7, Art. 76, Art. 80 Abs. 1).",
+          "en": "As a manufacturer, the manufacturer obligations under Art. 22 could apply to you, including the digital product passport. You would have to provide it no later than 18 months after the delegated act under Art. 75 para. 1 enters into force (Art. 22 para. 7, Art. 76, Art. 80 para. 1)."
+        }
       },
       "hersteller_veraendert": {
         "titel": {
@@ -116,7 +124,11 @@
           "en": "Anyone who changes a product in a way that may affect its conformity, makes it available for a use other than the one declared by the manufacturer or states different characteristics is considered a manufacturer (Art. 26(1)(b) to (d)). The manufacturer obligations under Art. 22 could then apply to you, including the declaration of performance and conformity, technical documentation, CE marking and the digital product passport. The manufacturer would have to provide the passport no later than 18 months after the delegated act under Art. 75(1) enters into force (Art. 22(7), Art. 76, Art. 80(1))."
         },
         "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
-        "status": "gilt"
+        "status": "gilt",
+        "pdf_kurz": {
+          "de": "Als Hersteller könnten für Sie die Herstellerpflichten nach Art. 22 gelten, darunter der digitale Produktpass. Diesen müssten Sie spätestens 18 Monate nach Inkrafttreten des delegierten Rechtsakts nach Art. 75 Abs. 1 bereitstellen (Art. 22 Abs. 7, Art. 76, Art. 80 Abs. 1).",
+          "en": "As a manufacturer, the manufacturer obligations under Art. 22 could apply to you, including the digital product passport. You would have to provide it no later than 18 months after the delegated act under Art. 75 para. 1 enters into force (Art. 22 para. 7, Art. 76, Art. 80 para. 1)."
+        }
       },
       "hersteller_gebraucht": {
         "titel": {
@@ -128,7 +140,11 @@
           "en": "Anyone who places certain used or refurbished products on the market can also be considered a manufacturer (Art. 26(2)). The manufacturer obligations under Art. 22 could then apply to you, including the declaration of performance and conformity, technical documentation, CE marking and the digital product passport. The manufacturer would have to provide the passport no later than 18 months after the delegated act under Art. 75(1) enters into force (Art. 22(7), Art. 76, Art. 80(1))."
         },
         "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
-        "status": "gilt"
+        "status": "gilt",
+        "pdf_kurz": {
+          "de": "Als Hersteller könnten für Sie die Herstellerpflichten nach Art. 22 gelten, darunter der digitale Produktpass. Diesen müssten Sie spätestens 18 Monate nach Inkrafttreten des delegierten Rechtsakts nach Art. 75 Abs. 1 bereitstellen (Art. 22 Abs. 7, Art. 76, Art. 80 Abs. 1).",
+          "en": "As a manufacturer, the manufacturer obligations under Art. 22 could apply to you, including the digital product passport. You would have to provide it no later than 18 months after the delegated act under Art. 75 para. 1 enters into force (Art. 22 para. 7, Art. 76, Art. 80 para. 1)."
+        }
       },
       "einfuehrer_haendler": {
         "titel": {
@@ -140,7 +156,11 @@
           "en": "According to your answers, none of the cases in Art. 26 in which an importer or distributor is considered a manufacturer would apply. The obligations of importers (Art. 24) or distributors (Art. 25) would then be relevant for you. In this case, the manufacturer would have to provide the digital product passport (Art. 22(7))."
         },
         "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng",
-        "status": "gilt"
+        "status": "gilt",
+        "pdf_kurz": {
+          "de": "Als Einführer bzw. Händler wären für Sie die Pflichten nach Art. 24 bzw. Art. 25 maßgeblich. Den digitalen Produktpass müsste der Hersteller bereitstellen (Art. 22 Abs. 7).",
+          "en": "As an importer or distributor, the obligations under Art. 24 and Art. 25 would apply to you. The manufacturer would have to provide the digital product passport (Art. 22 para. 7)."
+        }
       }
     }
   }

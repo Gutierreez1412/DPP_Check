@@ -149,6 +149,78 @@
     "ihre_antwort": {
       "de": "Ihre Antwort",
       "en": "Your answer"
+    },
+    "pdf_button": {
+      "de": "Als PDF speichern",
+      "en": "Save as PDF"
+    },
+    "pdf_titel": {
+      "de": "Zusammenfassung Ihres Betroffenheitschecks",
+      "en": "Summary of your impact check"
+    },
+    "pdf_gruppe": {
+      "de": "Produktgruppe",
+      "en": "Product group"
+    },
+    "pdf_erstellt": {
+      "de": "Erstellt am",
+      "en": "Created on"
+    },
+    "pdf_rolle_titel": {
+      "de": "Mögliche Rolle",
+      "en": "Possible role"
+    },
+    "pdf_rolle_fehlt": {
+      "de": "Zur Rolle lagen in dieser Sitzung keine Angaben vor. Sie könnten den Rollen-Check im Filter durchlaufen, um eine erste Einschätzung zu erhalten.",
+      "en": "No role information was available in this session. You could complete the role check in the filter to get an initial assessment."
+    },
+    "pdf_aufwand_titel": {
+      "de": "Mögliche Aufwandstreiber",
+      "en": "Possible effort drivers"
+    },
+    "pdf_treiber_intro": {
+      "de": "Nach Ihren Antworten könnten vor allem diese Bereiche den Aufwand bestimmen:",
+      "en": "Based on your answers, these areas could mainly drive the effort:"
+    },
+    "pdf_keine_treiber": {
+      "de": "Nach Ihren Antworten ergäben sich keine ausgeprägten Aufwandstreiber.",
+      "en": "Based on your answers, no pronounced effort drivers would emerge."
+    },
+    "pdf_umfang_titel": {
+      "de": "Mögliche Einschätzung des Umfangs",
+      "en": "Possible assessment of the scope"
+    },
+    "pdf_umfang_satz": {
+      "de": "Auf Basis Ihrer Antworten könnte der Umfang des Handlungsbedarfs als „{stufe}“ eingeschätzt werden.",
+      "en": "Based on your answers, the scope of the need for action could be assessed as “{stufe}”."
+    },
+    "pdf_stand_titel": {
+      "de": "Stand der Daten",
+      "en": "Status of the data"
+    },
+    "pdf_stand_fehlt": {
+      "de": "wird noch ergänzt",
+      "en": "to be added"
+    },
+    "pdf_quellen": {
+      "de": "Quellen und Begründungen stehen in der Online-Version des Checks.",
+      "en": "Sources and reasoning are available in the online version of the check."
+    },
+    "pdf_seite": {
+      "de": "Seite",
+      "en": "Page"
+    },
+    "pdf_rolle_dpp_label": {
+      "de": "Pflichten zum Digitalen Produktpass",
+      "en": "Obligations regarding the Digital Product Passport"
+    },
+    "pdf_rolle_weitere_label": {
+      "de": "Weitere Pflichten",
+      "en": "Further obligations"
+    },
+    "pdf_rolle_weitere": {
+      "de": "Mit Ihrer Rolle könnten weitere Pflichten einhergehen, die über den Digitalen Produktpass hinausgehen. Für eine Beratung stehen wir Ihnen gern zur Verfügung.",
+      "en": "Your role could entail further obligations beyond the Digital Product Passport. We are happy to advise you."
     }
   },
   "platzhalter_pilot": {
@@ -518,5 +590,9 @@
         "en": "Back to start page"
       }
     }
+  },
+  "datenstand": {
+    "de": "",
+    "en": ""
   }
 }
