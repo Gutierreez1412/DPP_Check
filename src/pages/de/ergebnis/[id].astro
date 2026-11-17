@@ -24,7 +24,7 @@ const freigeschaltet = Object.keys(gruppenDateien).some((pfad) =>
 
 <StartLayout
   lang="de"
-  title={`${seite.ergebnis.eyebrow.de} – ${gruppe.name.de}`}
+  title={`${seite.ergebnis.eyebrow.de}: ${seite.ergebnis.produktgruppe_label.de} ${gruppe.name.de}`}
   schlicht
   zurueck={{
     href: `/de/gruppe/${gruppe.id}/`,
@@ -37,7 +37,10 @@ const freigeschaltet = Object.keys(gruppenDateien).some((pfad) =>
     <div class="wrap hero-start__innen">
       <div class="hero-start__text">
         <span class="tag tag-stand">{seite.check.eyebrow.de}</span>
-        <h1>{seite.ergebnis.eyebrow.de} · {gruppe.name.de}</h1>
+        <h1>
+          {seite.ergebnis.eyebrow.de}<br />
+          {`${seite.ergebnis.produktgruppe_label.de} ${gruppe.name.de}`}
+        </h1>
       </div>
     </div>
   </section>

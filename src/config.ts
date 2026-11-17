@@ -9,3 +9,8 @@ export const QUELLEN_ANZEIGEN = false;
 // gefiltert wird nur beim Bauen (`src/lib/rechtsverweise.mjs`, `astro.config.mjs`).
 // Nach Änderung den Dev-Server neu starten bzw. neu bauen.
 export const RECHTSVERWEISE_ANZEIGEN = false;
+
+// Schalter für den Abschnitt „Unternehmenssicht: Wer liefert welche Daten?“ (Lieferkette)
+// auf der DPP-Beispielseite. Aus (false): Der Abschnitt ist ausgeblendet, direkt nach dem
+// Pass folgt das Kontaktformular. Die Inhalte bleiben in `pilot.json` (`lieferkette`).
+export const LIEFERKETTE_ANZEIGEN = false;

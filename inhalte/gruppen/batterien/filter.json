@@ -15,8 +15,8 @@
             "en": "LV battery"
           },
           "text": {
-            "de": "Antriebsbatterie bis 25 kg, z. B. für E-Bikes, E-Scooter und Motorräder (Klasse L)",
-            "en": "Traction battery up to 25 kg, e.g. for e-bikes, e-scooters and motorcycles (class L)"
+            "de": "Antriebsbatterie Klasse L bis 25 kg, z. B. für E-Bikes, E-Scooter und Motorräder",
+            "en": "Class L traction battery up to 25 kg, e.g. for e-bikes, e-scooters and motorcycles"
           }
         },
         {
@@ -83,10 +83,6 @@
       "titel": {
         "de": "Kaufen Sie Batterien direkt von einem Lieferanten <u>außerhalb der EU</u> und verkaufen, vermieten oder verbauen Sie diese in Produkte, die Sie in der EU anbieten?",
         "en": "Do you buy batteries directly from a supplier <u>outside the EU</u> and sell or rent them, or build them into products that you offer in the EU?"
-      },
-      "hinweis": {
-        "de": "Gemeint sind Unternehmen mit Sitz in der EU, die Batterien aus einem Drittland in Verkehr bringen.",
-        "en": "This refers to companies established in the EU that place batteries from a third country on the market."
       },
       "bei_ja": "einfuehrer",
       "bei_nein": "weiter"

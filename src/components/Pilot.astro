@@ -1,5 +1,5 @@
 ---
-import { QUELLEN_ANZEIGEN } from "../config";
+import { LIEFERKETTE_ANZEIGEN, QUELLEN_ANZEIGEN } from "../config";
 import seite from "../../inhalte/seite.json";
 import pilotVorlage from "../../inhalte/gruppen/batterien/pilot.json";
 import Beratungsformular from "./Beratungsformular.astro";
@@ -445,46 +445,48 @@ const dpZahl = {
     </div>
   </section>
 
-  <section
-    class="pilot-konsole pilot-kette"
-    aria-labelledby="pilot-kette-titel"
-  >
-    <div class="pilot-explorer__kopf">
-      <h2 id="pilot-kette-titel" class="pilot-h2">
-        {t(p.lieferkette_titel)}
-      </h2>
-      <p>{t(p.lieferkette_text)}</p>
-    </div>
-    <ol class="kette">
-      {
-        pilot.lieferkette.map((k, i) => (
-          <li
-            class={
-              k.verantwortlich
-                ? "kette__glied ist-verantwortlich"
-                : "kette__glied"
-            }
-            style={`--i:${i}`}
-          >
-            <span class="pilot-mono kette__nr">0{i + 1}</span>
-            <strong>{t(k.rolle)}</strong>
-            <span class="kette__beispiel">
-              {k.verantwortlich ? (
-                <span class="kette__badge">{t(p.verantwortlich)}</span>
-              ) : (
-                t(k.beispiel)
-              )}
-            </span>
-            <ul>
-              {k.liefert[lang].map((l) => (
-                <li>{l}</li>
-              ))}
-            </ul>
-          </li>
-        ))
-      }
-    </ol>
-  </section>
+  {
+    LIEFERKETTE_ANZEIGEN && (
+      <section
+        class="pilot-konsole pilot-kette"
+        aria-labelledby="pilot-kette-titel"
+      >
+        <div class="pilot-explorer__kopf">
+          <h2 id="pilot-kette-titel" class="pilot-h2">
+            {t(p.lieferkette_titel)}
+          </h2>
+          <p>{t(p.lieferkette_text)}</p>
+        </div>
+        <ol class="kette">
+          {pilot.lieferkette.map((k, i) => (
+            <li
+              class={
+                k.verantwortlich
+                  ? "kette__glied ist-verantwortlich"
+                  : "kette__glied"
+              }
+              style={`--i:${i}`}
+            >
+              <span class="pilot-mono kette__nr">0{i + 1}</span>
+              <strong>{t(k.rolle)}</strong>
+              <span class="kette__beispiel">
+                {k.verantwortlich ? (
+                  <span class="kette__badge">{t(p.verantwortlich)}</span>
+                ) : (
+                  t(k.beispiel)
+                )}
+              </span>
+              <ul>
+                {k.liefert[lang].map((l) => (
+                  <li>{l}</li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )
+  }
 
   {
     QUELLEN_ANZEIGEN && (

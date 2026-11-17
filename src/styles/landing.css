@@ -305,26 +305,107 @@
   font-size: 1rem;
 }
 
-/* --- Grundlagen-Slider auf hellem Band --------------------------------- */
-.landing .grundlagen-slider {
-  margin: 0;
+/* --- Grundlagen: Intro links, 2x2-Karten rechts (Layout wie CSRD-Seite) ---- */
+.landing .grundlagen {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 3rem 3.25rem;
+  align-items: start;
   text-align: left;
 }
+.landing .grundlagen__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+.landing .grundlagen__lead {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+}
+.landing .grundlagen__lead a {
+  margin-left: 0.4rem;
+  font-size: 0.85rem;
+}
+.landing .grundlagen__linie {
+  align-self: stretch;
+  margin: 0.5rem 0 0;
+  border: 0;
+  border-top: 1px solid var(--color-text);
+}
+.landing .grundlagen__fuss {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.landing .grundlagen__raster {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
 .landing .grundlagen-karte {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1.5rem;
   background: #fff;
   border: 1px solid var(--color-text);
   border-radius: 0;
-  box-shadow: none;
 }
 .landing .grundlagen-karte h3 {
-  font-family: inherit;
+  font-size: 1.15rem;
   font-weight: 600;
 }
-.landing .grundlagen-slider__steuerung button {
-  border-radius: 2px;
-  border-color: var(--color-text);
-  color: var(--color-text);
-  background: transparent;
+.landing .grundlagen-karte p {
+  margin: 0;
+}
+.landing .grundlagen-karte .grundlagen-karte__kern {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+.landing .grundlagen-karte .grundlagen-karte__text {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+.landing .grundlagen-karte > a {
+  margin-top: auto;
+  font-size: 0.82rem;
+}
+.landing .grundlagen-karte--dunkel {
+  background: var(--color-inverse);
+  border-color: var(--color-inverse);
+  color: var(--color-on-inverse);
+}
+.landing .grundlagen-karte--dunkel h3,
+.landing .grundlagen-karte--dunkel .grundlagen-karte__kern {
+  color: var(--color-on-inverse);
+}
+.landing .grundlagen-karte--dunkel .grundlagen-karte__text {
+  color: var(--color-on-inverse-muted);
+}
+.landing .grundlagen-karte--dunkel .tag {
+  color: var(--color-on-inverse);
+  border-color: var(--color-on-inverse);
+}
+.landing .grundlagen-karte--dunkel > a {
+  color: var(--color-on-inverse);
+}
+@media (max-width: 60rem) {
+  .landing .grundlagen {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 40rem) {
+  .landing .grundlagen__raster {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --- Abschluss-Band ----------------------------------------------------- */
@@ -417,26 +498,6 @@
 .landing .nav-link:hover,
 .landing .start-fuss a:hover {
   text-decoration: underline;
-}
-.landing .grundlagen-slider {
-  padding-top: 0;
-  border-top: 0;
-}
-.landing .grundlagen-slider__kopf h2 {
-  font-family: inherit;
-}
-.landing .grundlagen-karte h3 {
-  color: var(--color-text-muted);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-.landing .grundlagen-karte .grundlagen-karte__kern {
-  font-family: inherit;
-  font-size: 1.3rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
 }
 .landing .start-abschluss {
   display: block;
@@ -769,7 +830,6 @@
 .landing .beratung {
   border: 1px solid var(--color-border);
 }
-.landing .grundlagen-karte,
 .landing .start-inhalt .faq-eintrag {
   border-color: var(--color-border);
 }
@@ -1157,6 +1217,13 @@
 .landing .ergebnis-karte__haupt {
   text-align: center;
 }
+/* Kein Mitlaufen der linken Spalte: Sie schob sich beim Scrollen über den
+   Beispiel-Link am Kartenende. */
+@media (min-width: 900px) {
+  .landing .ergebnis-karte__haupt {
+    position: static;
+  }
+}
 .landing .tacho {
   margin-top: 0.5rem;
 }
@@ -1218,22 +1285,66 @@
 .landing .ergebnis-karte :focus-visible {
   outline-color: var(--color-focus);
 }
+/* Beispiel-Link: eigener, auffälliger Block statt unauffälliger Textzeile */
 .landing .ergebnis-karte__pilot {
-  border-top-color: var(--color-border);
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--color-border);
+  border-image: var(--gradient-accent) 1;
+  background: #fff;
   color: var(--color-text);
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition:
+    opacity 0.6s ease 2.6s,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
 }
 .landing .ergebnis-karte__pilot:hover {
-  color: var(--color-focus);
-}
-.landing .ergebnis-karte__pilot-qr {
-  border-radius: 0;
-  background:
-    linear-gradient(90deg, var(--color-text) 50%, transparent 0) 0 0 / 6px 6px,
-    linear-gradient(var(--color-text) 50%, transparent 0) 0 0 / 6px 6px;
-  outline-color: var(--color-text);
+  color: var(--color-text);
+  box-shadow: 0 6px 20px rgba(20, 20, 40, 0.12);
 }
 .landing .ergebnis-karte__pilot-text {
-  text-decoration-color: var(--color-control);
+  flex: 1;
+  text-align: left;
+  text-decoration: none;
+}
+.landing .ergebnis-karte__pilot-pfeil {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--color-text);
+  color: #fff;
+  font-size: 1.2rem;
+}
+/* Bunte Kugel (Verlauf der Marke) statt Gitter-Symbol */
+.landing .ergebnis-karte__pilot-qr {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  /* weicher Farbring: Indigo links, Orchidee oben, Pfirsich rechts, helle Mitte */
+  background: conic-gradient(
+    from 200deg,
+    #5b5bd6,
+    #c27bc0 35%,
+    #f2a676 60%,
+    #c27bc0 82%,
+    #5b5bd6
+  );
+  -webkit-mask: radial-gradient(
+    circle,
+    transparent 0 22%,
+    #000 48%,
+    transparent 72%
+  );
+  mask: radial-gradient(circle, transparent 0 22%, #000 48%, transparent 72%);
+  filter: blur(0.6px) saturate(1.1);
+  outline: none;
+  opacity: 1;
 }
 /* Begründungen */
 .landing .begruendung {
