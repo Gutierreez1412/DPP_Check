@@ -50,6 +50,13 @@ const texteFuerClient = {
               <span class="check__kategorie">{t(f.kategorie)}</span>
               {t(f.text)}
             </legend>
+            {(f as { untertitel?: Record<"de" | "en", string> }).untertitel && (
+              <p class="check__untertitel">
+                {t(
+                  (f as { untertitel: Record<"de" | "en", string> }).untertitel,
+                )}
+              </p>
+            )}
             <div class="optionen optionen--liste">
               {f.antworten.map((a) => (
                 <label class="option">

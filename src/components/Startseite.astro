@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import seite from "../../inhalte/seite.json";
 import GrundlagenUebersicht from "./GrundlagenUebersicht.astro";
+import Beratungsformular from "./Beratungsformular.astro";
 import heroBild from "../assets/hero-dpp.png";
 
 interface Props {
@@ -73,3 +74,7 @@ const start = seite.startseite;
     <p class="start-hinweis">{start.hinweis[lang]}</p>
   </div>
 </section>
+
+<div class="wrap">
+  <Beratungsformular lang={lang} mitPerson />
+</div>

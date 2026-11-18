@@ -333,6 +333,10 @@
     "de": "Beantworten Sie wenige Fragen zu Ihren Produkten und erhalten Sie eine erste Einschätzung. Ihre Antworten bleiben in Ihrem Browser.",
     "en": "Answer a few questions about your products and get a first assessment. Your answers stay in your browser."
   },
+  "cta_kicker": {
+    "de": "Nächster Schritt",
+    "en": "Next step"
+  },
   "cta_beratung_link": {
     "de": "Oder direkt einen Beratungstermin anfragen",
     "en": "Or request a consultation directly"

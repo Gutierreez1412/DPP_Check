@@ -13,6 +13,10 @@
         "de": "Wie viele verschiedene Produkttypen (Artikel- oder Modellnummern) bieten Sie an?",
         "en": "How many different product types (item or model numbers) do you offer?"
       },
+      "untertitel": {
+        "de": "Gemeint sind nur Ihre Produkte aus der gewählten Produktgruppe, nicht Ihr gesamtes Sortiment.",
+        "en": "Count only your products from the selected product group, not your entire range."
+      },
       "antworten": [
         {
           "id": "a",
