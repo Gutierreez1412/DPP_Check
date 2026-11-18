@@ -74,8 +74,46 @@ const dpNachNr = Object.fromEntries(
 // laut pilot.json); alle weiteren Datenpunkte erscheinen nur unscharf. So bleibt
 // der Detailgrad gering und das Beispiel ersetzt keine Beratung.
 const MAX_FELDER = 2;
+// Je Register genau 2 Felder mit Wert. Bevorzugt eingeschränkte Felder (berechtigtes
+// Interesse bzw. Behörden, nach Möglichkeit je eine Stufe), damit das Beispiel die
+// Rollen zeigt, ohne viele Daten offenzulegen. Fehlen solche, werden öffentliche
+// Felder aufgefüllt.
+const waehleZwei = <T extends { stufe: string }>(liste: T[]): T[] => {
+  const streng = liste.filter((f) => f.stufe !== "oeffentlich");
+  const offen = liste.filter((f) => f.stufe === "oeffentlich");
+  const erste = streng[0];
+  const zweite = erste
+    ? (streng.find((f) => f.stufe !== erste.stufe) ?? streng[1] ?? offen[0])
+    : undefined;
+  return (erste ? [erste, zweite] : offen.slice(0, MAX_FELDER)).filter(
+    Boolean,
+  ) as T[];
+};
+const standardGezeigt = new Set(
+  pilot.pass.abschnitte.flatMap((a) =>
+    waehleZwei(a.felder as Feld[]).map((f) => f.id),
+  ),
+);
+// Je Bauteil ebenfalls nur 2 Felder klar, der Rest unscharf. Bevorzugt die Felder,
+// die unten im Pass mit Wert erscheinen, mit verschiedenen Stufen.
+const feldNachIdVorab = Object.fromEntries(
+  pilot.pass.abschnitte.flatMap((a) =>
+    (a.felder as Feld[]).map((f) => [f.id, f]),
+  ),
+) as Record<string, Feld>;
+const bauteilAuswahl: Record<string, string[]> = Object.fromEntries(
+  pilot.komponenten.map((k) => {
+    const alle = k.felder.map((id) => feldNachIdVorab[id]).filter(Boolean);
+    const unten = alle.filter((f) => standardGezeigt.has(f.id));
+    const rest = alle.filter((f) => !standardGezeigt.has(f.id));
+    const auswahl = waehleZwei(unten);
+    if (auswahl.length < MAX_FELDER)
+      auswahl.push(...waehleZwei(rest).slice(0, MAX_FELDER - auswahl.length));
+    return [k.id, auswahl.map((f) => f.id)];
+  }),
+);
 const abschnitte = pilot.pass.abschnitte.map((a) => {
-  const felder = (a.felder as Feld[]).slice(0, MAX_FELDER);
+  const felder = (a.felder as Feld[]).filter((f) => standardGezeigt.has(f.id));
   const gezeigt = new Set(felder.flatMap((f) => f.datenpunkte ?? []));
   return {
     ...a,
@@ -241,10 +279,19 @@ const dpZahl = {
               <p class="komponente__text">{t(k.text)}</p>
               <p class="komponente__label">{t(p.liefert_daten)}</p>
               <ul class="komponente__felder">
-                {k.felder.map((id) => {
+                {[
+                  ...k.felder.filter((id) => bauteilAuswahl[k.id].includes(id)),
+                  ...k.felder.filter(
+                    (id) => !bauteilAuswahl[k.id].includes(id),
+                  ),
+                ].map((id) => {
                   const f = feldNachId[id];
+                  const gesperrt = !bauteilAuswahl[k.id].includes(id);
                   return f ? (
-                    <li>
+                    <li
+                      class={gesperrt ? "ist-unscharf" : undefined}
+                      aria-hidden={gesperrt ? "true" : undefined}
+                    >
                       <span>{t(f.label)}</span>
                       <span class={`stufe-chip stufe-chip--${f.stufe}`}>
                         {stufeName[f.stufe]}
