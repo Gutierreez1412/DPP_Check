@@ -1591,3 +1591,14 @@
 .landing .check__untertitel {
   margin-top: 1rem;
 }
+
+/* Startseite: Kontaktblock mit Luft zum Footer, weniger Leerraum davor */
+.landing .start-abschluss {
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+.landing .start-kontakt {
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+.landing .start-kontakt .beratung {
+  margin-top: 0;
+}
