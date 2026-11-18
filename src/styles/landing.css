@@ -427,7 +427,7 @@
   max-width: 38rem;
 }
 .landing .start-hinweis {
-  max-width: 52ch;
+  max-width: none;
   margin: 2.5rem 0 0;
   font-size: 0.88rem;
   color: var(--color-text-muted);
