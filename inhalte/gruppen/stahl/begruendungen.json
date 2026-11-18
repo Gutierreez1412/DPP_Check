@@ -50,8 +50,8 @@
     },
     "q2": {
       "fakt": {
-        "de": "Pflichtig ist, wer das Stahlprodukt in der EU in Verkehr bringt, bei Herstellern außerhalb der EU der Importeur; Angaben der Vorstufen müssen aus Stahlwerk, Walzwerk und Handel kommen und bei Weiterverarbeitung übernommen werden.",
-        "en": "Whoever places the steel product on the EU market is obliged, for manufacturers outside the EU the importer; information from earlier stages must come from steel mill, rolling mill and trade and be inherited on further processing."
+        "de": "Die Angaben der Vorstufen kommen aus Stahlwerk, Walzwerk und Handel und werden bei der Weiterverarbeitung übernommen.",
+        "en": "The information from earlier stages comes from steel mill, rolling mill and trade and is carried over on further processing."
       },
       "aufwand": {
         "gruen": {

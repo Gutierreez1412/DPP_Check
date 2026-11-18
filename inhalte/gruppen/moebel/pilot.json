@@ -114,8 +114,8 @@
         "en": "QR code on the rating plate"
       },
       "text": {
-        "de": "Das Möbelstück soll über einen Datenträger wie einen QR-Code zum Pass führen. Der Entwurf schlägt Modell-ID und Chargen-ID als Pflicht vor, eine Kennung je Einzelstück ist offen. Die meisten Beteiligten halten die Modellebene für den praktikablen Standard.",
-        "en": "The piece of furniture is to lead to the passport via a data carrier such as a QR code. The draft proposes model ID and batch ID as mandatory, an identifier per item is open. Most stakeholders consider the model level the practical baseline."
+        "de": "Das Möbelstück soll über einen Datenträger wie einen QR-Code zum Pass führen. Der Entwurf schlägt Modell-ID und Chargen-ID als Pflicht vor, eine Kennung je Einzelstück ist offen.",
+        "en": "The piece of furniture is to lead to the passport via a data carrier such as a QR code. The draft proposes model ID and batch ID as mandatory, an identifier per item is open."
       },
       "quelle": "https://espr-euecolabel-furniture.eu/media/16"
     },
@@ -125,8 +125,8 @@
         "en": "Data from the supply chain"
       },
       "text": {
-        "de": "Lieferanten für Holz, Schaum, Textil und Chemie sowie das Möbelwerk liefern Daten zu. Verantwortlich für den Pass ist, wer das Möbelstück in der EU in Verkehr bringt, bei Herstellern außerhalb der EU der Importeur.",
-        "en": "Suppliers of wood, foam, textile and chemicals as well as the furniture plant contribute data. The party placing the piece of furniture on the EU market is responsible for the passport, for manufacturers outside the EU the importer."
+        "de": "Lieferanten für Holz, Textil und Chemie sowie das Möbelwerk liefern Material- und Stoffangaben und den Rezyklatanteil. Zuständig für den Pass ist laut ESPR der Hersteller oder Importeur, Details regelt der delegierte Rechtsakt.",
+        "en": "Suppliers of wood, textile and chemicals as well as the furniture plant provide material and substance data and the recycled content. Under the ESPR, the manufacturer or importer is responsible for the passport; the delegated act sets out the details."
       },
       "quelle": "https://espr-euecolabel-furniture.eu/media/16"
     },

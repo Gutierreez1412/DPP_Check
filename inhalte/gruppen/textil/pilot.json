@@ -121,8 +121,8 @@
         "en": "Data from the supply chain"
       },
       "text": {
-        "de": "Faser-, Garn- und Stofflieferanten, Färberei und Nähbetrieb liefern Daten zu. Verantwortlich für den Pass ist, wer das Kleidungsstück in der EU in Verkehr bringt.",
-        "en": "Fibre, yarn and fabric suppliers, dye house and garment maker contribute data. The party placing the garment on the EU market is responsible for the passport."
+        "de": "Faser-, Garn- und Stofflieferanten, Färberei und Nähbetrieb liefern Daten zu Fasern, Stoffen, Rezyklatanteil und CO₂-Fußabdruck. Zuständig für den Pass ist laut ESPR der Hersteller oder Importeur, Details regelt der delegierte Rechtsakt.",
+        "en": "Fibre, yarn and fabric suppliers, dye house and garment maker contribute data on fibres, substances, recycled content and carbon footprint. Under the ESPR, the manufacturer or importer is responsible for the passport; the details are set by the delegated act."
       },
       "quelle": "https://susproc.jrc.ec.europa.eu/product-bureau/sites/default/files/2026-05/Textiles_DPP_20260513.pdf"
     },

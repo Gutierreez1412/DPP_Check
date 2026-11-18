@@ -50,8 +50,8 @@
     },
     "q2": {
       "fakt": {
-        "de": "Pflichtig ist nur, wer das fertige Kleidungsstück in der EU in Verkehr bringt; die Daten zu Fasern, Garnen und Stoffen kommen aber aus der vorgelagerten Lieferkette.",
-        "en": "Only whoever places the finished garment on the EU market is obliged; however, the data on fibres, yarns and fabrics comes from the upstream supply chain."
+        "de": "Die Daten zu Fasern, Garnen und Stoffen kommen aus der vorgelagerten Lieferkette.",
+        "en": "The data on fibres, yarns and fabrics comes from the upstream supply chain."
       },
       "aufwand": {
         "gruen": {

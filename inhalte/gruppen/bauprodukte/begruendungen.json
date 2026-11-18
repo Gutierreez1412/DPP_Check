@@ -25,8 +25,8 @@
   "fragen": {
     "q1": {
       "fakt": {
-        "de": "Der Produktpass ist dem Produkttyp und seinem eindeutigen Kenncode zugeordnet (Art. 76 Abs. 2). Der Hersteller muss jeden Produkttyp mit einem eigenen Identifizierungscode und, soweit verfügbar, mit einer Chargen- oder Seriennummer kennzeichnen (Art. 22 Abs. 5).",
-        "en": "The product passport is linked to the product type and its unique identifier (Art. 76(2)). The manufacturer must mark each product type with its own identification code and, where available, a batch or serial number (Art. 22(5))."
+        "de": "Der Produktpass ist dem Produkttyp und seinem eindeutigen Kenncode zugeordnet (Art. 76 Abs. 2). Für den Digitalen Produktpass muss jeder Produkttyp mit einem eigenen Identifizierungscode und, soweit verfügbar, mit einer Chargen- oder Seriennummer gekennzeichnet werden (Art. 22 Abs. 5).",
+        "en": "The product passport is linked to the product type and its unique identifier (Art. 76(2)). For the Digital Product Passport, each product type must be marked with its own identification code and, where available, a batch or serial number (Art. 22(5))."
       },
       "aufwand": {
         "gruen": {
