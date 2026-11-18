@@ -315,3 +315,37 @@
 .landing .pilot-produkt__daten dd {
   color: var(--color-text);
 }
+
+/* Hoodie in der Hero-Szene: Fläche, Rippstrick, Nähte, Falten, Kordel */
+.landing .szene__stoff {
+  fill: rgba(22, 22, 22, 0.035);
+}
+.landing .szene__stoff--tief {
+  fill: rgba(75, 71, 196, 0.08);
+}
+.landing .szene__stoff--tasche {
+  fill: rgba(22, 22, 22, 0.035);
+}
+.landing .szene__stoff--holz {
+  fill: rgba(22, 22, 22, 0.07);
+}
+.landing .szene__buegel,
+.landing .szene__rippe {
+  stroke: rgba(22, 22, 22, 0.3);
+}
+.landing .szene__rippe--kante,
+.landing .szene__tasche {
+  stroke: rgba(22, 22, 22, 0.42);
+}
+.landing .szene__naht {
+  stroke: rgba(22, 22, 22, 0.38);
+}
+.landing .szene__falte {
+  stroke: rgba(22, 22, 22, 0.12);
+}
+.landing .szene__kordel {
+  stroke: rgba(22, 22, 22, 0.55);
+}
+.landing .szene__spitze {
+  stroke: rgba(22, 22, 22, 0.75);
+}
