@@ -104,32 +104,10 @@
         "en": "From when do I need a Digital Product Passport for construction products?"
       },
       "antwort": {
-        "de": "Das steht noch nicht fest. Die EU-Kommission nennt Q2 2027 als Richtwert für den delegierten Rechtsakt zu Bauprodukten. Die Pflicht beginnt 18 Monate nach dessen Inkrafttreten (Art. 22 Abs. 7, Art. 80 Abs. 1). Bis dahin kann das System freiwillig genutzt werden.",
-        "en": "This has not been decided yet. The European Commission gives Q2 2027 as the indicative timeline for the delegated act on construction products. The obligation starts 18 months after it enters into force (Art. 22(7), Art. 80(1)). Until then, the system can be used on a voluntary basis."
+        "de": "Das steht noch nicht fest. Die EU-Kommission nennt Q2 2027 als Richtwert für den delegierten Rechtsakt zu Bauprodukten. Die Pflicht beginnt 18 Monate nach dessen Inkrafttreten. Bis dahin kann das System freiwillig genutzt werden. Unklar ist noch, ob der Zeitpunkt für alle Produktfamilien gleich ist oder je Familie unterschiedlich ausfällt.",
+        "en": "This has not been decided yet. The European Commission gives Q2 2027 as the indicative timeline for the delegated act on construction products. The obligation starts 18 months after it enters into force. Until then, the system can be used on a voluntary basis. It is still unclear whether the date will be the same for all product families or differ by family."
       },
       "quelle": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en#dpp-timeline"
-    },
-    {
-      "frage": {
-        "de": "Wer muss den Produktpass bereitstellen?",
-        "en": "Who has to provide the product passport?"
-      },
-      "antwort": {
-        "de": "Der Hersteller (Art. 22 Abs. 7). Einführer und Händler können als Hersteller gelten, etwa wenn sie ein Produkt unter eigenem Namen oder eigener Marke in Verkehr bringen. Dann tragen sie auch die Herstellerpflichten (Art. 26 Abs. 1).",
-        "en": "The manufacturer (Art. 22(7)). Importers and distributors can be considered manufacturers, for example when they place a product on the market under their own name or trademark. They then also bear the manufacturer obligations (Art. 26(1))."
-      },
-      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
-    },
-    {
-      "frage": {
-        "de": "Wann gilt ein Einführer oder Händler als Hersteller?",
-        "en": "When is an importer or distributor considered a manufacturer?"
-      },
-      "antwort": {
-        "de": "Nach Art. 26 Abs. 1, wenn er ein Produkt unter eigenem Namen oder eigener Handelsmarke in Verkehr bringt, es so ändert, dass die Übereinstimmung beeinträchtigt werden kann, es für einen anderen Verwendungszweck bereitstellt, abweichende Merkmale angibt oder die Herstellerrolle übernimmt. Auch bestimmte gebrauchte und wiederaufbereitete Produkte sind erfasst (Abs. 2). Nicht darunter fällt, wer nur Herstellerinformationen übersetzt oder die äußere Verpackung ersetzt, ohne den Zustand des Produkts zu beeinträchtigen (Abs. 3). Er muss den Hersteller darüber unterrichten (Abs. 4).",
-        "en": "Under Art. 26(1), when they place a product on the market under their own name or trademark, change it in a way that may affect compliance, make it available for a different intended use, state different characteristics or decide to take on the role of manufacturer. Certain used and refurbished products are also covered (para. 2). This does not apply to those who only translate the manufacturer's information or replace the outer packaging without affecting the condition of the product (para. 3). They must inform the manufacturer of this (para. 4)."
-      },
-      "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
     },
     {
       "frage": {
@@ -137,8 +115,8 @@
         "en": "What is the product passport to contain?"
       },
       "antwort": {
-        "de": "Nach Art. 76 Abs. 2 unter anderem die Leistungs- und Konformitätserklärung, die allgemeinen Produktinformationen, Gebrauchsanweisungen und Sicherheitsinformationen, die technische Dokumentation, die CE-Kennzeichnung, eindeutige Kennungen und weitere nach Unionsrecht erforderliche Unterlagen. Der Pass ist über einen Datenträger kostenlos zugänglich, mit unterschiedlichen Zugangsstufen. Die Einzelheiten legt der delegierte Rechtsakt fest.",
-        "en": "According to Art. 76(2), among other things the declaration of performance and conformity, the general product information, instructions for use and safety information, the technical documentation, the CE marking, unique identifiers and other documents required under Union law. The passport is accessible free of charge via a data carrier, with different levels of access. The details are set by the delegated act."
+        "de": "Unter anderem die Leistungs- und Konformitätserklärung, Produkt-, Gebrauchs- und Sicherheitsinformationen, die technische Dokumentation, die CE-Kennzeichnung und eindeutige Kennungen. Der Pass ist über einen Datenträger kostenlos zugänglich, mit unterschiedlichen Zugangsstufen. Die Einzelheiten legt der delegierte Rechtsakt fest.",
+        "en": "Among other things the declaration of performance and conformity, product, usage and safety information, the technical documentation, the CE marking and unique identifiers. The passport is accessible free of charge via a data carrier, with different levels of access. The details are set by the delegated act."
       },
       "quelle": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/eng"
     },
@@ -148,8 +126,8 @@
         "en": "Does the product passport apply to all construction products?"
       },
       "antwort": {
-        "de": "Laut Arbeitsplan erhält jedes Produkt, das unter harmonisierte technische Spezifikationen oder Europäische Bewertungsdokumente nach der Bauproduktenverordnung fällt, einen Produktpass, sobald das System einsatzbereit und per delegiertem Rechtsakt verpflichtend ist. Produkte, die noch nach der früheren Verordnung (EU) Nr. 305/2011 geregelt sind, nennt der Arbeitsplan dabei ausdrücklich nicht.",
-        "en": "According to the working plan, every product covered by harmonised technical specifications or European Assessment Documents under the Construction Products Regulation will have a product passport once the system is operational and made mandatory by delegated act. The working plan expressly does not include products still governed by the former Regulation (EU) No 305/2011."
+        "de": "Laut Arbeitsplan erhält jedes Produkt, das unter harmonisierte technische Spezifikationen oder Europäische Bewertungsdokumente nach der Bauproduktenverordnung fällt, einen Produktpass, sobald das System einsatzbereit und per delegiertem Rechtsakt verpflichtend ist. Welche Produktfamilien die Verordnung unterscheidet, zeigt Anhang VII, zum Beispiel Zement, Betonstahl, Fenster und Türen oder Dämmstoffe. Ob die Pass-Pflicht für alle Familien zum selben Zeitpunkt beginnt, ist noch unklar und hängt von den delegierten Rechtsakten ab.",
+        "en": "According to the working plan, every product covered by harmonised technical specifications or European Assessment Documents under the Construction Products Regulation will have a product passport once the system is operational and made mandatory by delegated act. Annex VII shows which product families the regulation distinguishes, for example cement, reinforcing steel, windows and doors or insulation products. Whether the passport obligation starts at the same time for all families is still unclear and depends on the delegated acts."
       },
       "quelle": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:52025DC0772"
     }
