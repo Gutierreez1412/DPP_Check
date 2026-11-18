@@ -64,7 +64,7 @@
         "en": "First stakeholder meeting on the preparatory study"
       },
       "beschreibung": {
-        "de": "Ein Beraterteam im Auftrag der Kommission legt einen Entwurf zu den Pass-Inhalten für Möbel vor (Version 1, Stand 22.09.2026). Rückmeldungen sind bis Ende November 2026 vorgesehen. Das ist ein Vorschlag, noch keine Pflicht.",
+        "de": "Ein Beraterteam im Auftrag der Kommission legt einen Entwurf zu den Pass-Inhalten für Möbel vor. Rückmeldungen sind bis Ende November 2026 vorgesehen.",
         "en": "A team of consultants on behalf of the Commission presents a draft on passport content for furniture (version 1, as of 22 September 2026). Feedback is foreseen until the end of November 2026. This is a proposal, not yet an obligation."
       },
       "status": "gilt",
@@ -115,8 +115,8 @@
         "en": "Which data is the passport to contain?"
       },
       "antwort": {
-        "de": "Der Entwurf der Vorstudie (September 2026) schlägt unter anderem als Pflicht vor: Modell- und Chargen-ID, Hersteller- und Werksangaben, Haupt- und Polstermaterialien, Haltbarkeit, Reparierbarkeit und Recyclingfähigkeit, besorgniserregende Stoffe, Rezyklatanteil, Pflege-, Montage- und Reparaturanleitungen, Ersatzteile, Garantiedauer sowie Rücknahmehinweise. CO₂- und Umweltfußabdruck sind noch offen. Angaben zum einzelnen Stück, etwa die Reparaturhistorie, wären freiwillig. Das ist ein Vorschlag, noch nicht mit den Beteiligten abgestimmt.",
-        "en": "The draft of the preparatory study (September 2026) proposes as mandatory, among other things: model and batch ID, manufacturer and plant details, main and upholstery materials, durability, repairability and recyclability, substances of concern, recycled content, care, assembly and repair instructions, spare parts, warranty duration and take-back information. Carbon and environmental footprint are still open. Information on the individual item, such as repair history, would be voluntary. This is a proposal, not yet validated with stakeholders."
+        "de": "Der Entwurf der Vorstudie (September 2026) schlägt die folgenden Datenpunkte vor: Modell- und Chargen-ID, Hersteller- und Werksangaben, Materialien, Haltbarkeit, Reparierbarkeit und Recyclingfähigkeit, besorgniserregende Stoffe, Rezyklatanteil, Anleitungen, Ersatzteile, Garantiedauer und Rücknahmehinweise. CO₂- und Umweltfußabdruck sowie Angaben zum einzelnen Stück (z. B. Reparaturhistorie) werden noch diskutiert.",
+        "en": "The draft of the preparatory study (September 2026) proposes the following data points: model and batch ID, manufacturer and plant details, materials, durability, repairability and recyclability, substances of concern, recycled content, instructions, spare parts, warranty duration and take-back information. Carbon and environmental footprint, as well as item-level information (e.g. repair history), are still under discussion."
       },
       "quelle": "https://espr-euecolabel-furniture.eu/media/16"
     },

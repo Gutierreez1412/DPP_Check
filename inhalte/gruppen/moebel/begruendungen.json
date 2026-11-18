@@ -18,15 +18,15 @@
       "en": "It is available for most products; close the gaps in a targeted way."
     },
     "rot": {
-      "de": "Diese Angaben fehlen bei Ihnen weitgehend oder sind unklar und müssen erst beschafft werden.",
-      "en": "This information is largely missing or unclear and must first be obtained."
+      "de": "Diese Angaben fehlen bei Ihnen weitgehend oder sind unklar und müssten erst beschafft werden.",
+      "en": "This information is largely missing or unclear and would first have to be obtained."
     }
   },
   "fragen": {
     "q1": {
       "fakt": {
-        "de": "Vorgeschlagen sind Modell-ID und Chargen-ID als Pflicht; eine Kennung je Einzelstück ist noch offen. Die meisten Beteiligten halten die Modellebene für den praktikablen Standard.",
-        "en": "Model ID and batch ID are proposed as mandatory; an identifier per item is still open. Most stakeholders consider the model level the practical baseline."
+        "de": "Vorgeschlagen sind Modell-ID und Chargen-ID als Pflicht; eine Kennung je Einzelstück ist noch offen.",
+        "en": "Model ID and batch ID are proposed as mandatory; an identifier per item is still open."
       },
       "aufwand": {
         "gruen": {
@@ -50,8 +50,8 @@
     },
     "q2": {
       "fakt": {
-        "de": "Pflichtig ist, wer das fertige Möbelstück in der EU in Verkehr bringt (Art. 27 und 34 ESPR), bei Herstellern außerhalb der EU der Importeur; Daten zu Holz, Schaum, Textil, Beschlägen und Chemie liegen oft nur bei Lieferanten, meist als PDF oder Zertifikat.",
-        "en": "Whoever places the finished piece of furniture on the EU market is obliged (Art. 27 and 34 ESPR), for manufacturers outside the EU the importer; data on wood, foam, textile, fittings and chemicals often only sits with suppliers, mostly as PDF or certificate."
+        "de": "Daten zu Holz, Schaum, Textil, Beschlägen und Chemie liegen oft nur bei Lieferanten, meist als PDF oder Zertifikat.",
+        "en": "Data on wood, foam, textile, fittings and chemicals often only sits with suppliers, mostly as PDF or certificate."
       },
       "aufwand": {
         "gruen": {

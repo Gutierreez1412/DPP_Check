@@ -176,6 +176,18 @@ const versatz: Record<string, number> = {
 
 // Hero-Szene: Hoodie auf dem Bügel, das Etikett im Nacken ist markiert.
 const sucher = { x: 96, y: 13, b: 48, h: 36 };
+
+// Rippstrick an Saum und Ärmelbündchen als kurze senkrechte Striche.
+const rippen = (xs: number[], y1: number, y2: number) =>
+  xs.map((x) => `M${x} ${y1}V${y2}`).join("");
+const saumRippen = rippen(
+  Array.from({ length: 20 }, (_, k) => 91 + k * 3),
+  110.5,
+  114.5,
+);
+const buendchenRippen =
+  rippen([68.6, 70.8, 73, 75.2, 77], 106, 110) +
+  rippen([163.4, 165.6, 167.8, 170, 172], 106, 110);
 ---
 
 {
@@ -193,12 +205,24 @@ const sucher = { x: 96, y: 13, b: 48, h: 36 };
       </defs>
 
       <path
-        class="szene__linie szene__linie--duenn"
-        pathLength="1"
+        class="szene__stoff"
+        d="M104 29Q120 41 136 29L150 33L166 40L174 112H162L160 62H152V116H88V62H80L78 112H66L74 40L90 33Z"
+      />
+      <path
+        class="szene__stoff szene__stoff--tief"
+        d="M104 29Q98 14 120 13Q142 14 136 29Q120 41 104 29Z"
+      />
+      <path
+        class="szene__stoff szene__stoff--tasche"
+        d="M97 85L93 106H147L143 85Z"
+      />
+
+      <path
+        class="szene__buegel"
         d="M120 13V9Q120 6 123 4.5Q126 3 125.5 1M120 20L88 34H152Z"
       />
       <path
-        class="szene__linie"
+        class="szene__linie szene__linie--mittel"
         pathLength="1"
         d="M104 29Q120 41 136 29L150 33L166 40L174 112H162L160 62H152V116H88V62H80L78 112H66L74 40L90 33Z"
       />
@@ -207,9 +231,28 @@ const sucher = { x: 96, y: 13, b: 48, h: 36 };
         pathLength="1"
         d="M104 29Q98 14 120 13Q142 14 136 29"
       />
+
+      <path class="szene__rippe" d={saumRippen + buendchenRippen} />
       <path
-        class="szene__speichen"
-        d="M113 36V54M127 36V52M67 104H77M163 104H173M88 109H152M96 86L92 108M144 86L148 108M96 86H144"
+        class="szene__rippe szene__rippe--kante"
+        d="M88 109H152M66.9 105H78.3M161.7 105H173.1"
+      />
+      <path class="szene__tasche" d="M97 85L93 106H147L143 85Z" />
+      <path
+        class="szene__naht"
+        d="M91 35Q97 50 88 62M149 35Q143 50 152 62M99.5 89L96.8 102H143.2L140.5 89M107 28Q120 37 133 28"
+      />
+      <path
+        class="szene__falte"
+        d="M70 80Q74.5 83 79 80M161 80Q165.5 83 170.2 80M88 66Q91 74 89.5 84M152 66Q149 74 150.5 84M101 97Q120 100 139 97"
+      />
+      <path
+        class="szene__kordel"
+        d="M113 36C111.5 42 114.5 48 113 55M127 36C128.5 42 125.5 47 127 53"
+      />
+      <path
+        class="szene__spitze"
+        d="M113 55V60M127 53V58M96.4 88.2L99 88.9M143.6 88.2L141 88.9"
       />
       <circle class="szene__oese" cx="113" cy="35" r="1.6" />
       <circle class="szene__oese" cx="127" cy="35" r="1.6" />
