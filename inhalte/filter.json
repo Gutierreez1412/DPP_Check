@@ -27,13 +27,6 @@
         "de": "Möbel",
         "en": "Furniture"
       }
-    },
-    {
-      "id": "bauprodukte",
-      "name": {
-        "de": "Bauprodukte",
-        "en": "Construction products"
-      }
     }
   ],
   "weitere_gruppen": {
@@ -47,6 +40,17 @@
     },
     "quelle": "https://eudigitalproductpassport.org/de/regulations/delegated-acts",
     "gruppen": [
+      {
+        "id": "bauprodukte",
+        "name": {
+          "de": "Bauprodukte",
+          "en": "Construction products"
+        },
+        "stand": {
+          "de": "Folgt, Datenlage noch unreif",
+          "en": "Coming later, data basis still immature"
+        }
+      },
       {
         "id": "aluminium",
         "name": {

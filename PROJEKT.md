@@ -38,7 +38,7 @@ Kooperationsprojekt mehrerer Partner (u. a. Future Response, Berlin); auf der Se
 
 Drei Schritte, je ein Bildschirm, mit Fortschrittsanzeige:
 
-1. **Produktgruppen** wählen (Mehrfachauswahl): Batterien, Stahl, Textil, Möbel, Bauprodukte
+1. **Produktgruppen** wählen (Mehrfachauswahl): Batterien, Stahl, Textil, Möbel (Bauprodukte zurückgestellt, Inhalte bleiben in inhalte/gruppen/bauprodukte/)
 2. **Ja/Nein:** Verkaufst du Produkte unter deinem eigenen Namen?
 3. **Ja/Nein:** Veränderst du Produkte wesentlich?
 
@@ -287,7 +287,7 @@ falls in `fragen.json` ein Feld `schwellen` steht.
 
 | Thema               | Entscheidung                                                                 |
 | ------------------- | ---------------------------------------------------------------------------- |
-| Produktgruppen (V1) | Batterien, Stahl, Textil, Möbel, Bauprodukte                                 |
+| Produktgruppen (V1) | Batterien, Stahl, Textil, Möbel (Bauprodukte on hold)                        |
 | Rollenfragen        | Zwei Ja/Nein-Fragen (eigener Name, wesentliche Änderung)                     |
 | Ebene 1 Ablauf      | Schritt für Schritt, eine Frage pro Bildschirm, Fortschrittsanzeige          |
 | Auswahl             | Mehrfachauswahl, Übersicht mit Link je Gruppe                                |
