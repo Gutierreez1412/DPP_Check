@@ -88,11 +88,19 @@ const quelleLabel = t(seite.quelle_label);
       <p>{t(seite.cta_text)}</p>
     </div>
     <div class="cta-band__aktion">
-      <a class="button button--hell" href={`/${lang}/check/${daten.id}/`}
-        >{t(seite.check_button)}</a
+      <a
+        class="button button--hell button--gross cta-band__haupt"
+        href={`/${lang}/check/${daten.id}/`}
+        ><span class="cta-band__haupt-text">
+          <span class="cta-band__kicker">{t(seite.cta_kicker)}</span>
+          <span>{t(seite.check_button)}</span>
+        </span>
+        <span class="cta-band__kugel" aria-hidden="true"></span></a
       >
-      <a class="cta-band__link" href="#beratung">{t(seite.cta_beratung_link)}</a
-      >
+      <a class="cta-band__link" href="#beratung">
+        <span>{t(seite.cta_beratung_link)}</span>
+        <span aria-hidden="true">→</span>
+      </a>
     </div>
   </div>
 
@@ -133,9 +141,11 @@ const quelleLabel = t(seite.quelle_label);
             data-datum={m.datum}
           >
             <span class="zeitstrahl__datum">{m.datum}</span>
-            <span class={`status-badge status-badge--${m.status}`}>
-              {t(seite.status_label[m.status])}
-            </span>
+            {m.status === "unklar" && (
+              <span class={`status-badge status-badge--${m.status}`}>
+                {t(seite.status_label[m.status])}
+              </span>
+            )}
             <strong>{t(m.titel)}</strong>
             <p>{t(m.beschreibung)}</p>
             {QUELLEN_ANZEIGEN && (

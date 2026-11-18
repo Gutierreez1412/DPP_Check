@@ -1511,3 +1511,83 @@
     gap: 1rem;
   }
 }
+
+/* --- Check-Band: Hauptaktion mit Kugel, Beratung leiser --- */
+.landing .cta-band__aktion {
+  align-items: stretch;
+  gap: 0.75rem;
+  min-width: min(22rem, 100%);
+}
+.landing .cta-band .cta-band__haupt {
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem 1rem 1.5rem;
+  font-size: 1.1rem;
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(20, 20, 40, 0.18);
+}
+.landing .cta-band .cta-band__haupt:hover {
+  box-shadow: 0 8px 22px rgba(20, 20, 40, 0.26);
+}
+.landing .cta-band__haupt-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.landing .cta-band__kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+/* Bunte Kugel (Markenverlauf) wie beim Beispiel-Link */
+.landing .cta-band__kugel {
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 200deg,
+    #5b5bd6,
+    #c27bc0 35%,
+    #f2a676 60%,
+    #c27bc0 82%,
+    #5b5bd6
+  );
+  -webkit-mask: radial-gradient(
+    circle,
+    transparent 0 22%,
+    #000 48%,
+    transparent 72%
+  );
+  mask: radial-gradient(circle, transparent 0 22%, #000 48%, transparent 72%);
+  filter: blur(0.6px) saturate(1.1);
+}
+/* Zweite Aktion: kleiner, Haarlinie, ohne Verlauf */
+.landing .cta-band__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  color: var(--color-text);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 0.2s ease;
+}
+.landing .cta-band__link:hover {
+  color: var(--color-text);
+  text-decoration: none;
+  border-color: var(--color-text);
+}
+
+.landing .check__untertitel {
+  color: var(--color-text-muted);
+}
+.landing .check__untertitel {
+  margin-top: 1rem;
+}

@@ -5,7 +5,8 @@ import personBild from "../assets/dominik-ehrenreich.jpg";
 
 interface Props {
   lang: "de" | "en";
-  gruppenName: string;
+  /** Produktgruppe; auf der Startseite leer (dann entfällt sie in der Mail). */
+  gruppenName?: string;
   /** Auf der Ergebnisseite: Häkchen "Ergebnis mitsenden" anzeigen. */
   mitErgebnis?: boolean;
   /** Ansprechpartner (Steckbrief mit Foto) links neben dem Formular zeigen. */
@@ -17,7 +18,7 @@ interface Props {
 
 const {
   lang,
-  gruppenName,
+  gruppenName = "",
   mitErgebnis = false,
   mitPerson = false,
   titel,
@@ -147,7 +148,7 @@ const clientTexte = {
       const d = new FormData(form);
       const wert = (k: string) => String(d.get(k) || "").trim() || "–";
       const zeilen = [
-        `${texte.gruppe}: ${texte.gruppenName}`,
+        ...(texte.gruppenName ? [`${texte.gruppe}: ${texte.gruppenName}`] : []),
         `${texte.labels.name}: ${wert("name")}`,
         `${texte.labels.firma}: ${wert("firma")}`,
         `${texte.labels.email}: ${wert("email")}`,
@@ -162,7 +163,9 @@ const clientTexte = {
       if (form.dataset.ergebnis) {
         zeilen.push("", "", ...JSON.parse(form.dataset.ergebnis));
       }
-      const betreff = `${texte.betreff} – ${texte.gruppenName}`;
+      const betreff = texte.gruppenName
+        ? `${texte.betreff} – ${texte.gruppenName}`
+        : texte.betreff;
       window.location.href =
         `mailto:${texte.empfaenger}` +
         `?subject=${encodeURIComponent(betreff)}` +

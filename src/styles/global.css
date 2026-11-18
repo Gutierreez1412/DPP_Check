@@ -1735,3 +1735,10 @@ details[open] > .begruendung__kopf::after {
 .ergebnis-karte__pdf:hover {
   color: #fff;
 }
+
+.check__untertitel {
+  margin: 0.9rem 0 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--farbe-text-gedaempft, #5c5c5c);
+}
